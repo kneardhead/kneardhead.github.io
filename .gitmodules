@@ -1,0 +1,6 @@
+[submodule "hugo-theme-diary"]
+	path = hugo-theme-diary
+	url = https://github.com/AmazingRise/hugo-theme-diary.git
+[submodule "themes/hugo-theme-diary"]
+	path = themes/hugo-theme-diary
+	url = https://github.com/AmazingRise/hugo-theme-diary.git
