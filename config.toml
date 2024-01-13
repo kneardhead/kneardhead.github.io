@@ -1,4 +1,4 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'kneardhead'
-theme = 'hugo-theme-diary'
+theme = 'm10c'
