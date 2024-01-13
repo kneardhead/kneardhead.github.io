@@ -1,4 +1,5 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
-title = 'kneardhead'
-theme = 'm10c'
+title = 'Ahmed Saad Sabit'
+theme = 'hugo-theme-diary'
+summaryLength = 1
