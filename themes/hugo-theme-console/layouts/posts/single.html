@@ -1,4 +1,15 @@
 {{ define "main" }}
+
+<style>
+	.custom-table {
+border: 2px solid transparent;
+}
+
+	.custom-table th, .custom-table td {
+  border: 2px solid transparent;
+}
+</style>
+
 <h1>{{ .Title }}</h1>
 
 {{ .PublishDate.Format "Jan. 2, 2006" }}
