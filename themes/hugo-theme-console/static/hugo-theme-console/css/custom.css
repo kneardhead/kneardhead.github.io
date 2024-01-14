@@ -5,3 +5,8 @@ border: 2px solid transparent;
 .custom-table th, .custom-table td {
   border: 2px solid transparent;
 }
+
+.h2 {
+  font-weight: bold;
+  font-size: 24px;
+}
