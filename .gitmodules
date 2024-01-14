@@ -7,3 +7,9 @@
 [submodule "themes/m10c"]
 	path = themes/m10c
 	url = https://github.com/vaga/hugo-theme-m10c.git
+[submodule "themes/PaperMod"]
+	path = themes/PaperMod
+	url = https://github.com/adityatelange/hugo-PaperMod.git
+[submodule "hugo-theme-console"]
+	path = hugo-theme-console
+	url = https://github.com/mrmierzejewski/hugo-theme-console.git

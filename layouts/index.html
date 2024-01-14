@@ -1,0 +1,42 @@
+{{ define "main" }}
+
+<h1>Hello</h1>
+
+<p>
+I am a Freshman at Rice University majoring in Theoretical Physics, Mathematics with interests in German and Engineering. Before university, I had studied for Physics Olympiads and participated in 53rd International Physics Olympiad and 20th Asian Physics Olympiad as a delegate from Bangladesh. <a href="about/">(more)</a>
+</p>
+<br/>
+
+<h1>Articles</h1>
+
+<div class="posts-list">
+{{ with .Site.GetPage "/posts" }}
+    {{ range first 3 (sort .Data.Pages "Date" "desc" (where .Pages ".Params.private" "!=" true))}}
+        <div class="post">
+            <p>
+                <div class="date">{{ .PublishDate.Format "Jan. 2, 2006" }}</div>
+                <h1><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h1>
+                {{ .Summary }}
+            </p>
+        </div>    
+    {{ end }}
+{{ end }}
+</div>
+
+<h1>Random Images</h1>
+
+<div class="image-grid">
+{{ with .Site.GetPage "/photos" }}
+    {{ range first 3 (sort .Data.Pages "Date" "desc")}}
+        <a href="{{ .Permalink }}" title="{{ .Title }}">
+        {{ $image := .Page.Resources.GetMatch .Params.image }}
+        {{ with $image }}
+            {{ $thumb := .Resize "400x" }}
+            <img src="{{ $thumb.RelPermalink }}" alt="{{ .Title }}" class="img-responsive">
+        {{end}}
+        </a>
+    {{ end }}
+{{ end }}
+</div>
+
+{{ end }}
