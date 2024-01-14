@@ -3,9 +3,10 @@ title: "Competitive Physics Notes (Olympiad Training)"
 date: 2024-01-13T16:06:51-06:00
 draft: false
 ---
-Practicing Physics Problems for Olympiads was a huge part of my life, and I had written several handouts back then.
+Practicing Physics Problems for Olympiads was a large part of my middle school and later high school career, and I had written several handouts back then. Their quality is rather questionable but I hope to re-rewrite some of them when I take the relevant physics courses.
+<!--more-->
 
-
+There are just too many files that I need to upload here. I will try some formats down below. These are trash-codes that don't expect to see the light of the day for too long.
 <table>
   <tr>
     <td>Name</td>
