@@ -13,8 +13,7 @@ I take the LaTeX notes in real time on my Fedora Linux Thinkpad, aided by the in
 \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 01](/math354/class01.pdf): Covers the bare minimum basics of the first portion of the textbook.\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 02](/math354/class02.pdf): Continued up to direct sums, with an introduction to induction.\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 03](/math354/class03.pdf)
-
+<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 03](/math354/class03.pdf)-->
 
 **MATH 232: Honors Multivariable Calculus**
 \
@@ -26,7 +25,7 @@ I take the LaTeX notes in real time on my Fedora Linux Thinkpad, aided by the in
 \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 01](/math382/class01.pdf): The basic definition of complex numbers, with some maths on series.\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 02](/math382/class02.pdf): Polar definition, Hyperbolic Definition, ending with roots of complex numbers.\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 03](/math382/class03.pdf)
+<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 03](/math382/class03.pdf)-->
 
 I built an invisible table environment in order to enlist the notes in a list view. I am not sure whether this is good or not.
 <table class="custom-table"> 
