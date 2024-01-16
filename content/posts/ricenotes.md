@@ -1,5 +1,5 @@
 ---
-title: "Rice University Course Notes (Mathematics and Physics)"
+title: "Rice University Lecture Notes (Mathematics and Physics)"
 date: 2024-01-13T16:15:11-06:00
 draft: false
 showthedate: false
@@ -8,6 +8,8 @@ Spring 2024: MATH 354, MATH 382, MATH 232
 <!--more-->
 
 I take the LaTeX notes in real time on my Fedora Linux Thinkpad, aided by the incredible flexibility and ergonomics of Vim and Ultisnips. I remain indebted to [Gilles Castel](https://castel.dev) for pioneering this incredible ecosystem that makes taking math notes and diagrams faster than hand. Currently I am using a fork of the LaTeX package [ahsan.sty](https://github.com/AnglyPascal/sty) that I have trimmed to suit my needs. I hope to upload the package [texabit.sty](https://www.youtube.com/watch?v=dQw4w9WgXcQ) after I have a stable code.
+
+The first few notes are a little bit bad because I am still learning.
 
 **MATH 354: Honors Linear Algebra**
 \
