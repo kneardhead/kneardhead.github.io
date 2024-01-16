@@ -1,0 +1,288 @@
+\documentclass[12pt]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Linear Algebra: Homework 01}
+\author{Ahmed Saad Sabit}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+
+
+
+\pr{\textbf{(1)}
+Use induction to show that, for all natural numbers $n$,
+\[
+1^2 + 2^2 + \cdots + n^2 = \frac{n(n+1)(2n+1)}{6}.
+\]
+}
+\solu{
+Let's get the base case. 
+\[
+P(1) = \frac{1(2)(2+1)}{6} = 1
+\] It is true. 
+
+Let's see $P(n)$ and assume that it is true. (Inductive assumption) Let's try $P(n+1)$, which is,
+\[
+P(n+1) = P(n) + (n+1)^2 = \frac{n(n+1)(2n+1)}{6} + (n+1)^2
+\] 
+Through algebra, we can turn this exact form into the following (taking $n+1$ as a factor),
+\[
+P(n+1) = \frac{(n+1)((n+1)+1)(2(n+1)+1)}{6}
+\] 
+If $n+1=k$, then we get the origin form
+\[
+P(k)= \frac{k (k+1)(2k+1)}{6} 
+\] So we proved the statement through induction. As a physics major this is refreshing because this word no more is a painful integral calculating the flux through some weird object. 
+}
+
+\pr{
+\textbf{(2)}
+Consider the set $\mathbb{F}_3 = \{ 0, 1, 2 \}$. Let us define an addition and a multiplication on $\mathbb{F}_3$ by following the rules in the following tables: \\
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
++&0&1&2\\
+\hline
+0&0&1&2\\
+\hline
+1&1&2&0\\
+\hline
+2&2&0&1\\
+\hline
+\end{tabular}
+\qquad
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$\cdot$&0&1&2\\
+\hline
+0&0&0&0\\
+\hline
+1&0&1&2\\
+\hline
+2&0&2&1\\
+\hline
+\end{tabular}\end{center}
+\vspace{.1in}
+\noindent You may assume, without verification, that these operations turn $\mathbb{F}_3$ into a field with additive identity $0$ and multiplicative identity $1$. \medskip
+
+Fill out the additive and multiplicative inverse tables below: \\
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x$&0&1&2\\
+\hline
+$-x$& & & \\
+\hline
+\end{tabular} \qquad
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x$&0&1&2\\
+\hline
+$1/x$& & &\\
+\hline
+\end{tabular} \end{center} 
+}
+
+\solu{
+Additive inverse for $x$ will be $-x$ such that, 
+\[
+x + (-x) = 0
+\] 
+Using this, 
+\begin{align*}
+	0 + 0 &= 0 \\
+	1 + 2 &= 0 \\
+	2 + 1 &= 0 
+.\end{align*}
+
+Multiplicative inverse is, $x^{-1}$ such that,
+\[
+x \cdot x^{-1} = 1
+\] 
+Hence, 
+\begin{align*}
+	0 \cdot U &= 1 \\
+	1 \cdot 1 &= 1 \\
+	2 \cdot 2 &= 1 \\
+.\end{align*}
+Note that $U$ means \textbf{Undefined}. There is no such number $U$ that exists that can solve this problem.
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x$&0&1&2\\
+\hline
+$-x$&0&2&1\\
+\hline
+\end{tabular} \qquad
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x$&0&1&2\\
+\hline
+$1/x$&?&1&2\\
+\hline
+\end{tabular} \end{center} 
+}
+
+\pr{
+\textbf{(3)}
+Briefly explain how you filled out the tables. \medskip
+Compute the value of the following expression in $\mathbb{F}_3$:
+\[ \frac{2^3 + 1}{2}. \]
+Briefly explain how you carried out the computation. 
+}
+\solu{
+We will do the computation in steps, 
+\begin{align*}
+	\frac{2^3+1}{2} &= \frac{(2\cdot 2\cdot 2) + 1}{2} \\
+			&= \frac{([2\cdot 2] \cdot 2 + 1)}{2} \\
+			&= \frac{1\cdot 2 + 1}{2} \\
+			&= \frac{2+ 1}{2} \\
+			&= \frac{0}{2} 
+			= 0 
+.\end{align*}
+We used associativity in the second line.}
+
+ \pr{
+	 The set $\mathbb{C} = \{ a + bi : a, b \in \mathbb{R} \}$ of complex numbers, together with its usual operations of addition and multiplication (see Definition 1.1 in \S 1.A), is a field. This is verified by the combination of Example 1.2 in \S 1.A and Exercises 1.A.1, 1.A.4, 1.A.5, 1.A.6, 1.A.7, 1.A.8, 1.A.9. You are welcome to try to do the proofs. They are tedious, and we will do similar exercises in other contexts, so let's just skip these and assume them to be true. \\
+
+\noindent By definition, every $z \in \mathbb{C}$ can be expressed as $a + bi$ with $a$, $b \in \mathbb{R}$; we refer to this as the \textbf{standard form} of the complex number $z$. For example, $-7 + 22i$ is the standard form of $(2+3i)(4+5i)$; see Example 1.2 in \S 1.A. Now, work these out: \\
+
+	Let $z \in \mathbb{C}$ have standard form $z = a+bi$, where $a$, $b \in \mathbb{R}$. Carry out the computation $z^3 = (a+ib)^3$ to find the standard form of $z^3$. Show your work. \\
+}
+\solu{
+Binomial Theorem is a rather better way of doing this but I believe doing the multiplication from scratch makes the point much more clear. 
+\begin{align*}
+	(a+ib)^3 &= \left(a+ib\right)\left(a+ib\right)\left(a+ib\right) \\
+	&= \left(a^2 + 2abi + b^2i^2\right)\left(a+ib\right) \\
+	&= a^3 + b^3 i^3 + 3 a^2 bi + 3 ab^2i^2 \\
+	&= a^3 - b^3 i + 3a^2 bi - 3ab^2 \\
+	&= \left(a^3-3ab^2\right)+i\left(3a^2b-b^3\right) \\
+\end{align*}
+}
+
+
+\pr{
+Consider $w = -\frac12 + \frac{\sqrt{3}}{2} i \in \mathbb{C}$. Compute $w^3$ and show it equals $1$. Show your work. }
+\solu{
+The format is exactly same as the previous problem,
+\[
+w = -\frac{1}{2} + \frac{\sqrt{3} }{2} i = a + ib 
+\] 
+\[
+w^3 = (a^3 - 3ab^2) + i \left(3a^2b - b^3\right) \]\[= 
+\left( -\frac{1}{2} -3 \left(-\frac{1}{2}\right) \left(\frac{\sqrt{3} }{2}\right)^2 \right) + i 
+\left(3 \left(-\frac{1}{2}\right)^2 \left(\frac{\sqrt{3} }{2}\right) - \left(\frac{\sqrt{3} }{2} \right)^3\right)
+\]
+\[
+= 1 + i \left(0\right) = 1
+\] 
+}
+
+
+\pr{
+Consider the same $w$ as in (5). Write its additive inverse and its multiplicative inverse in standard form. Confirm that these inverses are correct by explicitly verifying that $w+(-w) = 0$ and $w \cdot 1/w = 1$ for them. Show your work for this verification.
+}
+\solu{
+Additive inverse for $w$ is, 
+\[
+-w = \frac{1}{2} - \frac{\sqrt{3} }{2}i
+\] 
+Proof for this is,
+\[
+	w + \left(-w\right)= 
+	\left(-\frac{1}{2} + \frac{\sqrt{3} }{2}i\right) + \left(\frac{1}{2} - \frac{\sqrt{3} }{2}i\right) = 0
+\] 
+Multiplicative inverse is, 
+\[
+	w^{-1} = \frac{1}{- \frac{1}{2} + \frac{\sqrt{3}}{2 }i} = 
+\frac{1}{- \frac{1}{2} + \frac{\sqrt{3}}{2 }i} \frac{-\frac{1}{2} - \frac{\sqrt{3} }{2} i}{
+-\frac{1}{2} - \frac{\sqrt{3} }{2}i}
+\] 
+\[
+= \frac{
+-\frac{1}{2} - \frac{\sqrt{3} }{2}i
+}{
+\frac{1}{4} + \frac{3}{4}} = -\frac{1}{2} - \frac{\sqrt{3} }{2} i
+\] 
+Proof that it's okay,
+\[w \cdot w^{-1}=
+	\left(-\frac{1}{2} + i \frac{\sqrt{3} }{2}\right) 
+	\left(-\frac{1}{2} - i \frac{\sqrt{3} }{2}\right) = 1
+\] 
+}
+
+
+
+\pr{
+1.A.9 (Corrected) Find $x \in \mathbb{R}^{4}$ such that \[
+	(4,-3,1,7) + 2x = (5,9,-6,8)
+\] 
+}
+\solu{
+Thinking of this like a vector, 
+\[
+\vec{a} + 2 \vec{x} = \vec{b}
+\] To solve for $\vec{x}$
+\[
+\vec{x} = \frac{\vec{b}-\vec{a}}{2}
+\] 
+Solving,
+\[
+\vec{x} = \frac{(5-4, 9-(-3), -6 - 1, 8 -7)}{2} = \frac{(1,12,-7,1)}{2} = \left(\frac{1}{2}, 
+6, -\frac{7}{2}, \frac{1}{2}\right)
+\] 
+}
+
+
+\pr{
+	1.A.14 Show that $\lambda (x+y) = \lambda x + \lambda y: \forall \lambda \in \mathbb{F} \,\&\, \forall x,y \in \mathbb{F}^{n}$ 
+}
+I am going to use the definition $1.18$ from the book, which is, 
+\df{
+The product of a number $\lambda$ and a vector in $\mathbb{F}^{n}$ is computed by multiplying each coordinate of the vector by $\lambda$\[
+	\lambda \left(x_1, \ldots, x_{n}\right) = \left(\lambda x_1, \ldots, \lambda x_{n}\right); \lambda \in \mathbb{F} \,\&\, \left(x_1, \ldots, x_{n}\right)\in \mathbb{F}^{n}
+\] 
+}
+\solu{Using the previous definition, multiplying $\lambda$ on the $\vec{x}+\vec{y}$ vector, and remembering $x_{n},y_{n} \in \mathbb{F}$
+\begin{align*}
+	\lambda (x+y) &= \lambda \left(x_1 + y_1, \ldots, x_{n} + y_{n}\right) \\
+	\text{(From Definition)}	&=  \left(\lambda (x_1+y_1), \ldots, \lambda (x_{n}+y_{n})\right)\\
+	\text{(Coordinates are scalars)}&= \left( \lambda x_1 + \lambda y_1, \ldots, \lambda x_{n} + \lambda y_{n}\right) \\
+	&= \left(\lambda x_1, \ldots, \lambda x_{n}\right) + \left(\lambda y_1, \ldots, \lambda y_{n}\right) \\ 
+	&= \lambda x + \lambda y 
+.\end{align*} 
+}
+
+\pr{
+1.B.1 Prove that $-(-v)$ is $v$ for $\forall v \in V$. 
+}
+\solu{If $v$ is a member of the vector space $V$, we must have additive identity $v + (-v) = 0$, using that, 
+\[
+- (-v) = - (-v) + 0 = - \left(-v\right) + v + (-v) = \boxed{
+v
+}
+\] 
+}
+
+\pr{
+1.B.2 Suppose that $a \in \mathbb{F}$ and $v \in V$, and \[
+av = 0
+\] Prove that $a = 0$ or $v=0$.
+}
+\solu{
+Let's start with $a$, 
+\[
+a = a \cdot  1 = a (v v^{-1}) = (av)v^{-1} = 0 \cdot  v^{-1} = 0
+\] Note that it's impossible here for $v = 0$ otherwise $v ^{-1}$ does not exist. Hence, if we have $v^{-1}$ in existence through $v \neq 0$, $a$ must be 0 for $av = 0$. But the other case is also true, 
+\[
+v = v \cdot  1 = v (a a^{-1}) = (av) a^{-1} = 0 \cdot  a^{-1} = 0
+\] Like so, if $a^{-1}$ exists, which means $a \neq 0$, then it's given that $v=0$ for $av = 0$. 
+}
+
+\end{document}
+
+
+
