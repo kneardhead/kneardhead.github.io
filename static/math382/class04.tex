@@ -1,0 +1,94 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Class 04}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle 
+
+Homework handout is being analyzed. 
+
+\section{Complex Logarithms}
+Let $z\neq 0$ be arbitrary, then using polar representation: 
+\[
+z = r e^{i \theta}
+\] 
+Now $r = |z|$ and $\theta = \arg(z)$ where the argument can't be an actual function because it has infinitely many outputs.
+
+Warning, never write the $\ln(z)$ where $z \in \mathbb{C}$. We will use log, $\log z = \log r + \log e ^{i\theta}$. We get $\ln r + i \theta$.
+
+\df{
+For any $z\neq 0$ complex number, the log of $z$ is defined to be,\[
+\log z = \ln |z| + i \arg(z)
+\]
+Hence turns out, $\log z$ and $\arg z$ has the same sort of ambiguity. 
+\[
+\arg(z + 2 \pi ) = \arg (z)
+\] \[
+\log(z + 2\pi ) = \log(z)
+\] 
+}
+
+We are computing $e^{\log z }$ which is, 
+\[
+e^{\log z } = e^{\ln |z|} e^{i \arg (z)} = |z| e^{i \arg(z)} = z
+\]
+That is $z$ no matter of the choice of $\arg z$. 
+
+\[
+\log (zw) = \ln |zw| + i \arg(zw) = \ln |z| + \ln|w| + i (\arg z + \arg w) + 2 \pi i k
+\] \[
+= \log | z| + \log| w| + 2 \pi i k 
+\] 
+
+\section{Differentiation} 
+This is where complex analysis becomes very different from real analysis. 
+
+Math 101: A function $f(t)$ is differentiable at $t_0$ if $\lim_{h \to 0} \frac{f(t_0 + h) - f(t_0)}{h}$ is $f'(t_0)$. Here is math 382, 
+
+	\df{
+	A function $f = f(z_0 )$ is differentiable at $z_0$ if, 
+	\[
+	\lim_{h \to 0} \frac{f(z_0 + h) - f(z_0)}{h} = f'(z_0)
+	\]
+	Here, $h \in \mathbb{C}$ and $h \neq  0 $. However this is a huge definition. 
+	}
+
+Examples, let's say $f(z) = z^2$. Then having, 
+\[
+f'(z_0) = \lim_{h \to 0} \frac{f(z_0 + h) - f(z_0)}{h} = \lim_{h \to 0} \frac{(z_0 + h)^2 - z_0^2}{h} = \lim_{h \to 0} \frac{2 z_0 h + h^2}{h} = \lim_{h \to 0}  2z_0 + h = 2 z_0 
+\] 		
+
+	\thm{
+		If $f$ is a differentiable function at $z_0$, then $f$ is continuous at $z_0$. 
+	}
+	\pf{
+		\begin{align*}
+			f'(z_0) &= \lim_{h \to 0} \frac{f(z_0+h)-f(z_0)}{h} \\
+			&= \lim_{h \to 0} \frac{1}{h} \left(f(z_0+h)-f(z_0)\right) 
+		.\end{align*}
+		For this $\frac{1}{h}$ as it blows up, we must  have the parenthesis tend to zero otherwise we don't have a limit.
+	}
+
+\df{
+Product Rule. 
+\[
+	(fg)' = fg' + f'g
+\] Given the function $\frac{1}{f}$ is also differentiable at $z_0$. 
+}
+
+Let's take $f(z) = Re(z)$. It's not differentiable at $0$. 
+\[
+	(f(h) - f(0)) \frac{1}{h} = \frac{Re(h)}{h} = \frac{x}{x+iy}
+\] This has no limit. 
+
+The complex input function can be written as $f(z) = f(x+iy) = f*(x,y)$. 
+
+Thus if $h \in \mathbb{R}$ then, $\frac{f*(x+h,y)}{h} $ is simply $\frac{\partial f*}{\partial x}$. 
+For $h \in  \mathbb{C} = i l$ we get $\frac{f*(x,y+l)}{il}$ is giving us $\frac{\partial f*}{\partial y}$. 
+\[
+\frac{\partial f*}{\partial x} = \frac{1}{i} \frac{\partial f*}{\partial y}
+\] This is the Cauchy-Riemann Equation. 
+\end{document}

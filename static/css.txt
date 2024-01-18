@@ -1,0 +1,17 @@
+390000		Dad
+278510		Mom
+
+155723		Additional allowances
+
+879112		Tot Compensation
+127872		Home Rent
+ 70000		Sadiq school
+ 15000		Medical
+ 40000		Utilities
+240000		Food
+ 20000		Clothing
+ 50000		Household
+ 27500		Transport
+160000		Others
+195000		EFC
+
