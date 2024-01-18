@@ -1,0 +1,153 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[dutch]{babel}
+\usepackage{amsmath, amssymb}
+
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+\setlength\parindent{0em}
+\pdfsuppresswarningpagegroup=1
+
+\title{Honors Linear Algebra 354}
+\author{Ahmed Saad Sabit} 
+\date{09 januari 2024 - \today}
+\begin{document}
+\maketitle
+\section{Office Hours} 
+Tuesday, \emph{12:30 - 2:30}. Wednesday \emph{9:30 - 12:30} and  \emph{2:30 - 3:30}.
+
+\section{Vector Spaces}
+\section{1.1 $\mathbb{R}^{n}$ and $\mathbb{C}^{n}$.}
+We can have a field $\mathbb{F}$ which can be either $\mathbb{R}$ or $\mathbb{C}$. 
+
+Let's talk a bout a List. A list can be,
+\[
+	(f_1, f_2, \ldots f_n)
+\] 
+These are ordered elements and the length of the list is $n$. But, it's no more a list if there are infinite elements. 
+
+$\mathbb{F}^{n}$ is the set of all lists of length $n$ positive integer with elements of $\mathbb{F}$. 
+\[
+	\left(x_1, x_2, x_3, \ldots x_{n} \right)
+\] 
+
+$\mathbb{R}^{2}$ can be drawn like in the cartesian plane, but it's difficult to draw $\mathbb{C}^{2}$. It is an ordered pair of complex numbers. These are vector spaces. 
+\[
+	\left(x_1, \ldots x_{n}\right) + 
+	\left(y_1, \ldots y_{n}\right) = 
+	\left(x_1 + y_1, \ldots, x_{n} + y_{n}\right)
+\] 
+We can multiply scalar times vectors, note that $a$ is any number. It can be real or complex.  
+\[
+a \in \mathbb{F} 
+\] For vectors $v,u$
+\[
+a \left(v + u\right) = av + au
+\] 
+\[
+	\left(a+b\right) v = av + bv
+\] 
+We define origin, 
+\[
+O = 	\left(0,0,0,0, \ldots, 0\right)
+\] 
+We have a zero vector such that, 
+\[
+\vec{v} = \vec{v} + \vec{0}
+\] 
+
+\section{Definition of Vector Space}
+Definition: There are objects called $V$ vectors. There are scalars $\mathbb{F}$. Then we have operations which have the properties of either $\mathbb{R}^{n}$ or $\mathbb{C}^{n}$ made with no notation other than $V$. 
+
+We need addition, $\vec{v} + \vec{w}$. It's still vector. It's commutative $\vec{v} + \vec{w} = \vec{w} + \vec{v}$, its associative, $\vec{v} + \left(\vec{w} + \vec{z}\right) = \left(\vec{v} + \vec{w}\right) + \vec{z}$. 
+
+for all $0$ we have $\vec{v} + 0 = v$. The scalar multiples, $a \in \mathbb{F}$ and $\vec{v} \in V$, 
+\[
+a \vec{v} \in V
+\]
+
+We can have
+\[
+0 v = 0
+\] 
+Proof: \[
+	\left(0 + 0\right) v = 0v + 0v = 0v
+\] 
+From here, subtracting one of the $0v$ from one side,
+\[
+0 = 0 v
+\] 
+
+A vector space with scalars $\mathbb{R}$ is called a real vector space. A vector space with scalars $\mathbb{C}$ is a complex vector space.
+
+On $P$-16, in Sheldon Axler, $V$ denotes (upper case V) always denotes a vector space over $\mathbb{F}$. 
+And scalars can be complex or real, it's not always just simple $1,2,3, \ldots n$
+
+\section{Subspaces} 
+Can a vector space be consist of just one element? Yes, element zero $\{0\}$ all by itself. 
+
+But can it be empty? Because it doesn't have the inverses. It just says it must have at least the origin. 
+Definition: If $V$ is a vector space. A subset $U$ of $V$ is said to be a subspace of $V$ if it satisfies all the axioms of a vector space. Using structure of $V$ itself.
+
+\begin{figure}[ht]
+    \centering
+    \incfig{vector-space-and-subspace-diagram}
+    \caption{Vector space and subspace diagram, here Red is not a subspace because it doesn't have the origin.}
+    \label{fig:vector-space-and-subspace-diagram}
+\end{figure}
+
+$\vec{v_0}$ is a vector and the line that connects it can be a subspace. Any single line that goes through the origin in a $\mathbb{R}^{2}$ space is a subspace. Food for thought, can we prove or disapprove that for a space $\mathbb{R}^{n}$, $\mathbb{R}^{n-1}$ is a subspace.
+
+\newpage
+\section{Chapter 2: Finite Dimensional Vector Spaces}
+There is a name of this book. It was the textbook of the professor.
+
+Let's review our standing assumptions, 
+\begin{itemize}
+	\item $\mathbb{F}$, V, here there is a field and $V$ is a vector space over it. 
+	\item 
+\end{itemize}
+
+Learning objectives are,
+\begin{itemize}
+	\item Span
+	\item Linear Dependence
+	\item Bases
+	\item Dimension
+\end{itemize}
+
+2A span and linear independence. 
+
+Definition: A linear combination of a list $\vec{v_1}, \ldots , \vec{v_n}$ of vectors is any vector of the form,
+\[
+a \vec{v_1} + \ldots + a_n \vec{v}_n
+\] 
+Here $a_i$ is a scalar such that $a \in \mathbb{F}$. The set of all linear combination of the list $\vec{v}_1, \ldots, \vec{v}_n$ is a subspace of $V$.
+
+This subset is a subspace of $V$, and called a span. 
+
+If span $\{\vec{v_1}, \ldots \vec{v}_n\}= V$, then we can say that $\vec{v}_1, \ldots \vec{v}_n$ span $V$. 
+
+For $\mathbb{R}^{3}$, $\text{span}\{(1,0,0),(0,1,0) \}$ is the  $x-y$ plane. Until $z\neq 0$, we will have $x,y$ plane to be the span for anything, because no matter how you make the linear combination, you cannot have any vector that points towards $z$ to make a $z$ span.
+
+Definion: Linear Independence : 
+Linear independent if $a_1 \vec{v}_1 + a_2 \vec{v}_2 + \ldots + a_n \vec{v}_n = 0$, can only and only be possible if you can use $a_1 = a_2 = a_3 = \ldots = a_n = 0$.
+
+A list of one vector is linearly independent if and only if that vector is not $0$. A list of two vectors is linearly independent if and only if neither are the scalar multiple of the other. 
+\[
+a_1 \vec{v}_1 + a_2 \vec{v}_2 = 0
+\] 
+
+\end{document}

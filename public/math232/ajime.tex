@@ -1,0 +1,58 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+	\pr{
+	Let's define a line $F$. 
+	\begin{itemize}
+		\item This line is perpendicular to a line $C$ which is $C(t)= (1,0,-1) + t(1,-1,2)$ 
+		\item This line goes through $(5,0,3)$. 
+	\end{itemize}
+	Find $F$.
+	}
+	\solu{
+	What is the vector $\vec{N}$ that points along $C$ line? That vector is simply $(1,-1,2)$. What are the vectors $\vec{N}_\perp$ that are perpendicular to $\vec{N}$? They are,
+	\[
+	\vec{N} \cdot \vec{N}_\perp = 0 
+	\] 
+	Let's break the vectors down in a way that,
+	\[
+	\vec{N} = (a,b,c)
+	\] 
+	\[
+	\vec{N}_\perp = (a',b',c')
+	\] 
+	So from the perpendicular condition, we can find $(a',b',c')$. 
+	\[
+	\vec{N}\cdot \vec{N}_\perp = a a' + b b' + c c' = 0
+	\] 
+	For this problem, $(a,b,c) = (1,-1,2)$ hence,
+	\[
+	a' -b' + 2c' = 0
+	\] 
+	So any vector $(a',b',c')$ that follow that condition above will be perpendicular to $(a,b,c)$
+	But the thing is, there are $ \infty$ numbers $(a',b',c')$ that can solve that above equation $a'-b' + 2c' = 0$. We end up getting a whole Plane of points that satisfy that relation, if you imagine that the vector $(a',b',c')$ spins around $(a,b,c)$ vector staying perpendicular. All the direction $\vec{N}_\perp$ can point to builds up a plane. A random plane that satisfies above condition can be
+	\[
+	x - y + 2 z = D
+	\] Where $D$ is some random number. 
+
+	There are infinite planes. But we are interested on the one that contains one of the point $(5,0,3)$ as shown in the problem. To find the plane that specifically contains the point $(5,0,3)$ we have to use, 
+	\[
+	a(x-x_0) + b(y - y_0) + c(z-z_0)=0
+	\] The derivation is avoided here, but you can find it out online. Putting the values we get the plane, \[
+	x - y + 2z = -1
+	\]  This plane includes $(5,0,3)$. 
+
+
+	This plane is perpendicular to the $C$ line (because it's perpendicular to it's direction as we have noted). There is a point where $C$ intersects $x - y + 2z = -1$. This intersection point, if connected to $(5,0,3)$ will give us the final answer which is the line that is perpendicular to $C$ and goes through that point.
+
+	Turns out for the $C$ line, the intersection is simply $1,0,-1$. So the line that connects 
+	\[
+		(1,0,-1) \to (5,0,3)
+	\] is the solution.
+}	
+\end{document}

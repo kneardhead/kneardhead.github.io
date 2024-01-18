@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ahmed Saad Sabit</title>
+    <link>http://example.org/</link>
+    <description>Recent content on Ahmed Saad Sabit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 13 Jan 2024 16:15:11 -0600</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rice University Lecture Notes (Mathematics and Physics)</title>
+      <link>http://example.org/posts/ricenotes/</link>
+      <pubDate>Sat, 13 Jan 2024 16:15:11 -0600</pubDate>
+      
+      <guid>http://example.org/posts/ricenotes/</guid>
+      <description>&lt;p&gt;Spring 2024: MATH 354, MATH 382, MATH 232&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Competitive Physics Notes (Olympiad Training)</title>
+      <link>http://example.org/posts/physicsolympiadnotes/</link>
+      <pubDate>Sat, 13 Jan 2024 16:06:51 -0600</pubDate>
+      
+      <guid>http://example.org/posts/physicsolympiadnotes/</guid>
+      <description>&lt;p&gt;Practicing Physics Problems for Olympiads was a large part of my middle school and later high school career, and I had written several handouts back then. Their quality is rather questionable but I hope to re-rewrite some of them when I take the relevant physics courses.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://example.org/about/</link>
+      <pubDate>Sat, 05 Nov 2016 21:05:33 +0530</pubDate>
+      
+      <guid>http://example.org/about/</guid>
+      <description>A minimal, responsive and light theme for Hugo inspired by Linux console.
+Installation $ mkdir themes $ cd themes $ git submodule add https://github.com/mrmierzejewski/hugo-theme-console.git hugo-theme-console See the Hugo documentation for more information.
+Configuration Set theme parameter in your config file:
+theme = &amp;#34;hugo-theme-console&amp;#34; License Copyright © 2020 Marcin Mierzejewski
+The theme is released under the MIT License.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,78 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}\maketitle 
+I could not be present in the class because there was time clash between the Weekly Jumah'r Namaz and 382, but here's a rough attempt to make this complete. This document will be updated with as many notes I can fetch from my friends and the office hours.
+	\pr{
+	\[
+	\sinh (z+w) 
+	\] 
+	}
+	\solu{ What we will only use is $e^{z+w} = e^{z}e^{w}$. Using that
+	you can show, 
+	\[
+	\sinh(z+w) = \cosh(z)\sinh(z) + \cosh(w)\sinh(z)	
+	\] 
+	\[
+	\cosh(z+w)=\cosh(z)\cosh(w)+\sinh(z)\sinh(w)
+	\] 		
+	}
+What if we put weird $x+iy$ form inside of $\sin(x)$? 
+	\pr{
+	Explain $\sin(z)$.
+	}
+	\solu{
+	\begin{align*}
+		\sin z &=   \sin (x +iy)\\
+		&= \sin x \cos (iy) + \cos(x) \sin(iy) \\
+		&= \sin (x) \cosh(y) + i \cos(x) \sinh(y) 
+	.\end{align*}		
+	If we square this, 
+	\begin{align*}
+		|\sin(z)|^2 &= \sin^2z \cosh^2 y + \cos ^2x \sinh ^2 y \\
+		&= \sin ^2z (\sinh^2 y + 1) + \sinh^2 (1 - \sin^2 x) \\
+		&= \sin^2x + \sinh^2 y 
+	.\end{align*}
+	}
+
+Now we will do some weird $\cos(\frac{2}{5})$ problem.
+	\pr{
+	Solve $\cos 2 \pi/ 5$.
+	}\solu{
+	\[
+	w = e^{2\pi i / 5}
+	\] Hence, $w^{5} = 1$. So,
+	\[
+	\frac{w^{5}-1}{w-1} = 0 = w^{4} + w^3 + w + 1
+	\] 
+	Divide this by $w^2$,
+	\[
+	0 = w^2 + w + 1 + \frac{1}{w} + \frac{1}{w^2} = \left(w + \frac{1}{w}\right)^2 + 
+	\left(w + \frac{1}{w}\right) - 1
+	\] 
+	From here,
+	\[
+	w + \frac{1}{w} = e^{2\pi i / 5 } + e^{- 2 \pi i / 5} = 2 \cos \frac{2\pi }{5} = 2z
+	\] 
+	\[
+	0 = 4z^2 + 2z - 1
+	\] Using the quadratic formula we get, 
+	\[
+	z = \frac{-1 \pm \sqrt{5} }{4}
+	\] 
+	}
+	
+
+	\pr{
+	\[
+	e^{z} = 1
+	\] Prove $z$ is a integer multiple of $2 $. 
+	}\solu{
+	I will have to do some reading on this.
+	}
+
+\end{document}

@@ -1,0 +1,205 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+I entered the class a little late because I couldn't find where the room was. By the time I was there, the professor had shown \[
+	\overline{zw} = \overline{z} \, \overline{w}
+	\] 
+I am re-reading the materials a few days later and I will keep the theoretical notes here. In the rare case that anyone is reading this instead, I think you should just read the book because what I type here is going to be quite hazy. I will try to improve quality of my handouts after I write some bad ones. One way this handout might be very useful to you is when I add my ideas why we are doing something (for example like why do we need to prove $z_2 = 0$ if $z_1 z_2 = 0$ given $ z_1 \neq  0$, isn't it just common sense?)
+
+\section{General Definitions}
+\df{
+Let's define a cute number called $i$ which has this specific property, 
+\[
+i^2 = -1
+\] Which conversely means, \[
+\sqrt{-1}  = i
+\] 
+}
+Let's play around with this number for a bit, 
+\begin{align*}
+	i &= i \\
+	i^2 &= -1 \\
+	i^3 &= -i \\
+	i^{4} &= 1 \\
+	i^{5} &= i \\
+	i^{6} &= -1 \\
+	i^{7} &= -i \\
+	i ^{8} &= 1 
+.\end{align*}
+There is a repeating pattern here. 
+
+\df{
+Complex numbers to me is basically a pair of numbers that are $(x,y): x,y \in \mathbb{R}$ and they follow a nice rule of addition and multiplication. 
+\[
+	(x_1, y_1) + (x_2, y_2) = (x_1 + x_2, y_1 + y_2)
+\] 
+\[
+	(x_1,y_1) * (x_2, y_2) = (x_1 x_2 - y_1 y_2, x_1 y_2 + x_2 y_1)		
+\] 
+A complex number can be written in the form $x+ iy$ where $i^2 = -1$. These numbers are member of the $\mathbb{C}$ complex numbers. 
+}
+
+\pf{
+The addition is trivial, for multiplication we will use the complex number form, $z = x + iy$ and $i^2 = -1$ to get,
+\[
+	\left(x_1 + i y_1\right)\left(x_2 + i y_2\right) = x_1 x_2 + i x_1 y_2 + i x_2 y_1 + i^2 y_1 y_2		
+\] 
+This gives us, 
+\[
+\boxed{
+	\left(x_1 + i y_1\right)\left(x_2 + i y_2\right) =
+x_1 x_2 - y_1 y_2 + i(x_1 y_2 + x_2 y_1)
+}
+\] 
+}
+
+An interesting thing to note is that setting $y_i$ to $0$ makes the operations simply $\mathbb{R}$ like. A logical way to think about this new type of $\mathbb{C}$ number is that this should have rules for $\sqrt{x  + iy} $ and like $\left(x+iy\right)^2$. We can find each operations on complex numbers one by one, plus we can even have operations that are unique to complex numbers.
+
+Before getting in too theoretical let's try to do a cool problem using Binomial Theorem
+
+\pr{
+Compute \[
+	(1 - i)^{4}
+\] 
+}
+\solu{Now I can simply multiply the term to itself for 4 times, or I can act pro and use binomial theorem. Anything works to be honest.
+
+Using the following,
+	\[(a+b)^{n} = \frac{n!}{j! (n-j)!} a^{j} b^{n-j}\]
+	We can get, 
+	\[
+		(1 + b)^{4} = \frac{4!}{0! 4!} b^{4} 
+		+ \frac{4!}{1! 3!} b^3 
+		+ \frac{4!}{2! 2!} b^2
+		+ \frac{4!}{3! 1!} b
+		+ \frac{4!}{4! 0!} 
+	\]
+	\[
+	= b^{4} + 4 b^3 + 6 b^2 + 4 b  + 1
+	\] If we have $b = -i$, then, 
+	\[
+	 = 1 - 4(-i) + 6(i)^2 +4(-i) + 1 = -4
+	\]
+	We got $(1-i)^{4} = -4$. 
+}
+
+Now of course we have the additive inverse (fun fact in Russian this is called Prativa-Palozhni Elemi-niyum) which is $z + (-z) = 0$. But do we have multiplicative inverse? 
+
+It should follow the rule $z z^{-1} = 1$. Turns out the next definition can help us, 
+\df{
+If $z = x + iy$ is a complex number, we call the \textbf{Complex Conjugate }of $z$ to be,
+\[
+z^{*} = x - iy
+\] 
+We just reverse the sign of $iy$ term. 
+}
+
+This comes in tremendously helpful while finding the inverse of $z$.
+
+\pr{
+Find the inverse of $z = x + iy$
+}
+\solu{
+\[
+z = x + iy = \left(x  +iy\right) \frac{x - iy}{x - iy} = \frac{x^2 + y^2}{x - iy}  
+\] 
+If we define $\sqrt{x^2 + y^2}$ to be the \textbf{Modulus of} $z$, then we can easily tell,
+\[
+z = \frac{|z|^2}{z^{*}}
+\] Here $|z|$ is a purely real number. So the nice thing is, having $z^{*}$ down in the numerator is a successful complex number, which being upside down is meaning that we have an inverse. 
+\[
+z \cdot \frac{z^{*}}{|z|^2} = 1
+\] This is simply, 
+\[
+	(x + iy) \cdot 
+	\left(\frac{x}{x^2 + y^2} - i \frac{y}{x^2 + y^2}\right) = 1
+\] Hence the inverse is, 
+\[
+\frac{x}{x^2 + y^2} - i \frac{y}{x^2 + y^2} = z^{-1}
+\] }
+
+
+\pr{
+Prove that $\mathbb{C}$ is a field.
+}
+\solu{
+Given if $\overline{z}$ exists, and none here is a zero, we can have a field. We need a multiplicative inverse.
+\[
+{z} = \frac{\overline{z}}{ z \overline{z}} = \frac{\overline{z}}{|z|^2}
+\] 
+And because it's already known that $-z$ exists such that $z + (-z) = 0$, hence what we have here is a field.
+}
+
+The interesting thing is, our basic ideas of numbers that if $ab = 0$ and $a \neq 0$, then $b$ must be zero, such ideas needs to be verified. Let's go through the next problem to verify this for complex numbers, 
+\pr{
+Prove $z_2 = 0$ if $z_1 \neq 0$ while $z_1 z_2 = 0$
+}
+\solu{
+\[
+z_2 = z_2 \cdot 1 = z_2 \left(z_1 z_1^{-1}\right) = (z_1 z_2) z_1^{-1} = 0 \cdot z_1^{-1} = 0
+\] 
+If $z_1$ not zero, then neither is $z_1^{-1}$. So from here the proof is complete.
+}
+
+
+Now using the complex calculation, we find out that,
+\[
+|z+w|^2 \le |z|^2 + |w|^2 + 2 \Re(z \overline{w})
+\]
+This relation above can be found out by using $z = x + iy$ and $w = x' + i y'$. 
+For a complex number $z = x + iy$ the $\Re(z) = x$. We can use triangle inequality,
+\[
+|z+w|^2 \le |z|^2 + 2 |z \overline{w} | + |w|^2
+\] 
+From this we can show, 
+\[
+|z+w|^2 \le (|z| + |w| )^2
+\] 
+A useful proof that comes out handy while doing this calculation,
+\[
+| z w | ^2 = (zw) ( \overline{zw}) = zw \overline{z} \, \overline{w} = |z|^2 |w|^2
+\] 
+Talked about the Polar Format of complex number. Here it's mentionable that $\theta$ is not unique because $\theta$ is same as $\theta + 2\pi $. $|z|$ is well defined, $\theta$ is argument.
+
+Using the definition of exponentials in series, \[
+	e^{x} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots = \sum_{n=1}^{\infty} \frac{x^{n}}{n!}
+\] 
+This can be helpful to prove the following problem,
+\pr{
+Prove that \[
+e^{z+w} = e^{z} e^{w}
+\] 
+}
+\solu{
+Because we will use the binomial theorem, let me state this before, 
+\[
+	(a+b)^{n} = \frac{n!}{j! (n-j)!} a^{j} b^{n-j}
+\] 
+Now, starting with the series, 
+\begin{align*} 
+	e^{z+w} &= \sum_{n=0}^{\infty} \frac{(z+w)^{n}}{n!} \\
+	&= \sum_{n=0}^{\infty} \frac{1}{n!} \left( \sum_{j=0}^{n} \frac{n!}{j! (n-j)! } z^{j} w^{n-j}\right)  \\
+	&= \sum_{n=0}^{\infty} \sum_{j=0}^{n} \frac{z^{j} w^{n-j}}{j! (n-j)!} \\
+\end{align*}
+It must have something to do with expanding $(z+w)^{n}$ using the binomial theorem. If you look at the equation you might feel stuck but now we are going to use Cauchy's Product of Infinite series to the rescue, 
+\[
+	\left(\sum_{i=0}^{\infty} a_i\right)
+	\left(\sum_{j=0}^{\infty} b_j\right) =
+	\sum_{k = 0}^{\infty} \left(\sum_{l=0}^{k} a_l b_{(k-l)}\right)
+\] 
+Using this we can get, 
+\[
+= \left(\sum_{j = 0}^{\infty} z^{j}/j!\right) \left(\sum_{n=0}^{\infty} w^{n}/n!\right)
+= \boxed{
+	e^{z} e^{w}
+}
+\] 
+}
+\end{document}

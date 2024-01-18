@@ -1,0 +1,69 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 04}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}\maketitle
+Forward direction was proved in last class. 
+\[
+\lim_{\vec{x} \to \vec{a}}  f(\vec{x}) = \vec{L}
+\]  if and only if $\forall $ sequence $\{x_k\}$ with $\vec{x}_k \to \vec{a}$ (but not equal) we have $\{f(\vec{x})\} \to \vec{L}$. 
+
+\pf{
+Let's prove the statement in reverse. Let's assume the limit is not $\vec{L}$. Suppose \[
+\lim_{\vec{x} \to \vec{a}}  f(\vec{x}) \neq  \vec{L}
+\] 
+We will put our limit definition to work. Then $\forall \epsilon > 0$ such that $\forall \delta > 0$.
+
+There exists $\vec{x}$ not equal ot $\vec{a}$, such that $|\vec{x} - \vec{a}| < \delta$ but $|f(\vec{x}) \to  \vec{L} \ge \epsilon$
+
+There is an $\epsilon$ around $\vec{L}$, that no matter what $\delta$ (which is around $\vec{x}$), there is an $\vec{x}$ is within this periphery of $\delta$, but doing the mapping the $f(\vec{x})$ ends up being outside of the $\epsilon$ ball.
+
+How to get a sequence out of this? $\epsilon$ is fixed but $\delta$ is anything above $0$. 
+
+For any $k \in \mathbb{Z}^{+}$, letting $\delta$ as $\frac{1}{k}$, we can find $\vec{x}_k$ satisfying, 
+\[
+|\vec{x} - \vec{a}| < \frac{1}{k}
+\] 
+But $f(\vec{x}_k) - \vec{L}$ is still outside of $\epsilon$ ball. ($|f(\vec{x}_k) - \vec{L}| \ge \epsilon$).
+
+Now we have sequence $\{\vec{x}_k\}$ which converges to $\vec{a}$ and we have the sequence $f(\vec{x}_k)$ of this thing which never gets within the $\epsilon$ of $\vec{L}$, so it doesn't converge. 
+}
+
+Ruden Analysis for more, Davidson and Donnsig. 
+
+How can we describe $f(x) = \sqrt{x} $ if we want to solve for $\lim_{x \to 0} f(x)$. Domain in multivariable can look weird,
+\begin{figure}[ht]
+    \centering
+    \incfig{domain-problem-in-multivariable-calculus}
+    \caption{domain problem in multivariable calculus}
+    \label{fig:domain-problem-in-multivariable-calculus}
+\end{figure} 
+
+First we need to define what points are legitimate to take a limit off? This is the valid inputs that we can give our function to throw out $f(\vec{x})$. 
+
+Another examples, let's say our domain is $\mathbb{Z}$ in $\mathbb{R}$. Does it make sense to take a limit? Taking a limit towards $2$ doesn't make sense because though $2 $ is in the domain it is we are not really intreested in $x=2$. 
+
+\df{
+If $D \subset \mathbb{R}^{n}$, we say that $\vec{a} \in \mathbb{R}^{n}$ is a limit point of $D$ if you can go arbitrarily close to $\vec{a}$ without equalling $\vec{a}$ itself. Hence, if $\forall \epsilon > 0$ that $\exists \vec{x} \in  D$ without $\vec{x} \neq \vec{a}$ but $|\vec{x}-\vec{a}| < \epsilon$.
+
+Or you can say, for $\forall \epsilon>0$, $B_\epsilon(\vec{a})$ contains a point in $D$ that is not $\vec{a}$ itself. \[
+	B_\epsilon(\vec{a}) \cap (D \smallsetminus \{\vec{a}\})  \neq \phi
+\] 
+}
+
+Talk about limits if the domain is $\mathbb{Q}$ in $\mathbb{R}$. What does it mean to take a limit in such case?
+
+\df{
+Now \[
+f: D \subset \mathbb{R}^{n} \to  \mathbb{R}^{m}
+\] 
+and $\vec{a}$ is a limit point in $D$, then,
+\[
+	\lim_{\vec{x} \to \vec{a}} f(\vec{x}) = \vec{L}
+\] 
+and $\vec{x} \subset D$, everything else is the same as the definition we did before. We are interested in the intersection of the ball and the domain. 
+}
+\end{document}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Ahmed Saad Sabit</title>
+    <link>http://example.org/posts/</link>
+    <description>Recent content in Posts on Ahmed Saad Sabit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 13 Jan 2024 16:15:11 -0600</lastBuildDate><atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rice University Lecture Notes (Mathematics and Physics)</title>
+      <link>http://example.org/posts/ricenotes/</link>
+      <pubDate>Sat, 13 Jan 2024 16:15:11 -0600</pubDate>
+      
+      <guid>http://example.org/posts/ricenotes/</guid>
+      <description>&lt;p&gt;Spring 2024: MATH 354, MATH 382, MATH 232&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Competitive Physics Notes (Olympiad Training)</title>
+      <link>http://example.org/posts/physicsolympiadnotes/</link>
+      <pubDate>Sat, 13 Jan 2024 16:06:51 -0600</pubDate>
+      
+      <guid>http://example.org/posts/physicsolympiadnotes/</guid>
+      <description>&lt;p&gt;Practicing Physics Problems for Olympiads was a large part of my middle school and later high school career, and I had written several handouts back then. Their quality is rather questionable but I hope to re-rewrite some of them when I take the relevant physics courses.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,162 @@
+\documentclass[a4paper]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analsys}
+\date{\today}
+\author{Ahmed Saad Sabit}
+\begin{document}
+\maketitle
+
+\df{Definitions on Hyperbolic Trigonometry
+\[
+e^{z} = \sum_{n=0}^{\infty} \frac{z^{n}}{n!}
+\] And we proved that this had the usual properties that solve $ke^{z+w} = e^{z} e^{w}$ webreak them into even and odd, 
+\[
+= \sum_{n=0}^{\infty} \frac{z^{2n}}{(2n)!} +
+\sum_{n=0}^{\infty} \frac{z^{2n+1}}{(2n+1)!}
+\] 
+\[
+= \cosh(z) + \sinh(z)
+\] 
+
+We take the same thing and replace $z$ with $-z$, and nothing happens in the first term because there is a positive power,
+\[ e^{-z}
+= \sum_{n=0}^{\infty} \frac{z^{2n}}{(2n)!} -
+\sum_{n=0}^{\infty} \frac{z^{2n+1}}{(2n+1)!} =  \cosh(z) - \sinh(z)
+\] 
+}
+
+Now using them we have, 
+\[
+\cosh(z) = \frac{e^{z} + e^{-z}}{2}	
+\] 
+\[
+\sinh(z)  = \frac{e^{z} - e^{-z}}{2}
+\] 
+\[
+\cosh(z) \sinh(z) = \frac{e^{2z} - e^{-2z}}{4} = \frac{\sinh\left(2z\right)}{2}
+\] 
+\[
+\sinh(2z) = 2 \cosh(z) \sinh (z)
+\] 
+
+Calc 102 review, 
+\[
+\cos \theta = 1 - \frac{\theta^2}{2!} + \frac{\theta^{4}}{4!} - \cdots
+\] 
+\[
+\sin \theta = \theta - \frac{\theta^3}{3!} + \frac{\theta^{5}}{5!} - \cdots
+\] 
+
+Now we are going to put $iz$, hence,
+\[
+	e^{iz} = \sum_{n=0}^{\infty} \frac{i^{n} z^{n}}{n!} = \sum \frac{i^{2n}} {\left(2n\right)!} 
+z^{2n}
++ 
+\sum \frac{i^{2n+1}}{\left(2n+1\right)!} z^{2n+1} 
+\] From our Calc 102 review now we have,
+\[
+e^{iz}= \cos \left(z\right) + i \sin (z)
+\]
+
+\nt{
+In the book we produce the exponential functions from the $\sin z$ and $\cos z$, but here we take the reverse approach because we consider that $e^{iz}$ is more fundamental.
+}
+
+This gives us, 
+\[
+\cos z = \frac{e^{iz} + e^{-iz}}{2}
+\] 
+\[
+\sin z = \frac{e^{iz} - e^{-iz}}{2}
+\] 
+
+Let's do a plot of $e^{i\theta}$.
+
+\begin{figure}[ht]
+    \centering
+    \incfig{plot-of-complex-power}
+    \caption{Plot of complex power}
+    \label{fig:plot-of-complex-power}
+\end{figure}
+
+\begin{align*}
+z &= x + i y \\
+&= r \cos \theta + i r \sin \theta \\
+&=r \left(\cos \theta + i \sin \theta\right) = 
+	re^{i \theta}
+\end{align*}
+
+This gives, \[
+	\left(r_1 e^{i \theta_1}\right) \left(r_2 e^{i \theta_2}\right) = r_1 r_2 e^{i \left(\theta_1 + \theta_2\right)}
+\] 
+
+\[
+z = |z| e^{i \left(\arg z\right)}
+\] 
+The ambiguity is that the argument can be $+2 \pi $. 
+
+If we multiply all points in $\mathbb{C} without \{0\}$ by $r e^{i \theta}$, then the result is, 
+\emph{multiply by the modulus $r$ and add $\theta$ to the argument.} Exponentiating is rotation.
+
+\pr{
+Page 20: Exercise 01. 
+
+\[
+	\left(\sqrt{3}  + i\right)^{7}
+\] 
+}
+\solu{
+We can do it in one go (without doing this 7 times). We are looking at $e^{i \frac{\pi}{6}} = \frac{\sqrt{3} }{2} + i \frac{1}{2}$. 
+\[
+	\left(\sqrt{3}  + i\right)^{7}
+= \left(2 e^{i \frac{\pi}{6}}\right)^{7} = 2^{7} e^{i \frac{7\pi}{6}}
+\] 
+I see that,
+\[
+\frac{7\pi}{6} = \frac{\pi + 6\pi }{6} = \pi + \frac{1}{6}\pi 
+\] 
+So what we get is, 
+\[
+= - 2^{6} \left(\sqrt{3}  + i\right)
+\] 
+}
+
+\pr{
+Find all the $n$-th root of a complex number. $w$ is unknown. $n \in \mathbb{Z}$.} 
+\solu{
+\[
+z = w^{n}
+\] We want all possible values of $w$. $z$ is given. First, we may as well assume the modulus of $w$ is $1$. So, find the $n$-th root of $1$. 
+
+We need to find $z$ such that, $z^{n} =  1$. 
+\[
+z^{n} = 1 = e^{2\pi i} = e^{4 \pi i} = \cdots
+\] 
+So, we have, 
+\[
+	z = 1 , e^{2 \frac{i\pi}{n}} , e^{4 \frac{i\pi}{n}} , \ldots
+\] 
+
+
+
+Observation, consider the polynomial of degree $n$, 
+\[
+z^{n} - 1 / z^{2 \pi i k \frac{1}{n}} - 1
+\] 
+
+Illustration,
+\[
+\frac{z^{4} - 1}{z - 1}
+\] These have no remainder as exact divisions.
+\[
+z^{n} - 1 = \prod_{k=0}^{n-1} \left(z - e^{2 \pi i \frac{k}{n}}\right) 
+\]
+Wait bro what is happening $\ldots$.
+
+\[
+z^{4} - 1 = \left(z-1\right)\left(z - e^{\pi \frac{i}{4}}\right)
+\left(z - e^{2 \pi \frac{i}{4}}\right) \left(z - e^{3 \pi \frac{i}{4}}\right)
+\]
+}
+\end{document}
