@@ -1,0 +1,10 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'Ahmed Saad Sabit'
+theme = 'hugo-theme-console'
+summaryLength = 50
+[markup.goldmark.renderer]
+  unsafe = true
+
+custom_css = ["css/custom.css"]
+
