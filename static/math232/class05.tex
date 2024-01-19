@@ -1,0 +1,108 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 05}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}\maketitle
+We are about to move into continuity. Interestingly I worked on this last night. I will type things up when things get clear.  
+	\df{
+	\[
+	f:D \to \mathbb{R}^{m} 
+	\] Here $D \subset \mathbb{R}^{n}$, and $\vec{a}$ is limit of point in $D$. \[
+	\lim_{\vec{x} \to \vec{a}} f(\vec{x}) = \vec{L} 
+	\] 
+	implies for all sequence $\{\vec{x}_k\}$ in $D$, 
+	\[
+		\{\vec{x}_k\} \to \vec{a}; \vec{x}_k \neq \vec{a}
+	\] For that we get $\{f(\vec{x})\} \to \vec{L} $. The setup here will be that $\vec{a}$ will not be an isolated point and $\vec{a} \in D$. 
+	}
+
+$D \subset \mathbb{R}^{n}$ and $\vec{a}$ is a limit point of $D$ if $\implies$ 
+
+\df{
+	If $\vec{a} \in  D$ and $\vec{a}$ is not a limit point of $D$, then we say that $\vec{a}$ is an isolated point of $D. $ $\vec{a}$ is a limit point of $D$ if $\forall r>0$ there $\exists \vec{x} \in D \smallsetminus \{\vec{a}\}$ with $|\vec{x} - \vec{a}| < r$.
+\[
+	D = [0,1] \cup \{5\}
+\] Here $5$ is not a limit point of $D$.
+}
+
+For the definition of continuity, we can have $\vec{x} = \vec{a}$. 
+
+	\df{Continuity: 
+	If $f:D\to \mathbb{R}^{m}$ and $\vec{a} \in D$ and isn't isolated, then we say $f$ is continuous at $\vec{a}$. 
+	\[
+	\lim_{\vec{x} \to \vec{a}} f(\vec{x}) = f(\vec{a})
+	\] 
+	}
+
+	\df{
+	Proposition: 
+	$f: D \to \mathbb{R}^{m}$, and $g: E(\subset \mathbb{R}^{m}) \to  \mathbb{R}^{p}$ and $\text{image}(f) \subset E$. If $\vec{a} \in D$ is not isolated, and $f$ is continuous at $\vec{a}$ and $g$ is continuous at $f(\vec{a})$, then $\implies$ $g \cdot f$ is continuous at $\vec{a}$.
+	}
+	\pf{
+		We don't need epsilons-delta here. We will consider sequences that go to $\vec{a}$ and see what happens when we apply $g$ on it. Consider $\{\vec{x}_k\}$ in $D$ with $\{\vec{x}_k\} \to \vec{a}$ Since $f$ is continuous at $\vec{a}$, we know, \[
+			\{f(\vec{x}_k)\} \to  f(\vec{a})
+		\]
+		Now do the exact same thing with $g$. Since $g$ is continuous  at $f(\vec{a})$, we conclude,
+		 \[
+			 \{g( f(\vec{x}_k)) \} \to  g ( f ( \vec{a}))
+		 \] 
+	}
+This is not true for limits by the way. Single variable example, say $g(x)$ is $1$ if $x = 0$. And $g(x)$ is $0$ if $x \neq 0$. And $f(x)$ is 0. 
+
+So $\lim_{x \to 4} f(x) = 0$, and $\lim_{x \to 0} g(x) = 0$. But what about \[
+\lim_{x \to 0} g(f(x)) = 1
+\] There is no general rule for showing this limit being chained for each of the preceding term.
+
+Let's work on an example,
+\[
+\lim_{(x,y) \to (1,2)} x + y = 3
+\] 
+This function here $f(x)$ is $f:\mathbb{R}^2\to \mathbb{R}$
+
+Lets work on 
+\[
+f(x,y) = e^{x+y} \cos x
+\]Split up in trees, 
+\[
+	(x,y) \to  x+y \to  e^{x+y}
+\] \[
+(x,y) \to x \to \cos x
+\] 
+\[
+	(e^{x+y},\cos x) \to e^{x+y} \cos x
+\] 
+
+\df{
+	$D \subset \mathbb{R}^{n}$ is an open set if $\forall \vec{a} \in D$ and $\exists r>0$ such that $B_r(\vec{a}) \subset  D$. 
+}
+At any point in this $D$ there is a neighborhood where $D$ 
+
+You can draw an small ball literally anywhere in $D$. Open balls are open sets. 
+\df{
+$D \subset R^{n}$ is closed if $\mathbb{R}^{n} \smallsetminus D$ is an open set. 
+}
+Closed is not the same thing as not open. 
+Open is not the same thing as not closed set. 
+
+\[
+	[1,2]
+\]
+\[
+	(1,2]
+\] 
+\[
+	(1,2)
+\] 
+
+\begin{figure}[ht]
+    \centering
+    \incfig{box-figure}
+    \caption{box figure}
+    \label{fig:box-figure}
+\end{figure}
+
+
+\end{document}

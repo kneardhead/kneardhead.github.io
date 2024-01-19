@@ -1,0 +1,36 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Class 05}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}\maketitle
+	If the derivative exists for a point $z_0$, then we have \[
+	\frac{\partial f}{\partial x} = \frac{1}{i} \frac{\partial f}{\partial y}
+	\] 
+	Suppose $f=f(z)$ has continuous partial derivatives with respect to $x$ and $y$. Now we want to show $f'$ exists. We know that $f$ is differentiable in real variable sense. 
+	\[
+	f(z+h) = f(x+h_1,y+h_2) = f(x,y) + \frac{\partial f}{\partial x} (x,y)h_1 + \frac{\partial f}{\partial y} h_2 + \text{Smaller Terms}
+	\] 
+	Here $h = h_1 + ih_2$ Using this we can come to the proof, 
+	\[
+		\lim_{h \to 0} \frac{f(z+h) - f(z)}{h} 	
+	\] This thing exists. There is a proof for this. TODO. 
+
+\textbf{Terminology} 
+\begin{table}[htpb]
+	\centering
+	\label{tab:label}
+	\begin{tabular}{c|c}
+	\textbf{Terminology} 
+	\textbf{Frank Jones} & \textbf{Everyone except Frank Jones and his followers} \\ \hline
+	Cauchy-Riemann Equation & Cauchy-Riemann Equations
+	\end{tabular}
+\end{table}
+
+Cauchy Riemann equation in polar form is 
+\[
+\frac{\partial f}{\partial r} = \frac{1}{i r} \frac{ \partial f}{\partial \theta}
+\] 
+\end{document}
