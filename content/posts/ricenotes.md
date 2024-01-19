@@ -15,7 +15,7 @@ The first few notes are a little bit bad because I am still learning.
 \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 01](/math354/class01.pdf): Covers the bare minimum basics of the first portion of the textbook.\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 02](/math354/class02.pdf): Continued up to direct sums, with an introduction to induction.\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 03](/math354/class03.pdf): Went over the theorems in "Finite Dimensional Vector Spaces".
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 03](/math354/class03.pdf): Theorems in "Finite Dimensional Vector Spaces". Includes my own notes. 
 
 **MATH 232: Honors Multivariable Calculus**
 \

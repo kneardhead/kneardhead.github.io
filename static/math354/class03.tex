@@ -116,4 +116,59 @@ Spanning Set:
 		\] 
 
 	}
+
+
+\section{Home Reading} 
+I have found this chapter to be a of tremendous confusion because nothing here makes sense to me. I will re-read this whole chapter from the beginning and note them down here. 
+
+\section*{Introduction to Finite Dimensional Vector Spaces} 
+Some key points we are about to get blessed with are
+\begin{itemize}
+	\item Linear Combinations of Lists of Vectors		
+\end{itemize}
+Whoa whoa wait that's mouthful. So what I understand, that you can have a random circus of vectors 
+\[
+	(\vec{s}, \vec{t}, \vec{u}, \vec{p}, \vec{i}, \vec{d}), (\vec{s}, \vec{p}, \vec{a}, \vec{c}, \vec{e})
+\] We have to list of random vectors up there, now they can get into combinations.  
+\begin{itemize}
+	\item Basis	
+\end{itemize}
+These kids are small enough to be \textbf{independent} but big enough that their \textbf{linear combinations} fill up the entire space. Okay makes a lot of sense. You can literally have any random vector in $\mathbb{R}^3$ just from combining $(1,0,0),(0,1,0),(0,0,1)$. Let's say you a vector $(4,9,2)$. Then you need to
+\[
+4(1,0,0) + 9(0,1,0) + 2(0,0,1) = (4,9,2)
+\]
+
+Fair. 
+
+\subsection*{Span}
+
+\df{
+Linear Combination: Let's have a list of vectors $\vec{v}_1, \vec{v}_2, \vec{v}_3, \vec{v}_4, \ldots$ in the same space $ V$, then a possible linear combination is \[
+\vec{m} = a_1 \vec{v}_1 + \ldots + a_n \vec{v}_n
+\] $\vec{m}$ is a linear combination of that vector list above.  
+}
+
+For sake of example, let's make a vector list, $(1,0), (3,2), (4,1)$. A linear combination of this vector can be \[
+\vec{t} = 5(1,0) + 8(3,2) - 2(4,1) = (5,0) + (24, 16) - (8, 2) = (21, 14) 
+\]
+So we just showed for this list $(21, 14)$ is a valid linear combination. 
+
+
+\df{
+Span: The set that contains all the possible linear combinations of a list of vectors $v_1, v_2, \ldots$ is called the span of the list. We can have any value of $a_i$ here, 
+\[
+	\text{span}(\vec{v}_1, \vec{v}_2, \vec{v}_3, \ldots) = {a_1 \vec{v}_1 + a_2 \vec{v}_2 + \ldots : a_1, a_2, \ldots \in \mathbb{F}}
+\] 
+}
+
+We have to tediously put all the linear combinations of a list of vectors to get this specific set. Any linear combination of a list of vector is a member of the span. I like to think in this way. Say we have a few vectors $(1,0), (3,3)$. So the linear combination $5(1,0) + 6(3,3)$ is a member of the $\text{span}((1,0),(3,3))$ 
+
+I am trying to get this into my mind straight that ``span is the set of all linear combinations of a vector-list".
+
+\pr{
+This is not a math problem. This is an actual goddamn problem I am suffering with. So there is a theorem \emph{The span of a list of vectors in $V$ is the \textbf{smallest} subspace containing all the vectors in the list.} I want a contrast, can we have a subspace that is not the smallest? 
+}
+
+But wait, do we know what a subspace is (for real Sabit you are asking this to yourself now?). 
+
 \end{document}
