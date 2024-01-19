@@ -23,7 +23,7 @@ The first few notes are a little bit bad because I am still learning.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 02](/math232/class02.pdf): Further examples relating to epsilon-delta limit definition. Ended by N-Dim generalization.\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 03](/math232/class03.pdf): Talked about sequences, and a few examples on limits on multiple dimensions.\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 04](/math232/class04.pdf): Completed the proof in last class, finished with domain definition for limits.\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 04](/math232/class05.pdf): .
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 05](/math232/class05.pdf): A proper introduction to continuity, ends with open-closed sets.
 
 **MATH 382: Computational Complex Analysis**
 \
