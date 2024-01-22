@@ -6,6 +6,8 @@
 \date{\today}
 
 \begin{document}
+\maketitle
+\section{Comments on Homework} 
 	\pr{
 	Given $w \in \mathbb{C}$, find $z \in \mathbb{C}$ such that $\sin z = w$. 
 	}
@@ -17,5 +19,97 @@
 	}
 
 	\section{Infinite Series of Complex Numbers} 
+	\[
+	\sum_{n=0}^{\infty} z_n
+	\] We define convergence for
+	\[
+	\lim_{N\to \infty} \sum_{n=0}^{N} z_n
+	\] Exists, such that,
+	\[
+	\sum_{n=0}^{\infty} Re(z_n) + \sum_{n=0}^{\infty} Im(z_n)
+	\] This sum exists.
+	Absolute convergence means, 
+	\[
+	\sum_{n=0}^{\infty} |z_n|
+	\] If a series converges absolutely, then the series converges. This is because of the completeness of the real number system. There are tests for absolute convergence. The main one for us is the ratio test.
+	\[
+		\lim_{n \to \infty} \frac{|z_{n+1}|}{|z_n|} 
+	\] If the above equation exists, and it smaller than 1 than it's converges, otherwise diverges. If it equals 1 then it might or might not. 
 
+
+
+
+	\subsection{Power Series} 
+	The situation there is a center $z_0$, and then we have the series, \[
+	\sum_{n=0}^{\infty} a_n (z-z_0)^{n}
+	\] It's complex series, but depends on point $z$. Here $a_n \in \mathbb{C}$. ``There is a wonderful theorem here".
+
+	\thm{
+		Suppose this series converges at a point $z$ not equal to $z_0$. Let's guess the convergence happens at $z_1$. This series than converges for absolutely all $z$ such that 
+		\[
+		|z-z_0|<|z_1-z_0|
+		\] 
+	}
+\begin{figure}[ht]
+    \centering
+    \incfig{convergence-around-the-point-mentioned}
+    \caption{Convergence around the point mentioned}
+    \label{fig:convergence-around-the-point-mentioned}
+\end{figure}
+From now on $z_0 = 0$ because there is nothing important about it. 
+
+Let's talk about Geometric series,\[
+\sum_{n=0}^{\infty} z^{n}
+\] This series converges to all $|z| < 1$. 
+
+	\pf{
+		If a series of complex number converges, then the limit of the $n$-th term as $\lim_{n \to \infty} z_n = 0$. 
+
+		{\small {Lemma: 
+		\[
+		\sum_{n=0}^{N} z_n - \sum_{n=0}^{N-1} z_n = z_N
+		\] Here $z_N$ must be zero otherwise it doesn't quite make zero. 
+
+}}
+		Suppose $\sum_{n=0}^{\infty} a_n z^{n} $ converges, and $z\neq 0$, let $z_1 \in \mathbb{C}$ for which the series converges $z_1 \neq 0$. 
+
+		{\small{Lemma: 
+
+		Then using the first proof of the lemma, $\lim_{n \to \infty} a_n z_1^{n}$ is 0. Hence, $\exists  C > 0$ constant such that $|a_n z_1^{n}| \le C$ }}
+
+	We have an estimate for $|a_n|$ we have $|a_n| \le \frac{C}{|z_n|^{n}}$. If $|z| < |z_1|$ then \[|a_n z^{n|} =  |a_n| |z|^{n} \le \frac{C}{|z_1|^{n} } = C \left(\frac{|z|}{|z_1|}\right)^{n}\]
+}
+We all like the ratio test, if $\sum_{n=0}^{\infty} a_n z^n $ converges, then $\sum_{n=0}^{\infty} n a_n z^n$ also converges, 
+\[
+	\left| \frac{a_n z^{n}}{a_{n-1} z^{n-1} } \right| = 
+	\left| \frac{a_n}{a_{n-1}} \right| |z| < 1
+\] Here the $\frac{n}{n-1}$ kills extremely high $n$ values. 
+
+
+
+	\df{
+	The radius of convergence of a power series is the radius of the largest open disk in which the series converges. 
+	}
+	Beispielen (example). 
+
+	\[
+	\sum_{n=0}^{\infty} z^{n}/n! 
+	\] What is the radius of convergence here? There is no large disk because it converges everywhere. The radius of convergence is $\infty$. What about, 
+	\[
+	\sum_{n=0}^{\infty} n! z^{n}
+	\] This radius of convergence is simply $R = 0$ because otherwise the $n!$ increases faster than any power out there. 
+	\[
+	\sum_{n=0}^{\infty} z^n 
+	\] Here $R = 1$.
+
+	\thm{If $\sum_{n=0}^{\infty} a_n z^n$ has radius of convergence $R$, then so does $\sum_{n=0}^{\infty} a_n z^n \cdot n$ have radius of convergence $R$. This basically means, multiplying coefficients in a power series by $n^{a}$ does not change the radius of convergence. 
+	}
+
+	Let's do some calculus. Let's have a power series that has a positive radius of convergence, 
+	\[
+	f(z) = \sum_{n=0}^{\infty} a_n z^n 
+	\] We strongly believe, 
+	\[
+		\exists f'(z) \quad \& \quad f'(z) = \sum_{n=1}^{\infty} n a_n z^{n-1}
+	\] 
 \end{document}

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="240mm"
+   height="120mm"
+   viewBox="0 0 240 120"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="convergence-around-the-point-mentioned.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.9342517"
+     inkscape:cx="488.04403"
+     inkscape:cy="182.49952"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showborder="true"
+     width="200mm"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1038"
+     inkscape:window-x="0"
+     inkscape:window-y="42"
+     inkscape:window-maximized="1"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid815"
+       units="mm"
+       spacingx="10"
+       spacingy="10"
+       empspacing="4"
+       dotted="false"
+       originx="0"
+       originy="0"
+       visible="false" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-177)">
+    <path
+       style="opacity:0.416654;fill:none;stroke:#000000;stroke-width:0.421322;stroke-linecap:round;stroke-miterlimit:4.3;paint-order:fill markers stroke"
+       d="m 82.198651,209.02746 c -75.0303819,73.61811 180.992649,84.68688 74.972339,23.72507 -14.64123,-8.41872 -20.36339,-25.51534 -37.30719,-31.40884 -16.49666,-5.73797 -23.584974,7.41218 -37.665149,7.68377 z"
+       id="path1" />
+    <circle
+       style="opacity:0.416654;fill:black;stroke:black;stroke-width:0.4213225;stroke-linecap:round;stroke-miterlimit:4.3;paint-order:fill markers stroke;fill-opacity:0.12;marker-end:none;marker-start:none;stroke-dasharray:1.05330625,1.05330625;stroke-opacity:1"
+       id="path2"
+       cx="116.92351"
+       cy="238.92525"
+       r="14.492424" />
+    <ellipse
+       style="opacity:0.416654;fill:black;stroke:black;stroke-width:0.4213225;stroke-linecap:round;stroke-miterlimit:4.3;paint-order:fill markers stroke;fill-opacity:1;marker-end:none;marker-start:none;stroke-dasharray:none;stroke-opacity:1"
+       id="path3"
+       cx="116.92351"
+       cy="238.92525"
+       rx="1.8615155"
+       ry="1.9252472" />
+    <ellipse
+       style="opacity:0.416654;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.421322;stroke-linecap:round;stroke-miterlimit:4.3;stroke-dasharray:none;stroke-opacity:1;marker-start:none;marker-end:none;paint-order:fill markers stroke"
+       id="path3-3"
+       cx="126.40827"
+       cy="228.19717"
+       rx="1.8615155"
+       ry="1.9252472" />
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text1"
+       y="243.7737"
+       x="115.83313"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         x="115.83313"
+         y="243.7737"
+         style="stroke-width:0.264583">$z_0$</tspan></text>
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text1-6"
+       y="228.59375"
+       x="129.64583"><tspan
+         sodipodi:role="line"
+         id="tspan1-7"
+         x="129.64583"
+         y="228.59375"
+         style="stroke-width:0.264583">$z_1$</tspan></text>
+  </g>
+</svg>
