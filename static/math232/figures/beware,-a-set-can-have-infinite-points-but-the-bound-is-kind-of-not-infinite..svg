@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="240mm"
+   height="120mm"
+   viewBox="0 0 240 120"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="beware,-a-set-can-have-infinite-points-but-the-bound-is-kind-of-not-infinite..svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2">
+    <marker
+       id="marker-arrow-1.5923999999999998"
+       orient="auto-start-reverse"
+       refY="0"
+       refX="0"
+       markerHeight="1.690"
+       markerWidth="0.911">
+      <g
+         transform="scale(1.0733986435568954)"
+         id="g1">
+        <path
+           d="M -1.55415,2.0722 C -1.42464,1.29512 0,0.1295 0.38852,0 0,-0.1295 -1.42464,-1.29512 -1.55415,-2.0722"
+           style="fill:none;stroke:#000000;stroke-width:0.6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           inkscape:connector-curvature="0"
+           id="path1-3" />
+      </g>
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.1832032"
+     inkscape:cx="422.58168"
+     inkscape:cy="157.20038"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showborder="true"
+     width="200mm"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1038"
+     inkscape:window-x="0"
+     inkscape:window-y="42"
+     inkscape:window-maximized="1"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid815"
+       units="mm"
+       spacingx="10"
+       spacingy="10"
+       empspacing="4"
+       dotted="false"
+       originx="0"
+       originy="0"
+       visible="false" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-177)">
+    <path
+       style="opacity:0.416654;fill-opacity:0.12;stroke:black;stroke-width:0.4213225;stroke-linecap:round;stroke-miterlimit:4.3;paint-order:fill markers stroke;fill:black;marker-end:none;marker-start:none;stroke-dasharray:none;stroke-opacity:1"
+       d="m 75.646276,205.24976 c -23.430626,33.81864 -3.932772,76.20955 21.94346,73.99768 25.876234,-2.21187 66.572524,-12.24434 66.572524,-19.81756 0,-7.57322 -3.03885,-59.63261 -9.20441,-57.13689 -6.16556,2.49573 -28.57448,-28.13737 -51.58303,-4.72978 -23.008541,23.40759 -14.880634,-6.6154 -27.728544,7.68655 z"
+       id="path1" />
+    <circle
+       style="opacity:0.416654;fill-opacity:1;stroke:black;stroke-width:0.4213225;stroke-linecap:round;stroke-miterlimit:4.3;paint-order:fill markers stroke;fill:white;marker-end:none;marker-start:none;stroke-dasharray:none;stroke-opacity:1"
+       id="path2"
+       cx="192.95168"
+       cy="233.46143"
+       r="1.3768163" />
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text1"
+       y="238.90347"
+       x="193.77757"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         x="193.77757"
+         y="238.90347"
+         style="stroke-width:0.264583">$\vec{a}$</tspan></text>
+    <circle
+       style="opacity:0.416654;fill-opacity:1;stroke:black;stroke-width:0.4213225;stroke-linecap:round;stroke-miterlimit:4.3;paint-order:fill markers stroke;fill:none;marker-end:none;marker-start:none;stroke-dasharray:1.05330625,1.05330625;stroke-opacity:1"
+       id="path3"
+       cx="192.95168"
+       cy="233.46143"
+       r="47.048325" />
+    <path
+       style="opacity:0.416654;fill:none;fill-opacity:1;stroke:black;stroke-width:0.4213225;stroke-linecap:round;stroke-miterlimit:4.3;stroke-dasharray:none;stroke-opacity:1;marker-start:none;marker-end:url(#marker-arrow-1.5923999999999998);paint-order:fill markers stroke"
+       d="M 145.90335,233.46142 H 87.306337"
+       id="path4" />
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text1-6"
+       y="254.638"
+       x="121.60083"><tspan
+         sodipodi:role="line"
+         id="tspan1-7"
+         x="121.60083"
+         y="254.638"
+         style="stroke-width:0.264583">$\vec{x}$</tspan></text>
+  </g>
+</svg>

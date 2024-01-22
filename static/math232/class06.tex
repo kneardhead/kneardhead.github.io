@@ -1,0 +1,74 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 06}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+\begin{document}\maketitle
+
+[Whatever I write inside third brackets are my own weird thoughts and they might not be true]
+\section{Thinking about Open Sets}
+	\df{
+	Given some $D \subset \mathbb{R}^{n}$, we say that a point $\vec{a}$ interior of $D$ if there $\exists r > 0$ such that $B_r(\vec{a}) \subset D$. 
+	}	
+
+This means the ball around $\vec{a}$ is entirely put inside $D$. You can go any direction and still be in your domain. Wherever you go, around $\vec{a}$, but you will stay in $D$. Only interior points of a function are where we are capable of being differentiated. 
+	
+	\df{
+	Proposition: $V \subset \mathbb{R}^{n}$ is closed iff $V$ contains all of it's limit points.
+	}
+	\pf{
+	Suppose $V$ is closed. We need to show it contains all of it's limit points. Then let $U = \mathbb{R}^{n} \smallsetminus V$. So we  can show that $U$ is open and that contains no limit point of $V$. We only have definition of $S$ sets that are open. 
+
+	Let $\vec{x} \in  U$ and we want to show $\vec{x}$ is not a limit point of $V$. What do we know about $ \vec{x}$ if $U$ is open. We can draw a ball and the ball is always inside of $U$. We know $\forall r>0$ such that $B_r(\vec{x}) \subset U$ so $B_r(\vec{x}) \cap V = \phi$ 
+
+	Proof on the reverse direction: 
+
+	Suppose $V$ is contains all its limit points. We want to show $V$ is closed, beispielen we want to show $U : = \mathbb{R}^{n} \smallsetminus V$ is open. 
+
+	Let $\vec{x}$ is in $U$. Then $\vec{x}$ is not a limit point in $V$. To negate it we need a limit point definition, that there exists an $r>0$ such that $B_r(\vec{x}) \cap ( V \smallsetminus \{\vec{x}\}   )$. So $B_r(\vec{x}) \cap V = \phi$, so $B_r(\vec{x}) \subset  U$, hence $U$ is open. [Negate means  what it not means to be a limit points. ] 
+	}
+
+	\df{
+	Proposition: Let $f: \mathbb{R}^{n} \to  \mathbb{R}^{m} $ be continuous. Then for all $U \subset \mathbb{R}^{m}$, the $f^{-1}(u) $ is open in $\mathbb{R}^{n}$. $f$ might not be a bijection and it is NOT an inverse function beware. Sidebar: if $f$ is $f: A \to  B$ and $U \subset B$, then $f^{-1} (u)$ is pre-image of $U$ under $ f$ and that is also $\{a \in A:f(a)\in U\} $
+	}
+
+	\pf{
+	Let $f$ be continuous and $U \subset \mathbb{R}^{m}$ be open. We need to show $f^{-1}(u)$ is open, so let $x \in f^{-1}(u)$. Then $f(\vec{x}) \in U$. Well $U$ is open. Since $U$ is open, $\forall \epsilon > 0$ such that $B_\epsilon(f(\vec{x})) \subset U$.  
+	Since $f$ is continuous in $\vec{x}$, we have the limit that works for continuity. So $\forall \delta > 0$ such that if $ |\vec{y}-\vec{x}| < \delta$, then $f(\vec{y}) - f(\vec{x}) < \epsilon$. This means that $f(\vec{y})$ is inside the $\epsilon$ ball around $f(\vec{x})$ which is $\subset  U$. So $\vec{y} \in  f^{-1} (u)$. This shows, 
+	\[
+	B_\delta(\vec{x}) \subset f^{-1}(u)
+	\] 
+	[For it to be open we need to show the ball around $\vec{x}$ is existant].
+	}
+
+\begin{figure}[ht]
+    \centering
+    \incfig{preimage-mapping-from-$-to-$}
+    \caption{Preimage mapping from $A$ to $B$}
+    \label{fig:preimage-mapping-from-$-to-$}
+\end{figure}
+
+	\df{
+	Proposition: 
+	\[
+	f: \mathbb{R}^{n} \to  \mathbb{R}^{m} \] if $\forall U \subset \mathbb{R}^{m}$, we have $f^{-1}(u) $ is open in $\mathbb{R}^{n}$. Then $f$ is continous. 
+	}
+	\pf{
+	Exercise lol}
+
+	\df{
+	$V \subset \mathbb{R}^{n}$ is bounded if $\exists r>0$ such that $V \subset B_r(\vec{0})$.
+	}
+
+	\df{
+	$^{*}$ $V \subset \mathbb{R}^{n}$ is compact if $V$ is closed and bounded. 
+	}
+\begin{figure}[ht]
+    \centering
+    \incfig{beware,-a-set-can-have-infinite-points-but-the-bound-is-kind-of-not-infinite.}
+    \caption{Beware, a set can have infinite points but the bound is kind of not infinite.}
+    \label{fig:beware,-a-set-can-have-infinite-points-but-the-bound-is-kind-of-not-infinite.}
+\end{figure}
+We can have infinitely many  $\vec{x}$ but still be careful about the boundary of this region. Any random $\vec{a}$ can have a ball that contains the whole set, this $\vec{a}$ can be anywhere. So we just pick up $\vec{0}$ to be the point of interest.
+	\end{document}
