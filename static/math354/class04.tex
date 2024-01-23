@@ -1,0 +1,146 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Linear Algebra : : Class 04}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+	\section{Dimensions of a Sum}
+	Let the subspaces $V_1, V_2$ be two finite dimensional vector space. 
+	We talked about, 
+	\[
+	V_1 + V_2
+	\] 
+	\[
+	V_1 \cap V_2
+	\] 
+	\[
+	\dim(V_1+V_2)=\dim(V_1)+\dim(V_2)-\dim(V_1\cap V_2)
+	\] 
+	
+\pf{
+	We begin the proof with a basis of the intersection $V_1 \cap V_2$, because then you can complete it. We extend it to a basis for $V_1$. Then for $V_2$.  
+}
+
+\pr{
+	Exercises in Section 2C: (3) The vector is a polynomial of degree $4$. $\mathbb{P}_4(\mathbb{F})$. The dimension is 5, $1, x,x^2,x^3,x^{4}$. $U$ is the set of polynomials in $\mathbb{P}^{4}$ such that\[
+	U = \{p \in \mathbb{P}_4(\mathbb{F}) | p(6) = 0\} 
+	\]
+	Basis is $x-6, (x-6)^2, (x-6)^3, (x-6)^{4}$. 
+
+}
+
+\pr{
+	Exercise (4)
+	\[
+	\{p \in \mathbb{P}_4(F) | p''(6) = 0\} 
+	\] 
+	Dimension of this space is 4. Because vector space of dimension $5$ then put one constraint and that reduces dimension. Without $6$ being a constraint we would have the second derivatives that can possibly equal $6$
+	\[
+	1, x, x^3, x^{4}
+	\] 
+	Now with the constraint
+	\[
+	1, (x-6), (x-6)^3, (x-6)^{4}
+	\] 
+	Is there a choice of natural basis? ``It is my own personal feeling of joy"
+}
+\pr{
+	Exercise (10): Bernstein Polynomials in $\mathbb{P}_m(\mathbb{F})$
+	\[
+	\mathbb{P}_k(x) = x^{k} (1-x)^{m-k}
+	\] For $\mathbb{P}_1(F)$
+	\begin{align*}
+		\mathbb{P}_0(x) &= 1-x \\
+		\mathbb{P}_1(x) &= x 
+	.\end{align*}
+	For $\mathbb{P}_2(F)$
+	\begin{align*}
+		\mathbb{P}_0(x) &= (1-x)^2  \\
+		\mathbb{P}_1(x) &= x(1-x) \\
+		\mathbb{P}_2(x) &= x^2 
+	\end{align*}
+	Then, $p_0, p_1, \ldots, p_m$ form a basis for $\mathbb{P}_m$. Let's use the definition of linear independence.
+	For $m=4$
+	\begin{align*}
+		\mathbb{P}_0(x) &= (1-x)^{4} \\ 
+		\mathbb{P}_1(x) &= x(1-x)^3 \\
+		\mathbb{P}_2(x) &= x^2(1-x)^2 \\
+		\mathbb{P}_3(x) &= x^3(1-x) \\
+		\mathbb{P}_4(x) &= x^{4} 
+	\end{align*}
+	\[
+	c_0(1-x)^{4}+c_1 x(1-x)^3 + c_2 x^2(1-x)^2 + c_3 x^3(1-x) + c_4x^{4} = 0
+	\]
+	$x=0$ then $c_0 = 0$. Factor out $x$ then you can set $x=0$. 
+	\[
+	x \left( c_1 (1-x)^3 + c_2 (1-x)^2 + c_3 x^2(1-x) + c_4 x^3 
+	\right) = 0
+	\]  
+}
+
+\pr{
+	Exercise (13): Suppose $U,W$ are $5- $dimensional subspace of $\mathbb{R}^{9}$. Then $U \cap W$ does not have $\{\phi\} $. 
+}
+
+\pr{
+        $U,W$ are 4 dimensional subspaces of $\mathbb{C}^{6}$. Prove that, there are at least two vectors in the intersection such that neither is a scalar multiple of the others. 
+	\[
+	\dim(U \cap V) \ge 2
+	\] 
+}
+
+\section{Linear Maps} 
+	The assumptions are $\mathbb{F}$ is either $\mathbb{R}$ or $\mathbb{C}$. $U,V,W$ are vector spaces of $\mathbb{F}$. $3A$ section starts with the idea on vector space of linear maps.
+
+\df{
+	A linear map from $V$ to $W$ is a function $T$, that maps
+	\[
+	T: V \to  W
+	\] 
+	With the following properties, each have linear structure with addition and scalar multiplication. You want to honor the definition of the vector space. 
+	 \[
+	 T(u+v) = T(u) + T(v)
+	 \] 
+	 \[
+	 T(\lambda u) = \lambda T(u)
+	 \] 
+	 Some mathematicians like to use the words, ``Linear Transformation", or ``Linear Operator". Linear maps are shown like, $\mathcal{L}(v,w)$. If $v=w$, $\mathcal{L}(v,v)=\mathcal{L}(v)$. Sabit will use $\mathbb{L}(v)$ instead. Hehe.
+}
+
+Differentiation is a linear map, 
+	\[
+	D: \mathbb{P}(F) \to \mathbb{P}(F)
+	\] 
+	So $(Df)(x) = f'(x)$.
+
+Integration $T \in  \mathbb{L}(\mathbb{P}(F), F)$, as
+	\[
+	T(p) = \int_0^1 p(x) \mathrm{d} x	
+	\] 
+
+Backward shift
+	$V$ is all the sequences of the form $x = (x_1,x_2,x_3, \ldots)$. $Tx = (x_2, x_3, x_4, \ldots)$. 
+	Then there exists a unique $T \in  \mathbb{L}(v,w)$ such that,
+	\[
+	T v_k = w_k
+	\] 
+	Operations on linear maps
+	\[
+	T,S \in \mathbb{L}(V,W)
+	\] 
+	Then $$(T+S)(\vec{v}) = T(\vec{v}) + S(\vec{v})$$ and $$(\lambda T)(\vec{v}) = \lambda T(\vec{v})$$. You can even have vector spaces of $\mathbb{L}$ linear maps. 
+
+\subsection{Product Linear Maps}
+	$T \in \mathbb{L}(U,V)$, $S \in \mathbb{L}(V,W)$
+	\[
+	U -^{T}\to  V -^{S}\to  W
+	\]
+	$ST$ is defined to be
+	\[
+	ST(\vec{u}) = S (T(\vec{u}))
+	\] 
+
+\end{document}
