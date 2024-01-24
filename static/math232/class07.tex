@@ -22,6 +22,38 @@
 	\] How tf do we divide with a vector? This can't work come on! Sensible one can be
 	\[
 	f'(\vec{a}) = \lim_{h \to 0} \frac{f(\vec{a}+\vec{h})-f(\vec{a})}{|\vec{h}|}
+	\]
+	If we tried to solve for $g(0)$ if $g(x) = |x|$, then $g'(0) = 1$. $g'(2)$ does not exist (you can try the calculation).
+
+	We now need a new way to define what a derivative is. [Whatever equation we have, one verification that can tell us its definitely incorrect, if not correct is that for $f:\mathbb{R}^{n} \to \mathbb{R}^{m}$, $n=1$ and $m=1$, then the normal definition appears].
+
+	Let's say $f:\mathbb{R}\to \mathbb{R}^{m}$, $f(x)=( f_1(x),f_2(x), \ldots, f_m(x))$, and each $f_i (x)$ is $f_i : \mathbb{R}\to \mathbb{R}$. So what we have is, 
+	\[
+	\lim_{h \to 0} \frac{f(a+h) - f(a)}{h} = \lim_{h \to 0} 
+	\frac{\left(
+f_1(a+h), \ldots, f_m(a+h)
+	\right) - 
+\left(f_1(a), \ldots, f_m(a)\right)}{h} 
 	\] 
+	\[
+	= \left(
+f'_1(a), f'_2(a), f'_3(a),\ldots, f'_m(a)
+	\right)
+	\]
+
+	I love the Wolfram Manipulation the prof is showing us now which is \[
+	p(t) = \left(\frac{1}{4}t^3,t^2\right)
+	\] 
+	What we have in the display is not a graph, a graph is $\mathbb{R}^{m+n}$. The curve has a sharp point but it's in the parametric of $t$. But if we thought of $x = \frac{1}{4}t^3$ and $y = t^2$, then the derivative won't have a $\frac{dy}{dx}$ solution at $0$. As, $\frac{dy}{dx } = 4\cdot \frac{2}{3} \left(4x\right)^{-\frac{1}{3}}$. 
+
+	If $p: \mathbb{R}^{1} \to \mathbb{R}^{m}$, and if $p$ is differentiable, $p'(a)$ is a vector in $\mathbb{R}^{m}$. If $p$ is position, then $p'$ is a velocity vector tangent to path or $\vec{0}$. Magnitude for $|\vec{v}| = |\vec{p}'|$ is speed. 
+
+	\[
+	\vec{p}' = \vec{v} : \mathbb{R}^{1} \to  \mathbb{R}^{m}
+	\] 
+	Now what is $\vec{v}'(t)$ (the size of the smile in profs face, if $n$, there always exists $N$ such that $n\ge N$). In single variable calculus $\vec{a} = \vec{v}'$ is a number. What does $a<0$ mean by the way? $a<0$ and $v>0$ means we are slowing down. $a<0$ and $v<0$ means we are speeding up, in the opposite direction. 
+
+	$p:\mathbb{R}^{1} \to \mathbb{R}^{m}$, $v = p'$, $a  = v' : \mathbb{R}\to \mathbb{R}^{m}$. If $a(t) = \vec{0}$ $ \forall t$, velocity is constant.  
+
 
 \end{document}
