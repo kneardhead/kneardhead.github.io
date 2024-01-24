@@ -8,5 +8,20 @@
 \begin{document}
 \maketitle
 
+\section{Differentiation}
+\df{
+	The single variable definition
+	\[
+		f'(a)=  \frac{\mathrm{d} f}{\mathrm{d} x} _a= \lim_{h \to 0} \frac{f(a+h)-f(a)}{h}
+	\] 
+}
+
+	Attempt a definition where $f: \mathbb{R}^{n} \to \mathbb{R}^{m}$, here, 
+	\[
+	f'(\vec{a}) = \lim_{h \to 0} \frac{f(\vec{a}+\vec{h})-f(\vec{a})}{\vec{h}}
+	\] How tf do we divide with a vector? This can't work come on! Sensible one can be
+	\[
+	f'(\vec{a}) = \lim_{h \to 0} \frac{f(\vec{a}+\vec{h})-f(\vec{a})}{|\vec{h}|}
+	\] 
 
 \end{document}

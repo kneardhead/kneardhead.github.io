@@ -25,7 +25,8 @@ The first few notes are a little bit bad because I am still learning.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 03](/math232/class03.pdf): Talked about sequences, and a few examples on limits on multiple dimensions.\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 04](/math232/class04.pdf): Completed the proof in last class, finished with domain definition for limits.\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 05](/math232/class05.pdf): A proper introduction to continuity, ends with open-closed sets.\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 06](/math232/class06.pdf): Played with Open Sets, and a few proofs regarding that. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 06](/math232/class06.pdf): Played with Open Sets, and a few proofs regarding that.\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 07](/math232/class07.pdf): Intro to Differentiation. 
 
 **MATH 382: Computational Complex Analysis**
 \
@@ -34,5 +35,5 @@ The first few notes are a little bit bad because I am still learning.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 03](/math382/class03.pdf): Missed Class for Friday Prayer - still edited from friends notes.\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 04](/math382/class04.pdf): Showed Complex Logarithms, Differentiation and finally Cauchy Riemann equation.\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 05](/math382/class05.pdf): Derivation of Cauchy-Riemann Equation(s). \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 06](/math382/class06.pdf): Power series, Sequences, and their limits.
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 06](/math382/class06.pdf): Power series, Sequences, and their limits.\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 07](/math382/class07.pdf):
