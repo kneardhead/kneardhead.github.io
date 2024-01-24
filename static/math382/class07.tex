@@ -1,0 +1,115 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Class 07}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+	\maketitle
+	 Let's start with a power series 
+	 \[
+	 f(z) = \sum_{n=0}^{\infty} a_n (z - z_0)^{n}
+	 \] 
+	 And this has $f(z_0)=a_0$. And $\sum_{n=0}^{\infty} a_n 0^{n} = a_0 (0)^{n}.$ 
+	 A good way of writing the series is instead $a_0 + \sum_{n=1}^{\infty} a_n(z-z_0)^{n}$. 
+	 Let's have a derivative, 
+	 \[
+	 f'(z) = \sum_{n=1}^{\infty} na_n (z-z_0)^{n-1}
+	 \] 
+	 \[
+	 f''(z) = \sum_{n=2}^{\infty} n(n-1)a_n (z-z_0)^{n-2}
+	 \] 
+	 \[
+	 f^{(k)}(z) = \sum_{n=k}^{\infty} n (n-1) (\cdots) (n-k+1) a_n (z-z_0)^{n-k}
+	 \]
+	 \[
+	 f^{(k)}(z_0) = k (k-1)(\cdots)(2)(1) a_k
+	 \] 
+	 \[
+		 a_k = \frac{f^{(k)}(z_0)}{k!}
+	 \] 
+	 The taylor series of $f$ centered at $z_0$ is
+	 \[
+	 \sum_{n=0}^{\infty} \frac{f^{(k)}(z_0)}{k!}(z-z_0)^{k}
+	 \] 
+
+\thm{
+	Suppose $f(z)$ power series $\sum_{n=0}^{\infty} a_n (z-z_0)^{n}$ with $R>0$, suppose $\exists $ sequence of points $\in \mathbb{C}$ converging to $z_0$ so that $f() = 0$ at every one of these points.	Then of course $f(z_0)=0$ and $f=0$ $\forall |z-z_0|<R$. 
+}
+\pf{
+	Proof by contradiction, suppose $f=0$ is false, there will be smallest $k$ such that $a_k\neq 0$. \[
+		f(z) = \sum_{k=0}^{\infty} a_{k+n}(z-z_0)^{k+n} = a_k (z-z_0)^{k} + \sum_{n=1}^{\infty} (a_{k+n}/a_k )(z-z_0)^{k+n}
+	\] 
+	\[
+	a_k (z-z_0)^{k} \left[
+	1 + \sum_{n=1}^{\infty} \frac{a_{k+n}}{a_k}(z-z_0)^{n}\right]
+	\]
+	From continuity we cannot have a zero series shown in the third bracket. 
+}
+
+\begin{figure}[ht]
+    \centering
+    \incfig{converging-to-a-center-point-for-a-series}
+    \caption{converging to a center point for a series}
+    \label{fig:converging-to-a-center-point-for-a-series}
+\end{figure}
+
+	\section{Changing Center of Convergence} 
+\begin{figure}[h]
+    \centering
+    \incfig{changing-the-center-of-convergence}
+    \caption{changing the center of convergence}
+    \label{fig:changing-the-center-of-convergence}
+\end{figure}
+	\[
+	\frac{1}{1-z} = \sum_{n=0}^{\infty} z^{n}
+	\] 
+	\[
+	\frac{1}{1-z} = \frac{1}{\frac{2}{3} - z + \frac{1}{3}} = \frac{3}{1 - \left(3z - 2\right)}
+	\] 
+	This can be written exactly like a summation,
+	\[
+	= 3 \sum_{n=0}^{\infty} (3z - 2)^{n}
+	\]
+	Setting the point of convergence at $-\frac{2}{3}$. 
+	\[
+	\frac{1}{1-z} = \frac{1}{\frac{1}{3} - (z- \frac{2}{3})}
+	\]\[
+	=\frac{1}{3} \sum_{n=0}^{\infty} \left(z- \frac{2}{3}\right)^{n}
+	\]  
+
+\thm{Let $D$ be an open connected subset of the complex plane $\mathbb{C}$. 
+	Suppose $f$ is defined on $D$ and is differentiable on every point of $D$. Suppose (radical assumption) the derivative is always zero for all on $D$. The conclusion is, $f$ is constant. 
+	}
+\pf{
+	$\frac{\partial f}{\partial x}$, $\frac{\partial f}{\partial y}$
+}	
+
+\section{Logarithm}
+	Consider the function \[
+	f(z) = \log(1-z)
+	\] near $z=0$, log is differentiable but an argument is needed. If $z\to 1$, we will be near where $\log 0$  might appear. So unit disk, use principle value of $\log (1-z)$. If the first disk was centered at $z=0$, we have another disk at $z=1$. We can use the principle argument for $1-z$. This is differentiable for $|z| <1$. 
+	\[
+		\frac{\mathrm{d} }{\mathrm{d} z} \log(1-z) =\frac{-1}{1-z} = - \sum_{n=0}^{\infty} z^{n}
+	\]
+	Try to integrate, 
+	\[
+	\log(1-z)=-\sum_{n=0}^{\infty} \frac{z^{n+1}}{n+1} + C
+	\] 
+	We can see $C = 0$, $\impliedby z=0$. 
+	\[
+	\log(1-z)=-\sum_{n=1}^{\infty} \frac{z^{n}}{n}
+	\]
+	Radius of convergence of $\sum_{n=1}^{\infty} \frac{z^{n}}{n} = 1$. $z\to 1$ we get harmonic series that tries to blow up.
+	\[
+	\ln 2 = - \sum_{n=1}^{\infty} \frac{(-1)^{n}}{n} = \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n}=1-\frac{1}{2}+\frac{1}{4}-\cdots
+	\] The series and the equation are both valid if $|z|<1$ except for $z = 1$.
+
+	\subsection{Regarding next class "Friday"}
+	\begin{itemize}
+		\item Line Integral (212 Ref)
+		\item Green's Theorem 
+		\item Amazing Results (Monday), for instance Cauchy's Integral Theorem. I need to read at home lol. 
+	\end{itemize} Frank Jones: ``I can't resist to say what the result is". 
+\end{document}
