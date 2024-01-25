@@ -1,0 +1,129 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Homework 03}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Problem} 
+\textbf{(a)}
+By definition a ball is 
+\[
+B_r(\vec{a}) = \{\vec{x} \in \mathbb{R}^{n} : |\vec{x}-\vec{a}| < r\} 
+\] 
+Here $r>0$. Let there be a point $\vec{y}$  such that $\vec{y} \in B_r(\vec{a})$. This means $|\vec{y}-\vec{a}| < r$. 
+\begin{figure}[ht]
+    \centering
+    \incfig{proof-of-a-ball-being-open-set}
+    \caption{Proof of a ball being open set}
+    \label{fig:proof-of-a-ball-being-open-set}
+\end{figure}
+We can consider a ball around $\vec{y}$, of radius. The ball around $\vec{y}$, 
+\[
+B_\rho(\vec{y}) = \{\vec{x} \in \mathbb{R}^{n} : |\vec{x} - \vec{y}| < \rho\} 
+\]
+If $B_\rho(\vec{y})$ exists inside $B_r(\vec{a})$ for $\rho>0$ then $\vec{y}$ must be an interior point. $\vec{y}$ can be in general, any point that is a member of $B_r(\vec{a})$, hence, proving all points being interior, and hence, $B_r(\vec{a})$ being an open set.
+
+Now, we can choose $\rho$ to be,
+\[
+\rho = r - |\vec{y} - \vec{a}|
+\] 
+If $\vec{y} \in B_r(\vec{a})$, then $|\vec{y}-\vec{a}|<r$ for all cases, hence $\rho > 0$. Thus, there always exists $\rho$ radius ball around a member point in the set $B_r(\vec{a})$ that is a member of the set. This hence proves all points are interior points, hence the set is open. 
+
+\textbf{(b)}
+The complement of the open set is a closed set. Consider the complement of $\overline{B_r}(\vec{a})$ 
+\[
+\mathbb{R}^{n} \setminus \overline{B_r}(\vec{x}) = \{\vec{x} \in R^{n} : |\vec{x}-\vec{a}| > r\} 
+\] 
+We can consider a point $\vec{y}$ outside of the $\overline{B_r}(\vec{a})$ such that the ball around it has radius $\rho$,
+\[
+\rho = |\vec{y}-\vec{a}| - r
+\] 
+From conditions, $|\vec{y}-\vec{a}| > r$ for all cases if it wants to be member of the complement set. Hence, $\rho>0$ always exists, hence a ball always exists for the complement set that does not have any member point from the $\overline{B_r}(\vec{a})$, hence the complement $\mathbb{R}^{n}\setminus \overline{B_r}(\vec{a})$ is always an open set. Which by definition means the $\overline{B_r}(\vec{a})$ is a closed set.
+
+\section{Problem}
+\textbf{(a)}\df{
+For a set $D \in \mathbb{R}^{n}$, we say that a point $\vec{a} \in  \mathbb{R}^{n}$ is a \textbf{Limit Point} of $D$, if, for every $r>0$, there is some point $\vec{x} \in D$ such that $\vec{x} \neq \vec{a}$ and $|\vec{x}-\vec{a}| < r$. 
+}
+Being a bit loose with tools we use, this is simply a ball, we define a ball like the last problem. 
+
+Let's pick $\vec{x} \in A$. The ball around it is a set $B_r(\vec{x})$. This $\vec{x}$ follows a few conditions revolving around its periphery $r$. Let $r>0$, then 
+\begin{itemize}
+	\item if $B_r(\vec{x}) \in A$ it is an interior point by definition. And hence, also a limit point by ball definition. 
+	\item if $B_r(\vec{x}) \not\in A$ then it's not a limit point of $A$. We have nothing to do with this. 
+	\item if $B_r(\vec{x})$ has some member points $\vec{y}$ such that $\vec{y} \in A$, and some member points $\vec{y}' \not\in A$, for all $r>0$, the by definition this belongs to the boundary point definition for $A$. 
+\end{itemize}
+$\vec{x}$ can either be in $A$, or either be in $\mathbb{R}^{n}\setminus A$, or either in both. And we have found each cases separately, hence proving limit point of $A$ is either in $A$ or at it's boundary. 
+
+\textbf{(b)} Consider the set $\mathbb{R}^{n}  \setminus A$, and $A$. The points that are not the boundary points are, 
+\[
+\vec{x} \in \mathbb{R}^{n} \setminus A : \vec{x} \not\in A
+\] \[
+\vec{x} \not\in \mathbb{R}^{n} \setminus A : \vec{x} \in A
+\] 
+Consider this $\vec{x}$ to be somewhere outside $\partial A$. Consider a boundary point $\vec{c} \in  \partial A$. The set $P$ be such that $\vec{c} \not\in P$. Let's pick $\rho $ such that,
+\[
+\rho = \min(
+|\vec{x} - \vec{c}_1|, |\vec{x}-\vec{c}_2|, \ldots
+)
+\] 
+Now considering the ball $R$ around $\vec{x}$, 
+\[
+B_R(\vec{x}) = \{\vec{x} \in \mathbb{R}^{n}: R < \rho\} 
+\]
+Given $\vec{x} \not\in \partial A$, $\rho > 0$ for all case. Hence, $B_R(\vec{x})$ always exists with points, hence proving $\vec{x}$ to be limit point. $B_R(\vec{x}) $ can exist for any $\vec{x} \in \mathbb{R}^{n}\setminus \partial A$, for this, the rest of the area being an open set, $\partial A$ is closed.
+
+\section{Problem}
+Suppose that $D$ is a subset of $\mathbb{R}^{n}$. Now $f,g:D\to \mathbb{R}$ is continuous for all points. We have to show that $h:D\to \mathbb{R}^{2}$ given $h(\vec{x}) = (f(\vec{x}), g(\vec{x}))$ is continuous for all points. 
+
+Because $h$ is a linear map, 
+\[
+|h(f(\vec{x}), g(\vec{x}))-h(f(\vec{a}), g(\vec{a})) |= |h(f(\vec{x}) - f(\vec{a}), g(\vec{x})-g(\vec{a}) )| < \epsilon
+\] 
+Because of continuity, 
+\[
+|f(\vec{x}) - f(\vec{a}) | < \epsilon_f
+\] 
+\[
+|g(\vec{x}) - g(\vec{a}) | < \epsilon_g
+\] 
+Hence, 
+\[|
+h(
+f(\vec{x})-f(\vec{a}), 
+g(\vec{x})-g(\vec{a})
+) |
+< |h(\epsilon_f, \epsilon_g)|
+\] 
+We can have $|h(\epsilon_f, \epsilon_g)|$ given $\vec{x} \to  \vec{a}$ and it's distance norm is smaller than some $\delta$, which it already is. 
+
+So $h$ is continuous. 
+
+\section{Problem}
+Assume we have a map $f: \mathbb{R}^{2} \to  \mathbb{R}$. Let this be injective and continuous. If $B$ is a closed disk in $\mathbb{R}^{2}$, then $f$ to $B$ is one-to-one from $B$ to $f(B)$. $f(B)$ should be a compact connected subset of $\mathbb{R}$, or simply, a segment. Take a point $p$ such that $p \in B$ and $f(p)$ is not an endpoint of segment $f(B)$. Then $f(B\setminus \{p\} )$ is not connected while $B \ \{p\} $ is still connected. Which is a contradiction.
+\begin{figure}[ht]
+    \centering
+    \incfig{diagram-to-illustrate-the-problem-4}
+    \caption{Diagram to illustrate the problem 4}
+    \label{fig:diagram-to-illustrate-the-problem-4}
+\end{figure}
+My intuitive point is two random points on the line segment probably maps to the same point $p$, which breaks down injective condition.z 
+
+\section{Problem}
+\textbf{(a)} Let the sets be $U_1, U_2, \ldots$. So, let's consider the first $U_1$ and $U_2$. So,
+\[
+x \in U_1 \cup U_2
+\] 
+If $x \in  U_1$, and $U_1$ is open, the there for sure exists $r>0$ such that $B_r(x)$ is a subset of $U_1$ and that also happens to be a subset of $U_1 \cup  U_2$. From definition we know $B_r(x)$ is an open set. Hence $U_1 \cup  U_2$ is an open set. Like so we can prove $(U_1 \cup  U_2) \cup U_3$ is an open set using the similar method. Hence the series of union is an open set. 
+
+\textbf{(b)} Consider each ball $B_r(x)_i$ in every $i$-th set in the intersection. $x$ by definition is a member common in every set (because of intersection). Because it is open, consider the smallest ball $B_r(x)_\text{min}$ that is amongst the sets. Hence, this should be a member of the intersection, because every other else balls are bigger. [Solution inspired from "Understanding Analysis: Abott"]
+
+\textbf{(c)} Not necessarily. One counter example I know of is the open interval $( - \frac{1}{n} \ldots \frac{1}{n}) \subset \mathbb{R}$. Taking intersection of all, it happens to be $\{0\} $. Which is closed. 
+
+One example I came up with while wandering at the sky is considering an infinite chain of disks with radius $r_i$ that keep decreasing. So, for $n\ge N$, there always exists $r_n < \epsilon$. 
+
+These disks who happen to share the same center but keep decreasing to the limit of $0$ radius, well, the only thing common with them is $\{0\} $ in the intersection. This is a closed set. This is one counter example so it won't work to say $\forall S$ sets. 
+\end{document}

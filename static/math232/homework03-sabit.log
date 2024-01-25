@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.11.22)  25 JAN 2024 01:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.11.22)  25 JAN 2024 01:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**class03.tex
-(./class03.tex
+**homework03-sabit.tex
+(./homework03-sabit.tex
 LaTeX2e <2022-06-01> patch level 5
 L3 programming layer <2022-12-17>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -735,8 +735,12 @@ File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count322
 \l__pdf_internal_box=\box78
 )
-(./class03.aux)
-\openout1 = `class03.aux'.
+
+LaTeX Warning: Unused global option(s):
+    [letter].
+
+(./homework03-sabit.aux)
+\openout1 = `homework03-sabit.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
@@ -757,7 +761,7 @@ LaTeX Font Info:    ... okay on input line 8.
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
-* paper: letterpaper
+* paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
@@ -822,88 +826,130 @@ LaTeX Font Info:    Trying to load font information for OT1+lmss on input line
 (/usr/share/texlive/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-9.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-29.
+14.
 
 (/usr/share/texlive/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-29.
+14.
 
 (/usr/share/texlive/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 29.
+(Font)              <10> on input line 14.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 29.
+(Font)              <7> on input line 14.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 29.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 29.
+(Font)              <5> on input line 14.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 14.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 29.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 14.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-(./figures/diagram-on-the-limit.pdf_tex
-<./figures//diagram-on-the-limit.pdf, id=41, page=1, 682.86612pt x 341.43306pt>
-
-File: ./figures//diagram-on-the-limit.pdf Graphic file (type pdf)
-<use ./figures//diagram-on-the-limit.pdf, page 1>
-Package pdftex.def Info: ./figures//diagram-on-the-limit.pdf , page1 used on in
-put line 56.
+(./figures/proof-of-a-ball-being-open-set.pdf_tex
+<./figures//proof-of-a-ball-being-open-set.pdf, id=41, page=1, 682.86612pt x 34
+1.43306pt>
+File: ./figures//proof-of-a-ball-being-open-set.pdf Graphic file (type pdf)
+<use ./figures//proof-of-a-ball-being-open-set.pdf, page 1>
+Package pdftex.def Info: ./figures//proof-of-a-ball-being-open-set.pdf , page1 
+used on input line 56.
+(pdftex.def)             Requested size: 500.484pt x 250.24954pt.
+<./figures//proof-of-a-ball-being-open-set.pdf, id=42, page=2, 682.86612pt x 34
+1.43306pt>
+File: ./figures//proof-of-a-ball-being-open-set.pdf Graphic file (type pdf)
+<use ./figures//proof-of-a-ball-being-open-set.pdf, page 2>
+Package pdftex.def Info: ./figures//proof-of-a-ball-being-open-set.pdf , page2 
+used on input line 59.
 (pdftex.def)             Requested size: 500.484pt x 250.24954pt.
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figures//diagram-on-the-
-limit.pdf>]
-(./figures/f-to-g-and-mapping.pdf_tex
-<./figures//f-to-g-and-mapping.pdf, id=72, page=1, 682.86612pt x 341.43306pt>
-File: ./figures//f-to-g-and-mapping.pdf Graphic file (type pdf)
-<use ./figures//f-to-g-and-mapping.pdf, page 1>
-Package pdftex.def Info: ./figures//f-to-g-and-mapping.pdf , page1 used on inpu
-t line 56.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figures//proof-of-a-ball
+-being-open-set.pdf> <./figures//proof-of-a-ball-being-open-set.pdf
+
+pdfTeX warning: pdflatex (file ./figures//proof-of-a-ball-being-open-set.pdf): 
+PDF inclusion: multiple pdfs with page group included in a single page
+>]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
+5.
+ (/usr/share/texlive/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [2]
+(./figures/diagram-to-illustrate-the-problem-4.pdf_tex
+<./figures//diagram-to-illustrate-the-problem-4.pdf, id=82, page=1, 682.86612pt
+ x 341.43306pt>
+File: ./figures//diagram-to-illustrate-the-problem-4.pdf Graphic file (type pdf
+)
+<use ./figures//diagram-to-illustrate-the-problem-4.pdf, page 1>
+Package pdftex.def Info: ./figures//diagram-to-illustrate-the-problem-4.pdf , p
+age1 used on input line 56.
 (pdftex.def)             Requested size: 500.484pt x 250.24954pt.
-) [2] [3 <./figures//f-to-g-and-mapping.pdf>] (./class03.aux) ) 
+<./figures//diagram-to-illustrate-the-problem-4.pdf, id=83, page=2, 682.86612pt
+ x 341.43306pt>
+File: ./figures//diagram-to-illustrate-the-problem-4.pdf Graphic file (type pdf
+)
+<use ./figures//diagram-to-illustrate-the-problem-4.pdf, page 2>
+Package pdftex.def Info: ./figures//diagram-to-illustrate-the-problem-4.pdf , p
+age2 used on input line 59.
+(pdftex.def)             Requested size: 500.484pt x 250.24954pt.
+<./figures//diagram-to-illustrate-the-problem-4.pdf, id=84, page=3, 682.86612pt
+ x 341.43306pt>
+File: ./figures//diagram-to-illustrate-the-problem-4.pdf Graphic file (type pdf
+)
+<use ./figures//diagram-to-illustrate-the-problem-4.pdf, page 3>
+Package pdftex.def Info: ./figures//diagram-to-illustrate-the-problem-4.pdf , p
+age3 used on input line 63.
+(pdftex.def)             Requested size: 500.484pt x 250.24954pt.
+) [3 <./figures//diagram-to-illustrate-the-problem-4.pdf> <./figures//diagram-t
+o-illustrate-the-problem-4.pdf
+
+pdfTeX warning: pdflatex (file ./figures//diagram-to-illustrate-the-problem-4.p
+df): PDF inclusion: multiple pdfs with page group included in a single page
+> <./figures//diagram-to-illustrate-the-problem-4.pdf
+
+pdfTeX warning: pdflatex (file ./figures//diagram-to-illustrate-the-problem-4.p
+df): PDF inclusion: multiple pdfs with page group included in a single page
+>] [4] (./homework03-sabit.aux) ) 
 Here is how much of TeX's memory you used:
- 22482 strings out of 476182
- 483861 string characters out of 5796580
- 1868793 words of memory out of 6000000
- 42337 multiletter control sequences out of 15000+600000
- 535676 words of font info for 52 fonts, out of 8000000 for 9000
+ 22481 strings out of 476182
+ 484934 string characters out of 5796580
+ 1865793 words of memory out of 6000000
+ 42330 multiletter control sequences out of 15000+600000
+ 541935 words of font info for 55 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 114i,16n,118p,442b,939s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texl
-ive/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texlive/texmf-dist/
-fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/
-lm-mathsy.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}<
-/usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/lm/lmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/lm/lmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/lm/lmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmsy7.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
->
-Output written on class03.pdf (3 pages, 156660 bytes).
+ 114i,17n,118p,511b,492s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips
+/lm/lm-rm.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{
+/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texlive
+/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texlive/texmf-dist/fon
+ts/type1/public/lm/lmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/lm/lmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/lm/lmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/lm/lmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmss17.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on homework03-sabit.pdf (4 pages, 188114 bytes).
 PDF statistics:
- 148 PDF objects out of 1000 (max. 8388607)
- 84 compressed objects within 1 object stream
+ 169 PDF objects out of 1000 (max. 8388607)
+ 96 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 167 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 182 words of extra memory for PDF output out of 10000 (max. 10000000)
 
