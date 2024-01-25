@@ -1,0 +1,142 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Linear Algebra : : Class 05}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Exercises 2C} 
+\textbf{(8)}
+
+Suppose $v_1, v_2, \ldots, v_m$ are linearly independent. Dude please use vector notations. $\vec{v}_1, \vec{v}_2, \vec{v}_3, \ldots, \vec{v}_m$ are linearly independent. Suppose $\vec{w}$ is a vector too. Prove that 
+\[
+\dim (
+\text{span}
+\{\vec{v}_1+\vec{w}, 
+\vec{v}_2+\vec{w},
+\vec{v}_3+\vec{w}, 
+\ldots
+,
+\vec{v}_m + \vec{w}\} 
+) \ge m-1
+\] 
+
+\textbf{(15)}
+$V_1, V_2, V_3$ subspaces. Such that
+\[
+\dim V_1 + \dim V_2 + \dim V_3 > 2 \dim V
+\] 
+Prove that $V_1 \cap V_2 \cap  V_3 \neq \{0\} $
+
+\textbf{(19)}
+Prove or give a counter example. \[
+\dim(V_1) + \dim(V_2) + \dim(V_3) = \dim(V_1+V_2+V_3) + \dim(V_1 \cap V_2) + \dim (V_2 \cap  V_3) + \dim(V_1 \cap V_3) - \dim (V_1 \cap  V_2 \cap  V_3)
+\] 
+
+$\implies$ Let's take $\mathbb{R}^{2}$, $V_1: \text{x-axis}$, $V_2:\text{y-axis}$, $V_3:x=y$. Sum of their three dimension is $3$. 
+$3 = 2 + 0 + 0 + 0 - 0$
+
+\textbf{(20)}
+True version of $19$. 
+
+\section{Exercises 3A} 
+\textbf{(16)} 
+Suppose $V$ is a finite dimensional vector space and the $\dim V \ge 2$. Prove their exists linear operators $S,T \in \mathcal{L}(V)$ such that their product,
+\[
+ST \neq TS
+\]
+Example: there are two vectors $\vec{v}$ and $\vec{w}$ which are linearly independent. So there will be a basis $v, w, \ldots$. So all the vectors in $V$ have the form,
+\[
+c_1 \vec{v} + c_2 \vec{w} + \cdots
+\]
+Every vector is uniquely determined by saying what these vector coefficients are. 
+$S(V)$ be defined such that, 
+\[
+S(\vec{v}) = \vec{v}
+\] 
+\[
+S(\vec{w}) = \vec{0}
+\] 
+\[
+T(\vec{v}) = 0
+\] 
+\[
+T(\vec{w}) = \vec{w}
+\] 
+
+Let's compute $ST$ and $TS$. 
+\[
+ST(\vec{v}) = S(T(\vec{v})) = S(0) = 0
+\] 
+\[
+TS(\vec{v}) = T(S(\vec{v})) = T(v) = 0
+\] 
+\[
+ST(\vec{w}) = S(T(\vec{w})) = S(\vec{v})
+\] 
+\[
+TS(\vec{w}) = T(0) = 0
+\] 
+\textbf{(11)} $V$ is a finite dimensional. $T \in \mathcal{L}(v)$. That means $T$ maps to itself. And $T$ commutes with every $S \in \mathcal{L}(v)$. $TS = ST$, then prove $T$ is a scalar multiple of the identity.
+
+Remark: ``I already knew this result for $n \times n$ matrices. And I have loved assigning it as Homework".
+
+For all $f \in \mathcal{L}(V, \mathbb{F})$, which is not 0. I.E $\vec{v}$ such that $f(\vec{v}) \neq 0$. Proof: Use a basis for $V$ : $\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_n$ and $\vec{x} = \sum_{n=1}^{n} c_n \vec{v}_n$. 
+\[
+f(\vec{x}) = c_1
+\] 
+The set of all $\mathcal{L}(V, \mathbb{F})$ is called the dual space of $V$. Define $S \in \mathcal{L}(v)$ and $S(x) = f(x) v$ 
+$ST = TS$, 
+\[
+ST(x) = S(T(x)) = f(T(x))V
+\] 
+\[
+TS(x) = T(S(x)) = T(f(x)v) = f(x) T(v)
+\] 
+\[
+f(x) T(v) = f(T(x)))v
+\] 
+\[
+f(x) \neq  0
+\] 
+\[
+T(v) = \frac{f(T(x))}{f(x)} \ v
+\] 
+
+\section{3B Null Space and Ranges} 
+3.11 Null Space 
+
+\df{
+	Let $T \in \mathcal{L}(V,W)$. The null space of $T = \{v \in V | T(v) = 0\} = \text{null}(T)$
+}
+Fact: The null space of $T$ is a subspace of $T$. It's a subset because 
+\[
+T(\vec{v}+\vec{w}) = T(\vec{v}) + T(\vec{w}) = 0
+\] Hence $\vec{v}+\vec{w} \in \text{null}(T)$. 
+Whatever from the subspace I put in $T$ I get $0$. 
+\[
+\text{Range}(T) = \{T (v) | v \in V\} 
+\] 
+\df{
+$T$ is injective if the equation $T(\vec{v}_1) = T(\vec{v}_2)$ $\implies \vec{v}_1 = \vec{v}_2$
+}
+Proof: $T(\vec{v}_1 - \vec{v}_2) = T(\vec{v}_1) - T(\vec{v}_2) = 0$, so 
+\[
+\therefore v_1 - v_2 \in \text{null} (T)
+\] 
+$T$ is injective if and only if $\text{null}(T)$ is $\{0\} $.
+
+\df{
+$T$ is surjective if $\text{range}(T)=W$. 
+}
+
+\section{Fundamental Theorem of Linear Algebra} 
+
+\[
+\dim (V) = \dim (\text{null}(T)) + \dim (\text{range}(T))
+\] 
+
+\end{document}
