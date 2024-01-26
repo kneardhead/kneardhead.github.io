@@ -27,7 +27,8 @@ The first few notes are a little bit bad because I am still learning.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 04](/math232/class04.pdf): Completed the proof in last class, finished with domain definition for limits.\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 05](/math232/class05.pdf): A proper introduction to continuity, ends with open-closed sets.\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 06](/math232/class06.pdf): Played with Open Sets, and a few proofs regarding that.\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 07](/math232/class07.pdf): Intro to Differentiation, and some shoutout to Physics! 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 07](/math232/class07.pdf): Intro to Differentiation, and some shoutout to Physics! \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 08](/math232/class08.pdf): Derivative vectors
 
 **MATH 382: Computational Complex Analysis**
 \

@@ -1,0 +1,96 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Linear Algebra : : Homework 02}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle 
+
+\section{Problem 01} 
+Consider the base case. If $\vec{u}_1$ is a member of $U$, then $\lambda_1 \vec{u}_1$ is a member either. So this is for $\mu = 1$. Let's consider the case $\mu$. Then $\vec{u}_\mu$ is a vector member, and hence is $\lambda_\mu \vec{u}_\mu$ Consider the case $\lambda_{\mu + 1} \vec{u}_{\mu+1}$. Let's add the two vectors, which is a member of the subspace, 
+\[
+	\lambda_\mu \vec{u}_\mu + \lambda_{\mu+1}\vec{u}_{\mu+1} = \vec{A}_\mu \in U
+\]
+This being a member of the subspace let's try adding the next term too, 
+\[
+	\vec{A}_\mu + \lambda_{\mu+2} \vec{u}_{\mu+2}  \in U
+\] 
+Two vectors being a member, well adding the third one works too. Hence the induction is true for the whole series. 
+
+\[
+\lambda_1 \vec{u}_1 + \lambda_2 \vec{u}_2 + \cdots + \lambda_m \vec{u}_m \in  U
+\] 
+
+\section{Problem} 
+\textbf{(a)}
+Let's assume $(x_1, x_2,x_3) \in \mathbb{F}^{3}$ where $\mathbb{F}^{3}$ is either $\mathbb{R}^{3}$ or $\mathbb{C}^{3}$. 
+$0 \in U$ for this case $x_1 = 0$, $x_2=0$, $x_3=0$. We can take two solutions $\vec{x}$ and $\vec{x}'$ which still satisfy additive closure. 
+\[
+	(x_1 + x_1') + 2 (x_2 + x_2') + 3(x_3 + x_3') = 0
+\] 
+This is also closed multiplication closure. 
+\[
+\lambda x_1 + 2 \lambda x_2 + 3 \lambda x_3 = 0
+\]
+
+\section{Problem}
+Define the ``zero function" in $\mathbb{R}^{[0,1]}$ as $z:[0,1]\rightarrow\mathbb{R}$ such that $z(x)=0$ for all $ x\in[0,1]$. 
+For $z\in U$, $z$ being continuous, which it is, and $\int_0^1z=b$. Since $\int_0^1z=\int_0^1 0=0$, the latter is true if and only if $b=0$. Thus, $0\in U$ if and only if $b=0$.
+
+Let's consider the two functions $f$ and $g$, it's closed under addition
+\[ \int_0^1(f+g)=\int_0^1f+\int_0^1g=0+0=0 \]
+It's weird to take integral without a $\mathrm{d}  x$. 
+
+Multiplicative closure is trivial
+\[
+c\int_0^{1} f = 0 = \int_0^{1} cf
+\] 
+
+
+\section{Problem} 
+$0 \in U$ with $(0,0,0)$. This satisfies the conditions. 
+
+Additive closure $(a,b,c)+(a',b',c')=(a+a', b+b', c+c')$ with conditions $a^3 = b^3$ and $a'^3=b'^3$. So, this is $(a+a', a+a', c+c')$. But then $(a+a') = (a+a')$ so this is still a member of $U$. Thus additive closure is achieved.
+
+Multiplicative closure well $(a,b,c) \to (ka,kb,kc)$, then $(ka)^3 = (kb)^3$ with $k^3 (a^3) = k^3 (b^3)$. This is still a member of the subspace. 
+
+\section{Problem}
+$0 \in U$ because $(0,0,0)$ is valid solution. 
+
+Additive closure can't perfectly work because for $\mathbb{C}$ $a^3 = b^3; a \neq b$. This is not closed so this is not a subspace. 
+
+\section{Problem}
+Both subset must have $\{0\} $. 
+
+Additive closure, well two vectors $u,v \in V_1 \cap V_2$, so the vectors exist in both subspaces. Now, because it's a subspace, and both have $u,v$, then both should also have $u+v$ in common. Similarly all linear combination must be common in a way. The summation can be extended to a sum. 
+
+Multiplicative closure is also true because if they contain $v$, then they also contain all $\lambda$ such that $\lambda {v}$.
+
+So this intersection is a subspace too. 
+
+\section{Problem} 
+Let's consider two set $V$ and $W$. Let each subspaces contain vectors that are not member of the other. The can have vector $v$ and $w$, and their combinations do NOT exist in the union because they are different separate vectors. So we can't have it as a subspace. 
+
+So we can't have pairs of vectors that are not common in both sets, hence either the two subsets should be exactly similar or they have to contain the other. 
+
+\section{Problem}
+$0 \in U$ so $0 \in U+U$. 
+Consider two vectors in $U$ such that $\vec{u}_1$ and $\vec{u}_2$. The summation must be a member of the $U$ itself, and also $k u_1, ku_2 \in U$ hence $U+U$ is also a subspace.
+
+
+\section{Problem} 
+Let $V_1$ and $V_2$ such that there are some vectors in $V_1$ that don't belong in $V_2$. Then $V_1 + U$ is going to have vectors that don't belong in $V_2 + U$ so they can't be equal. So $V_1=V_2$. 
+
+\section{Problem} 
+Let's consider a subspace $(x,x,0,0)$, this is a subspace because it contains $(0,0,0,0)$ and $(x,x,0,0)+(y,y,0,0) = (x+y,x+y,0,0)$ which is a member of the subspace. $\lambda(x,x,0,0)$ is $(\lambda x, \lambda x, 0, 0)$ which is a subspace member too. Similarly $(0,0,m,m)$ is a subspace too. 
+
+The direct sum would be with $x,m \in \mathbb{F}$ is
+\[
+	(x,x,0,0) \oplus (0,0,m,m) = (x,x,m,m)
+\] 
+This is a subspace direct sum because $(x,x,0,0) \cap (0,0,m,m) = \{0\} $ 
+
+
+\end{document}
