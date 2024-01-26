@@ -1,0 +1,86 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Class 08}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle 
+
+\section{Review} 
+Suppose $f$ is differentiable, then $\overline{f(z)}$ is also differentiable. 
+\[
+f(z) = \sum_{n=0}^{\infty} a_n z^n \implies \overline{f(z)} = \sum_{n=0}^{\infty} \overline{a_n} z^n
+\] 
+Line integrals for $\mathbb{R}^{n}$. We deal with curve in $\mathbb{C}$, which are $C^{1}$ that means it has continuous derivatives (piecewise). 
+\begin{figure}[ht]
+    \centering
+    \incfig{paths-with-piece-wise-differentiability}
+    \caption{Paths with piece wise differentiability}
+    \label{fig:paths-with-piece-wise-differentiability}
+\end{figure}
+We take line integrals of vector fields to be specific. In $\mathbb{R}^{2}$ we will use the integrand as a vector field although it's not, it's a complex number $f(z)$. If curve is represented as $\gamma(t)$ and we represent it between $(a,b)$ (more correctly $a\le t\le b = [a,b]$), the line integral is
+\[
+\int f \,\mathrm{d} t = \int_a^b f(\gamma(t)) \gamma'(t) \mathrm{d} t
+\]
+Line integrals do not depend on how $\gamma(t)$ the curve is parametrized.
+An example can be something going from $0$ to $1+i$, 
+\[
+	\int_\gamma e^{z}\mathrm{d} z = \int_0^{1} e^{1+i}t (1+i)\mathrm{d} t = \int_0^{1} \frac{\mathrm{d} }{\mathrm{d} t} e^{(1+i)t} \mathrm{d} t
+\] We had $\gamma = t + it$. 
+
+How about an integral around a circle counter clockwise, 
+\[
+\int_C \mathrm{d} z \frac{1}{z}
+\] 
+Parametrize the circle by $z = re^{it}$. 
+\[
+= \int_0^{2\pi } \frac{re^{it}i\mathrm{d} t}{re^{it}}
+\] 
+\begin{figure}[ht]
+    \centering
+    \incfig{taking-integral-around-the-path-of-a-circle-counterclockwise}
+    \caption{Taking integral around the path of a circle counterclockwise}
+    \label{fig:taking-integral-around-the-path-of-a-circle-counterclockwise}
+\end{figure}
+\[
+\int_C \mathrm{d} z \frac{1}{z^2} = 
+\int_0^{2\pi } \frac{i r e^{it} \mathrm{d} t}{r^2 e^{2it}} 
+\] 
+\[
+ = \frac{i}{r} \int_0^{2 \pi } e^{-2it} \mathrm{d} t = 2\pi \frac{i}{r} \left( 0\right)
+\] 
+Turns out 
+\[
+\int z^{n} \mathrm{d} z = 0 ; n\neq -1
+\] 
+\[
+\int z^{-1} \mathrm{d} z = 2\pi i
+\] 
+We can do other calculations like integrating each terms one by one,
+\[
+	\int \sum_{n=-\infty}^{\infty} a_n z^n \mathrm{d} z = \sum_{n=\infty}^{\infty} a_n \int z^{n} \mathrm{d} z = 2\pi i a_{-1}
+\]  
+
+\section{Fundamental Theorem of Calculus} 
+Suppose $f$ is differentiable, and let's do an integral of $f$ from $a$ to $b$, 
+\[
+	\int_a^b f'(z) \, \mathrm{d} z = f(b) - f(a)
+\]
+Let $\vec{F}$ be a vector field. Then these two statements are equivalent. 
+\begin{enumerate}
+	\item If $\vec{F} = \nabla f$ then it's line integral over any closed loop (starts and ends at the same point) is $0$. 
+	\item Converse is also valid. Theorem in Churchill, let $f$ be a continuous function which is complex valued, defined on a connected open set in complex plane. Then the line integral 
+		\[
+		\int f \, \mathrm{d} z
+		\] on any loop equals $0$ if and only if there exists a function that $F' = f $. Book calls $F$ as anti-derivative, but Prof hates it. 
+\end{enumerate}
+Proof is if $F' = f$ then 
+\[
+\int_\text{loop} f(z) \, \mathrm{d} z = \int_\text{loop} F'(z) \mathrm{d}  z = F(z) - F(z_0)
+\] 
+Conversely suppose always $\int_\text{loop} f(z) \mathrm{d} z = 0$. Then define $F(z ) = \int_{\text{path from} z_0 \text{ to } z} f(w) \, \mathrm{d} w$. This does not depend on the path.
+
+
+\end{document}
