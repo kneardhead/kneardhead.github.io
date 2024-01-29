@@ -1,0 +1,131 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 09}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section{Finding change is linear transformation} 
+
+A tangent line is the best linear approximation to the curve. The function at some point $a$ must be equal to a function $f: \mathbb{R}\to \mathbb{R}$. It can be 
+\[
+f(x) \approx f(a) + m (x-a)	
+\] 
+\[
+f(x) - f(a) \approx m (x-a)
+\] 
+\[
+\Delta f \approx m \Delta x
+\] 
+This is the definition I taught myself for all my life. 
+
+For a $f: \mathbb{R}^{2} \to  \mathbb{R}$ near $(x,y) \to (a,b)$
+\[
+f(x,y) \approx \text{equation of a tangent plane at } (x,y)  = (a,b)
+\]
+\[
+= f(a,b) + m_1 (x-a) + m_2(y -b)
+\]
+We can have from here, 
+\[
+f(x,y) - f(a,b) \approx m_1 (x - a) + m_2 (y-b)
+\] 
+A way to represent this 
+\[
+	\Delta f \approx \begin{pmatrix} m_1 & m_2 \end{pmatrix}  
+	\begin{pmatrix} x-a \\ y-b \end{pmatrix} 
+\]
+\[
+	\Delta f \approx \begin{pmatrix} m_1 & m_2 \end{pmatrix}  \Delta \vec{x}
+\]
+Here $\Delta \vec{x}$ is small. 
+
+The way we think about things, when we are talking about differentiability, we are trying to think how the output changes while we change the input. The relationship is we multiply a number, if not a number, then a matrix. In general the relationship we'd be getting after is $\Delta f$ is some linear transformation of the linear input. 
+
+The main idea: we want $\Delta f$ to be the linear transformation (roughly) applied to $\Delta (\text{input})$. The requisite is that the input is small. We have to define what is how roughly is roughly allowed to be that - ``that requires some technicalities".  
+
+The linear transformation is going to be the derivative. 
+
+$f: \mathbb{R} \to  \mathbb{R}^2$, 
+\[
+f(t) = (\cos t, \sin t)
+\] 
+\[
+f'(t) = \langle -\sin t, \cos t \rangle 
+\] 
+\[
+f'({\pi}/ {6}) = \langle - {1}/ {2} , {\sqrt{3} } /{2} \rangle
+\]
+Let's go back to $f: \mathbb{R}\to \mathbb{R}$, and 
+$f(2) = 3$ and $f'(2) = \frac{1}{2}$. We will have a graph. We are going to have for $x$ near $2$,
+\[
+	f(x) - f(2) \approx \left(\frac{1}{2}\right) (x-2)
+\]
+\[
+f(x) - f(2) - \frac{1}{2}(x-2) \approx 0
+\] When $x$ is near $2$. Is it sufficient to require that $f(x)-f(2) - \frac{1}{2} (x-2)$ goes near zero as $x\to 2$. We can't just set this going 0, then we could have anything instead of $\frac{1}{2}$ as slope. Another curve going through the same point would also still solve for the equation. 
+\begin{figure}[ht]
+    \centering
+    \incfig{what-do-we-define-as-the-tangent?}
+    \caption{What do we define as the tangent? All function at that point goes to zero!}
+    \label{fig:what-do-we-define-as-the-tangent?}
+\end{figure}
+We should require something omre, $\forall \epsilon >0$, 
+\[
+|f(x) - f(2) - \frac{1}{2}(x-2)| < \epsilon |x-2|
+\]
+The distance from a shifted $m \pm \epsilon$ should be minimal to a limit. 
+Hence we get, 
+\[
+\frac{|f(x) - f(2) - \frac{1}{2} (x-2) |}{|x-2|} < \epsilon
+\]
+The difference goes to zero faster than any other function. I am thinking of something like,
+\[
+\frac{\Delta y - m \Delta x}{\Delta x} = 0
+\]
+\df{
+Given $f : D (\subset \mathbb{R}^{n}) \to  \mathbb{R}^{m}$ and $\vec{a} \in D (\text{interior})$, if there exists a linear transformation $L:\mathbb{R}^{n} \to  \mathbb{R}^{m}$ satisfying the limit has $\vec{h}\to \vec{0}$ 
+\[
+\lim_{\vec{h} \to \vec{0}} \frac{|f(\vec{a}+\vec{h}) - f(\vec{a}) - L (\vec{h})|}{|\vec{h}|}
+\]
+If there exists such limit then we say that $L$ derivative of $f$ at $\vec{a}$ exists. $df_{\vec{a}} = L$. If I understand properly, we are trying to subtract the derivative from the other side definition of the derivative. 
+}
+\pr{
+	$f:\mathbb{R}^{n} \to \mathbb{R}^{m}$ given by $f(\vec{x}) = A\vec{x}+\vec{b}$. Here $A$ is a matrix $m \times n$, and $\vec{b} \in \mathbb{R}^{m}$. Claim that for every $\vec{a}$ in $\mathbb{R}^{n}$, \[ d f_{\vec{a}} = T	
+	\] where $T(\vec{h} ) = A \vec{h}$. 
+}
+\pf{
+\[
+	\lim_{\vec{h} \to 0} \frac{|f(\vec{a}+\vec{h}) - f(\vec{a}) - T(\vec{h})| }{|\vec{h}|}
+\] So 
+\[
+= \frac{(A \vec{a}+ A \vec{h} + \vec{b} ) - (A \vec{a} + \vec{b}) - A \vec{h}}{|\vec{h}|}
+ = 0\] 
+}
+
+\pr{
+$f:\mathbb{R}^{2}\to \mathbb{R}^{1}$ and 
+\[
+f(x,y) = (x-1)^2 + (y+2)^2
+\] 
+You can think of this like keeping $y$ constant and varying the other one. Claim that 
+\[
+	d f_{(0,0)} \left( \begin{pmatrix} p \\ q \end{pmatrix} \right) = -2p - 4q
+\] 
+}
+\pf{
+\[
+\lim_{(p,q) \to (0,0)} |f(p,q) - f(0,0) - (-2p - 4q)| / |(p,q)|
+\] 
+\[
+= \lim_{(p,q) \to (0,0) }  
+\frac{| p^2 - 2p + 1 - q^2 - 4q -4 - (-3) + 2p - 4q |}{\sqrt{p^2 + q^2} }
+\] 
+We get something like, 
+\[
+= \lim_{(p,q) \to (0,0)} \frac{|p^2 - q^2|}{\sqrt{p^2+q^2} } = 0
+\] Looking at the limit we can then solve for that it goes to zero. 
+}
+\end{document}
