@@ -1,0 +1,104 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Class 09}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle 
+
+Open connected set $D \in \mathbb{C}$ continuous $f$ defined on $D$. Then these two statement are equivalent: 
+\begin{itemize}
+	\item The line integral $\int_\gamma f \ \mathrm{d} z$ are equivalent only on $z_0 \neq z_1$ independent of path. 
+	\item $f$ has an anti derivative $F$ defined $D$. $F$ is differentiable on $D$ and $F' = f$. Proof that  existence of an anti derivative is given.
+\end{itemize}
+\[
+\int_\gamma f \mathrm{d} z ; \int_\gamma F' \mathrm{d} z 
+\] 
+Here $\mathrm{d} z = \gamma' (t) \mathrm{d} t$ 
+\[
+= \int_a^b F'(\gamma(t)) \gamma'(t) \mathrm{d} t
+\]
+\[
+= \int_a^{b} \frac{\mathrm{d} }{\mathrm{d} t}\left(F(\gamma(t)) \right)\mathrm{d} t
+\]
+ETC
+\[
+	F(\gamma(t))_{t = a}^{t = b} = F(z_1) - F(z_0)
+\] 
+Converse, we assume the integral of $f$ and 
+\[
+\int_\gamma f(z) \mathrm{d} z
+\] is an independent path. We want to produce an anti-derivative $F$. Clever way
+define $F(z) = \int_w^{z} f \mathrm{d} z$, this makes sense because any path can do. Try to analyze $F(z+h) - F(z)$. Which is a straight line. 
+\[
+	F(z+h) = \int_{\text{that path}} f \mathrm{d} z = \int_w^{z} f \mathrm{d} z + \int_z^{z+h} f \mathrm{d} z = F(z) + \int_z^{z+h} f \mathrm{d} z
+\] Parametrize $z + th$ 
+\[
+F(z+h) - F(z) = \int_0^1 f(z+th) h \mathrm{d} t
+\]
+I am kind of out of clue what is Prof Frank doing at this point. If anything, I want some rest and my head is really heavy right now. 
+\[
+	\frac{F(h+z) + F(z)}{h} = \int_0^{1} f(z+th) \mathrm{d} t 
+\] 
+The average of $f(z+th)$ at $0 \le t \le 1$. \[
+F'(z) = f(z)
+\]
+
+\section{Green's Theorem}
+Let there be a region, and we have a function $f(x,y)$ defined for that region. The region is $D$. And $\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}$ are continuous. Greens theorem says,
+\[
+	\iint \frac{\partial f}{\partial x} \mathrm{d} x \mathrm{d} y = \int_{\partial D} f \mathrm{d} y
+\] 
+$\partial D$ is the boundary of $D$.
+\begin{figure}[ht]
+    \centering
+    \incfig{greens-theorem}
+    \caption{Greens theorem}
+    \label{fig:greens-theorem}
+\end{figure}
+Likewise 
+\[
+	\iint_D \frac{\partial g}{\partial y} \mathrm{d} x \mathrm{d} y = - \int_{\partial D} -g \mathrm{d} x
+\]
+Now for an experiment. 
+
+\[
+	\iint_D  = \int_{\partial D} f \mathrm{d} z = \int_{\partial D} f \mathrm{d} x + 
+i \int_{\partial D} f \mathrm{d} y
+\]
+$z = x + iy$ so $\mathrm{d} z = \mathrm{d} x + i \mathrm{d} y$
+Let's try this now
+\[
+	\int_{\partial D} f \mathrm{d} z =  \iint_D -\frac{\partial f}{\partial y} \mathrm{d} x \mathrm{d} y + 
+	i \iint_D \frac{\partial f}{\partial x} \mathrm{d} x \mathrm{d} y
+\]
+\[
+= \iint _D \left(i \frac{\partial f}{\partial x} - \frac{\partial f}{\partial y}\right) \mathrm{d} x \mathrm{d} y = i \iint_D \left(\frac{\partial f}{\partial x} - \frac{1}{i} \frac{\partial f}{\partial y}\right) \mathrm{d} x \mathrm{d} y
+\]
+If $f$ is put to Cauchy-Riemann equation then we get, 
+\[
+0
+\]
+If $f$ is differentiable at every point then the cauchy riemann equation states that $\frac{\partial f}{\partial x} - \frac{1}{i} \frac{\partial f}{\partial y} = 0$. Therefore the line integral 
+$\int_{\partial D} f \mathrm{d} z = 0$. So the integral $\int f \mathrm{d} z$ is 0 on closed paths. Therefore it's independent of the path. Therefore $f$ has an anti-derivative.
+
+Riemann Cauchy equation needs a derivation by me.
+
+\begin{figure}[ht]
+    \centering
+    \incfig{derivative-of-derivative-might-not-always-exist.}
+    \caption{Derivative of Derivative might not always exist.}
+    \label{fig:derivative-of-derivative-might-not-always-exist.}
+\end{figure}
+Back to $f'(z)$, suppose $f$ is differentiable at $z$ and $f'(z) \neq  0$ then let's try to see about directional derivative $f$ at $z$. 
+
+Consider $z$ and $z+h$ that is a straight line. We are looking at 
+$\frac{f(z+th)}{\mathrm{d} t}$ at $t = 0$. 
+\[
+\lim_{t \to 0} \frac{f(z+th)-f(z)}{t } \approx \frac{f'(z) th}{t}
+\] So the complex projection of the derivative along $h$ that can be thought of as a vector is a directional derivative (along $\theta$), $= f'(z) e^{i \theta}$. So rotating the complex number by an angle $\theta$.
+
+Complex differentials preserve angles at points where $f'(z) \neq  0$. Lengths can vary but angles are preserved, hence conformal.  
+\end{document}

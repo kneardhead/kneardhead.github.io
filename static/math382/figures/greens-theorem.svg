@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="240mm"
+   height="120mm"
+   viewBox="0 0 240 120"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="greens-theorem.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3"
+       is_visible="true"
+       lpeversion="1" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.9313002"
+     inkscape:cx="348.72879"
+     inkscape:cy="201.93649"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showborder="true"
+     width="200mm"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1038"
+     inkscape:window-x="0"
+     inkscape:window-y="42"
+     inkscape:window-maximized="1"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid815"
+       units="mm"
+       spacingx="10"
+       spacingy="10"
+       empspacing="4"
+       dotted="false"
+       originx="0"
+       originy="0"
+       visible="false" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-177)">
+    <path
+       style="opacity:0.416654;fill:none;stroke:black;stroke-width:0.4213225;stroke-linecap:round;stroke-miterlimit:4.3;paint-order:fill markers stroke;fill-opacity:1;marker-end:none;marker-start:none;stroke-dasharray:none;stroke-opacity:1"
+       d="m 58.509505,200.37695 v 72.32968"
+       id="path1" />
+    <path
+       style="opacity:0.416654;fill:none;fill-opacity:1;stroke:black;stroke-width:0.4213225;stroke-linecap:round;stroke-miterlimit:4.3;stroke-dasharray:none;stroke-opacity:1;marker-start:none;marker-end:none;paint-order:fill markers stroke"
+       d="M 47.046078,255.90297 H 195.36394"
+       id="path2" />
+    <path
+       style="opacity:0.416654;fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:0.421322;stroke-linecap:round;stroke-miterlimit:4.3;stroke-dasharray:none;stroke-opacity:1;marker-start:none;marker-end:none;paint-order:fill markers stroke"
+       d="m 114.3355,202.62994 c -2.73756,-1.81219 -6.17927,-2.52866 -9.41257,-1.95945 -3.23331,0.5692 -6.223416,2.41796 -8.177525,5.05609 -1.347443,1.8191 -2.192454,3.95034 -3.185168,5.98486 -0.992714,2.03451 -2.19904,4.05257 -4.040348,5.36951 -1.191867,0.85245 -2.599277,1.3693 -4.035844,1.65824 -1.436568,0.28893 -2.908088,0.35803 -4.373295,0.3775 -2.930413,0.0389 -5.947666,-0.10378 -8.696137,0.91344 -2.172593,0.80409 -4.068776,2.32657 -5.342344,4.26171 -1.273568,1.93513 -1.92125,4.27141 -1.848703,6.58689 0.07255,2.31549 0.861647,4.60032 2.214923,6.48058 1.353276,1.88025 3.263125,3.35075 5.418508,4.19989 2.276657,0.89692 4.780131,1.10029 7.220557,0.92153 2.440426,-0.17876 4.837117,-0.72679 7.218104,-1.29118 2.380986,-0.56439 4.766395,-1.14844 7.200243,-1.40146 2.433848,-0.25302 4.93607,-0.16518 7.263119,0.59144 2.61679,0.85083 4.89043,2.49964 7.37296,3.68647 2.38216,1.13885 4.97762,1.85261 7.61451,1.98853 2.63689,0.13592 5.31398,-0.31394 7.72126,-1.39869 3.08848,-1.39171 5.71625,-3.87195 7.07661,-6.97436 1.36036,-3.10241 1.38122,-6.81225 -0.14602,-9.836 -1.22553,-2.42639 -3.33032,-4.29865 -4.7187,-6.63567 -1.15078,-1.93706 -1.77548,-4.13421 -2.36162,-6.30974 -0.58613,-2.17553 -1.15451,-4.38097 -2.20962,-6.37176 -0.59578,-1.12411 -1.38326,-2.20491 -2.50682,-2.80173 -0.6884,-0.36567 -1.46375,-0.52901 -2.19085,-0.80994 -1.20688,-0.46631 -2.28266,-1.26684 -3.07594,-2.28895"
+       id="path3"
+       inkscape:path-effect="#path-effect3"
+       inkscape:original-d="m 114.3355,202.62994 c -6.22038,-0.67018 -12.84515,-2.59737 -17.590095,3.09664 -2.062146,2.47461 -5.050993,9.72349 -7.225516,11.35437 -4.095713,3.07176 -12.583473,-2.2186 -17.105276,2.94918 -4.736658,5.41333 -7.778324,17.41874 0.442384,21.52907 8.55658,4.27827 20.000168,-2.36654 28.902023,-1.17967 2.91739,0.38897 4.95689,2.23683 7.37296,3.68647 4.44075,2.66446 10.67637,2.4536 15.33577,0.58984 6.56749,-2.62698 10.62303,-10.04083 6.93059,-16.81036 -1.31231,-2.40592 -3.31219,-4.29149 -4.7187,-6.63567 -2.19047,-3.65077 -2.25194,-8.62278 -4.57124,-12.6815 -0.48411,-0.84716 -1.68033,-2.25073 -2.50682,-2.80173 -1.5975,-1.06501 -0.58697,0.0803 -2.19085,-0.80994 -1.95699,-1.0863 -5.12565,0.52254 -3.07594,-2.28895"
+       sodipodi:nodetypes="cssssssssssssc" />
+    <path
+       style="opacity:0.416654;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.421322;stroke-linecap:round;stroke-miterlimit:4.3;stroke-dasharray:none;stroke-opacity:1;marker-start:none;marker-end:none;paint-order:fill markers stroke"
+       d="m 84.11131,216.75817 -3.141561,2.34812 3.117556,1.69737"
+       id="path4" />
+    <path
+       style="opacity:0.416654;fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:0.421322;stroke-linecap:round;stroke-miterlimit:4.3;stroke-dasharray:none;stroke-opacity:1;marker-start:none;marker-end:none;paint-order:fill markers stroke"
+       d="M 66.220511,235.52947 H 132.0447"
+       id="path5" />
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text1"
+       y="230.68379"
+       x="88.963547"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         x="88.963547"
+         y="230.68379"
+         style="stroke-width:0.264583">$\int \frac{\partial f}{\partial x} \mathrm{d} x$</tspan></text>
+    <text
+       style="font-size:2.64583px;font-family:monospace;-inkscape-font-specification:'monospace, Normal';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       id="text1-3"
+       y="215.70078"
+       x="104.79987"><tspan
+         sodipodi:role="line"
+         id="tspan1-6"
+         x="104.79987"
+         y="215.70078"
+         style="stroke-width:0.264583">$f(x,y)$</tspan></text>
+  </g>
+</svg>
