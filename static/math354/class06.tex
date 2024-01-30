@@ -91,5 +91,48 @@ We have $T: \mathcal{P}(\mathbb{R})\to \mathbb{R}^2$  by
 $b=c=0$ because $bp(1)p(2)$ is a weird additive term, and $\sin $ is not a linear term. 
 
 \subsection{Problem 4} 
-$T \in \mathbb{L}(v,w)$ and $v_1, \ldots, v_m \in V$ such that $Tv_1, \ldots, Tv_m$ is linearly independent. Now prove $v_1, \ldots, v_m $ is linearly independent. 
+$T \in \mathbb{L}(v,w)$ and $v_1, \ldots, v_m \in V$ such that $Tv_1, \ldots, Tv_m$ is linearly independent. Now prove $v_1, \ldots, v_m $ is linearly independent.
+
+Step one to proving them is the combination
+$c_1 v_1 + \ldots + c_m v_m = 0$ and we want to prove $c_i = 0$. Well, use $T$ of the combination so we have
+\[
+T (c_i v_i) = 0 
+\] 
+Proved! 
+
+\section{3B}
+\subsection{Problem 9} 
+Suppose a transformation $T$ is injective. So suppose $v_1, \ldots, v_m$ are linearly independent. Then prove $Tv_1, \ldots, Tv_m $ is also linearly independent. 
+
+Supposing  \[
+c_1 T v_1 + \ldots + c_m T v_m = 0
+\] 
+Remember that if system is injective then $\sum_{i=1}^{m} c_i v_i = 0$
+\[
+T(c_i v_i) = 0
+\]
+
+\subsection{Problem 27} 
+``27 is cute!" - Frank Jones. 
+
+Given $\mathcal{P} \in  \mathcal{L}(v)$ such that $P^2 = P$. Prove that 
+$V = \text{null}(P) \oplus \text{range}(P)$
+
+If $v \in \text{null}(\mathcal P)$ and $w \in  \text{range} (\mathcal P)$ 
+$Pv = 0$ and $w = P u $ so 
+ \[
+P w = P^2 u = P u = w
+\]
+Can $v = w$? 
+\[
+Pv = P w \to 0 = Pw \to 0 = w
+\]
+Conversely let $v \in V$ we want to find $x \in \text{null}(P)$ and $y \in \text{range}(P)$. Such that $v = x+y$. 
+\[
+Pv = Px + Py
+\]
+\[
+ y = P z
+\]
+[discontinued, next class]
 \end{document}

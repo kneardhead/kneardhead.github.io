@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.11.22)  30 JAN 2024 10:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.11.22)  30 JAN 2024 10:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -887,7 +887,7 @@ fonts/type1/public/lm/lmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmsy7.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 >
-Output written on class06.pdf (3 pages, 176305 bytes).
+Output written on class06.pdf (3 pages, 180474 bytes).
 PDF statistics:
  117 PDF objects out of 1000 (max. 8388607)
  63 compressed objects within 1 object stream
