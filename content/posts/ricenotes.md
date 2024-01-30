@@ -17,7 +17,8 @@ The first few notes are a little bit bad because I am still learning.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 02](/math354/class02.pdf): Continued up to direct sums, with an introduction to induction.\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 03](/math354/class03.pdf): Theorems in "Finite Dimensional Vector Spaces". Includes my own notes. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 04](/math354/class04.pdf): Dimension of Vector Spaces, related Exercises, and intro to Mapping.\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 05](/math354/class05.pdf): Some exercises on dimension, linear transformation, defined null space and injections. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 05](/math354/class05.pdf): Some exercises on dimension, linear transformation, defined null space and injections. \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 06](/math354/class06.pdf): More exercises on dimension, linear transformations etc.  
 
 **MATH 232: Honors Multivariable Calculus**
 \

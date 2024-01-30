@@ -74,5 +74,22 @@ Let's have a map $T \in  \mathbb{L}(v,w)$, and $T$ maps $V$ to $W$. We have surj
 
 $T$ is injective that means the null space of $T$ is just the zero vectors. And also $T(v_1) = T(v_2) \implies v_1 = v_2$. Since $T$ is linear, we can rewrite this as $T(v_1 - v_2) = 0 \implies v_1 - v_2 = 0$. This means $T(v) = 0 \implies v = 0$. 
 
-Surjective Injective doesn't necessarily require having a linear transform. $x^3$ is surjective and injective. 
+Surjective Injective doesn't necessarily require having a linear transform. $x^3$ is surjective and injective.
+
+\subsection{Problem 1}
+$b,c \in \mathbb{R}$, we have $f:\mathbb{R}^{3} \to \mathbb{R}^2$ by 
+\[
+T(x,y,z) = (2x-4y+3z+b,6x+cxyz)
+\]
+Show that this is a linear map only if $b=c=0$.
+
+\subsection{Problem 2}
+We have $T: \mathcal{P}(\mathbb{R})\to \mathbb{R}^2$  by 
+\[
+	Tp = \left(3p(4)+5p'(6)+bp(1)p(2), \int_{-1}^{2} x^3 p(x) \, \mathrm{d} x + c \sin p(0)\right)
+\]
+$b=c=0$ because $bp(1)p(2)$ is a weird additive term, and $\sin $ is not a linear term. 
+
+\subsection{Problem 4} 
+$T \in \mathbb{L}(v,w)$ and $v_1, \ldots, v_m \in V$ such that $Tv_1, \ldots, Tv_m$ is linearly independent. Now prove $v_1, \ldots, v_m $ is linearly independent. 
 \end{document}
