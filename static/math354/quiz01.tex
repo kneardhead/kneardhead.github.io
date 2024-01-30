@@ -1,0 +1,71 @@
+\documentclass[letter]{article}
+\usepackage[gruvbox]{ahsansabit}
+
+\title{Honors Linear Algebra : : Quiz 01}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+	\maketitle 
+
+	\section*{Problem 01} 
+	Let's consider the base case $n = 1$ 
+	\[
+		(1-a)^{n} \ge 1-na \quad \rightarrow \quad (1-a) \ge 1 - a
+	\]
+Base case is true. 
+
+Let's try the case $k$, 
+\[
+	(1-a)^{k} \ge 1 - ka
+\] 
+Let's try the case $k+1$ 
+\[
+	(1-a)^{k+1} \ge 1 - (k+1)a \quad \rightarrow \quad (1-a)^{k} (1-a) \ge 1 - a - ka
+ \]
+ If we can somehow prove $k+1$ case is true by using $k$ case then we can confidently say that the statement is true (proven through induction). 
+
+ Multiply both sides of $(1-a)^{k} \ge (1 - ka)$ by $(1-a)$ 
+ \[
+	 (1-a)^{k} (1-a) \ge (1-ka)(1-a)
+ \]
+ We get, 
+ \[
+	 (1-a)^{k} (1-a) \ge 1 -a -ka + ka^2
+ \]
+ By out definition $ka^2$ is supposedly $ka^2 > 0$ hence, this implies
+ \[
+ \implies (1-a)^{k} (1-a) \ge 1 -a -ka
+ \]
+ This is exactly the $k+1$ case that is proven, so we are done because $k+1$ is true. 
+
+ \section*{Problem 02} 
+ \subsection*{(a)}
+ To be a subspace we need $(0,0,0,0,0)$ to be a member of the system. But if $x_3 = 5 x_4 + b$ is a condition, then if $x_3 = 0$, $x_4 \neq  0$ and if $x_4 = 0$ then $x_3 \neq  0$ given $b \neq  0$. But then the $\vec{0}$ member isn't possible, hence the tuple forms a vector space if and only if $b=0$.
+
+ \subsection*{(b)} 
+ We can have a continuous function $f$ such that $f(x) = 0$ for any $x$ and $f$ is defined to be the zero member. 
+
+ From theory of calculus (I am taking 232 so this occupies my day and night at this point) we know sum of two continuous function is also continuous hence $f,g \in \mathbb{R}^{[0,1]}$ implies $f+g \in \mathbb{R}^{[0,1]}$. The set by definition includes it. 
+
+ Continuous function is still continuous given the function is $f$ so that $f(x) = X$ and $ \alpha f(x) = \alpha X$. Both of the additive and multiplicative members are included in the set of all continuous real valued function so it is a subspace. 
+
+ \subsection*{(c)}
+ Similar to before, we can define a differentiable function $f$ such that $f(x) = 0$. So $0$ is a member function in the subspace. 
+
+ Now, sum of two differential operators (or functions) is also differentiable. This follows from the sum rule of limits in calculus. So $f,g \in \mathbb{R}^{\mathbb{R}}$ implies $f+g \in \mathbb{R}^{\mathbb{R}}$. The set by definition includes them. 
+
+ Similarly we can have the function $f(x) = X$ and given $\alpha f(x) = \alpha X$, this is differentiable too and hence by definition the multiplicative closure is followed as the set also is defined to include the functions $\alpha f$. 
+
+ \subsection*{(d)} 
+ We already know the set of real valued differentiable functions itself is a subset given it contains the zero function. Now the subset of the this space so that $f'(2) = b$ can only be a subspace if that itself contains the zero function. The zero function implies $f'(2) = 0$. If $b\neq 0$ then the zero function isn't contained and the set can't be a subspace. 
+
+ Now from basic calculus we know $f'(2) + g'(2) = (f' + g')(2) = 0$ so the addition closure is followed. Also, $\alpha f'(2) = \alpha (0)$ so multiplicative closure is also followed. Set of all such functions successfully form a subset. 
+
+ \subsection*{(e)	}
+Set of all sequences of complex numbers (let's call it $\mathbb{S}$) will also include the summation of the sequences. So $a_\infty$ and $b_\infty$ being members of this set, $a_\infty + b_\infty$ must also be a member of this set by definition. 
+
+Similarly, set of all sequences implies it will include $\alpha \left(a_\infty\right)$ as well where $a \in \mathbb{F}$.
+
+Now we need a $0$ sequence for this set. If the condition is that it is the set of all sequences that approaches to the limit of $\infty$ then $0,0,0,0\ldots$ sequence is also a member, hence the set also has a zero member. This set $ \mathbb{S}$ hence will be subspace of $\mathbb{C}^{\infty}$
+\end{document}

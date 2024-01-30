@@ -1,0 +1,78 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Linear Algebra : : Class 06}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+	\maketitle 
+	\section{2C}
+	\subsection{Problem 6} 
+
+$\mathbb{P}_4(\mathbb{F})$ of a scalar field, is the subspace of all polynomials whose degree are less than $4$. 
+\[
+U = \{p \in  \mathbb{P}_4 : p(2) = p(5) = p(6)\} 
+\]
+It's $3$ dimension because each constraint reduces the dimension. Find the basis. 
+
+Basis: 1 is the easiest. The second one is $(x-2)(x-5)(x-6)$. Then comes $(x-2)^2(x-5)(x-6)$ because for degree $4$ at least one should be degree of $2$. You can safely square any of the term. 
+Check:
+\[
+a + b(x-2)(x-5)(x-6)+c(x-2)^2(x-5)(x-6) = 0
+\]
+If this is a basis then we should have $a=b=c = 0$. This equation is true for all $x$ and here if $x=2$ then $a=0$. Now through factorization,
+\[
+	(x-2)(x-5)(x-6) [b+ c(x-2) ] = 0
+\]
+This is zero for all polynomial values input $x$ and thus $(x-2)(x-5)(x-6)$ is non-zero trivially hence $b+c(x-2)=0$. From this we get $a=b=c=0$. 
+
+Extend this basis for $U$ to a basis for $\mathbb{P}_4(\mathbb{F})$. The dimension for $\mathbb{P}_4$ is $5$, and thus we need $2$ more polynomials for a basis. 
+\[
+x, x^2
+\] Can serve as that. 
+
+	\subsection{Problem 7}
+\[
+	U = \{p \in \mathbb{P}_4(\mathbb{F}) : \int_{-1}^{1} p\, \mathrm{d} x = 0\}
+\] 
+Find a basis: Look about odd functions so  $x,x^3$ works for now. We need something with $x^2$.
+\[
+	\int_{-1}^1 x^2\, \mathrm{d} x = \frac{2}{3}
+\] 
+So we can include the basis $x^2 - \frac{1}{3}$ and similarly with $x^{4}$ we can include $x^{4} - \frac{1}{5}$ 
+\[
+x, x^3, x^2 -\frac{1}{3}, x^{4} - \frac{1}{5}
+\] 
+Find subspace $W \subset \mathbb{P}_4(\mathbb{F})$ such that $U \oplus W = \mathbb{P}_4(\mathbb{F})$ We need one more because dimension is 5. $W = \text{span}(1) = \mathbb{F}$
+
+
+	\subsection{Problem 8} 
+$v_1, \ldots, v_m$ is linearly independent in a vector space $V$ and $w \in V$. Prove that 
+\[
+\dim \text{span}(v_1+w, \ldots, v_m + w) \ge m-1 
+\]
+So what he does is 
+$(v_j + w) - (v_k + w) = v_j - v_k$. Now we have to prove $v_2-v_1, v_3-v_1, \ldots, v_m - v_1$ is linearly independent. 
+The proof is \[c_2(v_2-v_1) + c_3(v_3-v_1)+ \ldots + c_m(v_m - v_1) = 0\]
+This is \[c_2 v_2 + c_3 v_3 + \ldots + c_m v_m + (-c_2-c_3-c_4-\ldots)v_1 = 0\]
+
+\subsection{Problem 14} 
+We have $\dim V = 10$. $V_1,V_2, V_3$ are subspaces of dimension $ 7$. Prove that $V_1 \cap V_2 \cap  V_3 \neq \{0\} $.
+
+Proof follows $\dim(V_2 + V_1) = \dim V_1 + \dim V_2 - \dim(V_1 \cap  V_2)$. As the left side of the equation is at most $10$ or smaller than that, then we get $\dim (V_1 \cap V_2) \ge 4$. Now
+\[
+\dim (V_1 \cap  V_2 + V_3) = \dim(V_1 \cap  V_2) + \dim (V_3) - \dim(V_1 \cap  V_2 \cap V_3)
+\] 
+Turns out the dimension of the $\dim(V_1 \cap  V_2 \cap  V_3) \ge 1$.
+
+\section{3A} 
+
+\textbf{Quick Review}
+
+Let's have a map $T \in  \mathbb{L}(v,w)$, and $T$ maps $V$ to $W$. We have surjective $T$, that means the range of $T$ is all of $W$. All the vector in $W$ comes from by means of $T$ from $V$. 
+
+$T$ is injective that means the null space of $T$ is just the zero vectors. And also $T(v_1) = T(v_2) \implies v_1 = v_2$. Since $T$ is linear, we can rewrite this as $T(v_1 - v_2) = 0 \implies v_1 - v_2 = 0$. This means $T(v) = 0 \implies v = 0$. 
+
+Surjective Injective doesn't necessarily require having a linear transform. $x^3$ is surjective and injective. 
+\end{document}
