@@ -1,0 +1,101 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+$z$ plane can have a point $z$ and look at a direction around the point in $z$. So, $z + th$ can be a direction around $z$. Here $h \in \mathbb{C}, t \in \mathbb{R}$. We will get a linear map to $w$ where $w = f(z)$ and $f'(z) = Re^{i\theta}$.
+\[
+f(z+h) = f(z) + R e^{i\theta}h + \ldots
+\]
+We are going to look at $f(z+th)$ so that $t$ is small and 
+\[
+f(z) + t R e^{i\theta} h
+\]
+One arrow in $z$ is also another arrow in $w$. Here the direction is going to be $R e^{i\theta}h$. The angles are going to be the same. 
+
+\section{Review}
+Let's have a region $D$ that might have holes in it. Then the line integral around $\gamma$ is 
+\[
+\int_\gamma f(z) \mathrm{d} z = 0
+\] For all loops $\gamma$ if and only if $f$ is differentiable. And is continuous, that is Green's theorems. The  Cauchy Integral theorem.
+
+\section{Cauchy Integral Formula} 
+Assume the same thing that $f$ is differentiable at every point of $D$ and $f'$ is continuous. Here's a daring move - let $z_0$ be a point $z_0 \in D$ that is not going to change. And try to apply a Cauchy integral theorem to $\frac{f(z)}{z-z_0}$, everywhere other than $z_0$. And see what Cauchy could do with it. What might I do to modify the situation? 
+
+We can't have $z_0$ in the area of $D$ because the integral is going to be undefined while we are taking the integral at $z_0$. So $z_0$ being at the interior, we imagine a disk of radius $\epsilon$ around $z_0$ that is going to be deleted.
+
+We obtain 
+\[
+	\int_{\partial D_\epsilon} \frac{f(z)}{z-z_0}\mathrm{d} z = 0
+\]
+And $D_{\epsilon} = D \setminus \text{safety disk}$. 
+\[
+	\int_{\partial D} \frac{f(z)}{z-z_0} \mathrm{d} z + 
+	\int_{\partial \text{ safety disk (clock-wise)}} \frac{f(z)}{z-z_0} \mathrm{d} z = 0
+\] 
+\[
+	\int_{\partial D} \frac{f(z)}{z-z_0} = \int_{\partial \text{safety disk, CCW}} \frac{f(z)}{z-z_0} \mathrm{d} z
+\] 
+Parametrize $z = z_0 + \epsilon e^{i \theta}$. Here $0 \le \theta \le 2\pi $. 
+
+\[
+	\int_{\partial D} \frac{f(z)}{z-z_0} \mathrm{d} z = 
+i	\int_0^{2\pi }  f(z_0 + \epsilon e^{i \theta} )\mathrm{d} \theta
+\] Left hand side does not depend on $\epsilon$. In spite of what it looks like. 
+\[
+\lim_{\epsilon \to 0} i \int_0^{2\ \pi } f (z_0) \mathrm{d} \theta = f(z_0) 2\pi i
+\] 
+\[
+\boxed{
+	f(z_0) = \frac{1}{2 \pi i} \int_{\partial D} \frac{f(z)}{z-z_0} \mathrm{d} z
+}
+\] 
+Cauchy integral formula, same assumptions on $D$ and $f$ having $f$ being continuous on $D \cup \partial D$ $f'(z) $ exists for all $z \in D$.
+\[
+	f(z_0) = \frac{1}{2 \pi i} \int_{\partial D} \frac{f(z)}{z-z_0} \mathrm{d} z
+\]
+Here $z$ becomes the dummy variable and use $s$ instead. 
+\[
+	f(z) = \frac{1}{2 \pi i} \int_{\partial D} \frac{f(s)}{s-z} \mathrm{d} s
+\]
+Observation is we have differentiate both sides with respect to $z$ 
+\[
+	f'(z) = \frac{1}{2\pi i} \int_{\partial D} f(s) 
+	\frac{\mathrm{d} }{\mathrm{d} z} \left(\frac{1}{s-z}\right)\mathrm{d} s
+\]
+\[
+	= \frac{1}{2 \pi i} \int_{\partial D} f(s) \frac{1}{(s-z)^2}\mathrm{d} s
+\]
+\[
+	f^{(n)}(z) = \frac{n!}{2 \pi i} \int_{\partial D} f(s) \frac{\mathrm{d} s}{(s-z)^{n+1}}
+\]
+The math looks cute kintu kisu toh bujtesina :)
+
+Line integral is path independent if it has an anti-derivative. Wait what. 
+
+Morera's Theorem follows
+\thm{
+For $f$ continuous on D and suppose and line integral of $f $ along loops in $D$ are always $0$ implies that $f'$ exists at every point. 
+}
+\pf{
+We already know that $\forall $ differentiable $F$ there is $f = F'$. But now we know that $F''$ exists, hence $f'$ exists. 
+}
+
+\df{
+In older days this was called Analytic. 
+
+Important Terminology, a function defined on an open set $D \subset \mathbb{C}$ which is differentiable at every point of $D$ is called Holomorphic. 
+}
+
+\df{
+A function $f$ is said to be analytic if near endpoint $z_0$ of it's domain, it equals a series 
+\[
+f(z) = \sum_{n=0}^{\infty} a_n (z-z_0)^{n}
+\] With positive radius of convergence.:q:q
+
+}
+
+\end{document}

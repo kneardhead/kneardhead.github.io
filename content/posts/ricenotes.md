@@ -30,7 +30,8 @@ The first few notes are a little bit bad because I am still learning.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 06](/math232/class06.pdf): Played with Open Sets, and a few proofs regarding that.\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 07](/math232/class07.pdf): Intro to Differentiation, and some shoutout to Physics! \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 08](/math232/class08.pdf): Derivative vectors and motivation to tangent line (showed wolfram). \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 09](/math232/class09.pdf): Introduction to derivative as Linear Transformation.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 09](/math232/class09.pdf): Introduction to derivative as Linear Transformation. \ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 10](/math232/class10.pdf): More on derivative and turning it into Directional Derivative. 
 
 **MATH 382: Computational Complex Analysis**
 \
@@ -42,4 +43,5 @@ The first few notes are a little bit bad because I am still learning.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 06](/math382/class06.pdf): Power series, Sequences, and their limits.\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 07](/math382/class07.pdf): Further discussion regarding series and sums.\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 08](/math382/class08.pdf): Revision on paths (multivariable calculus) and path independence.\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 09](/math382/class09.pdf): Green's Theorem, Path integral being zero for z, conformal map.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 09](/math382/class09.pdf): Green's Theorem, Path integral being zero for z, conformal map.  \
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 10](/math382/class10.pdf): Derivation of Cauchy's Integral Formula, Moirrer's Theorem.  
