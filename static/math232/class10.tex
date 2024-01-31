@@ -1,0 +1,139 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 10 (Woohoo!)}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle 
+
+\df{
+$f:D \to \mathbb{R}^{m}$ is differentiable at $\vec{a}$ if for all linear transformation $L:\mathbb{R}^{n}\to \mathbb{R}^{m}$ such that
+\[
+\lim_{\vec{h} \to \vec{0}} \frac{|f(\vec{a}+\vec{h}) - f(\vec{a}) -L(\vec{h}) |}{|\vec{h}|} = 0
+\] 
+If so $L$ is $L = \mathrm{d} f_{\vec{a}}$ is derivative of $f$ at $\vec{a}$. 
+}
+
+For $f(x,y) = (x-1)^2-(y+2)^2$ the derivative is going to be like $\mathrm{d} f_{(0,0)} \begin{pmatrix} p \\ q \end{pmatrix} $ is $-2p - 2q$ 
+
+Proposition, 
+\thm{
+If $f$ is differentiable at $\vec{a}$ then $f$ must be continuous at $\vec{a}$. 
+}
+\pf{
+	Let $L$ be $\mathrm{d} f_{\vec{a}}$. Then we know that the limit as $h\to 0$, then 
+	\[
+	\frac{|f(\vec{a}+\vec{h}) - f(\vec{a}) - L(\vec{h})|}{|\vec{h}|} = 0
+	\]
+	We want to show (WTS) that 
+	\[
+	\lim_{\vec{x} \to \vec{a}} f(\vec{x}) = f(\vec{a})
+	\] 
+Using sequences would be easier, suppose that $\{\vec{x}_k\} $ is a sequence moving towards $\{\vec{a}\} $, let $\vec{h}_k = \vec{x}_k - \vec{a}$. We know that $\{\vec{h}_k\} \to  0$. So,
+\[
+	\frac{|f(\vec{a}+\vec{h}_k) - f(\vec{a}) - L(\vec{h}_k)|}{|\vec{h}_k|} \to  0
+\]Multiply both sides with the denominator, 
+\[
+|\vec{h}_k|	\frac{|f(\vec{a}+\vec{h}_k) - f(\vec{a}) - L(\vec{h}_k)|}{|\vec{h}_k|} \to  0
+\]
+If norms go to zero then the vectors themselves go to zero.
+\[
+\frac{|f(\vec{a}+\vec{h}_k) - f(\vec{a}) - L(\vec{h}_k)|}{|\vec{h}_k|} = 0 
+\]
+Then we have that
+\[
+f(\vec{a}+\vec{h}_k) - f(\vec{a}) - L(\vec{h}_k) \to 0
+\]
+For continuity 
+\[
+f(\vec{x}_k) - f(\vec{a}) \to  \vec{0}
+\]
+Hence
+\[
+L(\vec{h}_k) \to  0
+\] 
+}
+
+What does $L $ is supposed to mean? Given $L = \mathrm{d} f_{\vec{a}}$. How should we think about $L(\vec{v})$? Of course $\vec{v}\neq 0$. 
+
+If $$\vec{v}\approx 0$$ then $$f(\vec{a}+\vec{v}) - f(\vec{a}) - L(\vec{v}) \approx 0$$ then $L(\vec{v}) \approx f(\vec{a}+\vec{v}) - f(\vec{a})$ and thus
+\[
+L(\vec{v}) \approx \Delta f 
+\]  if the change in the input of $\vec{v}$. 
+
+
+\subsection{Thinking about $L(\vec{v})$ }
+Another way to think about $L(\vec{v})$ while $\vec{v}\neq 0$. We want to think of the limit in the definition given above for a particular $\vec{h}$ 
+\[
+\lim_{\vec{h} \to \vec{0}}  \frac{| f(\vec{a}+\vec{h}) - f(\vec{a}) - L(\vec{h})|}{|\vec{h}|} = 0
+\]
+Here $\vec{v}\in \mathbb{R}^{n}$. We can think of $\vec{h}$ as scalar multiples of $\vec{v}$. Consider
+\[
+\vec{h} = t \vec{v}
+\] 
+We will presume what happens when $t \to  0$. 
+\[
+\lim_{t \to {0}}  \frac{| f(\vec{a}+\vec{v}t) - f(\vec{a}) - tL(\vec{v})|}{|\vec{v}| | t|} = 0
+\]
+What we get is,
+\[
+\frac{1}{|\vec{v}|} \lim_{t \to 0} | 
+\frac{f(\vec{a}+\vec{tv}) - f(\vec{a}) - t L(\vec{v}) }{t} 
+| = 0
+\]
+
+\[
+\lim_{t \to 0} | 
+\frac{f(\vec{a}+\vec{vt}) - f(\vec{a}) }{t} 
+- L(\vec{v})
+| = 0
+\]
+
+This basically means 
+\[
+\lim_{t \to 0} \frac{f(\vec{a} + t \vec{v}) - f(\vec{a})}{t} = L(\vec{v})
+\]
+Think about the line that stretches along $\vec{v}$. 
+\[
+\lim_{t \to 0} \frac{f(\vec{a} + t \vec{v}) - f(\vec{a})}{t} = L(\vec{v})
+\]
+is called the Directional Derivative of $f$ at $\vec{a}$ in the direction $\vec{v}$. 
+\thm{
+	Proposition: If $df_{\vec{a}}$ is $L$ then $L(\vec{v})$ is the directional derivative at $\vec{a}$ along $\vec{v}$ and we say 
+	\[
+		D_{\vec{v}} f(\vec{a})
+	\] 
+	Prefer talking about $D_{\vec{v}} f(\vec{a})$ when $|\vec{v}| = 1$. Having a unit vector is professor Wangs preference. 
+}
+
+\[
+f(x,y) = \frac{x^2y}{x^4 + y^2}
+\] It is zero $f(0,0) = 0$ in such. 
+Let's calculate it's directional derivative. 
+\[
+	D_{\vec{v}} f(0,0)
+\] when $\vec{v} = \begin{pmatrix} p \\ q \end{pmatrix} $.
+\[
+	\lim_{t \to 0}  \frac{f(\vec{0} + \vec{v}t ) - f(\vec{0})}{t}
+\]
+\[
+= \lim_{t \to 0} \frac{f(\begin{pmatrix} tp\\tq \end{pmatrix} ) - 0}{t} = \frac{\frac{t^2 p^2 t q}{t ^{4} p^{4} + t^2 q^2}}{t}
+\]
+\[
+= \lim_{t \to 0} \frac{p^2 q}{t^2 p^2 + q^2} = \frac{p^2}{q}
+\]
+We can't let $q\neq 0$. 
+
+We can't find $L$ at this point to just simply pull a $L \vec{v}$ and get directional derivative. So 
+
+\df{
+The partial derivative, the $i$-th one of $f$ at $\vec{a}$ is just
+\[
+	D_{\vec{e}_i} f(\vec{a})
+\] 
+In a particular direction. 
+}
+In general if we are at $\mathbb{R}^{m}$ then $D_{\vec{v}} f(\vec{a})$ lives in $\mathbb{R}^{m}$. The dir derivative gives the slope of the tangent at a preferred direction, not the tangent itself. 
+\end{document}
