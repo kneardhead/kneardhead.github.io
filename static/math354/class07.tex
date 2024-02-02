@@ -1,0 +1,89 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 07}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+	\maketitle 
+
+	Let $\mathcal P \in  \mathcal L(V)$ and $P^2 = P$ prove that 
+	 \[
+	V = \text{null} P \oplus \text{range} P
+	\] 
+
+Suppose $u \in \text{null}P \cap \text{range} P$ and then 
+\[
+P u = 0
+\] 
+\[
+u = Pv
+\] 
+\[
+0 = Pu = P^2 v = Pv = u
+\] 
+Now we need to show every vector can be written as the sum of the $\text{null} P \oplus \text{range}P$. 
+Next $u \in  V$ and $P(I - P  ) = 0$ 
+\[
+ u = P u + (I - P)u 
+\] 
+\[
+P(I-P) u = (P - P^2)u = 0 u = 0 
+\]
+
+\section{Problem 3B27} 
+$\implies$ assume $S = TE$. Every vector in range $S$ is of the form $Sv$. Hence $TEv = Sv$. $Sv \in \text{range}T$. 
+
+$\implies$ Assume range of $S$ is $\subset $ range of $T$. Let' $v_n$ be a basis for $\mathbb{V}$. Then 
+$S v_k$ is $T w_k$. I want to find $E$ such that $S = TE$, $S v_k = TE v_k$ 
+Through defining $E$ by $Ev_k = w_k$ then 
+\[
+E (\sum_{n=1}^{N} c_n v_n) = \sum_{n=1}^{N} c_n w_n
+\]
+
+\section{Fundamental Theorem of Linear Algebra}
+Given a linear function $T \in \mathcal L (V, W)$, and we assume $V$ is finite dimension. Then the 
+\[
+\dim V = \dim \left(\text{null} T\right) + \dim \left(\text{range} T\right)
+\]
+Null is in $T$ and the range is in $W$.
+
+\textbf{Proof by us}
+\begin{itemize}
+	\item Choose a basis for $\text{null}T$ hence $\{\vec{v}_m\} $.
+	\item Extend this basis to achieve a basis for $\mathbb{V}$ itself. $\{\vec{v}_m\}  $ and $\{\vec{v}_{m+1} \ldots \vec{v}_n\} $ 
+	\item We assume that $n>m$.
+	\item Look at the range of $T$, any vector of the form
+		\[
+			\vec{v} = c_1 \vec{v}_1 + \ldots + c_{m+1} \vec{v}_{m+1} + \ldots
+		\]
+		\[
+			Tv = 0 + \ldots + 0 + c_{m+1} T \vec{v}_{m+1} + \ldots c_n T \vec{v}_{n}
+		\]
+		Proof will be over if $T \vec{v}_{m+1} , \ldots, T \vec{v}_n $ are linearly independent.\item Start with an equation of the form 
+		\[
+			d_{m+1} T \vec{v}_{m+1} + \ldots + d_n T \vec{v}_n = 0
+		\]
+		\[
+			T ( d_{m+1} v_{m+1} + \ldots d_n v_n ) = 0
+		\] 
+		Then the equation in the bracket is belonged in $\text{null}T$. 
+\end{itemize}
+
+\section{Problem : 3B 28} 
+Suppose $D$ is a member of $\mathcal L (\mathcal P (\mathbb{R}))$ and suppose $\deg D p$ is $\deg p - 1$ for non-constant polynomial $p$. Prove that $D$ is surjective.
+
+\textbf{Proof} Consider the subspace of $\mathcal P (\mathbb{R})$ to be the span of $x ,x^2, \ldots, x^{n}$. Notice: no constant polynomial except $0$. When we restrict $D$ to this subspace, $\text{range} D$ to be equal to the span of $1,x, \ldots, x^{n}$. 
+
+Definition of degree 
+\[
+\deg(1) = 0
+\] 
+\[
+\deg(0) = - \infty
+\]
+
+\section{Problem 3B19} 
+\section{Problem 3B20}
+	\end{document}

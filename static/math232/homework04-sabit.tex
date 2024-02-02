@@ -1,0 +1,167 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Homework 04}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}\maketitle
+\section{Problem}
+
+$f^{-1}(U) $ being open means that there exists a point $\vec{a}$ in $f^{-1}(U)$ such that it is a limit point. Being a limit point, the set of points $\vec{x}$ around $\vec{a}$ within $r>0$ distance all are member of $f^{-1}(U)$.
+
+This set be called $B_r(\vec{a})$ such that
+\[
+B_r(\vec{a}) = \{\vec{x} \in f^{-1}(U) : |\vec{x}-\vec{a}| < r > 0\} 
+\]
+So $B_r(\vec{a}) \subset f^{-1}(U)$ signifies that $\vec{a}$ is a limit point. 
+
+Having the input set and output set both being open it is given that $f(B_r(\vec{a}))$ will also be an open set. 
+\[
+f(B_r(\vec{a}) ) \subset B_\epsilon(f(\vec{a})) \subset U
+\]
+But if there is a set $B_\epsilon (f(\vec{a}))$ around $f(\vec{a})$ then that just simply means that there exists continuous points around $f(\vec{a})$. That means $f(\vec{x}) - f(\vec{a})$ norms are within $\epsilon$. This is a condition of continuity hence proves this function $f$ is continuous. 
+
+\section{Problem} 
+
+\[
+h'(t) = \lim_{h \to 0} \frac{f(t+h)\cdot g(t+h) - f(t) \cdot g(t)}{h}
+\]
+We can do this, 
+\[
+	h'(t) = \lim_{h \to 0} \frac{f(t+h)\cdot g(t+h) +[f(t+h) \cdot g(t) - f(t+h) \cdot g(t)]- f(t) \cdot g(t)}{h}
+\]
+\[
+	h'(t) = \lim_{h \to 0} \frac{[f(t+h)\cdot g(t+h) - f(t+h) \cdot g(t) ] + [f(t+h) \cdot g(t)- f(t) \cdot g(t)]}{h}
+\]
+\[
+	h'(t) = \lim_{h \to 0} \frac{[f(t+h)\cdot g(t+h) - f(t+h) \cdot g(t) ]  +[f(t+h) \cdot g(t)- f(t) \cdot g(t)]}{h}
+\]
+
+\[
+	h'(t) = \lim_{h \to 0} \frac{f(t+h)\cdot [g(t+h) -   g(t) ]  +[f(t+h) -f(t) ] g(t)}{h}
+\]
+Taking the limits, 
+\[
+h'(t) = f(t) \cdot g'(t) + f'(t) \cdot g(t)
+\]
+Addition is commutative had been considered prior. 
+
+\section{Problem}
+Consider the distance vector $\vec{d}(t) = \vec{f}(t) - \vec{a}$, and it's norm is minimized when the distance is minimal. For ease of computation, if $|\vec{d}(t)| $ is minimal, then so as $|\vec{d}(t)|^2$. Using this,
+\[
+\frac{\mathrm{d} }{\mathrm{d} t} |\vec{d}(t)|^2 = \frac{\mathrm{d} }{\mathrm{d}t } \left( \vec{d}(t) \cdot \vec{d}(t)\right) = 2 \frac{\mathrm{d} }{\mathrm{d} t}\vec{d}(t) \cdot \vec{d}(t) = 0
+\]
+We know that the tangent of $\vec{f}(t) $
+
+\[
+	\frac{\mathrm{d} }{\mathrm{d} t} \vec{d}(t) = \frac{\mathrm{d} }{\mathrm{d} t} \vec{f}(t) + 0
+\]
+Because we have seen $\frac{\mathrm{d} \vec{f}(t)}{\mathrm{d} t} \cdot  \vec{d}(t) = 0$, so we have orthogonality of the two vectors.
+
+\section{Problem} 
+Defining $h'(t) = f(t) \times g(t)$
+\[
+h'(t) = \lim_{h \to 0} \frac{f(t+h)\times g(t+h) - f(t) \times g(t)}{h}
+\]
+We can do this, 
+\[
+	h'(t) = \lim_{h \to 0} \frac{f(t+h)\times g(t+h) +[f(t+h) \times g(t) - f(t+h) \times g(t)]- f(t) \times g(t)}{h}
+\]
+\[
+	h'(t) = \lim_{h \to 0} \frac{[f(t+h)\times g(t+h) - f(t+h) \times g(t) ] + [f(t+h) \times g(t)- f(t) \times g(t)]}{h}
+\]
+\[
+	h'(t) = \lim_{h \to 0} \frac{[f(t+h)\times g(t+h) - f(t+h) \times g(t) ]  +[f(t+h) \times g(t)- f(t) \times g(t)]}{h}
+\]
+
+\[
+	h'(t) = \lim_{h \to 0} \frac{f(t+h)\times [g(t+h) -   g(t) ]  +[f(t+h) -f(t) ] g(t)}{h}
+\]
+Taking the limits, 
+\[
+h'(t) = f(t) \times g'(t) + f'(t) \times g(t)
+\]
+Addition is commutative had been considered prior. 
+
+\section{Problem}
+\subsection*{(a)}
+The angle between $\vec{p}(t)$ and $\vec{v}(t)$ is $\theta$. Then the perpendicular component of $\vec{v}$ over $\vec{p}$ would be $ |\vec{v}| \sin \theta$. The cross product norm is basically the area of this triangle the two vectors make. In $\delta t$ time, the area swept is hence an infinitesimal triangle
+\[
+\text{area} = \delta A = \frac{1}{2} |\vec{p}(t)| |\vec{v}(t)| \sin \theta \delta t
+\]
+From here we can do the sacred $\delta t$ division on both sides to get, 
+\[
+\frac{\delta A}{\delta t} = \text{Area Rate} = \frac{1}{2} | \vec{p}(t) \times \vec{v}(t)|
+\] 
+
+\subsection*{(b)} 
+Equal areas swept in equal times basically means that the area rate is a constant, and hence, 
+\[
+	\frac{\mathrm{d} }{\mathrm{d} t}\left( \frac{\mathrm{d} A}{\mathrm{d} t}\right) = 0
+\] 
+
+\subsection*{(c)}
+As a Physics major I will give a shoutout to Angular Momentum being conserved. Also, I want to mention the scalar multiple $\lambda$ which shows $\vec{a}(t) = \lambda \vec{r}$ is not a constant and itself is a function of time. 
+\[
+\lambda = \frac{G M m}{|\vec{r}(t)|^2}
+\]
+I was about to make a grave mistake by using $\lambda$ constant. 
+
+Now, this basically means, 
+\[
+	\vec{r}(t) \times \vec{a}(t) = 0
+\]
+We can do some circus with the vectors and derivatives, 
+\[
+\vec{r}(t) \times \vec{a}(t) = \vec{r}(t) \times  \frac{\mathrm{d} \vec{v}(t)}{\mathrm{d} t}
+=0\]
+Notice that the cross product above can be found through the following process, 
+\[
+\frac{\mathrm{d} }{\mathrm{d} t} \left
+(\vec{r}(t) \times  \vec{v}(t) 
+\right) = 
+\frac{\mathrm{d} \vec{r}(t)}{\mathrm{d} t} \times \vec{v}(t) + 
+\vec{r}(t) \times \frac{\mathrm{d} \vec{v}(t)}{\mathrm{d} t}
+= 
+\vec{v}(t) \times \vec{v}(t) + \vec{r}(t) \times \vec{a}(t) = 0
+\]
+This just says $\partial_t (\vec{r}(t) \times  \vec{v}(t) )= 0$ Which basically validates the area sweep remains constant, hence proving Kepler's Second Law. I cannot curb my urge to mention $\vec{r}\times \vec{v}$ is angular momentum.
+
+\section{Problem} 
+$f:\mathbb{R}\to \mathbb{R}^{m}$ hence, 
+\[
+f = (f_1, \ldots, f_m)
+\] 
+Mean value theorem individually for the i-th function 
+\[
+f_i'(c_i) = \frac{f_i(b) - f_i(a)}{b-a}
+\] 
+A single point $c$ exists if for all $i$ we have the same $c_i$. Let's try a parametrized form where we start from $a$ and end at $b$ such that for $t \in [0,1]$ we have a line 
+\[
+L(t) = t b + (1- t) a
+\] Thus defining 
+\[
+\lambda(t) = f(L(t))
+\]
+We have
+\[
+\frac{\lambda(1) - \lambda(0)}{1 - 0} = \lambda'(\tau)
+\]
+The chain rule implies that from $\lambda'(t)$ we have $\nabla f(L(\tau)) \cdot (b-a)$. If we define $c$ to be $L(\tau)$ then $c \in L(\tau)$, and since $\lambda(0) = a$ and $\lambda(1)=b$ then we are confirmed that a single point $c$ exists such that
+\[
+f(b) - f(a) = \nabla f(c) \cdot (b-a)
+\] 
+So mean value theorem extends for other dimensions too.
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,134 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Linear Algebra : : Homework 03}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section*{Problem 01: 2A2} Span of the vectors is the set 
+\[
+	\{a_1 \vec{v}_1 + a_2 \vec{v}_2 + a_3 \vec{v}_3 + a_4 \vec{v}_4 : a_1,a_2,a_3,a_4 \in \mathbb{F}\} 
+\] 
+List of $\vec{v}_1-\vec{v}_2, \vec{v}_2 - \vec{v}_3, \vec{v}_3 - \vec{v}_4, \vec{v}_4 $ can spanned such that 
+\[
+\{p (\vec{v}_1 - \vec{v}_2) + q \left(\vec{v}_2 - \vec{v}_3\right) + r
+\left(\vec{v}_3 - \vec{v}_4\right) + s \vec{v}_4 : p,q,r,s \in \mathbb{F}\}
+\]
+Turns out, this is exactly same as saying, relating to the first set of span
+\[
+\{p \vec{v}_1+ (q-p) \vec{v}_2 + (r-q)\vec{v}_3 + (s-r)\vec{v}_4: a_1 = p, a_2 = q-p, a_3 = r-q, a_4 = s -r \} 
+\]
+So they span the exact same space. 
+
+\section*{Problem 02: 2A7(a)} 
+Over the real number we can try using $x,y \in \mathbb{R}$ 
+\[
+x (1+i) + y (1-i) = 0
+\]
+This can be rewritten as $x+y + (x-y) i = 0$ hence 
+\[
+x = 0 \quad y =0 
+\]
+This is linearly independent. 
+
+\section*{Problem 03: 2A7(b)} 
+Over the complex number we can do the following 
+\[
+i (1+i) + (1 -i) = (i-1) + (1-i) = 0
+\]
+This happens to be linearly dependent. 
+
+\section*{Problem 04: 2A8}
+A linear combination for the list is 
+\[
+a(\vec{v}_1 - \vec{v}_2) + b(\vec{v}_2 - \vec{v}_3) + c(\vec{v}_3 - \vec{v}_4) + d \vec{v}_4 = 0
+\] 
+This simply is same as
+\[
+a \vec{v}_1 + (b-a) \vec{v}_2 + (c-b) \vec{v}_3 + (d-c) \vec{v}_4 = 0
+\]
+We know that the list which is independent is 
+\[
+p \vec{v}_1 + q \vec{v}_2 + r \vec{v}_3 + s \vec{v}_4 = 0
+\]
+This gives us 
+\[
+a = p = 0
+\]
+\[
+q = b-a = 0\quad \therefore b = 0
+\]  
+Like so it's trivial to see that $a=b=c=d = 0$ hence proving that the list is linearly independent.
+
+\section*{Problem 5: 2A10} 
+The sequence $\{\vec{v}_m\}$ is linearly independent. That means we can have 
+\[
+\sum_{i = 1}^{n} a_i \vec{v}_i = 0
+\]
+Only for $a_i = 0$ for all $i$. Now, this system being linear, 
+\[
+\lambda \sum_{i = 1}^{n} a_i \vec{v}_i = 0
+\quad \rightarrow \quad \sum_{i = 1}^{n} a_i (\lambda\vec{v}_i) = 0
+\]
+This just shows $\{\lambda \vec{v}_i\} $ is also a linearly independent list of vectors.
+
+\section*{Problem 6: 2A15} 
+Dimension of $\mathcal{P}_4 (\mathbb{F})$ is $5$. We know by the theorem, 
+\thm{
+In a finite-dimensional vector space, the length of every linearly independent list of vectors is less than or equal to the length of the every spanning list of vectors.
+}
+
+Having dimension $5$, it is impossible to have any other basis above $5$ basis vectors. For this case, $1, z, z^2, z^3, z^{4}$ are the 5 basis polynomials that are linearly independent for this specific set. Anything more would violate the dimension of the given set hence is not possible. 
+
+\section*{Problem 7: Example 2.18(b)}
+Let's consider the numbers $x,y,z \in \mathbb{F}$ such that, 
+\[
+x(2,3,1) + y(1,-1,2) + z(7,3,c) = 0
+\]
+We can try solving for $x,y,z$ and if and only if $x=y=z=0$ then we can say the system is linearly independent, otherwise dependent. The above condition is same as saying the following system of linear equations are held true 
+ \begin{align*}
+	2x + y + 7 z &= 0 \\
+	3x - y + 3 z &= 0 \\
+	 x + 2y + cz &= 0 
+.\end{align*}
+Through solving the equation if $c = 8$ we get $x = -2 z$ and $y = -3 z$. So we can pick anything we want for $z$ and we will have non-zero solutions for $x,y,z$ for this system of equations. $z = 1$ gives us $(x,y,z) = (-2, -3, 1)$ to be a valid solution. If we have $c \neq 8$ this breaks and there are no possible non-zero solutions to the system of equation above. So we can see that this equation is only linearly dependent for $c = 8$.
+
+\section*{Problem 08}
+The sum taken here is a minkowski sum
+\[
+A + B = \{\vec{a}+\vec{b}  \mid  \vec{a} \in A, \vec{b} \in B\} 
+\]
+
+Span of $i$-th vector is 
+\[
+\{a_i \vec{v}_i  \mid a_i \in \mathbb{F}\} 
+\]
+Span of $j$-th vector $i\neq j$ is similar. Added to $i$-th vector, we get 
+\[\{
+a_j \vec{v}_j + a_i \vec{v}_i  \mid a_j, a_i \in \mathbb{F}\}
+\]
+Like so, we can have the possible linear combination of all the basis vectors in the space. For the whole list, we then end up getting the whole span of the basis vectors, hence, the statement is proven. 
+
+\section*{Problem 09}
+Consider it to have $n$ dimension. We can provide a counter example that $n$ cannot be finite. Because pick $m$ number of monomials such that $\{z^{m}\} $. For every $n$ we can pick $m$ such that $m > n$ and thus this having  $m$ basis whilst having $n$ dimension is a contradiction and it is impossible. 
+
+\section*{Problem 10} 
+We can have a linear combination of this list, 
+\[
+a (\vec{v}_1 + \vec{v}_2) + b (\vec{v}_2 + \vec{v}_3) + c (\vec{v}_3 + \vec{v}_4) + d \vec{v}_4
+\] 
+Re-writing
+\[
+a \vec{v}_1 + (a+b)\vec{v}_2 + (b+c) \vec{v}_3 + (c+d)\vec{v}_4
+\]
+We can set 
+\begin{align*}
+	a &= \lambda_1 \\
+	a+b &= \lambda_2 \\
+	b+c &= \lambda_3 \\
+	c+d &= \lambda_4 
+.\end{align*}
+We can directly solve for each $\lambda_i$ in this case from $a,b,c,d$ and the other way around too. So every vector  $\vec{v}_k$ that can be represented by $\lambda_i$'s can be also represented by $a,b,c,d$ hence we can say that $\vec{v}_1+\vec{v}_2, \vec{v}_2 + \vec{v}_3, \vec{v}_3 + \vec{v}_4, \vec{v}_4$ is a basis of $V$ too. 
+\end{document}
