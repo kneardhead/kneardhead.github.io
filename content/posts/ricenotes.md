@@ -18,7 +18,8 @@ The first few notes are a little bit bad because I am still learning.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 03](/math354/class03.pdf): Theorems in "Finite Dimensional Vector Spaces". Includes my own notes. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 04](/math354/class04.pdf): Dimension of Vector Spaces, related Exercises, and intro to Mapping.\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 05](/math354/class05.pdf): Some exercises on dimension, linear transformation, defined null space and injections. \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 06](/math354/class06.pdf): More exercises on dimension, linear transformations etc.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 06](/math354/class06.pdf): More exercises on dimension, linear transformations etc.\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 07](/math354/class07.pdf): Some more problems from the 3B. To be further edited.  
 
 **MATH 232: Honors Multivariable Calculus**
 \
@@ -30,7 +31,7 @@ The first few notes are a little bit bad because I am still learning.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 06](/math232/class06.pdf): Played with Open Sets, and a few proofs regarding that.\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 07](/math232/class07.pdf): Intro to Differentiation, and some shoutout to Physics! \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 08](/math232/class08.pdf): Derivative vectors and motivation to tangent line (showed wolfram). \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 09](/math232/class09.pdf): Introduction to derivative as Linear Transformation. \ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 09](/math232/class09.pdf): Introduction to derivative as Linear Transformation. \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 10](/math232/class10.pdf): More on derivative and turning it into Directional Derivative. 
 
 **MATH 382: Computational Complex Analysis**

@@ -1,0 +1,136 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 11}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle 
+
+Partial derivatives of $f$ at $\vec{a}$ with respect to ${x}_i$ is 
+\[
+	D_{{e}_i} f(\vec{a}) 
+\]
+More common notation is $ \frac{\partial f}{\partial x_i} (\vec{a})$
+Sometimes you will see 
+\[
+f(x,y) = z
+\] 
+So 
+\[
+\frac{\partial z}{\partial x} = f_x
+\]
+An example can be $f(x,y) = (\sin y + x^2 e^{y} , x+ 2 xy)$ where $f:\mathbb{R}^{2} \to \mathbb{R}^2$ and we want $\frac{\partial f}{\partial x}$ at $(2,0)$?
+
+We can do this on the long way so by definition 
+\[
+\lim_{t \to 0} \frac{f(2,0) + t \vec{e}_1 - f(2,0)}{t}
+\] 
+\[
+\lim_{t \to 0} \frac{f(2+t,0)   - f(2,0)}{t}
+\] 
+\[
+\lim_{t \to 0}  
+\frac{
+\begin{pmatrix} 0 + (2+t)^2 \\ 2 + t + 2 (2+t) \cdot 0 \end{pmatrix} 
+- 
+\begin{pmatrix} 4 \\ 2 \end{pmatrix} 
+}{t}
+\]
+We have a simple single variable derivative. 
+\[
+\begin{pmatrix} 
+\lim_{t \to 0} \dfrac{(2+t)^2-4}{t} 
+\\
+\lim_{t \to 0} \dfrac{2+t+2(2+t)0 - 2}{t}
+\end{pmatrix} 
+\]
+This just boils down into treating the individual components as individual derivatives. 
+\[
+\frac{\partial f}{\partial x} (2,0) = \begin{pmatrix} 4 \\ 1 \end{pmatrix} 
+\]
+Just doing single variable we can find 
+\[
+\frac{\partial f}{\partial y} (2,0) = \begin{pmatrix} 5\\4 \end{pmatrix} 
+\]
+These are directional derivative along $\vec{e}_1$ and $\vec{e}_2$. 
+\[
+	\frac{\partial f}{\partial x}(2,0) = \begin{pmatrix} 4 \\ 1 \end{pmatrix}  = D_{\vec{e}_1} f(2,0) 
+\] 
+\[
+	\frac{\partial f}{\partial y} (2,0) = \begin{pmatrix} 5\\4 \end{pmatrix} = D_{\vec{e}_2} f(2,0)
+\]
+If $f$ is differentiable and $df_(2,0)$ is represented by matrix $M$ then 
+ \[
+	 M = \begin{pmatrix} 4 & 5 \\ 1 & 4 \end{pmatrix} 
+\]
+\[
+d f_{(2,0)} (\vec{e}_1) = M \vec{e}_1
+\]
+\[
+	d f_{(2,0)} (\vec{e}_2) = M \vec{e}_2
+\]
+If $f$ is differentiable at $\vec{a}$ then $Mx$ for $d f_{\vec{a}}$ is 
+\[
+\begin{pmatrix} 
+	\frac{\partial f}{\partial x_1} (\vec{a}) & \ldots& \frac{ \partial f }{\partial x_n} (\vec{a})
+\end{pmatrix} 
+\] Consider the vertical spanning of this matrix too. We have columns here beware! 
+
+If $f(\vec{a})$ is $( f_1(\vec{a}), f_2(\vec{a}), \ldots, f_m(\vec{a}))$ if $f$ is differentiable at $\vec{a}$ then 
+\[
+	d f_{\vec{a}} 
+	= 
+	\begin{pmatrix} \dfrac{\partial f_1}{\partial x_1}(\vec{a}) & \cdots & \dfrac{\partial f_1}{\partial x_n}(\vec{a})\\
+		\vdots & \ddots & \vdots \\
+	\dfrac{\partial f_m}{\partial x_1} (\vec{a}) & \cdots & 
+	\dfrac{\partial f_m}{\partial x_n} (\vec{a})
+	\end{pmatrix} 
+\]
+The $ij$ entry is $ \frac{\partial f_i}{ \partial x _ j} (\vec{a})$
+So $f$ is differentiable at $\vec{a}$, then this means $f$ has directional derivatives in all directions of $\vec{a}$, then this also means $f$ has partial derivatives along all $n$ basis directions. 
+
+\[
+f(x,y) = \sqrt{|xy|} 
+\] 
+Does not have directional derivatives (wait how why)
+
+\section*{Partial derivatives around a region} 
+\thm{
+If $ \frac{\partial f_i}{ \partial x_j}$ all exist on some neighborhood of $\vec{a}$ and are continuous there (neighborhood basically means some small open set ball containing $\vec{a}$), the $f$ is differentiable at $\vec{a}$. 
+}
+\pf{
+Lemma: If $f:D\to \mathbb{R}^{m}$ and $f(\vec{a}) = (f_1(\vec{x}), \ldots, f_m(\vec{x}))$ then $f$ is differentiable at $\vec{a}$ if and only if all $f_i$ are differentiable at $\vec{a}$. (Left as homework)
+
+For simplicity $n = 2$ by the lemma can just work with single coordinate function, so will take $f: \mathbb{R}^2 \to \mathbb{R}^{1}$. We will later find out how this generalizes to $\mathbb{R}^{n}$. We are assuming that $ \frac{\partial f}{\partial x}$ is continuous at $\vec{a}$. I will write $f_x$ for now, hence, 
+$f_x$ is continuous at $\vec{a}$ and also $f_y$. So we are trying to show that 
+\[
+\lim_{\vec{h} \to \vec{0}} \frac{f(\vec{a}+\vec{h}) - f(\vec{a}) -L(\vec{h})}{|\vec{h}|} = \vec{0}
+\]
+$L(\vec{h})$ is what we think as the derivative. Here this $L(\vec{h})$ should be the matrix 
+\[
+	L = \begin{pmatrix} f_x(\vec{a}) & f_y(\vec{a}) \end{pmatrix} 
+\]
+\[
+\text{LHS} = 
+\frac{
+|
+f(\vec{a}+\vec{h}) -
+f(a_1 + h, a_2) + 
+f(a_1 + h_1, a_2) 
+-
+f(a_1, a_2) 
+- L(h_1, h_2)
+}{\sqrt{h_1^2+h_2^2} }
+\]
+We will consider there is a mean value theorem being applied hence a point in between
+}
+
+\begin{figure}[ht]
+    \centering
+    \incfig{showing-continuity-through-partial-derivatives}
+    \caption{Showing continuity through partial derivatives}
+    \label{fig:showing-continuity-through-partial-derivatives}
+\end{figure}
+\end{document}

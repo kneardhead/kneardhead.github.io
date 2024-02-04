@@ -1,0 +1,193 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Linear Algebra : : Homework 04}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+	\section*{Problem 01}
+A possible linear combination of the polynomials where the coefficients belong in $\mathbb{F}$, 
+\[
+a_1(1-x) + a_2x(1-x) + a_3x^2(1-x) + a_4x^3
+\]
+This is equivalently 
+\[
+a_1  - a_1 x + a_2 x - a_2 x^2 + a_3x^2 - a_3 x^3 + a_4 x^3 
+\]
+This is exactly same as the linear combination 
+\[
+b_1 + b_2 x + b_3 x^2 + b_4 x^3
+\]
+Here this linear combination equals $0$ if and only if $b_1 = b_2 = b_3 = b_4 = 0$ because we know $1,x,x^2, x^3, \ldots$ are linearly independent. Hence they also form a basis for $4-1 = 3$ hence $\mathcal P_3 (\mathbb{F})$
+
+\section*{Problem 02: 2.27(f) example} 
+The list is 
+\[
+	(1,-1,0) , (1,0,-1)
+\] 
+The condition is 
+\[
+\{(x,y,z) \in \mathbb{F}^{3}: x+y+z=0\} 
+\] 
+We can see that $x+y+z=0$ is satisfied for both of the vectors. Now, the linear combination is,
+\[
+a(1,-1,0) + b(1,0,-1) = (a+b, -a, -b) 
+\]
+If it's linearly independent then 
+\[
+a(1,-1,0) + b(1,0,-1) = (a+b, -a, -b) =\vec{0}
+\]
+if and only if $a=b=0$. We can see that 
+\begin{align*}
+	a+b &= 0 \\
+	-a &= 0 \\
+	-b &= 0 
+\end{align*}
+Hence proven $a=b=0$ hence they are linearly independent. As it spans the set wholly it's a perfect basis. 
+
+
+	\section*{Problem 03: 2B3(a)}
+
+The subspace of $\mathbb{R}^{5}$ is defined by 
+\[
+U = \{(x_1,x_2,x_3,x_4,x_5) \in \mathbb{R}^{5}: x_1 = 3 x_2 \text{ and } x_3 = 7 x_4\} 
+\] 
+A vector in this space is 
+\[
+	\left(z_1, \frac{z_1}{3}, z_2, \frac{z_2}{7}, z_3 \right)
+\]
+The map $f: \mathbb{R}^{3} \to U$ help us simply find the basis for $U$. The basis for $\mathbb{R}^{3}$ is, 
+\[
+	(1,0,0),(0,1,0),(0,0,1)
+\] 
+Mapped to $U$, we get the basis, 
+\[
+	(1, \frac{1}{3}, 0,0,0), (0,0,1,\frac{1}{7},0),(0,0,0,0,1)
+\]
+
+
+\section*{Problem 04: 2B3(b)}
+The existing basis is 
+\[
+	(1, \frac{1}{3}, 0,0,0), (0,0,1,\frac{1}{7},0),(0,0,0,0,1)
+\]
+Note that this basis cannot extend wholly to $\mathbb{R}^{5}$ because of the constraints over the set $U$. If we lift the constraint conditions and let $x_2 \neq f(x_1)$ and $x_4 \neq  g(x_3)$ where $f,g : \mathbb{R} \to  \mathbb{R}$
+then we can easily extend to the additional vectors to form the basis for $\mathbb{R}^{5}$
+\[
+	(1, \frac{1}{3}, 0,0,0), (0,0,1,\frac{1}{7},0),(0,0,0,0,1), (0,1,0,0,0),(0,0,0,1,0)
+\]
+These are obviously linearly independent from inspection. 
+
+\section*{Problem 05: 2B10}
+
+Definition of Direct Sum is for $V_1 \oplus V_2 \oplus \cdots V_l$ then it's elements can be written in only one way where $v_1 + v_2 + \cdots + v_l$ where $v_k \in V_k$. So for $V_1 \oplus V_2$, if $a \in V_1 \cap V_2$ and $a \neq  \{0\} $ then there should be only one way to write this vector. But it's a contradiction because $a \in V_1$ so linear combination of $V_1$ basis can give $a$, so as the linear combination of the basis of $V_2$ (as $V_1 \cap V_2$ means both sets has the shared members). 
+
+From the problem definition we know the set $\{u_m\} $ and $\{w_n\} $ are each linearly independent. And because $V = U \oplus W$ hence $U \cap W = \{0\} $. This means that $\{w_n\} $ cannot be written as a linear combination of $\{v_m\} $ or vice versa. This hence means $\{v_m\} $ and $\{w_n\} $ are linearly independent.
+
+If they are linearly independent, and having $V = U \oplus W$, $\{v_m\} , \{w_n\} \in V $. Thus every vector in $V$ can be written uniquely by the basis of $U$ and $V$, and hence $u_1, \ldots, u_m, w_1, \ldots, w_n$ forms the basis of $V$. 
+
+
+\section*{Problem 06}
+Note: 
+Proof of the sum of spaces and their dimensions is added in the Appendix section. 
+
+$\dim U = \dim V = m$ means the number of basis required to span $U $ and $V$ is equal. Let $\vec{u_1}, \vec{u}_2, \ldots, \vec{u}_m$ basis spans $U$. Similarly , let $\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_m$ be basis of $V$. By definition the set $\{\vec{u}_m\} $ and $\{\vec{v}_m\} $ are linearly independent. 
+
+Now if $U$ is a subspace of $V$ then $U \subset V$. If so then all the members of $U$ can be written as linearly combinations of $V$ basis. 
+\[
+	\{\vec{v}_m\}  \to \{\vec{u}_m\} 
+\]
+All the vectors $\vec{v}_m$ can be linearly combined into $ \vec{u}_m$ because $\vec{u}_m$ belong in $V$ and hence $\vec{v}_m$ basis should be able to turn into that. But because the length of the list is same, then we can do a reverse transformation and write each vector of $\vec{v}_m$ in terms of $\vec{u}_m$. If we can write the basis of $V$ in terms of $U$ basis then that basically means both vector spaces ``can" share the same basis. 
+
+If they share the same basis then they must be equal. Hence $U = V$.
+
+\section*{Problem 7: 2C13}
+Note: 
+Proof of the sum of spaces and their dimensions is added in the Appendix section. 
+
+Consider the dimension of sum of the two subspaces,
+\[
+\dim(U + W) = \dim U + \dim W - \dim (U \cap  W) = 10 - \dim(U \cap W)
+\]
+If $\dim (U \cap W) = \{0\} $ then $\dim (U + W) = \dim U + \dim W$ (which intuitively means the two vectors spaces share no elements), but then $\dim (U + V) = 10$. This is contradiction because $U,W \subset \mathbb{V}$ where $\dim \mathbb{V} = 9$. Hence $\dim(U\cap W)$ must be $1$, hence proven $U \cap W \neq \{0\} $
+
+\section*{Problem 08: 2C17}
+Note: 
+Proof of the sum of spaces and their dimensions is added in the Appendix section. 
+
+We know that 
+\[
+\dim(V_1 + V_2) = \dim V_1 + \dim V_2 - \dim(V_1 \cap  V_2)
+\] That gives us the inequality, 
+\[
+\dim(V_1 + V_2) \le   \dim V_1 + \dim V_2
+\] Similarly, 
+\[
+\dim(V_1 + V_2 + V_3) = \dim (V_1 +  V_2) + \dim V_3 - \dim((V_1 +  V_2) \cap V_3) 
+\] 
+\[ \dim(V_1 + V_2 + V_3) = \dim V_1 + \dim V_2 - \dim(V_1 \cap  V_2) + 
+\dim V_3 - \dim((V_1 +  V_2) \cap V_3) 
+\]
+We can find the trivial inequality 
+\[
+\dim(V_1 + V_2 + V_3) \le \dim V_1 + \dim V_2 + \dim V_3
+\]
+Like so we can see that this can be generalized to any length of subspaces because the $ \dim (U \cap V)$ terms are always subtracted from the sum $\dim U + \dim V$. Hence proven. 
+\[
+\dim (V_1+\ldots+V_m) \le \dim V_1 + \ldots + \dim V_m
+\] 
+
+\section*{Problem 09}
+Note: 
+Proof of the sum of spaces and their dimensions is added in the Appendix section. 
+
+Definition of Direct Sum is for $V_1 \oplus V_2 \oplus \cdots V_l$ then it's elements can be written in only one way where $v_1 + v_2 + \cdots + v_l$ where $v_k \in V_k$. So for $V_1 \oplus V_2$, if $a \in V_1 \cap V_2$, then there should be only one way to write this vector. But it's a contradiction because $a \in V_1$ so linear combination of $V_1$ basis can give $a$, so as the linear combination of the basis of $V_2$ (as $V_1 \cap V_2$ means both sets has the shared members). 
+
+Hence there can be no shared vectors hence $V_1 \cap V_2 = \{0\} $. 
+
+Now we know
+\[
+\dim (V_1 + V_2) = \dim V_1 + \dim V_2 - \dim(V_1 \cap  V_2)
+\] 
+If it's a direct sum then $\dim(V_1 \cap  V_2) = 0$, 
+\[
+\dim (V_1 \oplus V_2) = \dim V_1 + \dim V_2
+\] 
+We can try 
+ \[
+\dim ((V_1 \oplus V_2) \oplus V_3) = 
+\dim(V_1 \oplus V_2) + \dim (V_3) =
+\dim V_1 + \dim V_2 + \dim V_3
+\]
+Like so we can extend this sum for any number $k$, hence proven 
+\[
+\dim (V_1 \oplus V_2 \oplus V_3 \oplus \cdots \oplus V_m) = \dim V_1 + \dim V_2 + \dim V_3 + \cdots 
++ \dim V_m
+\] 
+
+\section*{Problem 10}
+\begin{itemize}
+	\item Case $U = \{0\} $\\ $\{0\} \in \mathbb{F}^{3}$ because of additive inverse condition on vector space. So if $U = \{0\} $ then $U \in \mathbb{F}$ and hence $U \subset \mathbb{F}^{3}$. 
+	\item Case $U = \text{span}(\vec{v})$ such that $\vec{v} \in  \mathbb{F}^{3}$ \\
+		If $\vec{v} \in \mathbb{F}^{3}$ then $\{a \vec{v} \in \mathbb{F}^{3} : a \in \mathbb{F}\} $ from vector space conditions. But this is also the exact same definition of a span $\text{span}(\vec{v})$ so $U \subset \mathbb{F}^{3}$.
+	\item Case $U = \text{span}(\vec{v}, \vec{w})$ while $\vec{v}, \vec{w} \in \mathbb{F}^{3}$ \\
+	Given $\vec{v}, \vec{w} \in  \mathbb{F}^{3}$ and if $\vec{v}$ and $\vec{w}$ are linearly independent then from the conditions of a vector space $\{a \vec{v} + b \vec{w} \in \mathbb{F}^{3}: a,b \in  \mathbb{F}\} $. But turns out this is exactly the same definition of a span because $\text{span}(\vec{v},\vec{w})= \{a \vec{v}+ b \vec{w} : a,b \in \mathbb{F}\} $.  So $U \subset \mathbb{F}^{3}$. 
+\item Case $U = \mathbb{F}^{3}$ \\ 
+	Then $U$ is exactly same as $\mathbb{F}^{3}$ hence it also must have all the members of $\mathbb{F}^{3}$ hence a subset (that happens to be equal. )
+\end{itemize}
+
+
+\section*{Proof of $\dim(V_1 + V_2) = \dim V_1 + \dim V_2 - \dim(V_1 \cap  V_2)$ } 
+Consider $\{v_m\} $ to be a basis for $V_1 \cap  V_2$ hence $\dim (V_1 \cap  V_2) = m$. Being the basis this set $\{v_m\}  $ is independent in both $V_1$ and $V_2$. 
+
+Fetching some other vectors $\{u_j\} $ with this already existing $\{v_m\} $ can give us the basis for $V_1$. The dimension of $V_1 $ will be hence $m+j$. Similarly for $V_2$ considering a list of vectors $\{w_k\} $ its dimension is $m + k$. 
+
+\[
+\dim(V_1 + V_2) = m + j + k = (m+j) + (m+k) - m = \dim V_1 + \dim V_2 - \dim (V_1 \cap  V_2)
+\]
+$\{v_m)\} $ is a basis itself so it's linearly independent. Because it unites with $\{u_j\} $ to form basis for $V_1$ then the set $\{v_m\} \cup \{u_j\} $ should also be linearly independent. Similarly $\{w_k\} $ is linearly independent because it forms basis for $V_2.$ 
+
+\end{document}

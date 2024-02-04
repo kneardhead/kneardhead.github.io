@@ -1,0 +1,165 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Class 11}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section*{Some Review}
+\df{
+A complex valued function defined from open subset of a complex plane is holomorphic if it has a complex derivative at every point. And $f'$ is continuous. In Brown and Churchill they don't mention but it's automatically proven there in the book using Goursat's Theorem.
+}
+
+\df{
+A complex valued function defined on an open set is analytic if at each point, say $z_0$, it agrees with the Taylor's series
+\[
+\sum_{n=0}^{\infty} a_n (z-z_0)^{n}
+\] 
+In the neighborhood of $z_0$. This is automatically holomophic because you can take integral how many times you want. 
+}
+
+\section*{Theorems mentioned in Class} 
+\subsection*{1}
+At any point of a function's domain if we can take derivative then we will call it holomorphic. If we can turn it into a series then it is analytic.
+
+
+If $f$ is real valued and holomorphic (that means you can take derivative anywhere) then $f$ is constant. Take the Cauchy Riemann equation and see that one side is purely real and other side is purely imaginary then the function is just a constant real valued function. ($f$ is real valued already, then the imbalance happens.)
+
+\subsection*{2}
+If $f$ is holomorphic and $|f|$ is constant, then $f$ is constant. 
+\[
+	|f|^2 = f \overline{f} 
+\]
+Taking $\frac{\partial}{\partial x}$ we get
+\[
+0 = f_x \overline{f} + f \overline{f_x}
+\] 
+Similarly for $\frac{\partial }{\partial y}$, 
+\[
+0 = f_y \overline{f} + f \overline{f_y}
+\] 
+This can be rewritten as 
+\[
+	0 = \frac{f_y}{i} \overline{f} - f \frac{\overline{f_y}}{i}
+\]
+Hence 
+\[
+f_x = \frac{f_y}{i} = - \frac{f_y}{i} 
+\] 
+\[
+f_y = f_x = 0
+\] 
+
+\subsection*{3} 
+Cauchy Integral formula 
+\[
+f(z) = \frac{1}{2\pi i} \int_C \frac{f(s)}{s-z} \,\mathrm{d} s
+\]
+
+\subsection*{4}
+Maximum modulus principle 
+\thm{
+This is quite important for holomorphic functions. It says suppose $f$ is holomorphic on a connected open set. And suppose $z_0$ the value of the modulus of $|f(z_0)|$ is $\ge $ of all $|f(z)|$ in the neighborhood of $z_0$. 
+
+Connected means I can go to one set to the other with a path contained in the set. 
+
+Then $f$ is constant! You cannot have mountain peaks in Holomorphic functions.  
+}
+\vspace{0.2cm}
+\pf{
+Let's use the Cauchy Integral formula on a disk centered at $z_0$. Consider this disk to be small. Imagine a point $z_0$ and there is a ball around it of radius $\epsilon$ (I don't care). Now I am going to use the cauchy 
+\[
+	f(z_0) = \frac{1}{2 \pi i} \int_{|s-z_0| =r} \frac{f(s)}{s-z_0} \, \mathrm{d} s
+\] 
+We will find the $f(z_0)$ only using the circle around $z_0$. Consider $s = z_0 + r e^{i\theta}$ where $\theta \in [0, 2\pi ]$.
+\[
+= \frac{1}{2 \pi i} \int_0^{2\pi }\frac{f(z_0 + r e^{i \theta})}{r e ^{i \theta}} r i e^{i \theta} \mathrm{d} \theta
+\] 
+\[
+f(z_0) = \frac{1}{2 \pi } \int_0^{2\pi } f(z_0 + r e^{i\theta}) \mathrm{d} \theta
+\]
+Now considering the absolute value,
+\[
+|f(z_0)| = | \frac{1}{2 \pi } \int_0 ^{2\pi } f(z_0 + r e^{i\theta}) \mathrm{d} \theta | 
+\le \frac{1}{2\pi } \int_0 ^{2 \pi } | f(z_0 + r e^{i \theta} ) |\mathrm{d}  \theta 
+\]
+\[
+0 \le \frac{1}{2\pi } \int_0^{2 \pi } ( | f(z_0 + r e^{i \theta} ) | - |f(z_0) | ) \mathrm{d} \theta
+\] 
+$|f(z_0)|$ is greater than or equal to it's neighborhood so up there we end up getting negative values which is a contradiction. So it can only be equal to  $0$. This proves $f$ has constant value.  
+
+This only proves for this neighboring region to $z_0$. But let's consider another point inside the limit that is near by $z_0$ but not $z_0$ itself. Consider neighborhood of that function. Like an epidemic it will spread. 
+
+So $f$ is constant everywhere. 
+}
+
+Proof of $\int_a^{b} g(t) \mathrm{d} t = I$ for $g$ complex valued, and to show that the modulus of $I$ is less than or equal to the modulus of the integral of $|g(t)|$. 
+
+\pf{
+\[
+I = | I | e^{i \theta}
+\] 
+We will write 
+\[
+|I | = e^{- i \theta} \int_a^b g(t) \mathrm{d} t
+\] 
+We didn't do anything random. Pushing that into the integral sign, 
+\[
+= \int_a^b e^{-i \theta} g(t) \mathrm{d} t
+\]You can do this for $\theta$ being constant. The left side is purely real. But the right side function is not necessarily real. Now only integrating the real part is enough, 
+\[
+= \int_a^b \text{Re}(e^{-i \theta} g(t) )\mathrm{d} t
+\]
+We can replace this with a larger real valued function
+\[
+= \int_a^b \text{Re}(e^{-i \theta} g(t) )\mathrm{d} t \le 
+\int_a^b | e^{-i \theta} g(t) | \mathrm{d} t = \int_a^b |e^{-i \theta}| |g(t)| \mathrm{d} t 
+\]
+\[
+= \int_a^b |g(t) | \mathrm{d} t
+\] 
+}
+
+\section{Liouville's Theorem} 
+Suppoe $f$ is holomorphic on all of $\mathbb{C}$ and suppose $f$ is bounded. 
+\[
+|f(z)| \le M 
+\] 
+For all $z$. Then the amazing conclusion is that $f$ itself is constant. 
+
+\pf{
+I (Frank Jones) want to show that $f'(z) = 0$ with $\forall z$. Consider a $z$ and saying $f'(z)$ is zero there. 
+
+Cauchy Integral Formula 
+\[
+	f(z) = \frac{1}{2 \pi i } \int_{|s-z| = R} \frac{f(s)}{s-z} \mathrm{d} s
+\]
+
+\[
+	f'(z) = \frac{1}{2 \pi i } \int_{|s-z| = R} \frac{f(s)}{(s-z)^2} \mathrm{d} s
+\]
+\[
+|f'(z)| \le \frac{1}{2 \pi } \int \frac{|f(s)|}{|s-z|^2} |\mathrm{d} s|
+\] 
+Limmerick 
+\[
+s = z + r e^{i \theta}
+\] \[
+\mathrm{d} s = i r e^{i \theta }\mathrm{d} \theta
+\] 
+\[
+|\mathrm{d} s| = r \mathrm{d} \theta
+\] 
+
+So we have 
+\[
+\le \frac{1}{ 2 \pi } \int_0^{2 \pi } \frac{M}{R^2} R \mathrm{d} \theta
+\] 
+\[
+ = \frac{M}{R}
+\] $R$ can be as large as I please and $f'(z) = 0$
+
+}
+\end{document}
