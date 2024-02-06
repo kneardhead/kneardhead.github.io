@@ -1,0 +1,75 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Class 12}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Maximum Modulus Principle} 
+If $f$ is holomorphic on a connected open set, and  if $ x_0$ is in the set, and 
+\[
+ \mid f(x) \mid  \le  \mid  f(x_0)  \mid  
+\] for all $x$ in the set, then $f$ is constant. 
+
+Proof was shown in Friday. It's the same one that spread like an epidemic.
+
+\subsection*{Corollary} 
+Suppose $f$ is continuous on a closed bounded set of the complex plane and holomorphic on the interior of that set. Then we know that the modulus of $f(z)$ attains a maximum value $|f(z)|$. Any real value continuous function on a closed bonded set obtains it's minimum value and maximum value (it's a fact of calculus 01 if in one dimension). 
+
+\section*{Minimum Modulus Principle} 
+Suppose $f$ is holomorphic on a connected open open set and $|f |$ attains its minimum value at $z_0$ : 
+\[
+|f(z)| \ge |f(z_0)| \quad \forall z
+\] 
+If $|f(z_0)| > 0 $ then $\frac{1}{f}$ satisfies the maximal condition. Hence $f$ is constant. 
+
+Remark: $|f(z)|$ can attain a minimum value in the set and not be constant $|f(z_0)
+| = 0$. 
+
+\subsection*{Corollary} 
+Similar. 
+
+\section*{A cool theorem}
+\thm{Every holomorphic function is analytic. }
+\pf{\vspace{0.3cm}
+Assume $f$ is holomorphic on an open set, and let $z_0$ be a point in that set. Consider a region and a point $z_0$, and draw circle centered at $z_0$ of positive radius that is still contained in the open set. Any small one that doesn't hit the boundary. Call the circle as $\gamma$ centered at $z_0$. Fact known is the taylor series looks like for 
+\[
+g(z) = \sum_{n=1}^{\infty} c_n (z-z_0)^{n}
+\] Where $c_n = \frac{g^{(n)} (z_0)}{n!}$. 
+We will use the Cauchy Integral Theorem 
+\[
+f(z) = \frac{1}{2 \pi i} \int_\gamma \frac{f(s)}{s- z} \mathrm{d}  s
+\]
+Call $z$ such that $|z-z_0| < r$. We have seen 
+\[
+f^{(n)}(z) = \frac{n!}{2 \pi i } \int_\gamma \frac{f(s)}{(s-z)^{n+1}} \mathrm{d}  s
+\]
+\[
+\frac{1}{s-z} = \frac{1 }{(s-z_0) - (z-z_0)}
+\] 
+\[
+ = \frac{1}{s-z_0} \frac{1}{1- \frac{z-z_0}{s-z_0}}
+\]
+Geometric Series 
+\[
+\frac{1}{s-z_0} \sum_{n=0}^{\infty} \left(\frac{z-z_0}{s-z_0}\right)^{n}
+\] 
+\[
+\frac{1}{s-z_0} \sum_{n=0}^{\infty} \frac{(z-z_0)^{n}}{(s-z_0)^{n+1}}
+\]
+Therefore the first thing to do is to move the summation symbol outside. 
+\[
+\frac{1}{2 \pi i} \sum_{n=0}^{\infty} \int_\gamma \frac{f(s) (z-z_0)^{n} }{(s-z_0)^{n+1} } \mathrm{d} s
+\]
+\[
+= \frac{1}{\pi 2 i} \sum_{n=0}^{\infty} (z-z_0)^{n} \int_\gamma \frac{f(s)}{(s-z_0)^{n+1}} \mathrm{d}  s
+\] 
+The distance from $z_0$ to the boundary of open set where $f$ is defined. 
+}
+
+
+
+\end{document}

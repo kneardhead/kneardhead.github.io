@@ -10,4 +10,152 @@
 \df{
 $f : D \to  \mathbb{R}^{m}$ and $D \in R^{n} $ as an open set. We say that $f$ is $C^{1}$ on $D$ if all of $f$-s partial derivatives (first order) exist and are continuous on $D$.
 }
+
+Recall, $f,g$ is $\mathbb{R}\to \mathbb{R}$ and if 
+\[
+h(x) = g(f(x))
+\] then 
+$h'(a) = g'(f(a)) \cdot f'(a)$
+For small changes we can show,
+\[
+\Delta x_1 = f'(a) \mathrm{d} x
+\] 
+\[
+\Delta x_2 = g'(f(a)) \Delta x_1
+\]
+I am thinking about using the linear operator twice. 
+
+212 Version of Chain rule is
+\[
+z = \text{function of } u, v
+\] 
+$u,v = \text{function of } x, y$ 
+\[
+	(u,v) = f(x,y)
+\] 
+\[
+z = g(u,v) = g(f(x,y))
+\] 
+\[
+\frac{\partial z}{\partial x} = 
+\frac{\partial z}{\partial u} 
+\frac{\partial z}{\partial x} + 
+\frac{\partial z}{\partial v} 
+\frac{\partial v}{\partial x}
+\] 
+\begin{figure}[ht]
+    \centering
+    \incfig{map-of-chain-rule-for-212}
+    \caption{Map of chain rule for 212}
+    \label{fig:map-of-chain-rule-for-212}
+\end{figure}
+
+\[
+z = g(u,v)
+\] 
+\[
+	(u,v) = f(x,y)
+\] 
+\[
+	\mathrm{d} g_{(u_0, v_0)} = 1 \times  2 \text{ matrix } \mathrm{d} f_{x_0,y_0} = 2\times 2 \text{ matrix } 
+\]
+The $1\times 2$ matrix is $\begin{pmatrix} \frac{\partial z}{ \partial u} & \frac{\partial z}{\partial v} \end{pmatrix} $, and the $2\times 2$ above is 
+\[
+	\begin{pmatrix} \frac{\partial u}{\partial x} & \frac{\partial u}{\partial y} \\
+	\frac{\partial v}{\partial x} & \frac{\partial v}{\partial y}\end{pmatrix} 
+\] 
+\[
+z = h (x,y) = g(f(x,y))
+\] 
+\[
+	\mathrm{d} h_{(x_0,y_0)} = \mathrm{d} g_{(u_0,v_0)} \cdot \mathrm{d} f_{(x_0,y_0)}  
+\] 
+
+\section*{A Good Beispiel for this} 
+Suppose $f: \mathbb{R}^2 \to \mathbb{R}$ is $C^{1}$ (truly differentiable). Suppose $z = f(x,y)$ and 
+\[
+\frac{\partial z}{ \partial x} (5,5) = 2
+\] 
+\[
+\frac{\partial z}{ \partial y } (5,5) = 4
+\] 
+We know how $z$ changes now. Let's change to polar coordinates. What is $\frac{\partial z}{\partial r}$ and $\frac{\partial z}{ \partial \theta}$? 
+\[
+	(x,y) = p(r, \theta)
+\] We know that 
+\[
+\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} r \cos \theta \\ r \sin \theta \end{pmatrix} 
+\]
+The line in polar makes a coordinate $(5 \sqrt{2} , \frac{\pi}{4})$. So, 
+\[
+	\begin{pmatrix} \frac{\partial z}{ \partial r} & \frac{\partial z}{\partial \theta} \end{pmatrix} = 
+	\mathrm{d} f_{(5,5)} \cdot \mathrm{d} p_{(5\sqrt{2} , \frac{\pi}{4}  )} 
+\] 
+\[
+	= \begin{pmatrix} 2 & 4 \end{pmatrix} 
+	\begin{pmatrix} \cos \theta & - r \sin \theta \\ 
+	\sin \theta & r \cos \theta \end{pmatrix} 
+\]
+\[
+	= \begin{pmatrix} 2 & 4 \end{pmatrix}  
+	\begin{pmatrix} \frac{\sqrt{2} }{2} & -5 \\ 
+	\frac{\sqrt{2} }{2} & 5\end{pmatrix}  = d (f \cdot  p)_{(5 \sqrt{2} , \pi / 4 )}
+\] 
+
+\section*{The Gradient} 
+Take $f: \mathbb{R}^{n} \to  \mathbb{R}$ here if $f$ is differentiable at $\vec{a}$ then $df_{\vec{a}}$ is a  \[
+	\begin{pmatrix} \frac{\partial f}{\partial x_1} & \cdots & \frac{\partial f}{\partial x_n} \end{pmatrix} 
+\] 
+\[
+	D_{\vec{v}} f(\vec{a}) = 
+	\begin{pmatrix} \frac{\partial f}{\partial x_1} & \cdots & \frac{\partial f}{\partial x_n} \end{pmatrix} \vec{v}
+\] 
+
+\[
+	D_{\vec{v}} f(\vec{a}) = 
+	\begin{pmatrix} \frac{\partial f}{\partial x_1} \\ \vdots \\ \frac{\partial f}{\partial x_n} \end{pmatrix} \cdot \vec{v}
+\]
+So we just did a $df_{\vec{a}} ^{t}$ transpose of the original that is in $\mathbb{R}^{n}$.
+
+\df{
+If $f: \mathbb{R} ^{n} \to \mathbb{R}$ then the gradient of $f$ at $\vec{a}$ at $\vec{a}$ in $\mathbb{R}^{n}$ is 
+\[
+\nabla f (\vec{a}) 
+=
+\begin{pmatrix} \frac{\partial f}{\partial x_1} \\ \vdots \\ \frac{\partial f}{\partial x_n} \end{pmatrix}
+\]
+If $f$ is differentiable at $\vec{a}$ then $D_{\vec{v}} f(\vec{a}) $ is $\nabla f(\vec{a}) \cdot \vec{v}$ for all unit vectors of $\vec{v}$. 
+\[
+  \mid \nabla (f(\vec{a}))  \mid  \cdot  \mid \hat{v} \mid  \cos \theta = 
+   \mid \nabla f(\vec{a}) \mid  \cos \theta
+\]
+Using $\cos \theta $ at max $ \mid \nabla f(\vec{a})  \mid  $ is the maximum. 
+\begin{itemize}
+	\item The largest possible derivative
+	\item Direction is where the derivative is largest 
+	\item Let $C = f(\vec{a})$ and then $X = f^{-1} (\{C\} )$. Set of all point thats $f$ maps to $C$. This is called ``Leveled Hypersurface", eg 
+		\[
+		f(x,y,z) = x^2 + y^2 + z^2
+		\]  
+		\[
+		f(1,1,1) = 3
+		\] 
+		Then $f^{-1}(\{3\} )$ level hypersurface for $f$ is set of all points that becomes $3$ so that is a sphere. If $p:\mathbb{R}\to \mathbb{R}^{n}$ is a curve (differentiable) with $p(t) \in  X$ for all $t$ and $p'(b) = \vec{a}$ then $f(p(t)) = C$ constantly. 
+		\[
+			\left(f (p(t ) \right) ' = 0
+		\] 
+		So 
+		\[
+			\mathrm{d} f_{p(b) } \cdot p'(b) = 0 
+		\] 
+		\[
+		\nabla f(p(\vec{b})) \cdot  p'(b) = 0
+		\] 
+		\[
+		\nabla f(\vec{a}) \cdot p'(b) = 0
+		\] 
+		Gradient is perpendicular to any curve travelling along the surface on $\vec{a}$. This is a equipotential.  
+\end{itemize}
+}
+
 \end{document}
