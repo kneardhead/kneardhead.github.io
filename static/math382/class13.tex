@@ -1,0 +1,74 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Class 13}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+We showed in the last class that every holomomorphic functions defined on an open set is also analytic. 
+
+The theorem about the zeroes of an analytic function. $\sin \frac{1}{z}$ is holomorphic, analytic on the complex plane. But without the origin. And where are it's zeros? $\frac{1}{z} = n \pi $. A power series centered at $z_0$ cannot be $0$ on a sequence converging to $z_0.$ 
+
+\thm{
+If $f$ is holomorphic on a connected open set, the zeroes of $f$ cannot have a limit point in the open set. 
+}
+
+\pf{
+By contradiction we consider a sequence 
+ \[
+ z_1, z_2 , \ldots , f(z_L) = 0
+ \] 
+ such that the sequence converge and 
+ \[
+ \lim_{n \to \infty} z_n \in \text{open set}
+ \]
+ One limit point of zeroes then epidemically spreads to make the whole sequence become zero. 
+}
+
+Commented ,,Very powerful". New proof to $e^{x+y} = e^{x}e^{y}$. 
+
+\begin{itemize}
+	\item Calc 2 gives $e^{x+y} = e^{x} e^{y}$. 
+	\item Let $x \in \mathbb{R}$ be fixed and let $f(x ) = e^{x+z} - e^{x}e^{z}$. For $f$ fixed for $\mathbb{R}$ we have 0.  We set a theorem $f=0$ for $z \in  \mathbb{C}$. 
+	\item Let $z \in  \mathbb{C}$ be fixed and consider the holomorphic function of $w.$ \[
+	e ^{w+z} = e^{w} e^{z}
+	\] 
+	The function $e^{x+z} - e^{x} e^{z} = 0$ for $x \in  \mathbb{R}$. 
+\end{itemize}
+
+Best version of maximum modulus principle. 
+
+\thm{
+Suppose $f$ is holomorphic on a connected open set and at some $z_0$, 
+\[
+|f(z)| \le |f(z_0)|
+\] 
+For all $z $ in some neighborhood of $z_0$. Conclusion $f$ is constant. Maximum modulus principle says the disk says is constant and we can epidemically make it spread. Theorem, suppose $f$ is holomorphic in a connected open set and $|f|$ has local minimum at some point in the set then $f=0$.   
+}
+
+\thm{
+Suppose $f$ is holomorphic on all of $\mathbb{C}$. And suppose that the limit
+\[
+\lim_{z \to \infty} |f(z)| \text{ is } \infty
+\]
+We just say the function grows with radius. Now set $f(z) = 0$ for some $z$. I am thinking the origin point doesn't matter.  
+}
+\pf{
+Proof by contradiction, suppose, the contradiction would be $f(z)$ is never $0$. Then $\frac{1}{f}$ is holomorphic on the whole plane. And $\frac{1}{f}$ and since $| \frac{1}{f}| \to 0$ as $z\to \infty$, $1 / f$ has a minimum. So $\frac{1}{f} = 0$ at some point and this is a contradiction. 
+}
+Fundamental Theorem of Algebra 
+
+Every polynomial of $f(z)$ of positive degree is zero at some point. Proof $f(z) = C z^{n} + \ldots $. 
+
+Another proof of Liouvilles Theorem,
+\[
+f \text{ holomorphic on } \mathbb{C}
+\] 
+and $|f(z)| \le M \quad \forall z$ and $f$ is constant.  Assume $f$ is never $0$, then $\frac{1}{f} $ is holomorphic and tends to $0$ at infinity. $\frac{1}{f}$ is constant. 
+
+
+
+
+\end{document}

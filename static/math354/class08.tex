@@ -1,0 +1,136 @@
+\documentclass[letter]{article}
+\usepackage[ monocolor]{ahsansabit}
+
+\title{Honors Linear Algebra : : Class 08}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+\df{
+\[
+\text{null }T \subset V \to  W 
+\]
+And $\text{range }T$ belongs in $W$. 
+\[
+\dim V = \dim(\text{null} T ) + \dim(\text{range} T)
+\] 
+}
+
+\section*{Problem 28}
+Suppose $D \in \mathcal L(\mathcal P( R))$ and suppose $\deg(D p ) = \deg(p) -1$ for every non-constant $p$. Prove that $D$ is surjective. 
+
+It is enough to prove that each $x ^{m} \in  \text{range }D$. 
+
+Define the vector space $V = \text{span}\{x,x^2, \ldots, x^{m}\} $. And here $\dim V = m$. Define 
+\[
+T= D  \mid_V
+\] $D$ is restricted just to $V$ 
+Now
+\[
+\deg Tx = \deg Dx = 0
+\] 
+\[
+\deg Tx^2 = \deg Dx^2 = 1
+\]
+\[
+\deg Tx^{m} = \deg Dx^{m} = m - 1
+\] 
+\[
+\dim (\text{range}) T = m
+\] 
+\[
+\dim(\text{null} T ) : p \in \text{null} T \implies T p = 0
+\] 
+From here 
+\[
+\deg Dp = 0
+\] 
+Hence $p = 0$.
+
+Bro this needs correctoin lmao.
+
+\section*{Problem 15} 
+Suppose there exists a linear map on $V$ whose null space and range are both
+finite-dimensional. Prove that $V$ is finite-dimensional.
+
+Let $v_1, \ldots, v_m$ be the basis for $\text{null } T$. 
+
+Let $w_1, \ldots, w_n$ be the basis for $\text{range }T$. 
+
+$w_k$ is $T (u_k)$ of some random vector for $u_k \in V$. Note $1 \le k \le n$. Now 
+\[
+v_1 , \ldots, v_m , u_1, \ldots, u_n \in V
+\]
+
+Let $x = c_1 v_1 + \ldots + c_m v_m + d_1 u_1 + \ldots + d_n u_n$. 
+
+\[
+T x = d_1 w_1 + \ldots + d_n w_n
+\] 
+\[
+---
+\] 
+Let $v \in  V$ then 
+\[
+T v= c_1 w_1 + \ldots + c_n v_n 
+\] 
+\[
+= c_1 T u_1 + \ldots c_n T u _n
+\] 
+Hence 
+\[
+v - c_1 u_1 - \ldots -c_n u_n \in  \text{null }T
+\] 
+It equals the linear combination of $v_1, \ldots, v_n$ and $v $ is a linearly combination of $u_1 , \ldots, u_n, v_1, \ldots , v_m$.
+
+
+\section*{Problem 16} 
+Suppose $V$ and $W$ are finite dimentional. Prove that there exists a linear map between the two from $V$ to $W$ if and only if $\dim V \le \dim W$.
+
+Let's start with a map. Assume we have $T$ makes $V\to W$ exists injectively. Fundamental theorem says the dimension of $V$ is 
+\[
+\dim V = \dim \text{null } T + \dim \text{range }T = 0 + \dim (\text{range } T) \le \dim (W)
+\]
+Converse solution we assume dimension of $\dim V$ is less than or equal to the dimension of $\dim W$ we need a linear map $T$ here. The only way to create a map is the linear combination of the basis elements. Let 
+\[
+v_1 ,\ldots, v_m \in  V \text{ be a basis}
+\] 
+\[
+w_1 ,\ldots, w_m \in  w \text{ be a basis}
+\] 
+We already know that $m \le n$. So define $T$ the linear map of $\mathcal L (V, W)$ 
+\[
+Tv_1 = w_1
+\] 
+\[
+T v_m = w_m
+\] 
+(We took a shortcut though), actual definition of $T$ 
+\[
+T ( c_1 v_1 + \ldots + c_m v_m) = c_1 w_1 + \ldots + c_m w_m 
+\]
+\[
+T (\ldots) = 0 \implies c_1 = \ldots = c_m = 0
+\]
+Original vector is $0 $. 
+Pretty clear $T$ is injective.  
+
+\section*{Problem 17} 
+
+\section*{Complexification of a Vector Space} 
+\[
+1(x,y) = (x,y)
+\] 
+\[
+i (x,y) = (-y, x)
+\]
+Supposing $V$ is a real vector space. Then the complexification. With scalar in $\mathbb{C}$ and scalar multiplication is 
+\[
+1 (v_1, v_2) = (v_1, v_2)
+\] 
+\[
+i (v_1, v_2) = (-v_2, v_1)
+\] 
+
+\end{document}

@@ -1,0 +1,110 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 14}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+For $f:\mathbb{R}^{n}\to \mathbb{R}$ the first order derivatives are 
+\[
+\frac{\partial f}{\partial x_1} , \frac{\partial f}{\partial x_2}
+\] There are are all $\mathbb{R}^{n}$ to $\mathbb{R}$.
+
+Differentiate $\partial f_{x_i}$ with respect to $x_j$, so 
+\[
+\frac{\partial}{\partial x_j} \left( \frac{\partial f}{\partial x_i}\right)
+\] In more condensed form 
+\[
+	\frac{\partial ^2 f}{\partial x_j \partial x_i}= \left(f_{x_i} \right) _{x_j}
+\]
+
+An example can be 
+\[
+f(x,y) = x \sin (y-x) + y \sin (x+y) - y
+\] 
+\[
+f_x = \sin (y-x) + x \cos (y-x) (-1) + y \cos (x+y) \cdot 1
+\]
+\[
+f_y = x \cos (y-x) + \sin (x+y) + y \cos (x+y) \cdot  1 - 1
+\] 
+\[
+	f_{x x}= \cos (y-x) \left(-1\right) - \cos (y-x) + x \sin(y-x) (-1) - y \sin(x+y)
+\] 
+\[
+	f_{y y } = -x \sin (y-x) + \cos (x+y) + \cos (x+y) - y \sin(x+y)
+\] 
+\[
+f_{xy}= \cos(y-x) + x \sin(y-x) + \cos(x+y) - y\sin(x+y)
+\]
+\[
+	f_{yx}= \cos(y-x) + x \sin(y-x) + \cos(x+y) - y\sin(x+y)
+\] 
+
+\section*{Clairaut's Theorem}
+\thm{
+If $f$ is $C^{2}$, not only the partial derivatives exist but also the function is continuous. So at some point $\vec{a}$ then mixed partials are equal.
+\[
+\frac{\partial^2 f}{\partial x_i \partial x_j} = \frac{\partial^2 f}{\partial x_j \partial x_i}
+\] 
+}
+
+\pf{
+For simplicity write $f$ as $f(x,y)$. Let 
+\[
+\vec{a} = (x_0, y_0)
+\] 
+Define 
+\[
+S (\Delta x, \Delta y) = f(x_0 + \Delta x, y_0 + \Delta y) - f(x_0 + \Delta x, y_0	) 
+- (f(x_0, y_0 + \Delta y) - f(x_0, y_0))	
+\]
+
+Define another function $g(x)$ 
+\[
+g(x) = f(x, y_0+\Delta y) - f(x, y_0)
+\]
+Then 
+\[
+S (\Delta x , \Delta y) = g(x_0 + \Delta x) - g(x_0)
+\] 
+Using the mean value theorem on $G$ because it is a single variable function, and $g$ is also differentiable because $f$ is differentiable and we have single order and this is going to be
+\[
+= \Delta x g'(c) \text{ for some $c$ between $x_0$ and $x_0 + \Delta x$}
+\]
+\[
+= \Delta x 
+\left(
+f_x (c, y_0 + \Delta y) - 
+f_x (c, y_0) 
+\right) = 
+\Delta x 
+\left(
+	\Delta y f_{xy} (c, d ) 
+\right)
+\text{ for some $d$ between $y_0$ and $y_0 + \Delta y$ as Mean Value Theorem}
+\]
+So 
+\[
+\frac{S (\Delta x, \Delta y)}{\Delta x \Delta y} = 
+f_{xy} (c,d)
+\] 
+Here $c,d$ is some coordinate in the rectangle. But as $\Delta x, \Delta y \to  0$ we need $c,d \to  0$ and hence the position become $\vec{a} = (x,y)$. Using continuity 
+\[
+	f_{xy} (c,d) \to f_{xy} (\vec{a})
+\] This is the limit as $\Delta x, \Delta y \to  0$ as $\lim_{\Delta x, \Delta y \to 0} S (\Delta x, \Delta y) / \Delta x \Delta y = f_{xy}(\vec{a}) $. We can do the exact same process in the opposite order we can simply form the $f_{yx}$
+}
+
+Partial differentiation draw a point $\vec{a}$ and extend it two both directions by $\Delta x$ and $\Delta y$, so you have a rectangle of $\Delta x$ and $\Delta y$ dimensions. 
+
+\section*{Taylor Polynomial}
+Whats the second order Taylor Polynomial for $f$ at $x=a$? 
+
+\[ f(x) \approx 
+f(a) + \frac{f'(a) }{1 ! } (x-a) + 
+\frac{f''(a) }{2! }(x-a)^2
+\] When $x $ is near $a$. Why is the $2 !$ there? Because we want the second derivative to match the left side of the equation.  
+
+\end{document}

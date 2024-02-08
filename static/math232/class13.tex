@@ -1,0 +1,100 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 13}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+A gradient points towards the greatest directional derivative. The norm is the greatest derivative and it's perpendicular to the $p(t)$ that lives on the level surface. 
+
+This perpendicular condition ends up causing a consequence. If the level surface of $f$ through $\vec{a}$ has a tangent hyperplane at $\vec{a}$ then $\nabla f(\vec{a})$ is $\perp$ is tangent to hyperplane. 
+
+An example is 
+ \[
+ f(x,y,z) = x^2 + y^3 + z^{4}
+ \] Find the tangent plane to the surface $x^2 + y^3 + z^{4} = 3$ at $(1,1,1)$. 212 answer is $ \nabla f = \langle 2x, 3y^2, 4z^3 \rangle = \langle 2,3,4 \rangle$. This vector is perpendicular to the tangent plane. A unique plane should be perpendicular to this line. 
+
+ Gradient is only perpendicular to the hyperplane. Only do the equipotential idea! 
+
+ \section{Chain Rule}
+ \[
+ f:\mathbb{R}^{n} \to \mathbb{R}^{m}
+ \] 
+ \[
+ g : \mathbb{R}^{m} \to \mathbb{R}^{p}
+ \] 
+ $f$ is diff at $\vec{a}$ and $g$ is diff at $f(\vec{a})$. Then 
+ \[
+ h = g \cdot  f
+ \]
+\[
+\boxed{
+	\mathrm{d} h _{\vec{a}} = \mathrm{d} g_{f(\vec{a})} \cdot  \mathrm{d} f_{\vec{a}}
+}
+\] 
+Basic idea is what happens if we go little bit away from $\vec{a}$? Let's say $h$, then 
+\[
+	f(\vec{a}+ \vec{h})  \approx f(\vec{a}) + \mathrm{d} f_{\vec{a}} (\vec{h})
+\] 
+Now consider $h(\vec{a} + \vec{h} ) = g(f(\vec{a} + \vec{h}))$, hence 
+\[
+	\approx g(
+	f(\vec{a}) + \mathrm{d} f_a (\vec{h}) ) \approx 
+	g(f(\vec{a})) + 
+	\mathrm{d} g_{f(\vec{a}) } ( \mathrm{d} f_{\vec{a}} (\vec{h}))
+\]
+For rigorous we just work on how approximate is it here. We have to do basic book keeping on the errors and ensure they don't really go too big.  
+
+To make rigorous 
+
+We know that  
+\[
+\lim_{h \to 0}  
+\frac{
+	f(\vec{a}+\vec{h}) - f(\vec{a}) - \mathrm{d} f_{\vec{a}} (\vec{h}) 
+}{ |\vec{h}| } = 0
+\]  
+
+\[
+	f(\vec{a}+ \vec{h})  \boxed{
+	=
+} f(\vec{a}) + \mathrm{d} f_{\vec{a}} (\vec{h}) + \phi(\vec{h}) \mid \vec{h} \mid 
+\]
+This $\phi$ is second order and it will quadratically go to zero. But now we have equal.
+\[
+h(\vec{a}+\vec{h}) = 
+g(f(\vec{a})) + 
+\mathrm{d} g_{f(\vec{a})} 
+(\vec{k}) + \psi(\vec{k})|\vec{k}|
+\]
+Here $k$ is the term in $f(\vec{a}+\vec{h})$ except the $f(\vec{a})$
+\[
+	\vec{k} = \mathrm{d} f_{\vec{a}} (\vec{h}) + \phi (\vec{h}) |\vec{h}|
+\]
+But now here 
+\[
+	\mathrm{d} g_{f(\vec{a})} (\vec{k}) = 
+	\mathrm{d} g_{f(\vec{a})} (\mathrm{d} f_{\vec{a}} (\vec{h}) ) + 
+	\mathrm{d} g_{f(\vec{a})} (\phi(\vec{h}) |\vec{h}|)
+\]
+Let' define 
+\[
+h(\vec{a}+\vec{h}) - h(\vec{a}) 
+\] 
+\[
+	g(f(\vec{a}+\vec{h}) ) - g(f(\vec{a})) - \mathrm{d} g_{f(\vec{a})} \cdot \mathrm{d} f_{\vec{a}} (\vec{h}) = 
+	|\vec{h}| \mathrm{d} g_{f(\vec{a})} \phi(\vec{h}) + 
+	\psi(\vec{k}) |
+	\mathrm{d} f_{\vec{a}} (\vec{h}) + \phi(\vec{h}) |\vec{h}| 
+\]
+Divide both side by $\vec{h}$ norm to get differential 
+\[
+	= \mathrm{d} g_{f(\vec{a})} \phi(\vec{h}) + \psi(\vec{k}) 
+	| \mathrm{d} f_{\vec{a}} 
+	\left(\vec{h}/|\vec{h}| \right) + \phi(\vec{h}) | 
+\]
+$\phi$ must go to $ 0$ by definition. $\vec{h} / |\vec{h}|$ builds a unit sphere and it's a closed set. Unit sphere is compact. Extreme value theorem for compact sets says that we can't have something going to infinity. So we don't have cancelling infinities to finally find out. 
+
+\end{document}
