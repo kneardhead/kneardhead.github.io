@@ -1,0 +1,97 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 15}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+1-variable 2nd order Taylor Polynomial $x=a$ is 
+\[
+f(a) = f'(a) (x-a) + \frac{1}{2!} f''(a) (x-a)^2 + \cdots
+\]
+This matches the 0th and $ 1$-st derivative of $f$ at $a$. If $x \approx a$ 
+\[
+f(a+h) \approx f(a) + f'(a) h + \frac{1}{2!} f''(a) h^2
+\]
+When $h \approx 0$. 
+
+Now we are going to do this for multivariable function,
+
+There are taylor functions that converge but not the function it's expanding. 
+\section*{Two Variable function} 
+\[
+f(0,0) + (\text{something}) x + (\text{something})y 
+\]
+\[
+f(0,0) + \frac{\partial f}{\partial x}(\vec{0}) x + 
+\frac{\partial f}{\partial y} (\vec{0}) y 
+\] 
+But we should have $x^2, y^2, xy$ terms
+\[ \text{incoorect!} = 
+f(0,0) + \frac{\partial f}{\partial x}(\vec{0}) x + 
+\frac{\partial f}{\partial y} (\vec{0}) y +
+x^2 
++ 
+y^2 
++ 
+xy 
+\] 
+\[ f(0,0) + \frac{\partial f}{\partial x}(\vec{0}) x + 
+\frac{\partial f}{\partial y} (\vec{0}) y +
+\frac{1}{2! } \frac{\partial^2 f}{\partial x^2} f(\vec{0}) x^2 
++ 
+\frac{1}{2!} \frac{\partial^2 f}{\partial y^2 } (\vec{0})y^2 
++ 
+\frac{\partial^2 f}{\partial x \partial y} (\vec{0})xy 
+\] 
+\[ f(0,0) + \frac{\partial f}{\partial x}(\vec{0}) x + 
+\frac{\partial f}{\partial y} (\vec{0}) y +
+\frac{1}{2! } \frac{\partial^2 f}{\partial x^2} f(\vec{0}) x^2 
++ 
+\frac{1}{2!} \frac{\partial^2 f}{\partial y^2 } (\vec{0})y^2 
++ 
+\frac{1}{2!}\frac{\partial^2 f}{\partial x \partial y} (\vec{0})xy 
++
+\frac{1}{2!}\frac{\partial^2 f}{\partial y \partial x} (\vec{0}) yx
+\] 
+What about even more terms? We will have additional 
+\[
+\frac{1}{3!} \frac{\partial^3 f}{\partial x^3} x^3 + 
+\frac{1}{3!} \frac{\partial^3 f}{\partial y^3} y^3 + 
+\frac{1}{2} \frac{\partial ^3 f}{\partial x^2 \partial y} x^2 y + 
+\frac{1}{2} \frac{\partial^3 f}{\partial y^2 \partial x} y^2 x 
+\]
+Think about this 
+\[
+\frac{1}{3!} (x x y + xy x + y x x )
+\]
+So the k'th order terms for the taylor polynomials for some function $f: \mathbb{R}^{n} \to \mathbb{R}^{m}$ are (an outline first, exact one later)
+\[
+	\sum_{i_k \in  \{1 \ldots k\} }^{} \frac{\partial^{k}f}{\partial x_{i_1} \partial x_{i_2} \cdots \partial x_{i_k} }\left(x_{i_1} x_{i_2} \cdots x_{i_k} \right)
+\] 
+If it is centered at $\vec{a}$ then $\vec{a} = (a_1, a_2, \ldots, a_n)$ then replace $\vec{x}_i$ with $\vec{x}_i - \vec{a}_i$
+
+\section*{How correct is our taylor series? }
+Single variable 
+\[
+f(a+h) = f(a) + f'(a) h + 
+\ldots + 
+\frac{1}{k!} f^{(k)} (a) h^{k} + R_k(a,h)
+\]
+Here $R_k(a,h)$ is the remainder of $k$ order. 
+
+Facts about $R_k$: If $f$ is $C^{k}$ near $a$ then 
+\[
+\lim_{h \to 0} \frac{R_k(a,h)}{h^{k}} = 0
+\]
+If $f $ is $C^{k+1}$ then 
+\[
+R_k(a,h) = \int_a^{a+h} \frac{(a+h - x)^{k} }{k!} f^{(k+1)} (x) \mathrm{d} x
+\]
+\[
+= \frac{1}{(k+1)!} f^{k+1}(c) h^{k+1}
+\] 
+
+\end{document}
