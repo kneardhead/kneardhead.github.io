@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.11.22)  29 JAN 2024 11:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2024.2.5)  12 FEB 2024 11:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -15,11 +15,22 @@ Type  H <return>  for immediate help.
                                                   
 l.1 -
      --
+? 
+! Interruption.
+\GenericError  ...                                
+                                                  \endgroup 
+l.1 -
+     --
+? ^^X^^[^^[:q
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, E to edit your file,
+H for help, X to quit.
 ? X
  
 Here is how much of TeX's memory you used:
- 18 strings out of 476182
- 548 string characters out of 5796580
+ 17 strings out of 476182
+ 415 string characters out of 5796582
  1848793 words of memory out of 6000000
  20425 multiletter control sequences out of 15000+600000
  512287 words of font info for 32 fonts, out of 8000000 for 9000
