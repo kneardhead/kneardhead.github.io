@@ -1,0 +1,118 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Class 15}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\renewcommand{\frac}{\dfrac}
+\begin{document}
+\maketitle
+
+Given some function which is undefined at a point $z_0$, we sometimes call $z_0$ a singularity of the function. We are now going to look at Holomorphic functions $f$ with a singularity at $z_0$. We are going to define around $z_0$ but not $z_0$. And specifically we want to discuss isolated singularities. And that means 
+
+\begin{figure}[ht]
+    \centering
+    \incfig{function-has-to-be-holomorphic-around-but-not-at-the-point}
+    \caption{function has to be holomorphic around but not at the point}
+    \label{fig:function-has-to-be-holomorphic-around-but-not-at-the-point}
+\end{figure}
+ 
+Say $z = \frac{1}{n \pi }$. Then $\sin \frac{1}{z} = 0$. Now look at $\frac{1}{\sin \frac{1}{z}}$. Every single point other than the origin then becomes an isolated point that is a singularity.
+
+Now we are going to classify the isolated singularities of holomorphic functions. So we will see that there are three classes. Suppose $z_0$ is an isolated singularity of $f$. Here's every where the function is holomorphic other than $z_0$. There is a unique Laurent's Expansion of $f$ in a neighborhood of $z_0$.
+
+\[
+f(z) = \sum_{n=-\infty}^{\infty} c_n (z-z_0)^{n}
+\]
+This converges for $0 < | z -z_0 | < r$. 
+\[
+c_n = \frac{1}{2\pi i} \int_C \frac{f(z_0 + s)}{s^{n+1}} \mathrm{d} s
+\] 
+
+Case 01: $c_n$ with $n<0$ are 0. 
+\[
+f(z) = c_0 + c_1 (z-z_0)+ \ldots
+\] 
+
+Riemann's Removable singularity theorem, if the modulus of $f$ is bounded near $z_0$ then removable. 
+
+Case 02: At least one $c_n$ is not $0$ with $n < 0$. In fact only finitely many $c_n$ are of this nature. 
+
+\[
+	f(z) = c_{-m} / (z-z_0)^{m} + \cdots + c_0 + c_1(z-z_0) + \cdots 
+\]
+What is the limit of $|f(z)|$ as $z \to z_0$? Well it goes to infinity because $\frac{C_m}{(z-z_0)^{m}}$ blows up to infinity. This is called a Pole.
+
+\begin{figure}[ht]
+    \centering
+    \incfig{a-visual-representation-of-a-pole}
+    \caption{A visual representation of a pole}
+    \label{fig:a-visual-representation-of-a-pole}
+\end{figure}
+
+Case 03: Infinitely many $c_n$ with $n<0$ are not zero. This is called ``Essential Singularity".
+
+\section*{Casorati Weierstrass Theorem} 
+\thm{Suppose $z_0$ is an essential singularity of $f$. Suppose $w$ is any complex number or $\infty$. Then the conclusion is there exists a sequence
+\[
+\zeta_1, \zeta_2, \zeta_3, \ldots, \zeta_k
+\]
+Here as $\lim_{k \to \infty} |\zeta_k| = z_0$ and \[
+\lim_{k \to \infty} f(\zeta_k) = w
+\]
+If you think of $e^{\frac{1}{z}}$ then 
+}
+
+Case 01: $w = \infty$. By contradiction assume there is such sequence. Then $f(z)$ has the property that it cannot have very large as  $z \to  z_0$. 
+\[
+\exists C > 0 \text{ such that } |f(z) | < C \text{ for all $z$ close to $z_0$}
+\]
+From Riemann's Removable Singularity Theorem, $z_0$ is a removable singularity for $f$.
+
+Case 02: $w \in  \mathbb{C}$. Again, if no such sequence exists, then there is a small disk containing $w$ which is never reached by any value of $f(z)$ near $z_0$. 
+
+\begin{figure}[ht]
+    \centering
+    \incfig{z-plane-and-w-plane}
+   \caption{z plane and w plane}
+    \label{fig:z-plane-and-w-plane}
+\end{figure}
+For $|f(z)-w| \ge a$ for all $|z-z_0| < r$, 
+\[
+	\left|
+\frac{1}{f(z) - w} \right| \frac{1}{a}
+\]
+$z_0$ is removable singularity $\frac{1}{f(z) - w'}$. 
+
+This function extends 
+\[
+\frac{1}{f(z) - w} 
+\] is $g(z)$. $g$ is holomorphic so it maybe $0$ at $z_0$. Factor out $(z-z_0)^{m}$ from $g$ : 
+\[
+g(z) = (z-z_0)^{m} h(z)
+\] 
+And 
+\[
+h(z_0) \neq  0 
+\] 
+\[
+\frac{1}{f(z) - w} = (z - z_0)^{m} h(z)
+\] 
+\[
+f(z) - w = (z - z_0)^{-m} \frac{1}{h(z)}
+\] 
+Laurent Expansion. It's a pole. Contradiction the essential singularity of $f$ at $z_0$. We did all the work to prove it wasn't an essential singularity instead it was a pole.
+
+We are about to start a huge transition: Look at holomorphic function with isolated singularity at $z_0$ and look at the Laurant Expansion of 
+\[
+	f(z) = \cdots c_{-2} (z-z_0)^{-2} + c_{-1} (z-z_0)^{-1} + c_0 + c_1 (z-z_0) + c_2 (z-z_0)^2 + \cdots 
+\]
+$c_{-1}$ is important and it's called the  residue of $f$ at $z_0$. 
+\[
+\boxed{
+	c_{-1}
+}
+\] 
+What we are going to use this for is called \textsf{Residue Theory}. 
+\end{document}
