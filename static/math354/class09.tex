@@ -1,0 +1,133 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Linear Algebra : : Class 09}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle\section*{Linear Transformation in Matrix Form}
+The linear transformation of $V \to W$ can be shown by $T \in \mathcal L (V,W)$. Let's make individual basis 
+\[
+v_1, \ldots, v_n
+\] 
+\[
+w_1, \ldots, w_m
+\]
+Then $T v_1$ is a unique linear combination of $w_1, \ldots, w_m$. Define $A_{j,k}$ to be scalars. 
+\[
+	T v_k = A_{1,k} w_1 + A_{2,k} w_2 + \ldots + A_{n,k} w_n
+\] 
+Here $1\le k\le m$ and we arrange these numbers 
+\[
+	\begin{pmatrix} A_{1,1} & \cdots & A_{1,n} \\ 
+	\vdots & \ddots & \vdots \\ 
+A_{m,1} & \cdots & A_{m,n}\end{pmatrix} 
+\]
+Horizontally think about $w_1, w_2, \ldots, w_n$ and vertically think about $v_1, v_2, \ldots, v_m$.
+$m,n$ are confusing, we should use sub letters that are not even in the same language, 
+\[
+	A_{\aleph, \beta}
+\]
+This matrix is known to be the linear transformation. 
+\[
+\mathcal M (
+T, (v_1, \ldots, v_n)
+,
+(w_1, \ldots, w_m)
+)
+\] 
+We can call this a matrix of $T$ if we are not worried about the basis. 
+
+\subsection*{Example: Beispiel}
+\[
+T \in \mathcal L (\mathbb{F}^{2}, \mathbb{F}^{3})
+\] 
+\[
+T (x,y) = 
+(x+3y, 
+2x+5y, 
+7x + 9y)
+\] 
+
+Standard bases,
+\[
+\mathbb{F}^{2} : (1,0), (0,1)
+\] 
+\[
+\mathbb{F}^3 : (1,0,0),(0,1,0), (0,0,1)
+\] 
+The matrix would be
+\[
+	\begin{pmatrix} 1  &3 \\ 2 & 5 \\ 7 & 9 \end{pmatrix} 
+\]
+\subsection*{Example} 
+\[
+T \in  \mathcal L (\mathcal P ^3, \mathcal P^2)
+\]
+And define
+\[
+Dp = p'
+\] 
+So standard basis 
+\[
+\mathcal P ^3 = (1,x,x^2,x^3)
+\]
+\[
+\mathcal P ^2 = (1,x,x^2)
+\]
+Now checking
+\begin{align*}
+	D(1) &= 0 \\
+	D(x) &= 1 \\
+	D(x^2) &= 2x \\ 
+	D(x^3) &= 3x^2 
+\end{align*}
+This gives (imagine $1,x,x^2,x^3$ horizontally to be the input basis)
+\[ 	\begin{pmatrix} 0 & 1 & 0 & 0 \\ 
+	0 & 0 & 2 & 0 \\ 
+	0 & 0 & 0 & 3
+\end{pmatrix}
+\]
+
+\subsection*{Exercise 4 } 
+Some $\mathcal P ^3 \to  \mathcal P ^2$. Basis for $\mathcal P^3$ is $\left(\frac{x^3}{3}, \frac{x^2}{2}, x ,1\right)$ and for $\mathcal P^2$  it is $(x^2,x,1)$. The matrix is 
+\[
+	\begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \end{pmatrix} 
+\]
+
+Suppose $S \in \mathcal L (V,W)$. Having the same basis, 
+\[
+	S v_k = B_{1,k} w_1 + B_{2, k} w_2 + \ldots B_{m,k} w_m
+\]
+We have an $B_{[m,n]}$ matrix. 
+
+\section*{Plan for Thursday}
+We will use a transformation $T$ and then $S$ so that $V \to  W \to U$ with each basis respective dimension being $n, m , l$. And we will show that the matrix for $T$ followed by $S$ is the product of the two matrix. 
+\[
+M(ST) = M (S) M (T)
+\] 
+This is composition
+
+\section*{Exercise 5} 
+We have a linear transformation from $V$ to $M$. So look at the null space of $V$. Let's find a basis for it. 
+
+\[
+\text{null} \, V : v_1, \ldots, v_k
+\] 
+Extend it to $V$ basis, 
+\[
+\text{null} \, V : v_1, \ldots, v_k, u_1, \ldots, u_l 
+\]
+Then $T v_1, \ldots, T v_k, T u_1, \ldots, T u_l$ will become
+\[
+0, \ldots, 0, T u_1 , \ldots, T u_l 
+\] 
+
+Now we want to extend this to the basis of 
+$
+0, \ldots, 0, T u_1 , \ldots, T u_l ; w_1, \ldots , w_p $ extended. 
+
+So we have chosen a basis for $V$ and a basis for $W$. Let's use these bases to calculate the corresponding matrix: 
+
+\end{document}

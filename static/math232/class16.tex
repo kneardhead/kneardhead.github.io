@@ -1,0 +1,83 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 16}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Quadratic Forms} 
+A quadratic forms is a function of $n$ real variables. Such that
+\[
+f: \mathbb{R}^{n} \to \mathbb{R}
+\] 
+of the form $Q(x_1, \ldots, x_n) = \text{ a polynomial in } x_1, \ldots, x_n$ here all the terms are of degree $2$. 
+
+\[
+Q(x_1,x_2,x_3) = 
+x_1 ^2 + 
+4x_1 x_2 + 
+x_2^2 + 
+10 x_1 x_3 + 2x_3^2
+\]
+
+\df{
+A quadratic form $Q$ is positively defined $Q(\vec{x}) >0$ always being positive definite. 
+Positive Semi-Definite $Q(\vec{x}) \ge 0$ , negative definite $Q(\vec{x}) < 0$ and $Q(\vec{x}) \le 0$. Indefinite if $Q$ is sometimes $>0$ and sometimes $<0$. For some quadratic forms it's easy to tell. 
+}
+
+\section*{Examples of Quadratic Forms} 
+We know the positive definite is always 
+\[
+	Q(x_1, x_2, x_3) = x_1^2 + 4 x_2^2 + 7 x_3^2
+\]
+
+\df{
+Fact: For every Quadratic form $Q : \mathbb{R}^{n} \to \mathbb{R}$, there is a symmetric matrix $A$ such taht 
+\[
+Q(\vec{x}) = \vec{x} ^{+} A \vec{x}
+\] 
+}
+
+\[
+Q(\vec{x}) = 
+\begin{bmatrix} x_1 & x_2 & x_3 \end{bmatrix}
+\begin{bmatrix} 1 & 2 & 5 \\ 
+2 & 1 & 1 / 2 \\ 
+5 & 1 / 2 & 2\end{bmatrix} 
+\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} 
+\] 
+Any quadratic form can be turned into this matrix format. The above one can yield us 
+\[
+Q(x_1,x_2,x_3) = 
+x_1 ^2 + 
+4x_1 x_2 + 
+x_2^2 + 
+10 x_1 x_3 + 2x_3^2
+\]
+SO 
+\[
+Q(\vec{x}) = \vec{x}^{t} P D P ^{t} \vec{x}
+\] 
+Let $\vec{y} = P^{t} \vec{x}$ and hence we have $D $ to have the eigenvalues of $A$. You take Eigenvalues and use the spectral theorem. Look at the signs and that tells you the answer. 
+
+\section*{Derivative Zeroes}
+\df{
+Let $f:D \to \mathbb{R}$ such that $D \subset \mathbb{R}^{n}$ and $\vec{a}$ is interior to $D$. We say that $f$ has a local max at $\vec{a}$ if $\exists  r>0$ such that $\forall \vec{x} \in B_r(\vec{a})$ that $f(\vec{a}) \ge f(\vec{x}) $. For minimum just flip sign. 
+}
+
+It's basically single variable calculus just using the definition of a ball. 
+
+\df{
+Proposition: If $f:\mathbb{R}\to \mathbb{R}$ has a local minimum or maximum at $a$ then either $f'(a)$ is zero, or $f$ is not differentiable at $a$. 
+}
+
+I don't have time to prove this, but I will state it 
+
+\thm{
+If $f$ has a local extremum at $\vec{a}$ then either $f$ is not differentiable $\vec{a}$ or $df_a = 0$. 
+}
+
+\end{document}

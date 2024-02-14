@@ -38,6 +38,7 @@ The first few notes are a little bit bad because I am still learning.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 13](/math232/class13.pdf): Proof to Chain Rule.   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 14](/math232/class14.pdf): Clairaut's Theorem, and taking two partial derivatives.   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 15](/math232/class15.pdf): Taylors Polynomials, generalized for n dimensions.     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 16](/math232/class16.pdf): Primer on Quadratic Forms, and max-min for multi.      
 
 **MATH 382: Computational Complex Analysis**
 \
