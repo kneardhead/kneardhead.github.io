@@ -1,0 +1,93 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Linear Algebra : : Class 10}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Matrix Multiplication} 
+\[
+	ST (u_k) = S(T u_k) = S (B_{1,k} v_1 + B_{2,k} v_2 + \ldots + B_{1,n} v_n )
+\]
+These $B$ are just scalars. 
+\[
+	= B_{1,k} (A_{11} w_1 + \ldots + A_{m,1} w_m) + \ldots + 
+	B_{n,k} (A_{1n} w_1 + \ldots + A_{m,n}w_m)
+\]
+\[
+	= A_{1,1} B_{1, k} + \ldots + A_{1,n} B_{n,k} ) w_1 + 
+	\ldots
+	+ (A_{m,1} B_{1,k} + \ldots + A_{m,n} B_{n,k} ) w_m 
+\] 
+Axler says, we define the matrix $AB$ to fit this scheme. 
+
+Hence, 
+\[
+	^{(m \times n)}AB ^{(n \times p)} [= (m \times p)] \implies (AB)_{j,k} = A_{j,1}B_{1,k} + \ldots + A_{j,n} B_{n,k}  = 
+	\sum_{l=1}^{n} A_{j,l} B_{l,k}
+\]
+This sounds $=$ ,,$j$-th row of $A$ times $k$-th column of $B$''
+\[
+	\begin{bmatrix} A_{j,1} & \ldots & A_{j,n} \end{bmatrix}  
+	\begin{bmatrix} B_{1,k} \\ \vdots \\ B_{n,k} \end{bmatrix} 
+\]
+Conclusion, 
+\[
+\mathcal M (ST) = \mathcal M (S) \, \mathcal M (T)
+\]
+
+Some notation, we have a matrix $A_{j,k}$ 
+\[
+	A_{j, \circ } \implies A \quad \text{row j}
+\] 
+\[
+	A_{ \circ, k } \implies A \quad \text{col j}
+\] 
+3.46 
+\[
+	(AB) _{j,k} = A_{j, \circ} B_{\circ , k}
+\] 
+
+3.51 On Strange notation
+
+Suppose $C$ is an $m \times c$ matrix. Suppose $R$ is a $c \times n$ matrix. Now if $1\le k \le n$ then column $k$ of $CR$ is a linear combination of the columns of $C$ with the coefficients coming from column $k$ of $R$. 
+
+Do the same with rows. 
+\[
+	(CR)_{j,k} = C_{j,l} R_{l,k} = \sum_{l}^{} (AB)_{j,k} = A_{j, \circ} \cdot B_{\circ, k} 
+\]
+If you have a repeat of the subscript, you take a sum over it. 
+\[
+	(CR)_{\circ, k} = C_{\circ, l} R_{l,k}
+\]
+The $k$-th column of $CR$ is a linear combination of the columns of $C$ with coefficient from $k$-th column of $R$. 
+
+\section*{Rank} 
+Axler P78, suppose $A$ is a $m\times n$ matrix with column rank $C \ge 1$. The list of columns of $A$ is 
+\[
+	A_{\cdot, 1} , \ldots , A_{\cdot ,n}
+\]
+has a span $A$ basis for this span that can be chosen from $A_{\cdot ,1}, \ldots, A_{\cdot ,n}$
+
+This basis has $C$ vectors. Put these vectors together as columns of a new matrix $C$. Then for the original matrix each column $A_{\circ, k}$ is a linear combination of these. We can write $A = CR$ $A_{\circ, k}$ is a linear combination of $C_k$ 's. 
+
+3.57 column rank is equal to row rank.
+\pf{
+\[
+A = CR
+\] 
+The rows of $A$ (3.51(b)) are linear combination of rows of $R$. 
+}
+
+
+\section*{Invertible}
+A linear map $T$ is $T \in \mathcal L (V, W)$ is invertible if 
+\[
+S: W \to V
+\]
+such that $ST = I_v$ and $TS = I_w$ if $S$ exists, then it's unique. 
+
+\end{document}

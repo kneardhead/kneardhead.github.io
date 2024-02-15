@@ -1,0 +1,158 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 01}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\renewcommand{\vec}{\mathbf}
+\begin{document}
+\maketitle
+
+\nt{
+This text is being edited a lot later than the first class. Well, I didn't have any respectable system running to take notes in class that day. 
+}
+Rigorous definition of a Limit is necessary 
+
+\section*{Single Variable Limit} 
+\df{
+Let there be a function $f:\mathbb{R} \to \mathbb{R} $ and let there exist a real number $a$. The number $L$ is defined to be the limit $L$ 
+\[
+\lim_{x \to a} f(x) = L
+\] 
+meaning that for all $\epsilon > 0$, there exists some $\delta > 0$ such that if 
+\[
+\left| x- a \right| < \delta 
+\] 
+then
+\[
+\left| f(x) -L \right| < \epsilon
+\]
+A requirement is that $x \neq a$. Hence we say $L$ is the limit of $f(x)$ if $x$ ,,approaches" $L$.  
+}
+We will later see if $x = a$ and $f(x) = L$ then it's definition of being continuous. We have defined closeness with a tricky way, we can pick $\epsilon$ to be anything above $0$. This can be infinitely large, this can be infinitely close to $0$. That's the beauty of this idea, it just nicely defines what's small without having to create weird abstractions. 
+
+I was thinking hard about limits when I was pretty young trying to define smallest limit. This brings the whole thing to perspective.
+
+\newpage \section*{Multi Variable Limit}
+\subsection*{Multivariable Function} 
+We can have single variable function like 
+\[
+f(2) = 3
+\] 
+But what is a vector function? Well this one takes input vectors and spits out another vector, not necessarily the same family of vector. Of course this is a linear map, or linear transformation, from either one space to another, or to itself. 
+
+\[
+f \left(
+\begin{bmatrix} 2 \\ 1\\ 4\\ 0 \\1 \end{bmatrix} 
+\right)= 
+\begin{pmatrix} 7 \\ 1 \end{pmatrix} 
+\]
+This specific function takes members of $\mathbb{R}^{5}$ and gives out $\mathbb{R}^{2}$. 
+\[
+f : \mathbb{R}^{5}\to \mathbb{R}^{2}
+\]
+We can break it down like this
+\[
+f(\vec{x}) = \begin{pmatrix} f_1(\vec{x}) \\ f_2(\vec{x}) \end{pmatrix} 
+\]
+The good thing about $f_1, f_2$ is
+\[
+f_1, f_2 : \mathbb{R}^{5} \to \mathbb{R}^{1}
+\] 
+They take vectors and spit out simple numbers (scalars). The $f_1$ and $f_2$ can be something like 
+\[f_1(\vec{x}) = 
+f_1(x_1,x_2,x_3,x_4,x_5) = 2x_1 - x_5 + x_3 = 7
+\]
+Similarly, taking a list $f_2$ behaves
+\[
+f_2(\vec{x}) = 
+f_2(x_1,x_2,x_3,x_4,x_5) = x_1 + x_2 + x_3 + x_4 - 6 x_5  = 1
+\] 
+
+
+Multivariable limit is basically instead of dealing with $\mathbb{R}$, we deal with $\mathbb{R}^{n}$ where the inputs are vectors $\vec{v}$ and outputs are $\mathbb{R}^{m}$ members like $\vec{u}$. Concept of limit is basically broken down into components of the vectors. 
+
+\df{
+Let there be a function $f:\mathbb{R}^{n} \to \mathbb{R}^{m}$ and points $\vec{a} \in \mathbb{R}^{n}$ and $\vec{L} \in \mathbb{R}^{m}$. The statement 
+\[
+\lim_{\vec{x} \to \vec{a}}  f(\vec{x}) = \vec{L}
+\] meaning that for all $\epsilon  > 0$, there exists $\delta > 0$ such that if $|\vec{x}-\vec{a}| < \delta $ and $|f(\vec{x}) - \vec{L}| < \epsilon$ with the requirement $\vec{x}\neq \vec{a}$. 
+}
+
+\thm{ 
+Suppose $f: \mathbb{D} \to \mathbb{R}$ is a vector function of $m$ dimension. This means, 
+\[
+f = (f_1, \ldots, f_m) \in \mathbb{R}^{m}
+\]
+Let a member of $\mathbb{D}$ be $\vec{a}$. This $\vec{a}$ itself might be a vector if $D \subset \mathbb{R}^{n}$ with $n$ dimensions. Now if $\vec{L} \in \mathbb{R}^{m}$, then 
+\[
+\lim_{\vec{x} \to \vec{a}} f(\vec{x}) = \vec{L}
+\] 
+If and Only If 
+\[
+\lim_{\vec{x} \to \vec{a}} f_i(\vec{x}) = L_i
+\] 
+Where $i = 1, \ldots, m$. 
+}
+
+\nt{The funny thing is we can also treat that like a theorem and prove it using single variable idea and introducing the idea of a norm $|\vec{v}|$. For this theorem, additionally it's important to consider $\vec{a}$ is a limit point. That means $\vec{a}$ isn't a boundary point (at the edge)or something and has infinite points around a small circle around. I will go indepth on this later using the idea of a Ball. For now consider $\vec{a}$ is well behaved. 
+}
+\pf{
+	Consider this 
+	\[
+	\lim_{\vec{x} \to \vec{a}} f(\vec{x}) = \vec{L}
+	\] 
+	This means that there is a $\epsilon>0$ such that 
+	\[
+	| f(\vec{x}) - \vec{L} | < \epsilon
+	\] 
+	From the definition of limit we say in the last section, well, the limit implies there must be a $\delta$ such that 
+	\[
+	| \vec{x} - \vec{a} | < \delta
+	\] 
+So having $\epsilon$ we also must have $\delta$ follow the rule. Because it's ,,if and only if", it also implies if $\delta$ exists, then so as the bound $\epsilon$. 
+
+\textbf{Vector function limit implies Component Limit}: let's say $| \vec{x} - \vec{a}| < \delta$. Then if component limit exists, we need a bound like. 
+\[
+|f_i(\vec{x}) - L_i | < \epsilon
+\] We are going to prove this bound $\epsilon$ is existent. 
+
+Well we know that a component must be either equal or smaller than the vector it forms
+\[
+|\alpha_i| \le | \vec{A}| 
+\]
+Using this, and using the fact that the \textbf{Vector Function} already is under the bound $\epsilon$, 
+\[
+|f_i(\vec{x})  - L_i| \le | f(\vec{x}) - \vec{L}| < \epsilon
+\]
+So we just showed 
+\[
+|f_i (\vec{x}) - L_i | \le \epsilon
+\] 
+\textbf{Component Limit implies Vector Limit}: Given $|f_i(\vec{x}) - L_i| < \beta$ (some bound), then we want to show $|f(\vec{x}) - \vec{L}| < \epsilon$. 
+
+Now note that 
+\[
+|f(x) - \vec{L}| = \sqrt{ \left[ 
+\sum_{i = 1}^{m} |f_i(\vec{x}) - b_i| ^2 
+\right]} 
+\]
+This looks scary but this is just Pythagoras theorem lol. 
+
+Let me further break down the logic for what we are about to do now, so every $|f_i(\vec{x}) - L_i| < \beta$ is unique for every $i$-th value, so it's important we had called it $\beta_i$ instead of just $\beta$. But I will assume out of all $\{\beta_i\} $, we pick the largest $\beta$ so that it's bigger than every bound. Hence $\beta = \text{max}(\{\beta_i\} )$
+
+Hence $\beta$ being bigger than every term
+
+\[
+|f(x) - \vec{L}| = \sqrt{ \left[ 
+\sum_{i = 1}^{m} |f_i(\vec{x}) - b_i| ^2 
+\right]}  < 
+\left[
+m \beta^2
+\right]^{\frac{1}{2}}  = \varepsilon 
+\]
+Choosing $\varepsilon = \sqrt{m \beta^2}$
+}
+
+\end{document}
