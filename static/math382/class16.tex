@@ -1,0 +1,45 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Class 16}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\[
+f(z ) = 
+\ldots 
++ 
+\frac{c_{-2} }{(z-z_0)^2} + \frac{c_{-1}}{z-z_0} + c_0 + c_1 (z-z_0)
+\] 
+\[
+\text{Res}(f,z_0)
+\] also it equals $\frac{1}{2\pi i} \int_{C} f(z) \mathrm{d} z$. Also it equals the unique $a \in  \mathbb{C}$ such that $f(z) - \frac{a}{z-z_0}$. 
+
+\[
+\text{Res} \left(
+	(z-z_0)^{n}, z_0 
+\right) = 1
+\]
+If $n = -1$ otherwise $0$. 
+\[
+C_1 \text{Res} \left(e^{\frac{1}{z}} , 0\right) = 1
+\]
+Simple pole at $z_0$ 
+\[
+f(z) = \frac{c_a}{z-z_0} + c_0 + c_1(z-z_0) + \cdots
+\]
+
+Suppose our function can be written as a quotient: 
+\[
+f(z) = \frac{a(z)}{b(z)} 
+\] And $a,b$ is holomorphic near $z_0$ and $b$ has a simple zero at $z_0$. \[
+b'(z_0) \neq  0 
+\] 
+\[
+\text{Res}(f(z), z_0) = \lim_{z \to z_0} \frac{(z-z_0) a(z)}{b(z)} = \lim_{z \to z_0} \frac{a(z)}{\frac{b(z)-b(z_0)}{z-z_0}} = \frac{a(z_0)}{b'(z_0)}
+\] 
+
+\end{document}
