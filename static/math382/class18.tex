@@ -1,0 +1,197 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Class 18}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+\[
+\int_0^{\infty} \frac{\mathrm{d} x}{x^{4}+x^2+1}
+\] 
+
+\[
+	\int_{-\infty}^{\infty} \frac{\cos a x}{x^2 + 1} \, \mathrm{d} x
+\]
+
+\[
+\int_0^{\infty} \frac{\mathrm{d} x}{x^3 - i }
+\] 
+Residue theorem says, 
+\[
+\frac{1}{2 \pi i} \oint f(z) \mathrm{d} z = 
+\sum_{}^{} \text{Residue inside } C
+\] 
+
+\section*{Illustration of a Property} 
+One of the properties of residues,
+\[
+\text{Res}\left(fg' , z_0\right) = - \text{Res}(f'g, z_0)
+\] 
+I want to calculate the residue of 
+\[
+\text{Res} \left(\csc^3(z) , 0\right)
+\]
+We know that 
+\[
+\text{Res}\left(\csc (z) , 0 \right) = 1
+\]
+
+You get a homework assignment to find, 
+\[
+\text{Res} \left(\csc^{n}(z) , 0\right)
+\] Here $n$ is odd otherwise we have an even function.
+
+We will show how to go from first power to the third power. Similar technique for the homework problem. 
+\[
+\text{Res}\left(\csc^3\right) = \text{Res} \left(\csc \cdot \csc ^2\right)
+\] We can leave out the origin, and $\csc $ is a derivative of something.
+\[
+\tan ' x = \sec ^2  x \quad \text{and} \quad \cot ' x = - \csc ^2 x 
+\]
+We can find, using the given mentioned formula, 
+\[
+ = \text{Res} \left(\csc \cdot \left(- \cot ' \right)\right) = \text{Res} \left(\csc ' \cot \right)
+\]
+\[
+= \text{Res} \left(- \csc \cot \cot \right)
+\]
+\[
+= \text{Res}\left(- \csc \cot ^2\right)
+\]
+Y`all knew the rule $\sec ^2 = 1 + \tan ^2 $
+\[
+= \text{Res}\left(- \csc ^3 + \csc \right) = - \text{Res}\left(\csc ^3\right) + \text{Res} \left(\csc\right)
+\]
+Left hand and right hand written together,
+\[
+\text{Res}\left(\csc ^3\right) = 
+- \text{Res}\left(\csc ^3\right) + \text{Res} \left(\csc\right)
+\]
+
+We get 
+\[
+	2 \text{Res}\left(\csc ^3\right) = \text{Res}(\csc) = 1
+\] 
+Hence we get,
+\[
+\boxed{
+\text{Res} \left(\csc ^3\right) = \frac{1}{2}
+}
+\] 
+\section*{Calculations} 
+\[
+\int_0^{\infty} \frac{\mathrm{d} x}{x^{4}+x^2+1}
+\] 
+
+\[
+f(z) = \frac{1}{z^{4} + z^2 + 1}
+\] 
+Our integral goes from two sides of infinity. That integral is bound from $0$ to $\infty$, so we just need half of the infinite as that's an even function
+\[
+	= \frac{1}{2}\int_{-\infty}^{\infty} \frac{\mathrm{d} x}{x^{4} + x^2+ 1}
+\]
+There are some poles in the semi-circle region we considered.
+\[
+\frac{1}{2 \pi i} \int_C f(z) \mathrm{d} z = \sum \text{Res}\left(f(z), \text{upper half plane}\right)
+\]
+An extra step, multiply both sides of the function with $z^2-1$
+\[
+f(z) = \frac{z^2 - 1}{z^{6} - 1}
+\]
+So the roots are 
+\[
+z^{6} = 1 = e^{2 n \pi i }
+\] 
+\[
+z = e^{\frac{2n \pi i}{6}}
+\] $n$ here goes from $0,1,2,3,4,5$. 
+Testing over \verb| a \over b| 
+\[
+	{a \over b}
+\] 
+The roots in the upper half plane are
+\[
+e^{2 \pi i \frac{1}{6}} = e^{ 2 \pi i / 6}, e^{ 4 \pi i / 6}
+\]
+"How did we get the $e ^{3 \pi i \frac{1}{6}}$? Prof: By mistake". 
+
+Now the integral over the ``path" (not ``region") is 
+\[
+\frac{1}{2 \pi i } \int_C f(z) \mathrm{d} z = \text{Res}\left(f , e^{ \pi i \frac{1}{3}}\right) + Res ( e^{ 2 \pi i  / 3})
+\]
+
+Now we need to check what $f$ is like over $R$ for $R\to \infty$, we need to have $f$ tends to zero hence the limit gives me a basically $0$.
+
+\[
+\text{Res} \left(\frac{z^2 - 1}{z^{6} - 1}, z_0\right) = \frac{z_0^2 - 1}{ 6 z_0 ^{5}} = \frac{z_0^3 - z_0}{6}
+\] 
+The $z_0$ are $e ^{ 2 \pi i \over 6}, e^{4 \pi i \over 6 }$
+
+\[
+	\frac{1}{2}\int_{-\infty}^{\infty} f(x) \mathrm{d} x= \frac{1}{2}2 \pi i 
+	\left(
+		{e^{\pi i } - e^{ \pi i \over 3}  
+			\over
+		6} 
+		+
+		{e^{2 \pi i} - e^{2 \pi i \over 3} 
+			\over 
+		6} 
+	\right)= 
+	\boxed{{
+	\pi \over 2 \sqrt{3}  }
+	}
+\]
+
+\section*{Another Computation} 
+\[
+\boxed{
+\int_{-\infty}^{\infty} \frac{\cos a x}{ x^2 + 1} \mathrm{d}  x}
+\]
+Here's a function of $z$ and here 
+\[
+f(z) = \frac{\cos az}{z^2 + 1}
+\] 
+We cannot use $a = i \alpha$ because that blows up. Hence we change it a bit, 
+\[
+f(z) = {
+e ^{i a z} \over z^2 + 1}
+\]
+We have to pick the real portion for $\cos a z$. Here $a \in \mathbb{R}$. Investigate what happens when for the semicircle $R\to \infty$. Now
+\[|
+e^{i a z}| = e^{
+\text{Re} \left(i a z\right)} = e^{\text{Re} \left(i a x - ay\right)} 
+ = 
+ e^{ - a y }
+\]
+Now we are required to say $a$ is $a >0$ otherwise we have something blowing up. Hence 
+\[
+a\ge 0
+\] 
+Back to the function now, 
+\[
+\left| f(z) \right| = 
+\left| 
+\frac{e^{i a z}}{z^2 + 1 }
+\right| 
+\]
+Now we need, where the singularities happen? Well at $z = i$ for upper half plane. 
+\[
+\text{Res} \left(\frac{e^{i a z}}{z^2 + 1}, i\right) ={  e^{-a} \over 2 i }
+\] 
+For $R \to  \infty$, the residue theorem
+\[
+\frac{1}{2 \pi i } \int_{\mathbb{R}} {e^{i a x} \over x^2  +1} \mathrm{d} x ={ e^{-a} \over 2i}
+\] 
+\[
+\boxed{
+	\int_{-\infty}^{\infty} \frac{e^{i a x}}{x^2 + 1} = \pi e^{-a} \qquad (a\ge 0)
+}
+\] 
+\[
+R \quad \mathbf R \quad \pmb R
+\] 
+Question: Is it practical to solve for definite integrals given we knew how the function behaved at finite $\pmb R$?
+\end{document}

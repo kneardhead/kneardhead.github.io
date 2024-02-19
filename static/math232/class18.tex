@@ -74,5 +74,61 @@ Eigenvectors we get are
 \[
 \begin{pmatrix} 1 \\ -1 \end{pmatrix} , \begin{pmatrix} 1 \\ 1 \end{pmatrix} 
 \]
-Spectral theorem says that for the symmetric matrices the eigenspaces are going to be orthogonal to each other. 
+Spectral theorem says that for the symmetric matrices the eigenspaces are going to be orthogonal to each other. This is neither min or max, it bends up in one direction and bends down in the other. 
+
+But how do you find around a boundary max min? 
+
+\section*{Boundaries}
+A square like region will have a boundary of 4 lines. So you can try parametrizing it because individually checking infinite points is impossible. 
+
+There are two ways, firstly boundary. 
+\[
+	x_0 \to  x_1 \text{ becomes an equation while } y = 0
+\]
+So $f(x,0)$ is something.
+
+The example of $f(x,y) = 4x + 3y$ has no critical points because its simplicity as you can see. Now for the boundary $x^2 + y^2 \le 1$ we can parametrize the boundary $(\cos \theta, \sin \theta)$ and look at that
+\[
+4 \cos \theta + 3 \sin \theta \to \text{ derivative } = 0 
+\]
+\[
+\theta = \tan ^{-1} \left(\frac{3}{4}\right)
+\]
+
+Another examples is looking at 
+\[
+f(x,y,z) = x^2 - y + z
+\] 
+On $x^2 + y^2 + z^2 \le  1$, here $d f $ is never $0$. So no critical points. We know that the action only happens at the boundary. 
+
+We can parametrize to this surface using a sphere equation. 
+\[
+z = \pm \sqrt{1 - x^2 - y^2} 
+\] 
+Here $x,y$ lives on a disk. 
+\[
+f = x^2 - y + \sqrt{1 - x^2 - y^2} 
+\]
+Now we need critical points in the interior. Now we need to do this for the boundary for the disk too. 
+
+It's doable, but ``hopefully I have scared you by now". 
+
+The second way is Lagrange multipliers. 
+
+\section*{Lagrange Multipliers}
+Teaser. 
+
+Suppose we want to optimize some $f$ from $\mathbb{R}^{n} \to \mathbb{R}$ on some hypersurface $\mathcal X \subset \mathbb{R}^{n}$ where $\mathcal X$ is a level surface for some $g$ such that $g : \mathbb{R}^{n} \to \mathbb{R}$. 
+
+$$
+\mathbb{abcdefghijklmnopqrstuvwxyz} $$ $$ 
+\mathcal{abcdefghijklmnopqrstuvwxyz}
+$$
+If you wonder\footnote{this is me making the discovery of a lifetime that bb and cal for smaller case gives custom symbols}.
+Now, 
+\[
+\mathcal X = \{\vec{a} \in  \mathbb{R}^{n}: g(\vec{a}) = c\} 
+\]
+On most circumstances we will care about points on $\mathcal X$ where $\nabla f = \lambda \nabla g$. 
+
 \end{document}
