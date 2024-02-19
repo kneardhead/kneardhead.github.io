@@ -1,0 +1,108 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 17}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\df{
+Proposition: 
+If $f$ is  differentiable at $\vec{a}$ ut $\mathrm{d} \vec{f_a}$ is not not identically zero, then $\vec{a}$ is not a local extremum for $\vec{f}$. 
+}
+
+Consequently if $f$ has a local maximum at $\vec{a}$, then $\vec{a}$ is a critical point for $f$. ($\mathrm{d} f_{\vec{a}} = 0 $ for $f $ is differentiable at $\vec{a}$. )
+
+\pf{
+	Suppose $\mathrm{d} f_{\vec{a}}$ is not identially $0 $. Then $\exists \vec{v} \in \mathbb{R}^{n}$ such that $\mathrm{d} f_{\vec{a}} (\vec{v}) \neq  0$. 
+
+\[
+	\lim_{t \to 0} \frac{f(\vec{a}+t \vec{v}) - f(\vec{a})}{t} = D_{\vec{v}} f(\vec{a})
+\] 
+\[
+= g'(0)
+\] 
+where $g(t) = f(\vec{a} + t \vec{v})$. So $t = 0 $ is a not a locla minimum or maximum for $g.$ 
+
+So $\forall \varepsilon > 0 $ let $\varepsilon ' = \frac{\varepsilon }{|\vec{v}|}$ We know that $\exists  t_1, t_2 \in (- \varepsilon' , \varepsilon')$ such that
+\[
+g(t_1) > (g(0)) > g(t_2)
+\] 
+Since $0$ is not a local min or max for $g$ so 
+\[
+f(\vec{a} + t_1 \vec{v}) > f(\vec{a}) > f(\vec{a} + t_2 \vec{v})
+\]
+Now here, 
+\[
+\vec{a} + t_1 \vec{v}
+\] and
+\[
+\vec{a} + t_2 \vec{v}
+\]  are within the $\varepsilon $ of $\vec{a}$. and $f$ is bigger than that of $f(\vec{a})$ at one of them. Smaller than $f(\vec{a})$ at the other. So $\vec{a}$ is not a local extremum. 
+}
+
+\df{
+	Prop: Suppose $f: \mathbb{R}^{n} \to \mathbb{R}$ and $\mathrm{d} f_{\vec{a}} = 0$. Then consider the Quadratic Form 
+	\[
+	Q(\vec{x}) = \vec{x}^{t} H \vec{x}
+	\] 
+	Where $H$ is the Hessian Matrix at $\vec{a}$. 
+	\begin{itemize}
+		\item If $Q$ is positive definite, then $f$ has a local min at $\vec{a}$.
+		\item If $Q$ is negative definite, then $f$ has a local max at $\vec{a}$. 
+		\item If $Q$ is indefinite, then $f$ has neither a local max or min at $\vec{a}$. 
+	\end{itemize} 
+}
+\pf{
+
+	Suppose $\mathrm{d} f_{\vec{a}} = 0$ and $H$ is positive. We know that  $f(\vec{a}+\vec{h})$ is $f(\vec{a}) + \mathrm{d} f_{\vec{a}} (\vec{h}) + \frac{1}{2!} \vec{h}^{t} H \vec{n} + R_2(\vec{a},\vec{h})$ 
+
+	\[
+	f(\vec{a}+\vec{h}) -f(\vec{a}) = \frac{1}{2!}\vec{h}^{t}H \vec{h} + R_2(\vec{a},\vec{h})
+	\] So the idea is that the difference is basically the left side term in the right of equality. The remainder has to be quite small. So the intuitive idea is a domination. Suppose all eigen values of $H$ are positive. 
+	\[
+	H = P D P ^{t}
+	\] P orthogonal, 
+	Define $\vec{j}$ such that
+	\[
+	\vec{j} = P^{t} \vec{h}
+	\] 
+	And 
+	\[
+	= \frac{1}{2!} \vec{j}^{t} D \vec{j}
+	\]
+	\[
+	h^{t} H h = h^{t} P D P ^{t} h 
+	\] 
+	Where $h^{t} P = j^{t}$ and $P^{t} h = j$. 
+\[
+= \frac{1}{2!} j^{t} D j + R_2 (\vec{a},\vec{h})
+\] 
+\[
+= \frac{1}{2!} 
+\left(
+\lambda_1 j_1^2 + \lambda_2 j_2^2 + \ldots 
++ \lambda_n j^2_n
+\right) + R_2(\vec{a},\vec{h})
+\] 
+\[
+\ge \frac{1}{2!} (\lambda_n j_1^2 + \ldots + \lambda_n j^2_n ) + R_2(\vec{a}, \vec{h})
+\] 
+\[
+= \frac{1}{2!} \lambda^2_n |\vec{j}|^2 + R_2(\vec{a},\vec{h})
+\]
+\[
+= \frac{\lambda_n}{2!} |h|^2 + R_2(\vec{a},\vec{h})
+\]
+But we know that 
+\[
+| R_2(\vec{a},\vec{h}) | < \frac{\lambda_n}{2!} |h|^2
+\] Because
+\[
+\lim_{h \to 0} \frac{R_2}{h^2} = 0
+\]
+And $R_2$ is strictly $>0$. 
+}
+\end{document}

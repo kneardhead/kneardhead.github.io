@@ -1,0 +1,139 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Class 17}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+\renewcommand{\frac}{\dfrac} 
+\begin{document}
+\maketitle
+
+\section*{Residue Theorem} 
+Apply Cauchy's theorem if $f$ has poles as shown. Let there $z_1, z_2, z_3$ each are there. We apply the cauchy's theorem on a region that doesn't have the neighborhood around the singularities. 
+
+\[
+	\int_{\text{region}} f(z) \mathrm{d} x \mathrm{d} y= \frac{1}{2\pi i } \int_{\text{boundary}} f \mathrm{d} z
+\]
+For the region with holes being analytic
+\[
+	\frac{1}{2\pi i} \int_{\text{boundary}} f(z)\mathrm{d} z  = 0
+\] 
+\[
+	\int_{\text{boundary of } D} f(z)\mathrm{d} z + \sum_{\text{CW circles}} \int f(z)\mathrm{d} z = 0
+\]
+\[
+	\int_{\partial D} f(z) \mathrm{d} z = \sum_{}^{} \int_{CCW} f(z)\mathrm{d} z
+\]
+\[
+	\frac{1}{2 \pi i} \int_{\partial D} f(z)\mathrm{d} z = 
+	\sum_{z \in  D}^{} \text{Res}(f,z)
+\] 
+
+\section*{Example} 
+\[
+	\int_{- \infty}^{\infty} \frac{\mathrm{d} x}{x^2 + 1} = 
+\] Calc 2, what do we do? Take $\arctan x$ from $-\infty$ to $\infty$. We get
+\[
+\frac{\pi}{2} - \left(- \frac{\pi}{2}\right) =  \pi 
+\] 
+Let's do this using the residue theorem. And then we can move on to the residue theorem $x^2 $ to $x^{4}$. 
+
+So I define $f(z) = \frac{1}{z^2 + 1}$. It has poles at $i$ and $-i$. 
+\[
+\text{Res}(f, i)= \frac{1}{2z} (z = i) = \frac{1}{2i}
+\]
+\[
+\text{Res}(f, -i)= \frac{1}{2z} (z = -i) = -\frac{1}{2i}
+\]
+As 
+\[
+\text{Res} \frac{a(z)}{b(z), z_0} = \frac{a(z_0)}{b'(z_0)}
+\]
+
+Now we have to find a region.  The region will be semicircle in complex plane with one of the poles contained. Radius of this semicircle sunset be 
+\[
+	\frac{1}{2 \pi i } \int_{\partial D_R} \frac{1}{z^2 + 1}\mathrm{d} z = \text{Res}(f,i) = \frac{1}{2i}
+\] 
+\[
+	\int_{\partial D_R} \frac{\mathrm{d} z}{z^2+1} = \pi 
+\]
+We can estimate the bounds
+\[
+| \int_{\cap } \int f(z) \mathrm{d} z | \le  \int_{\cap } |f(z) \mid \mathrm{d} z| = \int \frac{1}{|z^2+1|}|\mathrm{d} z | \le \int_0^{\pi } \frac{1}{R^2 - 1} R \mathrm{d} \theta
+\] 
+
+\section*{Example} 
+Getting even more serious
+\[
+	\int_{-\infty}^{\infty} \frac{\mathrm{d} x}{x^{4} + 1}
+\] Choose the holomorphic function 
+\[
+f(z) = \frac{1}{z^{4} + 1}
+\] 
+Find residues, 
+\[
+z^{4} = -1 = e^{\pi i } = e^{3 \pi i} = e^{5 \pi i } = e^{7 \pi i}
+\] 
+\[
+z = e^{\frac{\pi i }{4}} , e^{3 \pi \frac{i}{4}}, e^{\frac{5 \pi i }{4}}, e^{\frac{7 \pi i}{4}}
+\] 
+Now let's find the residues for each 
+\[
+\text{Res} = \frac{1}{4z^3} = \frac{z}{4 z^{4}} = - \frac{z}{4}
+\] 
+As $z^{4} = -1$. 
+
+Now, choose the path. 
+
+\begin{figure}[ht]
+    \centering
+    \incfig{residue-path-of-a-semicircle}
+    \caption{Residue path of a semicircle}
+    \label{fig:residue-path-of-a-semicircle}
+\end{figure}
+
+Now apply the residue theorem 
+\[
+	\frac{1}{2 \pi i } \int_{-R}^{R} + \int_{\cap } f(z) \mathrm{d} z = \sum \text{residues of 2 points inside the region} = \frac{- e^{\pi i \frac{1}{4}}}{4} - \frac{e^{\frac{3 \pi i }{4}}}{4} 
+\]
+Computation 
+\[
+\frac{\pi}{\sqrt{2} }
+\]
+So the integral is done. 
+
+\[
+f(z) = \frac{1}{z^{4} + 1} = \frac{\pi}{\sqrt{2} }
+\] 
+
+\[
+	\int_{-\infty}^{\infty} \frac{\mathrm{d} x}{x^{6}+1}
+\] 
+The poles occur at 
+\[
+z^{6} = -1 = e^{\pi i } = e^{3 \pi i } = e^{5 \pi i } = e^{7 \pi i } = e^{9 \pi i } = e^{11 \pi i }
+\] 
+The roots are gotten by simply taking the $6$ th root.
+We choose the path semicircle that is going to have 3 poles in the upper plane. These 3 poles are the upper plane existing roots of the number.
+
+\[
+\int \frac{\mathrm{d} z}{z^{6} +1} = \sum_{}^{} \text{Residues at 3 points}
+\] 
+\[
+	\frac{1}{2 \pi i } \int_{-\infty}^{\infty} \frac{\mathrm{d} x}{x^{6} + 1}
+\]
+Residues
+\[
+\text{Res}(f, \cdot) = \frac{1}{6 z^{9}} = \frac{z}{6 z^{6}} = - \frac{z}{6}
+\]
+\[
+	\frac{1}{2 \pi i} \int_{-\infty}^{\infty} \frac{\mathrm{d} x}{x^{6}+1} =
+\frac{
+-e^{\pi \frac{i}{6}} - i - e^{5 \pi \frac{i}{6}}
+}{6} = - \frac{i}{3}
+\] 
+So we get
+\[
+	\int_{-\infty}^{\infty} \frac{\mathrm{d} x}{x^{6} +1} = \frac{2 \pi }{3}
+\] 
+\end{document}
