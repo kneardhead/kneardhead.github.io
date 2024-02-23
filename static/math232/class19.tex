@@ -1,0 +1,134 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+\df{
+Suppose $g:\mathbb{R}^{n}\to \mathbb{R}$ is $C^{1}$. Let 
+\[
+X = \text{ Level Surface } g^{-1}(\{c\} ) = 
+\{\vec{x} \in \mathbb{R}^{n} : g(\vec{x}) = \vec{c}\} 
+\] 
+Take $f:\mathbb{R}^{n}\to \mathbb{R}$ and we say that $\vec{a} \in X$ is ``interesting" for $f$ on $X$ if any one of the following is
+\begin{itemize}
+	\item $f$ not differentiable $\vec{a}$ 
+	\item $\nabla g(\vec{a}) = \vec{0}$ 
+	\item $\nabla f(\vec{a}) = \lambda \nabla g (\vec{a})$ for some scalar $\lambda$. 
+\end{itemize}
+}
+
+\thm{
+If $\vec{a} \in X = g^{-1} \left(\{c\} \right)$ is uninteresting for $X$, then 
+$\forall r >0$, $\exists \vec{b} \in  X$ with $| \vec{b} - \vec{a}| < r$ and $\vec{c} \in X$ with $|\vec{b_2} - \vec{a}| < r$ such that
+\[
+f(\vec{b_1}) > f(\vec{a}) > f(\vec{b_2})
+\] 
+on $X$ $\vec{a}$ isn't a local min/max for $f$ ". 
+}
+
+\section*{Example}
+\[
+f(x) = 4x + 3y 
+\]
+On $x^2 + y^2 = 1$. Is $f$ ever going to be non differentiable. Now what is $g$? It's $g(x,y)= x^2 + y^2 $ and $X = g^{-1}(\{1\} )$. $f$ always being differentiable, so 
+\[
+\nabla g = \langle 2x, 2y \rangle
+\]
+This is never $\vec{0}$ on $X$. So only interesting points are at
+\[
+\nabla f = \lambda \nabla g
+\] 
+\[
+\langle 4,3 \rangle = \nabla \langle 2x , 2y \rangle
+\]
+\[
+4 = 2 \lambda x
+\] 
+\[
+3 = 2 \lambda y
+\] 
+And 
+$x^2 + y^2 = 1$. Solve these for interesting points $\frac{4}{3} = \frac{x}{y}$ and 
+\[
+4y = 3x
+\]
+\[
+ y= \frac{3}{4} x
+\] 
+\[
+x^2 + \frac{9}{16} x^2 = 1
+\] 
+So we can have
+\[
+2 S x^2 \frac{1}{16} = 1
+\] 
+\[
+x = \pm \frac{4}{5}
+\] 
+\[
+y = \pm \frac{3}{5}
+\] 
+We know $f$ attains its min and max on $X$ since is a cpt and $f$ is continuous. So max at $4 / 5 , 3 / 5$ and min at other. 
+
+\section*{Example}
+\[
+f(x,y,z) = x^2 - y + z
+\] 
+on $X$ the unit sphere $x^2 + y^2 + z^2 = 1$, 
+We call that $g(x,y,z)$. So,
+\[
+\nabla g = \langle 2x, 2y, 2z \rangle
+\] 
+\[
+\nabla f = \langle 2x, -1, 1 \rangle
+\] 
+Now what we get is, and required to solve $\lambda$, 
+\[
+2x = \lambda 2x
+\]
+Gives above either $\lambda = 1$ or $x = 0$. 
+\[
+-1 = \lambda 2y
+\] 
+\[
+1 = \lambda 2 z
+\] 
+\[
+x^2 + y^2 + z^2 = 1
+\]
+Case 01 : $x = 0$ from there 
+\[
+	{-1 \over 1} = { \lambda 2 y \over  \lambda 2 z } 
+\] 
+\[
+z = - y 
+\] 
+Using this 
+\[
+0 ^2 + y^2 + (-y)^2 = 1 \implies y = \pm \frac{1}{\sqrt{2} } \text{ and } z = - \left(\pm \frac{1}{\sqrt{2} }\right)
+\] 
+
+Case 02: $\lambda  = 1$ then from there we can find 
+\[
+y = - \frac{1}{2}, z = \frac{1}{2}
+\] 
+\[
+x^2 + \frac{1}{4} + \frac{1}{4} = 1
+\] 
+\[
+x = \pm \frac{1}{\sqrt{2} }
+\] 
+$2$ more interesting points are 
+\[
+	\left(
+\pm \frac{1}{\sqrt{2} }, - \frac{1}{2}, \frac{1}{2}
+	\right)
+\]
+
+$X$ is compact then we will get min max. 
+
+\end{document}

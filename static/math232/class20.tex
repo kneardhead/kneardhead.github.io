@@ -1,0 +1,83 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 20}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+\nt{
+The focus must be to kind of acquire the content of the class, not just blatantly take notes and shit.
+}
+
+The ball around $f(\vec{a})$ would have both bigger and smaller function values and that is then uninteresting. 
+\thm{$g: \mathbb{R}^{n} \to \mathbb{R}$ and $C^{1}$. \[
+X = g^{-1} (\{c\} ), \quad \vec{a} \in  X
+\] 
+If $\vec{a}$ is uninteresting, for $f$ on $X$, then $\forall r >0$, there are points on $X$ within $r$ from $\vec{a}$ where $f$ is bigger and smaller than $f(\vec{a})$
+\pf{
+Recall $p:\mathbb{R}\to X$ is any differentiable curve with point $p(t_0) = \vec{a}$ then $p'(t_0) \perp \nabla g(\vec{a})$. 
+
+Claim: Every $\vec{v}$ $\in  \nabla g(\vec{a})^{\perp}$ is $p'(t_0)$ for some $p$ as above.
+
+Since $\nabla f(\vec{a}) \neq \lambda \nabla g(\vec{a})$, then $\exists \vec{v} \in  \nabla g(\vec{a})^{\perp}$ such that $\vec{v} $ is not perpendicular to $\nabla f(\vec{a})$. 
+
+By claim $\exists p : \mathbb{R}\to X$ with $p(t) = \vec{a}$ and $p'(t) = \vec{v}$. Consider $j :\mathbb{R}\to \mathbb{R}$.  
+Given by  $j(t) = f(p(t))$, 
+\[
+	j'(t) = d f _{p(t)} (p'(t))
+\] 
+\[
+	j'(t_0) = d f_{p(t_0) } (p'(t_0))
+\]
+\[
+	d f_{\vec{a}} (\vec{v} ) = \nabla f(\vec{a}) \cdot \vec{v} \neq 0
+\] 
+So $j$ is smaller than $j(t_0)$ on one side and bigger than the other. 
+}
+
+\section*{Example} 
+\[
+g(x,y,z) = x^2 + y^2 + z^2
+\] 
+So Let a sphere be
+\[
+g^{-1}(\{1\} ) = X
+\]
+Let's say there is a point on $X$ called $\vec{a} = \frac{1}{\sqrt{3} , \frac{1}{\sqrt{3} , \frac{1}{\sqrt{3} }}}$ lol silly, 
+\[
+\frac{1}{\sqrt{3} } , \frac{1}{\sqrt{3} }, \frac{1}{\sqrt{3} }
+\] 
+Attached diagram. 
+
+\section{Implicit function theorem}
+\[
+x^3 +xy + e^{y} = 2
+\] 
+Globally $y$ is not a function of $x$. $y$ is implicitly a function of $x$, near $1,0$ if things turns out nicely, we can see a little piece of the curve and looks like $y$ is a function of $x$ and we treat it like
+\[
+x^3 + x h(x) + e^{h(x)} = 2
+\] 
+Then we differentiate and we treat $y = h(x)$ as an implicit function only for that point.
+
+\thm{
+	(Baby version) $F : \mathbb{R}^{n}\to \mathbb{R}$ and $C^{1}$. Take a point $\vec{a}$ in $\mathbb{R}^{n} $ where $F(\vec{a}) = C$. We are going to suppose that $\partial F / \partial x_n$ at $\vec{a}$ is not 0. Then well 
+	\[
+		x_{n} \text{ is an implicit function of } x_1, \ldots, x_{n-1}
+	\]
+	given the equation $F(x_1, \ldots, x_n )= C$. This is near $(a_1, \ldots, a_{n-1} )$. 
+
+	Setting $\vec{a} = (a_1, \ldots, a_n)$ we have an open $U$ $\subset R^{n-1}$ around $\vec{a}$ and $V \subset \mathbb{R}^{n}$ around $\vec{a}$. And 
+	\[
+	h : U \to \mathbb{R}
+	\] 
+	Such that $V \cap F^{-1}(\{C\} )$ is the graph of $h$. I.E there is a $(b_1, \ldots, b_n) \in V \cap  F^{-1}(\{C\} )$ $ \impliedby $ \[
+		b_n = h (b_1, \ldots, b_{n-1} )
+	\]  
+}
+
+
+
+
+\end{document}

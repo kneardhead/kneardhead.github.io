@@ -1,0 +1,71 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Class 20}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+We are going to exploit 
+\[
+z = r e^{i \theta}
+\]
+\[
+\log z = \ln r + i \theta
+\] 
+\[
+\log z = \ln |z| + i \arg z
+\]
+Today we will look at 
+\[
+0 < \arg < 2 \pi 
+\] 
+The function 
+\[
+f(z) \log z
+\]
+Residue theorem 
+\[\frac{1}{2\pi i }
+\int_C f(z) \log z \mathrm{d} z = \text{ sum of the residues of integrand }f(z)\log z \text{ inside the path }
+\]
+\[
+	\frac{1}{2 \pi i } \int_\epsilon^R f(x) \ln x \mathrm{d} x +
+	\frac{1}{2 \pi i}\int_{-C} \cdots + 
+	\frac{1}{2\pi i } \int_R^{\epsilon} f(x) (\ln x + 2 \pi i ) \mathrm{d}  x
+\]
+Taking the limit 
+\[
+0 = \frac{1}{2 \pi i } \int_0^{\infty} f(x) \ln x - \frac{1}{2 \pi i } \int_0^\infty f(x) 
+\left(\ln x + 2 \pi i \right)\mathrm{d} x = \text{ sum of residues }
+\]
+
+\[
+\boxed{
+\int_0^{\infty} f(x) \mathrm{d} x = - \sum_{}^{} f(z) \log z \text{ residues}
+}
+\]
+
+\section*{Examples}
+\[
+\int_0^{\infty} \frac{\mathrm{d} x}{ x^3+1}
+\] 
+so this is going to be 
+\[
+- \sum_{n}^{} \text{residues of } \frac{\log z}{z^3+1}
+\] 
+Singularities happen at $z^3 = -1$ 
+\[
+z = e^{ \pi i \over 3}, e^{ \pi i }, e^{5 \pi i \over 3}
+\]
+\[
+\text{res}\left({\log z \over z^3+1 } \right) = \frac{\log z}{3 z^2} = {z \log z \over 3 z^3} = - {z \log z \over 3}
+\] 
+Look at 
+\[
+z^{\alpha}
+\] 
+
+
+\end{document}

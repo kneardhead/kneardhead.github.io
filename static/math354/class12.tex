@@ -1,0 +1,93 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section*{Products and Quotients of Vector Spaces} 
+Products: Suppose $V_1, \ldots, V_m$ are vector spaces (same $\mathbb{F}$) then we define their product 
+\[
+V_1 \times V_2 \times  \cdots 
+\] The product is a cartesian product. As the set of all lists of the form, 
+\[
+	(v_1, v_2, v_3, \ldots)
+\]
+We also define the natural choices for addition and scalar multiplication. 
+\[
+	(v_1, \ldots, v_m) + (w_1, \ldots, w_m)= (v_1 + w_1, \ldots)
+\]
+\[
+\lambda (v_1, \ldots, v_m) = (\lambda v_1, \ldots , \lambda v_m)
+\] 
+Easy to check, this is a vector space, and these are finite dimensional, 
+\[
+\text{dim} (v_1 \times \ldots \times  v_m) = \sum_{k = 1}^{m} \dim v_k
+\]
+Basis of $V_1$, Basis of $V_2$. 
+
+\section*{ Something in the way }
+\df{
+Suppose $U$ is a subspace of $V$. Then all possible translatables of $U$, 
+\[
+\vec{v} + U, \quad \vec{v} \in  V
+\]
+We just add a single vector to a whole subspace, so it translates from origin, otherwise it's mostly the same. 
+\[
+V / U = \{\vec{v} + U : \vec{v} \in  V\} 
+\] 
+
+To define addition and subtraction 
+\[
+\vec{v_1} + U + \vec{v_2} + U = (v_1) + v_2 + U
+\]
+\[
+\lambda (\vec{v} + U) = \lambda \vec{v} + U
+\] 
+The quotient map 
+\[
+V \to  V / U
+\] 
+Here the linear transform is called $\pi $. 
+\[
+\pi(\vec{v}) = \vec{v}  + U 
+\]
+\[
+\pi \mathcal L (V , {V}/ {U})
+\]
+\[
+\text{null } \pi = U
+\] 
+\[
+\text{range } \pi = V / U
+\] 
+}
+\[
+	\dim V = \dim \text{null} \pi  + \dim \text{range} \pi = \dim U
+\]
+\[
+\dim \text{range} \pi = \dim V - \dim U
+\]
+
+\df{
+	\[	\tilde{T}  \in \mathcal L (V / \text{null} T ) \to  W \]
+
+\[
+	\tilde{T} (v + \text{null} T ) = T v
+\] 
+}
+\section*{Exercises}
+\[
+U = \{(x,y,z) \in \mathbb{R}^{3} : 2 x + 3y + 5z = 0\} 
+\] 
+\[
+A \subset \mathbb{R}^{3}
+\] 	
+Prove that $A$ is a translate of $U$ if and only if there exists a real number such that $A$ is the set of $(x,y,z)$ such that 
+\[
+2x + 3y + 5z = C
+\] 
+
+\end{document}

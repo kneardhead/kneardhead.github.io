@@ -1,0 +1,59 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+The integral we are going to do today is similar but mostly different. 
+In every complex analysis book you will find
+\[
+	\int_{-\infty}^{\infty} {\sin ax \over x } \mathrm{d} x
+\]
+Using a dummy variable we can do a rewrite,
+\[
+	\int_{-\infty}^{\infty} \frac{\sin t}{t / a} \mathrm{d} t / a
+\]
+So in our analysis we might just do the case that $a= 1$ because for other $a$ we might have minor trouble with $-/+$ signs. So we are deal with now is
+\[
+\boxed{
+	\int_{-\infty}^{\infty} \frac{\sin x}{x} \mathrm{d} x
+}
+\] 
+Choose $f(z) = \frac{\sin z}{z}$. Instead, we deal with 
+\[
+f(z) = \frac{e^{iz}}{z}
+\] This is undefined at $0$. 
+\[
+| e^{iz} | = e^{\text{Re}(iz)} = e^{-y}
+\] 
+Now having a singularity at $z=0$ causes us to consider a sub circle path of $\epsilon$ radius inward to the circle and we get
+\[
+\int_C {e^{iz} \over z} \mathrm{d} z = 0
+\] We need $R \to \infty$ and $\epsilon \to  0$. Let's talk about $R\to \infty$ first. 
+
+So we are going to integrate along $\bigcap $ path and taking modulus
+\[
+\left| \int e^{iz}/z \mathrm{d} z \right| \le \int 
+{ |e^{iz}| | \mathrm{d} z| \over |z| } 
+\]
+From here we get, 
+\[
+= \int_C 
+{ e^{-y} R \mathrm{d} \theta \over R} = \int_C e^{-y} \mathrm{d} \theta
+\]
+Using $y = R \sin \theta$ 
+\[
+= \int_0 ^\pi e^{-R \sin \theta} \mathrm{d} \theta
+\] The problem is this integral tries to go to infinitely zero, other than the two points $\theta = 0$ and $\theta = \pi $. Using symmetry we can go from 
+\[
+2 \int_0^{\pi / 2} e^{-R \sin \theta} \mathrm{d}  \theta 
+\]
+This is smaller than 
+\[
+< 2 \int e^{ - R \pi \theta / 2} \mathrm{d}  \theta
+\] 
+
+\end{document}
