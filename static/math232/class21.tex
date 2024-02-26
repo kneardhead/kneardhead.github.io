@@ -1,0 +1,108 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 21}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+\[
+F(x,y,z) = x^2 + y^2 + z^2
+\] 
+\[
+x^2 + y^2 + z^2 = 1
+\] 
+\[
+\vec{a} = \left(\frac{1}{\sqrt{2} }, \frac{1}{2}, \frac{1}{2}\right)
+\]
+\[
+\nabla F = \left(2x , 2y, 2z\right)
+\] 
+\[
+\nabla F(\vec{a}) = \langle \sqrt{2} , 1 , 1 \rangle 
+\] 
+\[
+\frac{\partial f}{\partial z} (\vec{a}) \neq 0 
+\] 
+Locally on the sphere $z$ is a function of $x,y$ 
+\[
+\frac{\partial z}{\partial x} = - \frac{\sqrt{2} }{1} = \sqrt{2} 
+\] 
+We are moving but we are trying to move so that $f$ remains the same. So we are actually trying to figure out, $x_i$ moves by a little bit then it will change $f$. Then, how can $x_n$ change so that $f$ stays constant. 
+
+Alternatively, 
+\[
+x^2 + y^2 + h(x,y) ^2 = 1
+\] And then we can get with partials around $x$, 
+\[
+2x + 0 + 2 h h_x(x,y) = 
+\]
+
+Let's talk about $y^3 - x^2 = 0$. Here 
+\[
+F(x,y) = y^3 - x^2 
+\] We want to take this near the origin (0,0). The partial derivatives are both zero at origin. Theorem does not apply. But does that $y$ is not function of $ f$ at near $0,0$? Actually, $y$ is a function of $x$. 
+
+A justification 
+\[
+n = 3, \quad \vec{a} = (a_1, a_2, a_3)
+\] 
+\[
+F = F(x,y,z) 
+\] 
+\[
+\partial f / \partial z (\vec{a}) > 0 
+\] 
+Show a point $\vec{a}$ as a dot. The partial in the $z$ direction is positive. $z$ be along the vertical. Partial derivatives continuous. Now zoom in so that the region we are worried about, everywhere the $\partial f /\partial z$ is greater than 0. This means means that along $z$, $F$ is always increasing, but we don't want to go too far. How far do we want to go? Well cut it off at some point range. Now $f(\text{upper bound})  = c + \epsilon_1$ and $f (\text{lower bound}) = c - \epsilon_2$. Because the function is continuous, so the variation of $x,y$ is bounded by some certain $m$.
+\[
+\left| \frac{\partial f}{\partial x} \right|, \left| \frac{\partial f}{\partial y} \right| < M
+\] 
+We don't want to move too much horizontally or forward-backward in a way that $f$ doesn't change drastically. $F$ cannot hit $C$ twice because it's always increasing. The point on fiber is $x,y, h(x,y)$. 
+\[
+h(a_1,a_2) = a_3
+\] 
+In order to show $h$ to be differentiable we are just going to check the partial derivatives, 
+\[
+\partial _x h (a_1, a_2) = \lim_{j \to 0} \frac{h(a_1 + j, a_2) - h(a_1, a_2)}{j}
+\]
+We know that $$F(a_1 + j_1 , a_2, h(a_1 + j, a_2)) = c$$ similarly 
+\[
+F(a_1, a_2, a_3) = C
+\]
+Now moving horizontally for a small for $f$ will have to be exactly opposite small $f$ variation and 
+\[
+\Delta F_x = - \Delta F_y
+\]  
+Because we have an equal $F$ equipotential region.
+\[
+\frac{\partial F}{\partial x} \cdot  j = 
+\frac{- \partial F}{\partial z} \cdot \left(h(a_1 + j, a_2, a_3)\right)
+\] 
+But this upper term divided by $j$ is exactly what we care about, the derivative of $h(x,y)$. 
+
+\[
+\partial _x h (a_1, a_2) = \lim_{j \to 0} \frac{h(a_1 + j, a_2) - h(a_1, a_2)}{j} = 
+-{
+	 \partial_x F(\vec{a}) 
+	\over
+\partial_z F(\vec{a}) }
+\]
+
+
+
+
+\section*{Non baby version}
+Let's take 
+$x^2 + y^2 + z^2 = 3$. This is a sphere
+in $\mathbb{R}^{3}$. But then you can also
+say that, 
+$x + 2y + 3z = 6$
+let's consider them both together. Intersection 
+is going to be some curve, for this case. Kind of hard
+to come up with equations but 
+near the point of intersection. Near $1,1,1$ can we write, 
+we can write $y,z$ together as an 
+implicit function of $x$. 
+Can you come up with an $x$ so that $h(y,z) = x$. 
+\end{document}
