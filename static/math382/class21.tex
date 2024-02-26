@@ -1,0 +1,206 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Class 21}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+We are going to look at $z^{\alpha}$.
+Both quantity are $\mathbb{C}$. 
+\[
+z^{\alpha}=
+\text{exp}(\alpha \log z)
+\] 
+\nt{
+\[
+= \exp \left(
+\alpha \left(
+\ln |z| + i \arg z 
+\right)
+\right) = \exp \left(\alpha \ln |z| \right) \exp \left(i \alpha \arg z\right)
+\] 
+}
+$z \neq 0$, it's ambiguous. Since $\log z$ is
+ambiguous. So also we could say $z^{\alpha}$ is 
+exponential of $\alpha \log z$ but we can add
+\[
+z^{\alpha} = 
+\exp
+\left(
+\alpha 
+\left(\log z + 2 \pi i n\right)
+\right)
+\] 
+\[
+z^{\alpha} = 
+\exp
+\left(\alpha \log z + 2 \pi i \alpha n\right)
+\] 
+If $\alpha $ is an integer we have it defined. $z^{\alpha}$ equals as it should. 
+
+
+Let's work on how about $\alpha = 0$. How about $1 ^{\alpha}$, 
+\[
+1^{\alpha} = \exp \left(\alpha i \arg 1\right) = \exp (\alpha i \left(2 \pi n \right) )
+\]
+It has infinitely many values. $\alpha$ is complex.
+
+
+\section*{Derivative}
+What about
+\[
+\frac{\mathrm{d} }{\mathrm{d}  z} \left(z^{\alpha}\right) = 
+\frac{\mathrm{d} }{\mathrm{d} z} \exp\left(\alpha \log z\right) = 
+\exp \left(\alpha \log z\right) \frac{\alpha}{z}
+\]
+\[
+= \frac{\alpha}{z}z^{\alpha} = \alpha z^{\alpha - 1}
+\] 
+So it holds. For another one, 
+\[
+\frac{\mathrm{d} }{\mathrm{d} \alpha} = z^{\alpha} \left(\log z\right)
+\]
+For fun try $i^{i}$. 
+
+\section*{Integral} 
+New computation of an integral. We want to go from $0$ to $\infty.$
+ \[
+\int_0^{\infty} \frac{x^{\alpha - 1}}{x + 1}
+\] 
+Set $\alpha \in \mathbb{R}$. 
+The condition on $\alpha$ to make the integral finite 
+as $x\to 0$ and $x\to \infty$. 
+\[
+1 > \alpha > 0 
+\] 
+Just confirms the integral will exist. Now I am going to look at the plane. 
+We are interested in the origin, of course, but we want to go to $+ \mathbb{R}$. 
+$z$ has singularity at $z = -1$. 
+\begin{figure}[ht]
+    \centering
+    \incfig{integral-around-for-class-21}
+    \caption{Integral around for Class 21}
+    \label{fig:integral-around-for-class-21}
+\end{figure}
+We want to use $f(z) = {z^{\alpha - 1} \over z + 1}$
+
+\[
+\int_C \frac{z^{\alpha - 1}}{z+1} \mathrm{d} z = 
+2 \pi i 
+\left(\text{Residue at -1}\right) = 
+2 \pi i  { 
+	\left(-1\right)^{\alpha - 1}\over 
+	1
+}
+\] 
+Then integrand numerator equals 
+\[
+\exp \left(\left( \alpha - 1 \right)  \log z \right)
+= \exp 
+\left( 
+\left(\alpha - 1\right) i \arg (-1 ) 
+\right)
+= 
+\exp \left(
+	\left(\alpha - 1\right)
+\right) i \pi 
+\]
+The details are
+\[
+\int _0^{\infty} \frac{x^{\alpha -1} }{x + 1} \mathrm{d} x + \int_\infty^0 \frac{x^{\alpha - 1}}{x+1} e^{2 \pi i \left(\alpha - 1\right)}
+\] 
+Beware about going around the circle changes the argument by $2\pi $
+\[
+\int{ x^{\alpha - 1} \over x + 1} \mathrm{d}  x = 
+{ 
+2\pi i e ^{ \pi i (\alpha - 1) } \over 1 - e^{2 \pi i (\alpha - 1)} } 
+\]
+
+\[
+= \pi / \sin \pi \alpha
+\] 
+Here the $\epsilon$ is a radius that will go to zero around $0$.
+
+\section*{Handy methods to extend this example} 
+Here's one. Take the formula and change dummy variable, 
+\[
+\boxed{
+\int_0 ^{ \infty} \frac{x^{\alpha - 1}}{x + 1} \mathrm{d}  x = \pi / \sin \pi \alpha
+}
+\] 
+Using $x = y^3$, 
+\[
+\pi / \sin \alpha \pi = 
+\int_0^{\infty} \frac{y ^{3 \alpha - 3} }{ y^3 + 1} 3y^2 \mathrm{d} y 
+= 
+\int_0^{\infty} 
+{y ^{3 \alpha -1} \mathrm{d} y \over y^3 + 1 } 
+\] 
+\[
+\frac{\pi}{\sqrt{3} / 2} = 3 \int_0^{\infty} \mathrm{d} y \frac{1}{y^3 + 1} = \frac{2 \pi }{3 \sqrt{3} }
+\]
+
+Differentiate the equation 
+\[
+f;dsakjl;lkjfdsa;lkjfdsa;lkjfdsa;lkjfdsa;lkjfdsaf;lkjdsa;lkjfdsafdsa;lkj;lkjfdsalkjfdsalkjfdsafdsa;lkj
+\]
+\[
+\int_0^{\infty} \frac{x^{\alpha - 1} \ln x}{x + 1} \mathrm{d}  x = 
+\pi \frac{\mathrm{d} }{\mathrm{d}  \alpha} \csc \pi \alpha = - \pi ^2 \csc \pi \alpha \cot \pi \alpha
+\]
+So for $\alpha = \frac{1}{2}$, 
+\[
+\int_0^{\infty} \frac{x^{- \frac{1}{ 2}} \ln x}{x + 1} = 0
+\]
+For $x=e^{y}$, then $x$ goes from $0$ to $\infty$ so $y$ goes from $-\infty$ to $\infty$. 
+
+\[
+	\int_{-\infty}^{\infty} e^{y} \mathrm{d} y \frac{e^{(\alpha - 1) y }}{e^{ y } + 1} = \frac{\pi}{\sin \pi \alpha}
+\] 
+
+
+\[
+	\int_{-\infty}^{\infty} \mathrm{d} y \frac{e^{\alpha y  }}{e^{ y } + 1} = \frac{\pi}{\sin \pi \alpha}
+\] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
