@@ -1,0 +1,171 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 22}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+\df{
+Given $m$ functions $f_1 ,\ldots, f_m : \mathbb{R}^{n} \to \mathbb{R}$ where 
+\[
+F = (f_1, \ldots, f_m) : \mathbb{R}^{n} \to \mathbb{R}^{m}
+\]
+$\vec{a} \in  \mathbb{R}^{n}$, where $F(\vec{a}) = \vec{c}$. Relabel $x_{n-m+1} \ldots x_n$ as $z_1 ,\ldots, z_m$. Then near $\vec{a}$, the constraint 
+\[
+F(\vec{x}) = \vec{c}
+\] defines $z_1, \ldots, z_m$ as implicit functions of $x_1, \ldots, x_{n - m} $ if 
+\[
+	\begin{pmatrix} \frac{\partial f_1}{\partial z_1} & \frac{\partial f_2}{\partial z_1} & \cdots \\
+	\vdots & & \\ 
+	       & & \frac{\partial f_ a}{\partial z_b }
+\end{pmatrix}
+\] 
+}
+
+\section*{Example} 
+Intersection of $x^2 + y^2 + z^2 = 3$ and $x + 2y + 3z = 6$ near $\vec{a} = (1,1,1)$. Can we get $y,z$ as implicit function of $x$ near $\vec{a}$? 
+\[
+f_1 = \text{first one}
+\] 
+\[
+f_2 = \text{second one}
+\]
+\[
+F = (f_1, f_2)
+\] 
+\[
+F(\vec{a}) = (3,6) = \vec{c}
+\]
+\[
+	\begin{pmatrix} \partial_2f_1 & \partial_2 f_2 \\ \partial_3f_1 & \partial_3f_2 \end{pmatrix} (\vec{a}) = 
+	\begin{pmatrix} 2 y & 2 \\ 2z & 3 \end{pmatrix}  (1,1,1) = \begin{pmatrix} 2 & 2 \\ 2 & 3 \end{pmatrix} 
+\]
+This is inververtible. So by the implicit function theorem we can treat $y,z$ as some function $h(x)$ near $1,1,1$ ($x,y,z$). 
+
+To calculate $\frac{dy}{dx}$ and $\frac{dz}{dx}$. 
+\[
+y = h(x) \text{ and } z = j(x)
+\]
+Near the given point hte equation is going to hold, 
+\[
+x^2 + h(x)^2 + j(x)^2 = 3
+\] 
+\[
+x + 2 h (x) + 3 j(x) = 6
+\]
+Taking a derivative, 
+\[
+2x + 2 h(x) h'(x) + 2 j(x) j'(x) = 0
+\] 
+\[
+1 + 2 h'(x) + 3 j' (x) = 0
+\] 
+At $(x,y,z) = (1,1,1)$ that becomes, 
+\[
+2 + 2h' + 2j' = 0
+\] 
+\[
+1 = 2h' + 3j' = 0
+\] 
+We just need to solve this system of equation for $h'$ and $j'$.
+That same thing can be written as
+\[
+	\begin{pmatrix} 2 & 2 \\ 2 & 3 \end{pmatrix}  
+	\begin{pmatrix} h' \\ j' \end{pmatrix} = 
+	\begin{pmatrix} -2 \\ -1\end{pmatrix} 
+\]
+This is only going to work out well if you plot it. 
+
+\section*{General Lagrange Multipliers} 
+Constraint is given by $$g_1(\vec{x}) = c_1$$
+\[
+g_2(\vec{x}) = c_2
+\] 
+\[
+g_m (\vec{x}) = c_m
+\] 
+So $G = (g_1, \ldots, g_m)$. Here 
+\[
+G: \mathbb{R}^{n} \to \mathbb{R}^{m}
+\] 
+And let's say that $X$ is $G^{-1} (\{\vec{c}\} )$. We want to optimize $f: \mathbb{R}^{n}\to \mathbb{R}$ constrained to $X$. The idea again is that you know there are going to be certain special, $f $ is not going to be maximized, unless something interesting happens. What's the interesting thing? 
+
+Given $\vec{a} \in X$, if $f$ is differentiable at $\vec{a}$. 
+\[
+\{\nabla g_i (\vec{a})\} \text{ is linearly independent}
+\]
+And $\nabla f(\vec{a})$ is not in span of $\{\nabla g_i(\vec{a})\} $. Then $f$ is not max or min at $\vec{a}$ when restricted to $X$. 
+
+\section*{INtuitive Justification} 
+Draw the picture of a sphere getting intersected by a plane. Sphere is $g_1 = c_1$ and $g_2 = c_2$ is plane. Intersection is our $X$. 
+\[
+X = G^{-1} ( c_1, c_2)
+\] 
+Let's pick a point $\vec{a}$ right there on the intersection disk. If we are moving along the intersection then $g_1, g_2$ are constant. And so any tangent direction along the $X$ are $\perp$ to $\nabla g_i (\vec{a})$. Tangent directions along $X$ $\subset  \nabla g_i ^{\perp }$ $\forall i$. 
+\[
+	X \subset \bigcap_{i=1}^m \nabla g_i^{\perp} 
+\]
+Implicit function theorem says
+\[
+X = \cap  \nabla g_i ^{\perp}
+\]
+If $\nabla f$ not in span of $\{\nabla g_i\} $ then $\exists \text{some} \vec{v} \cap \nabla g_i^{\perp}$ where $\vec{v}$ is not perp to $f$. Going aong that direction will increase or decrease $f$. 
+
+Think about $\nabla g_1$ and $\nabla g_2$ and they are perp to $\vec{t}$ tangent vector. $\nabla f$ is not in their span so it can't either be perp to $\vec{t}$. This diagram is necessary. 
+
+\section*{Subject ot the constraints example}
+\[
+x^2 + y^2 + z^2 = 3
+\] 
+\[
+x + 2y + 3z = 6
+\] 
+What is the maximum and minimum value of $x$? 
+\[
+f(x,y,z) = x
+\] 
+Are we guarenteed we are going to have a maximum or minimum? $f$ is continous function. Constraint is the $X$ which is compact. 
+\nt{
+Given $\vec{a} \in X$, if $f$ is differentiable at $\vec{a}$. 
+\[
+\{\nabla g_i (\vec{a})\} \text{ is linearly independent}
+\]
+And $\nabla f(\vec{a})$ is not in span of $\{\nabla g_i(\vec{a})\} $. Then $f$ is not max or min at $\vec{a}$ when restricted to $X$. 
+}
+These conditions are given in the note. 
+
+\[
+\nabla g_1 = (2x, 2y , 2z)
+\]
+\[
+\nabla g_2 =( 1,2,3)
+\] 
+Are they every linearly dependent? well yes but they will be linearly dependent on points that are not on $X$. 
+Linearly dependent if $(x,y,z) = \kappa (1,2,3)$
+\[
+\kappa^2 + (2\kappa)^2 + (3\kappa)^2 = 3
+\] 
+But we get $\kappa = \pm \sqrt{\frac{3}{14}} $. This point is outside of our required place of interest. 
+\[
+	(x,y,z) = \pm 
+\left(
+	\sqrt{\frac{3}{14}}  , 2 \sqrt{\frac{3}{14}} , 3 \sqrt{\frac{3}{14}} 
+	\right)
+\]
+We don't have $\kappa$ range within $X$ (this sentence makes no sense lol). So, where is $\nabla f$ in span of $\nabla g_1, \nabla g_2$ are? 
+\[
+\nabla f = \lambda_1 \nabla g_1 + \lambda_2 \nabla g_2
+\]
+\[
+	(1,0,0) = \lambda_1 (2x, 2y, 2z) + \lambda_2 (1,2,3)
+\] 
+\begin{align*}
+	1 &= \lambda_1 2x + \lambda_2 \\
+	0 &= \lambda_1 2y + 2\lambda_2 \\
+	0 &= \lambda_1 2z + 3 \lambda_2 \\
+	3 &= x^2 + y^2 + z^2 \qquad \text{(constraint 1)}\\
+	6 &= x+ 2y + 3z \qquad \text{(constraint 2)} \\
+\end{align*}
+\end{document}

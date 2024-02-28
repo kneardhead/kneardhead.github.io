@@ -1,0 +1,153 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Linear Algebra : : Class}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Exercise 3E6}
+Suppose $U, W$ are subspaces of $V$. One of the translates of $U$ is a translate of $U$ is the translate of $W$. 
+\[
+v  + U = x + W
+\] 
+Then $U$ and $W$ are same to prove. 
+
+From what's given, $v = x  + w$. So, 
+\[
+v - x \in W
+\] 
+Suppose $u \in U$. Then $v+ u$ belongs to $v + U$. And  this equals to $x + W$. 
+So, 
+\[
+u \in x - v + W 
+\] 
+Hence $U \subset W$. Likewise $W \subset U$ and $U = W$ 
+
+\section*{3F: Duality} 
+\df{
+Consider the linear functions from $V$ to the scalars. 
+\[
+\mathcal L (V, \mathbb{F})
+\]
+Each one of these $\phi \in  \mathcal L (V, \mathbb{F})$ is a linear function from $V$ to the scalars. We call \emph{Linear Functional} on $V$. 
+
+An added notation would be $V'$ on this space would be set of all functionals on $V$. 
+}
+
+An example can be $V = \mathcal P (\mathbb{F})$. A functional can be \[
+\int _0^{1} p \, \mathrm{d} x
+\]
+Another example can be evaluation at, say, 10, 
+\[
+p(10)
+\] 
+Functional on $\mathbb{F}^{\infty}$ can be 
+\[
+\vec{x} = \left(x_1, x_2, \ldots, x_n, \ldots\right)
+\]
+A functional can be $\phi \in \mathcal L (\mathbb{F}^{\infty}, \mathbb{F})$, 
+\[
+\phi (x) = x_1 + \ldots  + x_n
+\]
+It should be apparent that $V'$ is a vector space. Now, given for a basis $V$, we obtain the very important dual basis for $V'$ 
+
+\[
+\phi_k (v_j) = 1 \text{ or } 0
+\] 
+Here it's one if $ k = j$. These linear functionals are linearly independent. For if, 
+\[
+c_1 \phi_1  + \ldots + c_m \phi_m = 0
+\] 
+Then evaluate at $v = v_k$. 
+\[
+c_k \phi_k(v_k) = 0
+\] 
+\[
+c_k = 0
+\] 
+From here we can say 
+\[
+\dim V' = \dim V
+\]
+\[
+\vec{v} = \phi_1(\vec{v}) \vec{v}_1 + \ldots + \phi_m (\vec{v}) \vec{v}_m
+\]
+
+\section*{}
+Given $T \in  \mathcal L (V, W)$, 
+\[
+V \to  W 
+\] 
+We define dual of $T$ by 
+\[
+W' \to V'
+\]
+\df{
+$T'$ start with a linear functional $\phi$ on $W$. 
+\[
+T' (\phi) (v) = \phi(T(v) ) 
+\] 
+\[
+	(T' \cdot \phi) \cdot v = \phi \cdot (T \cdot v)
+\]
+Hence 
+\[
+T' \cdot \phi = \phi \cdot T
+\]
+
+}
+
+\section*{Null Space and Range of Dual of Linear Map} 
+\df{
+3.121
+}
+Example 3.122
+
+EX3F1 
+
+Each linear functional is surjective or $0$. This is easy to see that if  $\phi(v) \neq  0$ then $\lambda \phi(v) = \phi(\lambda v)$ so you can have any value as you want. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
