@@ -1,0 +1,118 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Class 22}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section*{Counting Theorem}
+
+Set we have a nice curve with a boundary region. And we have a holomorophic function $f $ with some isolated singularities, namely Poles. We want to count the number of zeroes and number of poles of $f$. We assume we can use the residue theorem and on the curve we don't have $f$ being infinite or zero. 
+
+Now we apply the residue theorem not to $f$ itself but to $f'(z) / f(z)$. Examine 
+\[
+\int_C \frac{f'(z)}{f(z)} \mathrm{d} z
+\] 
+What are the singularities inside? Wherever $f$ is zero we have singularity. Wherever $f$ is infinite we also have it same. Examine singularities of $f'/f$.
+
+Let's say $f(z_0) = 0$. Now near $z_0$, 
+\[
+f(z) = (z-z_0)^{m} g(z)
+\] 
+so that $g(z_0) \neq  0$. 
+\[
+	(z-z_0)^{m} \left(
+a_0 + a_1 (z-z_0)^{1} + a_2 (z-z_0)^{2} + \cdots
+	\right)
+\]
+Let's compute our quotient 
+\[
+f'/f = \frac{(z-z_0)^{m} g'(z) + m (z-z_0)^{m-1} g(z)}{(z-z_0)^{m} g(z)}
+\]
+\[
+ = \frac{g'(z)}{g(z)} + \frac{m g(z)}{g(z)} \frac{1}{z-z_0} + \cdots
+\] 
+So the residue of $\frac{f'}{f}$ at $z_0$ is equal to 
+\[ 
+	\text{Res} \left(\frac{f'}{f} , z_0\right) = m
+\]
+
+Now let's apply the same thing for a pole. 
+\[
+f(z) = \frac{C}{(z-z_0)^{m}} + \cdots
+\]
+\[
+= \frac{1}{(z-z_0)^{m} } g(z) 
+\]
+\[
+g(z_0) = C
+\] 
+\[
+\log f = -n \log(z-z_0)g + (z-z_0)^{-n} \log g
+\] 
+\[
+\frac{f'}{f} = \frac{-ng }{z-z_0} + \cdots
+\]
+
+Residue Theorems 
+\[
+\frac{1}{2 \pi i } \int_C \frac{f'(z)}{f(z)} \mathrm{d} z = \text{ total number of zeroes} - \text{ total number of poles}
+\]
+
+Let's consider a polynomial $P(z)$ with order $n\ge 1$ and consider the curve to be a circle. If it has zeroes it has finitely many so we just need to draw a big radius. 
+
+\[
+\int_C \frac{1}{2 \pi i } \frac{P'(z)}{P(z)} \mathrm{d} z = \mathcal Z
+\] 
+Rough estimates $P_z$ will have leading term $cz^{n} + \text{lower order}$ if $C \neq  0$. Then $P'(z) = nc z^{ n-1}$. 
+\[
+P'/P = \frac{ncz^{n-1} (1+\ldots)}{ cz^{n} (1+\ldots)} = \frac{n}{z} + \cdots 
+\]
+\[
+\int P' / P \mathrm{d} z = \int \frac{n}{z} \mathrm{d} z = n \frac{2 \pi i }{R^{n-1}}
+\] 
+\[
+P(z) \text{ has exactly } n \text{ zeroes in } \mathbb{C}
+\]
+
+\section*{Rouche's Theorem} 
+Back to the general situation. $f$ is defined to be a holomorphic as before and $g$ is also defined holomorphic as before. But assume $|g(z)| < |f(z) | $ on $\mathbb{C}$. $f\neq 0 $ on $\mathbb{C}$ and $f + g \neq  0 $ on $\mathbb{C}$.
+
+The two functions $f(z)$ and $f(z) + g(z)$ have the same value of number of zeroes minus the number of poles inside $\mathbb{C}$. 
+
+To prove the theorem we need to show 
+\[
+\int f'/f \mathrm{d} z = \int \frac{f' + g'}{f + g}
+\]  
+\[
+\int_C \left(
+f'/f - \frac{f' + g'}{f+ g}
+\right)
+\] 
+Take common denominator
+\[
+= \frac{f' (f+g) - f(f'+g') }{f(f+g)} = 
+\frac{f'g - fg' }{f(f+g)} 
+= 
+\frac{ - \left(\frac{g}{f}\right)'}{f(f+g)}
+\]
+$h = g / f$ gives $ = \frac{- h' }{1  + h}$. So we now have to see $h$ values on $\mathbb{C}$. 
+$|h| < 1$ from the starting point. We need to prove $\int - \frac{h'}{1+h} \mathrm{d} z$. 
+
+$\log h$ is well defined because it's argument $- \frac{\pi}{2} + \frac{\pi}{2}$ and now 
+$\log 1+h$ has derivative $h'/1+h$. 
+\[
+\int_C \frac{d}{dz} \log( 1+ h) = 0
+\]
+This can be used to solve the Fundamental Theorem of Algebra here again. 
+
+\[
+P(z) = cz^{n } + \cdots
+\] 
+\[
+f(z) = cz^{n}
+\] 
+And this dominates the  lower order term on the big circle. 
+\end{document}
