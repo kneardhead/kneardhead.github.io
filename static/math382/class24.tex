@@ -1,0 +1,84 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Class 24}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+ 
+Continue the discussion on the fact that every non constant holomorphic function is an open function. 
+$f$ be holomorphic function then $f(z_0) = w_0$ $N$ times. Except at $z_0$, $f$ is not going to be $w_0$.
+If we use residue theorem and call the circle around $z_0$ as $C_0$ then 
+\[
+N = 	\frac{1}{2\pi i } \int_{C_0} \frac{f'(z)}{f(z) - w_0} \mathrm{d} z
+\] 
+$N $ is the order of $0$ here in $f(z) = w_0$, where 
+\[
+f(z) = c(z-z_0)^{N} + \ldots
+\] 
+$c\neq 0$. If $|w-w_0|$ is sufficiently small then 
+\[
+|f(z) - w | \ge |f(z) - w_0| - |w- w_0| > 0
+\] 
+That integral can be replaced with 
+\[
+1 / 2\pi i \left(
+	\int_{C_0} \frac{f'(z)}{f(z) - w} \mathrm{d}  z
+\right)
+\]
+The denom. is a continuous function of $w$. $N$ is the number of times here. $f(z)$ has every value close enough to $w_0$. $f$ is an open function. 
+
+Trivial example $f(z) = z^{N}$. $z_0 = 0$. 
+Look at $f(z) - \epsilon$. 
+
+Now a question, why is it that the close enough to $  w_0$ the $N$ values of $f(z) = w$ $z$ close to $z_0$ are distinct? 
+
+\section*{Summation of Infinite Series}
+
+Summation of infinite series. We are going to look at holomorphic functions $f$ defined on $\mathbb{C}$ and we hope to calculate $\sum_{-\infty}^{\infty} f(n)$. Starting point
+\[
+	\text{Res}(\cot \pi z , n )= \frac{\cos \pi n }{\pi \cos \pi n } = {\frac{1}{ \pi }}
+\]
+Multiply both sides by 
+\[
+\text{Res} \left(\pi \cot \pi z, n\right) = 1
+\]
+$f$ being holomorphic at $n$, 
+\[
+\text{Res}\left(f(z) \pi \cot \pi z, n\right) = f(n) \text{Res}\left(\pi \cot n \pi \right)= f(n)
+\]
+Take the path. On real number line take $N+\frac{1}{2}$ and $- N - \frac{1}{2}$. Then vertically go way up and at the center is origin on the real line. 
+One side would be at $Ni$ and another at $-Ni$. We will take integral over this square with the origin at the center with side length $N$. 
+\[
+	\frac{1}{2 \pi i} \int_{C_N} f_(z) \pi \cot \pi z \mathrm{d}  z = \sum_{n=1}^{\infty} \text{Residues inside.}
+\]
+So if $N\to \infty$ then $f\to 0$ as assumed, at least quadratically, 
+\[
+|f(z)| \le \frac{C}{N^2} \text{ on } C_N
+\]
+So we hope we will be able to utilize the product $f(z) \pi \cot \pi z$ and we are ought to show that, 
+\[
+|\pi \cos \pi z | \le  \text{constant on } C_n
+\] 
+Setting $N\to \infty$ and the integral overall turns into, 
+\[
+0 = \sum_{-\infty}^{\infty} f(n) + \text{Res}\left(f(z) \pi \cot \pi z , 0 \right)
+\] 
+So we get,
+\[
+\sum_{-\infty}^{\infty} - \text{Res} \left(f(\pi) \cot \pi z, 0\right)
+\]
+Small example can be 
+\[
+f(z) = \frac{1}{z^2} 
+\] 
+\[
+	\sum \frac{1}{n^2} = - \text{Res} \left(
+		\frac{\pi \cot \pi z}{z^2}
+\right) = \frac{\pi^2}{3}
+\]
+Summing for $n = 0$ to $\infty$ would be $\frac{\pi^2}{6}$. 
+
+\end{document}

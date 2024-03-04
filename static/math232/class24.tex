@@ -1,0 +1,66 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 23}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+Integration was defined in terms of Riemann Sums. What is a piece and what is volume though? That's an issue. This is less of an issue in $\mathbb{R}$, so you only integrate over intervals, so pieces are like intervals. Then what is the meaning of a piece in $\mathbb{R}^2$? In Physics I remember using small area. We can try defining volume (measure theory!). We can restrict ourselves to rectangles (boxes). 
+
+\df{
+	A \emph{box} in $\mathbb{R}^{n}$ is anything of the form $[a_1, b_1] \times [a_2, b_2] \times  \ldots \times [a_n, b_n]$. The volume of such a box is going to be 
+	\[
+\text{Prod}(a_i - b_i)	
+	\]
+}
+
+\df{(informal)
+	Given a bounded function (all function are going to be bounded for integrals) $f:\mathbb{D} \to \mathbb{R}$ where $D \subset \mathbb{R}^{n}$ is a box, we define
+	\[
+	\int_D f
+	\]
+	in this way: (we will subdivide $D$ into small boxes. This leads us to define partition that tells us how we divide boxes.)
+}
+
+\df{
+	(Partition of a Box) A box of $[a_1,b_1] \times [a_2,b_2]$ then a partition $P$ is a choice of $\{c_0, c_1, c_2, \ldots, c_k\} $ with $a 1 = c_0 < c_1 < \ldots < c_k = b_1$. The $c_i$ tells us where we are cutting the first coordinate. We can further slice using $\{d_1, d_2, \ldots, d_k\} $ from $a_2$  to $b_2$. Given a partition $P$ and a function $f$, we define the upper sum $U(f,P)$ to be
+	\[
+		\sum_{\text{pieces of }P} ^{} \text{(vol of piece)} \times \text{max of }f\text{ on that piece.*}
+	\] 
+	Asterisk there we don't know if there is a max or if it is continuous. We can tell it's supremum instead of max. The lower sum would just consider the minimum of the value, or with an asterisk infinimum. An obvious fact is that the upper sum is greater or equal to the lower sum. Less obvious is the upper sum is still higher than lower sum for different partition. 
+	 \[
+	U(f, P_1) \ge L(f, P_2)
+	\] 
+	Think about considering a partition and making another cut. \textbf{After somethinking} if you add a cut to a partition $U(f,P)$ the sum does not increase. This is called refinement. 
+}
+If you have two partitions going in you can try using both of the partitions at once. This is a common refinement $Q$.
+\[
+U(f, P_1) \ge U(f, Q)
+\]
+\[
+L(f, P_2) \ge L(f, Q)
+\] Saying
+\[
+U \ge L
+\]  
+We get something interesting from this.
+
+
+Given a box $D$ and a function $f$ on $D$. On a line $U$ is all to the right, $L$ values are all to the left. And we call $f$ is integrable if there is a real number that it is in the middle of the upper and lower sum. 
+
+\df{
+$f$ is integrable on $D$ if for all exactly one real number $I$ such that 
+\[
+L(f, P) \le I \le U (f,P)
+\] 
+If $f$ is integrable then we define integral of $f$ to be $\int_D f$ to be number  $I$. 
+}
+
+
+Claim $f$ is integrable on $D$ if and only if for all $\epsilon > 0$ such that there exists $P$ partition such that $U(f,P) - L(f, P) < \epsilon$. 
+The proof is that the function integrable $\int_D f = I$ then there exists $P$ such that $U(f, P_1) < I + \frac{\epsilon}{2}$. And another $P_2$ exist such that 
+$L(f, P_2) > I - \frac{\epsilon}{2}$. 
+\end{document}

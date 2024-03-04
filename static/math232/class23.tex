@@ -1,0 +1,84 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 23}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{INTEGRATION: (lesgoo)}
+Math 212 understanding, 
+\[
+D \subset  \mathbb{R}^{n} 
+\] 
+and let's be in $f: D \to  \mathbb{R}$. The integral 
+\[
+\int_D f =
+\] 
+
+\[
+	\int_{[1,5]} 3x^2 \mathrm{d} x \text{ is defined via Riemann Sums}
+\]
+We just going to think we are summing the area of a bunch of rectangles. 
+So think about breaking the system into Pieces. 
+
+$\int_D f$ is break $D$ into pieces and each piece take ``volume of the piece in n-dim" and multiply ``value of $f$ on piece". This 
+is the informal but 
+useful understanding of what the integration is doing. What does integral measure? 
+
+signed area, which is the volume of between the graph of $f$ in $\mathbb{R}^{n+1}$ and domain $D \times \{0\} \subset \mathbb{R}^{n} \times \{0\} \subset \mathbb{R}^{n+1} $
+
+If $f$ is density like stuffs, the integral gives the mass. Defining $\delta$ density $r$ position, moment of inertia
+\[
+\int_D \delta r^2 = \text{ Moment of Inertia}
+\]
+
+Integrals might give average. Take $N$ values of $f$ each $\frac{1}{N}$ of $D$. 
+\[
+\frac{\sum_{n=1}^{N} f(x_i)}{N} = \frac{\sum_{n=1}^{N} f(x_i) \frac{\text{area of } D}{N}}{\text{area of } D} \approx \int_D f
+ \]
+
+ So $\int_D f$ are $n$ dimensional volume of $D$, gives average of $f$. 
+
+
+
+
+\section*{Usage of Inverse Functions using Implicit Theorem} 
+Y'all know about Polar Coordinates.
+\[
+	(x,y) = (r \cos \theta , r \sin \theta) = F(r, \theta)
+\] 
+Hence, $F : \mathbb{R}^2 \to \mathbb{R}^2$.
+
+\df{
+	Given $C^{1}$ $\mathbb{F}:\mathbb{R}^{n} \to \mathbb{R}^{n}$ with $\vec{a} \in  \mathbb{R}^{n}$ where $dF_{\vec{a}} $ is invertible. Then $F$ is locally a bijection, or, there are open sets $U $ where $a \in U$ such that $f (\vec{a}) \in V$ such that $F$ restricted to $U$ is a bijection between $U$ and $V$. The inverse $G$ sending $V$ to $U$ is $C^{1}$, and  
+	\[
+		dG_{f(\vec{a})} = \left(d F_{\vec{a}} \right)^{-1}
+	\] 
+}
+
+\pf{
+Let $F = (f_1, \ldots, f_n) $ and $f_i:\mathbb{R}^{n} \to \mathbb{R}$. Consider $\mathbb{R}^{2n}$ consists of $x_1, \ldots, x_n$ and $y_1, \ldots, y_n$. And we got
+\[
+y_1 = f_1 (x_1, \ldots, x_n)
+\] 
+\[
+y_n = f_n (x_1, \ldots, x_n)
+\]
+These functions show the graph of $f _n$. Apply implicit function theorem, 
+\[
+y_1 - f_1 (x_1, \ldots, x_n) = 0
+\] 
+\[
+g_n(x_1, \ldots, x_n , y_1, \ldots, y_n) = y_n - f_n (x_1, \ldots, x_n) = 0
+\]
+To apply Implicit function theorem, we need $mx$ of 
+\[
+\frac{\partial g_i}{\partial x_j} 
+\] to be invertible. 
+This is the same as $mx$ of $- \frac{\partial f_i}{\partial x_j}$ at $\vec{a}$. This is $- d F_{\vec{a}}$. 
+}
+
+\end{document}

@@ -1,0 +1,75 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Class 23}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section*{Slight improvement to Rouche's Theorem}
+Two holomorphic functions $f,g$ around a curve over the domain $D$. $D \cup C$. 
+\[
+|g(z)| \le |f(z)| \text{ on } C
+\] 
+and 
+$f+g$ is never $0$ on $C$. Then, $f+g$ and $f$ have same number of $0$ in $D$. Proof repeated, 
+want to show, 
+\[
+\int_C 
+\frac{(f+g)'}{f+g} - f'/f = 0
+\] 
+This is re-written as
+\[
+\int_C \frac{g'f - f' g}{(f+g) f} = \int \frac{(\frac{g}{f}) ' }{1 + \frac{g}{f}}
+\]
+$h = g / f$, so 
+\[
+\int_C \frac{h'}{ 1 + h} 
+\] 
+\[
+= \int_C \frac{d}{dz} \left(\log(1+h)\right)\mathrm{d} z = 0
+\] 
+Before the values of $1+h$ couldn't hit the boundary but now they can hit the boundary. But they cannot go around the origin to change the determination of the argument. 
+
+\section*{Examples}
+$3e^{z} - z$ on $|z| \le 1$ how many $0$ are there? On the boundary $C$, the 
+$|z|  = 1$, and 
+$|3 e^{z } | = 3 e^{x} \pm 3e^{-1} = \frac{3}{e}> 1$ there are no zeroes because $e^{z}$ has no zeros. 
+
+Another example. 
+\[
+z^{4} - 5z + 1
+\] How many zeroes are there in the annulus $1 \le |z| \le  2$. Let's see at $|z| = 2$. So $|z|^{4} = 16$ and $|-5z + 1| \le 11$, and there looks like 4 zeros. In the smaller $|z| = 1$, 
+$5z$ dominates, and there's 1 zero. 
+
+Different proof. 
+\[
+\frac{1}{2 \pi i } \int_C \frac{f' + t g'}{f+ tg} \mathrm{d} z = N(t)
+\] 
+
+\df{
+Suppose $f$ is a function defined on some set in  $\mathbb{R}^2$ with values in some set in $\mathbb{R}^2$. We say that $f$ is an \emph{open function} if for every open set $G$ where $f$ is defined 
+$f$ the image of $f(G)$ is also open. $f(x) = e^{x}$. An open interval in input maps to an open interval in output.    
+}
+$f(x) = x^2 $ is not open. 
+
+\thm{
+	Every non constant 
+holomorphic function is an open function.   
+}
+\pf{
+Let $z_0$ be fixed. 
+Then let $w_0 = f(z_0)$. 
+$f(z_0) - w_0$ is $0$ at $z_0$. 
+Let's call the order of zero as $N \ge 1$. 
+i.e. 
+\[
+f(z) - f(z_0) = (z-z_0)^{N} g(z)
+\] 
+Where $g(z_0) \neq  0$. There is no sequence $z_k \to z_0$  for which $f(z_k) = w_0$. Therefore there should be a circle centered on $z_0$ on inside which $f = w_0 $ only at $z_0.$  
+}
+Problem for self, does an open interval can map to something closed? 
+
+
+\end{document}
