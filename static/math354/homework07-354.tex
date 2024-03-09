@@ -1,0 +1,579 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Linear Algebra : : Homework 07}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section*{Problem 01} 
+Let $v \in  V$ and $v = b_1 \vec{v}_1 + b_2 \vec{v}_2 + \cdots + b_n \vec{v}_n$ so the matrix of $v$ is 
+\[
+\mathcal M(v) = \begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_n\end{pmatrix} 
+\] 
+Similarly consider $u \in V$ and $u = d_1 \vec{v}_1 + d_2 \vec{v}_2 + \cdots + d_n \vec{v}_n$, it's matrix is
+\[
+\mathcal M(u) = \begin{pmatrix} d_1 \\ d_2 \\ \vdots \\ d_n  \end{pmatrix} 
+\] 
+
+\textbf{Additivity}: From vector summation we directly know, 
+\[
+v + u = (b_1 + d_1 ) \vec{v}_1 + \cdots + (b_n + d_n) \vec{v}_n 
+\]
+The matrix representation of $v+u$ is thus, 
+\[
+\mathcal M (v+u) = 
+\begin{pmatrix} b_1+d_1 \\ b_2+d_2 \\ \vdots \\ b_n + d_n  \end{pmatrix} 
+\]
+Now let's consider matrix addition of $\mathcal M (u) + \mathcal M (v)$, 
+\[
+\mathcal M(v) + \mathcal M(u)= \begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_n\end{pmatrix}  + 
+\begin{pmatrix} d_1 \\ d_2 \\ \vdots \\ d_n  \end{pmatrix} 
+= \begin{pmatrix} b_1+d_1 \\ b_2+d_2 \\ \vdots \\ b_n + d_n  \end{pmatrix} 
+\]
+So apparently, 
+\[
+\mathcal M(u+v) = \mathcal M(u) + \mathcal M(v)
+\] 
+
+\textbf{Multiplicity:} Given $\alpha \in \mathbb{F}$ and for the vector 
+\[
+v = b_1 \vec{v}_1 + \cdots + b_n \vec{v}_n 
+\]
+\[
+\alpha v = \alpha b_1 \vec{v}_1 + \cdots + \alpha b_n \vec{v}_n 
+\]The matrix representation is going to be
+\[
+\mathcal M(\alpha v) = 
+\begin{pmatrix} \alpha b_1 \\ \alpha b_2 \\ \vdots \\ \alpha b_n  \end{pmatrix} 
+\] 
+Now let's consider the following, 
+\[
+\alpha \mathcal M (v) = \alpha  
+\begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{pmatrix} 
+\]
+From scalar to matrix multiplication we can see, 
+\[
+\alpha \mathcal M(v) = 
+\begin{pmatrix} \alpha b_1 \\ \alpha b_2 \\ \vdots \\ \alpha b_n  \end{pmatrix} 
+\] 
+So turns out $$\mathcal M(\alpha v) = \alpha \mathcal M (v)$$
+From $\alpha = 0$ case we can show $0$ gets mapped to $0$ trivially. So the Linearity is Proven. 
+
+\section*{Problem 02} 
+Consider the $i$-th vector $u_i$ such that 
+\[
+u_i = \lambda v_i
+\]
+Here $v_i$ is a basis vector of $V$. $i$ ranges from $0 , 1, \ldots, n$. Now, for $u_1, \ldots, u_n$ to be a basis vector we need, 
+\[
+c_1 u_1 + \ldots c_n u_n = 0
+\]
+If and only if $c_i = 0$ for all $i$. But as we had defined $u_i$
+\[
+c_1 \left(\lambda v_1\right) + \ldots + \left(\lambda v_n \right) = 0
+\] 
+\[
+\lambda \left(c_1 v_1 + \ldots + c_n v_n \right) = 0
+\]
+Because $\lambda \neq  0$ the only way this system is zero is if $c_i = 0$ , as $v_i$ each are linearly independent basis of $V$. So the only possible way for this system of equation to hold is for $c_i = 0$, hence,  
+\[
+c_1 u_1 + \ldots c_n u_n = 0
+\] 
+is linearly independent. Which means $\lambda v_1 , \ldots, \lambda v_n $ is a basis.
+
+\section*{Problem 03} 
+The given matrix 
+\[
+\mathcal M (I_V , \left(\lambda \vec{v}_1, \ldots, \lambda \vec{v}_n\right) , 
+\left(\vec{v}_1, \ldots, \vec{v}_n\right))
+\]
+is a matrix of a linear map $I_V$ from the basis $\lambda \vec{v}_1 ,\ldots, \lambda \vec{v}_n$ to the basis $\vec{v}_1, \ldots, \vec{v}_n$. For now let's call $\{\lambda\vec{v}_i\} $ as $\{\vec{u}_i\} $ for all $i$, 
+\[
+\mathcal M (I_V , \left(\vec{u}_1 ,\ldots, \vec{u}_n\right), 
+\left(\vec{v}_1, \ldots, \vec{v}_n\right))
+\]
+
+So a vector $\vec{t} = t_1 \vec{u}_1 + \ldots + t_n \vec{u}_n$ transforms into 
+$\vec{t} = t_1 \lambda \vec{v}_1 + \ldots + t_n \lambda \vec{v}_n$ where the basis is $\vec{v}_i$. In matrix notation,
+\[
+\begin{pmatrix} t_1 \\ \vdots \\ t_n \end{pmatrix} \to 
+\begin{pmatrix} \lambda t_1 \\ \vdots \\\lambda t_n \end{pmatrix} 
+\] 
+
+Consider the matrix, 
+
+\[  
+{\lambda} 
+\begin{pmatrix} 1 & 0 & \cdots & 0 \\ 
+0 & 1 & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & 1 \end{pmatrix}  = 
+%
+\begin{pmatrix} {\lambda} & 0 & \cdots & 0 \\ 
+0 & {\lambda} & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & {\lambda} \end{pmatrix}  
+\]
+This validly gives us the transformation, 
+\[
+\begin{pmatrix} {\lambda} & 0 & \cdots & 0 \\ 
+0 & {\lambda} & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & {\lambda} \end{pmatrix}   
+\begin{pmatrix} t_1 \\t_2 \\ \vdots \\ t_n \end{pmatrix}  = 
+\begin{pmatrix} \lambda t_1 \\ \lambda t_2\\ \vdots \\\lambda t_n \end{pmatrix} 
+\]
+Hence, 
+\[
+\mathcal M (I_V , \left(\lambda \vec{v}_1, \ldots, \lambda \vec{v}_n\right) , 
+\left(\vec{v}_1, \ldots, \vec{v}_n\right)) = 
+\begin{pmatrix} {\lambda} & 0 & \cdots & 0 \\ 
+0 & {\lambda} & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & {\lambda} \end{pmatrix}   
+\]To solve the opposite direction as stated in the problem, 
+from $3.82$ in LADR we know that 
+\[
+\mathcal M (I_V , \left(\vec{v}_1, \ldots, \vec{v}_n\right) , 
+\left( \lambda \vec{v}_1, \ldots, \lambda \vec{v}_n\right)) = \text{Inverse of }
+\begin{pmatrix} {\lambda} & 0 & \cdots & 0 \\ 
+0 & {\lambda} & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & {\lambda} \end{pmatrix}   
+\]
+As this is a diagonal matrix, our life is easier, 
+\[
+\mathcal M (I_V , \left(\vec{v}_1, \ldots, \vec{v}_n\right) , 
+\left( \lambda \vec{v}_1, \ldots, \lambda \vec{v}_n\right)) = 
+\begin{pmatrix} \frac{1}{\lambda} & 0 & \cdots & 0 \\ 
+	0 & \frac{1}{\lambda} & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & \frac{1}{\lambda} \end{pmatrix}   
+\]
+This can be easily justifiable because if we start with $\lambda t_i$ components for $i$-th basis, we get $t_i$ which is an inverse transform. For example, consider a vector $\vec{t} = t_1 \vec{v}_1 + \cdots + t_n \vec{v}_n$, after transformation to new basis, $\vec{t} = (t_1 / \lambda) \lambda \vec{v}_1 + \cdots + (t_n / \lambda) \vec{v}_n$, so the transformation is, 
+\[
+\begin{pmatrix} t_1 \\ \vdots \\ t_n \end{pmatrix}  \to  
+\begin{pmatrix} \frac{t_1}{\lambda} \\ \vdots \\ \frac{t_n}{\lambda}  \end{pmatrix} 
+\]
+From the matrix multiplication, it's apparent that, 
+\[
+\begin{pmatrix} \frac{1}{\lambda} & 0 & \cdots & 0 \\ 
+	0 & \frac{1}{\lambda} & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & \frac{1}{\lambda} \end{pmatrix}   
+\begin{pmatrix} t_1 \\ \vdots \\ t_n \end{pmatrix}  = 
+\begin{pmatrix} \frac{t_1}{\lambda} \\ \vdots \\ \frac{t_n}{\lambda}  \end{pmatrix} 
+\] 
+\section*{Problem 04} 
+\begin{tcolorbox}[colback=white,colframe=NordBlue,sharpish corners]
+	\textbf{Aid for my small brain}\hspace{0.5cm}
+	Just to get a sense of the problem let's try the $m = 3$ case.
+
+	Then the basis are
+	\[
+	w_1, w_2, w_3
+	\] 
+	The new basis are 
+	\[
+	w_1', w_2', w_3'
+	\] 
+	The relation of one to the other basis 
+	\begin{align*}
+		w_1' &= T_{11} w_1 + T_{21} w_2 + T_{31} w_3 \\
+		w_2' &= T_{12}w_1 + T_{22}w_2 + T_{32} w_3 \\
+		w_3' &= T_{13}w_1 + T_{23}w_2 + T_{33}w_3 \\
+	\end{align*}
+	This numbering looks a little bit weird to me. Decomposing above into a matrix form (unnecessary)
+	\[
+		\begin{pmatrix} T_{11} & T_{21} & T_{31} \\ 
+		T_{12} & T_{22} & T_{32} \\ 
+	T_{13} & T_{23} & T_{33} \end{pmatrix} 
+	\begin{pmatrix} w_1 \\ w_2 \\ w_3 \end{pmatrix} = 
+	\begin{pmatrix} w_1' \\ w_2' \\ w_3' \end{pmatrix} 
+	\] 
+	\[
+		\begin{pmatrix} T_{11} & T_{21} & T_{31} \\ 
+		T_{12} & T_{22} & T_{32} \\ 
+	T_{13} & T_{23} & T_{33} \end{pmatrix}  
+	\left(
+	w_1 \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}  + 
+	w_2 \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} + 
+	w_3 \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} 
+	\right) =
+	\left(
+	w_1' \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}  + 
+	w_2' \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} + 
+	w_3' \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} 
+	\right) 
+	\] 
+\end{tcolorbox}
+The given shift to $w'_k$ is 
+\[
+	w'_k = B_{1k} w_1 + B_{2k} w_2 + \cdots + B_{m k} w_m
+\]
+This $w'_k$ can be thought of as $T(w'_k) = w'_k$ which maps to itself but changes the basis.  
+\[
+T (	w'_k ) = B_{1k} w_1 + B_{2k} w_2 + \cdots + B_{m k} w_m = w'_k 
+\]
+From the given information we can build a matrix 
+\[
+B = 
+\begin{pmatrix} B_{11} &\cdots& B_{m 1}\\
+\vdots & \ddots & \vdots \\
+B_{1m} & \cdots & B_{m m }\end{pmatrix} 
+\] 
+Here $ k = 1 ,\ldots, m$. The map $T$ is inverse in $W$ and $B$ is the change of basis linear map from $w_1', \ldots, w_m'$ to $w_1, \ldots, w_m$. We can say,
+\[
+B = \mathcal M \left(
+I_W , (w_1', \ldots, w_m'),
+(w_1, \ldots, w_m)\right)
+\] 
+By 3.82 LADR, $B$ is invertible with inverse $B^{-1}$ where 
+\[
+B^{-1} = \mathcal M 
+\left(I_W, (w_1, \ldots, w_m), (w_1', \ldots, w_m')\right)
+\] 
+
+\section*{Problem 05}
+From $V$ basis $v_1, \ldots, v_n$ we can consider another basis of $V$ that such 
+\[
+	v'_k = A_{1k} v_1 + \cdots + A_{nk} v_n
+\]
+For $A_{jk} \in \mathbb{F}$ and $j,k = 1, \ldots, n$. This can be assembled into a matrix $A \in \mathbb{F}^{n,n}$. If $T \in \mathcal L(V,W)$, we shall show that, 
+\[
+\mathcal M (T, (v_1', \ldots, v_n'), (w_1', \ldots, w_m')) = 
+B^{-1 } \mathcal M(T, (v_1, \ldots, v_n), (w_1, \ldots, w_m)) A
+\]
+
+We had shown that 
+\[
+B = \mathcal M (I_W, (w'_1, \ldots,  w'_m), (w_1, \ldots, w_m)) 
+\]
+And in similar way we can say that 
+\[
+A = \mathcal M 
+\left(
+I_V , 
+(v_1', \ldots, v_n'), 
+(v_1 ,\ldots, v_n)
+\right)
+\] 
+By using $3.81$ LADR we have 
+\[
+B^{-1} \mathcal M 
+(
+T, 
+(v_1, \ldots, v_n), 
+(w_1, \ldots, w_m)
+) A = \]\[= 
+(\mathcal M 
+\left(I_W, (w_1, \ldots, w_m), (w_1', \ldots, w_m')\right)
+) * 
+(\mathcal M 
+\left(I_V, (v_1, \ldots, v_n), (w_1, \ldots, w_m)\right)
+A)  
+\] 
+ \[
+ = [ 
+\mathcal M 
+(
+I_W T, 
+\left(v_1 ,\ldots, v_n\right) , 
+\left(w_1', \ldots, w_m'\right)
+)
+  * 
+ \mathcal M 
+\left(
+	I_V, (v_1' ,\ldots, v_n'), 
+	(v_1 ,\ldots, v_n)
+\right) ]
+ \] 
+ \[
+ = \mathcal M 
+ \left(
+I_W T I_V 
+, 
+(v_1',\ldots, v_n'), 
+\left(w'_1 , \ldots, w'_m\right)
+ \right)
+ \] 
+ By the definitions of $I_V$ and $I_W$, we have 
+ \[
+ T = I_W T 
+ \]
+ \[
+ T = T I_V
+ \]
+ Thus,
+ \[
+ T = I_W T I_V
+ \]
+ This follow that, 
+ \[
+ \mathcal M 
+ \left(
+I_W T I_V , 
+\left(v_1 ' ,\ldots, v_n'\right), 
+\left(w_1' ,\ldots, w_m'\right)
+ \right) 
+ =
+ \mathcal M 
+ \left(
+T, 
+\left(v_1', \ldots, v'_n\right) , 
+(w_1', \ldots, w_m')
+ \right)
+ \]
+ Hence forth as desired we get,
+ \[
+ \mathcal M 
+ \left(T,
+	 (v_1', \ldots, v_n'), 
+	 \left(w_1', \ldots, w'_m\right)
+ \right) = 
+ B^{-1} 
+ \mathcal M
+ \left(
+T, 
+(v_1, \ldots, v_n), 
+\left(w_1 ,\ldots, w_m\right) 
+ \right) A
+ \] 
+\section*{Problem 06}
+Consider $A = \mathcal M (T)$. Then if $A \in \mathbb{F}^{m,n}$ then $A$ is a $m$-by-$n$ matrix. The linear map $ T \in \mathcal L (V,W)$ and basis of $V$ is $v_1 ,\ldots, v_n$ (notice the $n$) and $W$ is $w_1, \ldots, w_m$ (notice the $m$). This also means
+\[
+\dim V = n \quad \dim W = m
+\]
+$A$ being invertible means that $T$ transformation also has an inverse. But $T$ is only inverse if $T$ is \textbf{injective } and \textbf{surjective}.
+
+From 3.22 LADR we know that \emph{linear map to lower dimensional space is not injective } so a condition on $V,W$ is,
+\[
+\dim V \ge \dim W \implies n \ge m
+\]
+From 3.24 LADR we know that \emph{linear map to higher dimensional space is not surjective} so another condition is, 
+\[
+\dim V \le \dim W \implies n \le m
+\]
+The only way both of the condition is true is if 
+$n = m$. 
+Hence $m = n$ proven for $A \in \mathbb{F}^{m,n}$
+
+
+\section*{Problem 07} 
+Let's consider the matrix 
+\[
+	\begin{pmatrix} 1 & 0 \\ 0 & 0  \end{pmatrix} 
+\] 
+If this  2-by-2 matrix is invertible, then there exists another matrix 
+\[
+	\begin{pmatrix} a & b \\ c & d \end{pmatrix} 
+\] Such that 
+\[
+	\begin{pmatrix} 1 & 0 \\ 0 & 0  \end{pmatrix} 
+	\begin{pmatrix} a & b \\ c & d \end{pmatrix}  
+	= 
+	\begin{pmatrix} 1 & 0 \\ 0 & 1  \end{pmatrix} 
+\]
+Let's compute the right hand side, then we get, 
+\[
+	\begin{pmatrix} 1 & 0 \\ 0 & 0  \end{pmatrix} 
+	\begin{pmatrix} a & b \\ c & d \end{pmatrix}  
+= 
+	\begin{pmatrix} a & b \\ 0 & 0 \end{pmatrix} 
+\]
+Look at the $2,2$ entry of the matrix multiplication, and for the matrix to be invertible we need, 
+\[
+	\begin{pmatrix} a & b \\ 0 & 0 \end{pmatrix} 
+	= \begin{pmatrix} 1 & 0 \\ 0 & 1  \end{pmatrix} 
+\] 
+But this is impossible because the $2,2$ entry $0 \neq 1$. So the considered matrix is not invertible. 
+
+\section*{Problem 08}
+\textbf{$(\implies)$ $ST$ is invertible. }
+
+Let $R$ be the inverse. This satisfies $R (ST) = I$. Now suppose $v \in \text{null }T$. This means $Tv = 0$. Then 
+\begin{align*}
+	v &= Iv \\
+	&= R(ST) v \\
+	&= RS(0) \\ &= R(0)\\ 
+	&= 0 
+\end{align*}
+Thus $v \subset \{0\} $. This is the only possible way for $T$ to have a null. Hence $ T$ is injective. We also know from 3.65 LADR that $T$ is injective hence means $T$ is also invertible. 
+
+Now let's show $S$ is invertible. Let there be another vector $u$ such that $u \in \text{null }S$. Because we know $T$ is invertible, define $u^{*} = T^{-1}(u)$. Then, 
+\begin{align*}
+	u^{*} &= I u^{*} \\ 
+	&= R(ST)u^{*} \\
+	&= RS(u) \\
+	&= R(0) \\
+	&= 0 \\
+\end{align*}
+This says $u^{*} = 0$, and hence $u^{*} = T^{-1}(0) = 0$. We proved $u=0$, so $S$ is injective hence also invertible. 
+
+\textbf{
+	($\impliedby$) $S$ and $T$ are invertible. 
+}
+
+$S^{-1}$ and $T^{-1}$ exist. Then let's try the following, 
+\begin{align*}
+	(T^{-1} S^{-1}) (ST) &= T^{-1} (S^{-1} S) T \\
+	&= T^{-1} IT \\
+	&= T^{-1} T \\
+	&= I 
+	\end{align*}
+	And, 
+	\begin{align*}
+		(ST) (T^{-1} S^{-1}) &= S(T T^{-1})S^{-1}  \\ 
+		&= S I S^{-1} \\
+		&= S S^{-1} \\
+		&= I \\
+	\end{align*}
+
+
+	\section*{Problem 09}
+	The system of equation can be easily written in terms of matrix multiplication with vector, 
+	\[
+		\begin{pmatrix} A_{11} & A_{12} & \cdots & A_{1n} \\ 
+			A_{21} & A_{22} & \cdots &A_{2n} \\ 
+	\vdots & \vdots &\ddots & \vdots \\ 
+A_{n1} & A_{n2} & \cdots & A_{n n }\end{pmatrix}  
+\begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix}  = 
+\begin{pmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{pmatrix}  
+	\]
+	Condensed form, 
+	\[
+	\mathcal A \vec{x} = \vec{c}
+	\] 
+Matrix $\mathcal A$ is $\mathcal A \in \mathbb{F}^{n,n}$. It can be thought of a linear map $T: V\to W$ where $\dim V = \dim W = n$. 
+	\subsection*{(a)$\implies$ (b)}
+
+(a) mentions that $\vec{x}=\vec{0}$ is the only possible solution for $\vec{c} = \vec{0}$. This means from the fundamental theorem of Linear Algebra, 
+\[
+\dim V = \dim \text{null } T + \dim \text{range } T
+\]
+\[
+n = \dim \text{null }T + n \implies \dim \text{null }T = 0
+\]
+Where $\dim (\text{range } T) = \dim W = n$. More importantly $\dim \text{null }T = 0$ means that $T$ is \emph{injective}. From 3.65 LADR we know that Injectivity is same as Surjectivity for finite dimension case and hence invertibility. 
+
+$\mathcal A^{-1}$ exists as per given conditions. So, 
+\[
+\mathcal A \vec{x} = \vec{c}
+\]
+Here we can do the following, 
+\[
+\mathcal A^{-1} \left(\mathcal A \vec{x}\right) = \mathcal A^{-1} \vec{c}
+\] 
+\[
+I \vec{x} = \mathcal A^{-1} \vec{c}
+\]
+Which means, 
+\[
+\vec{x} = \mathcal A^{-1} \vec{c}
+\]
+From injectivity we know that $\vec{x}$ is unique and we are also guarenteed $\vec{x}$ exists. $\vec{x} = (x_1, x_2, \ldots, x_n)$ is the solution to this system. 
+
+\subsection*{(b) $\implies$ (a)} 
+For every $\vec{c} \in W$ we have a solution $\vec{x} \in V$. If we consider a linear map $T \in \mathcal L(V,W)$ such that
+ \[
+T(\vec{x}) = \vec{c}
+\] 
+Every $\vec{c} \in W$ has a solution, which means that  $\text{range } T = W$. This is the definition of surjectivity. From 3.65 LADR we know that Surjectivity implies Injectivity and hence Invertibility. 
+
+This map being injective implies that 
+\[
+T(\vec{x}) = 0 \implies \vec{x} = 0
+\]
+So $T(\vec{x}) = \vec{c}$ where $\vec{c} = 0$ means $\vec{x} = 0$ and that is the only solution.
+
+\section*{Problem 10} 
+Suppose one vector space $V_r$ in $\Pi = V_1 \times V_2 \times  \cdots \times V_m$ is infinite-dimensional where $\Pi$ itself is finite dimensional. From definition of products, 
+\[
+V_1 \times \cdots \times V_m = 
+\{(v_1, \ldots, v_m) : v_1 \in V_1 , \ldots, v_m \in V_m\} 
+\]
+\subsection*{Solution 01 using a member vector} 
+Let's consider a member element $\mathbf{q} \in \Pi$. It can be written in the form, 
+\[
+\mathbf{q} = (\vec{q_1}, \ldots, \vec{q_m})
+\]
+Where $\vec{q}_k \in V_k$. We had defined $V_r$ to be the infinite dimensional vector space. Hence, 
+\[
+\vec{q}_r = (f_1, f_2 ,\ldots, f_\infty)
+\]
+Where $f_i \in \mathbb{F}$.  $\vec{q}_r$ requires infinite number of basis vectors because, 
+\[
+\vec{q}_r = f_1 (1, 0, \ldots) + f_2 (0,1 , \ldots) + \cdots 
+\]
+So if $\mathbf q = (\vec{q}_1, \ldots, \vec{q}_r, \ldots, \vec{q}_m)$ has to span all of $\Pi$ it needs to go through all multiples of all possible basis vectors of $\vec{q}_r$. But $\vec{q}_r$ having infinite basis yields $\mathbf q$ to have infinite dimension too.
+
+\subsection*{Solution 02 using a formulation of dimension} 
+\begin{tcolorbox}[colback=white,colframe=NordBlue,sharpish corners]
+	\textbf{What does dimension mean for Product Space? Example. } \hspace{0.5cm} 
+
+Consider a simple $\pi = V_1 \times V_2 \times V_3$, then a member of this $\pi$ is
+\[
+	\mathbf{d} = (\vec{d}_1 , \vec{d}_2, \vec{d}_3)
+\]
+if each vector spaces $V_i$ are two dimensional, 
+\[
+\mathbf d = 
+\left(
+a^{x} \begin{pmatrix} 1 \\ 0 \end{pmatrix}    +
+a^{y} \begin{pmatrix} 0 \\ 1 \end{pmatrix} ,
+b^{x} \begin{pmatrix} 1 \\ 0 \end{pmatrix}    +
+b^{y} \begin{pmatrix} 0 \\ 1 \end{pmatrix} , 
+c^{x} \begin{pmatrix} 1 \\ 0 \end{pmatrix}    +
+c^{y} \begin{pmatrix} 0 \\ 1 \end{pmatrix} 
+\right)
+\] 
+Dimension (specifically Hamel Dimension from Wikipedia), the dimension of vector space $V$ is the number of basis of $V$ over it's base field. For $\pi$ we have total of $6$ basis. The set of basis for this system is, 
+\begin{align*} 
+	&\{(1,0), (0,0), (0,0)\},\\
+	&\{(0,1), (0,0), (0,0)\},\\ 
+	&\{(0,0), (1,0), (0,0)\},\\ 
+	&\{(0,0), (0,1), (0,0)\},\\ 
+	&\{(0,0), (0,0), (1,0)\},\\ 
+	&	\{(0,0), (0,0), (0,1)\} 
+\end{align*}
+The representation of $\mathbf d$ is, 
+\begin{align*} 
+	\mathbf d = 
+	& a^{x}[(1,0), (0,0), (0,0)] \\+
+	&a^{y}[(0,1), (0,0), (0,0)]  \\+ 
+	&b^{x}[(0,0), (1,0), (0,0)]  \\+  
+	&b^{y}[(0,0), (0,1), (0,0)] \\+ 
+	&c^{x}[(0,0), (0,0), (1,0)]  \\+
+	&c^{y}[(0,0), (0,0), (0,1)]
+\end{align*}
+Obviously the terms $t^{z}\in \mathbb{F}$ where $t = a,b,c$ and $z= x,y$
+\end{tcolorbox}
+Suppose one vector space $V_r$ in $\Pi = V_1 \times V_2 \times  \cdots \times V_m$ is infinite-dimensional where $\Pi$ itself is finite dimensional. From definition of products, 
+\[
+V_1 \times \cdots \times V_m = 
+\{(v_1, \ldots, v_m) : v_1 \in V_1 , \ldots, v_m \in V_m\} 
+\]
+Basis of $\Pi$ is, 
+\begin{align*}
+\text{Basis set }  \Sigma =	&\bigcup_{j = 1}^{\dim  V_1} \{(\vec{v}_j, 0, \ldots, 0) : v_j \in \text{basis of }V_1\} \\ 
+\cup  &
+	\bigcup_{j = 1}^{\dim V_2} \{(0, \vec{v}_j, \ldots, 0) : v_j \in \text{basis of }V_2\}  
+	 \\
+\cdots  \cup &
+	\bigcup_{j = 1}^{\dim V_m} \{(0, 0, \ldots, \vec{v}_j) : v_j \in \text{basis of }V_m\}  
+\end{align*} 
+We can count the number of elements we have in the mentioned set above to get the dimension. Turns out for all $V_j$ being finite, we simply have $\dim V_1 + \ldots + \dim V_m$. But as we are considering the infinite dimensional $V_r$ the basis is, 
+\begin{align*}
+	\Sigma &= \bigcup_{j = 1}^{\dim  V_1} \{(\vec{v}_j, 0, \ldots, 0) : v_j \in \text{basis of }V_1\} \\ 
+	&\cup  
+	\bigcup_{j = 1}^{\dim V_2} \{(0, \vec{v}_j, \ldots, 0) : v_j \in \text{basis of }V_2\}  
+	 \\
+	\cdots & \cup
+	\bigcup_{j = 1}^{\infty} \{(0, 0, \ldots, \vec{v}_j, \ldots, 0) : v_j \in \text{basis of }V_r\}  \cup \ldots \\
+	 \ldots 
+	       & \cup \bigcup_{j = 1}^{\dim V_m} \{(0, 0, \ldots, \vec{v}_j) : v_j \in \text{basis of }V_m\}  
+\end{align*} 
+Counting this sets gives us $\dim V_1 + \dim V_2 + \ldots + \infty + \ldots + \dim V_m$. So dimension of the product space $\Pi$ is $\infty$. This is a contradiction to the definition of what we started with, hence there can be no $V_r$ vector space that is infinite dimensional in $\Pi$. So the member vector spaces are all finite. 
+\end{document}

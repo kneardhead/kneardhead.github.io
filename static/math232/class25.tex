@@ -1,0 +1,97 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 25}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+For all $a$ and for all $b$ there exist a $c$ is a (statement $S$ involving $a,b,c$ ). 
+For all $b$ there exists $c$ such that  for all $a$
+Which statement might be easier to prove here? Statement $2 $ is harder to prove. 
+
+The difficulty in $\epsilon-\delta$ is choosing the $\delta$. What is the statement $f$ is continuous on $D$ of the form? Most likely statement 1. That's for because $\forall x$ and $\forall \epsilon>0$ there exists $\exists \delta >0$ such that - something. 
+
+\df{
+$f$ is uniformly continuous on $D$ if $\forall \epsilon>0$, $\exists \delta>0$ such that $\forall  x \in D$ if $|\vec{y}-\vec{x}| < \delta$ then $|f(\vec{y}) - f(\vec{x})| < \epsilon$. 
+}
+
+An example can be $f(x) = 4x$ to be uniform continuous. 
+\pf{
+Let $\epsilon > 0$ and choose $\delta = \frac{\epsilon}{4}$, then if $x,y \in  \mathbb{R}$ with $|y-x| < \delta = \frac{\epsilon}{4}$ , we have,
+\[
+|f(y) - f(x)| = |4y - 4x| = 4 |y-x| < \epsilon
+\] 
+}
+
+Another example, $f(x) = x^2$ is not a uniformly continuous on $\mathbb{R}$. Note about the $\Delta x$ for $\Delta f$, moving to the left, we need narrower and narrower tolerance around $x$ that $\Delta x$ gets smaller. So there is not a single $\delta$ that can be universally okay. 
+
+\pf{ We want to find one counter example which will totally negate the statement. 
+
+Choose $\epsilon = 1$. Then we are trying to claim that there is no $\delta$ that works. So for any $\delta > 0$ we can find an $x$ and choose it such that $x $ is greater than $\frac{1}{ \delta}$. Then what happens when we take $y = x +\frac{\delta}{2}$ then we get 
+\[
+f(y) - f(x) =  
+\left(x + \frac{\delta}{2}\right)^2 - x^2 = \delta x + \frac{\delta^2}{4} > \delta x > \epsilon 
+\] 
+}
+
+\thm{
+If $D$ is compact and $f$ is continuous on $D$ then $f$ is a uniformly continuous on $D$. 
+}
+This is a happy fact. 
+\pf{Analysis}
+
+\thm{Proposition: 
+If $f$ is continuous on a box $D$ then $f$ is integrable on $D$.  
+}
+Here $f : D \to \mathbb{R}$ and $D \in \mathbb{R}^{n}$. 
+\pf{
+Let $\epsilon > 0$. Define $\epsilon ' = \frac{\epsilon}{ \text{vol of } D}$. Uniform continuity of $f$ on $D$ means there exists an $\delta >0$ that $\vec{y},\vec{x} \in D$ with $|\vec{y} - \vec{x}| < \delta$ then $|f(\vec{y}) - f(\vec{x})| < \epsilon'$. Pick a partition $P$ such that $\vec{x},\vec{y}$ are in the same piece $P$ then $|\vec{y}-\vec{x}| < \delta$. 
+
+So on each piece the max of $f$ subtracted from $min$ value of $f$ : 
+\[
+U(f, P) - L(f, P)  < 
+\sum_{\text{pieces}}^{} \text{(vol of piece)} \text{(max value of f on piece - min value of f on piece)} < 
+\]\[
+< \sum_{\text{pieces}}^{} \text{(vol of piece)} \epsilon' = \text{vol}(D) \epsilon' = e
+\]  
+}
+
+Before we move to non-boxes, what about $f$ is non continuous? 
+
+\df{
+A set $X \subset \mathbb{R}^{n}$  has content $0$ or content zero if $\forall \epsilon > 0$ $\exists \text{finitely many boxes } B_1, \ldots, B_k$ such that $x \subset \cup B_i$ and 
+\[
+\sum_{i = 1}^{k} \text{vol}(B_i) < \varepsilon
+\] 
+}
+\[
+\subset \cup \, \cap \in 
+\]
+\thm{Proposition: 
+If the set of the discontinuities of $f$ on the box $D$ is content zero, then $f$ is integrable on $D$. 
+}
+When we are trying to integrate functions it's important to remember that our functions are bounded.
+
+\pf{
+$D$ and we are not assuming $f$ is continuous. In the box $D$ imagine some line where $X$ is the set of discontinuities. Choose $P$ partition such that the pieces of $P$ that intersect $X$ that have total volumen $< (\text{fill in the blank later})$. (by $X's$ content zero.)  
+
+$f$ is uniformly continuous outside of those boxes, choose $P$ also such that if $\vec{y}, \vec{x}$ are in a single piece of outside of these boxes then $|f(\vec{y}) - f(\vec{x})| < (\text{fill in box})$.
+
+Then 
+\[
+U(f, P) - L(f, P) = \sum_{n=1}^{\infty} \text{(vol of piece)} \text{(min - max)}
+\]
+\[
+= \sum_{\text{piece that contain X}}^{} \text{(vol)  } |\text{min - max} |  + 
+\sum_{\text{others}}^{} \text{(vol)}|\text{min - max}| 
+\] 
+Now the boxes around the discontinuous part can be taken really small though the min - max would not be ssmall. 
+\[
+< \sum_{\text{pieces containing $X$}}^{} \text{(vol)}\text{(overall max - over min of f on D)} + 
+\sum_{\text{other pieces}}^{} \text{(vol) } \epsilon' \]\[ < 
+\text{(overall max - overall min)  } \epsilon'' + (\text{vol} D) e' < \frac{\epsilon}{2} + \frac{\epsilon}{2}
+\] 
+} 
+\end{document}

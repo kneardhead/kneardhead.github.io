@@ -1,0 +1,68 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Class 25}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+For the case of $N= 1$ 
+\[
+	\int_{C_{z_0}} \frac{1}{2\pi i }\frac{f'(s)}{f(s) - w } \mathrm{d} s = 1
+\]
+For $w$ near $w_0$. Now think about another holomorphic function $g(z)$ defined near $z_0$. Then let's calculate the integral $\frac{1}{2\pi i }\int {f'(s) g(s) \over f(s) - w } \mathrm{d} s$ using the residue theorem. 
+Hence it' is the sum of residues of $\frac{f'(z) g(z)}{f(z) - w}$ inside $C_0$. This single residue occurs when $f(z) = w$. 
+\[
+= \frac{f'(z) g(z) }{f'(z)} = g(z)
+\] 
+Here $ w = f(z)$. In other words $z$ is what you get by taking $w$ and finding out $f'(w)$. 
+
+Now apply the formula with $g(z) = z$. 
+\[
+	z = \frac{1}{2 \pi i }\int_{C_0} \frac{f'(s) s}{f(s) - w} \mathrm{d}  s
+\] 
+\[
+	f^{-1}(w) = \frac{1}{2 \pi i} \int_{C_0} \frac{f'(s) s}{f(s) - w} \mathrm{d} s
+\] 
+
+---
+Same picture as Monday, let a holomorphic function be $f(z)$ that tends to 0 quadratically as $|z| \to \infty$. 
+\[
+	\left|
+{f(z) \cdot  z^2} \right| \le C \text{ for large } z
+\]
+We want to apply residue theorem to 
+\[
+\pi \cot \pi z f(z)
+\] We choose this to be the function because it has poles to be the integers (i am writing what?) 
+\begin{figure}[ht]
+    \centering
+    \incfig{class25-figure-box}
+    \caption{class25-figure-box}
+    \label{fig:class25-figure-box}
+\end{figure}
+
+Prove that $\pi \cot \pi z $ is bounded on this path independent of $N$. For the vertical lines 
+\[
+|\cot \pi (N  + \frac{1}{2} + i y) |= |\cot ( \pi N  + \frac{\pi}{2} + iy)| = 
+| \cot (\pi /2 + i y) | = |\tan iy| 
+\]
+\[
+= \frac{| \sinh y| }{\cosh y } < 1
+\]
+(discontinued a portion because I understand nothing what he did)
+Result: Apply residue theorem then let $N\to \infty$. The integral of this huge path is 
+\[
+0 = \sum_{}^{} \text{Res} \left(\pi \cos \pi z f(z)\right)
+\]
+
+Application of this very same thing. 
+\[
+f(z) = \frac{1}{z^{2k}}
+\] We will calculate 
+\[
+\sum_{-\infty}^{\infty} \frac{1}{n^{2k}}
+\] 
+
+\end{document}

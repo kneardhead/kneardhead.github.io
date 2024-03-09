@@ -1,0 +1,123 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Linear Algebra : : Class 15}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Duality} 
+if $T \in  \mathcal L (V,W)$ and the transformation over the dual space$T' \in \mathcal L (W',V')$
+\[
+V \to ^{T} W
+\]
+\[
+V' \leftarrow ^{T'} W'
+\] 
+then 
+\[
+\dim \left(\text{range } T\right) = 
+\dim \left(\text{range } T'\right)
+\]
+Matrix of the dual of a linear map. We are going to write the matrix for both cases and compare them. 
+Let's use $\{v_m\} $ for $V$ basis and $\{w_m\} $ is basis for $W$. Then we have a matrix for $T$, 
+\[
+\mathcal A =  \mathcal M (T)
+\] 
+Definition of this matrix is this, 
+\[
+	T(\vec{v}_k) = \sum_{r=1}^{m} \mathcal A_{r,k} w_r
+\] 
+For the inverse map $T'$ we are going to use the Dual Basis. There are $n$ of these basis, so $\{\phi_n\} $ for going back to $V$ and for $W$ we have $\{\psi_m\} $. $$\mathcal C = \mathcal M (T')$$ hence,
+\[
+T' \psi_j = 
+\sum_{r=1}^{n} \mathcal C_{r,j} \phi_r
+\]
+Now compute the dual basis, 
+\[
+T' (\psi_j) \left(v_k\right)
+\] 
+\[
+	=	\sum_{r=1}^{n} \mathcal C_{r,j} \phi_r(v_k) = C_{k,j}
+\]
+Another computation, where we have a composition of two linear maps. 
+\[
+	(\psi_j T )(v_k) = \psi_j (T v_k ) = \psi_j \left(\sum_{r}^{} \mathcal A_{r,k} w_r\right)
+\]
+\[
+	= \sum_{r}^{} \mathcal A_{r,k} \psi_j (w_r) = A_{j,k}
+\] 
+We can see 
+\[
+	\mathcal C _{k,j} = \mathcal A _{j,k}
+\]
+$\mathcal C$ happens to be transpose of $\mathcal A$.
+
+A good consequence is, for a matrix $\mathcal A$, the column rank is equal to the row rank. We saw the proof before. Here's a second proof. 
+
+\section*{Problem 3.133} 
+Column Rank is equal to row rank. So suppose $A$ is a matrix $A \in \mathbb{F}^{m,n}$. We want to use the fact we just had done in previous section. We need a $T$, and obvious way to get a linear mapping is to define the mapping from $\mathbb{F}^{n,1} \to ^{T} \mathbb{F}^{m,1}$ by $T(\vec{x}) = A \vec{x}$, matrix multiplication. 
+
+Vertically $m$ and $n$ horizontally of $A$. 
+
+Column rank of $A$ well we've seen that $T(x)$ is a linear combination of the columns of $A$, so the column rank of $A$ is the dimension of the range of $A$ 
+\[
+\text{column rank of }A = \dim \left(\text{range } T\right) = 
+\dim \left(\text{range } T' \right)
+\]
+\[
+= \text{column rank of }A^{T} =
+ \text{row rank of }A
+\]
+
+\section*{Exercise 09}
+The vector space is $\mathcal P_m (\mathbb{R})$ and the standard basis, 
+\[
+1, x, x^2, x^3, \ldots, x^{m}
+\] 
+The exercise is to find the Dual Basis. Let's call them, 
+\[
+\phi_0, \phi_1 ,\ldots, \phi_m
+\] 
+So, 
+\[
+	\phi_k(1) = 0, \ldots,  \phi_{k} (x^{k-1}) = 0, \phi_{k} (x^{k}) = 1, \ldots, \phi_k (x^{m})=0
+\]
+\[
+p(x) = c_0 + c_1 x + \ldots + c_m x^{m}
+\] 
+\[
+\phi_k( p) = \phi_k (c_k x^{k}) = c_k 
+\] 
+Separately to find $c_k$ we can try doing a differentiation, 
+\[
+p^{(k)} = c_k k! + c_n x^{n} + \ldots 
+\]
+Set $x=0$, then 
+\[
+c_k = \frac{p^{(k) } (0)}{k!} = \phi_k (p)
+\] 
+
+
+\section*{Exercise 32} 
+The double dual space of $V$. Let have $V$ vector space and $V'$ the dual space that has all the functionals. But $V'$ itself is a vector space, so it must have a dual of it's own, so $V''$ is dual of $V'$. 
+Say $\Lambda \in \mathcal L (V , V'' )$. 
+\[
+\Lambda (v) \text{ is a linear functional on } V'
+\]
+\[
+\Lambda (v) (\phi)  = \phi(v)
+\] 
+I need a linear functional on $V'$. 
+
+Now show that if $V$ is finite dimensional then, $\Lambda$ is a bijection. 
+
+\section*{Exercise 30} 
+
+
+\section*{Polynomials}
+
+
+\end{document}

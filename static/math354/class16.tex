@@ -1,0 +1,117 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section*{Eigenvalues and Eigenvectors}
+
+We are mainly dealing with $T \in \mathcal L(V)$ where $T$ is an operator. 
+\df{
+Invariant Subspace $U \subset V$ subspace such that $Tu \in U$ for all $u \in U$. $T(U) \subset U$ where $T(U)$ is $\text{range} T$. Trivial examples, 
+\[
+V, \{0\} , \text{range} T, \text{null }T
+\] 
+}
+Suppose $u \in V$ $u\neq 0$ and then of course $u$ defines $1$-dim subspace of $V$, 
+\[
+\lambda u : \lambda \in \mathbb{F}
+\]
+Then $T$ will have this as the invariant subspace $Tu = \lambda u$. 
+
+In this case we can say $\lambda $ is an eigenvalue of $T$, and $T u = \lambda u$ $u\neq 0$. And $u$ is called an Eigenvector of $T$ corresponding to the Eigenvalues. 
+
+Suppose $\dim V$ is finite. 
+\[
+T \in \mathcal L (V), \quad \lambda \in \mathbb{F}
+\] 
+Then these conditions are equivalent
+\begin{itemize}
+	\item $\lambda$ is an eigenvalue of $T$ 
+	\item $T - \lambda I$ is not injective. 
+	\item $T - \lambda I$ is not surjective. 
+	\item $T - \lambda I$ is not bijective. 
+\end{itemize}
+
+An example is $T \in \mathcal L(\mathbb{F}^2)$ defined by $T(x_1,x_2) =  (-x_2, x_1)$. Look for eigenvalue of $T$. 
+
+$T(x_1,x_2)$  is $= \lambda (x_1, x_2)$. That means 
+\[
+	(-x_2, x_1) = \lambda (x_1 ,x_2)
+\] 
+Looking at the equations, 
+\[
+-x_2 = \lambda x_1
+\] 
+\[
+x_1 = \lambda x_2
+\] 
+From here $x_1 = \lambda (- \lambda x_1) = - \lambda^2 x_1$. For $\mathbb{F}= \mathbb{R}$ then either $\lambda = 0$ or $x_1 , x_2 = 0,0$. So $T$ has no eigenvalue. 
+
+But if $\mathbb{F}= \mathbb{C}$ then $x\neq 0$ if and only if $\lambda^2 = - 1$ so $\lambda = \pm i$. 
+
+\section*{Linearly Independent Eigenvectors} 
+$ v_1, \ldots, v_n$ be eigenvectors of $T$ such that their corresponding eigenvalues are distinct. Then $v_1 ,\ldots, v_n$ are linearly independent. 
+\[
+T v_1 = \lambda_1 v_1
+\]
+\[
+T v_2 = \lambda_2 v_2 
+\] 
+\[
+T v_n = \lambda_n v_n
+\] 
+To prove this, we use contradiction. 
+\pf{
+Some non-trivial linear combination of these vectors of the vector is $0$. We want to write the shortest equation of $m$ length (not $n$ ) that will give us a nice $0$. 
+\[
+a_1 v_1 + \ldots + a_m v_m = 0
+\] And $a_j \neq  0$ . 
+Operate with $T$, 
+\[
+a_1 \lambda_1 v_1 + \ldots+ a_m \lambda_m v_m = 0
+\]
+Now this is also valid, which is a separate equation, 
+\[
+a_1 \lambda_m v_1 + \ldots + \ldots + a_m \lambda_m v_m = 0
+\]
+But we can subtract the two from here, 
+\[
+a_1 (\lambda_1 - \lambda_m) v_1 + 
+\ldots
+a_m (\lambda_1 - \lambda_m) v_m = 0
+\]
+Then we have another shorter equation.
+}
+
+If $T \in \mathcal L(V) $ then $\text{null } T$ and $\text{range }T$ are both invariant under the action of $T$. 
+
+\section*{Problem 08}
+$P^2 = P$ the find $\lambda$. So, 
+\[
+Pu = \lambda u
+\] 
+\[
+P P u = \lambda P u \implies p^2 u = \lambda^2 u
+\] 
+So \[
+	(P^2 - \lambda P ) u = 0
+\]
+\[
+	(P - \lambda P) u = 0
+\] 
+\[
+	(1-\lambda) Pu = 0
+\] 
+\[
+	(1- \lambda )\lambda u = 0
+\] 
+\[
+	(1-\lambda)\lambda = 0
+\] 
+
+
+\end{document}
