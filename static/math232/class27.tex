@@ -1,0 +1,86 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 27}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+	
+Continuous function inside a compact set is uniformly continuous. 
+\thm{
+If $f $ is continuous on a box 
+\[
+	B= [a_1, b_1] \times [a_2,b_2] \times  [a_3,b_3]
+\] then setting $S(x,y) = \int_{a_3} ^{b_3} f(x,y,z) \mathrm{d} z$ we have 
+\[
+	\int_B f = \int_{[a_1, b_1] \times [a_2, b_2] } S(x,y)
+\] 
+This is called Fubini's Theorem.}
+Sketch of a proof. First thing is we need to say $S$ is integrable ($S(x,y)$). We will show that $S$ is continuous then it will be integrable on a rectangle. 
+Why is $S$ continuous? We say, 
+$(x_1, y_1) = (x + \delta x , y + \delta y)$ here $\delta x  , \delta y$ are small. We want to compare $f(x,y,z)$ to $f(x_1,y_1, z)$. Let's claim these functions are close. 
+This is required to be universal closeness. We need ``uniform continuity" of $f$ on $B$ if this distance between $\delta x, \delta y$ are small enough then $f(x_1,y_1,z)$ and $f(x,y,z)$ are close within some $\epsilon'$. So we have $f(x_1, y_1, z) - \epsilon' < f(x_1,y_1,z) < f(x,y,z) + \epsilon'$ for all $z$. Thus here the 
+\[
+	\int_{a_3}^{b_3} f(x_1 y_1 , z) - \epsilon' \mathrm{d} z < 
+	\int f(x_1, y_1 , z) \mathrm{d} z  
+	< 
+	\int f(x_1, y_1, z) + \epsilon ' 
+\]
+So we have 
+\[
+S(x,y) - \epsilon' (b_3 - a_3) < S(x_1,y_1) < S(x_1, y) + \epsilon'(b_3, -a_3)
+\]
+So $S$ is continuous hence integrable. From there, now. To prove. 
+
+So if division of the the ``mesh" is fine enough, then $\int_{B'} S(x,y)$ is close to any Riemann Sum 
+\[
+\sum_{n}^{} s(x_n , y_n ) \Delta x \Delta y = 
+\sum_{}^{} 
+\left(\int f dz\right) \Delta x \Delta y
+\]
+Remember
+\[
+\int_B f  \text{ is close to } \sum_{i}^{} \left(
+\sum_{j}^{} f(x_i , y _i , z_j) \Delta x \Delta y \Delta z
+\right) 
+= 
+\sum_{i}^{} \left(
+\sum_{j} f(x_i, y_i, z_j) \Delta z
+\right) \Delta x \Delta y
+\]
+We have a similarity to the equation we had built, 
+
+\[
+\sum_{n}^{} s(x_n , y_n ) \Delta x \Delta y = 
+\sum_{}^{} 
+\left(\int f dz\right) \Delta x \Delta y
+\]
+Fixed the notation to be exact what professor wrote (couldn't type properly in class).
+\[
+\sum_{i}^{} s(x_i , y_i ) \Delta x \Delta y = 
+\sum_{i}^{} 
+\left(\int_{a_3}^{b_3} f(x_i, y_i, z) dz\right) \Delta x \Delta y
+\]
+
+Here's an idea
+\[
+	\int_{a_3}^{b_3} f(x_i, y_i, z) \, \mathrm{d} z = 
+	\sum_{j}^{} 
+	\left(
+		\int_{s_{j-1}}^{s_j} f(x_i, y_i, z)\, \mathrm{d} z
+	\right)
+\]
+There is a mean value theorem for integration, 
+\[
+	\int_a^b g(x) \mathrm{d}  x = (b-a) \text{ arg value of } g  \text{ on } [a,b] = (b-a) g(c) 
+\] for some $c$ and $g$ is continuous. 
+
+Not in a box? Then 
+\[
+\int_R f = \int_B f \cdot \xi_R
+\]
+Here $\xi = 1$ if $ \vec{x} \in  R$ and $\xi = 0$ if not.
+
+\end{document}

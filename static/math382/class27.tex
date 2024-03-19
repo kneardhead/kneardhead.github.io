@@ -1,0 +1,175 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Class 27}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+Provisional definition 
+\df{
+For any $z \in \mathbb{C}$ with $\text{Re} (z) > 0$ 
+\[
+\Gamma (z) = \int_0^\infty t ^{z-1} e^{- t} \mathrm{d} t
+\]
+The modulus of $|t ^{z -1} | = t ^{Re(z)  - 1}$ and 
+\[
+\int_0^1 t ^{Re(z) -1 } \mathrm{d} t < \infty
+\] 
+Hence the $\Gamma(z)$ is lower than $\infty$. $\Gamma$ is holomorphic. So, 
+\[
+\Gamma' (z) = 
+\int_0 ^{\infty} \frac{\mathrm{d} }{\mathrm{d} z} \left(t ^{z-1}\right) e^{-t} \mathrm{d} t
+= \int_0^{\infty} t ^{z - 1} \ln t e^{-t} \mathrm{d}  t
+\]  Something might happen near $0$ though, but it doesn't contribute that much.
+}
+We remember doing, 
+\[
+\Gamma (z+1) = z \Gamma (z)
+\] So looking at the complex plane for this, $z$ is taken for  positive only. But using the recursion problem, we can find $\Gamma$ for the negative $z$ region (left side). From the recursion theorem we defined $ \Gamma (z)$ for all $z \in \mathbb{C}$ except $0, -1 , -2, -3$.
+
+What about the $\text{Res}(\Gamma, 0)$? So we can write, 
+\[
+\Gamma(z) = \frac{\Gamma (z+1)}{z}
+\]
+Evaluate numerator, differentiate the numerator and we get, 
+\[
+\text{Res}(\Gamma, 0) = \frac{\Gamma (1)}{ 1} = 1
+\] 
+$\Gamma$ is also not defined in $-1$, so, let's try this to find the resiude, 
+\[
+\Gamma(z+1) = z \Gamma(z)
+\]
+GIves us $Res(\Gamma, -1) = -1$. We could keep doing this and find the residues of all the poles, $0, -1, -2, -3, \ldots$. Now there's a way that does everything at once. Kind of a unique and wonderful thing - Frank Jones, 18th March, 2024. 
+
+\section*{}
+Here's a rapid extension of $\Gamma$ to all of $C$. Assume, real part of $z$ is positive. This is a standing assumption. The integral is going to be broke in two parts, 
+\[
+	\Gamma (z) = \int_0^k t ^{z-1} e^{-t} \mathrm{d} t + \int_k^{\infty}
+\] 
+We can pick whatever we want for $k$. Why not just $1$? 
+\[
+	\Gamma (z) = \int_0^1 t ^{z-1} e^{-t} \mathrm{d} t + \int_1^{\infty}
+\]
+Happens that the right side of the above equation is holomorphic for all $z$. The left one is not. So we are gonna play with that. 
+\[
+\int_0^{1} t ^{z- 1} e^{-t} \mathrm{d}  t = \int_0 ^{1} t ^{z-1} \sum_{n=0}^{\infty} \frac{(-t)^{n}}{n!}\mathrm{d}  t
+\]
+\[
+= \sum_{n=0}^{\infty} \frac{1}{n!} \int_0^{1} (-1)^{n} t ^{n + z - 1} \mathrm{d}  t
+\]
+Freshman calculus integral of the easiest sort, we get, 
+\[
+= \sum_{n=0}^{\infty} \frac{1}{n!} (-1)^{n} \frac{ t ^{n+z} }{n+z} 
+\] We want $t = 0$ to $t = 1$. So the sum is 
+\[
+= \sum_{n=0}^{\infty} \frac{1}{n!} (-1)^{n} \frac{1}{n+z}
+\] 
+\[
+\Gamma (z) = \sum_{n=0}^{\infty} \frac{(-1)^{n} }{n! (n+z) } 
++ 
+\int_1^{\infty} t ^{z-1} e ^{-1} \mathrm{d} t
+\]
+We assumed $Re(z) > 0$ in order to derive this formula, but now a bonus - right side of the formula is holomorphic, except for $z$ being one of the number $z = 0 , -1, -2, -3, \ldots$.  
+ 
+This function (Right hand side of the formula) we can define $\Gamma (z)$ for all $z \in  \mathbb{C}$ except $0, -1, -2, -3, \ldots$
+
+Now the residue is clear here, 
+\[
+\text{Res}(\Gamma, -n) = \frac{(-1)^{n}}{n!}
+\] 
+The ingenuity was to take the summation of inside the integral.  
+\[
+\Gamma (z) = \sum_{n=0}^{\infty} \frac{(-1)^{n} }{n! (n+z) } 
++ 
+\int_1^{\infty} t ^{z-1} e ^{-1} \mathrm{d} t
+\]
+\df{
+Gamma function is 
+
+\[
+\Gamma (z) = \sum_{n=0}^{\infty} \frac{(-1)^{n} }{n! (n+z) } 
++ 
+\int_1^{\infty} t ^{z-1} e ^{-1} \mathrm{d} t
+\]
+}
+
+Plot $\Gamma(z)$. Each integer had given $n!$ factorials. The plot basically interpolates the points. Investigate the change of variable. So replace $t$ by $s ^{ \alpha}$ and $\alpha > 0$. $\alpha < \infty$. 
+\[
+\gamma(z) = 
+\int_0^{\infty} s ^{\alpha (z-1)} e^{ - s^{\alpha}} \alpha s ^{\alpha - 1} \mathrm{d}  s = 
+\alpha \int_0^{\infty} s^{ \alpha z -1 } e^{ - s ^{\alpha}}\mathrm{d}  s
+\]
+$\alpha = 2$ makes it a Gaussian. 
+\[
+	\Gamma(z) = 2 \int_0^{\infty} s^{2z - 1} e^{-s ^2} \mathrm{d} s
+\]
+So, 
+\[
+\Gamma(\frac{1}{2}) = 2 
+\int_0^{\infty} \mathrm{d}  s\, e^{ -s ^2}  = \sqrt{\pi } 
+\]
+\[
+\Gamma(3 / 2) = \frac{1}{2} \Gamma({1} / {2}) = \frac{\sqrt{ \pi } }{2}
+\]
+\[
+\Gamma(\frac{1}{\alpha}) = \alpha \int_0^{\infty} e^{-s ^{\alpha}} \mathrm{d}  s
+\]
+So, 
+\[
+\frac{1}{\alpha} \Gamma ( \frac{1}{\alpha}) = \int_0^{\infty} e ^{-s ^{\alpha}} \mathrm{d}  s
+\]
+So, 
+\[
+\int_0^{\infty} e^{-s ^{\alpha}} \mathrm{d} s = \Gamma(1 + \frac{1}{\alpha})
+\] 
+The math 212 way of computing the Gaussian integral is to first square the integral and then use polar coordinates. Great part of math 212 is doing that, we wanna do the same thing here. 
+So we wanna take $\Gamma (z) \Gamma (w)$. 
+
+We will use,
+\[
+\Gamma(z) = 2 \int_0^{\infty} s ^{2z - 1} e^{ - s ^2} \mathrm{d}  s
+\] 
+\[
+\Gamma(z) \Gamma(w) = 
+2 \int_0^{\infty} s ^{2z - 1} e^{ - s ^2} \mathrm{d}  s
+\cdot
+2 \int_0^{\infty} s ^{2w - 1} e^{ - s ^2} \mathrm{d}  s
+\] 
+\[
+= 4 \int_0^{\infty} \int_0^{\infty} s^{2z-1}t ^{2w-1} e^{-s^2 -t^2} \mathrm{d} s \mathrm{d} t
+\]
+We are taking integral over the whole complex quadrant. So we can try, 
+\[
+s = r \cos \theta
+\] 
+\[
+t = r \sin \theta
+\] 
+\[
+\mathrm{d} s \mathrm{d} t = \mathrm{d} A = r \mathrm{d} r \mathrm{d} \theta
+\] So the system shifted into polar coordinates is, 
+\[\Gamma(z) \Gamma(w) = 	
+= 4 \int_0^{\pi / 2} \int_0^{\infty}
+(r \cos \theta) ^{2 z - 1} 
+(r \sin \theta)^{2w - 1} e^{ r ^2} r \mathrm{d} r \mathrm{d} \theta
+\]
+\[
+2 \int_0^{\pi / 2} \cos ^{2z - 1} \theta \sin ^{2w - 1} \theta \mathrm{d} \theta - 
+2 \int_0^{\infty} r ^{ 2 (z+w) - 1} e^{-r ^2 } \mathrm{d} r
+\]
+This gives, 
+\[
+\Gamma(z) \Gamma(w) = \Gamma(z+w) \cdot 
+2 \int_0^{\pi / 2} \cos ^{2z - 1} \theta \sin ^{2w - 1} \theta \mathrm{d} \theta 
+\]
+\[
+2 \int_0^{\pi / 2} \cos ^{2z - 1} \theta \sin ^{2w - 1} \theta \mathrm{d} \theta = 
+\frac{\Gamma(z)\Gamma(w)}{\Gamma(z+w)}
+\]
+Gauss's Trick will be to $\Gamma(\frac{1}{2}) = \sqrt{\pi } $. 
+
+
+
+\end{document}
