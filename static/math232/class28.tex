@@ -1,0 +1,78 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus ; : Class 27}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+\[
+\int_D f = \int_B f \cdot \Xi_D
+\]
+You can try any direction of integration, but some might be easier. One reason can be that just the setup is easier. Fewer inequality your variable has is better, the less number of faces your laser deals with. 
+\[
+\int_0^{1} \int_x^{1} x \frac{\sin y}{y} \mathrm{d} y \mathrm{d} x
+\] 
+This ain't possible to compute exactly. But a good news is, the $f(x,y)$ is being integrated over a region that looks like a V in first quadrant. With a reversed around $dy dx$ to $dx dy$. 
+\[
+	\int_{y=0}^{1} \int_{x=0}^{x=1} x \frac{\sin y}{y} \mathrm{d}  x \mathrm{d}  y
+\]
+This can be solved, 
+\[
+\int_0^{1} \frac{\sin y}{y} x^2 \mathrm{d} y 
+\]
+From $0$ to $y$, and we get, 
+\[
+\int_0^{1} \left(
+\frac{\sin y}{y} y^2 - 0 
+\right) \mathrm{d}  y = 
+\int_0 ^{1} y \sin y \mathrm{d}  y = \text{ doable.}
+\] 
+
+What if you are trying to integrate over an annulus? Then $x,y$ are not that fun. Then in polar coordinates, we can find $D$ is the region where $1 \le R \le 3$ and $0 \le  \beta \le  \pi $. Now we gonna talk about how to change coordinates.
+
+$u$ substitution is also a coordinate changing. So everyone in their career has changed variables. 
+\[
+\int_0^{2\pi } \sin 2x \mathrm{d}  x
+\]
+You all know how to do this, I hope. - S. Wang, 2024. 
+
+Substitute $u = 2x$ so
+\[
+\int_0^{\pi } \sin u \mathrm{d} u
+\]
+Our upper and lower limit changed. So our domain is new. We started from $0$ to $\pi $. But there is still a correction, 
+\[
+\int_0^{\pi } \sin u \left(\frac{1}{2 } \mathrm{d}  u\right)
+\]
+$\sin 2x $ does one ``hump" as it goes from $0$ to $\pi / 2$. But $\sin u$ does one hump as it goes from $0$ to $\pi$. The rectangles $I_j$ and $J_j$ horizontally stretch. 
+
+Three things that change when 
+\begin{itemize}
+	\item integrand
+	\item delimeters/bounds/region
+	\item the volume factor
+\end{itemize}
+
+If we have a weird shape over $D$ that we are integrating, we can try squeezing it into another homeomorphism square that is easier and we get $D'$. So, we get, 
+\[
+\int_D' f(T(u, v))  \text{ (multiply some number to balance the make an area scale which will be the determinant. )}
+\]
+
+\section*{Integration of Annulus} 
+\[
+\int_D f(x,y)
+\]
+\[
+T(r,\theta) = (r \cos \theta, r \sin \theta)
+\] 
+So $r$ goes between $1$ and $3$, (inner and outer radius), we end up getting a box in $r, \theta$ coordinates. 
+
+\[
+\int_D' f(T(r, \theta)) \times  \text{ (area scale number)} 
+\]
+The stretching is not uniform, it's not linear, they are not equal sized, so the area scaling number is going to be a variable. 
+
+
+\end{document}

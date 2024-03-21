@@ -1,0 +1,107 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Linear Algebra : : Class 17}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{5B: Minimal Polynomial} 
+\subsection*{5.22 Existence, Uniqueness, and degree of Minimal Polynomial}
+
+Ey Ey Monica 
+Ey podei Monica. 
+
+Definition 5.21 and 5.22. 
+
+$dim V = 1$ case. 
+
+$T \in  \mathcal L (V)$ and $V = \mathbb{F} \cdot \vec{v}$. Now,
+\[
+T(w ) = T(a v) = a T(v) = ab v
+\]
+So, 
+\[
+T = b I 
+\]
+and a monic polynomial, 
+$p(z) = z+ \text{ const }$
+So, 
+\[
+p(T) = T + \text{ const } I 
+\]
+Zero if $\text{ const } = b$
+so, 
+\[
+p(z) = z - b
+\] Is the needed polynomial. 
+
+To prove uniqueness, 
+\[
+p(T) = 0
+\]
+\[
+r(T) = 0
+\]
+Now consider the two minimal polynomials (with leading coefficient 1 and minimum degree), the degree of polynomial $p -r $is $< $ degree of $p$. So, 
+\[
+p(z) = z^{m} + \cdots
+\]
+\[
+r(t) = z^{m} + \cdots
+\]
+\[
+	(p-r) T = 0
+\] 
+
+5.27 : Eigenvalues are the zeros of minimal polynomial. 
+
+$\lambda$ is a eigenvalue of $T$ if and only if the minimal polynomial $p$ for $T$ satisfies $p(\lambda) = 0$. 
+$\impliedby$ reasoning, $p(\lambda) = 0$ so divisible by $z - \lambda$. \[
+p(z) = (z-\lambda) q(z)
+\]
+\[
+p(T) = (T - \lambda I) q(z) = 0 
+\]
+choose $q(v) \neq  0$, then,
+ \[
+p(T) v = (T - \lambda I) q(T) v = 0
+\]
+Eigenvalue of $T$. 
+
+
+$\implies$ $\lambda$ is eigenvalue of $T$. Then, \[
+T v = \lambda v
+\] for an eigenvector $\neq  0$ then, 
+\[
+p(T) = 0
+\]  and $p(T) v = 0$. 
+
+5.29: Use polynomial algebra to try to divide $q$ by $p$. 
+
+\section*{Exercise 6. }
+
+applied $T$ to the equation again. That gave
+\[
+T^2 + I = 0
+\] 
+Maybe minimal polynomial has lesser degree, then, 
+\[
+z + C = 0
+\] 
+Then, 
+\[
+T + cI = 0
+\]
+\[
+T = - cI 
+\]
+this is not the case, and the $z+C$ is not the right one. So the correct minimal for this is,
+\[
+z^2 + 1 
+\]
+
+
+\end{document}
