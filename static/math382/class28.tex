@@ -7,5 +7,111 @@
 
 \begin{document}
 \maketitle
+\section*{Showing a sine relation} 
+
+The provisional definition for the $\Gamma$ function
+\[
+	\Gamma(z) = \int_0^{\infty} t ^{z-1} e^{-t} \mathrm{d} t
+\]
+This is defined for $\text{Re}(z)>0$. We have extended $\Gamma$ function to a holomorphic function defined on, 
+\[
+\mathbb{C} \setminus \{-1,-2, \ldots\} 
+\] 
+We rewrite 
+\[
+\Gamma(z) = 2 \int_0^{\infty} t ^{2z-1} e^{-t^2} \mathrm{d}  t
+\]
+We use this to find, 
+\[
+\Gamma(z) \Gamma(w) = \Gamma(z+w) \cdot 2 \int_0^{\pi / 2} (\sin \theta)^{2z - 1} \left(\cos \theta\right)^{2w - 1} \mathrm{d} \theta
+\]
+\[
+B(a,b) = \int_{0}^{1} t ^{a - 1} (1- t)^{b -1} \mathrm{d} t 
+\]
+$a>0, b>0$, 
+\[
+= 2 \int_{0}^{\pi / 2}  (\sin \theta)^{2 a - 1} (\cos \theta)^{2b - 1} \mathrm{d}  \theta 
+\]
+\[
+B(a,b) = \frac{\Gamma(z) \Gamma(w)}{\Gamma(z+w)}
+\] 
+
+Brown and Churchill Page 285 shows, 
+\[
+\int_{0}^{\infty} \frac{x^{-a}}{1+x} \mathrm{d} x = \frac{\pi }{\sin (a \pi )}
+\] 
+For $0 < a < 1$. 
+
+A new calculation would be for $0 < a < 1$, 
+\[
+\Gamma(a) \Gamma(1-a) = B(a, 1-a) = \int_{0}^{1} t ^{a- 1} (1- t)^{-a} \mathrm{d} t  
+\]
+$t = \sin ^2\theta$ here. Then, 
+\[
+= 2 \int_{0}^{ \pi /2} \sin \theta ^{2a - 2} \left(1 - \sin ^2 \theta\right)^{ - a} \cdot \sin \theta \cos \theta \mathrm{d}  \theta 
+\] 
+\[
+= 2 \int_{ 0 }^{\pi / 2}  \sin ^{2a - 1} \theta \cos ^{1- 2a} \theta \mathrm{d} \theta = 2 \int_{0}^{\pi / 2} \tan ^{2a - 1} \theta \mathrm{d} \theta  
+\]
+Because $\tan \theta = u$, we have, 
+\[
+= 2 \int_{0}^{\infty} u ^{2a - 1} \frac{\mathrm{d}  u }{\sec ^2 \theta} = 2 \int_{ 0}^{\infty} \frac{u^{2 a - 1}}{1 + u^2} \mathrm{d}  u  
+\] 
+Sub in $u = \sqrt{x} $. 
+\[
+= 2 \int_{0}^{\infty} \frac{x^{2a -1 / 2} }{1+x} \frac{\mathrm{d} x}{2 \sqrt{x} } = 
+\int_{ 0}^{\infty} \frac{x^{a-1}}{1+x} \mathrm{d} x  = \frac{\pi}{\sin \pi a}
+\] 
+We hence forth showed,
+\[
+\boxed{
+\Gamma(a) \Gamma(1-a) = \frac{\pi}{\sin \pi a}
+}
+\] 
+For $0 < a < 1$ and for $a = \frac{1}{2}$ we have, 
+\[
+\Gamma(\frac{1}{2}) = \sqrt{\pi } 
+\] 
+\subsection*{You can think about} 
+Valid for $\forall a \in \mathbb{C}$ except $a \in \mathbb{Z}$, 
+\[
+\Gamma(a) \Gamma(1-a) - \frac{\pi}{\sin a \pi } 
+\] limit point of $0$ function is identically $0$. Corollary: $\Gamma(z) \neq  0$.  
+\section*{Formula for Gamma Function} 
+
+With $\text{Re}(z) > 0$, with, 
+\[
+e^{-t} = \lim_{n \to \infty} (1- \frac{t}{n})^{n}
+\] 
+The proof for this is, 
+\[
+-t = \lim_{n \to \infty} \frac{\ln\left(1 - t / n\right)}{{1} / { n}}
+\]
+applying $l' $Hopital. From that definition of $e^{-t}$ we can hope, 
+\[
+\Gamma(z) = \lim_{n \to \infty} \int_{0}^{n} t ^{z- 1} \left(1 - t / n \right)^{n} \mathrm{d}  t 
+\] Pretty easy to justify because there is an integrable function defined on $(0, \infty)$ which dominates the integral. 
+
+Now evaluate, 
+\[
+\int_{0 }^{n} t ^{ z - 1} ( 1 - t / n)^{n } \mathrm{d}  t 
+\] 
+If we set $t = ns$, 
+\[
+\int_{0}^{1} (ns)^{z- 1} (1  - s )^{n} n \mathrm{d} s =  n^{z}\int_{0}^{1}  s^{z-1} (1- s )^{n} \mathrm{d} s
+\]
+\[
+= n^{z} B(z, n+1) = n^{z} \frac{\Gamma(z) \Gamma(n+1)}{G(z+n+1)}
+\] 
+\[
+ = n ^{z} n! \frac{\Gamma(z)}{(z+n) (z+n-1)\Gamma(z+n-1)}
+\] 
+Here $\Gamma(z)$ cancels because of with respect to $n$ times. 
+\[
+= \frac{n^{z} n!}{(z+n)(\cdots)(z+1)z}
+\]
+\[
+\frac{1}{\Gamma(z)} = \lim_{n \to \infty} \frac{z(z+1)(\cdots)(z+n)}{n^{z}n!}
+\] 
 
 \end{document}
