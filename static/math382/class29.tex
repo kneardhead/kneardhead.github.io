@@ -1,0 +1,109 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Class 29}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+Last class we found that, 
+\[
+\frac{1}{\Gamma(z)} = \lim_{n \to \infty} {z(z+1) \cdots (z+n) \over n^{z} n!}
+\]
+Valid for all $z \in \mathbb{C}$. People use the word entire holomorphic function. Slang for holomorphic function defined on the ``entire" complex plane. We can rewrite this as an infinite product, 
+\[
+\prod_{n=1}^{\infty}   \phi_n = \lim_{W \to \infty} \prod_{n=1}^{N}  \phi_n 
+\]
+\[
+	{ z ( z+1) \cdots (z+n) \over n^{z} n!} = \frac{z}{n^z} { \frac{z+1}{1} \frac{z+2}{2} \cdots \frac{z+n}{n}}
+\] The above thing diverges. Weierstrass does this, 
+\[
+ = z {
+	 \left(1 + \frac{z}{1}\right)e^{- \frac{z}{1}} 
+	 \left(1 + \frac{z}{2}\right)e^{- \frac{z}{2}}
+	 \cdots 
+	 \left(1 + \frac{z}{n}\right)e^{- \frac{z}{n}}
+	 \over 
+	 n^{z}
+ } 
+ e^{z \left(1 + \frac{1}{2} + \cdots + \frac{1}{n}\right)}
+\]
+The upper right thing blows up.  
+\[
+ = z {
+	 \left(1 + \frac{z}{1}\right)e^{- \frac{z}{1}} 
+	 \left(1 + \frac{z}{2}\right)e^{- \frac{z}{2}}
+	 \cdots 
+	 \left(1 + \frac{z}{n}\right)e^{- \frac{z}{n}}
+	 \over 
+	 e^{ z \ln n}
+ } 
+ e^{z \left(1 + \frac{1}{2} + \cdots + \frac{1}{n}\right)}
+\]
+\[
+ = z \left({
+	 \left(1 + \frac{z}{1}\right)e^{- \frac{z}{1}} 
+	 \left(1 + \frac{z}{2}\right)e^{- \frac{z}{2}}
+	 \cdots 
+	 \left(1 + \frac{z}{n}\right)e^{- \frac{z}{n}}
+ }\right) 
+ e^{z \left(1 + \frac{1}{2} + \cdots + \frac{1}{n}\right)} 
+ e^{-z \ln n}
+\]
+So what we can write now is that, 
+\[
+\frac{z(z+1)(\cdots)(z+n)}{n^{z}n!} = 
+z \prod_{k= 1}^{n} \left(1 + \frac{z}{k}\right)e^{-z / k } 
+\times 
+\left(
+e^{z (1 + 1 / 2 + \cdots + 1 / n) - \ln n} 
+\right)
+\]  
+
+The thing goes to limit, 
+\[
+1 + 1 / 2 + \cdots + 1 / n - \ln(n) \to \gamma
+\]
+$\gamma$ is the  \textbf{Euler-Mascheroni} Number.
+
+There is a limit hence, 
+\[
+\boxed{
+\frac{1}{\Gamma (z)} = 
+z e^{ \gamma z} \prod_{k=1}^{\infty} \left(1 + \frac{z}{k}\right)e^{- \frac{z}{k}} }
+\]
+We had in last class, 
+\[
+\Gamma(a) \Gamma(1-a) = \frac{\pi}{\sin \pi a} \qquad \left(0 < a < 1\right)
+\]
+\[
+\frac{\pi}{\sin \pi z}
+	= \Gamma(z) \Gamma(1-z) = 
+\lim \frac{n^{z} n!}{z(z+1)\cdots (z+n)} 
+\lim \frac{n^{1-z} n!}{(1-z)(2-z)\cdots (n+1-z)} 
+\]
+\[
+= \lim 
+\frac{n (n!)^2 \quad (-1)^{n}}{z (z+1)(\cdots)(z+n) \times (z-1)(z-2)(\cdots)(z-n-1)}
+\]
+\[
+= \lim
+\frac{n(n!)^2 \quad (-1)^{n+1}}{z (z^2 - 1) (z^2 - 4) (\cdots) (z^2-n^2)} \frac{1}{z -n - 1}
+\]
+\[=
+\lim 
+\frac{n (n!)^2 \quad (-1)}{z (1-z^2) (\cdots)(n^2-z^2)} \frac{1}{z-n-1}
+\]
+\[
+= \lim 
+\frac{1}{z 
+\left(1 - \frac{z^2}{1}\right)\left(1 - \frac{z^2}{2^2}\right) \left(\cdots\right) \left(1 - \frac{z^2}{n^2}\right)} \frac{1}{z - n -1 }
+\]
+\[
+\frac{\sin \pi z}{\pi z } = \prod_{n=1}^{\infty} 
+\left(1- \frac{z^2}{n^2}\right)
+\] 
+
+
+\end{document}
