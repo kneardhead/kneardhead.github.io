@@ -1,0 +1,141 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 31}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+We talked specifically about two things, 
+\[
+\Gamma(z) = \int_{0}^{\infty}  t ^{z - 1} e^{ -t} \mathrm{d} t 
+\]
+And then the volume of the hypersphere, 
+\[
+V_n (R) = \frac{1}{n}R^{n} v_n
+\]
+Here $v_n$ is the surface area of the unit sphere at $\mathbb{R}^{n}$. 
+
+\section*{$\Gamma(1 / 2)$} 
+So what we have discussed, 
+\[
+\Gamma(1 / 2) = \int_{-\infty}^{\infty} e ^{- u^2} \mathrm{d}  u 
+\] 
+We can say, 
+\[
+\lim_{k \to \infty} \int_{-k}^{k} e ^{- u ^2} \mathrm{d} u 
+\]
+There is not anti-derivative without the limit. We want to instead define, 
+\[
+S(k) = \int_{-k}^{k} \int_{-k}^{k} e ^{-x^2 -y^2} \mathrm{d} y \mathrm{d} x  
+\]
+Why is this any better, 
+\[
+= \int_{-k}^{k} \int_{-k}^{k} e ^{-x^2 }e ^{-y^2 } \mathrm{d} y \mathrm{d} x  
+= \int_{-k}^{k} e ^{-x^2} \left(\int_{-k}^{k} e ^{-y^2 } \mathrm{d} y \right) \mathrm{d} x  
+\]
+\[
+= \left(
+\int_{-k}^{k} e^{-y^2} \mathrm{d} y 
+\right)
+\left(\int{-k}^{k} e ^{-x^2 }\mathrm{d} x \right) 
+\]
+So it just showed, \[
+\Gamma({1} / {2} ) = \sqrt{S(k)} 
+\] 
+Now define, 
+\[
+C(k) = \int_{\text{disk of radius k cent. 0}} e ^{-x^2 - y^2} = \int_{\theta = 0}^{2 \pi } \int_{r = 0}^{k}  e ^{-r^2} r \mathrm{d} r \mathrm{d} \theta  
+\]
+Drawing a circle of $C(k)$ and $C(\sqrt{2 }  \cdot  k)$, we know $S(k)$ is between the two, which says, 
+\[
+C(k) < S(k) < C(k \sqrt{2} )
+\] 
+Setting $u = -r ^2$ now, 
+\[
+= \int_{0}^{ 2\pi } \left(
+e ^{u} \left(- \frac{1}{2}\right)
+\right) _{r = 0; \, u = -0} ^{r = k; \, u =-k ^2} \mathrm{d} \theta 
+\]
+\[
+= - \frac{1}{2} \int_{0}^{2 \pi } \left(e ^{-k^2 } - 1\right)\mathrm{d} \theta = - \pi \left(e ^{ - k^2 } - 1\right) 
+\] 
+So, $C(k)$ goes to $ \pi $ and $C(k \sqrt{2} )$ also goes to $\pi $ so we get $S(k) $ to go to $\pi $ too. 
+
+Hence, $S(k) = \pi $ and from there, 
+\[
+\Gamma \left(\frac{1}{2}\right) = \sqrt{\pi } 
+\]
+\[
+\Gamma \left(\frac{3}{2}\right) = \frac{1}{2}\sqrt{\pi } 
+\] 
+\[
+\Gamma \left(\frac{5}{2}\right) = \frac{3}{2} \Gamma\left(\frac{3}{2}\right) = \frac{3}{4} \sqrt{\pi } 
+\]
+\[
+\Gamma \left(\frac{7}{2}\right) = \frac{5}{2} \Gamma\left(\frac{5}{2 }\right) = \frac{15}{8} \sqrt{\pi } 
+\]
+Now we are interested on doing this over $\mathbb{R}^{n}$. 
+\[
+e ^{-x_1^2 - x_2^2 \cdots -x_n^2}
+\]
+\[
+= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty}  \cdots 
+\left(
+\int_{-\infty}^{\infty} e ^{-x_1^2 - x_2^2 - x_3^2 \cdots -x_n^2} \mathrm{d} x_1 
+\right) \cdots \mathrm{d} x_n
+\]
+\[ = 
+	\left(\int_{-\infty}^{\infty} e^{-x_1^2} \mathrm{d} x_1 \right) \left(\cdots \right) 
+\left(	\int_{-\infty}^{\infty} e ^{-x_n^2 } \mathrm{d} x_n   \right) 
+\]
+
+\section*{To integrate over a hypersphere} 
+\[
+	\int_{\rho = 0}^{\infty } \quad \int_{\theta_1} \cdots \int_{\theta_2} \quad e^{-\rho^2} \rho^{n-1} \text{(trig stuffs from jacobian)} \mathrm{d} \theta \cdots \mathrm{d} \theta \mathrm{d} \rho
+\]
+\[
+= \left(
+\int_{0}^{\infty} e^{-\rho ^2} \rho^{n -1} \mathrm{d} \rho 
+\right) 
+\left(
+\int \int \int \int \int \int 
+\text{(trig stuffs)} \mathrm{d} \theta 
+\right)
+\]
+\[
+t = \rho^2 \quad \mathrm{d} t = 2 \rho \mathrm{d} \rho \quad \mathrm{d} t \left(1 / 2\right) = \rho \mathrm{d} \rho
+\]
+\[
+\int_{0}^{\infty} e^{-\rho ^2} \rho^{n -1} \mathrm{d} \rho  = 
+\int_{0}^{\infty} e^{-t} \rho^{n- 2} \rho \mathrm{d} \rho \mathrm{d} \rho = 
+\int_{0}^{\infty} e^{-t} t ^{\frac{n}{2} - 1} \frac{1}{2} \mathrm{d} t = \frac{1}{2} \Gamma\left(\frac{n}{2}\right) 
+\]
+From here we come to conclude, 
+\[
+\sqrt{\pi }  ^{n } = \frac{1}{2} \Gamma (n / 2) v_n 
+\] 
+Hence we get, 
+\[
+v_n = \frac{\sqrt{ \pi } ^{n} }{\frac{1}{ 2} \Gamma \left(\frac{n}{2}\right)}
+\]
+\[
+V_n (R) = \frac{R^{n } }{n} \frac{\sqrt{\pi }^{n}  }{\frac{1}{2} \Gamma(\frac{n}{2})}
+\]
+\[
+\boxed{
+V_n(R) = \frac{R^{n} \left(\sqrt{ \pi } ^{n} \right)}{\Gamma(\frac{n}{2} + 1)}
+}
+\] 
+Computing this, 
+\[
+V_4 (R) = \frac{\pi ^2}{2} R^{4}
+\] 
+\[
+V_5 (R) = \frac{8 \pi ^2}{15} R^{5}
+\] 
+
+
+
+\end{document}

@@ -1,0 +1,153 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Class 30 }
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+
+\section*{Stereographic Projection of a Sphere on a Plane} 
+
+$N = (0,0,1)$ and $p = (p_1, p_2, p_3)$, $z = (x,y,0)$. 
+
+\begin{figure}[ht]
+    \centering
+    \incfig{steregraphic-projection-(class-30)}
+    \caption{Steregraphic projection (Class 30)}
+    \label{fig:steregraphic-projection-(class-30)}
+\end{figure}
+\[
+x = \frac{p_1}{1 - p_3} \quad y = \frac{p_2}{1 - p_3} \quad z = \frac{p_1 + i p_2}{1 - p_3}
+\] 
+\[
+|z|^2 = \frac{p_1^2 + p_2^2}{(1-p_3)^2} = \frac{1 - p_3^2}{(1 - p_3)^2} = \frac{1 + p_3}{1-p_3}
+\]
+Go back to solve for $p_3$. We say that this sphere is a Riemann Sphere. 
+
+\df{
+If a function $f(z)$ defined for all large $|z|$  as $|z| > R$, then define the behavior of 
+$f(z)$ for $|z| > R$ and $z = \infty$ by saying its the same as the behavior of $f(\frac{1}{z})$ near $z = 0$.
+
+if $ f$ is defined for all of $z$ then we say that at infinity $f$ has a removable singularity, if and only if $f (\frac{1}{z})$ has a removable singualarity. 
+
+We say $f$ has a pole at $ \infty$ if $ f(\frac{1}{z})$ has zero at origin. 
+
+We say $f$ has essential singularity at $\infty$ if $f(\frac{1}{z})$ has an essential singularity at the origin. 
+}
+
+\df{
+Residue of $f$ at infinity, 
+\[
+\text{Res}\left(f, \infty\right) = \frac{1}{2 \pi i }\int_C f(z)\mathrm{d} z
+\] 
+Change of variables, $z \to  \frac{1}{z}$ and then, 
+\[
+	\text{Res}(f, \infty) = \frac{1}{2 \pi i } \int_{CW} f(z') -\frac{1}{z^2} \mathrm{d} z
+\]
+\[
+	= \frac{1}{ 2 \pi i} \int_{CCW} f(\frac{1}{z}) \mathrm{d} z \, \frac{1}{z^2}
+\]
+\[
+\text{Res} \left(
+\frac{f(\frac{1}{z})}{z^2}, 0
+\right)
+\] 
+}
+
+The Riemann Sphere is the first example of a ``complex manifold", this complex manifold is compact. 
+Other examples are there. 
+
+Holomorphic function on this manifold is called elliptic function. 
+
+
+Function of $\mathbb{C}$ of the form, 
+\[
+f(z) = \frac{az + b}{cz+d}
+\] 
+Then $a,b,c,d$ $\in  \mathbb{C}$, and $ad - bc \neq  0$. This function is called a  Mobius Function with several nice properties related to $2 \times 2$ matrices.
+\[
+	\begin{pmatrix} a & b \\ c & d  \end{pmatrix} 
+\]
+\[
+	\begin{pmatrix} a & b \\ c & d  \end{pmatrix} \begin{pmatrix} z \\ w \end{pmatrix} = \begin{pmatrix} az + bw \\ cz + dw  \end{pmatrix} 
+\]
+We can say
+\[
+	\begin{pmatrix} a & b \\ c & d  \end{pmatrix} \begin{pmatrix} z \\ 1 \end{pmatrix} = \begin{pmatrix} az + b \\ cz + d  \end{pmatrix} 
+\]
+Extension can be made, 
+\[
+f(z) = \frac{az + b}{cz + d} \quad g(z) = \frac{A z + B}{C z + D}
+\] 
+$f \cdot g$ results the matrix, 
+\[
+	\begin{pmatrix} a & b \\ c & d  \end{pmatrix} 
+	\begin{pmatrix} A & B \\ C & D \end{pmatrix} 
+\]
+Now on inverses, 
+\[
+	\begin{pmatrix} a & b \\ c & d \end{pmatrix}  \to 
+	\begin{pmatrix} d & -b \\ -c & a \end{pmatrix} 
+\]
+We are not worried about $ad - bc$ in the second part of the above equation, so, 
+\[
+f(z) = \frac{z - i}{2z + 3} \to  \frac{3z + i}{-2 z + 1}
+\]
+But now we can think about
+\[
+\frac{az + b}{cz + d}
+\] at $z = \infty$. You get, 
+\[
+\frac{a}{c}
+\]
+We are going to show, if $3$ distinct numbers of $\mathbb{C} \cup \{\infty\} $ are given, and also $3  $ other distincts are given in order then $\exists 1$ and only $1$ mobius function which maps the first 3 onto the second three in order.  
+
+Given $3$ distinct numbers, $u,v,w \in \mathbb{C}$ there exists 1 Mobius function such that, 
+\[
+f(u) = 0 \quad f(v) = \infty \quad f(w) = 1
+\]
+To make this happen, 
+\[
+f(z) = \frac{z - u}{z - v}  \frac{w - v}{w - u}
+\]
+
+Also, 
+\[
+f(\infty) = 0 \quad f(v) = \infty \quad f(w) = 1
+\]
+\[
+f(z) =  \frac{w- v}{z-v}
+\] 
+
+Also, 
+\[
+f(u) = 0 \quad f(\infty) = \infty \quad f(v) = 1
+\]  
+
+\[
+f(z) = \frac{z-u}{z} \frac{v }{v-u}
+\]
+
+Also, 
+\[
+f(u) = 0 \quad f(v) = \infty \quad f(\infty) = 1
+\] 
+\[
+f(z) = \frac{z-u}{z-v}
+\] 
+
+Now if you want to do this,
+\[
+\begin{pmatrix} u \\ v \\ w \end{pmatrix}  \to  \begin{pmatrix} U \\ V  \\  W \end{pmatrix} 
+\] 
+Do this, 
+
+\[
+\begin{pmatrix} u \\ v \\ w \end{pmatrix}  \to  (0, \infty, 1) \to \begin{pmatrix} U \\ V  \\  W \end{pmatrix} 
+\]
+
+Therefore the Mobius functions form a group with group multiplication being composition. These matrices do not form a group.  
+\end{document}

@@ -1,0 +1,173 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+\usepackage[]{hyperref}
+\title{Honors Multivariable Calculus : : Class 30 (whaatttt)}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+We want to talk about spheres. We will soon be talking about $n$-dimensions. This is what 212 people are worried about. 
+
+\section*{Spherical Coordinates in $\mathbb{R}^{3}$} 
+We can use more angles to coordinize. Take, 
+\[
+\rho, \phi, \theta
+\]
+\begin{itemize}
+	\item $\rho$ measures distance from origin, so $\rho = \sqrt{x^2 + y^2 + z^2} $. 
+	\item $\phi$ measures angle between $\vec{z}$ and the $\vec{r}$. 
+	\item $\theta$ measures $\vec{r} _{xy} $ with $\vec{x}$ axis. 
+\end{itemize}
+\begin{figure}[ht]
+    \centering
+    \incfig{spherical-coordinates-(class-30)}
+    \caption{Spherical Coordinates (Class 30)}
+    \label{fig:spherical-coordinates-(class-30)}
+\end{figure}
+
+A cone can be described by simply, 
+\[
+z = \sqrt{x^2+y^2} 
+\]
+\[
+\phi = \frac{\pi}{4}
+\]
+
+The transformation from Cartesian to Polar is, 
+\begin{align*}
+	z &= \rho \cos \theta \\
+	y &= \rho \sin \phi \sin \theta \\
+	x &= \rho \sin \phi \cos \theta 
+\end{align*}
+\[
+	(x,y,z) = T(\rho, \phi , \theta)
+\] 
+Then, 
+\[
+\det \mathrm{d} T = \rho^{k}  \text{(trig stuffs)}
+\]
+What can $ k$ be?  $k = 2$. 
+
+\[
+\int_R f = \int_R' f \cdot T | \det \mathrm{d} T| \, \mathrm{d} \rho \, \mathrm{d} \phi \, \mathrm{d} \theta 
+\] 
+
+The volume of $R$ radius ball is covered in the bounds,  
+\[
+0 \le \rho \le R
+\]
+And the angle dimensions are, 
+\[
+0 \le \phi \le \pi
+\]
+\[
+0 \le \theta \le 2\pi
+\]
+So the integral is to find the volume is, 
+\[
+	\int_{0}^{R} \int_{0}^{ \pi } \int_{0}^{2 \pi } \rho^2 \sin \phi \, \mathrm{d} \theta \, \mathrm{d}  \phi \, \mathrm{d} \rho   
+\] 
+These are linearly independent things we are integrating so, 
+\[
+\int_{0}^{R}  \rho^2 \text{ (trig stuffs) } \mathrm{d} \rho 
+\]
+The $\text{(trig stuffs)}$ is basically surface area of a unit sphere.
+\[
+\int_{0}^{R}  4 \pi \rho^2 \mathrm{d} \rho 
+\]
+\[
+= \frac{4 \pi }{3} R^3
+\]
+
+\section*{Let's work on this on $\mathbb{R}^{4+}$} 
+\[
+\rho = \text{ dist from origin }
+\]
+\[
+\rho^2 = x_1^2 + x_2^2 + x_3^2 + x_4^2
+\]
+We want to come up with coordinates for the rest of these things. So, 
+\[
+\rho^2 = x_4^2 + 
+\left(\sqrt{x_1^2+ x_2^2 + x_3^2} \right)^2 = x_4^2 + \rho^2 \sin ^2 \theta_1 = \rho^2 \cos ^2 \theta_1 + \rho^2 \sin ^2 \theta_1
+\] 
+We are basically saying, 
+\[
+x_4 = \rho \cos \theta
+\]
+\[
+x_1 ^2 + x_2 ^2 + x_3 ^2 = \left(\rho \sin \theta_1\right)^2
+\] 
+Use spherical coordinates from $\mathbb{R}^{3}$ to deal with these,  with the $\mathbb{R}^{3}$ case replaced by $ \rho \sin \theta_1$, 
+\[
+x_3 = \left(\rho \sin \theta_1\right) \cos \theta_2
+\]
+\[
+x_2 = \left(\rho \sin \theta_1 \right) \sin \theta_2 \cos \theta_3
+\]
+\[
+x_3 = \left(\rho \sin \theta_1\right) \sin \theta_2 \sin \theta_3
+\] 
+Here the bounds for the sphere are, 
+\[
+0 \le \theta_1 , \theta_2 \le  \pi
+\]
+\[
+0 \le \theta_3 \le  2 \pi
+\] 
+The volume is going to be, 
+\[
+	\int_{0}^{R}  \left(\int_{\theta_1} \int_{\theta_2} \int_{\theta_3} \cdots \int_{\theta_n}\right)  \det \mathrm{d} T \, \mathrm{d} \theta_1 \, \mathrm{d} \theta_2 \, \mathrm{d} \theta_3 \, \cdots \, \mathrm{d} \theta_n \mathrm{d} \rho
+\]
+Notice that, 
+\[
+\det \mathrm{d} T = \rho^{n-1} \text{(trig stuffs)}
+\] 
+Hence the volume integral, 
+\[
+\int_{0}^{R} \rho^{n-1} \text{ (trig integral) } \mathrm{d} \rho = \frac{1}{n}R^{n} v_n
+\] 
+
+\section*{Find the volume in $n$-dimension} 
+\href{https://scholar.rose-hulman.edu/cgi/viewcontent.cgi?article=1064&context=rhumj}{spoiler link here}. 
+\df{
+$\Gamma$ function is, 
+\[
+\Gamma(z) = \int_{0}^{\infty} t ^{z-1} e^{-t} \, \mathrm{d} t 
+\]
+Only defined for $z > 0$. 
+}
+
+\pr{\[
+\Gamma(5) = \int_{0}^{\infty}  t ^{4} e^{-t} \mathrm{d} t = 
+-  \left[ t ^{4} e ^{-t} \right]_{0} ^{\infty} + 
+\int_{0}^{\infty} 4 t ^3 e ^{-t} \mathrm{d}  t  = 4 \Gamma(4)
+\]
+We can just do this generally and as we found in Computational Complex Analysis, 
+\[
+\Gamma(n+1) = n \Gamma(n)
+\]
+\[
+\Gamma(5) = 4 \Gamma(4) = 4 \Gamma(4) = 4 \cdot  3 \Gamma(3) = 4 \cdot  3 \cdot  2 \Gamma(2) = \left(4 \cdot  3 \cdot  2 \cdot  1\right) \Gamma(1) = (5-1)!
+\]
+}
+\pr{Another example can be shown that, 
+\[
+\Gamma\left(\frac{1}{2}\right) = \int_{0}^{\infty} t ^{- 1 / 2} e ^{ -t} \mathrm{d}  t 
+\]
+Setting, 
+\[
+u = \sqrt{t}  \quad \mathrm{d} u = \frac{1}{2 \sqrt{t} }\mathrm{d} t
+\]
+So, 
+\[
+\int_{0}^{\infty}  e ^{-u ^2} 2 \mathrm{d}  u  = \int_{-\infty}^{\infty} e ^{ - u^2 }\mathrm{d} u 
+\]
+
+}
+
+
+
+\end{document}
