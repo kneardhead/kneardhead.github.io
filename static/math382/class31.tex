@@ -1,0 +1,140 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Class 31}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section*{Mobius Function} 
+
+Mobius Function was talked on 
+\[
+f(z) = \frac{az + b}{cz + d}
+\] 
+where $a,b,c,d \in \mathbb{C}$, and $ad - bc \neq  0$. A nice fact is that every Mobius function sends lines and circles to lines and circle. 
+
+If $c = 0$, then clear. $c \neq  0 $ then 
+\[
+f(z) = \frac{\frac{a}{c} \left(cz + d\right) + b - \frac{ad }{c } }{cz +d } = \frac{a}{c} + \frac{bc - ad}{cz + d}
+\] 
+
+\section*{Stereographic Projection} 
+And we could show that stereographic projection preserves lines and circles.
+
+\section*{Conformal Transformation}
+Two open sets be $D_1$ and $D_2$ and consider a function that is holomorphic and a bijection, then $f^{-1}$ is also a holomorphic bijection. We can say $D_1$ and $D_2$ are conformally equivalent. A square and disk does it pretty nicely. Triangle also does the job. But then if you want to do that in an annulus then it won't work, because they don't contain a hole and that can't be done (homeomorphism baby). 
+
+A few conformal transformation can be 
+\[
+f(z) = z
+\] 
+\[
+f(z) = az + b
+\] 
+But that's all there is! There are no other than this! What the hell. 
+
+\thm{
+	Suppose $f:\mathbb{C}\to \mathbb{C}$ is a conformal transformation from $\mathbb{C}$ to itself. $f$ operator can only be
+	\[
+	f(z) = az  +b
+	\]
+	Where $a\neq 0$ and $a,b \in \mathbb{C}$. 
+}
+Proof is in the book. 
+\pf{
+First think about the inverse function $f^{-1}$, then for any $A > 0$ then $\exists B > 0$ such that 
+\[
+|w| < A \implies | f^{-1} (w) | < B
+\]
+In other words, given $A$ find $B$.
+Let $w = f(z)$ then 
+\[
+|f(z)| < A \implies |z| < B
+\] Contra-positive of this statement, 
+\[
+|z| \ge B \implies |f(z)| \ge A
+\]
+From this we can say that, 
+\[
+\lim_{z \to \infty} f(z) = \infty
+\]
+Now we will define 
+\[
+g(z) = \frac{1}{f\left(\frac{1}{z}\right)}
+\]
+$g$ is well defined near the origin. 
+\[
+\lim_{z \to \infty} g(z ) = 0
+\] And $g$ is a holormorphic other than a removable singularity at $0$,  
+\[
+g(0) = 0 \quad g'(0) \neq 0
+\]
+Because if $g'(0) = 0$ then $g$ has a double 0 at the origin and will have lots of points such 
+$g(z_1) = g(z_2)$, but $g$ is an injection sime $f$ is an injection. 
+\[
+g'(0) \neq  0
+\] 
+Maclauren Expansion, 
+\[
+g(z) = Cz + Dz^2 + \cdots 
+\]
+\[
+\lim_{z \to 0}  \frac{g(z)}{z} = \lim \frac{g(z) - g(0) }{z} = g'(0) \neq 0
+\] 
+\[
+|g(z)| \ge C |z|
+\] Whilst $C > 0$ near $0$. 
+
+So $| f( 1 / z ) |  = 1 / |g(z)| \le 1 / C|z| $  near 0. 
+
+Now through $R$ being large, 
+\[
+	f(z) = \frac{1}{2 \pi i } \int_{|s| = R} \frac{f(s)}{s-z} \mathrm{d} s
+\] 
+\[
+	f'(z) = \frac{1}{2 \pi i } \int_{|s| = R} \frac{f(s)}{(s-z)^2} \mathrm{d} s
+\] 
+\[
+	f'(z) = \frac{2}{2 \pi i } \int_{|s| = R} \frac{f(s)}{(s-z)^3} \mathrm{d} s
+\] 
+\[
+	|f''(z)| \le  \frac{1}{\pi } \int_{|s| = R} \frac{|f(s)|}{|s-z|^3}|\mathrm{d} s|
+\]
+\[
+	\le \frac{1}{C \pi } \int_{|s| = R} \frac{|R|}{(R - |z|)^3} |\mathrm{d} s| 
+\] 
+\[
+= \frac{2}{C} \frac{R^2}{(R - |z|)^3}
+\] 
+\[
+|f(z)| \le \frac{|z|}{C}
+\] 
+Next we are going to find out what the conformal transformations of the unit are, we will work on it on Friday. 
+
+
+}
+
+\section*{Schwart'z Lemma} 
+``It's crazy that it's called a Lemma, because it should be called a Theorem" - Frank Jones, 27th March 2024.
+
+
+$\mathbb{D} = \text{ open unit disk } = \{z  \mid |z| < 1\} $. Suppose $f$ is holomorphic on $D$ and $|f(z)| \le 1$ for all $z \in  D$, and $f(0) = 0$. Then $|f(z)| \le  | z| $ for all $z$ in the unit disk. And $|f'(0)| \le  1$. More over, if any of the above inequality holds $z\neq 0$ then $f(z) = az$ where $|a| = 1$. 
+Proof is going to be define 
+\[
+g(z) = \frac{f(z)}{z} \quad  (z\neq 0)
+\]
+\[
+g(z) = f'(0) \quad (z=0)
+\]
+$g$ is holomorphic on $D$. 
+On the smaller circle $g(z)$ for $|z| = r$ satisfies 
+\[
+|g(z)| = \frac{|f(z)|}{|z|} \le \frac{1}{r}
+\] 
+<maximum principle> 
+
+
+
+\end{document}

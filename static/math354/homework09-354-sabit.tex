@@ -1,0 +1,329 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Homework 09}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section{Problem 01} 
+Consider $V$ is finite dimensional and $U$ and $W$ are subspaces of $ W$. By definition we have, 
+\[
+	(U + W)^{0}  \text{ contains all $\phi \in V'$ }
+\]
+where for every $v \in  U + W $, and $\phi(v) = 0$. This means that $\phi$ must be $0$ for every $u \in U$ and every $w \in W$, otherwise it won't be $0$ in $U+W$, which means $(U + W) ^{0} \subset U^{0} \cap W^{0}$. For every other direction, let us suppose $\phi \in U^{0}$ and $\phi \in W^{0}$ hence, 
+\[
+\phi \in U^{0} \cap  W^{0}
+\] 
+From this we can write, 
+\[
+\phi(u) = 0
+\] 
+\[
+\phi(w) = 0
+\] 
+Then for all $u \in U$ and $w \in W$ we have,
+\[
+\implies \phi(u+ w) = 0 + 0 = 0 \quad \forall  (u + w) \in U+W
+\] 
+Therefore $U^{0} \cap W^{0} \subset (U + W)^{0}$ since both directions of subsets hold we can say, 
+\[
+	(U + W)^{0} = U^{0} \cap  W^{0}
+\] as required. 
+
+\section*{Problem 02} 
+If $U$ nad $W$ are subspaces of $V $ then $U \cap  W$ are subspace too. Then we can write, 
+\[
+\dim (U \cap  W)^{0} = 
+\dim V - \dim (U \cap  W)
+\] 
+\[
+\dim U^{0} = \dim V - \dim U
+\] 
+\[
+\dim W^{0} = \dim V - \dim W
+\] 
+This all implies that, 
+\[
+\implies \dim U^{0} + \dim W^{0} = 2 \dim V - \dim U - \dim W
+\] 
+Which then implies that, 
+\[
+\implies \dim (U^{0} + W^{0}) = \dim U^{0} + \dim W^{0} - \dim (U^{0} \cap W^{0}) = 2 \dim V - \dim U - \dim W - \dim (U^{0} \cap W^{0})
+\] 
+We had found out in the last problem that, 
+\[
+U^{0} \cap W^{0} = (U + W)^{0}
+\] so from here, 
+\[
+\dim (U^{0} \cap W^{0}) = \dim (U + W)^{0} = \dim V - \dim (U + W)
+\] 
+\[
+\implies \dim (U^{0} + W^{0}) = 2 \dim V - \dim U - \dim W - 
+\left(\dim V - \dim (U + W)\right)
+\]
+Now using what we had seen in, 
+\[
+\implies \dim (U^{0} + W^{0}) = \dim V - \dim (U \cap  W) = \dim (U \cap  W)^{0} \quad \text{LADR 2.43}
+\]
+Then supposing that $\phi \in U^{0}$ and $\phi \in  W^{0}$ so that, 
+\[
+\phi(u) = 0 = \phi(w) = 0
+\] 
+\[
+\implies \forall u \in U, \quad w \in W
+\] then any vector $v \in U \cap W$ has $\phi(v) = \phi(u) = \phi(w)$ is equal to 0. 
+
+Hence, 
+\[
+\phi(v) = \phi(u) + \phi(w) = 0
+\] and
+\[
+	(U \cap W)^{0} \subset (U^{0} + W^{0})
+\] 
+Since one is a subset of the other and the dimensions are proved to be same hence, 
+\[
+U^{0} + W^{0} = (U \cap  W)^{0}
+\]
+
+\section*{Problem 3}
+Considering $T \in \mathcal L (V)$ has no eigenvalues and $T^{4} = I $ then,
+\[
+0 = T ^{4} - I = (T^2 + I) \left(T ^2 - I\right) = 
+(T ^2 + I ) (T  + I ) (T - I )
+\] Then at least one of the $T^2$ is equal to, 
+\[
+T^2 = - I 
+\] 
+\[
+T = - I
+\] 
+\[
+T = I 
+\] 
+However since $I v = v $ then $\forall v \in  V$ then $I$ has at least eigenvalue $\lambda = 1$. Similarly $-I$ has eigenvalue $- 1$. 
+
+Then $T = - I$ or $T = I$ contradict the original statement that $T$ has no eigenvalues. There for the only remaining valid case is that
+\[
+T^2 = - I
+\] 
+
+
+\section*{Problem 04} 
+Let us write the matrix form of the following,
+\[
+T ^2 - (a + d) T + (ad - bc) I 
+\]
+\[
+	\begin{pmatrix} a & c \\ b & c \end{pmatrix} 
+	\begin{pmatrix} a & c \\ b & c \end{pmatrix} 
+- 
+(a+d) 
+	\begin{pmatrix} a & c \\ b & c \end{pmatrix} 
+	+ (ad - bc) I 
+\]
+I did the calculation on paper and we get from that, 
+\[
+	\begin{pmatrix} bc -ad & 0 \\ 0 & bc -ad \end{pmatrix} + 
+	\begin{pmatrix} ad -bc & 0 \\ 0 & ad -bc \end{pmatrix} = 
+	\begin{pmatrix} 0 & 0 \\ 0 & 0  \end{pmatrix}  = 0 \] 
+
+
+
+	\section*{Problem 05} 
+	Since $\dim V = 2$ the minimal polynomial of $T$ has at most $2$ degree of coefficients satisfying, 
+	\[
+	c_0 I + c_1 T = - c_2 T^2 \implies c_0 I + c_1 
+	\begin{pmatrix} a & c \\ b & d \end{pmatrix}  = -c_2 
+	\begin{pmatrix} a^2+ bc & c(a+d) \\ b(a+d) & bc + d^2 \end{pmatrix} 
+	\] 
+	From setting the bound $b=c=0$ and $a=d$ then, 
+	\[
+	\implies
+	c_0 I + c_1 \begin{pmatrix} a & 0 \\ 0 & a \end{pmatrix} = 
+	-c_2 \begin{pmatrix} a^2 & 0 \\ 0 & a^2 \end{pmatrix}  
+	\]
+	\[
+	\implies c_0 + c_1 a + c_2 a^2 = 0
+	\]
+
+	At most one from  $c_0, c_1 ,c_2$ can be 0 otherwise all three are 0 and the polynomial isn't anymore monic. In the case none are $0$ then this forms a quadratic that has solutions for particular values of $a,c_0, c_1, c_2$ rather than any value of $a$ therefore the only solutions to this occurs when exactly one of $c_0,c_1,c_2$ is 0. Moreover in this case with $b = c = 0$ and $a = d$ we have, 
+	\[
+		T = \begin{pmatrix} a & 0 \\ 0 & a \end{pmatrix} = a I
+	\] 
+	and since $I$ is invertible, $T$ is also invertible. 
+
+	Let us consider the case  $c_2$ is 0. Then $c_0 + c_1 a = 0$ that implies $c_0 = -c_1 a$ and the polynomial is $c_1 z - c_1 a \to  z - a$. 
+
+	Considering $c_1 = 0$ then $c_0 + c_2 a^2 = 0$ that means, $c_0 = - c_2 a^2 $. The polynomial we get from this is $c_2 z^2 - c_2 a^2 \to z^2 - a^2$. 
+
+	Note that LADR  $5.32$ says that $c_0 \neq 0$. 
+
+	The lowest degree polynomial is found if $c_2 = 0$ hence, 
+	when $b = ;c = 0$ and $a= d$ the minimal polynomial is $z- a$. 
+
+
+
+\section{Problem 05} 
+Let $V$ be finite dimensional and $T \in \mathcal L (V)$. Defining 
+\[
+A \in \mathcal L (\mathcal L (V)) \quad A(S) = TS 
+\]
+where $S \in \mathcal L (V)$. The set of $A$ eigenvalues are those $\lambda$ such that 
+\[
+A(S) = \lambda_A S
+\] while $T$ satisfy $T v = \lambda_T v$. Then taking, 
+\[
+A(S) = \lambda_A S = TS =T (Sv) = \lambda_T S
+\]
+As long as $S\neq 0$, 
+\[
+\lambda_A S = \Lambda_T S \implies \lambda_A = \lambda_T
+\]
+This means that the both eigenvalues are the same. 
+
+\section*{Problem 06} 
+We can consider the matrix and break it down in the following way using the definition of determinants
+\[
+	\begin{pmatrix} 1 & 0 & a &0
+	\\
+
+0 & 1 &0&\\
+b&0&1&0\\
+0&c&0&1\end{pmatrix} =
+		1 \begin{pmatrix} 1 & 0 & 0 \\
+		0 & 1 & 0 \\ 
+	0 & 0 & 1\end{pmatrix} + 
+			b \begin{pmatrix} 0 & a &0
+			\\
+		1 & 0 & 0 \\ 
+	c & 0 & 1\end{pmatrix}  = 1 - ab
+\]
+
+\section*{Problem 07}
+\[
+\det 
+\begin{bmatrix} 
+	\vec{u}+\lambda \vec{e}_1 &
+	\vec{u}+\lambda \vec{e}_2 & 
+	\cdots &  
+	\vec{u}+\lambda \vec{e}_n
+\end{bmatrix} 
+\]
+We can break this down in the following way,
+\[
+\det 
+\begin{bmatrix} 
+	\vec{u} &
+	\vec{u}+\lambda \vec{e}_2 & 
+	\cdots &  
+	\vec{u}+\lambda \vec{e}_n
+\end{bmatrix}
++\det 
+\begin{bmatrix} 
+	\lambda \vec{e}_1 &
+	\vec{u}+\lambda \vec{e}_2 & 
+	\cdots &  
+	\vec{u}+\lambda \vec{e}_n
+\end{bmatrix}
+\]
+We can do this for each next terms, 
+\begin{align*}
+\det 
+\begin{bmatrix} 
+	\vec{u} &
+	\vec{u} & 
+	\cdots &  
+	\vec{u}+\lambda \vec{e}_n
+\end{bmatrix}+
+\det 
+\begin{bmatrix} 
+	\vec{u} &
+	\lambda\vec{e}_2 & 
+	\cdots &  
+	\vec{u}+\lambda \vec{e}_n
+\end{bmatrix} \\
++\det 
+\begin{bmatrix} 
+	\lambda \vec{e}_1 &
+	\vec{u}+\lambda \vec{e}_2 & 
+	\cdots &  
+	\vec{u}+\lambda \vec{e}_n
+\end{bmatrix}
+\end{align*}
+The first term contains the same instance of $\vec{u}$ in two columns so it's determinant is $0$. This gives, 
+\begin{align*}
+\det 
+\begin{bmatrix} 
+	\vec{u} &
+	\lambda\vec{e}_2 & 
+	\cdots &  
+	\vec{u}+\lambda \vec{e}_n
+\end{bmatrix} 
++\det 
+\begin{bmatrix} 
+	\lambda \vec{e}_1 &
+	\vec{u}+\lambda \vec{e}_2 & 
+	\cdots &  
+	\vec{u}+\lambda \vec{e}_n
+\end{bmatrix}
+\end{align*}
+Expand the third term like this, and repeated process will yield us, 
+\begin{align*}
+	= \det \begin{bmatrix} \vec{u} & 
+	\lambda \vec{e}_2 & \cdots & \lambda \vec{e}_n \end{bmatrix} 
+	+ 
+	\det 
+	\begin{bmatrix} \lambda \vec{e}_1 
+	& 
+	\vec{u}+\lambda \vec{e}_2 
+	& \cdots &  
+\vec{u} + \lambda \vec{e}_{n} \end{bmatrix} \\
+= 
+\det 
+\begin{bmatrix} \lambda \vec{e}_2 
+& 
+\lambda \vec{e}_3 & 
+\cdots 
+		  & 
+\lambda \vec{e}_n \end{bmatrix} 
++ 
+\det 
+		\begin{bmatrix} \lambda \vec{e}_1 & 
+		\vec{u} + \lambda \vec{e}_2 & 
+	\cdots 
+					    & 
+	\vec{u}+ \lambda \vec{e}_n \end{bmatrix} 
+	\\
+	=
+\lambda^{n - 1}  + 
+\lambda \left( \lambda ^{n-2} + \lambda \det 
+		\begin{bmatrix} \vec{u}+ \lambda \vec{e}_3 & \cdots & \lambda \vec{e}_{n-1} \end{bmatrix} \right)
+\end{align*}
+The second matrix can be written as the exact same as previous one with the substituation of $n \to  n - 1$ and $\vec{u}$ with length $n-1$, 
+\[
+= \lambda^{n-1} +
+\lambda \left(
+\lambda ^{n-2} + \lambda \det \begin{bmatrix} \vec{u} + 
+\lambda \vec{e}_3 & \cdots & \vec{u}+ \lambda \vec{e}_n\end{bmatrix} 
+\right)
+\] 
+So this we can write, 
+\[
+\lambda ^{n-1} + \lambda 
+\left(\lambda ^{n-2} + \lambda \left(\lambda ^{n-3} + \cdots + \det \begin{bmatrix} \vec{u}+\lambda \vec{e}_n \end{bmatrix} \right)\right)
+\]
+\[
+= \lambda^{n-1} + \lambda 
+\left(\lambda^{n-2} + \lambda
+\left(\lambda^{n-3} + \cdots + \lambda + 1\right)\right)
+\]
+Looking at the pattern of multiplication, apparently, 
+\[
+\boxed{
+n \lambda ^{n-1}
+}
+\] 
+
+	\end{document}

@@ -1,0 +1,97 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 33}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+The 212 definition of scalar surface integral. Say that is in $\mathbb{R}^{3}$. Let there be a function $f : \mathbb{R}^{3}\to \mathbb{R}$. Then, 
+\[
+\iint_S f \, \mathrm{d} S
+\]  
+is ``defined" using Riemann Sums. Break S into pieces. For each piece take a value of $f$ on that piece. So the integral is going to be the 
+small area times the function. And then add that up. That gives you a Riemann sum and consider the number of pieces goes to infinity.
+
+A use of this is that integrating $1$ like $\iint 1 \, \mathrm{d} S$ gives the total surface area. More generally, if $\delta$ is a per area density,
+then it gives the total. The average of $f$ is 
+\[
+\frac{\iint f \, \mathrm{d} S}{ \iint \mathrm{d} S}
+\] 
+
+\df{
+$S \subset \mathbb{R}^{3}$ is a parametrized $C^{1}$ surface if there exists 
+\[
+T : D \to \mathbb{R}^{3}
+\]
+and $D \subset \mathbb{R}^2$ has non empty interior such that $T$ is $C_1$, the image of $T$ is $S$ and $T$ is injective other than a set of content zero. 
+}
+
+Here if $S$ is a compact $C_1$ parametrized surface in $\mathbb{R}^{3}$ with parametrization $T: D \to \mathbb{R}^{3}$ then define $\iint_S f \, \mathrm{d} S$ to be just 
+\[
+\iint_D f\cdot T \text{ (change of coordinate )} 
+\]
+\[
+\iint_D f \cdot T \,  \left| \frac{\partial T}{\partial u} \cdot \frac{\partial T}{\partial v} \right| 
+\]
+
+Let's take a 
+\[
+	\{(x,y,z) : z = x^2 + y^2 \, \& \, z \le 4\} 
+\]
+Let's set $f(x,y,z) = z$ and $\iint_S f \, \mathrm{d} S$, let's set
+\[
+u = r \quad \text{and} \quad v = \theta 
+\]
+\[
+x = u \cos v
+\]
+\[
+y = u \sin v
+\]
+\[
+z = x^2 + y^2 = u^2 
+\]
+\[
+T(u,v) = ( u \cos v, u \sin v, u^2)
+\]
+\[
+0 \le u \le 2
+\]
+\[
+0 \le v \le 2 \pi
+\]
+
+\[
+	\iint f \, \mathrm{d} S = \int_{[0,2]\times [0, 2\pi ] } 
+	u^2 \sqrt{2 u ^{4} + u^2} \, \mathrm{d} u \, \mathrm{d} v 
+\]
+
+Another type of parametrization, 
+\[
+T(u,v) = (u,v, u^2 + v^2)
+\]
+Then this becomes, 
+\[
+\iint_D (u^2 + v^2) \left| \frac{\partial T}{\partial u} \times  \frac{\partial T}{ \partial v} \right| \, \mathrm{d} u \, \mathrm{d} v
+\]
+Here $D$ is a disk of radius $2$.
+\[
+\iint_D (u^2 + v^2) \sqrt{4 u^2 + 4 v^2 + 1}  \, \mathrm{d} u \,  \mathrm{d} v
+\]
+
+\section*{Vector Field} 
+Every point in space is a vector. 
+\[
+\vec{F} : \mathbb{R}^{n} \to \mathbb{R}^{n} 
+\] 
+Inputs are thought of as points and outputs are thought of as arrows. 
+An easy example, 
+\[
+F(x,y) = \langle 1 , 3 \rangle 
+\]
+
+
+
+\end{document}

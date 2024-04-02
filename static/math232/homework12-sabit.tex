@@ -1,0 +1,62 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{calc, positioning, math}
+\title{Honors Multivariable Calculus : : Homework 1x}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Problem 01} 
+\begin{tcolorbox}[colback=white, colframe=NordBlue, sharpish corners]
+	\textbf{Aid for my brain: }
+	Let the compact region be $R \in \mathbb{R}^{n-1}$ where $n = 3$. Common sense tells us $R$ is basically a disk in $\mathbb{R}^{2}$ or for now $x-y$ plane if we want what is in the figure. The tip of the cone is $\vec{a}$. 
+
+	I think from the question our $R$ doesn't really need to be necessarily a disk. Now the region is all the lines that join from $\vec{a}$ to $R$. If $\vec{x} \in R$ then considering a linear map $\gamma_{\vec{x}}: [0,1] \to \mathbb{R}^{n} $ such that $\gamma_{\vec{x}}(0) = \vec{a}$ and $\gamma_{\vec{x}}(1) = \vec{x} \in R$ 
+
+\begin{center}
+\newcommand{\radiusx}{2}
+\newcommand{\radiusy}{.5}
+\newcommand{\height}{3}
+\begin{tikzpicture}
+\coordinate (a) at (-{\radiusx*sqrt(1-(\radiusy/\height)*(\radiusy/\height))},{\radiusy*(\radiusy/\height)});
+
+\coordinate (b) at ({\radiusx*sqrt(1-(\radiusy/\height)*(\radiusy/\height))},{\radiusy*(\radiusy/\height)});
+
+\draw[fill=gray!30] (a)--(0,\height)--(b)--cycle;
+
+\fill[gray!50] circle (\radiusx{} and \radiusy);
+
+\begin{scope}
+\clip ([xshift=-2mm]a) rectangle ($(b)+(1mm,-2*\radiusy)$);
+\draw circle (\radiusx{} and \radiusy);
+\end{scope}
+
+\begin{scope}
+\clip ([xshift=-2mm]a) rectangle ($(b)+(1mm,2*\radiusy)$);
+\draw[dashed] circle (\radiusx{} and \radiusy);
+\end{scope}
+
+\draw[dashed] (0,\height)|-(\radiusx,0) node[right, pos=.25]{$a_n$} node[above,pos=.75]{$r$};
+
+\draw (0,.15)-|(.15,0);
+\end{tikzpicture}
+
+\end{center} 
+The line segment is set of all points such that, 
+\[
+	\Gamma = \{s \in \mathbb{R}^{n} : s = \vec{a} t + (1- t ) \vec{x} \text{ where } t \in  [0, 1], \vec{x} \in R, \vec{a} \in \mathbb{R}^{n}\} 
+\]
+Here $x \in  R$. Every point $\vec{p} \in \Gamma$ is a memeber of the cone.  
+\end{tcolorbox}
+
+The volume of the region $\Gamma$ (which is the defined cone) is going to be,
+\[
+\int_\Gamma 1 = \text{Volume}
+\] 
+Now the burden is to find a region $\Gamma$. 
+
+\end{document}

@@ -1,0 +1,67 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 32}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Scalar Line Integral}
+Curve $C$ in $\mathbb{R}^{n}$. Have some scalar function, 
+\[
+f:\mathbb{R}^{n} \to \mathbb{R}
+\] 
+And on the curve to somewhat distinguish from the integrals we wrote before, 
+\[
+\int_C f \mathrm{d}  s
+\]
+What is the intuitively supposed to be? Break $C$ into pieces and on each piece take a value of $f$ times a ``bit of the domain", here the bits of the domain are the length. Add up and take a limit as number pieces goes to infinity and size of the piece goes to zero. 
+\[
+\int_C 1 \, \mathrm{d} s = \text{ arc length}
+\]
+More generally if $f$ is some curved density like mass or charge, then, you get total for the whole system. 
+\[
+\int_C f \, \mathrm{d} s = \text{ total }
+\]
+
+\df{
+A $C$ in $\mathbb{R}^{n}$ is a smooth parametrized curve if $\exists C^{1}$ $p: I \to  \mathbb{R}^{n}$ where $I$ is an interval in $R$ such that, we want the image of $P$ to be $C$, and $p$ being the parametric description of the curve above. We don't want to double count any part of the $C$, because if $C$ is circle then we can end up over counting. So we are going to say that $P$ is injective except possibly a content zero set.  
+}
+
+\df{
+$f:\mathbb{R}^{n}\to \mathbb{R}$ is a scalar function and $C$ is a parametrized curve in $\mathbb{R}^{n}$ then $\int_C f \mathrm{d} s$ is defined to be 
+\[
+\int_{a}^{b} f(p(t))  \mid  \mid p'(t)  \mid  \mid \mathrm{d} t 
+\] where $p:[a,b] \to \mathbb{R}^{n} $ is a $C^{1}$ parametrization of $C$. 
+}
+
+An example would be, arclength of semi-circle of radius $1$ we can parametrize it through, 
+\[
+p(t) = \left(\cos t, \sin t\right)
+\] 
+$0\le t \le \pi $ and hence,
+\[
+\int_c 1 \mathrm{d} s = \int_{0}^{\pi } 1  \mid  \mid p'(t)  \mid  \mid \mathrm{d} t = \int_{0}^{\pi }  \sqrt{ (-\sin t)^2 + (\cos t)^2}  \mathrm{d} t = \pi  
+\]
+\[
+\int_C x^{6}\mathrm{d} s = \int_0^\pi  \cos ^{6} t\mathrm{d} t \sqrt{\left(- \sin t\right)^2 + \left(\cos t\right)^2 } 
+\] 
+Definition can be extended for curve having sharp edges ``piecewise $C^{1}$ " 
+
+\[
+q(t) = (t, \sqrt{1-t^2} )
+\] 
+where $-1 \le t \le 1$, hence,
+\[
+\int_C x^{6} \mathrm{d} s = \int_{-1}^{1} t ^{6}  \mid  q'(t)  \mid \mathrm{d} t 
+\]  
+\[
+= \int_{-1}^{1}  t ^{6} \sqrt{1 ^2 + \left(\frac{1}{2} \frac{-2 t}{\sqrt{1 - t^2} }\right)^2}  
+\]
+\[
+= \int_{-1}^{1} t ^{6} \sqrt{1 + \frac{t^2}{1 - t^2} }  \mathrm{d} t = \int_{-1}^{1} t ^{6} \sqrt{\frac{1}{1 - t^2}} \mathrm{d} t  
+\] 
+
+\end{document}
