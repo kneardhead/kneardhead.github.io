@@ -1,0 +1,395 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Homework 13}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section*{Problem 01} 
+The force is given by $\vec{F}: \mathbb{R}^{n} \to  \mathbb{R}^{n}$ and the curve $C$ follows the path $\vec{p} : [a,b] \to \mathbb{R}^{n}$. $[a,b]$, as a Physics major, to me is time. We are to compute the line integral of $\vec{F}$ on $C$. 
+
+This integral is given by 
+\[
+\int_C \vec{F} \cdot \mathrm{d} \vec{s} = \int_a^b \vec{F}(\vec{p}(t)) \cdot \vec{p}'(t) \, \mathrm{d} t
+\]
+
+With the help of Newton's Second Law 
+\[
+\int_C \vec{F} \cdot \mathrm{d} \vec{s} = \int_a^b m \vec{p}''(t)\cdot \vec{p}'(t) \, \mathrm{d} t
+\] 
+If $\vec{p}(t) = \left(p_1(t), p_2(t), \ldots, p_n(t)\right)$, then 
+\[
+\int_a^b m \vec{p}''(t)\cdot \vec{p}'(t) \, \mathrm{d} t = 
+\sum_{i=1}^{n} \int_a^b m p_i'' (t) p_i ' (t) \, \mathrm{d} t
+\] 
+This has reduced into a single variable integral problem. We can use integration by parts now. The formula is, 
+\[
+	\int_a^b u \,\mathrm{d} v  = uv]_{a}^b - \int_{a}^{b} v \, \mathrm{d} u 
+\]
+With the ``substitution" of $\mathrm{d} v = p_i ''(t) \mathrm{d}  t$ and $u = p_i'(t)$
+\[
+	\int_a^b m p_i '' (t) p_i '(t) \mathrm{d} t = m (p_i'(t))^2 ]_a^b- \int_a^b m p_i'(t) p_i ''(t) \, \mathrm{d}  t
+\] Which happens to be a relatively simple solution,
+\[
+	\int_{a}^{b}  m p_i''(t) p_i '(t) \, \mathrm{d}  t= \frac{m p_i'(b)^2}{2} - \frac{m p_i'(a)^2}{2} 
+\]
+
+Now to take the summation, we will use the Generalized Pythogoras Theorem for general $n$ dimension.
+In Physics sense, if the basis is orthonormal, then speed $s(a), s(b)$ is 
+\[
+\sum_{i = 1}^{n} p_i' (a)^2 = s ^2(a)
+\] 
+\[
+\sum_{i = 1}^{n} p_i' (b)^2 = s ^2(b)
+\] Hence
+\[
+\sum_{i = 1}^{n}\int_{a}^{b}   m p_i''(t) p_i'(t) \, \mathrm{d} t
+= 
+\sum_{i = 1}^{n} \frac{m p_i'(b)^2}{2} - \sum_{i=1}^{n} \frac{m p_i '(a)^2}{2} = \frac{ms ^2(b)}{2} - \frac{m s ^2(a) }{2}
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section*{Problem 02} 
+
+
+The vector field is given by the equation 
+\[
+\vec{F}(x,y) = \langle F_1 (x,y), F_2(x,y)\rangle
+\] where $\vec{F} \in \mathbb{R}^{2}$ and $F_i \in \mathbb{R}$ where $ i = 1, 2 $. 
+The point $\vec{a}$ is defined by,
+\[
+\vec{a} = (a,b) \in \mathbb{R}^{2}
+\]
+As given in the problem
+\[
+c = (F_2)_x (\vec{a}) - (F_1)_y (\vec{a}) \] Because $F_1, F_2$ are $\mathbb{R}^{2}\to \mathbb{R}$ I can write the following notation too \[ c=  \frac{\partial F_2}{\partial x} (\vec{a}) - \frac{\partial F_1}{\partial y} (\vec{a})
+\]
+We are supposed to compute the following
+\[
+\int_C \vec{F}
+\]
+where $C$ is defined by the path $(a,b) - (a+t, b) - (a+t,b+t) - (a, b+t)$, a simple square on $\mathbb{R}^{2}$. Let the paths $P_1+P_2+P_3+P_4 = C$ hence 
+\[
+	\int_C \vec{F} = \int_{P_1} \vec{F} + 
+	\int_{P_2} \vec{F} + 
+	\int_{P_3} \vec{F} + 
+	\int_{P_4} \vec{F}
+\]
+Let's begin working on $\int_{P_1} \vec{F}$. This is a simple path integral of the vector function $\vec{F}$ on the ``straight line" that connects $(a,b) $ with $(a+t,b)$. Define this path with the parametric $\vec{p}_1: [0,t] \to \mathbb{R}^2: \vec{p}_1(\sigma) = (a+\sigma,b) $. 
+
+I will do this for all paths individually, \textbf{please be aware of the direction of $\sigma$ for the path}
+\begin{align*}
+	\vec{p}_1 : [0,t] \to  \mathbb{R}^2 & \quad \vec{p}_1 = (a+\sigma,b) \quad &\sigma \in [0,t] \, \text{increasing}\\  
+	\vec{p}_2 : [0,t] \to  \mathbb{R} ^2& \quad \vec{p}_2 = (a+t,b+\sigma) \quad &\sigma \in [0,t] \, \text{increasing}\\  
+	\vec{p}_3 : [0,t] \to  \mathbb{R} ^2& \quad \vec{p}_3 = (a + \sigma ,b+t) \quad &\sigma \in [0,t] \, \text{decreasing} \\  
+	\vec{p}_4 : [0,t] \to  \mathbb{R} ^2& \quad \vec{p}_4 = (a,b + \sigma) \quad &\sigma \in [0,t] \, \text{decreasing }\\  
+\end{align*}
+
+To compute the integral over the path, we end up having a single variable parametrization. The path integral, generally
+\[
+\int_{P} \vec{F} = 
+\int_{P} \vec{F} \cdot \mathrm{d} \vec{s} = 
+\int_0^{t} \vec{F}(\vec{p}(\sigma)) \cdot \vec{p}'(\sigma) \mathrm{d} \sigma
+\] 
+For each line segment  
+\[
+	\int_{P_1} \vec{F} = 
+	\int_0^{t} \vec{F}(\vec{p}_1(\sigma)) \cdot \vec{p}'_1(\sigma) \mathrm{d} \sigma = 
+	\int_0^{t} \vec{F}(a+\sigma, b) \cdot \begin{pmatrix} 1 \\ 0 \end{pmatrix}  \mathrm{d} \sigma = 
+	\int_0^{t} F_1(a+\sigma, b) \mathrm{d} \sigma
+\] 
+\[
+	\int_{P_2} \vec{F} = 
+	\int_0^{t} \vec{F}(\vec{p}_2(\sigma)) \cdot \vec{p}'_2(\sigma) \mathrm{d} \sigma = 
+	\int_0^{t} \vec{F}(a+t, b+\sigma) \cdot \begin{pmatrix} 0 \\ 1 \end{pmatrix}  \mathrm{d} \sigma = 
+	\int_0^{t} F_2(a+t, b+\sigma) \mathrm{d} \sigma
+\] 
+\[
+	\int_{P_3} \vec{F} = 
+	\int_0^{t} \vec{F}(\vec{p}_3(\sigma)) \cdot \vec{p}'_3(\sigma) \mathrm{d} \sigma = 
+	\int_0^{t} \vec{F}(a+\sigma, b+t) \cdot \begin{pmatrix} -1 \\ 0 \end{pmatrix}  \mathrm{d} \sigma = 
+-	\int_0^{t} F_1(a+\sigma, b+t) \mathrm{d} \sigma
+\] 
+\[
+	\int_{P_4} \vec{F} = 
+	\int_0^{t} \vec{F}(\vec{p}_4(\sigma)) \cdot \vec{p}'_4(\sigma) \mathrm{d} \sigma = 
+	\int_0^{t} \vec{F}(a, b+\sigma) \cdot \begin{pmatrix} 0 \\ -1 \end{pmatrix}  \mathrm{d} \sigma = 
+	-\int_0^{t} F_2(a, b+\sigma) \mathrm{d} \sigma
+\]
+The total path integral is then, 
+\[
+\int_C \vec{F} = 
+\int_0^{t} \mathrm{d} \sigma \left(F_1(a+\sigma, b) + F_2 (a+t, b+\sigma) - F_1 (a+\sigma, b+t) - F_2(a,b+\sigma) \right)
+\]
+\[
+\int_C \vec{F} = 
+\int_0^{t} \mathrm{d} \sigma \left(
+F_1(a+\sigma, b) - F_1(a+\sigma, b+t)
+\right) + 
+\int_{0}^{t} \mathrm{d} \sigma 
+\left(
+F_2(a+t, b+\sigma) - F_2(a, b+\sigma)
+\right)
+\]
+\[
+\int_C \vec{F} = 
+- \int_0^{t} \mathrm{d} \sigma \left(
+F_1(a+\sigma, b+t) - F_1(a+\sigma, b)
+\right) + 
+\int_{0}^{t} \mathrm{d} \sigma 
+\left(
+F_2(a+t, b+\sigma) - F_2(a, b+\sigma)
+\right)
+\]
+
+Mean value theorem has some forms that we can use here, the single variable case
+\[
+	\phi(b) - \phi(a) = (b-a) \frac{\mathrm{d} \phi}{\mathrm{d} t} \left(z \in [a,b]\right)
+\]
+Using this 
+\[
+\int_C \vec{F}= 
+- 
+\int_{0}^{t} t \frac{\partial F_1}{\partial y} (a+\sigma, b+ b_0)  + 
+\int_{0}^{t} t \frac{\partial F_2}{\partial x} (a+a_0, b+\sigma ) 
+\]
+\[
+\int_C \vec{F} = \int_{0}^{t} \mathrm{d} \sigma \left(
+t \frac{\partial F_2}{\partial x} (a+a_0, b+ \sigma) - t \frac{\partial F_1}{\partial y} (a+\sigma, b+b_0)
+\right) \] 
+Now the helpful mean value theorem is going to be,
+\[
+	\int_a^b \mathrm{d} t \, \gamma(t) = (b-a) \gamma(t) 
+\]
+Using this on the equation
+\[
+\int_C \vec{F} = 
+t^2 \frac{\partial F_2}{\partial x} (a+a_0, b+b_1) - t^2 \frac{\partial F_1}{\partial y} (a+a_1, b+b_0)
+\]
+Now what we have is, 
+\[
+\frac{\int_C \vec{F}}{ t^2} = \frac{\partial F_2}{\partial x} (a+a_0, b+b_1) - \frac{\partial F_1}{\partial y} (a+a_1, b+b_0)
+\]
+Because $a_0, a_1, b_0, b_1 \in [0,t]$ and if $t \to 0$ then similarly $a_0, a_1, b_0, b_1 \to 0$
+\[
+	\frac{\int_C \vec{F}}{t^2 } = (\left(F_2\right)_x - \left(F_1\right)_y )(\vec{a})
+\] 
+
+\begin{comment} 
+Mean value theorem says 
+\[
+\omega(b) - \omega(a) = (b-a) \cdot \omega'(c)
+\] 
+\[
+\int_{0}^{t} F_1(a + \sigma, b) \mathrm{d} \sigma  =  t F_1(a+c_1,b)
+\]
+\[
+\int_{0}^{t} F_2(a+t,b+\sigma) \mathrm{d} \sigma = t F_2(a+t, b+d_1)   
+\] 
+\[
+\int_{0}^{t}  F_1 (a+t-\sigma, b+t) \mathrm{d} \sigma = t  F_1  (a+ t - c_2 , b+t) 
+\]
+\[
+\int_{0}^{t} F_2 (a, b+t-\sigma) \mathrm{d} \sigma = t F_2 (a, b+t - d_2)  
+\] 
+The path integral hence is,
+\[
+\frac{1}{t}\int_C \vec{F} =  
+F_1(a+c_1, b)- F_1(a+t-c_2 , b+t) + F_2(a+t, b+d_1) - F_2(a, b+t - d_2 )
+\]
+
+
+\[
+= \left(\frac{\partial F_1}{\partial x} , \frac{\partial F_1}{\partial y}\right) (\vec{z}) \cdot  (a+c_1 - a - t + c_2, b - b - t) = 
+ -\left(\frac{\partial F_1}{\partial x} , \frac{\partial F_1}{\partial y}\right) (\vec{z}) \cdot  (t - (c_1 + c_2), t) + \left(
+\frac{\partial F_2}{\partial x}, 
+\frac{\partial F_2}{\partial y} 
+ \right) (\vec{z}) (t, (d_1 + d_2) - t) =  
+\] 
+
+\[
+f(\vec{b}) - f(\vec{a}) = \nabla f(\vec{z}) \cdot (\vec{b}-\vec{a})
+\] 
+\end{comment} 
+
+
+\newpage
+\section*{Problem 03} 
+Equation of the circle in $xy$ plane is given on Cartesian Coordinates from Polar coordinates through
+ \begin{align*}
+	x &= R + r \cos \theta \\
+	y &= r \sin \theta 
+\end{align*}
+$R$ is the position of the center of the circle and thus $ R = 5$. To complete the circle we require $\theta \in [ 0 , 2 \pi] $. The radius of the circle is $2$ hence $r = 2$. This creates, 
+\begin{align*}
+	x &= 5 + 2 \cos \theta \\
+	y &= 2 \sin \theta 
+\end{align*}
+
+If we create a sweep of the circle with the axis of $y$ then we create a torus 
+\begin{align*}
+	x &= (5 + 2 \cos \theta) \cos \phi \\
+	y &= 2 \sin \theta \\
+	z &= (5 + 2 \cos \theta) \sin \phi 
+\end{align*}
+With the required bound on $\phi$ being $\phi \in [0, 2\pi]$.
+
+So the torus can be found using the variables $\theta, \phi$ through the linear transformation $T: \mathbb{R}^{2} \to \mathbb{R}^{3}$
+\[
+	T (\theta, \phi) = ([(5 + 2 \cos \theta) \cos \phi] ,
+	[2 \sin \theta ],[(5+2 \cos \theta) \sin \phi]) 
+\]
+\[
+\partial_\theta T = 
+\left(
+- 2 \sin \theta \cos \phi, 
+2 \cos \theta, 
+-2 \sin \theta \sin \phi
+\right)
+\]
+\[
+\partial_\phi T = 
+\left(
+	-\left(5 + 2 \cos \theta\right)  \sin \phi,
+	0, 
+	\left(5 + 2 \cos \theta\right) \cos \phi
+\right)
+\]
+
+Surface area of this $S$ surface which is the torus can be transformed into another surface $D$ so that 
+\[
+\iint _S 1  = \iint_D \left| \frac{\partial T}{\partial \theta} \times \frac{\partial T}{ \partial \phi} \right|  
+=
+\int_{\phi = 0}^{\phi = 2\pi }  \int_{\theta = 0}^{\theta = 2 \pi }    \left| \frac{\partial T}{\partial \theta} \times \frac{\partial T}{ \partial \phi} \right| \, \mathrm{d} \theta \, \mathrm{d} \phi
+\] 
+
+For ease of using Wolfram Alpha I will substitute $(\theta, \phi)$ with $(x,y)$. 
+\begin{align*}
+\partial_\theta T \times \partial_\phi T =  
+(& 10 \cos(x) \cos(y) + 4 \cos^2(x) \cos(y), \\ 
+ &10 \cos^2(y) \sin(x) + 4 \cos(x) \cos^2(y) \sin(x) + 10 \sin(x) \sin^2(y) + 4 \cos(x) \sin(x) \sin^2(y), \\
+ & 10 \cos(x) \sin(y) + 4 \cos^2(x) \sin(y)) \\ 
+= (& 
+	 [ \partial_\theta T \times  \partial_\phi T ]_1,
+	 [ \partial_\theta T  \times  \partial_\phi T ]_2, 
+	 [ \partial_\theta T  \times  \partial_\phi T ]_3 
+ ) \\
+\end{align*}
+
+
+\begin{align*}
+|\partial_\theta T \times \partial_\phi T |^2 =  
+& 
+	 [ \partial_\theta T   \times  \partial_\phi T ]_1^2
+	 +[ \partial_\theta T   \times  \partial_\phi T ]_2^2
+	 +[ \partial_\theta T   \times  \partial_\phi T ]_3^2 
+ \\
+=(& 10 \cos(x) \cos(y) + 4 \cos^2(x) \cos(y))^2 \\ 
+ +(&10 \cos^2(y) \sin(x) + 4 \cos(x) \cos^2(y) \sin(x) + 10 \sin(x) \sin^2(y) + 4 \cos(x) \sin(x) \sin^2(y))^2 \\
+ + (&10 \cos(x) \sin(y) + 4 \cos^2(x) \sin(y)))^2\\ 
+ = & 4 (2 \cos(x) + 5)^2
+\end{align*}
+\[
+| \partial_\theta T \times \partial_\phi T | = 2 (5 + 2 \cos(\theta)) 
+\]
+
+
+
+\[
+\int_{\phi = 0}^{\phi = 2\pi }  \int_{\theta = 0}^{\theta = 2 \pi }  
+(10 + 4 \cos \theta)
+\, \mathrm{d} \theta \, \mathrm{d} \phi = 
+\int_{0}^{2\pi } 20 \pi \, \mathrm{d} \phi = \boxed{
+40 \pi^2
+} 
+\] 
+
+This happens to align with the google surface area of torus. We have correct solution. Hellya. 
+
+
+
+
+
+
+
+
+
+\newpage
+\section*{Problem 04} 
+\subsection*{a}
+The field is given by
+\[
+\vec{F} (x,y) = \langle  xy, y^2 \rangle
+\]
+Parametric of a circle, 
+\[
+	p : [0, 2 \pi ] \to \mathbb{R}^{2} \quad \text{where} \quad p(\theta) = (a \cos \theta, a \sin \theta)
+\] 
+Path integral, 
+\[\int_{0}^{2 \pi } \vec{F}(p(\theta) ) p'(\theta) \, \mathrm{d} \theta \]
+\[
+= \int_{0}^{2 \pi }  \left(
+a^2 \frac{\sin 2 \theta}{2}, a^2 \sin ^2\theta
+ \right) \cdot  
+ \left(- a \sin \theta, a \cos \theta\right) \, \mathrm{d} \theta =
+ \int_{0 }^{2 \pi } \mathrm{d} \theta \, a ^3 \left(
+-\frac{\sin 2 \theta}{2} \sin \theta + \frac{\sin 2 \theta}{2} \sin \theta
+ \right) = \boxed{
+ 0
+ } 
+\] 
+
+
+\subsection*{b} 
+\[
+\text{curl} \, \vec{F} \text{ along $\vec{z}$} = \frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y} = 0 - x = \boxed{
+-x
+}
+\]
+The curl is non-zero. This is not path independent. Though there can be paths that can give $0$ path integral.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

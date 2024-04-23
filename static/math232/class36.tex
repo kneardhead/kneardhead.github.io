@@ -1,0 +1,42 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 36}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+Suppose $\vec{F}$ is defined on all $\mathbb{R}^{2}$ and curl $\vec{F}$ is $0$ everywhere. Then 
+\[
+\oint _C \vec{F} \cdot \mathrm{d} \vec{s} = \int_{R}^{} \text{curl} \vec{F} = 0 
+\]
+We can conclude that $\oint$ is 0 then $\vec{F}$ is conservative.
+
+\df{
+A domain $D \subset \mathbb{R}^{n}$ is simply connected if it is path-connected and every loop in $D$ can be "filled in" without leaving $D$. 
+}
+
+Discussion on what is a simply connected loop is being done. It has to be some funny topological problem. Can we contract a loop into a single point without running into a domain issue? Well in $\mathbb{R}^{3}$ if we have a hole at $x,y,z=0,0,0$ then a loop can be moved away from that point and contracted to 0.
+
+\df{
+A region $R \subset \mathbb{R}^{2}$ is a "simple region" (made up) if it can be described both as 
+\[
+R = \{(x,y) : a_1 \le x \le b_1, f_1(x) \le  y \le f_2(x)\}  
+\] For some continuous functions $f_1, f_2$ satisfying $f_1(x) \le  f_2(x) \, \forall x \in [a_1,b_1]$. AND as 
+\[
+R = \{(x,y): a_2 \le y \le b_2, g_1(y) \le x\le g_2(y) \} 
+\] For some continuous functions $g_1, g_2$ satisfying $g_1(y)\le  g_2(y) \, \forall y \in [a_2,b_2]$. 
+Box, disk. }
+
+\section*{Vector Surface Integral}
+Let $\vec{F}$ in $\mathbb{R}^{3}$. The oriented surface be chosen $S$. Choose $S$ to have one side and 
+\[
+\int_S \vec{F} \cdot \mathrm{d} \vec{S}
+\] 
+is integral of $\vec{F}$ over $\vec{S}$. 
+
+Simplest case is to consider a flat constant field. Take a plan and we have some surface $S$ on that plane and it has a positive side. 
+
+\end{document}

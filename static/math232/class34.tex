@@ -1,0 +1,60 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 34}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section*{Vector path integrals}
+\textbf{Motivation of what it is supposed to do:} The ingredients are the vector field $\vec{F} \in \mathbb{R}^{n}$, then an oriented curve $C$ (we have picked a direction). Integral of $\vec{F}$ along $C$ should measure: Imagine $C$ as a wire and we have a bead on this wire. The bead is supposed to move only along the wire, and it's constrained to move along $C$, bead moves along $C$ in the direction of Integral of $\vec{F}$ along $C$ is how much the force $\vec{F}$ help or hinder the motion. 
+
+Examples where $\vec{F}$ is constant. $C$ is chosen to be straight. Imagine gravity and horizontal line, 
+ \[
+	 \int_{C_1} \vec{F} = 0
+\]
+If line is vertical then, 
+\[
+	\int_{C_2} \vec{F} > 0
+\]
+If we reverse the direction then, 
+\[
+\int_{C_3}^{}  \vec{F} < 0
+\]
+Compare a $C_4$ that makes $\theta$ with vertical then, gravity helps a little less than $C_2$ that is directly pointing down. 
+
+We can see that the angle that the path makes with field matters. 
+
+Then length of path matters. 
+
+Strength of $\vec{F}$ matters. 
+
+\[
+\vec{F} \cdot \text{ (displacement along $C$) }
+\]
+This is the answer if $\vec{F}$ is constant and $C$ is straight. This is a fact. 
+
+Intuitive definition: break $C$ into pieces and approximate each piece as straight, we can take the field at each point, and dot it with small piece displacement vector. 
+\[
+\vec{F} \cdot  \mathrm{d} \vec{L}
+\]
+Then you add this all up, a version of Riemann sum, 
+\[
+	\int \vec{F} \cdot  \mathrm{d} \vec{L}
+\]
+\df{
+If $C$ is a piecewise $C^{1}$ parametrized curve in $\mathbb{R}^{n}$, paramtrized like, 
+\[
+	p: [a,b] \to \mathbb{R}^{n}
+\]
+then 
+\[
+\int_{C}^{} \vec{F} \cdot \mathrm{d} \vec{s}  = \int_{a}^{b} \vec{F}(p(t)) p'(t) \mathrm{d} t 
+\]
+This is typically how it's written.
+}
+
+An example can be to take a swirl field $\vec{F} = \langle -y , x \rangle$ on $\mathbb{R}^{2}$. All points being in $(1,0) $ and takes upper semi circle to $ (-1,0)$. Then lower $(1,0)\to (-1,0)$ and a line through axis. 
+
+\end{document}

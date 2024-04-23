@@ -1,0 +1,81 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus : : Class 37}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+$\vec{F}$ is a vector field on $\mathbb{R}^{3}$ oriented surface $S$. We think of $\int_S \vec{F} \cdot \mathrm{d} \vec{S}$ as sum over pieces of it is 
+ \[
+	 (\text{value of } \vec{F}) \cdot (\text{positively directed until normal}) \cdot (\text{area of piece})
+\]
+
+Example would be $\vec{F} = \langle  x,y,z \rangle$ and hence
+\[
+\int_S \vec{F} \cdot \mathrm{d}  \vec{S} = \int_S \langle x, y ,0 \rangle \mathrm{d} \vec{S} 
+\]
+\[\sum_{}^{} 
+\text{cosine of function and unit normal times area}
+\]
+\[
+\int_S \vec{F} \cdot \mathrm{d} \vec{S} = 
+\int_D \vec{F}(p(u,v)) \cdot  
+\left(
+\frac{
+\frac{\partial p}{\partial u} \times \frac{\partial p}{\partial v}
+}{ 
+\left| 
+\frac{\partial p}{\partial u} \times \frac{\partial p}{\partial v}
+\right|}
+\right) 
+\left|
+\frac{\partial p}{\partial u} \times \frac{\partial p}{\partial v}
+\right| 
+\]
+You will have a plus minus depending on the orientation of the surface. 
+Example. $S$ to be the unit sphere centered at the origin oriented out. 
+\[
+\vec{F} = \langle 0,0,z \rangle 
+\]
+\[
+\int_S \vec{F} \cdot \mathrm{d} \vec{S}
+\]
+Parametrize $\phi, \theta$ sphere 
+\[
+x = 1 \, \sin \phi \cos \theta
+\] 
+\[
+y = 1 \, \sin \phi \sin \theta
+\] 
+\[
+z = 1 \, \cos \phi
+\] 
+\[
+0 \le \phi \le \pi 
+\] 
+\[
+0 \le \theta \le  2 \pi 
+\] 
+\[
+p(\phi, \theta) = \langle x(\phi,\theta), y(\phi,\theta), z(\phi,\theta) \rangle
+\] 
+\[
+\frac{\partial p}{\partial \phi} = 
+\langle \cos \phi \cos \theta, \cos \phi \sin \theta, - \sin \phi \rangle 
+\] 
+\[
+\frac{\partial p}{\partial \theta} = 
+\langle - \sin \phi \sin \theta, \sin \phi , \cos \theta, 0 \rangle 
+\] 
+\[
+\int_S \vec{F} \cdot \mathrm{d} \vec{S} = 
+\int_{\theta = 0}^{2 \pi } \int_{\phi = 0}^{\pi } \langle 0, 0, \cos \phi \rangle 
+\left( \frac{\partial p}{\partial \phi}  \times \frac{\partial p}{\partial \theta}\right) 
+\, 
+\mathrm{d} \phi \, \partial \theta
+\] 
+
+
+\end{document}

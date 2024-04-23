@@ -1,0 +1,169 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Homework 09}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section*{Problem 01} 
+Consider the Mobius Transformation because it preserves circles to circles and lines to lines. A particular interest is, 
+\[
+\frac{1}{z - \alpha}
+\] 
+
+So if we imagine the point $\alpha$ to be moved rightwards to infinity we will end up creating the other and inner circle to become parallel lines. The circles between the lines are going to be symmetrically positioned in a way that the touching points between the ``inner circles" is going to be a straight line. Call this line $L$. 
+
+If we bring the $\alpha$ point back to it's original position, because at infinity we had $L$, it's going to become a circle as $\alpha$ comes to finite distance. 
+
+
+\section*{Problem 02} 
+We know that, 
+\[
+\frac{\sin \pi z}{\pi z} = 
+\prod_{n = 1}^{\infty} \left(1 - \frac{z^2}{n^2}\right)
+\]
+Morph the $z$ to $2z$ so that we can apply $\sin 2 \theta = 2 \sin \theta \cos \theta$. 
+\[
+\frac{\sin 2 \pi z}{2 \pi z} =  
+\frac{2 \sin \pi z \cos \pi z}{2 \pi z} = 
+\prod_{n = 1}^{\infty}
+\left(
+1 - 
+\frac{4 z^2}{n^2}
+\right)
+\]
+We can divide $\sin \pi z / \pi z $ equation in both sides through the following and bring the $\cos \pi z$ in one side, 
+\[
+{\cos \pi z} = 
+\frac{\prod_{n = 1}^{\infty}
+\left(
+1 - 
+\frac{4 z^2}{n^2}
+\right)}
+{
+\prod_{n = 1}^{\infty} \left(1 - \frac{z^2}{n^2}\right)
+}
+\] 
+Every even terms of the numerator are factored off by the denominator whenever we have an even $n$. So $n$ is only odd and the product is taken over the odd $n$. From this straight forward calculation it's apparent that, 
+\[
+	\cos \pi z = \prod_{n = 0}^{\infty} \left(1 - \frac{z^2 }{\left(n + {1 \over 2}\right)^2}\right)
+\] 
+
+\section*{Problem 03} 
+$z = e^{i \theta}$ is going to help us simplify this, 
+\[
+\int_{0}^{ 2 \pi } e^{ e^{ i \theta}} \, \mathrm{d} \theta = e^{z} \mathrm{d}  \theta 
+\]
+Now we need to shift variables, so, 
+\[
+\frac{\mathrm{d} z}{\mathrm{d} \theta} = i e^{ i \theta} = i z
+\]
+This with the forbidden multiplication of $\mathrm{d} \theta$ on both sides, 
+\[
+\mathrm{d} z = i z \, \mathrm{d} \theta 
+\] We have a more well functioning integral where it's taken over a circle of radius $1$ in $\mathbb{C}$ plane
+\[
+	\int_{\text{C}} {e ^{z}  \over i z } \mathrm{d} z 
+\]
+The residue at the singularity at $z = 0$ that happens inside the path
+\[
+\text{Res}\left(\frac{e^{z}}{i z} , 0 \right) = \frac{e^{0}}{i} = \frac{1}{i}
+\]
+We know from the residue theorem 
+\[
+\frac{1}{2 \pi i } 
+	\int_{\text{C}} {e ^{z}  \over i z } \mathrm{d} z  = 
+	\frac{1}{i}
+\]
+Hence what get is for the integral
+\[
+\boxed{
+2 \pi
+}
+\]  
+
+\section*{Problem 04} 
+The singularity exists at $z = - 1$. As we are taking the integration over the $i$ axis, consider the semicircle of radius $R$ that has it's flat side on $i$ axis. Let's find the residue first
+\[
+\text{Res}\left(\frac{e^{z}}{(z+1)^{4}}, -1\right) = 
+\frac{(e^{-1})^3}{3!} = \frac{1}{6 e^{3}}
+\]
+Now, the integral, denoting $C$ to be the curved path of $R$ radius
+\[
+\oint \frac{e^{z}}{(z+1)^{4}} \mathrm{d} z = 
+\int_C \frac{e^{z}}{(z+1)^{4}}  \mathrm{d} z + 
+\int_{-i R}^{ i R}  \frac{e^{z}}{(z+1)^{4}} 
+\mathrm{d} z\] 
+
+Looking at the $\int_C$, the real part of $z $ in the $e^{z}$ in denominator is goes smaller with increase of $R$ because the $\text{Re}(z) < 0$. $e^{-R}$ will go to zero faster than $(-R +1)^{4}$ so $\int_C$ will eventually converge to zero as we set $R\to \infty$. 
+
+From this, with the simple application of residue theorem on $\oint$ 
+\[
+\boxed{
+\int_{-i R}^{ i R}  \frac{e^{z}}{(z+1)^{4}} = \frac{2 \pi i}{6 e^{3}} = 
+\frac{\pi i }{3 e^{3}}
+}
+\]
+
+\section*{Problem 05} 
+Our very own $B(\alpha,\beta)$ is, 
+\[
+B(\alpha, \beta) = 
+2 \int_{0}^{ \pi / 2} \left(\sin \theta\right)^{2\alpha - 1} 
+\left(\cos \theta\right)^{2 \beta - 1} 
+\mathrm{d} \theta 
+\] 
+Setting the conditions to get a $\cos ^{2 m } x$
+\[
+2 \beta - 1 = 2 m \implies \beta = \frac{2m + 1}{2}
+\]
+And to get a $\sin x = 1$ 
+\[
+2\alpha - 1 = 0 \implies \alpha = \frac{1}{2}
+\] 
+Putting this together, 
+\[
+B\left(\frac{1}{2}, \frac{2m + 1}{2}\right) = 
+2 \int_{0}^{ \pi / 2} \cos^{2m} x \, \mathrm{d} x 
+\] 
+Now by drawing the simple graph of this function we know that the bounds of this integration
+\[
+2 \int_{0}^{\pi / 2}  = \int_{0 }^{ \pi }   
+\]
+Hence from our intuition regarding odd-even functions it's very easy to see that
+\[
+	\int_{0}^{2 \pi} = 4 \int_{0}^{ \pi / 2}   
+\]
+It gives us the following form, 
+\[
+2 B\left(\frac{1}{2}, \frac{2m + 1}{2}\right) = 
+\int_{0}^{2 \pi }  \cos^{2m } x \, \mathrm{d} x  
+\]
+Now we know (found this in wikipedia)
+\[
+	B(m,n) = \frac{(m-1)! (n-1)!}{(m+n-1)!} = \left. \frac{m + n}{mn } \middle/ \binom{m+n}{m}\right.
+\]
+So, 
+\[
+B\left(\frac{1}{2}, \frac{2m + 1}{2}\right) = \left.
+\frac{ 1 / 2 + (2m + 1) / 2}{(2m + 1 )/ 4} 
+\middle/	\binom{
+	\frac{1}{2} + \frac{2m + 1}{2}}
+{\frac{1}{2}}
+\right. = 
+ 4 \left.
+\frac{ m+1}{2m + 1} 
+\middle/	\binom{m+1}
+	{1 / 2}
+\right.
+\]The answer we got is for the integral  as $2 B(\frac{1}{2}, \frac{2m + 1}{2})$ shows
+\[
+ 8 \left.
+\frac{ m+1}{2m + 1} 
+\middle/	\binom{m+1}
+	{1 / 2}
+\right.
+\] 
+\end{document}

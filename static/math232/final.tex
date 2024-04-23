@@ -1,0 +1,177 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{The Set $\mathbb{R}$ } 
+\textsf{I like to think $\mathbb{R}$ as a ``bag full of all the numbers I can imagine", which includes negative numbers because why not? 
+\newline
+Guess 69, it's in $\mathbb{R}$. Guess $23001.1930$, it's also in $\mathbb{R}$. Guess $\sin 20^{\circ}$, it's in $\mathbb{R}$. If any number $a$ is a member of $\mathbb{R}$ we say that 
+\[
+a \in \mathbb{R}
+\] 
+which means $a$ is an element of $\mathbb{R}$. This could be any number. But to do interesting things with these numbers we have to define ``mathematical operations", for instance addition, multiplication and their respective inverses (subtraction and division). We can define a definitions for ``distance" between two elements of $\mathbb{R}$. When we have defined the well set of rules and operations on $\mathbb{R}$, we have a \textbf{space} on $\mathbb{R}$. I will expand on this on the next subsection.   
+}
+
+\df{
+The \emph{Set} of all real numbers is defined to be $\mathbb{R}$.}
+
+Please note that for this course we will be using Base-10 number system with the common sensical decimals.\footnote{$1,2,3,\ldots$}
+
+
+
+
+
+
+
+
+
+
+
+\section*{The Space of $\mathbb{R}$ }
+
+\textsf{I will first talk rigorously about this ``space" thing. Spaces are basically like all the "objects" (set) and "protocols or rules" (structure) you need to play chess. The chessboard, pieces and maybe a timer make up the ``set" of your ``space". The rules of time limit, the way to move each knight, pawn and rook etc. form the protocol, or ``structure" of the ``space". We need to talk about ``spaces" because we need to, roughly, define numbers and addition-multiplications in the first place.  }
+
+\textsf{We will be interested on the \emph{set} $\mathbb{R}^{n}$ of numbers, whose elements are n-tuples (as you should know from linear algebra but I will still define them in next section). The \emph{structure} (or mathematical operations) we will define on this will complete the space and we name it ``vector space". }
+
+\textsf{Later we will include additional rules that will help us turn these vectors spaces into a Euclidean Space. These additional rules are basically Dot Products, just so that we can have a geometric representations of angles and stuffs. For now I will define it for one-dimension $\mathbb{R} = \mathbb{R}^{1}$ case. 
+}
+
+
+
+\df{
+	A \emph{One Dimensional Vector Space} is the Set $\mathbf V$ such that $\mathbf{V} \subset \mathbb{R}$ defined with two mappings\footnote{note that the $\otimes$ symbol just means a mathematical operation.}
+\begin{align*}
+	+ : \mathbf V \otimes \mathbf V &\to \mathbf V \qquad \text{(Scalar Addition)} \\ 
+	\times : \mathbb{R} \otimes \mathbf V & \to \mathbf V \qquad \text{(Scalar Multiplication)}
+\end{align*}
+
+
+Considering ${x}, {y}, {z} \in \mathbf V$ and $a, b \in \mathbb{R},$\footnote{\textsf{To avoid confusion, I want to mean that $a,b$ might real numbers not necessarily members of $\mathbf V$}} the eight properties that elucidate the two mappings we instantiated above are as follows. 
+\begin{enumerate}
+	\item ${x} + \left({y} + {z}\right) = ( {x} + {y}) + {z}$
+	\item ${x}+ {y} = {y} + {x}$ 
+	\item ${x} + {0} = {x}$ 
+	\item ${x}+ \left(- {x}\right) = {0}$ 
+	\item $(a \times  b)\times   {x} = {a} \times  (b \times  {x})$ 
+	\item $(a+b) \times  {x} = a \times   {x}+ b  \times  {x}$ 
+	\item $a \times  ({x} + {y}) = a \times  {x} + a \times  {y}$ 
+	\item $1  \times  {x} = {x}$
+\end{enumerate}
+Additionally for Scalar Multiplication, 
+\[
+a \times  b = b \times  a
+\] TODO: Comments needed on this.  
+}
+
+\textsf{Usually while doing maths we can avoid $\times $ sign for scalar multiplication, even if it's between a Scalar and a Vector. I am going to define 3 new rules imposed on this Vector Space to turn it into an Euclidean Space. But please note that the concept of \emph{inner products} make more sense in $n$ dimensions while we are working with $\mathbb{R}^{n}$. For now, just focus on the distance $d (x,y)$. }
+
+	\df{
+	A \emph{One Dimensional Euclidean Space} is a Vector Space on the set $\mathbf V \subset \mathbb{R}$ with three additional rules. Consider $x,y,z \in \mathbf V$ and $a,b \in \mathbb{R}$. Firstly, concept of \textbf{Inner Product} that satisfies
+\begin{enumerate}
+	\item $\langle x, x \rangle > 0$ if $x \neq 0$. 
+	\item $\langle x, y \rangle = \langle y, x \rangle $. 
+	\item $\langle a x + by , z \rangle = a \langle x, z \rangle + b \langle y , z \rangle$
+\end{enumerate}
+We define inner product on $x,y \in  \mathbb{R}$ 
+\[
+\langle x , y \rangle = xy
+\]
+
+Secondly, from Inner Products we get the concept of a \textbf{Norm} which can be thought of as a ``function" (we will define this later) that satisfies
+\begin{enumerate}
+	\item $|x| > 0$ if $x \neq  0$ 
+	\item $|a x| = |a| |x|$
+	\item $|x + y| \le |x| + |y|$
+\end{enumerate}
+We define the norm (associated with inner product) on $\mathbb{R}$.\footnote{Which is basically the non-negative value of $x$ in one dimensional case. Basically $= \sqrt{x^2}  = + x$}
+\[|x | = \sqrt{\langle x , x \rangle} \]
+Thirdly, from the idea of Norm we can provide a definition of \textbf{Distance} between two elements $x,y \in \mathbf V$ that satisfies the conditions 
+\begin{enumerate}
+	\item $d(x,y) > 0$ unless $x = y$ 
+	\item $d(x,y) = d(y,x)$ 
+	\item $d(x,z) \le d(x,y) + d(y,z)$
+\end{enumerate}
+We define the distance on $\mathbb{R}$ between to elements 
+\[
+d(x,y) = | x - y | 
+\] 
+	}
+
+
+\section*{The space of $\mathbb{R}^{n}$ }
+A \emph{space} is anything that has a set of ``objects" $\mathbf V$ and a mathematical structure defined on it.  We are specifically interested on \emph{Euclidean Spaces.} 
+
+\df{
+A \emph{Vector Space} is a set $\mathbf V \subset \mathbb{R}^{n}$ defined with two mappings\footnote{note that the $\otimes$ symbol just means a mathematical operation.}
+\begin{align*}
+	\mathbf V \otimes \mathbf V &\to \mathbf V \qquad \text{(Vector Addition)} \\ 
+	\mathbb{R} \otimes \mathbf V & \to \mathbf V \qquad \text{(Scalar Multiplication)}
+\end{align*}
+
+
+Considering $\vec{x}, \vec{y}, \vec{z} \in \mathbf V$ and $a, b \in \mathbb{R}$, the eight properties that elucidate the two mappings we instantiated above are as follows. 
+\begin{enumerate}
+	\item $\vec{x} + \left(\vec{y} + \vec{z}\right) = (\vec{x} + \vec{y}) + \vec{z}$
+	\item $\vec{x}+ \vec{y} = \vec{y} + \vec{x}$ 
+	\item $\vec{x} + \vec{0} = \vec{x}$ 
+	\item $\vec{x}+ \left(- \vec{x}\right) = \vec{0}$ 
+	\item $(ab) \vec{x} = \vec{a}(b \vec{x})$ 
+	\item $(a+b) \vec{x} = a \vec{x}+ b \vec{x}$ 
+	\item $a (\vec{x} + \vec{y}) = a \vec{x} + a \vec{y}$ 
+	\item $1 \vec{x} = \vec{x}$
+\end{enumerate}
+
+}
+
+\nt{
+	A \emph{Euclidean Vector Space} is a finite-dimensional \textbf{Inner Product Space} over the real numbers.
+}
+I prefer a slightly different wording of the exact same thing for simplicity. 
+	\df{
+	A \emph{Euclidean Space} is a Vector Space on the set $\mathbf V \subset \mathbb{R}^{n}$ with an additional rule of \textbf{Inner Product}. Consider $\vec{x},\vec{y},\vec{z} \in \mathbf V$ and $a,b \in \mathbb{R}$. Firstly, concept of \textbf{Inner Product} that satisfies
+\begin{enumerate}
+	\item $\langle \vec{x}, \vec{x} \rangle > 0$ if $\vec{x} \neq \vec{0}$. 
+	\item $\langle \vec{x}, \vec{y} \rangle = \langle \vec{y}, \vec{x} \rangle $. 
+	\item $\langle a \vec{x} + b \vec{y} , \vec{z} \rangle = a \langle \vec{x}, \vec{z} \rangle + b \langle \vec{y} , \vec{z} \rangle$
+\end{enumerate}
+We define inner product on $\vec{x},\vec{y} \in  \mathbb{R}$ 
+\[
+\langle \vec{x}, \vec{y} \rangle = \sum_{i = 1}^{n} x_i y_i =  x_1 y_1 + x_2 y_2 + \cdots + x_n y_n
+\]
+
+Secondly, from Inner Products we get the concept of a \textbf{Norm} which can be thought of as a ``function" (we will define this later) that satisfies
+\begin{enumerate}
+	\item $|\vec{x}| > 0$ if $\vec{x} \neq  0$ 
+	\item $|a \vec{x}| = |a| |\vec{x}|$
+	\item $|\vec{x} + \vec{y}| \le |\vec{x}| + |\vec{y}|$
+\end{enumerate}
+We define the norm (associated with inner product) on $\mathbb{R}^{n}$.
+\[|\vec{x} | = \sqrt{\langle \vec{x} , \vec{x} \rangle} \]
+Thirdly, from the idea of Norm we can provide a definition of \textbf{Distance} between two elements $\vec{x},\vec{y} \in \mathbf V$ that satisfies the conditions 
+\begin{enumerate}
+	\item $d(\vec{x},\vec{y}) > 0$ unless $\vec{x} = \vec{y}$ 
+	\item $d(\vec{x},\vec{y}) = d(\vec{y},\vec{x})$ 
+	\item $d(\vec{x},\vec{z}) \le d(\vec{x},\vec{y}) + d(\vec{y},\vec{z})$
+\end{enumerate}
+We define the distance on $\mathbb{R}^{n}$ between to elements 
+\[
+d(\vec{x},\vec{y}) = | \vec{x} - \vec{y} | 
+\] 
+	}
+\newpage\section*{Introduction} 
+
+\textsf{Whatever you see in this particular font is \emph{intuition}. Through \emph{intuition} I mean the ``not so correct" way of writing things that will provide you with a rough picture to think about. The slightly incorrect literature is supposed to give you an anchor for imagination - though the rigorous correctness is embodied in the} \emph{Definitions, Propositions, Theorems.}
+
+The goal I am trying to achieve with this handout is \textbf{putting all the things I've learned in 232 in one single place in a way my malfunctioning brain can understand.} I have particularly struggled through every single classes other than integration because I couldn't convince myself why certain things existed and behaved the way they did. This was remarkably debilitating for my academics because I had taken two other math courses and I had to spent three times the time only working on 232. 
+
+Now as I think about it, right before finals, the inability to \emph{chronologically} and \emph{logically} not being able to structure the ideas was the fatal flaw I was dealing with. This note is an attempt to fix that. 
+
+Please don't forget to read the footnotes.
+
+\end{document}

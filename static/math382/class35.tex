@@ -1,0 +1,55 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Computational Complex Analysis : : Class 35}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+The Schwarz-Pick lemma: we have a holomorphic function $f$ defined on $D$. We are going to derive some inequalities similar to this: if $f(0) = 0$ then $|f(z)| \le |z|$ and $|f'(0)| \le 1 $. Suppose $f(z_1)= w_1$ and $f(z_2) = w_2$. Use Mobius functions, 
+\[
+\phi_a(z) = \frac{z- a }{1 - \overline{a} z} \quad (a \in D)
+\]
+\[
+\phi_a(a) = 0
+\] 
+\[
+\phi_a(0) = -a
+\] 
+\[
+\phi_a^{-1} = \phi_a
+\]
+
+\[
+	\begin{pmatrix} 1 & - a \\ - \overline{a} & 1 \end{pmatrix}  \to \text{inv} \to 
+	\begin{pmatrix} 1 & a \\ \overline{a} & 1 \end{pmatrix} 
+\]
+\[
+	\phi_{w_1} \circ f \circ \phi_{z_1}^{-1} 
+\] 
+This maps $0$ to $0$. Schwarz says, 
+\[
+	| \phi_{w_1} \circ f \circ \phi_{z_1}^{-1}(z) | \le |z|
+\]
+\[
+|\phi_{w_1} \circ f(z_2) | \le |\phi_{z_1} (z_2) | 
+\]
+From this, 
+\[\left|
+\frac{f(z_2) - w_1}{1 - \overline{w_1} f(z_2)} 
+\right| \le 
+\left| 
+\frac{z_2 - z_1}{1 - \overline{z_1} z_2} 
+\right| 
+\]
+\[
+\left| 
+\frac{w_2 - w_1}{1 - \overline{w}_1 w_2} \right| \le 
+\left| 
+\frac{z_2 - z_1}{1 - \overline{z_1}z_2} \right|
+\] 
+
+Detective method is to start with conformal equivalence for upper half. Then we realize we get Mobius transformation. Lemma: 
+if $f(z) = \frac{az + b}{cz + d}$ is real for all real $z$, then $a,b,c,d$ are essentially real. 
+\end{document}

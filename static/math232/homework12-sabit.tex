@@ -59,4 +59,298 @@ The volume of the region $\Gamma$ (which is the defined cone) is going to be,
 \] 
 Now the burden is to find a region $\Gamma$. 
 
+The trick we are going to apply is to translate a relatively more simple shape into our cone shape by the following definition. 
+
+\df{
+	Define the $D$ region to be $R \times [0,1]$. Volume of this shape is 
+	\[
+	\int_D 1 = \text{vol}(R)
+	\] 
+}
+We need to find a transformation $T : D \to \Gamma$. From definition of cone we can write, 
+\[
+	T(x_1, x_2, \ldots, x_{n-1}, x_n) = 
+	x_n (\vec{a} - (x_1, \ldots, x_{n-1}, 0 ) ) + 
+	(x_1 , \ldots, x_{n-1}, 0)
+\]
+
+In vector form, 
+\[
+T(x_1, \ldots, x_n) = 
+\begin{pmatrix} x_n a_1 - x_n x_1 + x_1 \\
+\vdots \\
+x_n a_{n-1} - x_n x_{n-1} + x_{n-1} \\ 
+x_n a_n \end{pmatrix} 
+\]
+
+$T$ is injective (check appendix after this problem). So we can compute, 
+\[
+\mathrm{d} T = 
+\begin{bmatrix} 1- x_n & 0 & \cdots & 0 & a_1-x_1 \\ 
+	0 & 1-x_n & \cdots & 0 & a_2 - x_2 \\ 
+	\vdots & \vdots & \ddots & \vdots & \vdots \\
+	0 & 0 & \cdots & 1-x_n & a_{n-1} - x_{n-1} \\ 
+	0 & 0 & \cdots & 0 & a_n 
+\end{bmatrix} 
+\]
+$dT $ being an upper triangular matrix, 
+\[
+\det (\mathrm{d} T) = (1-x_n)^{n-1} a_n
+\]
+Now through change of coordinates we can find the integral, 
+\[
+\int_D 1 = \int_\Gamma 1 \cdot T | \det (\mathrm{d} T) | 
+\]
+Because $1\cdot T = 1$, 
+\begin{align*}
+	&= \int_\Gamma | \det(\mathrm{d} T) | \\
+	&= \int_\Gamma | (1-x_n)^{n-1} a_n | \\
+	&= \int_\Gamma (1-x_n)^{n-1} a_n \quad \text{(integration over $x_n > 0$)} \\
+	&= a_n \int_\Gamma (1- x_n )^{n-1} \\
+	&= a_n \int_{R}^{} \int_{0}^{1} (1- x_n)^{n-1} \mathrm{d} x_n   
+\end{align*}
+We can carry out the integration using $u = 1- x_n$ substitution method and we can get, 
+\[
+	a_n \text{vol}(R) \left[\frac{u^{n}}{n}\right]_0^{1}
+\]
+Hence, 
+\[
+\boxed{
+\frac{a_n}{n} \text{vol}(R)
+}
+\] 
+
+
+\subsection*{$T$ is injective}
+For this transformation to be valid, $T$ must be injective other than places that are content zero. We can see that $T$ is injective everywhere on it's domain except for the point where the $x_n = 1$. 
+
+$T$ is only valid if $x_n = 1$ ``place" or $R \times \{1\} $ is content zero in $\mathbb{R}^{n}$. 
+
+Consider $f: R \subset R^{n-1} \to \mathbb{R}$ given by $f(\vec{x}) = 1$. Note that the graph of $f$ is precise $R \times \{1\} $. Since our region $R$ is compact we know that the graph of a continuous function is content zero. Therefore $R \times \{1\} $ is content zero. 
+
+
+\section*{Problem 02} 
+Let $D$ denote the region described by the $n$ dimensional solid ellipsoid
+\[
+\frac{x_1^2}{a_1^2} + \cdots + \frac{x_n^2}{a_n^2} \le 1
+\] 
+Here $a_i$ are positive. The volume is, 
+\[
+\int_D 1
+\] 
+We need to do a transformation now, so define $T : D' \to  D$ defined by
+\[
+T(x_1, \ldots, x_n) = (a_1 x_1 ,\ldots, a_n x_n)
+\] 
+where $D'$ is the unit ball in $\mathbb{R}^{n}$. Then note that $T$ is surjective to $D$ and injective on it's domain. 
+
+\[
+\text{d}T = 
+\begin{bmatrix} a_1 & \cdots & 0 \\ 
+\vdots & \ddots & \vdots \\ 
+0 & \cdots & a_n \end{bmatrix} 
+\]
+So easily,
+\[
+\det (\mathrm{d} T) = a_1 \cdots a_n 
+\]
+Now we perform the change of coordinates and compute, 
+\[
+	\int_D 1 = \int_{D'} 1 \cdot T | \det (\mathrm{d} T) | 
+\]
+Carrying out the computation we simply have, 
+\[
+	\int_{D'} |a_1 \cdots a_n| 
+\]
+So from here, 
+\[
+= (a_1 \cdots a_n) \text{(volume of the unit ball in }\mathbb{R}^{n})
+\]
+\[
+\boxed{
+	(a_1 \cdots a_n) \frac{\pi^{\frac{n}{2}}}{\Gamma \left(\frac{n}{2} + 1\right)}
+}
+\] 
+
+\section*{Problem 03} 
+Denote the region enclosed by the blue curve and red line by $D$. The average value of $f$ on this region is, 
+\[
+\overline{f} = 
+\frac{\int_D f}{ \text{vol} (D)}
+\] 
+
+We first need to compute $\int_D f$. So consider,
+\[
+T : D' \to  D \quad 
+T(r, \theta) = (r \cos \theta, r \sin \theta)
+\] From here we can see, 
+\[
+| \det (\mathrm{d} T) | = r
+\]
+We can compute the integral $\int_D f $ as, 
+\[
+	\int_D  f= \int_{D'} f \cdot T \cdot r  = 
+	\int_{D'} (r^2 \cos ^2 \theta + r^2 \sin ^2 \theta) r 
+\]
+From here, 
+\[
+	\int_{D'} r^3  = \int_{0}^{2 \pi } \int_{0 }^{\theta} r^3 \mathrm{d} r \mathrm{d} \theta  
+\]
+Computing the integral gives, 
+\[
+\frac{8}{5} \pi^5
+\]
+
+Now we are required to evaluate the volume. 
+\[
+	\int_D 1 = \int_{D'} (1 \cdot T) \cdot r = 
+	\int_{0}^{2 \pi } \int_{0}^{\theta} r \mathrm{d} r \mathrm{d} \theta 
+\] 
+Solving this gives us, 
+\[
+\frac{4}{3} \pi^3 
+\] 
+So the division of the two results gives us the average value of $f$ on $D$, 
+\[
+\frac{6}{5} \pi^2
+\]
+
+\section*{Problem 04} 
+Similar to the first problem let's start by a simple volume first, define the region $R \times [0, 2 \pi]$. From here we define 
+\[
+	T : R \times [0, 2\pi ] \to D
+\]
+with 
+\[
+T(x,y,z) = 
+(x , y \cos z, y \sin z)
+\] 
+Note how $T$ is a surjective map onto $D$ and is injective at every points except the content zero portion that is  $z = 0$ and $z = 2 \pi$. 
+
+We will now compute, 
+\[
+\mathrm{d} T = 
+\begin{pmatrix} 1 & 0 & 0 \\ 
+0 & \cos z & - y \sin z \\ 
+0 & \sin z & y \cos z \end{pmatrix} 
+\]
+
+From here, 
+\[
+\det (\mathrm{d} T) = 1 \cdot 
+\det 
+\begin{pmatrix}   \cos z & - y \sin z \\ \sin z & y \cos z  \end{pmatrix} 
+\]
+\[
+\det (\mathrm{d} T) = y
+\]
+Now we can carry out this integration, 
+\[
+\int_D 1 = 
+\int_{R \times [0, 2\pi ]} 1 \cdot T | \det (\mathrm{d} T) |  = 
+\int y = \int_{R}^{} \int_{0 }^{ 2 \pi } y dz   
+\]
+Solving this get's us, 
+\[
+2 \pi \int_R y 
+\]
+Now from here we compute, 
+\[
+2 \pi \cdot \text{avg of y on R } \cdot \text{vol}(R)
+\]
+We get,
+\[
+2 \pi \int_R y
+\] 
+From this we showed that, 
+\[
+\text{vol} (D) = \int_D 1 = 2 \pi \text{(avg of y on R)} \cdot \text{vol}(R)
+\]
+
+\section{Problem 05} 
+The unit ball on $\mathbb{R}^{4}$ is defined by 
+ \[
+x_1 ^2 + x_2 ^2 + x_3^2 + x_4^2 \le 1
+\] 
+Let denote $D$ on this region the unit ball, and to find the unit ball volume we find 
+$\int_D 1 $. 
+
+The coordinates can be changed by the following 
+$T : D' \to  D$ through, 
+\[
+T(r_1, \theta, r_2 , \theta_2) = 
+(r_1 \cos \theta , r_1 \sin \theta_1, r_2 \cos \theta_2, r_2 \sin \theta_2  )
+\] 
+where $D' = S_1 \times [0, 2\pi], S_2 \times [0, 2\pi] $ such that, $\forall  r_1 \in S$ and  $\forall  r_2 \in S_2$ we have $r_1 ^2 + r_2^2 \le 1$ and $r_1, r_2 \ge 0$. 
+
+\[
+\mathrm{d} T = 
+\begin{bmatrix} \cos \theta_1 & 
+- r_1 \sin \theta_1 & 0 & 0 \\ 
+\sin \theta_1 & r_1 \cos \theta_1 & 0 & 0 \\
+0 & 0 & \cos \theta_2 & -r_2 \sin \theta_2 \\
+0 & 0 & \sin \theta_2 & r_2 \cos \theta_2 \end{bmatrix} 
+\]
+Now that $\mathrm{d} T$ is a block matrix, therefore we calculate its determinant as, 
+\[
+\det (\mathrm{d} T) = 
+\det 
+\begin{pmatrix} \cos \theta_1 & -r_1 \sin \theta_1 \\ 
+\sin \theta_1 & r_1 \cos \theta_1 \end{pmatrix} 
+\cdot 
+\det 
+	\begin{pmatrix} \cos \theta_2 & -r_2 \sin \theta_2 \\
+	\sin \theta_2 & r_2 \cos \theta_2\end{pmatrix} 
+\] 
+\[
+= (r_1 \cos ^2 \theta_1 + r_1 \sin ^2 \theta_1) \left(r_2 \cos ^2 \theta_2 + r_2 \sin^2 \theta_2\right) = r_1 r_2
+\]
+Through change of variables, 
+\[
+	\int_D 1 = \int_{D'} 1 \cdot T | \det (\mathrm{d} T)| 
+\] 
+\[
+	= \int_{D'} r_1 r_2 
+\]
+This integral can be computed, 
+\[
+	\int_{D'} r_1 r_2 = 
+	\int_{S_1 \times S_2} \int_{0}^{2 \pi } \int_{0}^{ 2 \pi } 
+	r_1 r_2 \mathrm{d} \theta_1 \mathrm{d} \theta_2
+\] 
+\[
+	= \int_{S_1 \times S_2} r_1 r_2 (4 \pi ^2)
+\] 
+Inside this region we have $r_1 ^2 + r_2^2 \le 1$. This is a unit circle and through change of ariables again, 
+\[
+G: S \to  S_1 \times S_2
+\] 
+\[
+G (R , \alpha) = G(R \cos \theta, R \sin \alpha)
+\] where $S = [ 0, 1] \times [0, \frac{\pi}{2} ] $ we constrain the input $\alpha \in  [ 0, \frac{\pi}{2}] $ upto content zero. 
+
+\[
+	\mathrm{d} G = \begin{bmatrix} \cos \alpha & - R \sin \alpha \\
+	\sin \alpha & R \cos \alpha\end{bmatrix} 
+\]
+\[
+\det (\mathrm{d} G) = R \cos ^2 \alpha + R \sin ^2 \alpha = R
+\]
+Then by the change of variables it follows, 
+\[
+	\int_{S_1 \times S_2} r_1 r_2 = \int_S (R \cos \alpha) (R \sin \alpha) \cdot  R
+\] 
+\[
+= \int_{0}^{\pi / 2}  \int_{0 }^{1}  R^3 \cos \alpha \sin \alpha \mathrm{d} R \mathrm{d} \alpha  
+\]
+Completing this integral we find, 
+\[
+\boxed{
+\frac{1}{8}
+}
+\] 
+Using this in our previous integral, \[
+	\int_{D'} r_1 r_2 = 4 \pi ^2 \left(\frac{1}{ 8}\right) = \frac{\pi^2}{2 }
+\] 
+Hence the volume is $\pi^2 / 2$. 
 \end{document}
