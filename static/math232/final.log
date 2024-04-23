@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2024.3.14)  22 APR 2024 23:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2024.3.14)  23 APR 2024 15:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -863,53 +863,66 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 19.
+(Font)              <5> on input line 23.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 24.
+(Font)              <8> on input line 28.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 24.
+(Font)              <6> on input line 28.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 40.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 44.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] (./final.a
-ux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6] [7]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
+63.
+
+(/usr/share/texlive/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [8] [9] [10] [11]
+[12] [13] [14] (./final.aux) )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 473 ({)
+### bottom level 
 Here is how much of TeX's memory you used:
- 22505 strings out of 476182
- 483474 string characters out of 5796581
- 1870793 words of memory out of 6000000
- 42350 multiletter control sequences out of 15000+600000
- 593378 words of font info for 81 fonts, out of 8000000 for 9000
+ 22583 strings out of 476182
+ 485070 string characters out of 5796581
+ 1869793 words of memory out of 6000000
+ 42424 multiletter control sequences out of 15000+600000
+ 605077 words of font info for 86 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 114i,11n,118p,545b,985s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/te
-xlive/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texlive/texmf-dis
-t/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvi
-ps/lm/lm-mathit.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbx10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/lm/lmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/lm/lmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/lm/lmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr7.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/lm/lmri10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/lm/lmri7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmri9.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/lm/lmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/lm/lmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmss
-o10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/symbols/msbm10.pfb>
-Output written on final.pdf (5 pages, 399464 bytes).
+ 114i,11n,118p,542b,989s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/u
+sr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texliv
+e/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texlive/texmf-dist/fonts
+/enc/dvips/lm/lm-mathex.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/l
+m-mathsy.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/lm/lmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/lm/lmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/lm/lmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/lm/lmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr5.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/lm/lmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/
+lmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/lm/lmri7.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/lm/lmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/
+lmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmss17.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/lm/lmsso10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmsy7.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on final.pdf (14 pages, 503518 bytes).
 PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
- 106 compressed objects within 2 object streams
+ 238 PDF objects out of 1000 (max. 8388607)
+ 139 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
