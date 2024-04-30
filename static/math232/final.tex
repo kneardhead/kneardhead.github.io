@@ -344,7 +344,12 @@ A function $f:D \to \mathbb{R}^{m}$ is \emph{Uniformly Continuous} on $D$ if for
 If $f $ is continuous on a compact domain $D$, then $f$ is uniformly continuous on $D$. 
 }
 
+\newpage
+\section*{Optimization}
 
+\df{
+Suppose $f: D \to \mathbb{R}$ is a function on a domain $D \subset  \mathbb{R}^{n}$ and $\vec{a}$ is a point in the interior of $D$. We say that $f$ has a \textbf{Local Minimum} at $\vec{a}$ if there is some $r> 0$ such that $f(\vec{a}) \le  f(\vec{x})$ for all $\vec{x} \in B_r (\vec{a})$. Similarly we say $f$ has a local maximum at $\vec{a}$ if $r>0$ exist such that $f(\vec{a}) \ge  f(\vec{x})$  for all $\vec{x} \in  B_r(\vec{a})$. 
+}
 
 
 \newpage
@@ -475,7 +480,25 @@ A set $X \subset \mathbb{R}^{n}$ has \emph{Content Zero} if for every $\epsilon 
 \pr{
 	(Proposition) Prove that the Graph of continuous function on a compact set is content zero. 
 }
+\solu{
+Suppose that $f: D \to \mathbb{R}$ is continuous on some compact set $D \subset  \mathbb{R}^{n-1}$. We will show that $f$'s graph is content zero in $\mathbb{R}^{n}$ and we will restrict to $n = 3$ maybe to simplify notations. 
 
+Let $\epsilon > 0$ and $Y$ be a box that contains $D$. 
+
+Let 
+\[
+\epsilon' = \frac{\epsilon}{\text{vol} (Y)} = \frac{\epsilon}{V}
+\]
+We know that $f$ is continuous on $D$. Thus there is some $\delta > 0$ such that $\vec{x}, \vec{y} \in D$ within $\delta$ of each other gives us $| f(\vec{x}) - f(\vec{y}) | < \epsilon'$. Find a partition $P$ of $Y$ into boxes that have diameter smaller than  $\delta$.
+
+Suppose that $X_i$ is a piece of the partition that intersects $D$. Let's create a box $B_ i$ in $\mathbb{R}^{n}$ that is $X_i \times [a,b]$, where $a = \text{min}f(X)$ and $b = \text{max} f(X)$. Since diameter of $X_i$ is less than $\delta$, through uniform continuity we have $b - a < \epsilon'$. 
+
+Note that this box contains the entire graph of $f$ on $X_i$. Thus if we do this for all piece of $P$ that intersect $D$, we will get finite union of boxes in $\mathbb{R}^{n}$ that cover the graph of $f$ on the entirety of $D$. 
+
+The volume of $B_i$ equals $(b-a)$ times the volume of $X_i$, which is at most $\epsilon' \text{vol} (X_i)$. Thus adding that all together, $B_i$ is at most $\epsilon'$ times the sum of volume of $X_i$, which is at most volume of $Y$. 
+
+But $\epsilon' \text{vol}(Y) = \epsilon $. This proves graph of $f$  is content zero. 
+}
 	\subsection*{Integration over a region of interest (needs more reading)} 
 \df{
 If $f$  is bounded on a bounded domain $D \subset \mathbb{R}^{n}$, then $\int_D f$ is defined to be equal to $\int_B f_1$. 
@@ -547,6 +570,12 @@ Spherical Coordinates in $\mathbb{R}^{3}$ is given by $(\rho, \phi, \theta)$ whe
 \newpage
 \section*{Integration on a Subset (on Curves and Surfaces)} 
 \subsection*{Defining Path} 
+\textsf{A path in our surrounding space is made of all the points $(x,y,z)$ that satisfy some curve equation. For the definition of path we are about to see, image of $p$ means that we are going to look at the set of outputs from $p$. 
+	\[
+	\text{image of } p = \{(x,y,z) \in  p(I)  \mid p : I \to \mathbb{R}^{3}  \text{ and } I \text{ is a set}\} 
+\]
+Depending on our mood we can write $p$ as $\vec{p}$ too as it spits out a vector. It doesn't really matter if we keep track of the domain and codomain.   
+} 
 \df{
 A subset $C \subset \mathbb{R}^{n}$ is a $C^{1}$ \emph{Parametrized Curve} if there is some interval $I \subset \mathbb{R}$ and a $C^{1}$ function $p:I \to \mathbb{R}^{n}$ such that image of $p$ is $C$ and $p$ is injective outside some set of content zero.
 }
@@ -582,6 +611,273 @@ For the $C^{1}$ parametrized surface $S \subset \mathbb{R}^{3}$, the surface are
 \int_{S}^{} 1 \, \mathrm{d} S 
 \] 
 }
+
+
+\pr{
+Solve for the surface area of a Unit Sphere in $\mathbb{R}^{3}$. 
+}
+\solu{
+From the definition of surface area we know 
+\[
+\int_{S}^{} 1 \, \mathrm{d} S = \int_{D}^{} \left| \frac{\partial p}{\partial u} \times  \frac{\partial p}{\partial v} \right| 
+\]
+\textbf{Parametric for Surface: }
+Here $\vec{p}$ is a function / map that is going to give us the surface of the sphere. In Cartesian Coordinates, we can roughly imagine a circle in $x-y$ plane is going to be mapped into a surface of a hemisphere using $x^2 + y^2 + z^2 = 1$ so that the point of the surface in $\mathbb{R}^{3}$ is $(x,y, \sqrt{1-  x^2 - y^2}) $. 
+
+So formally, defining $$D = \{(x,y)  \mid  x,y \in \mathbb{R} \text{ and } x^2 + y^2 \le  1\} $$ the parametric that gives the surface would be the image of the map $\vec{p} : D \to \mathbb{R}^{3}$
+\[
+\vec{p}(x,y) = \left(x, y , \sqrt{1- x^2 - y^2} \right)
+\]
+This will give the upper half of the hemisphere if we only consider the positive square root (and we should otherwise it's not a function). 
+
+\textbf{Partial Derivative Cross Product Determinant: }
+\begin{align*}
+	\frac{\partial \vec{p}}{\partial x} &= \left(1,0, \frac{x }{\sqrt{1 - x^2 - y^2} }\right) \\
+	\frac{\partial \vec{p}}{\partial y} &= \left(0, 1, \frac{y}{\sqrt{1-x^2 -y^2} } \right) \\
+	\frac{\partial \vec{p}}{\partial x} \times 
+	\frac{\partial \vec{p}}{\partial y} &= 
+	\left(\frac{x}{\sqrt{1-x^2-y^2}} , \frac{y}{\sqrt{ 1-x^2-y^2}},1\right)\\
+	\left|\frac{\partial \vec{p}}{\partial x} \times  \frac{\partial \vec{p}}{\partial y}\right| &= 
+	\sqrt{1 + \frac{x^2}{1-x^2-y^2  } + \frac{y^2}{1-x^2-y^2}} 
+\end{align*}
+\textbf{Change of Coordinates for Integration: (SETUP)}
+We learned that 
+\[
+\int_{D}^{} f = \int_{D'}^{ } f \circ T \, | \det (\mathrm{d} T) |   
+\] 
+What we have now is 
+\[
+	\int_{S}^{} 1 \, \mathrm{d} S = \int_{D}^{}    
+	 \sqrt{1 + \frac{x^2}{1-x^2-y^2  } + \frac{y^2}{1-x^2-y^2}} 
+\]
+Where \[
+D = \{(x,y)  \mid  x,y \in \mathbb{R} \text{ and } x^2 + y^2 \le  1\} 
+\]
+Because $D$'s image is a circle, we can conveniently use polar coordinates with the following transformation, as we know that $(x,y)$ is 
+\[
+	(x,y) = \left(x(r, \theta), y(r, \theta)\right)
+\] 
+\[
+	(x,y) = T(r, \theta)  = (r \cos \theta , r \sin \theta)
+\]
+We have defined $T$. Then 
+\[
+	\mathrm{d} T = \begin{pmatrix} \dfrac{\partial x}{\partial r} & 
+	\dfrac{\partial y}{\partial r} \\ 
+	\dfrac{\partial x}{\partial \theta} & 
+	\dfrac{\partial y}{\partial \theta} 
+\end{pmatrix}
+	 = \begin{pmatrix} \cos \theta & \sin \theta \\ - r \sin \theta & r \cos \theta \end{pmatrix} 
+\] 
+The determinant 
+\[
+\det \left(\mathrm{d} T\right) = 
+r
+\] 
+For the new domain of integration 
+\[
+D = \{(x,y)  \mid  x,y \in \mathbb{R} \text{ and } x^2 + y^2 \le  1\} 
+\]  
+will turn to 
+\[
+	D' = \{(r , \theta)  \mid  r,\theta \in \mathbb{R} \text{ and } r \in [0,1] \text{ and } \theta \in  [0, 2\pi] \} 
+\]
+$0$ and $2 \pi $ are content zero so we don't have to worry about overlaps.\footnote{Think about how much area is swept from 0 to $2 \pi $.} 
+
+\textbf{Change of Coordinates for Integration: (COMPUTATION)}
+\[
+f \circ T \implies f(T(r, \theta)) = f(r \cos \theta, r \sin \theta) = 
+\sqrt{
+1 + \frac{r^2 \cos ^2 \theta}{1 - r^2 \cos ^2 \theta - r^2 \sin ^2 \theta} + \frac{r ^2 \sin ^2 \theta}{1 - r^2 \cos ^2 - r^2 \sin ^2 \theta } }\] \[= \sqrt{1 + \frac{r^2}{1 - r^2}} 
+\]
+Putting all of it together now with variables of choice being $(r,\theta)$
+\[
+\int_{D}^{} f = \int_{D'}^{} f \circ T \, \det \left(\mathrm{d} T\right) \implies 
+\int_{D'}^{} \sqrt{1 + \frac{r^2}{1 - r^2}} (r)  = \int_{D'}^{} \frac{r}{\sqrt{1 -r^2} }  
+\] 
+\[
+	D' = \{(r , \theta)  \mid  r,\theta \in \mathbb{R} \text{ and } r \in [0,1] \text{ and } \theta \in  [0, 2\pi] \} 
+\]
+\textbf{Fubini's Theorem}:
+
+As we have an integration over a box-like region we can now turn the problem using Fubini's Theorem and evaluate the integral like this, 
+\[
+ \int_{D'}^{}  \frac{r}{\sqrt{1 - r^2} } = \int_{0}^{2\pi } 
+	\left[ 
+	\int_{0}^{1} \frac{r}{\sqrt{1 - r^2} } \, \mathrm{d}  r 
+	\right] \mathrm{d} \theta = 2 \pi 
+\] 
+Evaluating this single variable integral gives us
+\[
+\int_{S}^{} \mathrm{d} S = 2 \pi  
+\]
+For the whole sphere it will be $4 \pi $. 
+}
+
+
+\newpage
+\section*{Vector Fields and Vector Integration} 
+\subsection*{Defining Vector Field}
+\textsf{This is the most Physics thing in this course ever. We will imagine ever point in our surrounding space (not the mathematical space haha) has a \emph{vector }assigned to it. }
+\df{
+A \emph{Vector Field} on a domain $D \subset \mathbb{R}^{n}$ is any function 
+\[
+\vec{F} : D \to \mathbb{R}^{n}
+\] 
+}
+
+\subsection*{Vector Path Integral} 
+\textsf{The idea is exactly what we learn in computing the work done on an object.}
+\df{
+For an oriented $C^{1}$ parametrized curve $C \subset \mathbb{R}^{n}$ and a vector field $\vec{F}$ defined on a domain containing $C$, the \emph{Vector Path Integral} or \emph{Vector Line Integral} of $\vec{F}$ over $C$ is denoted by 
+\[
+\int_{C}^{ }  \vec{F} \cdot \mathrm{d} \vec{s}  
+\]
+defined to be 
+\[
+\int_{a}^{b} \vec{F}( \vec{p}(t) ) \cdot \vec{p}'(t) \, \mathrm{d} t 
+\] for a path $\vec{p} : [a,b] \to \mathbb{R}^{n}$, any valid parametrization whose image is $C$. Obviously the value of this integral is independent of the choice of parametrization of $C$. 
+}
+
+A path integral can be independent of the choice of the path too. We can define it by 
+\df{
+A vector field $\vec{F}$ on a domain $D \subset \mathbb{R}^{n}$ is \emph{Path Independent} if for any two oriented paths $C_1, C_2$ in $D$ that begin and end at the same points 
+\[
+\int_{C_1}^{} \vec{F} \cdot \mathrm{d} \vec{s} = \int_{C_2}^{} \vec{F} \cdot \mathrm{d} \vec{s}  
+\] 
+}
+This can lead to a very important theorem 
+\thm{
+A vector field $\vec{F}$ is path independent if and only if 
+\[
+\oint _C \vec{F} \cdot \mathrm{d}  \vec{s} = 0
+\] for all loops $C$ in the domain. 
+}
+
+From Physics we can write another banger of a definition 
+\df{
+A vector field $\vec{F}$ defined on an open set $D \subset  \mathbb{R}^{n}$ is \emph{Conservative} if there is  some function $f:D\to \mathbb{R}$ such that $\nabla f = \vec{F}$.
+}
+
+Conservative Vector Fields happen to be quite important. For instance we have the following theorem
+\thm{
+	A vector field on a \emph{path-connected domain}\footnote{will be defined right after this} is conservative if and only if it is Path Independent. 
+}
+
+\textsf{I like to think there is no island like disconnect between the regions.}
+\df{
+\emph{Path Connected} means that for every two points in the set $D \subset \mathbb{R}^{n}$, there is a path starting from one and ending at other. 
+}
+
+\subsection*{Path Integral version of Fundamental Theorem of Calculus} 
+\thm{
+If $\nabla f = \vec{F}$, then for any path $C$ in the domain of $\vec{F}$ which starts at a point $\vec{a}$ and ends at point $\vec{b}$, we have
+\[
+\int_{C}^{} \vec{F} \cdot \mathrm{d} \vec{s} = f(\vec{b}) - f(\vec{a}) 
+\] 
+}
+
+\subsection*{Introduction to Curl} 
+\df{
+If $\vec{F} = \langle F_1, F_2 \rangle$ a vector field in $\mathbb{R}^{2}$ then 
+\[
+	(\nabla \times \vec{F})_z = \text{curl}_z \vec{F} = \frac{\partial F_2}{\partial x} - \frac{\partial F_2}{\partial y}
+\] 
+}
+
+\df{
+	For a vector field $\vec{F} = \langle F_1, F_2, F_3 \rangle $ in $\mathbb{R}^{3}$, we define the curl 
+	\[
+	\text{curl} \vec{F} = 
+	\Biggl<
+	\frac{\partial F_3}{\partial y} - \frac{\partial F_2}{\partial z}, 
+	\frac{\partial F_1}{\partial z} - \frac{\partial F_3}{\partial x}, 
+	\frac{\partial F_2}{\partial x} - \frac{\partial F_1}{\partial y} \Biggl>
+	\] 
+}
+\subsection*{Green's Theorem: Vector Path Integral to Scalar Surface Integral in $\mathbb{R}^{2}$} 
+\thm{
+	Let $R$ be a ``nice" region in $\mathbb{R}^{2}$\footnote{the ``inside" of some closed, piecewise $C^{1}$ curve $C$ } and let $\vec{F}$ be a $C^{1}$ vector field defined on $R$. Then 
+	\[
+	\int_{R}^{} \text{curl}_z (\vec{F}) = \oint_C \vec{F} \cdot \mathrm{d} \vec{s}
+	\]
+	where $C$ is oriented so that $R$ is on the left if we go around $C$. 
+}
+TODO: make next one proposition 
+
+\thm{
+If a $C^{1}$ vector field $\vec{F}$ in $\mathbb{R}^{2}$ is \emph{conservative} the $\text{curl}_z \vec{F}$ is identically zero. 
+}
+
+\textsf{The reverse of this is not necessarily true for all case. For that our path need to be nice enough. I will define what I mean with nice enough later.} 
+TODO: make next one proposition 
+
+\thm{
+	If a $C^{1}$ vector field $\vec{F}$ in $\mathbb{R}^{2}$ has \emph{Simply Connected}\footnote{will be defined right after this.} domain $D$ and $\text{curl}_z \vec{F}$ is identically zero on  $D$, then $\vec{F}$ is conservative. 
+}
+\df{
+A domain $D$ in $\mathbb{R}^{2}$ or $\mathbb{R}^{3}$ is \emph{Simply Connected} if every loop in $D$ can be ``filled in" (by a region/surface) while staying in $D$. Alternatively, $D$ is \emph{Simply Connected} if every loop in $D$ can be ``pulled in" to a point in $D$. 
+}
+
+\subsection*{Vector Surface Integral : Flux} 
+\textsf{Before moving on to the Green's Theorem in $ \mathbb{R}^{3}$ we have the burden of definition of a Flux Integral}. 
+\df{
+Suppose $\vec{F}$ is a vector field on $\mathbb{R}^{3}$ and $S$ is an oriented $C^{1}$ parametrized surface in $\mathbb{R}^{3}$. If $S$ is parametrized by $p: D\to \mathbb{R}^{3}$ for some $D \subset \mathbb{R}^{2}$, then the \emph{Flux Integral} is defined by $\vec{F}$ over $S$ as 
+\[
+\int_{S}^{} \vec{F} \cdot \mathrm{d} \vec{S} = 
+\int_{D}^{} \vec{F}( p(u,v)) \cdot  \left(
+\frac{\partial p}{ \partial u} \times  \frac{\partial p }{\partial v}
+\right) 
+\]
+where we stay aware about the direction of $\frac{\partial p}{\partial u} \times  \frac{\partial p}{\partial v}$ with chosen orientation of the surface. 
+}
+
+\subsection*{Green's Theorem in $\mathbb{R}^{3}$ }
+\thm{
+Given a $C^{1}$ vector field $\vec{F}$ in $\mathbb{R}^{3}$ defined on an oriented surface $S$, we have 
+\[
+\int_{S}^{} \text{curl }\vec{F} \cdot \mathrm{d} \vec{S} = 
+\oint_{\partial S} \vec{F} \cdot  \mathrm{d} \vec{s}
+\]
+where $\partial S$ represents the edge of $S$ oriented compatibly with the orientation of $S$. 
+}
+\textsf{The intuitive addition to the above theorem is going to be that travelling around $\partial S$ with our head pointed towards the positive side of the surface, the surface is on our left.}
+
+
+TODO: make the next one proposition 
+\thm{
+If a $C^{1}$ vector field in $\vec{F}$ in $\mathbb{R}^{3}$ is conservative then $\text{curl } \vec{F}$ is identically zero. 
+}
+
+\thm{If a $C^{1}$ vector field $\vec{F}$ is defined on a \emph{Simply Connected }domain in $\mathbb{R}^{3}$ and $\text{curl }\vec{F}$ is identically zero, the $\vec{F}$ is conservative. 
+
+
+\subsection*{Divergence Theorem} 
+\df{
+For a vector field $\vec{F} = \langle F_1, F_2, F_3 \rangle$ in $\mathbb{R}^{3}$ the \emph{Divergence} of $\vec{F}$ is given by 
+\[
+\text{div }\vec{F} = \nabla \cdot \vec{F} = 
+\frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y} + \frac{\partial F_3}{ \partial z}
+\] 
+}
+
+\thm{Given a $C^{1}$ vector field $\vec{F}$ on $\mathbb{R}^{3}$ defined on region $R$, we have 
+	\[
+		\int_{R}^{} \text{div }\vec{F} = \oint_{\partial R} \vec{F} \cdot  \mathrm{d} \vec{S} 
+	\]
+	where $\partial R$ represents the boundary of $R$ oriented so that the side away from $R$ is positive. 
+
+	A useful fact can be 
+
+	TODO: make proposition 
+	\thm{ For a $C^{2}$ vector field $\vec{F}$
+		\[
+	\text{div} \left(\text{curl }\vec{F}\right)	 = 0
+		\] 
+	}
+
+
+
 \newpage\section*{Introduction} 
 
 \textsf{Whatever you see in this particular font is \emph{intuition}. Through \emph{intuition} I mean the ``not so correct" way of writing things that will provide you with a rough picture to think about. The slightly incorrect literature is supposed to give you an anchor for imagination - though the rigorous correctness is embodied in the} \emph{Definitions, Propositions, Theorems.}
@@ -591,6 +887,7 @@ The goal I am trying to achieve with this handout is \textbf{putting all the thi
 Now as I think about it, right before finals, the inability to \emph{chronologically} and \emph{logically} not being able to structure the ideas was the fatal flaw I was dealing with. This note is an attempt to fix that. 
 
 Please don't forget to read the footnotes.
+
 
 
 \section*{Appendix : Gamma Function} 
