@@ -1,0 +1,75 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Integrals Exercise from Edwards}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\df{
+\emph{Box} in $\mathbb{R}^{n}$ is defined by
+\[
+	B = [a_1, b_1] \times \cdots [a_n, b_n]
+\] 
+We may also call them \emph{Rectangles} in cases. 
+}
+
+\df{
+\emph{Volume of a Box} is defined by 
+\[
+v(B) = |a_1 - b_1 | \times  \cdots \times  |a_n - b_n| 
+\]
+}
+
+\df{
+\emph{Area $\alpha$ of a Bounded Set $S$ in} $\mathbb{R}^{n}$ is given by the following two conditions for $\epsilon > 0$
+\begin{itemize}
+	\item Finite collection of $p_1, p_2, \ldots, p_k$ non-overlapping rectangles contained in $S$, with \[
+	\sum_{i}^{k} a(p_i) > \alpha - \epsilon
+	\]
+\item Finite collection of $P_1 , P_2, \ldots, P_l$ rectangles that together contain $S$ with 
+	\[
+	\sum_{i}^{l} a(P_i) < \alpha + \epsilon 
+	\] 
+\end{itemize}
+}
+
+\pr{
+	Find the area under the curve (graph of -) $y = x^2$ in a closed interval $[0,1]$ using the above definition of area. 
+}
+
+\solu{
+TODO: please do it. 
+}
+
+
+\pr{
+Do the same above exercise with fundamental theorem. 
+}
+
+
+\pr{
+	If $S$ and $T$ have area, and $S \subset T$, then $a(S) \le a(T)$. 
+
+Prove this statement.} 
+
+\solu{
+Consider set of small rectangles inside $T$ $\alpha_i$ such that their set $\{\alpha_i\} \subset T $. Similarly, consider the set of small rectangles inside $S$ as $\{s_i\} $. These follow (obviously) $\{s_i\}  \subset S$. 
+\[
+\{\alpha_i\}  \subset T
+\]
+\[
+\{s_i\}  \subset S
+\] 
+Now let's invoke $S \subset T$. And define $\{s_i\} $ to be
+\[
+\{s_i\}  \subset   S \cap \{\alpha_i\} 
+\]
+Note that I define $\{s_i\}  \subset S \cap \{\alpha_i\} $ instead of $\{s_i\} = S \cap \{\alpha_i\} $ because the equality can cause boxes to be cut off weirdly. I only want full rectangles to be in $\{s_i\} $. Because of this, several rectangles will get cut off, so apparently it's obvious that
+\[
+\sum_{}^{} a(s_i) \le \sum a(\alpha_i)
+\] 
+}
+\end{document}
