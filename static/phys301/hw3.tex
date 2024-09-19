@@ -1,0 +1,199 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{../math232/ahsansabit}
+
+\title{Classical Mechanics : : Homework 03}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+ \usepackage[]{float}
+\begin{document}
+\maketitle
+
+\section{Problem 01} 
+\subsection{a}
+There are two key points. 
+\begin{itemize}
+	\item From the given equation in the problem it seems like we have to consider the momentum exchange between resting tiny droplets and bigger raindrop is negligible. Other wise we have to add a $- \lambda \pi r^2 v^2$ term with the effective force. 
+	\item Air drag is neglected, as mentioned.
+\end{itemize}
+The equation of motion hence
+\[
+F = \frac{\mathrm{d} p}{\mathrm{d} t} = v \frac{\mathrm{d} m}{\mathrm{d} t} + m \frac{\mathrm{d} v}{\mathrm{d} t}
+\] 
+The only force acting on this waterdrop is $mg$ if we consider positive to point downwards. Hence
+\[
+\boxed{
+mg = v \frac{\mathrm{d} m}{\mathrm{d} t} + m \frac{\mathrm{d} v}{\mathrm{d} t}
+}
+\]
+
+\subsection{b}
+To compute the area swept by the spherical raindrop, we assume $\delta t \neq 0 $ but $\delta t \to  0$. Then the infinitesimal volume swept in that time period, 
+\[
+\mathrm{d} \nu = 	\left(\pi r^2\right) \left(v \delta t\right)
+\]
+Let $n$ volume of water be stored per unit volume of cloud. So the amount of mist/water/fog in the swept region is
+\[
+ n \mathrm{d} \nu = \mathrm{d} V = n \pi r^2 v \delta t 
+\]
+As stated in the problem, the raindrop holds its spherical shape and absorbs this volume of water. As water is incompressible, this adds to the volume of the raindrop. Hence, the rate of increase of volume of the raindrop is 
+\[
+	\frac{\mathrm{d} V}{\mathrm{d} t} = n \pi r^2 v
+\]
+From this we can compute rate of change of radius easily 
+\begin{align*}
+	\frac{\mathrm{d} }{\mathrm{d} t} \left(\frac{4}{3} \pi r^3\right) &= n \pi r^2 v \\
+	(4 \pi r^2 )\frac{\mathrm{d} r}{\mathrm{d} t}&= n \pi r^2 v \\
+	\frac{\mathrm{d} r}{\mathrm{d} t} &= \frac{n}{4} v \equiv \eta v
+\end{align*}
+Hence 
+\[
+\boxed{
+\eta = \frac{n}{4}
+}
+\] 
+
+\subsection{c} 
+\[
+\frac{\mathrm{d} m}{ \mathrm{d} t} = \rho \frac{\mathrm{d} V}{\mathrm{d} t} = \rho n \pi r^2 v
+\]
+Now using the force equation found in  \textbf{a}
+\begin{align*}
+	mg &= v \frac{\mathrm{d} m}{\mathrm{d} t} + m \frac{\mathrm{d} v}{\mathrm{d} t}\\
+	g &= v \frac{\rho n \pi r^2 v}{m} + \frac{\mathrm{d} v}{\mathrm{d} t} \\
+	g &= v \frac{m n \pi r^2 v}{ ( 4 / 3) \pi r^3 m } + \frac{\mathrm{d} v}{\mathrm{d} t} \\
+	g &= v^2 \left(\frac{3n}{4r}\right) + \frac{\mathrm{d} v}{\mathrm{d} t} 
+\end{align*}
+\[
+\boxed{
+	r \frac{\mathrm{d} v}{\mathrm{d} t} + \left(\frac{3n}{4}\right) v^2 - rg = 0
+}
+\] 
+
+\subsection*{d}
+
+\subsection*{e} 
+Using $\mathrm{d} r / \mathrm{d} t$ 
+\[
+\frac{\mathrm{d} r}{\mathrm{d} t} = \frac{n}{4} v
+\]
+the acceleration can be re-written as 
+\[
+\frac{\mathrm{d} v}{\mathrm{d} t} = \frac{\mathrm{d} v}{\mathrm{d} r} \frac{\mathrm{d} r}{\mathrm{d} t} = \frac{\mathrm{d} v}{\mathrm{d} r} \frac{n}{4} v  = \left(\frac{1}{2} \frac{\mathrm{d} v^2}{\mathrm{d} t}\right) \frac{n}{4} = \frac{n}{8} \frac{\mathrm{d} (v^2 )}{\mathrm{d} t}
+\] 
+\[
+	\frac{nr}{8} \frac{\mathrm{d} (v^2)}{\mathrm{d} r} + \left(\frac{3n}{4}\right) v^2 - rg = 0
+\]
+\[
+\frac{\mathrm{d} (v^2)}{\mathrm{d} r} + \frac{6}{r} v^2 - \frac{8}{n} g = 0
+\] 
+Setting a euphemism 
+\[
+v^2 = x
+\] 
+\[
+\boxed{
+\frac{\mathrm{d} x}{\mathrm{d} r} + \frac{6x}{r} - \frac{8g}{n} = 0
+}
+\] 
+\
+\begin{tcolorbox}[colback=white,colframe=gray,sharp corners]
+	\textbf{Solving the above differential equation: }
+This is a standard differential equation that can be crunched with integrating factor method (MATH 211)
+\[
+\frac{dx}{dr} + P(r)x = Q(r)
+\]
+Here, \( P(r) = \frac{6}{r} \) and \( Q(r) = \frac{8g}{n} \).
+The integrating factor \( \mu(r) \) is given by:
+
+\[
+\mu(r) = e^{\int P(r) dr} = e^{\int \frac{6}{r} dr} = e^{6 \ln r} = r^6
+\]
+Multiplying the factor
+\[
+r^6 \frac{dx}{dr} + 6r^5x = \frac{8g}{n} r^6
+\]
+The left-hand side is the derivative of \( r^6x \), so:
+\[
+\frac{d}{dr}(r^6x) = \frac{8g}{n}r^6
+\]
+\[
+r^6x = \int \frac{8g}{n}r^6 dr
+\]
+\[
+r^6x = \frac{8g}{n} \cdot \frac{r^7}{7} + C = \frac{8g}{7n}r^7 + C
+\]
+\[
+x(r) = \frac{8g}{7n}r + \frac{C}{r^6}
+\]
+We can solve from $C$ from boundary conditions 
+\[
+\boxed{
+v^2 (r) = \frac{8g}{7n} r + \frac{C}{r^{6}}
+}
+\] 
+\end{tcolorbox}
+	The radius increase rate can also be written purely in terms of $r$ \[
+	\frac{\mathrm{d} r}{\mathrm{d} t} = \frac{n}{4} v = \frac{n}{4} \sqrt{\frac{8g}{7n} r + \frac{C}{r^{6}}} 
+	\] 
+
+
+
+	\section{Problem 02} 
+
+	Consider a position $r \in  [x,  x + \mathrm{d} x]$. A particle stays in this region for $\mathrm{d} t_{1 / 2 } = \frac{\mathrm{d} x}{v(x)}$ time for half period of motion, and $ \mathrm{d} t = 2 \frac{\mathrm{d} x}{v(x)}$ for full period of motion. We can make symmetry assumptions because the motion is given to be simple harmonic. 
+	The probability is defined in a manner
+	\[
+	P(x) \mathrm{d} x = \frac{\mathrm{d} t}{\tau} = \frac{2}{\tau v(x)} \mathrm{d} x 
+	\]
+	\[
+	\boxed{
+	P(x) = \frac{2}{\tau v(x)}
+	}
+	\] Where $\tau$ is the full period of motion.
+
+	Solution for $v(x)$ in case of simple harmonic motion 
+	\[
+		v(x) = \sqrt{\frac{2E}{m} - \frac{k}{m} x^2}  \]
+	\[
+	\tau = 2 \pi \sqrt{\frac{m}{k}} 
+	\]
+	\[
+	P(x) = \frac{2}{2 \pi \sqrt{\frac{2E}{k} - x^2} } = \frac{1}{ \pi \sqrt{\frac{2E}{k} - x^2} }
+	\]
+
+	We can test whether our probability is normalize, as $x \in \left[-\sqrt{  \frac{2E}{k}}, \sqrt{ \frac{2E}{k} } \right]$. We can also change our notation to be more convenient $\frac{2E}{k} = A^2$ which is the amplitude, 
+	\[
+	\int_{-A}^{A} P(x) \, \mathrm{d} x =  \int_{-A}^{A} \frac{\mathrm{d}  x}{\pi \sqrt{A^2 - x^2} } = 1 
+	\] 
+	This gives us 
+	\[
+	\boxed{
+	P(x) = \frac{1}{\pi \sqrt{A^2 - x^2} }
+	}
+	\] 
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.5\textwidth]{ss/ncl01.png}
+		\caption{Vertical lines represent boundary}
+		\label{fig:ss-ncl01-png}
+	\end{figure}
+	The infinity at $x = A$ and $x = -A$ makes sense because $v(x) = 0$ and the time it stays in that position is indefinite. But physically we know that the particle spends infinitesimally small amount of time in that position as  of the spring force, so we can safely neglect the boundary blowing up. 
+
+	More pure mathematically, we only are interested on the area under the curve (integral) for the probability. The $x = A$ and $x = -A$ region is content zero, so we still can take the integral under the curve without any difficulty even after having infinity there.  
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.5\textwidth]{ss/ncl02.png}
+		\caption{Various plots for various amplitudes}
+		\label{fig:ss-ncl01-png}
+	\end{figure}
+
+	This makes perfect sense because the lowest probability of time spent in the center aligns with the graph, as the speed is maximum there. The area under each and every single curve is going to be 1 for normalization, and regions under the graph in general describe probability of finding the particle there. Note this region $R$ must be such that $R \subset [-A,A]$. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{ss/ncl03.png}
+	\caption{Probability of finding a particle in given $x$ region is the area. I did the calculation it shows 0.23 something, so like 23\%.}
+	\label{fig:ss-ncl03-png}
+\end{figure}
+\end{document}

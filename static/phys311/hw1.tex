@@ -1,6 +1,7 @@
 \documentclass[letter]{article}
 \usepackage[monocolor]{../math232/ahsansabit}
-
+\usepackage[]{multicol}
+\usepackage[]{float}
 \title{Quantum Mechanics Homework 01}
 \author{Ahmed Saad Sabit, Rice University}
 \date{\today}
@@ -49,7 +50,7 @@ Just so that we can invoke the inner product between orthonormal bases, we can t
 \end{align*}
 This above gives us the $p$-th term
 \[
-c_p = \frac{2}{L} \int_{0}^{L} \mathrm{d} x \, f(x) \phi_p(x) 
+c_p = \frac{2}{L} \int_{0}^{L} \mathrm{d} x \, f(x) \phi_p(x)  
 \] 
 Using the explicit equation for the bases and also looking at the piecewise function, we can write, 
 \begin{align*}
@@ -77,15 +78,85 @@ Using the explicit equation for the bases and also looking at the piecewise func
 Hence if I write this huge mess properly
 \[
 \boxed{
-	c_n = \frac{8h}{\pi ^2 p ^2} \sin\left(\frac{p \pi }{2}\right) \left[ 1 - \cos \left(\frac{p \pi }{2}\right) \right]
+	c_p = \frac{8h}{\pi ^2 p ^2} \sin\left(\frac{p \pi }{2}\right) \left[ 1 - \cos \left(\frac{p \pi }{2}\right) \right]
 }
 \] 
 
 
 
 \subsection*{\emph{Discussion on odd and even modes}}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{ss/graph-cn.png}
+	\caption{ss/graph-cn.png}
+	\label{fig:ss-graph-cn-png}
+\end{figure}
+We can see that every \emph{even} numbers is giving us a $0$ for $c_p$ ($d$ term in graph). The \emph{odd} terms alter between $-1$ and $1$. The contribution of even and odd modes is obvious from here.   
+\subsection*{\emph{Plotting the displacement with time}}
+Let's set $L = 1$ and we will look at $0 \le  x \le 1$. 
 
+As given $\Omega_n = k_n = \frac{n\pi}{L} = n \pi $. 
 
+For $h$ let's pick $h = 0.4$. 
+
+Using hte $c_p$ we derived above, the displacement function $q(x,t)$ is then, 
+\[
+	q(x,t)_{(10)}= 
+\sum_{n=1}^{10} c_n \cos ( n \pi t) \sin(n \pi x)
+\] 
+Expanding $c_n$, 
+\[
+q(x,t)_{(10)} = \frac{8 (0.4)}{\pi ^2 n^2 } 
+\sum_{n=1}^{10} \sin \left(\frac{n \pi }{2}\right) 
+\left[ 
+1 - \cos \left(\frac{n \pi }{2}\right)
+\right] \cos \left( n \pi t\right) \sin (n \pi x)
+\]
+And $\tau = \frac{2\pi}{\Omega_1} = \frac{2 \pi }{\pi } = 2$
+\newpage
+
+\begin{center}
+	{\huge \textbf{Plots of $q(x,t)$ where $\tau = 2$ }}
+\end{center}
+\[
+\boxed{
+q(x,t)_{(10)} = \frac{8 (0.4)}{\pi ^2 } 
+\sum_{n=1}^{10} \frac{1}{n^2} \sin \left(\frac{n \pi }{2}\right) 
+\left[ 
+1 - \cos \left(\frac{n \pi }{2}\right)
+\right] \cos \left( n \pi t\right) \sin (n \pi x) 
+\quad \text{and } x \in [0,1]
+}\]
+\begin{minipage}{0.5\textwidth}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{ss/c_n_001.png}
+	\caption{$t = 0$ and also $t = \tau$}
+	\label{fig:ss-c_n_001-png}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{ss/c_n_025.png}
+	\caption{$t = 0.35$}
+	\label{fig:ss-c_n_01-png}
+\end{figure}
+\end{minipage}
+\hfill %
+\begin{minipage}{0.5\textwidth}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{ss/c_n_02.png}
+	\caption{$t = \frac{\tau}{3} = \frac{2}{3}$}
+	\label{fig:ss-c_n_01-png}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{ss/c_n_03.png}
+	\caption{$t = \frac{\tau}{2} = 1$}
+	\label{fig:ss-c_n_01-png}
+\end{figure}
+\end{minipage}
+\newpage
 
 \section*{Problem 1 (b)} 
 \subsection*{\emph{Studying the Problem}}
@@ -105,11 +176,207 @@ I am not going to waste my and graders time by re-writing everything I wrote abo
 \begin{align*}
 	g(x) &= \sum_{n=1}^{\infty} d_n \Omega_n \phi_n(x)   \\
 \int_{0}^{L} \mathrm{d} x\, 	g(x) \phi_p (x) &= \sum_{n=1}^{\infty}  \int_{0}^{L} \mathrm{d} x \, d_n \Omega_n \phi_n (x) \phi_p (x)\\
-\int_{L / 2 - a}^{L / 2  + a} v_0 \phi_p (x) &= d_p  \Omega_p \frac{L}{2}
-\end{align*} 
+\int_{\frac{L}{2} - a}^{\frac{L}{2} + a} v_0 \phi_p (x) &= d_p  \Omega_p \frac{L}{2} \\ 
+\int_{\frac{L}{2}- a}^{\frac{L}{2} + a} v_0 \sin (k_p x) &= d_p  k_p \frac{L}{2}\\ 
+\frac{v_0}{k_p} \left[ - \cos \left(k_p x\right)\right]_{x = \frac{L}{2} - a}^{x = \frac{L}{2}+a} &= d_p k_p \frac{L}{2} \\ 
+\cos \left(k_p \frac{L}{2} - k_p a\right)- \cos \left( k_p \frac{L}{2} + k_p a\right)  &= \frac{d_p k_p^2 L}{2v_0} \\
+\cos \left( \frac{n \pi }{2} - \frac{n \pi a}{L}\right) - 
+\cos \left( \frac{n \pi }{2} + \frac{n \pi a}{L}\right) &= \frac{d_p n^2 \pi ^2 }{2 v_0 L} \\ 
+\end{align*}
+This gives us 
+\[
+d_p = \frac{2 v_0 L}{n^2 \pi ^2} 
+\left[ 
+\cos \left( \frac{n \pi }{2} - \frac{n \pi a}{L}\right) - 
+\cos \left( \frac{n \pi }{2} + \frac{n \pi a}{L}\right) 
+\right] 
+= \frac{4 v_0 L}{n^2 \pi ^2} \sin \left(\frac{n \pi }{2}\right) \sin \left(\frac{n \pi a}{L}\right)
+\]
 
+\subsection*{\emph{Discussion on Even and Odd modes}}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{ss/graph-dn}
+	\caption{ss/graph-dn}
+	\label{fig:ss-graph-dn}
+\end{figure}
+Like before we can see every  \emph{even} modes are 0. 
+
+
+\subsection*{\emph{Plotting the displacement with time}}
+Let's set $L = 1 $, then $a = 1 / 8$. Let's set $v_0 = 1.5$. 
+As before $\tau = 2$. 
+\newpage
+
+\begin{center}
+	{\huge \textbf{Plots of $q(x,t)$ where $\tau = 2$ }}
+\end{center}
+\[
+\boxed{
+q(x,t)_{(10)} = \frac{4 (1.5)}{\pi ^2} 
+\sum_{n=1}^{10} \frac{1}{n^2}
+\sin \left( \frac{n \pi }{2}\right) \sin \left({n \pi (1 / 8)}\right) 
+\sin \left( n \pi t\right) \sin \left(n \pi x\right)
+\quad \text{and } x \in [0,1]
+}\]
+\begin{minipage}{0.5\textwidth}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{ss/d_n_03.png}
+	\caption{$t = 0$ and also $t = \tau$}
+	\label{fig:ss-c_n_001-png}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{ss/d_n_025.png}
+	\caption{$t = \frac{\tau}{20} = 0.1 $}
+	\label{fig:ss-c_n_01-png}
+\end{figure}
+\end{minipage}
+\hfill %
+\begin{minipage}{0.5\textwidth}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{ss/d_n_02.png}
+	\caption{$t = \frac{\tau}{3} = \frac{2}{3}$}
+	\label{fig:ss-c_n_01-png}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{ss/d_n_03.png}
+	\caption{$t = \frac{\tau}{2} = 1$}
+	\label{fig:ss-c_n_01-png}
+\end{figure}
+\end{minipage}
+\newpage
+
+\begin{minipage}{0.5\textwidth}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{ss/dx1.png}
+	\caption{$t = 1.1$}
+	\label{fig:ss-c_n_001-png}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{ss/dx2.png}
+	\caption{$t =  1.5 $}
+	\label{fig:ss-c_n_01-png}
+\end{figure}
+\end{minipage}
+\hfill %
+\begin{minipage}{0.5\textwidth}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{ss/dx3.png}
+	\caption{$t = 1.85$}
+	\label{fig:ss-c_n_01-png}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{ss/dx4.png}
+	\caption{$t = 1.95$}
+	\label{fig:ss-c_n_01-png}
+\end{figure}
+\end{minipage}
+\newpage
+
+\subsection*{Plotting the Initial Velocity}
+We can simply take the time derivative and make a plot. The more iterations we make, we should get close to a heaviside function as stated in the initial velocity profile. 
+
+\begin{minipage}{0.3\textwidth}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{ss/speed01.png}
+	\caption{Plotted for $n = 10$}
+	\label{fig:ss-speed01-png}
+\end{figure}
+\end{minipage}
+\hfill
+\begin{minipage}{0.3\textwidth}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{ss/speed02.png}
+		\caption{Plotted for $n = 20$}
+		\label{fig:kdkdk}
+	\end{figure}	
+\end{minipage}
+\hfill 
+\begin{minipage}{0.3\textwidth}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{ss/speed03.png}
+		\caption{Plotted for $n = 30$}
+		\label{fig:ss-speed03-png}
+	\end{figure}
+\end{minipage}
+
+\begin{minipage}{0.3\textwidth}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{ss/speed04.png}
+	\caption{Plotted for $n = 100$}
+	\label{fig:ss-speed01-png}
+\end{figure}
+\end{minipage}
+\hfill
+\begin{minipage}{0.3\textwidth}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{ss/speed05.png}
+		\caption{Plotted for $n = 200$}
+		\label{fig:kdkdk}
+	\end{figure}	
+\end{minipage}
+\hfill 
+\begin{minipage}{0.3\textwidth}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{ss/speed06.png}
+		\caption{Plotted for $n = 300$}
+		\label{fig:ss-speed03-png}
+	\end{figure}
+\end{minipage}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{ss/speed07.png}
+	\caption{Waited 2 minutes to try $n = 10,000$. We have the exact initial conditions we wanted. This is absolutely beautiful to do this myself. }
+	\label{fig:ss-speed07-png}
+\end{figure}
+
+\section*{Problem 2}
+Linear Dependence equation 
+\[
+a 
+\begin{pmatrix} 0&1\\0&0 \end{pmatrix} 
++
+b
+\begin{pmatrix} 1&1\\0&1 \end{pmatrix} 
++
+c
+\begin{pmatrix} -2&-1\\0&-2 \end{pmatrix}  = 0
+\]
+If the three above equations are linearly independent we are going to have the only possible solution of the equality being zero as $\{a,b,c\} = \{0,0,0\}$. We get three different equations 
+\begin{align*}
+	b- 2c &= 0 \\
+	a+b-c&= 0 \\
+	b - 2c &= 0 \\
+	0 + 0 &= 0 
+\end{align*}
+Where the I didn't count the last one as it's not really anything. If we solve the system of equation above we are left with (did the computation by hand on paper)
+\begin{align*}
+	a &= -c \\
+	b = 2 c \\
+	c = \text{can be anything}
+\end{align*}
+$a,b,c$ doesn't necessarily need to be $0$ to yield above equation to be zero. This system is \emph{NOT linearly independent}. For example, setting $c = 1$ 
+\[
+	- \begin{pmatrix} 0&1\\0&0 \end{pmatrix} + 2 \begin{pmatrix} 1 & 1\\0&1 \end{pmatrix} + 
+	\begin{pmatrix} -2 & -1 \\ 0 & -2 \end{pmatrix}  = \begin{pmatrix} 0&0\\0&0 \end{pmatrix} 
+\] 
 
 \section*{Problem 3}
+\subsection*{Deduction} 
 \begin{align*}
 	| v + w | ^2 &=   \langle v + w | v + w \rangle  \\ 
 	&= \langle v | v + w \rangle  + \langle w | v + w \rangle \\
@@ -125,6 +392,26 @@ This shows that
 \[
 |v + w |  \le |v| + |w| 
 \] 
+\subsection*{Equality condition} 
+Above we can see
+\begin{align*}
+	| v + w | ^2 &=   \langle v + w | v + w \rangle  \\ 
+	&= | v | ^2 + | w | ^2 + 2 \text{Re}\left( \langle v | w \rangle\right) \\
+\end{align*}
+For the equality to hold we strictly need 
+\[
+2 \text{Re}\left( \langle v | w \rangle\right) = 2 |v | |w|  
+\]
+Let's try $| v \rangle  = a | w \rangle $.  
+\[
+2 \text{Re}\left( \langle a w | w \rangle\right) = 
+2a \text{Re} \left( \langle w | w \rangle \right)=
+2 |aw | |w| = 2 a |w| |w|   
+\]
+$| v \rangle  = a | w \rangle $ satisfies this. If $| v \rangle $ has component perpendicular to $| w \rangle $ (in a way that $| v \rangle $ can be broken down into constituent factors of basis vectors such that inner product with $| w \rangle $ gives zero), then some of the value of $2 \text{Re} ( \langle v | w \rangle )$ is getting lost. Having the two vectors parallel gives equal to their norm. This is more of a physical vector-like intuition.
+
+
+
 \section*{Problem 4(a)}
 I will write $\hat{\sigma}^{n}$ as simply $\sigma^{n}$ for this problem. I did the multiplication by hand. 
 \[
@@ -325,4 +612,149 @@ I've checked this in Wolfram Alpha and it seems to work.
 	\caption{ss/pauli-basis.png}
 	\label{fig:ss-pauli-basis-png}
 \end{figure}
+
+
+\section*{Problem 5(a)}
+From the question, my understanding of the basis is 
+\[
+| 1 \rangle = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \quad 
+| 2 \rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix} 
+\] 
+Projection operator 
+\[
+P_1 = | 1 \rangle \langle 1 |  = 
+\begin{pmatrix} 1 \\ 0 \end{pmatrix} 
+\begin{pmatrix} 1 & 0 \end{pmatrix} 
+=
+\begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} 
+\]
+\[
+P_2 = | 2 \rangle \langle 2 | 
+= 
+\begin{pmatrix} 0 \\ 1 \end{pmatrix}
+\begin{pmatrix} 0 & 1  \end{pmatrix}
+= 
+\begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix} 
+\] 
+We've determined the elements of the matrices.
+
+\section*{Problem 5(b)}
+Doing the matrix multiplication by hand
+\[
+P_1 P_1 = 
+\begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} 
+\begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}  = 
+\begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} 
+\] 
+\[
+P_2 P_2 = 
+\begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix} 
+\begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}  = 
+\begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix} 
+\]
+\[
+P_1 P_2 = 
+\begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} 
+\begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}  = 
+\begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix} 
+\] 
+\[
+P_2 P_1 = 
+\begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}  
+\begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} = 
+\begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix} 
+\] 
+My intuition for the projection operator is basically 
+\[
+P_i P_j = (| i \rangle \langle i | ) (| j \rangle \langle j |)  = 
+| i \rangle \langle i   | j \rangle \langle j |  = 
+| i \rangle \delta_{ij} \langle j | = \delta_{ij} |i \rangle \langle j | = |k \rangle \langle k |  
+\] where $k = \{i,j\} $ 
+
+
+\section*{Problem 5(c)} 
+\subsection*{\emph{Computation} }
+\[
+| V \rangle = \frac{1}{\sqrt{2} } ( | 1 \rangle + | 2 \rangle )
+\]
+\[
+P_V = | V \rangle \langle V | = 
+\frac{1}{2} (
+| 1 \rangle + | 2 \rangle 
+)
+(\langle 1 | + \langle 2 | ) = 
+\frac{1}{2} 
+\left(
+| 1 \rangle \langle 1 | +  
+| 1 \rangle \langle 2 | + 
+| 2 \rangle \langle 1 | + 
+| 2 \rangle \langle 2 | 
+\right)
+\]  
+\[
+P_V = 
+\frac{1}{2 }
+\left[
+	\begin{pmatrix} 1&0\\0&0 \end{pmatrix}  + 
+	\begin{pmatrix} 0&1\\0&0 \end{pmatrix}  + 
+	\begin{pmatrix} 0&0\\1&0 \end{pmatrix}  + 
+	\begin{pmatrix} 0&0\\0&1 \end{pmatrix}  
+\right]
+=
+	\begin{pmatrix} 1&1\\1&1 \end{pmatrix} 
+\]
+Now computing 
+\begin{align*}
+	P_1 P_V P_2 &= 
+\begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} 
+\left[\frac{1}{2} 
+\begin{pmatrix} 1&1\\1&1 \end{pmatrix} \right] 
+\begin{pmatrix} 0&0\\0&1 \end{pmatrix}  \\ 
+&= \frac{1}{2}  
+\begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}  \begin{pmatrix} 0&1\\0&1 \end{pmatrix}  \\ &=
+\frac{1}{2}\begin{pmatrix} 0&1\\0&0 \end{pmatrix} 
+\end{align*}
+
+We could have also done this directly like
+\begin{align*}
+	P_1 P_V P_2 &=  \frac{1}{2}
+\left(
+	| 1 \rangle \langle 1 | 
+\right)
+\left( | 1 \rangle \langle 1 | 
++ | 1 \rangle \langle 2 | + | 2 \rangle \langle 1 | + | 2 \rangle \langle 1 | 
+\right)
+\left(
+	| 2 \rangle \langle 2 | 
+\right) \\ 
+&= \frac{1}{2}
+\left(| 1 \rangle \langle 1 | \right)
+\left[
+	| 1 \rangle \langle 1 | 2 \rangle \langle 2 | + 
+	| 1 \rangle \langle 2 | 2 \rangle \langle 2 | + 
+	| 2 \rangle \langle 1 | 2 \rangle \langle 1 | + 
+	| 2 \rangle \langle 2 | 2 \rangle \langle 2 | 
+\right] \\ 
+&= 
+\frac{1}{2}
+\left(| 1 \rangle \langle 1 |  \right) 
+\left(
+	| 1 \rangle \langle 2 |  + | 2 \rangle \langle 2 | 
+\right)
+\\ 
+&= \frac{1}{2} 
+\left(
+| 1 \rangle \langle 1  | 1 \rangle \langle 2 |  + 
+| 1 \rangle \langle 1 | 2 \rangle \langle 2 | 
+\right)\\
+&= \frac{1}{2} | 1 \rangle \langle 2 |  \\
+&= \frac{1}{2} \begin{pmatrix} 1\\0 \end{pmatrix}
+	\begin{pmatrix} 0&1 \end{pmatrix} \\ 
+			 &= \frac{1}{2}\begin{pmatrix} 0&1\\0&0 \end{pmatrix}  \\
+\end{align*} 
+
+
+
+\subsection*{\emph{Analysis}}
+We can keep three polarizers, each at a increasing angle, then components of lights get filtered as the pass through, remaining light falls on the screen behind. 
 \end{document}

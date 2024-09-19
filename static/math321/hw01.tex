@@ -1,0 +1,140 @@
+\documentclass[letter, 12pt]{article}
+\usepackage[monocolor]{../math232/ahsansabit}
+\setcounter{secnumdepth}{0}
+\title{Analysis HW 01}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+\begin{document}
+\fontfamily{qcr}\selectfont
+\maketitle
+
+\tableofcontents
+
+
+\newpage
+\section{Problem 01} 
+\subsection{a}
+Suppose we have $x^{n} = k$ where $k \in \mathbb{N}$ and we know that $x \not\in \mathbb{N}$. Then assuming for the sake of contradiction that the root $x \in \mathbb{Q}$. This means 
+\[
+x = \frac{p}{q}
+\] where $p,q$ are natural numbers and coprime. 
+\[
+\frac{p^{n}}{q^{n}} = \implies \frac{p^{n}}{k} = q^{n}
+\] 
+$q^{n}$ is a natural number. This implies that $p^{n}/k$ is also a natural number. Writing
+\[
+\frac{p}{k} (p ^{n-1}) \in \mathbb{N}
+\] and since obviously $p^{n-1} \in \mathbb{N}$ we also have $\frac{p}{k} \in \mathbb{N}$. Saying, $p$ is divisible by $k$. 
+
+Now let's re-write
+\[
+\frac{p^{n}}{k} = q^{n} \implies \frac{p^{n}}{k^2} = \frac{q^{n}}{k}
+\] 
+From which 
+\[
+	\left( \frac{p^2}{k^2}\right) p^{n-2} = \left(\frac{q}{k}\right)q^{n-1}
+\] 
+Similarly like before, we know that the left hand side is a natural number. This is true for all $n$ greater or equal to $2$ but it's trivial to prove $n \neq 1$. Hence meaning
+\[
+\frac{q}{k} q^{n-1} \in \mathbb{N}
+\] 
+As $q^{n-1} \in \mathbb{N}$, so $\frac{q}{k}$ must also be a natural number. Therefore $q$ is divisible by $k$. This is a contradiction because $p,q$ are supposedly co-prime. Hence the assumption that the roots are rational is false. 
+
+\subsection{b} 
+We have proved that the roots are in no way rational. We can possibly have natural numbers which are roots, and from the proof above, irrational in a sense that it is no way rational. 
+\newpage
+\section{Problem 02} 
+\subsection{a}	
+	We have $x = A | B$, and $x > O^{*}$. Then let's define 
+	\[
+		C = \{p \in \mathbb{Q}: p < 0 \text{ or } pq < 1 | \forall q \in A\} 
+	\quad \text{and} \quad D = C^{C}
+	\] 
+	Looking at $C$ we can tell that it forms a cut. 
+
+	First let's show that if $x = A | B $ and $y = C| D$ then $xy = 1^{*}$. 
+	\[
+		xy = \{p \in  \mathbb{Q} : p < ac, a > 0, c> 0, a \in A, c \in C \} | 
+		\{\text{rest of } \mathbb{Q} \} 
+	\]
+	From this construction it is apparent that $ac < 1$. Hence from the idea of cuts we know that $x y = 1^{*}$, because for any $p \in  x y$ we have $p \in 1^{*}$. There does not exist an element $p \in 1^{*}$ such that $p \not\in xy $ because if $p < 1$, then $p < ac$ for some $a \in A$ and $c \in C$, so $p \in  xy$. 
+
+	\subsection{b} 
+	If $x< 0^{*}$ such that $x = A |B$ then there exists $-x$ such that $-x = A^{*} | B^{*}$ and $-x > 0^{*}$. Let's define $- y > 0^{*}$ where $- y = C^{*} | D^{*}$ and we define $C^{*}$ the same way we defined $C$ in the previous solution. 
+	\[
+	C ^{*} = \{p \in \mathbb{Q} : pq < 1  \mid \forall q \in A\} 
+	\] 
+	$D^{*} = C^{*C}$. We know that $C$ is a valid cut. From our $-y$ we can take it's additive inverse in $y = C  \mid D$. We know this value must exist. Finally because $-y > 0^{*}$ we know that $y < 0^{*}$ and from here we use the definition of a cut multiplication 
+	\[
+	x y = (-x) (-y) , \quad x < 0^{*} \text{ and } y < 0^{*}
+	\] 
+	Because our new values of $-x $ and $-y$ are equivalent to previous solution, we can draw along the line of last solution. 
+
+	\subsection{c}
+	Suppose $x$ has two multiplicative inverses $y_1$ and $y_2$ such that $xy_1 = 1$ and $x y_2 = 1$. Suppose for sake of contradiction that they are not equal to each other. Because $\mathbb{R}$ is an ordered field, $y_1 > y_2$ (without loss of generality) we can define
+	\[
+	y_1 = C_1 | D_1
+	\] \[
+	y_2 = C_2 | D_2
+	\] 
+	then $C_2 \subset C_1$ but they are not equal. Implying existance of $r \in \mathbb{Q}$ such that $r \in  C_1$ and $r \not\in C_2$. 
+
+	If $x > 0^{*}$, we have $rp < 1$ for all $p \in A$ based on the construction of $C_1$. However the construction of $C_2$ says that $r$ should therefore also be in $C_2$ which is a contradiction. If $x< 0^{*}$ we use the exact same way of proving but with $rp > 1$ for all $p \in A$. 
+\newpage
+\section{Problem 03}
+\subsection{a} 
+	From definition $b$ being $\text{lub}(S)$, $\forall s \in S$
+	\[
+	b \ge  s 
+	\]
+	Given $\epsilon > 0$, $b - \epsilon$ is not an upper bound because 
+	\[
+	b - \epsilon  < b
+	\] 
+	Thus there must exist $s \in  S$ such that $s \ge  b - \epsilon$ and hence
+	\[
+	b - \epsilon \le  s \le  b
+	\]
+
+\subsection{b} 
+	Counter-example. $S = \{1,2\} $ where $\text{lub}(S) = 2$. If $\epsilon \le 1$, there doesn't exist any $s$ in $S$ such that $b - \epsilon < s < b$. Hence the statement is not true.
+
+\subsection{c} 
+	By definition if $x = A | B$, then for any $a \in A$, $x > a$ as $x \in \mathbb{R}$.
+
+	Now let's say that $x$ is NOT the least upper bound, then there must exist some $y$ such that $y < x$ and is another upper bound. But from the definition of cuts, $y = C | D$, and then $ C \subset A$ because $y  < x$, and $C \neq A$.    
+
+	$y$ being upper bound, $\forall  a \in A$, then there exist $c \in C$ such that $c > a$. But this would end up meaning $a \in C$ and hence $A \subset C$. This is a contradiction, hence $x$ must be the least upper bound.   
+\newpage
+\section{Problem 04} 
+	Take $x = A | B$ where $A = \{r \in \mathbb{Q} | r < 0 \text{ or } r^2 < 2\} $ then by doing cut multiplication
+	\[
+	x^2 = E |F 
+	\]
+	\[
+	E = \{p \subset \mathbb{Q} |r_1 \in A, r_2 \in A, r_1 > 0, r_2 > 0,   p < r_1 \cdot  r_2\} 
+	\] 
+	\[
+	F = E^{c}
+	\] 
+	Proving $E|F = 2^{*}$ would prove $x = \sqrt{2} $. 
+
+	As $r_1^2 < 2$ and $r_2 ^2 < 2$ then $(r_1^2)(r_2^2) < (2\cdot 2)$ that gives us $(r_1 r_2)^2 < 4$ and $r_1 r_2 < 2$. That proves that $E|F$ is a cut of $2$ and $x = \sqrt{2} $.
+
+\newpage	
+\section{Problem 05} 
+The greatest lower bound property of real numbers is that if $S \subset \mathbb{R}$, $s \neq \varnothing$, and $S$ has a lower bound  (a value of $x \in \mathbb{R}$ such that $x \le s \,\text{ where } \forall s \in S$), then $S$ has also a greatest lower bound. If $x$ is the greatest lower bound of $S$, and $x' > x$ then  $x'$ is not a lower bound. 
+
+We can proof this in the following. 
+
+Let's have a set $S$ that is a subset of real number. Let's say that $S$ is bounded below that means there exists $L$ such that any element $s \in S$ satisfies $L \le  s$. Let's define 
+\[
+B := \{b \in \mathbb{R} | b \text{ is a lower bound of S}\} 
+\] 
+As we defined $S$ has a bound in the bottom, $B$ is non-empty. 
+
+Furthermore, this whole set $B$ in and of itself is the set of all lower bound of $S$. Any member $b \in B$ satisfies $b \le s$ where any element $s \in S$. 
+
+But conversely, every element of $S$ is an upper bound of the set $B$. This apparently means the least upper bound $\text{lub}(B)$ exists. Now lets say $x$ is $\text{lub}(B)$, then if $x' < x$ $x'$ is not $\text{lub}(B)$. But, this means that there eixsts $b \in B$ such that $b > x'$. Therefore $x'$ cannot be $\text{glb}(S)$ because $x' > x$ then $x' \not\in B$ and $x'$ is not a lower bound of S.
+
+\end{document}

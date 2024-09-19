@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2024.6.24)  7 SEP 2024 04:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2024.6.24)  7 SEP 2024 08:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**hw1.tex
-(./hw1.tex
+**hw01.tex
+(./hw01.tex
 LaTeX2e <2022-06-01> patch level 5
 L3 programming layer <2022-12-17>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
 \c@section=\count186
@@ -728,84 +728,7 @@ Package amsthm Warning: Unknown theoremstyle `derivationstyle' on input line 45
 (/usr/share/texlive/texmf-dist/tex/latex/import/import.sty
 Package: import 2020/04/01  v 6.2
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
-Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
-\c@tracingmulticols=\count322
-\mult@box=\box78
-\multicol@leftmargin=\dimen273
-\c@unbalance=\count323
-\c@collectmore=\count324
-\doublecol@number=\count325
-\multicoltolerance=\count326
-\multicolpretolerance=\count327
-\full@width=\dimen274
-\page@free=\dimen275
-\premulticols=\dimen276
-\postmulticols=\dimen277
-\multicolsep=\skip55
-\multicolbaselineskip=\skip56
-\partial@page=\box79
-\last@line=\box80
-\maxbalancingoverflow=\dimen278
-\mult@rightbox=\box81
-\mult@grightbox=\box82
-\mult@firstbox=\box83
-\mult@gfirstbox=\box84
-\@tempa=\box85
-\@tempa=\box86
-\@tempa=\box87
-\@tempa=\box88
-\@tempa=\box89
-\@tempa=\box90
-\@tempa=\box91
-\@tempa=\box92
-\@tempa=\box93
-\@tempa=\box94
-\@tempa=\box95
-\@tempa=\box96
-\@tempa=\box97
-\@tempa=\box98
-\@tempa=\box99
-\@tempa=\box100
-\@tempa=\box101
-\@tempa=\box102
-\@tempa=\box103
-\@tempa=\box104
-\@tempa=\box105
-\@tempa=\box106
-\@tempa=\box107
-\@tempa=\box108
-\@tempa=\box109
-\@tempa=\box110
-\@tempa=\box111
-\@tempa=\box112
-\@tempa=\box113
-\@tempa=\box114
-\@tempa=\box115
-\@tempa=\box116
-\@tempa=\box117
-\@tempa=\box118
-\@tempa=\box119
-\@tempa=\box120
-\c@minrows=\count328
-\c@columnbadness=\count329
-\c@finalcolumnbadness=\count330
-\last@try=\dimen279
-\multicolovershoot=\dimen280
-\multicolundershoot=\dimen281
-\mult@nat@firstbox=\box121
-\colbreak@box=\box122
-\mc@col@check@num=\count331
-)
-(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count332
-\float@exts=\toks48
-\float@box=\box123
-\@float@everytoks=\toks49
-\@floatcapt=\box124
-)
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 9
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/lm/ot1lmr.fd
@@ -813,70 +736,30 @@ File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count333
-\l__pdf_internal_box=\box125
+\l__color_backend_stack_int=\count322
+\l__pdf_internal_box=\box78
 )
 
 LaTeX Warning: Unused global option(s):
     [letter].
 
-(./hw1.aux
+(./hw01.aux)
+\openout1 = `hw01.aux'.
 
-LaTeX Warning: Label `fig:ss-c_n_01-png' multiply defined.
-
-
-LaTeX Warning: Label `fig:ss-c_n_01-png' multiply defined.
-
-
-LaTeX Warning: Label `fig:ss-c_n_001-png' multiply defined.
-
-
-LaTeX Warning: Label `fig:ss-c_n_01-png' multiply defined.
-
-
-LaTeX Warning: Label `fig:ss-c_n_01-png' multiply defined.
-
-
-LaTeX Warning: Label `fig:ss-c_n_01-png' multiply defined.
-
-
-LaTeX Warning: Label `fig:ss-c_n_001-png' multiply defined.
-
-
-LaTeX Warning: Label `fig:ss-c_n_01-png' multiply defined.
-
-
-LaTeX Warning: Label `fig:ss-c_n_01-png' multiply defined.
-
-
-LaTeX Warning: Label `fig:ss-c_n_01-png' multiply defined.
-
-
-LaTeX Warning: Label `fig:ss-speed01-png' multiply defined.
-
-
-LaTeX Warning: Label `fig:kdkdk' multiply defined.
-
-
-LaTeX Warning: Label `fig:ss-speed03-png' multiply defined.
-
-)
-\openout1 = `hw1.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -897,12 +780,12 @@ LaTeX Font Info:    ... okay on input line 9.
 * \topmargin=-52.36449pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=10.0pt
+* \topskip=12.0pt
 * \footskip=30.0pt
-* \marginparwidth=65.0pt
-* \marginparsep=11.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -914,17 +797,17 @@ LaTeX Font Info:    ... okay on input line 9.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count334
-\scratchdimen=\dimen282
-\scratchbox=\box126
-\nofMPsegments=\count335
-\nofMParguments=\count336
-\everyMPshowfont=\toks50
-\MPscratchCnt=\count337
-\MPscratchDim=\dimen283
-\MPnumerator=\count338
-\makeMPintoPDFobject=\count339
-\everyMPtoPDFconversion=\toks51
+\scratchcounter=\count323
+\scratchdimen=\dimen273
+\scratchbox=\box79
+\nofMPsegments=\count324
+\nofMParguments=\count325
+\everyMPshowfont=\toks48
+\MPscratchCnt=\count326
+\MPscratchDim=\dimen274
+\MPnumerator=\count327
+\makeMPintoPDFobject=\count328
+\everyMPtoPDFconversion=\toks49
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -934,235 +817,274 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count340
+\c@lstlisting=\count329
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
-\inpenc@prehook=\toks52
-\inpenc@posthook=\toks53
+\inpenc@prehook=\toks50
+\inpenc@posthook=\toks51
+)
+LaTeX Font Info:    Trying to load font information for OT1+qcr on input line 8
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/tex-gyre/ot1qcr.fd
+File: ot1qcr.fd 2009/09/25 v1.2 font definition file for OT1/qcr
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-10.
+9.
 
 (/usr/share/texlive/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-5.
+) (./hw01.toc
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
+.
 
 (/usr/share/texlive/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-15.
+2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-15.
+2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 15.
+(Font)              <12> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 15.
+(Font)              <8> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 15.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 15.
-
+(Font)              <6> on input line 2.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 38.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 38.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 38.
+))
+\tf@toc=\write4
+\openout4 = `hw01.toc'.
+
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<ss/graph-cn.png, id=58, 547.04375pt x 872.25874pt>
-File: ss/graph-cn.png Graphic file (type png)
-<use ss/graph-cn.png>
-Package pdftex.def Info: ss/graph-cn.png  used on input line 90.
-(pdftex.def)             Requested size: 300.29344pt x 478.82542pt.
- [2] [3 <./ss/graph-cn.png>] [4]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <20.74> on input line 119.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 119.
-<ss/c_n_001.png, id=73, 627.34375pt x 537.00626pt>
-File: ss/c_n_001.png Graphic file (type png)
-<use ss/c_n_001.png>
-Package pdftex.def Info: ss/c_n_001.png  used on input line 133.
-(pdftex.def)             Requested size: 225.21626pt x 192.7813pt.
-<ss/c_n_025.png, id=74, 628.3475pt x 542.025pt>
-File: ss/c_n_025.png Graphic file (type png)
-<use ss/c_n_025.png>
-Package pdftex.def Info: ss/c_n_025.png  used on input line 139.
-(pdftex.def)             Requested size: 225.21626pt x 194.26869pt.
-<ss/c_n_02.png, id=75, 627.34375pt x 538.01pt>
-File: ss/c_n_02.png Graphic file (type png)
-<use ss/c_n_02.png>
-Package pdftex.def Info: ss/c_n_02.png  used on input line 148.
-(pdftex.def)             Requested size: 225.21626pt x 193.14163pt.
-<ss/c_n_03.png, id=76, 625.33624pt x 537.00626pt>
-File: ss/c_n_03.png Graphic file (type png)
-<use ss/c_n_03.png>
-Package pdftex.def Info: ss/c_n_03.png  used on input line 154.
-(pdftex.def)             Requested size: 225.21626pt x 193.40404pt.
-
-Overfull \hbox (2.2222pt too wide) in paragraph at lines 129--159
-$[]$  $[]$ 
+Overfull \hbox (17.15692pt too wide) in paragraph at lines 23--25
+$\OML/lmm/m/it/12 q[]$ \OT1/qcr/m/n/12 is a nat-u-ral num-ber. This im-plies th
+at $\OML/lmm/m/it/12 p[]=k$ \OT1/qcr/m/n/12 is also a nat-u-ral num-ber.
  []
 
-[5 <./ss/c_n_001.png> <./ss/c_n_025.png> <./ss/c_n_02.png> <./ss/c_n_03.png>]
-<ss/graph-dn.png, id=85, 550.055pt x 941.5175pt>
-File: ss/graph-dn.png Graphic file (type png)
-<use ss/graph-dn.png>
-Package pdftex.def Info: ss/graph-dn.png  used on input line 199.
-(pdftex.def)             Requested size: 300.29344pt x 514.01477pt.
 
-[6] [7 <./ss/graph-dn.png>]
-<ss/d_n_03.png, id=94, 643.40375pt x 553.06625pt>
-File: ss/d_n_03.png Graphic file (type png)
-<use ss/d_n_03.png>
-Package pdftex.def Info: ss/d_n_03.png  used on input line 225.
-(pdftex.def)             Requested size: 225.21626pt x 193.59296pt.
-<ss/d_n_025.png, id=95, 638.385pt x 554.07pt>
-File: ss/d_n_025.png Graphic file (type png)
-<use ss/d_n_025.png>
-Package pdftex.def Info: ss/d_n_025.png  used on input line 231.
-(pdftex.def)             Requested size: 225.21626pt x 195.46611pt.
-<ss/d_n_02.png, id=96, 642.4pt x 550.055pt>
-File: ss/d_n_02.png Graphic file (type png)
-<use ss/d_n_02.png>
-Package pdftex.def Info: ss/d_n_02.png  used on input line 240.
-(pdftex.def)             Requested size: 225.21626pt x 192.84106pt.
-File: ss/d_n_03.png Graphic file (type png)
-<use ss/d_n_03.png>
-Package pdftex.def Info: ss/d_n_03.png  used on input line 246.
-(pdftex.def)             Requested size: 225.21626pt x 193.59296pt.
-
-Overfull \hbox (2.2222pt too wide) in paragraph at lines 221--251
-$[]$  $[]$ 
+Overfull \hbox (17.91579pt too wide) in paragraph at lines 36--38
+\OT1/qcr/m/n/12 Similarly like be-fore, we know that the left hand side is a na
+t-u-ral num-
  []
 
-[8 <./ss/d_n_03.png> <./ss/d_n_025.png> <./ss/d_n_02.png>]
-<ss/dx1.png, id=103, 647.41875pt x 557.08125pt>
-File: ss/dx1.png Graphic file (type png)
-<use ss/dx1.png>
-Package pdftex.def Info: ss/dx1.png  used on input line 256.
-(pdftex.def)             Requested size: 225.21626pt x 193.7913pt.
-<ss/dx2.png, id=104, 640.3925pt x 553.06625pt>
-File: ss/dx2.png Graphic file (type png)
-<use ss/dx2.png>
-Package pdftex.def Info: ss/dx2.png  used on input line 262.
-(pdftex.def)             Requested size: 225.21626pt x 194.50438pt.
-<ss/dx3.png, id=105, 637.38126pt x 551.05875pt>
-File: ss/dx3.png Graphic file (type png)
-<use ss/dx3.png>
-Package pdftex.def Info: ss/dx3.png  used on input line 271.
-(pdftex.def)             Requested size: 225.21626pt x 194.71489pt.
-<ss/dx4.png, id=106, 638.385pt x 552.0625pt>
-File: ss/dx4.png Graphic file (type png)
-<use ss/dx4.png>
-Package pdftex.def Info: ss/dx4.png  used on input line 277.
-(pdftex.def)             Requested size: 225.21626pt x 194.75789pt.
 
-Overfull \hbox (2.2222pt too wide) in paragraph at lines 253--282
-[]$[]$  $[]$ 
+Overfull \hbox (2.0046pt too wide) in paragraph at lines 36--38
+\OT1/qcr/m/n/12 ber. This is true for all $\OML/lmm/m/it/12 n$ \OT1/qcr/m/n/12 
+greater or equal to $\OT1/lmr/m/n/12 2$ \OT1/qcr/m/n/12 but it's triv-ial to
  []
 
-[9 <./ss/dx1.png> <./ss/dx2.png> <./ss/dx3.png> <./ss/dx4.png>]
-<ss/speed01.png, id=114, 374.39874pt x 728.7225pt>
-File: ss/speed01.png Graphic file (type png)
-<use ss/speed01.png>
-Package pdftex.def Info: ss/speed01.png  used on input line 290.
-(pdftex.def)             Requested size: 135.13112pt x 263.01817pt.
-<ss/speed02.png, id=115, 361.35pt x 727.71875pt>
-File: ss/speed02.png Graphic file (type png)
-<use ss/speed02.png>
-Package pdftex.def Info: ss/speed02.png  used on input line 299.
-(pdftex.def)             Requested size: 135.13112pt x 272.13878pt.
-<ss/speed03.png, id=116, 368.37625pt x 717.68124pt>
-File: ss/speed03.png Graphic file (type png)
-<use ss/speed03.png>
-Package pdftex.def Info: ss/speed03.png  used on input line 308.
-(pdftex.def)             Requested size: 135.13112pt x 263.2601pt.
-<ss/speed04.png, id=117, 381.425pt x 713.66624pt>
-File: ss/speed04.png Graphic file (type png)
-<use ss/speed04.png>
-Package pdftex.def Info: ss/speed04.png  used on input line 317.
-(pdftex.def)             Requested size: 135.13112pt x 252.83603pt.
-<ss/speed05.png, id=118, 367.3725pt x 673.51625pt>
-File: ss/speed05.png Graphic file (type png)
-<use ss/speed05.png>
-Package pdftex.def Info: ss/speed05.png  used on input line 326.
-(pdftex.def)             Requested size: 135.13112pt x 247.74805pt.
-<ss/speed06.png, id=119, 383.4325pt x 728.7225pt>
-File: ss/speed06.png Graphic file (type png)
-<use ss/speed06.png>
-Package pdftex.def Info: ss/speed06.png  used on input line 335.
-(pdftex.def)             Requested size: 135.13112pt x 256.82468pt.
-<ss/speed07.png, id=120, 484.81125pt x 705.63625pt>
-File: ss/speed07.png Graphic file (type png)
-<use ss/speed07.png>
-Package pdftex.def Info: ss/speed07.png  used on input line 342.
-(pdftex.def)             Requested size: 400.38872pt x 582.79234pt.
- [10 <./ss/speed01.png> <./ss/speed02.png> <./ss/speed03.png> <./ss/speed04.png
-> <./ss/speed05.png> <./ss/speed06.png>] [11 <./ss/speed07.png>] [12] [13] [14]
-<ss/pauli-basis.png, id=145, 1083.04625pt x 739.76375pt>
-File: ss/pauli-basis.png Graphic file (type png)
-<use ss/pauli-basis.png>
-Package pdftex.def Info: ss/pauli-basis.png  used on input line 611.
-(pdftex.def)             Requested size: 400.38872pt x 273.48254pt.
- [15] [16 <./ss/pauli-basis.png>] [17] (./hw1.aux)
 
-LaTeX Warning: There were multiply-defined labels.
+Overfull \hbox (12.43086pt too wide) in paragraph at lines 40--42
+\OT1/qcr/m/n/12 i-ble by $\OML/lmm/m/it/12 k$\OT1/qcr/m/n/12 . This is a con-tr
+a-dic-tion be-cause $\OML/lmm/m/it/12 p; q$ \OT1/qcr/m/n/12 are sup-pos-edly co
+-prime.
+ []
 
- ) 
+
+Overfull \hbox (3.5158pt too wide) in paragraph at lines 44--45
+\OT1/qcr/m/n/12 We have proved that the roots are in no way ra-tio-nal. We can 
+pos-si-bly
+ []
+
+
+Overfull \hbox (32.31578pt too wide) in paragraph at lines 44--45
+\OT1/qcr/m/n/12 have nat-u-ral num-bers which are roots, and from the proof abo
+ve, ir-ra-tional
+ []
+
+[2]
+Overfull \hbox (0.421pt too wide) in paragraph at lines 59--61
+\OT1/qcr/m/n/12 From this con-struc-tion it is ap-par-ent that $\OML/lmm/m/it/1
+2 ac < \OT1/lmr/m/n/12 1$\OT1/qcr/m/n/12 . Hence from the idea
+ []
+
+
+Overfull \hbox (6.57237pt too wide) in paragraph at lines 59--61
+\OT1/qcr/m/n/12 of cuts we know that $\OML/lmm/m/it/12 xy \OT1/lmr/m/n/12 = 1[]
+$\OT1/qcr/m/n/12 , be-cause for any $\OML/lmm/m/it/12 p \OMS/lmsy/m/n/12 2 \OML
+/lmm/m/it/12 xy$ \OT1/qcr/m/n/12 we have $\OML/lmm/m/it/12 p \OMS/lmsy/m/n/12 2
+ \OT1/lmr/m/n/12 1[]$\OT1/qcr/m/n/12 . There
+ []
+
+
+Overfull \hbox (1.37927pt too wide) in paragraph at lines 63--64
+\OT1/qcr/m/n/12 If $\OML/lmm/m/it/12 x < \OT1/lmr/m/n/12 0[]$ \OT1/qcr/m/n/12 s
+uch that $\OML/lmm/m/it/12 x \OT1/lmr/m/n/12 = \OML/lmm/m/it/12 A\OMS/lmsy/m/n/
+12 j\OML/lmm/m/it/12 B$ \OT1/qcr/m/n/12 then there ex-ists $\OMS/lmsy/m/n/12 ^^
+@\OML/lmm/m/it/12 x$ \OT1/qcr/m/n/12 such that $\OMS/lmsy/m/n/12 ^^@\OML/lmm/m/
+it/12 x \OT1/lmr/m/n/12 = \OML/lmm/m/it/12 A[]\OMS/lmsy/m/n/12 j\OML/lmm/m/it/1
+2 B[]$ \OT1/qcr/m/n/12 and
+ []
+
+
+Overfull \hbox (7.55655pt too wide) in paragraph at lines 66--68
+$\OML/lmm/m/it/12 D[] \OT1/lmr/m/n/12 = \OML/lmm/m/it/12 C[]$\OT1/qcr/m/n/12 . 
+We know that $\OML/lmm/m/it/12 C$ \OT1/qcr/m/n/12 is a valid cut. From our $\OM
+S/lmsy/m/n/12 ^^@\OML/lmm/m/it/12 y$ \OT1/qcr/m/n/12 we can take it's
+ []
+
+
+Overfull \hbox (20.6192pt too wide) in paragraph at lines 70--72
+\OT1/qcr/m/n/12 Because our new val-ues of $\OMS/lmsy/m/n/12 ^^@\OML/lmm/m/it/1
+2 x$ \OT1/qcr/m/n/12 and $\OMS/lmsy/m/n/12 ^^@\OML/lmm/m/it/12 y$ \OT1/qcr/m/n/
+12 are equiv-a-lent to pre-vi-ous so-lu-tion,
+ []
+
+
+Overfull \hbox (5.18773pt too wide) in paragraph at lines 74--75
+\OT1/qcr/m/n/12 Suppose $\OML/lmm/m/it/12 x$ \OT1/qcr/m/n/12 has two mul-ti-pli
+ca-tive in-verses $\OML/lmm/m/it/12 y[]$ \OT1/qcr/m/n/12 and $\OML/lmm/m/it/12 
+y[]$ \OT1/qcr/m/n/12 such that $\OML/lmm/m/it/12 xy[] \OT1/lmr/m/n/12 = 1$ \OT1
+/qcr/m/n/12 and
+ []
+
+
+Overfull \hbox (12.94604pt too wide) in paragraph at lines 74--75
+\OT1/qcr/m/n/12 each other. Be-cause $\U/msb/m/n/12 R$ \OT1/qcr/m/n/12 is an or
+-dered field, $\OML/lmm/m/it/12 y[] > y[]$ \OT1/qcr/m/n/12 (with-out loss of ge
+n-
+ []
+
+
+Overfull \hbox (0.69373pt too wide) in paragraph at lines 82--83
+\OT1/qcr/m/n/12 How-ever the con-struc-tion of $\OML/lmm/m/it/12 C[]$ \OT1/qcr/
+m/n/12 says that $\OML/lmm/m/it/12 r$ \OT1/qcr/m/n/12 should there-fore also be
+ in
+ []
+
+
+Overfull \hbox (20.97969pt too wide) in paragraph at lines 82--83
+\OML/lmm/m/it/12 C[]$ \OT1/qcr/m/n/12 which is a con-tra-dic-tion. If $\OML/lmm
+/m/it/12 x < \OT1/lmr/m/n/12 0[]$ \OT1/qcr/m/n/12 we use the ex-act same way of
+ prov-
+ []
+
+[3] [4]
+Overfull \hbox (2.99283pt too wide) in paragraph at lines 105--106
+[]\OT1/qcr/m/n/12 Now let's say that $\OML/lmm/m/it/12 x$ \OT1/qcr/m/n/12 is NO
+T the least up-per bound, then there must ex-
+ []
+
+
+Overfull \hbox (16.7175pt too wide) in paragraph at lines 105--106
+\OT1/qcr/m/n/12 ist some $\OML/lmm/m/it/12 y$ \OT1/qcr/m/n/12 such that $\OML/l
+mm/m/it/12 y < x$ \OT1/qcr/m/n/12 and is an-other up-per bound. But from the de
+f-
+ []
+
+
+Overfull \hbox (1.20688pt too wide) in paragraph at lines 107--108
+[]$\OML/lmm/m/it/12 y$ \OT1/qcr/m/n/12 be-ing up-per bound, $\OMS/lmsy/m/n/12 8
+\OML/lmm/m/it/12 a \OMS/lmsy/m/n/12 2 \OML/lmm/m/it/12 A$\OT1/qcr/m/n/12 , then
+ there ex-ist $\OML/lmm/m/it/12 c \OMS/lmsy/m/n/12 2 \OML/lmm/m/it/12 C$ \OT1/q
+cr/m/n/12 such that $\OML/lmm/m/it/12 c > a$\OT1/qcr/m/n/12 . But
+ []
+
+[5] [6]
+Overfull \hbox (3.71432pt too wide) in paragraph at lines 126--127
+\OT1/qcr/m/n/12 The great-est lower bound prop-erty of real num-bers is that if
+ $\OML/lmm/m/it/12 S \OMS/lmsy/m/n/12 ^^Z \U/msb/m/n/12 R$\OT1/qcr/m/n/12 , $\O
+ML/lmm/m/it/12 s \OMS/lmsy/m/n/12 6\OT1/lmr/m/n/12 =
+ []
+
+
+Overfull \hbox (11.64268pt too wide) in paragraph at lines 126--127
+\OML/lmm/m/it/12 S$\OT1/qcr/m/n/12 ), then $\OML/lmm/m/it/12 S$ \OT1/qcr/m/n/12
+ has also a great-est lower bound. If $\OML/lmm/m/it/12 x$ \OT1/qcr/m/n/12 is t
+he great-est lower
+ []
+
+
+Overfull \hbox (19.36565pt too wide) in paragraph at lines 130--131
+[]\OT1/qcr/m/n/12 Let's have a set $\OML/lmm/m/it/12 S$ \OT1/qcr/m/n/12 that is
+ a sub-set of real num-ber. Let's say that $\OML/lmm/m/it/12 S$ \OT1/qcr/m/n/12
+ is
+ []
+
+
+Overfull \hbox (10.83636pt too wide) in paragraph at lines 130--131
+\OT1/qcr/m/n/12 bounded be-low that means there ex-ists $\OML/lmm/m/it/12 L$ \O
+T1/qcr/m/n/12 such that any el-e-ment $\OML/lmm/m/it/12 s \OMS/lmsy/m/n/12 2 \O
+ML/lmm/m/it/12 S$ \OT1/qcr/m/n/12 sat-
+ []
+
+
+Overfull \hbox (5.84766pt too wide) in paragraph at lines 136--137
+[]\OT1/qcr/m/n/12 Furthermore, this whole set $\OML/lmm/m/it/12 B$ \OT1/qcr/m/n
+/12 in and of it-self is the set of all lower
+ []
+
+
+Overfull \hbox (20.97258pt too wide) in paragraph at lines 138--139
+[]\OT1/qcr/m/n/12 But con-versely, ev-ery el-e-ment of $\OML/lmm/m/it/12 S$ \OT
+1/qcr/m/n/12 is an up-per bound of the set $\OML/lmm/m/it/12 B$\OT1/qcr/m/n/12 
+. This
+ []
+
+
+Overfull \hbox (14.46336pt too wide) in paragraph at lines 138--139
+\OT1/qcr/m/n/12 ap-par-ently means the least up-per bound $[]\OT1/lmr/m/n/12 (\
+OML/lmm/m/it/12 B\OT1/lmr/m/n/12 )$ \OT1/qcr/m/n/12 ex-ists. Now lets say $\OML
+/lmm/m/it/12 x$ \OT1/qcr/m/n/12 is
+ []
+
+
+Overfull \hbox (17.50446pt too wide) in paragraph at lines 138--139
+[]\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 B\OT1/lmr/m/n/12 )$\OT1/qcr/m/n/12 , then i
+f $\OML/lmm/m/it/12 x[] < x$ $x[]$ \OT1/qcr/m/n/12 is not $[]\OT1/lmr/m/n/12 (\
+OML/lmm/m/it/12 B\OT1/lmr/m/n/12 )$\OT1/qcr/m/n/12 . But, this means that there
+ eixsts
+ []
+
+[7] (./hw01.aux) ) 
 Here is how much of TeX's memory you used:
- 22787 strings out of 476182
- 488004 string characters out of 5796581
- 1873793 words of memory out of 6000000
- 42610 multiletter control sequences out of 15000+600000
- 575537 words of font info for 83 fonts, out of 8000000 for 9000
+ 22428 strings out of 476182
+ 482006 string characters out of 5796581
+ 1858793 words of memory out of 6000000
+ 42285 multiletter control sequences out of 15000+600000
+ 546155 words of font info for 60 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 114i,15n,118p,479b,290s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texli
-ve/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texlive/texmf-dist/f
-onts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/
-lm/lm-mathex.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbx12.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/lm/lmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi
-5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/lm/lmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr5.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/lm/lmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/lm/lmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmss1
-7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on hw1.pdf (17 pages, 990441 bytes).
+ 114i,6n,118p,466b,261s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathex.e
+nc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texl
+ive/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texlive/texmf-dist/
+fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips
+/tex-gyre/q-rmm.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbx12
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/lm/lmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr8
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/tex-gyr
+e/qcrb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/tex-gyre/qcrr.pfb>
+
+Output written on hw01.pdf (7 pages, 200217 bytes).
 PDF statistics:
- 236 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
+ 137 PDF objects out of 1000 (max. 8388607)
+ 77 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 262 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
