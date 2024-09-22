@@ -1,0 +1,176 @@
+\documentclass[12pt,letter]{article}
+\usepackage[monocolor]{../math232/ahsansabit}
+\usepackage{mathtools}
+\newtagform{nowidth}{\llap\bgroup(}{)\egroup}
+\title{Classical Mechanics : : Homework 04}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Problem 01} 
+\begin{align*}
+	\boxed{
+\ddot{x}  + 2 \gamma \dot{x} +  \omega_0^2 x = C e^{i \omega t}
+}\to  	x(t) &= e^{- \gamma t} 
+\left(
+A e^{t \sqrt{\gamma^2 - \omega_0^2} } 
++ 
+B e^{-t \sqrt{\gamma^2 - \omega_0^2} }
+\right) 
++ 
+\left(
+\frac{C}{- \omega^2 + 2 i \gamma \omega + \omega_0^2} \right)
+e^{i \omega t} \\
+	 &= e^{- \gamma t} 
+A e^{t \sqrt{\gamma^2 - \omega_0^2} } 
++ 
+e^{- \gamma t}
+B e^{-t \sqrt{\gamma^2 - \omega_0^2} }
++ 
+\left(
+\frac{C}{- \omega^2 + 2 i \gamma \omega + \omega_0^2} \right)
+e^{i \omega t} \\
+	 &= 
+	 A e^{t [ \sqrt{\gamma^2 - \omega_0^2} - \gamma ] } 
++ 
+B e^{-t [\sqrt{\gamma^2 - \omega_0^2}+ \gamma]  }
++ 
+\left(
+\frac{C}{- \omega^2 + 2 i \gamma \omega + \omega_0^2} \right)
+e^{i \omega t} 
+\end{align*}
+\[
+\sqrt{\gamma^2 - \omega_0^2 }  - \gamma < 0  \implies \text{ for } t \to  \infty \implies
+	 A e^{t [ \sqrt{\gamma^2 - \omega_0^2} - \gamma ] } 
++ 
+B e^{-t [\sqrt{\gamma^2 - \omega_0^2}+ \gamma]  } \to  0
+\] 
+\begin{equation*}
+	\therefore
+	\lim_{t \to \infty} x(t) = \left(\frac{C}{- \omega^2 + 2i \gamma \omega + \omega_0^2}\right) e^{i \omega t} \tag{steady state solution}
+\end{equation*}
+
+\subsection*{a} 
+External driving force 
+\[ F = C e^{i \omega t}
+\]
+Work done with proper change of coordinates from $\mathrm{d} x$ to $\mathrm{d} t$, we seek the time interval to be a full cycle $ t_i = 2 n \pi / \omega$ to $t_f = 2 (n+1) \pi / \omega$
+\begin{align*} 
+- W = 
+	\int_{x_i}^{x_f}  F \, \mathrm{d} x &=
+\int_{t_i}^{t_f}  F(t) \left(\frac{\mathrm{d} x}{\mathrm{d} t}\right) \, \mathrm{d} t \\
+&= 
+\int_{t_i}^{t_f} (C e^{i \omega t}) \left(\frac{\mathrm{d} }{\mathrm{d} t} 
+\left[\frac{C}{- \omega^2 + 2 i \gamma \omega + \omega_0^2} e^{i \omega t}
+\right]\right)  \, \mathrm{d} t \\ &=  
+\int_{t_i}^{t_f} (C e^{i \omega t}) \left(
+\frac{ i \omega C}{- \omega^2 + 2 i \gamma \omega + \omega_0^2} e^{i \omega t}
+\right)  \, \mathrm{d} t \\ 
+&= 
+\int_{t_i}^{t_f} 
+\frac{ i \omega C^2 }{- \omega^2 + 2 i \gamma \omega + \omega_0^2} 
+e^{2 i \omega t }
+\, \mathrm{d} t \\ &=
+\frac{ i \omega C^2 }{- \omega^2 + 2 i \gamma \omega + \omega_0^2} 
+\left(
+\frac{1}{2 i \omega } e^{2 i \omega t}   
+\right)\Biggr\rvert_{t_i}^{t_f}  
+\\		   &= 
+\frac{ C^2 }{ 2 (- \omega^2 + 2 i \gamma \omega + \omega_0^2)} 
+\left(
+e^{2 i \omega t_f }- e^{ 2 i \omega t_i}   
+\right) 
+\\		   &= 
+\frac{ C^2 }{ 2 (- \omega^2 + 2 i \gamma \omega + \omega_0^2)} 
+\left(
+	e^{2 i \omega [2(n+1) \pi / \omega }- e^{ 2 i \omega [2 n \pi / \omega ]}   
+\right)
+		   && \text{ where $n \in \mathbb{Z}^{+}, n \gg 1$}  \\
+		   &= 0 \\
+\end{align*} 
+
+\begin{align*}
+	-W = \int_{x_i}^{x_f} F \, \mathrm{d} x &= \int_{t_i}^{t_f}   F(t) 
+	\left(\frac{\mathrm{d} x}{\mathrm{d} t}\right)\mathrm{d}  t \\
+	&= \int_{t_i}^{t_f} (C \cos(\omega t) ) 
+	\left( \frac{\mathrm{d} }{\mathrm{d} t} 
+		\left[ \frac{C}{- \omega^2 + 2 i \gamma \omega + \omega_0^2 } \cos (\omega t) \right] 
+	\right) \mathrm{d} t \\ 
+	&= \int_{t_i}^{t_f} (C \cos( \omega t) ) 
+	\left(
+\frac{ \omega C}{- \omega^2 + 2 i \gamma \omega + \omega_0^2 } (- \sin (\omega t )) 
+	\right) \mathrm{d} t\\ 
+	&= \frac{- \omega C^2 }{ - \omega^2 + 2 i \gamma \omega + \omega_0^2 } \int_{t_i}^{t_f}  \sin(\omega t) \cos (\omega t ) \mathrm{d}  t \\
+	&=  \frac{1}{2 } \frac{- \omega C^2 }{ - \omega^2 + 2 i \gamma \omega + \omega_0^2 } \int_{t_i}^{t_f}  \sin ( 2 \omega t  ) \mathrm{d}  t \\
+	&=  \frac{1}{2 } \frac{- \omega C^2 }{ - \omega^2 + 2 i \gamma \omega + \omega_0^2 } 
+	\left[ - \cos(2 \omega t) \cdot  \frac{1}{2} \right]_{t_i}^{t_f}  \\
+	&=  \frac{1}{4 } \frac{- \omega C^2 }{ - \omega^2 + 2 i \gamma \omega + \omega_0^2 } 
+\left[ - \cos\left(2 \omega \left( \frac{2(n+1)\pi}{\omega} \right)\right) + \cos 
+\left(
+2 \omega \left( \frac{2 n \pi }{\omega }\right)
+\right)\right]  \\ 
+	&= 0 
+\end{align*}
+\textbf{Comment:} This makes sense because the graph of $x(t)$ doesn't go up or down. It stays steady which gives us the sanity check of $W = 0$ for $t \to  \infty$. The driving force does positive work against the drag overshooting the mass, but then does negative work again to balance the overshoot and repeat. This is my intuition for the steady state. 
+
+\subsection*{b}
+\begin{align*}
+	W &= \int_{x_I}^{x_f} (-F) \, \mathrm{d} x  \\
+	  &= \int_{x_i}^{x_f}   \left(2\gamma \frac{\mathrm{d} x}{\mathrm{d} t} \right) \, \mathrm{d} x \\
+	  &= \int_{t_i}^{t_f}  2 \gamma \frac{\mathrm{d} x}{\mathrm{d} t} \frac{\mathrm{d} x}{\mathrm{d} t} \, \mathrm{d} t \\ 
+	  &=  \int_{t_i}^{t_f} 2 \gamma \left(\frac{\mathrm{d} x}{\mathrm{d} t}\right)^2 \mathrm{d} t \\ &= \int_{t_i}^{t_f}   2 \gamma \left(\frac{ - \omega C}{- \omega ^2 + 2 i \gamma \omega + \omega_0^2  }  \sin(\omega t) \right)^2 \mathrm{d} t\\ 
+	  &= 2 \gamma \left(\frac{ - \omega C}{- \omega^2 + 2 i \gamma \omega + \omega_0 ^2 } \right) ^2 \int_{t_i}^{t_f} \sin^2\left( \omega t \right) \, \mathrm{d} t  \\
+	  &= 2 \gamma \left(\frac{  - \omega C}{- \omega^2 + 2 i \gamma \omega + \omega_0 ^2 } \right) ^2 
+	  \left( \frac{\pi}{ \omega }\right) \\
+	  &= \frac{ 2 \pi  \gamma \omega C^2 }{\left(- \omega ^2 + 2 i \gamma \omega + \omega_0^2\right)^2 } \\
+\end{align*} 
+\[
+\frac{1}{2} m v^2(t) = K(t) \implies \Biggr\langle \frac{2 K(t)}{m} \Biggr\rangle = \langle v^2(t) \rangle 
+\] 
+\[
+x(t) = \frac{C}{- \omega^2 + 2 i \gamma \omega + \omega_0^2} \cos(\omega t)
+\]
+\begin{align*}
+x(t)	&=  A \cos \left( \omega t \right)\\
+v(t) &= - \omega A \sin( \omega t) \\
+v^2(t) &= \omega^2 A^2 \sin ^2 \left( \omega t\right) \\
+\langle v^2 (t) \rangle &= \frac{1}{2 } \omega ^2 A ^2  \\
+\langle K \rangle &= \frac{m}{4} \omega^2 A^2 \\ 
+&= \frac{m}{4} \omega ^2 C^2 \left(\frac{1}{- \omega^2 + 2 i \gamma \omega + \omega_0^2} \right) \left(\frac{1}{- \omega^2 - 2 i \gamma \omega + \omega_0^2}\right)\\
+&= \boxed{
+ \frac{m}{4} \left(\frac{\omega ^2 C^2 }{(\omega_0^2 - \omega^2 )^2 + \left(2  \gamma \omega\right) ^2}\right) }\\
+&=  	\frac{m}{4} \left(\frac{\omega ^2 C^2}{4 \gamma^2 \omega^2}\right) \tag{at resonance $\omega = \omega_0$} \\ &= \frac{m C^2}{16 \gamma^2 } \\
+\end{align*}
+For $\omega = n \omega_0$ 
+\begin{align*}
+	\langle K \rangle &= \frac{m}{4}
+ \frac{n^2 \omega_0 ^2 C^2}{\omega_0^{4} \left(1 - n^2\right) ^2 + 4 \gamma^2 n^2 \omega_0 ^2}
+	\\ &= \frac{m}{4} \frac{C^2}{\omega_0^2 \left(\frac{1 - n^2}{n}\right)^2 + 4 \gamma^2 } \\
+\end{align*}
+
+For one octave higher, 
+\[
+\frac{1 - n^2}{n} = \frac{1 - 2^2}{2} = \frac{1 - 4}{2} = - \frac{3}{2} 
+\] 
+For one octave lower, 
+\[ \frac{1 - n^2}{n} = 
+	\frac{1 - (1 / 2)^2 }{(1 / 2)} =  \frac{1 - \frac{1}{4}}{\frac{1}{2}} = \frac{\frac{3}{4}}{\frac{1}{2}} = \frac{3}{2} 
+\]
+Let any higher octave be called $2^k = N$ and a lower octave by same distance be $2^{-k} = n$. Then it's obvious, 
+\[ \frac{1- N^2}{N} =  
+	\frac{1 - 2^{2k}}{2^k} = 2^{k} (2^{-k} - 2^k) \frac{1}{2^k} = \frac{1}{2^{-k}} (2^{-2k} - 1  ) = - \frac{1 - (2^{-k})^2}{2^{-k}}  = - \frac{1 - n^2}{n} 
+\]{  
+\[
+\implies \left(\frac{1-N^2}{N}\right)^2 = \left( - \frac{1-n^2}{n}		\right)^2
+\implies \langle K (\omega = 2^{k} \omega_0) \rangle  = 
+\langle K( \omega = 2^{-k}\omega_0)  \rangle 
+\]Hence we proved for two equally distant octaves the kinetic energy satisfies
+\[
+\boxed{
+\langle K (2^{k} \omega_0) \rangle = 
+\langle K (2^{-k} \omega_0) \rangle 
+}
+\] 
+\end{document}

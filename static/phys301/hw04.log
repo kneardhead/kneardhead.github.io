@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2024.6.24)  19 SEP 2024 21:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2024.6.24)  22 SEP 2024 14:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**hw3.tex
-(./hw3.tex
+**hw04.tex
+(./hw04.tex
 LaTeX2e <2022-06-01> patch level 5
 L3 programming layer <2022-12-17>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
 \c@section=\count186
@@ -728,123 +728,36 @@ Package amsthm Warning: Unknown theoremstyle `derivationstyle' on input line 45
 (/usr/share/texlive/texmf-dist/tex/latex/import/import.sty
 Package: import 2020/04/01  v 6.2
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplots.sty
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
-Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2022/06/29 v1.29 mathematical typesetting tools
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks48
-\t@pgfplots@tokb=\toks49
-\t@pgfplots@tokc=\toks50
-\pgfplots@tmpa=\dimen273
-\c@pgfplots@coordindex=\count322
-\c@pgfplots@scanlineindex=\count323
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code
-.tex))
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.t
-ex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
-gfsupp_loader.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex
-))
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotslists
-tructure.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotslists
-tructureext.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray
-.code.tex
-\c@pgfplotsarray@tmp=\count324
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count322
+\calc@Bcount=\count323
+\calc@Adimen=\dimen273
+\calc@Bdimen=\dimen274
+\calc@Askip=\skip55
+\calc@Bskip=\skip56
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count324
+\calc@Cskip=\skip57
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatri
-x.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshare
-d.code.tex
-\c@pgfplotstable@counta=\count325
-\t@pgfplotstable@a=\toks51
+(/usr/share/texlive/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque
-.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.te
-x
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.co
-de.tex))
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code
-.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.sur
-fshading.code.tex
-\c@pgfplotslibrarysurf@no=\count326
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surf
-shading.pgfsys-pdftex.def)))
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.
-tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex
-))
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.t
-ex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.t
-ex
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.cod
-e.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.
-tex)))
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.cod
-e.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex
-) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex
-) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibrarydecorations.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.cod
-e.tex
-\pgfdecoratedcompleteddistance=\dimen274
-\pgfdecoratedremainingdistance=\dimen275
-\pgfdecoratedinputsegmentcompleteddistance=\dimen276
-\pgfdecoratedinputsegmentremainingdistance=\dimen277
-\pgf@decorate@distancetomove=\dimen278
-\pgf@decorate@repeatstate=\count327
-\pgfdecorationsegmentamplitude=\dimen279
-\pgfdecorationsegmentlength=\dimen280
-)
-\tikz@lib@dec@box=\box78
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibrarydecorations.pathmorphing.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
-decorations.pathmorphing.code.tex))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibrarydecorations.pathreplacing.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
-decorations.pathreplacing.code.tex))
-(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.co
-ntourlua.code.tex)
-\pgfplots@numplots=\count328
-\pgfplots@xmin@reg=\dimen281
-\pgfplots@xmax@reg=\dimen282
-\pgfplots@ymin@reg=\dimen283
-\pgfplots@ymax@reg=\dimen284
-\pgfplots@zmin@reg=\dimen285
-\pgfplots@zmax@reg=\dimen286
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibraryplotmarks.code.tex
-File: tikzlibraryplotmarks.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.co
-de.tex
-File: pgflibraryplotmarks.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-))) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count329
-\float@exts=\toks52
-\float@box=\box79
-\@float@everytoks=\toks53
-\@floatcapt=\box80
+\g_MT_multlinerow_int=\count325
+\l_MT_multwidth_dim=\dimen275
+\origjot=\skip58
+\l_MT_shortvdotswithinadjustabove_dim=\dimen276
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen277
+\l_MT_above_intertext_sep=\dimen278
+\l_MT_below_intertext_sep=\dimen279
+\l_MT_above_shortintertext_sep=\dimen280
+\l_MT_below_shortintertext_sep=\dimen281
+\xmathstrut@box=\box78
+\xmathstrut@dim=\dimen282
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 9
 .
@@ -854,19 +767,15 @@ File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count330
-\l__pdf_internal_box=\box81
+\l__color_backend_stack_int=\count326
+\l__pdf_internal_box=\box79
 )
 
 LaTeX Warning: Unused global option(s):
     [letter].
 
-(./hw3.aux
-
-LaTeX Warning: Label `fig:ss-ncl01-png' multiply defined.
-
-)
-\openout1 = `hw3.aux'.
+(./hw04.aux)
+\openout1 = `hw04.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
@@ -902,12 +811,12 @@ LaTeX Font Info:    ... okay on input line 9.
 * \topmargin=-52.36449pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=10.0pt
+* \topskip=12.0pt
 * \footskip=30.0pt
-* \marginparwidth=65.0pt
-* \marginparsep=11.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -919,17 +828,17 @@ LaTeX Font Info:    ... okay on input line 9.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count331
-\scratchdimen=\dimen287
-\scratchbox=\box82
-\nofMPsegments=\count332
-\nofMParguments=\count333
-\everyMPshowfont=\toks54
-\MPscratchCnt=\count334
-\MPscratchDim=\dimen288
-\MPnumerator=\count335
-\makeMPintoPDFobject=\count336
-\everyMPtoPDFconversion=\toks55
+\scratchcounter=\count327
+\scratchdimen=\dimen283
+\scratchbox=\box80
+\nofMPsegments=\count328
+\nofMParguments=\count329
+\everyMPshowfont=\toks48
+\MPscratchCnt=\count330
+\MPscratchDim=\dimen284
+\MPnumerator=\count331
+\makeMPintoPDFobject=\count332
+\everyMPtoPDFconversion=\toks49
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -939,122 +848,89 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count337
+\c@lstlisting=\count333
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
-\inpenc@prehook=\toks56
-\inpenc@posthook=\toks57
+\inpenc@prehook=\toks50
+\inpenc@posthook=\toks51
 )
-
-Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
-ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
-your preamble.
- on input line 9.
-
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
 10.
+
 (/usr/share/texlive/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (./hw3.toc
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-.
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-2.
+13.
 
 (/usr/share/texlive/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-2.
+13.
 
 (/usr/share/texlive/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 2.
+(Font)              <12> on input line 13.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 2.
+(Font)              <8> on input line 13.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 2.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
+(Font)              <6> on input line 13.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 13.
+
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 13.
+
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
-\tf@toc=\write4
-\openout4 = `hw3.toc'.
+) [1
 
- [1
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] (./hw04.aux) )
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-7.
+(\end occurred inside a group at level 1)
 
-(/usr/share/texlive/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [2] [3] [4] [5] [6]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-[7] [8]
-<ss/ncl01.png, id=81, 852.18375pt x 822.07124pt>
-File: ss/ncl01.png Graphic file (type png)
-<use ss/ncl01.png>
-Package pdftex.def Info: ss/ncl01.png  used on input line 323.
-(pdftex.def)             Requested size: 250.24199pt x 241.39252pt.
- [9 <./ss/ncl01.png>]
-<ss/ncl02.png, id=87, 742.775pt x 873.2625pt>
-File: ss/ncl02.png Graphic file (type png)
-<use ss/ncl02.png>
-Package pdftex.def Info: ss/ncl02.png  used on input line 332.
-(pdftex.def)             Requested size: 250.24199pt x 294.20036pt.
-<ss/ncl03.png, id=88, 915.42pt x 884.30376pt>
-File: ss/ncl03.png Graphic file (type png)
-<use ss/ncl03.png>
-Package pdftex.def Info: ss/ncl03.png  used on input line 341.
-(pdftex.def)             Requested size: 250.24199pt x 241.73375pt.
- [10 <./ss/ncl02.png>] [11 <./ss/ncl03.png>]
-[12] (./hw3.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+### simple group (level 1) entered at line 164 ({)
+### bottom level 
 Here is how much of TeX's memory you used:
- 32972 strings out of 476182
- 835938 string characters out of 5796581
- 1869793 words of memory out of 6000000
- 52685 multiletter control sequences out of 15000+600000
- 547829 words of font info for 57 fonts, out of 8000000 for 9000
+ 23017 strings out of 476182
+ 493152 string characters out of 5796581
+ 1875793 words of memory out of 6000000
+ 42868 multiletter control sequences out of 15000+600000
+ 551793 words of font info for 62 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 114i,17n,118p,742b,2186s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/t
-exlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texlive/texmf-di
-st/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/
-lm/lm-mathex.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<
-/usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/lm/lmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/lm/lmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi5.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/lm/lmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/lm/lmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmss12.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/lm/lmsy7.pfb>
-Output written on hw3.pdf (12 pages, 400930 bytes).
+ 114i,13n,118p,461b,261s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
+}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texliv
+e/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texlive/texmf-dist/fo
+nts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texlive/texmf-dist/fonts/type1/publi
+c/lm/lmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmex10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/lm/lmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/lm/lmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr6.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/lm/lmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmsy8.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on hw04.pdf (4 pages, 187998 bytes).
 PDF statistics:
- 162 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
+ 130 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 172 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 157 words of extra memory for PDF output out of 10000 (max. 10000000)
 

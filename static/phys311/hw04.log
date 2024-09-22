@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2024.6.24)  19 SEP 2024 21:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2024.6.24)  22 SEP 2024 18:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**hw3.tex
-(./hw3.tex
+**hw04.tex
+(./hw04.tex
 LaTeX2e <2022-06-01> patch level 5
 L3 programming layer <2022-12-17>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -728,18 +728,26 @@ Package amsthm Warning: Unknown theoremstyle `derivationstyle' on input line 45
 (/usr/share/texlive/texmf-dist/tex/latex/import/import.sty
 Package: import 2020/04/01  v 6.2
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count322
+\float@exts=\toks48
+\float@box=\box78
+\@float@everytoks=\toks49
+\@floatcapt=\box79
+)
 (/usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplots.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
 Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks48
-\t@pgfplots@tokb=\toks49
-\t@pgfplots@tokc=\toks50
+\t@pgfplots@toka=\toks50
+\t@pgfplots@tokb=\toks51
+\t@pgfplots@tokc=\toks52
 \pgfplots@tmpa=\dimen273
-\c@pgfplots@coordindex=\count322
-\c@pgfplots@scanlineindex=\count323
+\c@pgfplots@coordindex=\count323
+\c@pgfplots@scanlineindex=\count324
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code
 .tex))
@@ -756,14 +764,14 @@ tructure.code.tex)
 tructureext.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray
 .code.tex
-\c@pgfplotsarray@tmp=\count324
+\c@pgfplotsarray@tmp=\count325
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatri
 x.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshare
 d.code.tex
-\c@pgfplotstable@counta=\count325
-\t@pgfplotstable@a=\toks51
+\c@pgfplotstable@counta=\count326
+\t@pgfplotstable@a=\toks53
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque
 .code.tex)
@@ -775,7 +783,7 @@ de.tex))
 .tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.sur
 fshading.code.tex
-\c@pgfplotslibrarysurf@no=\count326
+\c@pgfplotslibrarysurf@no=\count327
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surf
 shading.pgfsys-pdftex.def)))
@@ -807,11 +815,11 @@ e.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen276
 \pgfdecoratedinputsegmentremainingdistance=\dimen277
 \pgf@decorate@distancetomove=\dimen278
-\pgf@decorate@repeatstate=\count327
+\pgf@decorate@repeatstate=\count328
 \pgfdecorationsegmentamplitude=\dimen279
 \pgfdecorationsegmentlength=\dimen280
 )
-\tikz@lib@dec@box=\box78
+\tikz@lib@dec@box=\box80
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarydecorations.pathmorphing.code.tex
@@ -823,7 +831,7 @@ zlibrarydecorations.pathreplacing.code.tex
 decorations.pathreplacing.code.tex))
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.co
 ntourlua.code.tex)
-\pgfplots@numplots=\count328
+\pgfplots@numplots=\count329
 \pgfplots@xmin@reg=\dimen281
 \pgfplots@xmax@reg=\dimen282
 \pgfplots@ymin@reg=\dimen283
@@ -838,18 +846,10 @@ File: tikzlibraryplotmarks.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.co
 de.tex
 File: pgflibraryplotmarks.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-))) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count329
-\float@exts=\toks52
-\float@box=\box79
-\@float@everytoks=\toks53
-\@floatcapt=\box80
-)
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 9
+)))
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 8
 .
-
-(/usr/share/texlive/texmf-dist/tex/latex/lm/ot1lmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -861,27 +861,23 @@ File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
 LaTeX Warning: Unused global option(s):
     [letter].
 
-(./hw3.aux
+(./hw04.aux)
+\openout1 = `hw04.aux'.
 
-LaTeX Warning: Label `fig:ss-ncl01-png' multiply defined.
-
-)
-\openout1 = `hw3.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -950,111 +946,83 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
 your preamble.
- on input line 9.
+ on input line 8.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-10.
+9.
 (/usr/share/texlive/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (./hw3.toc
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-.
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+5.
 
 (/usr/share/texlive/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-2.
+15.
 
 (/usr/share/texlive/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-2.
+15.
 
 (/usr/share/texlive/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 2.
+(Font)              <10> on input line 15.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 2.
+(Font)              <7> on input line 15.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 2.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
+(Font)              <5> on input line 15.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 15.
+
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
+
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
-\tf@toc=\write4
-\openout4 = `hw3.toc'.
+) [1
 
- [1
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
+Overfull \hbox (32.10498pt too wide) detected at line 332
+[]
+ []
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-7.
-
-(/usr/share/texlive/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [2] [3] [4] [5] [6]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-[7] [8]
-<ss/ncl01.png, id=81, 852.18375pt x 822.07124pt>
-File: ss/ncl01.png Graphic file (type png)
-<use ss/ncl01.png>
-Package pdftex.def Info: ss/ncl01.png  used on input line 323.
-(pdftex.def)             Requested size: 250.24199pt x 241.39252pt.
- [9 <./ss/ncl01.png>]
-<ss/ncl02.png, id=87, 742.775pt x 873.2625pt>
-File: ss/ncl02.png Graphic file (type png)
-<use ss/ncl02.png>
-Package pdftex.def Info: ss/ncl02.png  used on input line 332.
-(pdftex.def)             Requested size: 250.24199pt x 294.20036pt.
-<ss/ncl03.png, id=88, 915.42pt x 884.30376pt>
-File: ss/ncl03.png Graphic file (type png)
-<use ss/ncl03.png>
-Package pdftex.def Info: ss/ncl03.png  used on input line 341.
-(pdftex.def)             Requested size: 250.24199pt x 241.73375pt.
- [10 <./ss/ncl02.png>] [11 <./ss/ncl03.png>]
-[12] (./hw3.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+[5] [6] [7] (./hw04.aux) ) 
 Here is how much of TeX's memory you used:
- 32972 strings out of 476182
- 835938 string characters out of 5796581
- 1869793 words of memory out of 6000000
- 52685 multiletter control sequences out of 15000+600000
- 547829 words of font info for 57 fonts, out of 8000000 for 9000
+ 32880 strings out of 476182
+ 833963 string characters out of 5796581
+ 1889793 words of memory out of 6000000
+ 52606 multiletter control sequences out of 15000+600000
+ 544518 words of font info for 55 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 114i,17n,118p,742b,2186s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/t
-exlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texlive/texmf-di
-st/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/
-lm/lm-mathex.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<
-/usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/lm/lmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/lm/lmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi5.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/lm/lmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/lm/lmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmss12.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/lm/lmsy7.pfb>
-Output written on hw3.pdf (12 pages, 400930 bytes).
+ 114i,20n,118p,764b,2182s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-
+mathsy.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/sh
+are/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texlive/tex
+mf-dist/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texlive/texmf-dist/fonts/t
+ype1/public/lm/lmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/
+lmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/lm/lmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/
+lmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/lm/lmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm
+/lmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/m
+sam10.pfb>
+Output written on hw04.pdf (7 pages, 195630 bytes).
 PDF statistics:
- 162 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
+ 136 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 172 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 157 words of extra memory for PDF output out of 10000 (max. 10000000)
 

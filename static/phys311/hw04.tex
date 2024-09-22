@@ -1,0 +1,404 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{../math232/ahsansabit}
+\usepackage[]{float}
+\usepackage[]{pgfplots}\title{Quantum Mechanics : : Homework 04}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+
+\section*{Problem 01}
+\subsection*{a} 
+I do the matrix multiplication by hand. 
+\begin{align*}
+	\hat{\sigma}_1 \hat{\sigma}_2  &= \begin{pmatrix} 0&1\\1&0 \end{pmatrix} 
+	\begin{pmatrix} 0&-i\\i&0 \end{pmatrix}  =
+	\begin{pmatrix} i&0\\0&-i \end{pmatrix} = i \hat{\sigma}_3 \\ 
+	\hat{\sigma}_2 \hat{\sigma}_1 &= \begin{pmatrix} 0&-i\\i&0 \end{pmatrix} 
+	\begin{pmatrix} 0&1\\1&0 \end{pmatrix} = \begin{pmatrix} -i&0\\0&i \end{pmatrix} = - i \hat{\sigma}_3 \\
+	\hat{\sigma_2}\hat{\sigma}_3 &= \begin{pmatrix} 0&-i\\i&0 \end{pmatrix} 
+	\begin{pmatrix} 1&0\\0&-1 \end{pmatrix} = 
+	\begin{pmatrix} 0&i\\i&0 \end{pmatrix} = i \hat{\sigma}_1
+	\\ \hat{\sigma_3}\hat{\sigma}_2 &= 	\begin{pmatrix} 1&0\\0&-1 \end{pmatrix}  
+	\begin{pmatrix} 0&-i\\i&0 \end{pmatrix} = 
+\begin{pmatrix} 0&-i\\-i&0 \end{pmatrix} = -i \hat{\sigma}_1 \\ 
+\hat{\sigma}_3 \hat{\sigma}_1  &= 
+\begin{pmatrix} 1&0\\0&-1  \end{pmatrix} 
+\begin{pmatrix} 0&1\\1&0 \end{pmatrix} 
+= \begin{pmatrix} 0&1\\-1&0 \end{pmatrix}  = i \hat{\sigma}_2 \\ 
+\hat{\sigma}_1 \hat{\sigma}_3  &= 
+\begin{pmatrix} 0&1\\1&0 \end{pmatrix} 
+\begin{pmatrix} 1&0\\0&-1  \end{pmatrix} 
+= \begin{pmatrix} 0&-1\\1&0 \end{pmatrix}  = -i \hat{\sigma}_2 \\ 
+\end{align*}
+The cross product 
+\begin{align*}
+	\hat{\vec{\sigma}} \times \hat{\vec{\sigma}} 
+&= \begin{vmatrix} \vec{n}_x & \vec{n}_y & \vec{n}_z \\
+\sigma_1 & \sigma_2 & \sigma_3 \\ 
+\sigma_1 & \sigma_2 & \sigma_3 \\ 
+\end{vmatrix}  \\
+	&= \vec{n}_x \left(\sigma_2 \sigma_3 - \sigma_3 \sigma_2\right) + \vec{n}_y \left(\sigma_3 \sigma_1 - \sigma_1 \sigma_3 \right) + \vec{n}_z \left(\sigma_1 \sigma_2 - \sigma_2 \sigma_1\right)  \\ 
+	&= \vec{n}_x (2 i \sigma_1) + \vec{n}_y \left( 2 i \sigma_2\right) + \vec{n}_z \left(2 i \sigma_3\right) \\
+	&= 2 i \left(\sigma_1 \vec{n}_x + \sigma_2 \vec{n}_y + \sigma_3 \vec{n}_z\right) \\
+	&= 2 i \hat{\vec{\sigma}} \\
+\end{align*}
+Note this also is alluring to the Levi-Civita Symbol because 
+\[ \text{cyclic }
+i \to j \to k \to i \to j \to  k \implies
+	\quad \sigma_i \sigma_j = i\epsilon_{ij} \sigma_k \tag{where $\{i,j,k\} \in \{1,2,3\} $ }
+\]
+
+
+
+
+
+\subsection*{a} 
+\begin{align*}
+	\left(\vec{U} \cdot  \hat{\vec{\sigma}}\right) 
+	\left(\vec{V} \cdot  \hat{\vec{\sigma}}\right) &= 
+	\left(U_1 \sigma_1 + U_2 \sigma_2 + U_3 \sigma_3\right)
+	\left(V_1 \sigma_1 + V_2 \sigma_2 + V_3 \sigma_3\right)\\
+\end{align*}
+
+\begin{align*}
+	\left(\vec{U} \cdot \hat{\vec{\sigma}}\right)
+	\left(\vec{V}\cdot \hat{\vec{\sigma}}\right) &= 
+	\left(\sum_{i= 1}^{3} U_i \sigma_i\right)
+	\left(\sum_{j=1}^{3} V_j \sigma_j\right) \\
+	&= 
+\sum_{i,j = 1}^{3} U_i V_j \sigma_i \sigma_j
+	\\
+	&= 
+\sum_{i,j = 1, i\neq j}^{3} U_i V_j \sigma_i \sigma_j + \sum_{n=1}^{3} U_n V_n \sigma_n \sigma_n 
+	\\ 
+	&= 
+	\sum_{i,j = 1, i\neq j}^{3} i U_i V_j \epsilon_{ij} \sigma_k + \sum_{n=1}^{3} U_n V_n \sigma_n \sigma_n 
+	\\ 
+	&= \left[  i(U_1 V_2 - U_2 V_1) \sigma_3 + i (U_2 U_3 - U_3 U_2) \sigma_1 + i (U_3 U_1 - U_1 U_3) \sigma_2  \right] + (U_1 V_1 + U_2 V_2 + U_3 V_3) \hat{I} \\ 
+	&= [ \vec{U} \times  \vec{V}]_3 i \sigma_3 + [ \vec{U} \times \vec{V}]_1 i \sigma_1 + 
+	[\vec{U} \times  \vec{V}]_2 i \sigma_2 + (\vec{U} \cdot \vec{V}) \hat{I}\\
+	&= i \left[ \vec{U} \times \vec{V}\right] \cdot \hat{\vec{\sigma}} + \left(\vec{U}\cdot \vec{V}\right) \hat{I} \\
+\end{align*}
+
+
+
+\newpage
+\section*{Problem 02}
+\subsection*{a} 
+Considering the simplest basis in column vector forms 
+\[
+| 1 \rangle = \begin{pmatrix} 1\\0\\0 \end{pmatrix} 
+\quad
+| 2 \rangle = \begin{pmatrix} 0\\1\\0 \end{pmatrix} 
+\quad
+| 3 \rangle = \begin{pmatrix} 0\\0\\1 \end{pmatrix} 
+\] 
+We want to compute the following operator $\hat{H}$ 
+\begin{align*}
+	\hat{H}= 
+	E_0\left(
+	| 1 \rangle \langle 1 |  + | 2 \rangle \langle 2 |  + | 3 \rangle \langle 3 | 
+	\right) - J
+	\left(
+	| 1 \rangle \langle 2 | + | 2 \rangle \langle 1  | +
+	| 2 \rangle \langle 3 | + | 3 \rangle \langle 2 | + 
+	| 3 \rangle \langle 1 | + | 1 \rangle \langle 3 |  
+	\right) 
+\end{align*}
+Matrices for the first term
+\begin{align*}
+	| 1 \rangle \langle 1 |  + | 2 \rangle \langle 2 |  + | 3 \rangle \langle 3 |  &
+= \begin{bmatrix} 1\\0\\0 \end{bmatrix} \begin{bmatrix} 1&0&0 \end{bmatrix} + 
+\begin{bmatrix} 0\\1\\0 \end{bmatrix} \begin{bmatrix} 0&1&0 \end{bmatrix} + 
+\begin{bmatrix} 0\\0\\1 \end{bmatrix} \begin{bmatrix} 0&0&1 \end{bmatrix} \\ 
+						       & =
+\begin{pmatrix} 1&0&0\\0&0&0\\0&0&0 \end{pmatrix} +
+\begin{pmatrix} 0&0&0\\0&1&0\\0&0&0 \end{pmatrix} + 
+\begin{pmatrix} 0&0&0\\0&0&0\\0&0&1 \end{pmatrix} \\  
+		 &= \begin{pmatrix} 1&0&0\\0&1&0\\0&0&1 \end{pmatrix} = \hat{I} 
+\end{align*}
+
+Matrices for the second term 
+\begin{align*}
+&	| 1 \rangle \langle 2 | + | 2 \rangle \langle 1  | +
+	| 2 \rangle \langle 3 | + | 3 \rangle \langle 2 | + 
+	| 3 \rangle \langle 1 | + | 1 \rangle \langle 3 |  \\ 
+	&= 
+	\begin{pmatrix} 1\\0\\0 \end{pmatrix} \begin{pmatrix} 0&1&0 \end{pmatrix} +
+	\begin{pmatrix} 0\\1\\0 \end{pmatrix} \begin{pmatrix} 1&0&0 \end{pmatrix}  +
+	\begin{pmatrix} 0\\1\\0 \end{pmatrix} \begin{pmatrix} 0&0&1 \end{pmatrix} + 
+	\begin{pmatrix} 0\\0\\1 \end{pmatrix} \begin{pmatrix} 0&1&0 \end{pmatrix} + 
+	\begin{pmatrix} 0\\0\\1 \end{pmatrix} \begin{pmatrix} 1&0&0 \end{pmatrix} + 
+	\begin{pmatrix} 1\\0\\0 \end{pmatrix} \begin{pmatrix} 0&0&1 \end{pmatrix} 
+	\\
+	&= 
+	\begin{bmatrix} 0&1&0\\0&0&0\\0&0&0 \end{bmatrix} + 
+	\begin{bmatrix} 0&0&0\\1&0&0\\0&0&0 \end{bmatrix} +
+	\begin{bmatrix} 0&0&0\\0&0&1\\0&0&0 \end{bmatrix} + 
+	\begin{bmatrix} 0&0&0\\0&0&0\\0&1&0 \end{bmatrix} + 
+	\begin{bmatrix} 0&0&0\\0&0&0\\1&0&0 \end{bmatrix} + 
+	\begin{bmatrix} 0&0&1\\0&0&0\\0&0&0 \end{bmatrix} 
+	\\
+	&= 
+	\begin{bmatrix} 0&1&1\\1&0&1\\1&1&0 \end{bmatrix} 
+	\\
+\end{align*}
+
+Put them all together 
+\begin{align*}
+	\hat{H} &= 
+	E_0\left(
+	| 1 \rangle \langle 1 |  + | 2 \rangle \langle 2 |  + | 3 \rangle \langle 3 | 
+	\right) - J
+	\left(
+	| 1 \rangle \langle 2 | + | 2 \rangle \langle 1  | +
+	| 2 \rangle \langle 3 | + | 3 \rangle \langle 2 | + 
+	| 3 \rangle \langle 1 | + | 1 \rangle \langle 3 |  
+	\right) \\ 
+		&= \begin{bmatrix} E_0&-J&-J\\-J&E_0&-J\\-J&-J&E_0 \end{bmatrix}  \\
+\end{align*}
+
+
+
+
+\subsection*{b (i)} 
+The $| E_1 \rangle $ in column vector representation 
+\[
+| E_1 \rangle  = \frac{1}{\sqrt{3} } \left(| 1 \rangle + | 2 \rangle + | 3 \rangle \right) = 
+	\frac{1}{\sqrt{3} } \begin{bmatrix} 1\\1\\1 \end{bmatrix}  
+\]
+
+Computing $\hat{H} | E_1 \rangle $
+\begin{align*}
+	\hat{H} | E_1 \rangle  &=  
+	\begin{bmatrix} E_0&-J&-J\\-J&E_0&-J\\-J&-J&E_0 \end{bmatrix} 
+	\left(
+\frac{1}{\sqrt{3} } \begin{bmatrix} 1\\1\\1 \end{bmatrix} 
+	\right)
+	\\
+	&= 
+\frac{1}{\sqrt{3} } 
+\begin{bmatrix} E_0 - J - J \\ -J + E_0 - J \\ - J - J + E_0  \end{bmatrix} 
+	\\
+	&= 
+\frac{1}{\sqrt{3} } 
+\begin{bmatrix} E_0 - 2J \\ E_0 - 2 J \\ E_0 - 2J  \end{bmatrix} 
+	\\ 
+	&= \frac{E_0 - 2J}{\sqrt{3} } \begin{bmatrix} 1\\1\\1 \end{bmatrix}  \\
+	&= \left(E_0 - 2J\right) | E_1 \rangle  
+\end{align*}
+We see the eigen-equation for the Hamiltonian 
+\[
+\hat{H} | E_1 \rangle  = E_1 | E_1 \rangle  \implies E_1 = E_0 - 2J
+\] 
+
+
+\subsection*{b (ii) and (iii)} 
+We algebraically initialize the elements of the matrix to minimize the computational effort by hand. Keep in mind that $\hat{H} - E \hat{I } = \hat{0} = \frac{1}{J} \hat{H} - \frac{1}{J} E \hat{I} $ hence 
+\begin{align*}
+	\frac{1}{J} \hat{H} &= 
+	\begin{bmatrix} \frac{E_0}{J} & -1 & -1 \\ -1 &  \frac{E_0}{J} & -1 \\ 
+	-1 & -1 &  \frac{E_0}{J}\end{bmatrix}  
+	\\
+		\left(\frac{1}{J} \hat{H}\right) - \frac{E}{J} \hat{I} &=
+	\begin{bmatrix} \frac{E_0 - E}{J} & -1 & -1 \\ -1 &  \frac{E_0 - E}{J} & -1 \\ 
+	-1 & -1 &  \frac{E_0 - E}{J}\end{bmatrix}   \\ 
+					  &= (-1) \begin{bmatrix} \lambda & 1 & 1 \\ 
+					  1 & \lambda & 1 \\ 1 & 1 & \lambda \end{bmatrix} \tag{$\lambda = (E - E_0 )/ J$}  = 0  \\ 
+					  & \implies \det  
+					   \begin{bmatrix} \lambda & 1 & 1 \\ 
+					  1 & \lambda & 1 \\ 1 & 1 & \lambda \end{bmatrix}  = 0\\  
+								   & \implies \lambda^3 + 3 \lambda + 2 = 0  \\ 
+								   & \implies ( \lambda - 1)^2 (\lambda + 2) = 0 \\
+& \implies (\lambda^2 - 2 \lambda + 1 ) (\lambda + 2 ) \\ 
+	& \implies \lambda = 1, 1, -2 
+\end{align*}
+As stated in the problem statement, $0 = (\lambda - \lambda_1 ) (\lambda^2 + b \lambda + c) \implies 0 = (\lambda - (-2)) (\lambda^2 + (-2) \lambda + 1  )$ giving us $(b,c) = (-2, 1)$
+\[
+	\text{For } \lambda = -2 \text{ the eigen-energy is } \frac{E - E_0}{J} = -2 \implies E = E_0 - 2 J  
+\] 
+\[
+	\text{For } \lambda = 1 \text{ the eigen-energy is } \frac{E - E_0}{J} = 1 \implies E = E_0 +  J  
+\]
+The eigenvalues are 
+\[
+\lambda_1 = -2, \quad \lambda_2 = 1, \quad \lambda_3 = 1
+\]
+And corresponding eigen-energy
+\[
+E_1 = E_0 - 2 J , \quad E_2 = E_0+ J , \quad E_3 = E_0 + J
+\] 
+
+\newpage
+\section*{Problem 03} 
+
+\subsection*{a} 
+\begin{align*}
+	\hat{T} | n \rangle  = | n+1 \rangle  &\implies \langle n | T^\dagger = \langle n+1 | \\ 
+					      &\text{now, } \langle n | T^\dagger | n+1 \rangle = 
+					      \langle n+1 | | n+1 \rangle  = 1 \\ 
+					      &\text{or, } 
+					      \langle n | T^\dagger T | n \rangle = 1 \\  
+					      &\text{and, } \langle n | T^\dagger | k+1 \rangle = 
+					      \langle n+1| | k+1 \rangle \tag{$n\neq k$ } = 0 
+					   \\ & \implies T^\dagger T = \hat{I}
+\end{align*}
+
+
+\subsection*{b}
+To compute $\left[ \hat{H}, \hat{T} \right] $ we compute the two operator terms individually
+\begin{align*}
+	\hat{H} \hat{T} &= 
+\left(
+	%
+\sum_{n=-\infty}^{\infty} 
+\left[
+E_0 | n \rangle \langle n | + 
+J 
+\left(
+| n+1 \rangle \langle n | + 
+| n \rangle \langle n+1 | 
+\right)
+\right] 
+%
+\right) 
+\hat{T} 
+\\ \hat{H} \hat{T} | n \rangle  &= 
+\left(
+	%
+\sum_{n=-\infty}^{\infty} 
+\left[
+E_0 | n \rangle \langle n | + 
+J 
+\left(
+| n+1 \rangle \langle n | + 
+| n \rangle \langle n+1 | 
+\right)
+\right] 
+%
+\right)  | n+1 \rangle 
+\\ 
+&= 
+\Bigl[
+E_0 | n \rangle  \langle n | + 
+J \Bigl(
+| n+1 \rangle \langle n | + 
+| n \rangle \langle n+1 | 
+\Bigr)
+\Bigr] | n+1 \rangle  + 
+%
+\Bigl[
+E_0 | n+1 \rangle \langle n+1 | + 
+J \Bigl(
+| n+2 \rangle \langle n+1 | + 
+| n+1 \rangle \langle n+2 | 
+\Bigr)
+\Bigr] | n+1 \rangle  
+\\
+&= 
+J | n \rangle + 
+E_0 | n + 1\rangle  + 
+J 
+\left(
+| n+2 \rangle 
+\right)
+\\
+\hat{T}\hat{H} | n \rangle  &= 
+\hat{T}\Biggr(
+\Bigl[
+E_0 | n \rangle  \langle n | + 
+J \Bigl(
+| n+1 \rangle \langle n | + 
+| n \rangle \langle n+1 | 
+\Bigr)
+\Bigr] | n \rangle  + 
+%
+\Bigl[
+E_0 | n-1 \rangle \langle n-1 | + 
+J
+\Bigl(
+| n \rangle \langle n-1 | + | n-1 \rangle \langle n | 
+	\Bigr)
+\Bigr] | n \rangle 
+\Biggr) \\ 
+&= 
+\hat{T} \bigl(
+E_0 | n \rangle + J | n+1 \rangle + J | n-1 \rangle 
+\bigr) \\ 
+&= E_0 | n+1 \rangle + J | n+2 \rangle + J | n \rangle  = \hat{H} \hat{T} | n \rangle \\
+\end{align*} 
+\[
+\therefore \left(\hat{H}\hat{T} - \hat{T}\hat{H}\right) | n \rangle  = | 0 \rangle  \implies
+\left[
+	\hat{H}, \hat{T} 
+\right] = 0
+\] 
+
+
+\subsection*{c} 
+Using the form given for the energy, and the eigen-equation for $\hat{T}$, we determine the general formula for $\psi_{E,n}$ in terms of $\psi_{E,0}$
+\begin{align*}
+	| E \rangle  &= \sum_{n=-\infty}^{\infty} | n \rangle \psi_{E,n} \\ 
+	T | E \rangle  &= \sum_{n=-\infty}^{\infty} T | n \rangle \psi_{E,n}\\ 
+	e^{-i \phi} | E \rangle 	       &= \sum_{n=-\infty}^{\infty} | n+1 \rangle \psi_{E,n} \\ 
+	\sum_{n=-\infty}^{\infty} e^{-i \phi} | n \rangle \psi_{E,n} &= \sum_{n=-\infty}^{\infty} | n+1 \rangle \psi_{E,n} \\ 
+	\implies e^{-i \phi} | n+1 \rangle \psi_{E,n+1} &= | n+1 \rangle \psi_{E,n} \\ 
+	\therefore \, e^{-i \phi} &= \frac{\psi_{E, n}}{\psi_{E,n+1}}
+\end{align*}
+The inductive relation between two coefficient is 
+\[
+	\psi_{E, n+1} = e^{ i \phi} \psi_{E,n} \implies \psi_{E, 1} = e^{i \phi} \psi_{E,0} \implies
+	\psi_{E, 2} = e^{i \phi} \psi_{E, 1} = e^{2 i \phi } \psi_{E,0}
+\]
+\[
+	\implies \psi_{E,n} = e^{i n \phi} \psi_{E,0} 
+\]
+The general form of energy is then 
+\[
+	| E \rangle  =  \psi_{E,0} \sum_{n=-\infty}^{\infty} e^{i n \phi} | n \rangle 
+\] 
+
+\begin{align*}
+	\hat{H} | E_n \rangle  &= \psi_{E,n} \hat{H}|  n \rangle = 
+	\psi_{E,n} \Bigl(
+E_0 | n \rangle  + J | n+1 \rangle + J| n-1 \rangle 
+	\Bigr) \\ 
+	\hat{H} | E \rangle  = \hat{H} \left( \sum_{n=-\infty}^{\infty} \psi_{E,n} | n \rangle \right) &= \sum_{n=-\infty}^{\infty} \psi_{E,n} \Bigl(
+E_0 | n \rangle + J | n+1 \rangle + J | n-1 \rangle 
+		\Bigr)  \\
+		\langle n' | \hat{H} | E \rangle  &= 
+		\sum_{n=-\infty}^{\infty} \psi_{E,n} 
+		\Bigl(
+E_0 \langle n' | n \rangle + J \langle n' | n+1 \rangle + J \langle n' | n-1 \rangle 
+			\Bigr) \\ 
+						  &= \psi_{E,n'}  + \psi_{E,n' - 1} + \psi_{E,n' + 1}  
+					       \\ &= 
+					       \psi_{E,n'} + \frac{\psi_{E,n'}}{e^{i \phi}} + 
+					       e^{i \phi} \psi_{E,n'} \\ 
+						  &= \psi_{E,n'} 
+						  (1 + e^{- i \phi} + e^{i \phi } )\\
+						  &= \psi_{E,n'} (1 + 2 \cos(\phi)) \\
+\end{align*}
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			xmin= -10, xmax= 10,
+			ymin= -10, ymax = 10,
+			axis lines = middle,
+		]
+			\addplot[domain=-10:10, samples=200]{ 1+2*cos(deg(x)) };
+			\legend{$1+2\cos(\phi)$}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Simple pgfplot for aesthetic purposes}
+	\label{}
+\end{figure}
+\begin{align*}
+	[1 + 2 \cos (\phi) ]_{\text{max}} &= 3 \\
+	[1  +2 \cos (\phi)]_{\text{min}} &= -1 \\
+\end{align*}
+\end{document}

@@ -1,0 +1,294 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{../math232/ahsansabit}
+
+\title{Heat Light and Waves : : Homework 03}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+\section*{Problem 01}
+\subsection*{(a)} 
+\[
+	e_1 = 1 - \frac{T_1}{T_h}
+\] 
+\[
+e_2 = 1 - \frac{T_2}{T_1}
+\] 
+\[
+e_3 = 1 - \frac{T_c}{T_2}
+\]
+Re-writing, 
+\[
+T_1 = T_h (1- e_1)	
+\]
+\[
+T_2 = T_1(1 - e_2) = T_h (1 - e_1) (1  - e_2)
+\] 
+\[
+T_c = T_c(1 - e_3) = T_h (1- e_1) (1 - e_2) (1 - e_3)
+\] 
+\[
+	e_{\text{net}} = 1 - \frac{T_c}{T_h} = 1 - (1- e_1) (1 - e_2) (1 - e_3)
+\]
+\[
+\boxed{
+	e_{\text{net}} = 1 - (1 - e_1) (1 - e_2) (1 - e_3)
+}
+\] 
+
+\subsection*{b} 
+With the input of heat $Q_0$ 
+\[
+W_1 = Q_0 - Q_0 \frac{T_1}{T_h}
+\] 
+\[
+W_2 = Q_0 \frac{T_1}{T_h} - Q_0 \frac{T_2}{T_h}
+\] 
+\[
+W_3 = Q_0 \frac{T_2}{T_h} - Q_0 \frac{T_c}{T_h}
+\]
+Now using
+\[
+W_1 = W_2 = W_3 
+\] 
+\[
+	1 - \frac{T_1}{T_h} = \frac{T_1}{T_h} - \frac{T_2}{T_h} = \frac{T_2}{T_h} - \frac{T_c}{T_h} 
+\]
+I took pen and paper and computed the results for $T_1$ and $T_2$ with solving the linear equations (we could also use matrices) 
+\[
+\boxed{
+T_1 = \frac{2 T_h + T_c}{3}
+}\quad 
+\boxed{ T_2 = 
+\frac{T_h + 2 T_c}{ 3}
+}
+\] 
+
+
+\section*{Problem 02} 
+\subsection*{(a)}
+\[
+T_a = \frac{p_a V_a}{R} = \frac{2 \cdot 10^{3}}{R}
+\] 
+\[
+T_b = \frac{p_b V_b}{R} = \frac{2 \cdot 10^{3}}{R}
+\] 
+This process is Isothermal because of equal temperature. 
+
+
+\subsection*{(b)} 
+\begin{itemize}
+	\item $a \to b$ is expelling heat. As we've seen the gas is compressing isothermally. 
+	\item $b\to c$ absorbs heat as it is expanding. 
+	\item $c \to a$ expelling heat since temperature drops. 
+\end{itemize}
+
+
+\subsection*{(c)} 
+\begin{itemize}
+	\item $T_a = \frac{2 \cdot 10^{5} \times 0.01}{R} = 240.5 \, K$
+	\item $T_b = 240.5 \, K$ [isothermal] 
+	\item $T_c = \frac{4 \cdot  10^{5} \times 0.01}{R} = 481.1 \, K$
+\end{itemize}
+
+
+\subsection*{(d)} 
+\begin{itemize}
+	\item $a\to b$ then $Q = - nRT \ln( V_1 / V_f) = - 240.5 R \ln 2 = - 1385 \, J $
+	\item $b\to c$ then $Q = n C_p \Delta T = \frac{7}{2} R (240.5) = 6998 \, J$ 
+	\item $c \to a$ then $Q = n C_v \Delta T = \frac{5}{2} R (- 240.5) = - 4998 \, J$
+\end{itemize}
+Computing $Q_\text{net}$ 
+\[
+Q_\text{net} = 615 \, J
+\] 
+
+\subsection*{(e)} 
+\[
+W = - Q_\text{net} = -  615 \, J
+\]
+
+\subsection*{(f)} 
+\[
+e = 1 - \frac{Q_c}{Q_h} = 1 - \frac{6383}{6998} = 0.087
+\] 
+
+
+\section*{Problem 03} 
+\subsection*{(a)} 
+\begin{itemize}
+	\item $B \to C$ and $D \to A$ is adiabatic hence $Q = 0$ 
+	\item $A \to  B$ hence $Q = n C_v \Delta T = n \left(\frac{5R}{2}\right) (T_B - T_A) > 0$ which is $Q_h$. 
+\end{itemize}
+
+\subsection*{(b)} 
+\begin{itemize}
+	\item $C \to D$ hence $Q = n C_v \Delta T = n \frac{5 R}{2} (T_D - T_C) < 0 $ which is $Q_C$. 
+\end{itemize}
+
+\subsection*{(c)} 
+\begin{itemize}
+	\item $D \to A$ adiabatic so $P_D V_B^{\gamma} = P_A V_A ^{\gamma}$ 
+	\item $B \to C$ adiabatic so $P_C V_B^{\gamma} = P_B V_A ^{\gamma}$ 
+\end{itemize}
+\[
+	(P_D - P_C ) V_B^{\gamma} = (P_A - P_B) V_A^{\gamma} \to P_D - P_C = \left(P_A - P_B\right) 
+	\left(\frac{V_A}{V_B}\right)^{\gamma}
+\] 
+For the idea gas we have 
+\[
+P_B V_A = n R T_B, \, P_A V_A = n R T_A 
+\]
+\[
+P_C V_B = n R T_C, \, P_D V_B = n R T_D  
+\]
+We can do a rewrite 
+\[
+| T_D - T_C | = \left| \frac{1}{n R} (P_D - P_C) V_B \right|
+\] 
+\[
+| T_B - T_A | = \left| \frac{1}{nR} (P_B - P_A) V_A \right|
+\] 
+\[
+e = 1 - \frac{ | Q_C | }{| Q_h |} = 1 - \frac{| \ln \frac{5}{2} R (T_D - T_C) | }{| \ln \frac{5}{2} R (T_B - T_A) | } = 1- \frac{|T_D - T_C |}{|T_B - T_A|} 
+\]
+\[
+e = 1 - \frac{ | (1 / nR) (P_D - P_C) V_B |  }{ | (1 / n R) (P_B- P_A) V_A | } = 
+1 - \frac{ | ( V_A / V_B )^\gamma V_B| }{| V_A| }
+\]
+\[
+e = 1 - \frac{ \left| \left( V_A / V_B \right)^{\gamma} V_B \right|}{| V_A| } = 1 - \left | 
+\left(\frac{V_A}{V_B} \right)^{\gamma} \frac{V_B}{V_A} \right| 
+\]
+Now 
+\[
+c_v = \frac{5}{2} R \to c_p = c_v + R = \frac{7}{2} R
+\] 
+\[
+\gamma = \frac{c_p}{c_v} = \frac{7}{5}
+\] 
+\[
+e = 1 - \left|
+\left(\frac{V_A}{V_B} \right)^{\frac{7}{5}} \frac{V_B}{V_A} \right|   = 1 - \left(\frac{V_A}{V_B}\right)^{\frac{2}{5}}
+\]
+Hence, 
+\[
+\boxed{
+e = 1 - \left(\frac{V_A}{V_B}\right)^{2 / 5}
+}
+\] 
+
+
+\section*{Problem 04} 
+\subsection*{(a)} 
+\[
+	\Delta S _\text{tea} = \int_{i}^{f}  \frac{\mathrm{d} Q}{T} = 
+	\int_{T_i}^{T_f}  \frac{m c \mathrm{d} T}{T} = m c \ln \left(\frac{T_f}{T_i}\right)  
+	= - 229.18 \, \frac{J}{K}
+\]
+\subsection*{(b)} 
+\[
+\Delta S_\text{air} = \frac{\Delta Q_\text{air}}{T} = \frac{- m c \Delta T_\text{tea}}{T_\text{air}} = 
+256.23 \, \frac{J}{K}
+\]
+\subsection*{(c)} 
+\[
+\Delta S_\text{net} = - 229.18 + 256.23 = 27.05 \, \frac{J}{K}
+\] 
+
+\section*{Problem 05} 
+\subsection*{(a)} 
+\[
+\Delta S_\text{ice} = \frac{m c_i}{T} = 302.19 \, \frac{J}{K}
+\] 
+\[
+\Delta S_\text{water} = mc \ln\left(\frac{T_f}{T_i}\right) + \Delta S_\text{ice} = 393.84 \, \frac{J}{K}
+\] 
+
+\subsection*{(b)} 
+\[
+\Delta S_\text{air} = \frac{- \Delta Q_\text{ice} }{T_\text{air}} = 364.59 \, \frac{J}{K}
+\] 
+
+\subsection*{(c)} 
+\[
+\Delta S_\text{net} = 393.84 - 364.59 = 29.25 \, \frac{J}{K}
+\]
+
+\section*{Problem 06} 
+\subsection*{(a)} 
+The forces are 
+\[
+F_1 = - k_1 x
+\] 
+\[
+F_2 = - k_2 x
+\] 
+\[
+F_\text{net} = - k_1 x - k_2 x = - (k_1 + k_2) x
+\] 
+\[
+k_\text{eff} = k_1 + k_2
+\] 
+
+\subsection*{(b)} 
+The forces are 
+\[
+F_1 = - k_1 x
+\] 
+\[
+F_2 = - k_2 x 
+\] 
+\[
+F_\text{net} = -k_1 x - k_2 x =  - \left(k_1 + k_2\right) x
+\] 
+\[
+k_\text{eff} = k_1 + k_2
+\] 
+
+\subsection*{(c)} 
+\[
+F_1 = - k_1 x_1
+\] 
+\[
+F_2 = - k_2 x_2
+\] 
+\[
+x_1 = - \frac{F_1}{k_1}
+\] 
+\[
+x_2 = - \frac{F_2}{k_2}
+\] 
+\[
+	F_1 = F_2 = F_\text{net} 
+\]
+\[
+x_1 + x_2 = - \left(\frac{F}{k_1} + \frac{F}{k_2}\right)
+\] 
+\[
+F_\text{net} = - k_\text{eff} x = - k_\text{eff} (x_1 + x_2) = k_\text{eff} \left(\frac{F}{k_1} + \frac{F}{k_2}\right)
+\] 
+\[
+F = F k_\text{eff} \left(\frac{1}{k_1} + \frac{1}{k_2}\right)
+\] 
+\[
+k_\text{eff} = \frac{1}{\left(\frac{1}{k_1} + \frac{1}{k_2}\right) } = \frac{1}{ \frac{k_1 + k_2}{k_1 k_2}} = \frac{k_2 k_1}{k_1 + k_2}
+\]
+
+\subsection*{(d)} 
+Treat original spring as chain of $10 x$ new spring. From part $(c)$, 
+\[
+\frac{1}{k_\text{old}} = \frac{10}{k_\text{new} } \to  k_\text{new} = 10 k_\text{old}
+\]
+\[
+T_\text{new} = 2 \pi \sqrt{\frac{m}{10 k_\text{old}}} 
+\]
+\[
+T_\text{old} = 2 \pi \sqrt{\frac{m}{k_\text{old}}} 
+\] 
+\[
+\frac{T_\text{new}}{T_\text{old}} = \frac{2 \pi \sqrt{\frac{m}{10 k_\text{old}}} }{2 \pi \sqrt{\frac{m}{k_\text{old}}} } = \frac{1}{\sqrt{10} }
+\] 
+
+\end{document}
