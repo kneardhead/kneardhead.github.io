@@ -1,0 +1,5 @@
+\contentsline {part}{I\hspace {1em}Methodology}{1}{part.1}%
+\contentsline {section}{\numberline {1}Reading this handout}{1}{section.1}%
+\contentsline {part}{II\hspace {1em}Vector Problems}{2}{part.2}%
+\contentsline {part}{III\hspace {1em}Newtonian Problems}{4}{part.3}%
+\contentsline {part}{IV\hspace {1em}Green's Function}{5}{part.4}%

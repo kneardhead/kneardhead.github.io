@@ -53,9 +53,7 @@ i \to j \to k \to i \to j \to  k \implies
 
 
 
-
-
-\subsection*{a} 
+\subsection*{b} 
 \begin{align*}
 	\left(\vec{U} \cdot  \hat{\vec{\sigma}}\right) 
 	\left(\vec{V} \cdot  \hat{\vec{\sigma}}\right) &= 
@@ -194,6 +192,20 @@ We see the eigen-equation for the Hamiltonian
 \[
 \hat{H} | E_1 \rangle  = E_1 | E_1 \rangle  \implies E_1 = E_0 - 2J
 \] 
+
+
+The special property can be realized by seeing that,
+\begin{align*}
+	\begin{bmatrix} E_0&-J&-J\\-J&E_0&-J\\-J&-J&E_0 \end{bmatrix}  &= 
+	(E_0 + J)\begin{bmatrix}  1 &0&0\\0&1&0\\0&0&1 \end{bmatrix}  + 
+	(-J) \begin{bmatrix} 1&1&1\\1&1&1\\1&1&1 \end{bmatrix} 
+	\\
+\end{align*}
+It's very obvious that $| E_1 \rangle $ is an eigenvector for both of the upper matrices. And if $\hat{H} = \hat{A} + \hat{B}$ then if $| E_1 \rangle $ is eigenvector for both $\hat{A},\hat{B}$, then 
+\[ \hat{H} | E_1 \rangle =
+\hat{A} | E_1 \rangle + \hat{B} | E_1 \rangle  = (a+b)| E_1 \rangle = E_1 | E_1 \rangle 
+\]
+Just from looking at the matrices it's obvious that $a = E_0+J$ and $b = -3J$ so $E_1 = E_0 - 2J$
 
 
 \subsection*{b (ii) and (iii)} 
@@ -374,13 +386,13 @@ E_0 | n \rangle + J | n+1 \rangle + J | n-1 \rangle
 		\Bigl(
 E_0 \langle n' | n \rangle + J \langle n' | n+1 \rangle + J \langle n' | n-1 \rangle 
 			\Bigr) \\ 
-						  &= \psi_{E,n'}  + \psi_{E,n' - 1} + \psi_{E,n' + 1}  
+						  &= E_0 \psi_{E,n'}  + J \psi_{E,n' - 1} + J \psi_{E,n' + 1}  
 					       \\ &= 
-					       \psi_{E,n'} + \frac{\psi_{E,n'}}{e^{i \phi}} + 
-					       e^{i \phi} \psi_{E,n'} \\ 
+					        E_0 \psi_{E,n'} + J \frac{\psi_{E,n'}}{e^{i \phi}} + 
+					        J e^{i \phi} \psi_{E,n'} \\ 
 						  &= \psi_{E,n'} 
-						  (1 + e^{- i \phi} + e^{i \phi } )\\
-						  &= \psi_{E,n'} (1 + 2 \cos(\phi)) \\
+						  (E_0 + J e^{- i \phi} +  J e^{i \phi } )\\
+						  &= \psi_{E,n'} (E_0 + 2  J \cos(\phi)) \\
 \end{align*}
 \begin{figure}[H]
 	\centering
@@ -390,15 +402,479 @@ E_0 \langle n' | n \rangle + J \langle n' | n+1 \rangle + J \langle n' | n-1 \ra
 			ymin= -10, ymax = 10,
 			axis lines = middle,
 		]
-			\addplot[domain=-10:10, samples=200]{ 1+2*cos(deg(x)) };
-			\legend{$1+2\cos(\phi)$}
+			\addplot[domain=-10:10, samples=200]{ 3+2(2.5)*cos(deg(x)) };
+		\legend{$3+2(2.5)\cos(\phi)$}
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Simple pgfplot for aesthetic purposes}
+	\caption{Simple pgfplot for aesthetic purposes $E = 3, J = 2.5$}
 	\label{}
 \end{figure}
 \begin{align*}
-	[1 + 2 \cos (\phi) ]_{\text{max}} &= 3 \\
-	[1  +2 \cos (\phi)]_{\text{min}} &= -1 \\
+	[E_0 + 2  J\cos (\phi) ]_{\text{max}} &= E_0 + 2J \\
+	[E_0 +2 J \cos (\phi)]_{\text{min}} &= E_0 - 2J  \\
 \end{align*}
+
+
+
+\section*{Problem 04} 
+
+
+\begin{align*}
+	\langle 1 | \hat{X} | 1 \rangle  &= 
+\langle 1 | \hat{I} \hat{X} \hat{I} | 1 \rangle 
+	\\ 
+	&= 
+\langle 1 | 
+\left(\int_{0}^{L}  \mathrm{d} x \, | x \rangle \langle x | \right)
+	\hat{X}
+\left(\int_{0}^{L}  \mathrm{d} x' \, | x' \rangle \langle x' | \right) | 1 \rangle 
+     \\ &= 
+\left(\int_{0}^{L}  \mathrm{d} x \, \langle 1 | x \rangle \langle x | \right)
+	\hat{X}
+\left(\int_{0}^{L}  \mathrm{d} x' \, | x' \rangle \langle x' | 1 \rangle \right) 
+\\ &=  
+\int_{0}^{L}  \mathrm{d} x \, 
+\int_{0}^{L}  \mathrm{d} x' \, 
+\langle 1 | x \rangle \langle x' | 1 \rangle \langle x | \hat{X} | x' \rangle 
+\\ &= 
+\int_{0}^{L}  \mathrm{d} x \, 
+\int_{0}^{L}  \mathrm{d} x' \, 
+\langle 1 | x \rangle \langle x' | 1 \rangle x' \delta(x - x')
+\\ &=
+\int_{0}^{L} \mathrm{d} x \, 
+\int_{0}^{L} \mathrm{d} x' \, 
+\left(\sqrt{\frac{2}{L}}  \sin\left(\frac{\pi}{L}x\right) \right) 
+\left(\sqrt{\frac{2}{L}}  \sin\left(\frac{\pi}{L}x'\right)\right) x' \delta(x-x')
+\\ &=
+\int_{0}^{L} \mathrm{d} x' \, 
+\left(\sqrt{\frac{2}{L}}  \sin\left(\frac{\pi}{L}x'\right) \right) 
+\left(\sqrt{\frac{2}{L}}  \sin\left(\frac{\pi}{L}x'\right)\right) x' \delta(x-x') \\
+&=  
+\frac{2}{L} 
+\int_{0}^{L}  \mathrm{d} x' \, x' \sin^2 \left(\frac{\pi}{L}x'\right)  
+\\
+&= 
+\frac{2}{L} \left(\frac{L}{2}\right)^2
+\\
+&= \frac{L}{2} 
+\end{align*}
+
+\begin{align*}
+	\langle 1 | \hat{X} | 2 \rangle &= 
+\int_{0}^{L} \mathrm{d} x \, 
+\int_{0}^{L} \mathrm{d} x' \, 
+\langle 1 | x \rangle \langle x' |  2 \rangle \langle x | \hat{X} | x' \rangle 
+	\\
+	&= 
+\int_{0}^{L} \mathrm{d} x \, 
+\int_{0}^{L} \mathrm{d} x' \, 
+\left(\sqrt{\frac{2}{L}} \sin\left(\frac{\pi}{L}x\right)  \right)
+\left(\sqrt{\frac{2}{L}}  \sin\left(\frac{2 \pi }{L} x' \right)\right) 
+x' \delta(x- x')
+	\\
+	&= \frac{2}{L}
+\int_{0}^{L} \mathrm{d} x' \, x' \sin\left(\frac{\pi}{L}x'\right) \sin\left(\frac{2\pi }{L}x' \right) 
+	\\
+	&= \frac{2}{L} \left(- \frac{8L^2}{9 \pi^2}\right) \\
+	&= -\frac{16 L}{9 \pi^2} \\
+\end{align*}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{ss/inti01.png}
+	\includegraphics[width=0.4\textwidth]{ss/inti02.png}
+	\caption{ss/inti02.png}
+	\label{fig:ss-inti02-png}
+\end{figure}
+
+\begin{align*}
+	\langle 1 | \hat{K} | 1 \rangle  &= 
+\int_{0}^{L} \mathrm{d} x' \, \langle 1 | \hat{K} | x' \rangle \langle x' | 1 \rangle 
+	\\
+					 & = 
+					 \int_{0}^{L} \mathrm{d} x' \,
+\int_{0}^{L} \mathrm{d} x  \,
+\langle 1 | x \rangle \langle x |  \hat{K} | x' \rangle \langle x' | 1 \rangle 
+	\\
+					 & = 
+					 \int_{0}^{L} \mathrm{d} x' \,
+\int_{0}^{L} \mathrm{d} x  \,
+\langle 1 | x \rangle \langle x |  \hat{K} | x' \rangle \langle x' | 1 \rangle 
+	\\
+	&= 
+\frac{2}{L }\int_{0}^{L} \mathrm{d} x' \, 
+\int_{0}^{L}  \mathrm{d} x \, 
+\sin\left(\frac{\pi}{L}x\right) 
+\langle x | \hat{K} | x' \rangle 
+\sin\left(\frac{\pi}{L}x'\right) 
+	\\
+	&= 
+\frac{2}{L }\int_{0}^{L} \mathrm{d} x' \, 
+\int_{0}^{L}  \mathrm{d} x \, 
+\sin\left(\frac{\pi}{L}x\right) 
+\delta(x-x') \left(- i \frac{\mathrm{d} }{\mathrm{d} x'}\right)
+\sin\left(\frac{\pi}{L}x'\right) 
+	\\
+	&= 
+\frac{2}{L}
+\int_{0}^{L} \mathrm{d} x' \, 
+\int_{0}^{L}  \mathrm{d} x \, 
+\sin\left(\frac{\pi}{L} x\right) \delta(x-x') \left(-i\right) \left(\frac{\pi}{L}\right) \cos(\frac{\pi}{L} x')
+	\\
+	&= 
+-i \frac{2 \pi }{L^2} 
+\int_{0}^{L} \mathrm{d} x' \,
+\sin \left(\frac{\pi}{L} x'\right) \cos \left(\frac{\pi}{L}x'\right)
+	\\ 
+	&= 0 
+\end{align*}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{ss/inti03.png}
+	\includegraphics[width=0.4\textwidth]{ss/inti04.png}
+	\caption{ss/inti04.png}
+	\label{fig:ss-inti04-png}
+\end{figure}
+
+
+\begin{align*}
+	\langle 1 | \hat{K} | 2 \rangle &= 
+\int_{0}^{L}  \mathrm{d}x' \,
+\int_{0}^{L} \mathrm{d} x \, 
+\langle 1 | x \rangle 
+\langle x |  \hat{K} | x' \rangle  
+\langle x' |  2\rangle 
+	\\ &=  \frac{2}{L} \left(-i \frac{2\pi}{L}\right)
+\int_{0}^{L}  \mathrm{d}x' \,
+\int_{0}^{L} \mathrm{d} x \, 
+\sin\left(\frac{\pi}{L} x\right)
+\delta(x-x')
+\cos\left(\frac{2\pi}{L} x'\right)
+\\
+&= 
+-i \frac{4 \pi }{L^2} \int_{0}^{L} \mathrm{d} x' \, 
+\sin\left(\frac{\pi}{L}x'\right) \cos\left(\frac{2\pi}{L}x'\right)
+\\
+&= 
+-i \frac{4 \pi }{L^2} \left(- \frac{2L}{3 \pi }\right)\\
+&= 
+i \frac{8}{3L}
+\\
+\end{align*}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{ss/inti06.png}
+	\includegraphics[width=0.4\textwidth]{ss/inti07.png}
+	\caption{ss/inti07.png}
+	\label{fig:ss-inti07-png}
+\end{figure}
+
+
+\subsection*{b} 
+\begin{align*}
+	\langle k_1 | \hat{X} | k_1 \rangle  &= 
+\langle k_1 | \hat{I} \hat{X} \hat{I}  | k_1 \rangle 
+					  \\ &=
+	\left(
+\int_{0}^{L} \mathrm{d} x' \, \langle k_1 | x' \rangle \langle x' |  
+	\right) \hat{X} 
+	\left(
+\int_{0}^{L}  \mathrm{d} x \, | x \rangle  \langle x | k_1 \rangle  
+	\right)
+	\\&= 
+\int_{0}^{L} \mathrm{d} x'\,
+\int_{0}^{L} \mathrm{d} x\, 
+\langle k_1 | x' \rangle \langle x' | \hat{X} | x \rangle \langle x | k_1 \rangle 
+	\\
+	&= 
+\int_{0}^{L} \mathrm{d} x'\,
+\int_{0}^{L} \mathrm{d} x\, 
+\langle k_1 | x' \rangle 
+x \delta(x' - x)
+\langle x | k_1 \rangle 
+	\\
+	&= 
+\int_{0}^{L} \mathrm{d} x'\,
+\int_{0}^{L} \mathrm{d} x\,  x 
+\left(\frac{1}{\sqrt{L}  } e^{ - i k_1 x' }  \right) 
+\left(\frac{1}{\sqrt{L}  } e^{  i k_1 x}  \right)  \delta(x' - x) \\
+&= 
+\frac{1}{L}\int_{0}^{L} \mathrm{d} x\,  x 
+e^{-i k_1 x} e^{i k_1 x}
+\\ 
+&= 
+\frac{1}{L} \int_{0}^{L} \mathrm{d} x \, x  
+\\
+&= 
+\frac{1}{L} \left(\frac{L^2}{2}\right)
+\\
+&= \frac{L}{2} 
+\end{align*}
+
+\begin{align*}
+	\langle k_1 | \hat{X} | k_2 \rangle &= 
+	\left(
+\int_{0}^{L} \mathrm{d} x'  \langle k_1 | x' \rangle \langle x' | 
+	\right)
+	\hat{X} 
+	\left(
+\int_{0}^{L}  \mathrm{d} x \, 
+| x \rangle \langle x | k_2 \rangle 
+	\right)
+	\\
+					    &= 
+					    \int_{0}^{L} \mathrm{d} x'\,
+\int_{0}^{L} \mathrm{d} x\, 
+\langle k_1 | x' \rangle \langle x' | \hat{X} | x \rangle \langle x | k_2 \rangle 
+	\\
+	&= 
+\frac{1}{L}
+\int_{0}^{L} \mathrm{d} x' \, 
+\int_{0}^{L}  \mathrm{d} x \, 
+x e^{- i k_1 x' } e^{i k_2 x} \delta(x' - x)
+	\\
+	&= 
+\frac{1}{L}
+\int_{0}^{L} \mathrm{d} x \, 
+x e^{i (k_2 - k_1) x} 
+	\\
+	&= 
+\frac{1}{L}
+\int_{0}^{L} \mathrm{d} x \, 
+x e^{i \left(2 \frac{\pi}{L}\right) x} 
+	\\ 
+	&= 
+	\left(\frac{1}{L} \right) \left(- \frac{i L^2}{2\pi}\right)
+	\\
+	&= 
+- \frac{i L}{2 \pi }
+	\\
+\end{align*}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{ss/balsal1.png}
+	\includegraphics[width=0.4\textwidth]{ss/balsal2.png}
+	\caption{ss/balsal2.png}
+	\label{fig:ss-balsal2-png}
+\end{figure}
+
+
+\begin{align*}
+\langle k_1 | \hat{K} | k_1 \rangle &= 
+\left(
+	\int_{0}^{L}  
+\mathrm{d} x' \, 
+\langle k_1 | x' \rangle \langle x' |  
+\right)
+\hat{K} 
+\left(
+\int_{0}^{L} \mathrm{d} x \, 
+| x \rangle \langle x | k_1 \rangle 
+\right)
+\\	
+&= 
+\int_{0}^{L} \mathrm{d} x' \, 
+\int_{0}^{L}  \mathrm{d} x \, 
+\langle k_1 | x' \rangle 
+\langle x' | \hat{K} | x \rangle 
+\langle x | k_1 \rangle 
+\\
+&= \frac{1}{L}
+\int_{0}^{L} \mathrm{d} x'
+\int_{0}^{L} \mathrm{d} x 
+\, 
+e^{-i k_1 x'} \left(- i \delta(x' - x) \frac{\mathrm{d} }{\mathrm{d} x}\right) e^{i k_1 x }
+\\
+&= \frac{-i}{L}
+\int_{0}^{L} \mathrm{d} x'
+\int_{0}^{L} \mathrm{d} x 
+\, 
+e^{-i k_1 x'} \delta(x' - x) i k_1 e^{i k_1 x }
+\\
+&= \frac{k_1}{L}
+\int_{0}^{L} \mathrm{d} x 
+\, 
+e^{-i k_1 x}   e^{i k_1 x }
+\\
+&= 
+\frac{k_1}{L} \int_{0}^{L} \mathrm{d} x  
+\\
+&= k_1 \\
+&= \frac{2\pi}{L} \\
+\end{align*}
+
+
+\begin{align*}
+\langle k_1 | \hat{K} | k_2 \rangle &= 
+\left(
+	\int_{0}^{L}  
+\mathrm{d} x' \, 
+\langle k_1 | x' \rangle \langle x' |  
+\right)
+\hat{K} 
+\left(
+\int_{0}^{L} \mathrm{d} x \, 
+| x \rangle \langle x | k_2 \rangle 
+\right)
+\\	
+&= 
+\int_{0}^{L} \mathrm{d} x' \, 
+\int_{0}^{L}  \mathrm{d} x \, 
+\langle k_1 | x' \rangle 
+\langle x' | \hat{K} | x \rangle 
+\langle x | k_2 \rangle 
+\\
+&= \frac{1}{L}
+\int_{0}^{L} \mathrm{d} x'
+\int_{0}^{L} \mathrm{d} x 
+\, 
+e^{-i k_1 x'} \left(- i \delta(x' - x) \frac{\mathrm{d} }{\mathrm{d} x}\right) e^{i k_2 x }
+\\
+&= \frac{-i}{L}
+\int_{0}^{L} \mathrm{d} x'
+\int_{0}^{L} \mathrm{d} x 
+\, 
+e^{-i k_1 x'} \delta(x' - x) i k_2 e^{i k_2 x }
+\\
+&= \frac{k_2}{L}
+\int_{0}^{L} \mathrm{d} x 
+\, 
+e^{-i k_1 x}   e^{i k_2 x }
+\\
+&= 
+\frac{k_2}{L} 
+\int_{0}^{L} 
+\mathrm{d} x \, e^{i \left(2 \pi / L\right) x}
+\\
+&= 0 
+\end{align*}
+
+
+\section*{Problem 05} 
+\subsection{a} 
+\begin{align*}
+	\langle k | \hat{X} | k' \rangle &= 
+	\left(
+		\int_{-\infty}^{\infty} \mathrm{d} x \,  \langle k | x \rangle \langle x | 
+	\right) \hat{X} 
+	\left(
+		\int_{-\infty}^{\infty} \mathrm{d} x' \, 
+		| x' \rangle \langle x' | k' \rangle 
+	\right)
+	\\&= 
+\int \mathrm{d} x \int \mathrm{d} x' \, 
+\langle k | x \rangle \langle x | \hat{X} | x' \rangle  \langle x' | k' \rangle 
+	\\
+	&= 
+\int \mathrm{d} x \, 
+\int \mathrm{d} x ' \, 
+\frac{1}{\sqrt{2\pi } } e^{-i k x} \langle x | \hat{X} | x' \rangle \frac{1}{\sqrt{2 \pi }  } e^{i k' x}
+	\\
+	&= 
+\int \mathrm{d} x \, 
+\int \mathrm{d} x ' \, 
+\frac{1}{\sqrt{2\pi } } e^{-i k x} 
+x ' \delta(x - x')
+\frac{1}{\sqrt{2 \pi }  } e^{i k' x'}
+	\\
+	&= 
+\int \mathrm{d} x \, 
+\int \mathrm{d} x ' \, 
+\frac{1}{\sqrt{2\pi } } e^{-i k x} 
+ \delta(x - x')
+\left( x' \frac{1}{\sqrt{2 \pi }  } e^{i k' x'} \right) 
+	\\
+	&= 
+\int \mathrm{d} x ' \, 
+\frac{1}{\sqrt{2\pi } } e^{-i k x'} 
+\left( x' \frac{1}{\sqrt{2 \pi }  } e^{i k' x'} \right) 
+	\\
+	&= 
+\int \mathrm{d} x ' \, 
+\frac{1}{\sqrt{2\pi } } e^{-i k x'} 
+\left( x' \frac{1}{\sqrt{2 \pi }  } e^{i k' x'} \right) 
+     \\ &= \left(
+	\frac{1}{\sqrt{2 \pi } } \right)^2 
+	\int \mathrm{d} x' 
+	\, 
+	x' e^{i (k' - k )x'}
+     \\ &= (-1)(-i) \left(
+    \frac{1}{\sqrt{2 \pi } } \right)^2 
+	\int \mathrm{d} x' 
+\, \frac{\mathrm{d} }{\mathrm{d}  k }
+ e^{i (k' - k )x'}
+	\\
+	&= 
+i \frac{\mathrm{d} }{\mathrm{d} k} 
+\left(
+	\frac{1}{2 \pi } \int_{-\infty}^{-\infty} \mathrm{d} x\, e^{i (k' - k ) x' }
+\right)
+	\\  &=  
+	i \frac{\mathrm{d} }{\mathrm{d} k} \delta(k' - k) = i \frac{\mathrm{d} }{\mathrm{d} k} \delta(k- k')
+\end{align*}
+
+\subsection*{b}
+\begin{align*}
+	\langle k | \hat{X} | f \rangle &= \int_{-\infty}^{\infty} \mathrm{d} k' \,  
+\langle k | \hat{X} | k'\rangle \langle k' | f \rangle 
+	\\
+	 &= \int_{-\infty}^{\infty} \mathrm{d} k' \,  
+	\left(
+i \frac{\mathrm{d} }{\mathrm{d} k} \delta(k - k')
+	\right)
+\langle k' | f \rangle 
+	\\
+	 &= \int_{-\infty}^{\infty} \mathrm{d} k' \,  
+	\left(
+i \delta(k-k')\frac{\mathrm{d} }{\mathrm{d} k'}
+	\right)
+\langle k' | f \rangle 
+	\\
+	 &= \int_{-\infty}^{\infty} \mathrm{d} k' \,  
+	\left(
+i \delta(k-k')\frac{\mathrm{d} }{\mathrm{d} k'}
+	\right)
+	\left(
+\int_{-\infty}^{\infty} \mathrm{d} x \, 
+\frac{e^{ - i k' x}}{\sqrt{2 \pi } } f(x)
+	\right)
+	\\
+	 &= \int_{-\infty}^{\infty} \mathrm{d} k' \,  
+	\left(
+i \delta(k'-k)\frac{\mathrm{d} }{\mathrm{d} k'}
+	\right)
+	\left(
+\int_{-\infty}^{\infty} \mathrm{d} x \, 
+\frac{e^{ - i k' x}}{\sqrt{2 \pi } } f(x)
+	\right)
+	\\
+	 &=   
+	\left(
+i\frac{\mathrm{d} }{\mathrm{d} k}
+	\right)
+	\left(
+\int_{-\infty}^{\infty} \mathrm{d} x \, 
+\frac{e^{ - i k x}}{\sqrt{2 \pi } } f(x)
+	\right)
+	\\ 
+	&= 
+	i \frac{\mathrm{d} }{\mathrm{d} k } \tilde{f}(k)
+	\\
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}
+
+

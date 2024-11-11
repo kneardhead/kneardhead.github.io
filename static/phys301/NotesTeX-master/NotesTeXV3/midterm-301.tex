@@ -1,0 +1,302 @@
+\documentclass[10pt]{article}
+\usepackage{NotesTeXV3,lipsum}
+%\usepackage{showframe}
+
+\begin{document}
+	\title{{Classical Mechanics : PHYS 301}\\{\normalsize{\itshape 
+Attempting to write a study guide for midterm
+	}}}
+	\author{Ahmed Saad Sabit}
+	\affiliation{
+	Sophomore at Rice University\\
+	\href{https://kneardhead.github.io/}{Website}\\
+	}
+	\emailAdd{ahmedsaadsabit@rice.edu}
+	\maketitle
+	\newpage
+	\pagestyle{fancynotes}
+
+\part{Methodology}
+\section{Reading this handout} 
+What I am going to do is that
+\begin{itemize}
+	\item Read the lectures from the first day. 
+	\item Read the example solved problems in problem session. 
+	\item Find out some relevant problems from outside sources that are in context, and then type their solution up. 
+\end{itemize}
+\begin{prob}
+	This is a problem statement.
+\end{prob}
+\begin{solu}
+	This is a solution statement. 
+\end{solu}
+\begin{margintable}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{rice.png}
+		\caption{Great Place for me to add figures.}
+		\label{fig:rice-png}
+	\end{figure}
+\end{margintable}
+\begin{definition}
+	This is a definition. 
+\end{definition}
+\begin{fact}
+This is a fact. By fact I mean it's a derivative of Definition.
+\end{fact}
+
+
+
+\newpage
+\part{Vector Problems} 
+\textsf{Motivation behind these problems are basically the initial treatment of Coordinate systems in the class.}
+\begin{prob}
+	Prove derivative of a time dependent vector $\vec{A}(t)$ can be written as 
+	\[
+	\frac{\mathrm{d} \vec{A}}{\mathrm{d} t} = \vec{\Omega} \times \vec{A} + 
+	\frac{\delta \vec{A}}{\delta t}
+	\] 
+	Where $\delta \vec{A} / \delta t$ is the rate of change of the vector in the frame that is rotating at a angular velocity $\vec{\Omega}$
+\end{prob}
+\begin{solu}
+	Pick a basis for $\vec{A}$ that we will set to be rotating later. 
+	\[
+		\vec{A} = a_1 \vec{e}_1 + \cdots + a_N \vec{e}_N
+	\]
+	Take a derivative. 
+	\[
+	\frac{\mathrm{d} }{\mathrm{d} t} \vec{A} = 
+	\sum_{n=1}^{N} a_n \frac{\mathrm{d} \vec{e}_n}{\mathrm{d} t} + 
+	\sum_{n=1}^{N} \vec{e}_n \frac{\mathrm{d} a_n}{\mathrm{d} t}
+	\]
+	Now, let us consider this $(\vec{e}_1, \ldots, \vec{e}_N)$ basis is a basis that is rotating with $\Omega$ angular velocity. This instantly sets the second term above to be 
+	\[
+	\sum_{n=1}^{N} \vec{e}_n \frac{\mathrm{d} a_n}{\mathrm{d} t} = \frac{\delta \vec{A}}{\delta t}
+	\]
+	Looking at the first term 
+	\[
+	\sum_{n=1}^{N} a_n \frac{\mathrm{d} \vec{e}_n}{\mathrm{d} t}
+	\] 
+	here is defined to be basis rotating with $\vec{\Omega}$. By definition of Angular velocity we know that 
+	\[
+	\vec{v} = \Omega \times  \vec{r}
+	\] 
+	Here $\vec{v}$ is the velocity of a particle that is described by $\vec{r}$ position vector. But if you think a little more in terms of the maths, then you will notice that rate of change of position is itself the velocity. So the rate of change of the vector $\vec{r}$ itself is $\vec{v}$. Hence we can rewrite, 
+	\[
+	\frac{\mathrm{d} \vec{r}}{\mathrm{d} t} = \Omega \times \vec{r}
+	\] 
+	Here any vector $\vec{r}$ rotating in a lab frame is described by the above equation. So considering the basis to be such vectors we quickly find 
+	\[
+	\sum_{n=1}^{N} a_n \frac{\mathrm{d} \vec{e}_n}{\mathrm{d} t} =
+	\sum_{n=1}^{N} a_n \left(\vec{\Omega} \times  \vec{e}_n\right) = 
+	\vec{\Omega} \times  \sum_{n=1}^{N} a_n \vec{e}_n = \vec{\Omega} \times \vec{A}
+	\]
+	We had found the second term to be 
+	\[
+	\sum_{n=1}^{N} \vec{e}_n \frac{\mathrm{d} a_n}{\mathrm{d} t} = \frac{\delta \vec{A}}{\delta t}
+	\]
+	Both of them put together prove the fact that 
+	\[
+	\frac{\mathrm{d} }{\mathrm{d} t} \vec{A} = 
+	\sum_{n=1}^{N} a_n \frac{\mathrm{d} \vec{e}_n}{\mathrm{d} t} + 
+	\sum_{n=1}^{N} \vec{e}_n \frac{\mathrm{d} a_n}{\mathrm{d} t} = \boxed{
+	\vec{\Omega} \times  \vec{A} + \frac{\delta \vec{A}}{\delta t}
+}\] 
+\end{solu}
+
+
+
+\newpage
+\part{Newtonian Problems}
+\begin{prob} \textsf{(Wisconsin)}
+	A particle of mass $m$ is subject to two forces, a central force and a frictional force
+	\begin{align*}
+		\vec{f}_1 &= \frac{\vec{r}}{r} f(r) \\ 
+\vec{f}_2 &= - \lambda \vec{v} 
+	\end{align*}
+	where $\vec{v}$ is the velocity of the particle. If the particle has an initial angular momentum $\vec{J}_0$ about $r = 0$, find it's angular momentum over the subsequent times.
+\end{prob}
+\begin{solu}
+	\emph{By studying the problem, my initial motivation is that if we know the force then we can know the torque with respect to the origin. That torque is equal to the rate of change of angular momentum hence by using that we can eventually solve the time derivative of angular momentum, which can be solved to say Angular Momentum as a function of time.}
+
+	At the beginning we will choose polar coordinates because it will be easier for us to calculate torque in it. Also the central force conditions give us the idea that Angular Momentum always points perpendicular to plane of motion, for which we don't need to worry about $\vec{J}$ direction. In that case,
+	\[
+	\vec{v} = \dot{r} \hat{r} + r \dot{\theta} \hat{\theta}
+	\] 
+	Acceleration in polar coordinates (was solved in homework)
+	\begin{align*}
+		a_r &= \ddot{r} - r \dot{\theta}^2  \\ 
+		a_\theta &=  r \ddot{\theta} + 2 \dot{r} \dot{\theta} 
+	\end{align*}
+	Equating them with the radial and angular component of force gives us
+	\begin{align*}
+		m \left( \ddot{r} - r \dot{\theta}^2 \right) &= f(r) - \lambda \dot{r} \\ 
+		m \left( r \ddot{\theta} + 2 \dot{r} \dot{\theta}  \right) &= - \lambda r \dot{\theta}  
+	\end{align*}
+	From here the torque is 
+	\[
+	r F_\theta	 = - \lambda r^2 \dot{\theta}  
+	\]
+	From this equating this to rate of change of torque 
+	\[
+	\frac{\mathrm{d} J}{\mathrm{d} t} = - \lambda r^2 \dot{\theta}
+	\]
+	The angular momentum at any time $t$ is given by 
+	\[
+	J = m r^2 \dot{\theta}
+	\]
+	Which gives us 
+	\[
+	\frac{\mathrm{d} J}{\mathrm{d} t} = - \frac{\lambda}{m} J  \implies J = J_0 e^{- \lambda t / m }
+	\]
+\end{solu}
+
+
+
+\newpage
+\part{Green's Function} 
+\begin{prob}
+Suppose you have a continuous function $f(x)$. How do you find the value of the function in $x_0$ exploiting the definition of a Dirac Delta function? 
+\end{prob}
+\begin{solu}
+	For the Dirac Delta Function below, it doesn't matter what $y$ we pick because it's a dummy variable.
+	\begin{align*}
+		f(x_0) &= \int_{-\infty}^{\infty} f(y) \, \delta(y - x_0) \, \mathrm{d} y  \\
+	\end{align*}
+\end{solu}
+
+
+\begin{prob}
+	Suppose $x(t)$ is a solution for the following differential equation 
+	\begin{align*}
+		\ddot{x} + 2\gamma \dot{x} + \omega_0^2 x &=  F(t)
+	\end{align*}
+Let's assume (a trick) there exists a function $G(t,y)$ such that 
+\[
+		\ddot{G} + 2\gamma \dot{G} + \omega_0^2 G =  \delta(y -t )
+\] 
+Use this to write the solution $x(t)$ in terms of the driving force $F(t)$
+\end{prob}
+\begin{solu}
+	\begin{align*}
+		\ddot{x} + 2 \gamma \dot{x} + \omega_0^2 x &= 
+		\left(
+\frac{\mathrm{d} ^2}{\mathrm{d} t^2} + 2 \gamma \frac{\mathrm{d} }{\mathrm{d} t} + \omega_0^2 
+		\right)
+		x(t) = F(t) \\
+		&=  
+		\left(
+\frac{\mathrm{d} ^2}{\mathrm{d} t^2} + 2 \gamma \frac{\mathrm{d} }{\mathrm{d} t} + \omega_0^2 
+		\right)
+		x(t) = \int_{-\infty}^{\infty} F(y) \delta(y - t)\, \mathrm{d} y  \\
+		&=  
+		\left(
+\frac{\mathrm{d} ^2}{\mathrm{d} t^2} + 2 \gamma \frac{\mathrm{d} }{\mathrm{d} t} + \omega_0^2 
+		\right)
+		x(t) = \int_{-\infty}^{\infty} F(y) 
+		\left[\left(
+\frac{\mathrm{d} ^2}{\mathrm{d} t^2} + 2 \gamma \frac{\mathrm{d} }{\mathrm{d} t} + \omega_0^2 
+\right) G(t,y) \right]
+		\, \mathrm{d} y  \\
+		&=  
+		\left(
+\frac{\mathrm{d} ^2}{\mathrm{d} t^2} + 2 \gamma \frac{\mathrm{d} }{\mathrm{d} t} + \omega_0^2 
+		\right)
+		x(t) =
+			\left(
+\frac{\mathrm{d} ^2}{\mathrm{d} t^2} + 2 \gamma \frac{\mathrm{d} }{\mathrm{d} t} + \omega_0^2 
+\right) 
+		\int_{-\infty}^{\infty} F(y) 
+G(t,y) 
+		\, \mathrm{d} y  \\ &
+		\implies x(t) = \int_{-\infty}^{\infty} F(y) G(t,y) \, \mathrm{d} y 
+	\end{align*}
+\end{solu}
+\begin{fact}
+For $\ddot{x} + 2 \gamma \dot{x} + \omega_0^2 x$ form, setting $\omega^2 = \omega_0^2 - \gamma^2 > 0$ the green's function is 
+\[ G(t,y) = 
+\frac{\Theta(t-y)}{\omega} \sin\left(\omega (t - y)\right) e^{- \gamma (t- y)}
+\] 
+In expanded form 
+\[ G(t,y) = 
+\frac{\Theta(t-y)}{\sqrt{\omega_0^2 - \gamma^2} } \sin\left(\sqrt{\omega_0^2 - \gamma^2}  (t - y)\right) e^{- \gamma (t- y)}
+\] 
+For $\omega^2 = \omega_0^2 - \gamma ^2 < 0$ case it becomes 
+\[ G(t,y) = 
+\frac{\Theta(t-y)}{\sqrt{\gamma^2 - \omega_0^2} } \sinh\left(\sqrt{\gamma^2 - \omega_0^2}  (t - y)\right) e^{- \gamma (t- y)}
+\] Here we have the Heaviside Step function which outputs $1$ for non-negative input, 0 for negative
+\[\Theta(t-y) = 
+\begin{cases}
+1 & t - y \ge 0 \implies t \ge y	\\
+0 & t - y < 0 \implies t < y
+\end{cases}
+\] 
+Note that while solving problems this Heaviside part of the Green's function contributes to change the bound of integral.
+\end{fact}
+\begin{prob}
+	Solve for $x(t)$ if the driving force is a constant over time. 
+\end{prob}
+\begin{margintable}
+	\begin{align*}
+		&x(t) = x_h + x_p = x_h + \frac{A}{\omega_0^2} \\ 
+		&\ddot{x}  + 2 \gamma \dot{x} + \omega_0^2 x = 0 + A = A
+	\end{align*}
+\end{margintable}
+\begin{solu}
+I was stuck with the Heaviside portion for hours. 
+	\begin{align*} x(t) &= 
+		\int_{-\infty}^{\infty} A \, G(t,y) \, \mathrm{d} y \\ 
+		&=
+		\int_{-\infty}^{\infty} A \frac{\Theta(t-y)}{\omega}\sin(\omega (t-y) ) e^{- \beta (t - y)}  \\ 
+		&= 
+		\int_{-\infty}^{t}  \frac{A}{\omega}\sin(\omega (t-y) ) e^{- \gamma (t - y)} 
+		\tag{$\Theta(t-y)$ ensures $t \ge y$ upper bound}
+		\\ 
+		&= \frac{A}{\omega^2 + \beta^2} = \frac{A}{\omega_0^2 - \gamma^2 + \gamma^2} = \frac{A}{\omega_0^2} \tag{used integral calculator}\\
+	\end{align*}
+	We got the \textbf{Particular Solution} for the Constant Force Damped Driven Oscillator. In the margin note you can see why it makes sense because the Homogeneous part of the solution becomes a zero when we run the differential equation over it. \emph{Hence motivating the next fact -}
+\end{solu}
+
+\begin{fact}\label{fcteqng}
+	$x(t) = \int_{-\infty}^{\infty} f(t) G(t,y) \, \mathrm{d} y \equiv x_p(t)  $ for driven force is the particular solution. 
+\end{fact}
+
+\begin{prob}
+	Solve for $x(t)$ if there is no driving force, which means $f(t) = 0$.
+\end{prob}
+\begin{solu}
+	\[
+	x(t) = \int_{-\infty}^{\infty} 0* G(t,y) \, \mathrm{d} y  = 0
+	\]
+	You can see that our Green's Function method kind of breaks here. This is reasonable because having no driving force means our solutions are \textbf{Homogeneous Solutions} which are found separately.
+	I am kind of going to write from memory 
+	\[
+	x_h(t) = A \cos( \omega t ) + B \sin( \omega t)
+	\] 
+\end{solu}
+
+
+\begin{prob}
+	Solve for $x(t)$ if the driving force is $f(t) = A \cos (\omega_D t)$.
+\end{prob}
+\begin{solu}
+	\begin{align*}
+		x(t) &= \int_{-\infty}^{\infty} f(y) G(t,y) \, \mathrm{d} y  \\
+		     &=
+		     \int_{-\infty}^{\infty} A \frac{\Theta(t-y)}{\omega}\cos(\omega_D y)\sin(\omega (t-y) ) e^{- \gamma (t - y)}  \\ 
+		     &= 
+		     \int_{-\infty}^{t}  \frac{A}{\omega}\cos(\omega_D y)\sin(\omega (t-y) ) e^{- \gamma (t - y)}  \\ 
+		     &= 
+		     \int_{-\infty}^{t}  \frac{A}{\sqrt{\omega_0^2 - \gamma^2} }\cos(\omega_D y)\sin(\sqrt{\omega_0^2 - \gamma^2}  (t-y) ) e^{- \gamma (t - y)}  
+		     \tag{intentionally expanded}		     \\
+		     &= 
+A \frac{
+2 \gamma \omega_D \sin\left(\omega_D t\right) + (\omega_0^2 - \omega_D^2) \cos(\omega_D t)
+}{
+	(\omega_0^2 - \omega_D^2)^2 + (2 \gamma \omega_D)^2
+}
+\tag{integral calculator assist}
+	\end{align*}
+	From Fact \ref{fcteqng} it's understood that what we have above is a Particular Solution. 
+\end{solu}
+\end{document}

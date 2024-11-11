@@ -1,0 +1,489 @@
+\documentclass[letterpaper]{article}
+\usepackage[]{float}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[dutch]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage[margin=1.3in]{geometry}
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+\usepackage[]{fancyhdr}
+\pdfsuppresswarningpagegroup=1
+\newcommand{\hb}{\hbar}
+\setlength\parindent{0pt}
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\fancyhead[L]{PHYS311 : Quantum Mechanics}
+\fancyhead[C]{\rightmark}
+\fancyhead[R]{Homework 05}
+\fancyfoot{}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\newlength\adder
+\setlength\adder{1cm}
+\addtolength\headwidth{2\adder}
+\fancyheadoffset{\adder}
+
+\fancyfoot[C]{\vspace{0.3cm}\\ \thepage}
+
+\begin{center}
+\Large{ \textsf{
+Quantum Mechanics Homework 05\\ 
+Ahmed Saad Sabit
+}	}
+\end{center}
+
+\section*{Problem 01} 
+\subsection*{(a)} 
+\begin{align*}
+	I(\alpha) I (\alpha) &= 
+\int_{-\infty}^{\infty} \mathrm{d} x \, e^{ - \alpha \frac{x^2}{2}}  
+\int_{-\infty}^{\infty} \mathrm{d} y \, e^{ - \alpha \frac{y^2}{2}}  
+	\\ 
+	I^2(\alpha) &= 
+	\int_{-\infty}^{\infty} 
+	\int_{-\infty}^{\infty} 
+	\mathrm{d} x \, \mathrm{d} y \, 
+	e^{ - \alpha \frac{x^2 + y^2}{2}}\\
+	&= 
+	\int_{0}^{2 \pi } \int_{0}^{\infty}   
+\mathrm{d} r \, \mathrm{d} \theta \, 
+\frac{\partial (r, \theta)}{\partial (x , y)} e^{ - \alpha \frac{r^2 \cos ^2 \theta + r^2 \sin ^2 \theta}{2}}
+	\\
+	&= 2\pi \int_{0}^{\infty} \mathrm{d} r \, r e^{- \alpha \frac{r^2}{2}}  \\
+	&= 2\pi \int_{0}^{\infty} \mathrm{d} \left(\frac{r^2}{2}\right) \,  e^{- \alpha \frac{r^2}{2}}  \\ 
+	&= 2\pi \int_{0}^{\infty} \mathrm{d} u \, e^{ - \alpha u}  \\
+	&= 2 \pi \frac{1}{- \alpha} [-1 + e^{ - \alpha (\infty)} ]   \\
+	&= \frac{2\pi}{\alpha} \\ 
+\implies I(\alpha) &= \sqrt{ \frac{2\pi}{\alpha}}
+\end{align*}
+
+
+\subsection*{(b)} 
+First find the integral probability distribution interpretation for the $\hat{X}^2$ for a state $\psi$
+\begin{align*}
+	\langle \hat{X}^2 \rangle &\implies \langle \psi |  \hat{X} \hat{X} | \psi \rangle   \\ 
+&= \int_{-\infty}^{\infty} \mathrm{d} x \, \langle \psi | \hat{X} \hat{X} | x \rangle  \langle x | \psi \rangle   \\
+&= \int_{-\infty}^{\infty} \mathrm{d} x \, \langle \psi | \hat{X} | x \rangle  x  \langle x | \psi \rangle   \\
+&= \int_{-\infty}^{\infty} \mathrm{d} x \, \langle \psi |  x \rangle  x^2  \langle x | \psi \rangle   \\ 
+&= \int_{-\infty}^{\infty} \mathrm{d} x \, 
+	x^2 \psi^*(x) \psi(x) 
+\\	&= \int_{-\infty}^{\infty} \mathrm{d} x \, x^2 | \psi(x) |^2   \\
+	&= \frac{1}{(\pi \Delta ^2)^{\frac{1}{2}}} \int_{-\infty}^{\infty} \mathrm{d} x \,  x^2 e^{- (1 /  \Delta ^2) x^2} 
+\end{align*}
+Now we require to solve the integral
+\begin{align*}
+	I(\alpha) &= \int_{-\infty}^{\infty} \mathrm{d} x \, e^{- \alpha \frac{x^2}{2}}  \\ 
+	\ \frac{\mathrm{d} }{\mathrm{d} \alpha} I(\alpha) &= 
+\int_{-\infty}^{\infty} \mathrm{d}  x \, \frac{\mathrm{d} }{\mathrm{d} \alpha} 
+e^{ - \alpha \frac{x^2}{2}} 
+	\\
+	\ \frac{\mathrm{d} }{\mathrm{d} \alpha} \sqrt{\frac{2\pi}{\alpha}} &= 
+	- \frac{1}{2} \int_{- \infty}^{\infty} \mathrm{d} x \, x^2 e^{- \alpha \frac{x^2}{2}}  \\ 
+	\sqrt{2 \pi } \left(- \frac{1}{2}\right) \frac{1}{\sqrt{\alpha^3} }
+									    &	= - \frac{1}{2} \int_{- \infty}^{\infty} \mathrm{d} x \, x^2 e^{- \alpha \frac{x^2}{2}}  \\ 
+	\sqrt{ \frac{2 \pi  }{\alpha^3} } &= \int_{-\infty}^{\infty} \mathrm{d} x \, x^2 e^{- \alpha \frac{x^2}{2}} 
+\end{align*}
+Drawing the coefficients together 
+\[
+\frac{\alpha}{ 2} = \frac{1}{\Delta ^2 } \implies \alpha = \frac{2}{\Delta ^2} \implies 
+\alpha^3 = \frac{8}{\Delta ^{6}}
+\]
+Hence the integral with $\alpha \to  \Delta$
+\[
+\int_{-\infty}^{\infty} \mathrm{d} x \, x^2 e^{ - \alpha \frac{x^2}{2}} = 
+\int_{-\infty}^{\infty} \mathrm{d} x \, x^2 e^{ - ( 1 / \Delta ^2) x^2 } = 
+\sqrt{2 \pi \alpha ^{-3} } = 
+\sqrt{2 \pi \Delta^{6} / 8}  = \sqrt{\pi (\Delta ^3)^2 / 2 ^2 }  = \frac{\Delta^3}{2} \sqrt{\pi} 
+\] 
+Put the remaining pieces together
+\begin{align*}
+	\langle \hat{X}^2 \rangle &= \frac{1}{\sqrt{\pi} \Delta } 
+	\int_{-\infty}^{\infty} \mathrm{d} x \, x^2 e^{ - (1 / \Delta^2) x^2} \\  
+	&= \frac{1}{\sqrt{ \pi } \Delta } \left(\frac{\Delta ^3}{2} \sqrt{{\pi }} \right) \\
+	&= \frac{\Delta^2 }{2  } \\
+\end{align*}
+
+\section*{Problem 03} 
+\subsection*{(a)}
+
+Consider the wave equation for $|x| \le \frac{L}{2}$. 
+\[
+\ \frac{\mathrm{d} ^2}{\mathrm{d} x^2} \psi(x) = 
+\left(
+B 
+\left[
+	\left(\frac{1+s}{2}\right) \left(- k_2^2 \cos(k_2 x)\right)
+	+
+	\left(\frac{1-s}{2}\right) \left(- k_2^2 \sin(k_2 x)\right)
+\right]
+\right) = 
+- k_2^2 \psi(x)
+\] 
+Putting it to Schrodinger's equation equation gives 
+\[
+	-k_2^2 \psi(x) = - \frac{2m}{\hb^2} [E - V_0] \psi(x) \implies k_2^2 = \frac{2m}{\hb^2} [E - V_0]
+\] 
+Similarly consider the wave equation for $x > L / 2$ 
+\[
+\ \frac{\mathrm{d} ^2}{\mathrm{d} x^2 } \psi(x) = (-k_1)^2 A e^{- k_1 x} = 
+k_1^2 \psi(x)
+\] 
+Putting it to Schrodinger's equation (note here $V(x) = 0$)
+\[
+	k_1^2 \psi(x) = - \frac{2m}{\hb^2} [E] \psi(x)
+\]
+For this 
+\[
+	k_1^2 + k_2^2 = \frac{2m}{\hb ^2 } [- E + E - V_0] = \frac{2mV_0 }{\hb ^2}  = q^2
+\] 
+
+\subsection*{(b)} 
+At boundary of a side of the well, we require 
+\[
+\psi_\text{in} (x)= \psi_\text{out} (x) \quad \text{ and } \quad \frac{\mathrm{d} \psi_\text{in} (x)}{\mathrm{d} x} = \frac{\mathrm{d} \psi_\text{out} (x)}{\mathrm{d} x}
+\] 
+\subsubsection*{Even parity case $s = 1$ } 
+Note that for the following computations $x = L / 2$\[
+\psi_\text{in}(x) = B \cos (k_2 x) 
+\] 
+The wave solution for $x > L / 2$
+\[
+\psi_\text{out} (x) = A e^{-k_1 x}
+\]
+First condition
+\begin{align*}
+	B \cos k_2 x &= A e^{- k_1 x} 
+\end{align*}
+Second condition 
+\[
+-k_2 B \sin k_2 x = -k_1 A e^{ - k_1 x}
+\]
+This is true for boundary $x = L / 2$
+The two equations relating $A,B$ as required in the problem 
+\[ \boxed{
+	A e^{- k_1 L / 2} = B \cos k_2 L / 2 \\ 
+} \]  \[ \boxed{
+A k_1 e^{-k_1 L /2 } =  B k_2 \sin k_2 L / 2
+}\] 
+Dividing these two equations
+\[
+k_1 = k_2 \tan \left(k_2 L / 2\right)
+\] 
+
+From previous computation of Schrodinger's equation inside the well we have 
+\begin{align*}
+	k_2^2 &= \frac{2m}{\hb^2}[E - V_0] = q^2 \frac{E - V_0}{V_0} \implies
+	k_2 = \sqrt{
+\frac{2m}{\hb^2}[E - V_0] 
+	}\\
+	q^2 &= \frac{2m}{\hb ^2} V_0 \implies \frac{q^2}{V_0} = \frac{2m }{\hb} \\ 
+	k_1^2 + k_2^2 &= q^2 \implies
+k_1 = \sqrt{q^2 - k_2^2}  \implies  
+\sqrt{q^2 - \frac{2m}{\hb^2}[E - V_0]} 
+\implies k_1 ^2 = \frac{2m}{\hb ^2} E = q^2 \frac{E}{V_0} \\ 
+\end{align*}
+The equation for Energy that we can get from this is 
+\begin{align*}
+	\frac{k_1}{k_2} &= \tan \left( \frac{k_2 L}{2}\right) \\ 
+	\frac{E}{E - V_0} &= \tan ^2 \left( \frac{k_2 L}{2}\right) \\
+	\frac{E }{E - V_0} &= \tan ^2 \left(
+\frac{qL}{2} \sqrt{\frac{E - V_0}{V_0}} 
+\right)
+\end{align*}
+
+\[
+\boxed{
+	\frac{E }{E - V_0} = \tan ^2 \left(
+\frac{qL}{2} \sqrt{\frac{E - V_0}{V_0}} 
+\right)}
+\] 
+
+\subsubsection*{Parity of $s = -1$ case} 
+We get 
+\[
+\psi_\text{in}(x) =  B \sin(k_2 x) \quad \text{ and } \quad \frac{\mathrm{d} \psi_\text{in}(x)}{\mathrm{d}x } = k_2 B \cos(k_2 x)
+\]
+\[
+\psi_\text{out} (x) = - A e^{ k_1 x} \quad \text{ and } \quad \frac{\mathrm{d} \psi_\text{out}}{\mathrm{d} x} = - k_1 A e^{k_1 x}
+\] 
+We have the equation relating $A,B$ at $x = - L /2 $
+\begin{align*}
+	- A e^{k_1 x} &= B \sin (k_2 x)	 \\
+	-k_1 A e^{k_1 x} &= k_2 B \cos(k_2 x)  \implies
+	\frac{1}{k_1} = \frac{\tan(k_2 x)}{k_2} \implies 
+	k_1 = k_2 \cot \left(k_2 x\right)
+\end{align*}
+\[
+k_1 = k_2 (- \cot(k_2 L / 2))
+\]
+We can avoid the whole computation by simply replacing the $\tan$ of previous equation with $- \cot $ 
+\[
+\boxed{
+\frac{E}{E - V_0} = \cot^2 \left(\frac{q L}{2} \sqrt{\frac{E - V_0}{V_0}} \right)
+}
+\] 
+
+\subsection*{(c)} 
+\begin{align*}
+	\tan \left(q \frac{L}{2} \sqrt{\frac{E-V_0}{V_0}} \right) &= 
+	\tan \left( \frac{k_2 L}{2}\right)\\ 
+\end{align*}
+
+\section*{Problem 04} 
+\subsection*{(a)}
+\begin{align*}
+	\psi(p) = \langle p | \psi \rangle &= \langle p | \hat{I} | \psi \rangle  \\
+	&= \langle p | \int_{-\infty}^{\infty} \, \mathrm{d} x | x \rangle \langle x | \psi \rangle  \\
+	&= \int_{-\infty}^{\infty}\mathrm{d} x\, \langle p | x \rangle \langle x | \psi\rangle  \\
+	&= \int_{-\infty}^{\infty}  \mathrm{d} x\, \frac{1}{\sqrt{2 \pi \hb}  } e^{-i p x / \hb} \psi(x) \\
+	&=  \frac{1}{\sqrt{2 \pi \hb} } \int_{-\infty}^{\infty}  \mathrm{d} x\, e^{-i p x / \hb} \psi(x) 
+\end{align*}
+
+
+\subsection*{(b)}
+\subsection*{Wave Mechanical Fourier Transform}
+\begin{align*}
+	&\left[
+- \frac{\hb^2}{2m} \frac{\mathrm{d} ^2}{\mathrm{d} x^2} + V_0 \frac{x}{a}
+\right] \psi(x) = E \psi(x) \\ &\implies \left[ 
+- \frac{\hb^2}{2m} \frac{\mathrm{d} ^2}{\mathrm{d} x^2} + V_0 \frac{x}{a}
+\right] \psi(x) e^{- i p x / \hb} = E \psi(x) e^{- i p x / \hb} \\
+			    &\implies 
+\int_{-\infty}^{\infty} \, \mathrm{d} x \, \left [- \frac{\hb^2}{2m} \frac{\mathrm{d} ^2}{\mathrm{d} x^2} + V_0 \frac{x}{a}
+\right] \psi(x) e^{- i p x / \hb} =\int_{-\infty}^{\infty} \mathrm{d} x\,  E \psi(x) e^{- i p x / \hb} \\
+			    &\implies 
+\int_{-\infty}^{\infty} \, \mathrm{d} x \, \left [- \frac{\hb^2}{2m} \frac{\mathrm{d} ^2}{\mathrm{d} x^2} 
+\right] \psi(x) e^{- i p x / \hb} 
+	+
+	\int_{-\infty}^{\infty} \mathrm{d} x \,  \left[	V_0 \frac{x}{a} \right ]\psi(x) e^{- i p x / \hb} 
+ =\int_{-\infty}^{\infty} \mathrm{d} x\,  E \psi(x) e^{- i p x / \hb} \\
+			    &\implies \left(- \frac{\hb ^2}{2m }\right) 
+\left[	\underbrace{ 	    \ \frac{\mathrm{d} \psi(x)}{\mathrm{d} x}  e^{- i p x / \hb} \Biggr]_{-\infty}^{\infty} - \int_{-\infty}^{\infty} \frac{\mathrm{d} \psi(x) }{\mathrm{d} x}  (-i p / \hb) e^{- i p x / \hb} 
+}_{\text{Integration by Parts done TWICE}} \right]+
+\frac{V_0}{a}	\int_{-\infty}^{\infty} \mathrm{d} x \, x  
+\psi(x)  e^{- i p x / \hb} 
+ =\int_{-\infty}^{\infty} \mathrm{d} x\,  E \psi(x) e^{- i p x / \hb} \\
+%
+&\implies 
+	\frac{p^2}{2m} \psi(p)+
+\frac{V_0}{a}  \left(-\frac{\hb}{i}\right)\frac{\mathrm{d} }{\mathrm{d} p} 	\int_{-\infty}^{\infty} \mathrm{d} x \,  
+\psi(x)  e^{- i p x / \hb} 
+ = E \int_{-\infty}^{\infty} \mathrm{d} x\,   \psi(x) e^{- i p x / \hb} \\ 
+			    & \implies 
+			    \left[ \frac{p^2}{2m}
+			    \right] \psi(p) + 
+			    \frac{V_0}{a} \left(- \frac{\hb}{i}\right) \frac{\mathrm{d} }{\mathrm{d} p} \psi(p) = E \psi(p)
+			    &\implies
+			    \left[
+			    \frac{p^2}{2m} - \frac{\hb}{i} \frac{V_0}{a} \frac{\mathrm{d} }{\mathrm{d} p} \right] \psi(p) = E \psi(p)
+\end{align*}
+
+\subsection*{Matrix Mechanical Wave Transform} 
+\begin{align*}
+	\hat{H} | E \rangle  = E | E \rangle  &\implies 
+\langle x |  \hat{H} | E \rangle  = E \langle x |  E \rangle 
+	\\
+					      &\implies \langle x |  \frac{\hat{P}^2}{2m} + \frac{V_0}{a} \hat{X} | E \rangle  = E \langle x |  E \rangle  \\ 
+\end{align*}
+We know know that 
+\begin{align*}&
+	\frac{1}{2 m}\langle x|\hat{p} \hat{p}| \Psi\rangle=\frac{1}{2 m} \frac{\hbar}{i} \frac{d}{d x}\langle x|\hat{p}| \Psi\rangle=\frac{1}{2 m} \frac{\hbar}{i} \frac{d}{d x} \frac{\hbar d}{d x}\langle x | \Psi\rangle=-\frac{\hbar^{2}}{2 m} \frac{d^{2}}{d x^{2}}\langle x | \Psi\rangle \\ 
+	& \frac{V_0}{a} \langle x | \hat{X} | \Psi \rangle 
+= \frac{V_0}{a} x \langle x | \Psi \rangle 
+\end{align*}
+
+In momentum basis, 
+\begin{align*}
+	\hat{H} | E \rangle  = E | E \rangle  &\implies 
+\langle p |  \hat{H} | E \rangle  = E \langle p |  E \rangle 
+	\\
+					      &\implies \langle p |  \frac{\hat{P}^2}{2m} + \frac{V_0}{a} \hat{X} | E \rangle  = E \langle p |  E \rangle  \\ 
+\end{align*} 
+Computing each terms 
+\begin{align*}
+	& \langle p | \frac{\hat{P}^2 }{2m} | E \rangle  = \frac{p^2}{2m} \langle p | E \rangle  \\ &
+\frac{V_0}{a}	\langle p | \hat{X} | E \rangle  = \frac{V_0}{a} \left(- \frac{\hb}{i}\right)\frac{\mathrm{d} }{\mathrm{d} p} \langle p | E \rangle
+	&\implies 
+	\left[
+\frac{p^2}{2m} - \frac{\hb
+}{i} \frac{V_0}{a} \frac{\mathrm{d} }{\mathrm{d} p}
+	\right] \Psi(p) = E \Psi(p)
+\end{align*}
+
+
+
+
+\subsection*{(c)} 
+The differential equation is 
+\[
+\left[
+- \frac{\hb V_0}{i a}
+\right] \frac{\mathrm{d} \psi(p)}{\mathrm{d} p}  = 
+\left[
+E - \frac{p^2}{2m} \right] \psi(p)
+\]
+Not that bad, 
+\begin{align*}
+	\Lambda \frac{\mathrm{d} \psi(p)}{\psi(p)} &= (E - p^2 / 2m ) \mathrm{d} p \\
+\int	\frac{\mathrm{d} \psi(p)}{\psi ( p) } &= 
+\int	\left(\frac{E}{\Lambda} - \frac{p^2}{2m \Lambda}\right) \mathrm{d} p\\
+\ln \left(\frac{\psi(p)}{\psi_0(p)}\right) &= \frac{E}{\Lambda} p - \frac{p^3}{6 m \Lambda} + C \\
+\ln\left(\frac{\psi(p)}{\psi(0)}\right) &= 
+\frac{E}{\Lambda}p - \frac{1}{6 m \Lambda} p^3
+\\ 
+\psi(p) &= \psi(0) \exp \left({
+\frac{E}{\Lambda}p - \frac{1}{6 m \Lambda} p^3} \right) \\ 
+\psi(p) &= \psi(0) \exp \left({
+\frac{- i a E }{\hb V_0}p + \frac{i a }{6 m \hb V_0} p^3} \right)
+\end{align*}
+
+\[ \boxed{
+F(p, E) =  \exp \left(
+\frac{- i a E }{\hb V_0}p + \frac{i a }{6 m \hb V_0} p^3 \right)
+}\] 
+
+
+\subsection*{(d)} 
+\begin{align*}
+	\psi(x) &= \frac{1}{ \sqrt{ 2 \pi \hb}} 
+	\int_{-\infty}^{\infty} \mathrm{d} p \, \psi(0)  
+	\exp \left( 
+\frac{- i a E }{\hb V_0}p + \frac{i a }{6 m \hb V_0} p^3 \right) e^{i p x / \hb } \\ 
+&= 
+\frac{\psi_p(0)}{\sqrt{2 \pi \hb } } 
+\int_{-\infty}^{\infty} 
+\mathrm{d} p \, 
+\exp 
+\left(
+\frac{- i a E }{\hb V_0}p + \frac{i x}{\hb } p + \frac{i a }{6 m \hb V_0} p^3 
+\right)
+\\
+&= 
+\frac{\psi_p(0)}{\sqrt{2 \pi \hb } } 
+\int_{-\infty}^{\infty} 
+\mathrm{d} p \, 
+\exp 
+\left( \frac{i}{\hb} 
+	\left [\frac{- a E }{ V_0} + { x}{ } \right ] p + \frac{i a }{6 m \hb V_0} p^3 
+\right)
+\\ & = 
+\frac{\psi_p(0)}{\sqrt{2 \pi \hb } } 
+\int_{-\infty}^{\infty} 
+\mathrm{d} p \, 
+\exp 
+\left( \frac{i}{\hb} 
+	\left [ x - \frac{ a E }{ V_0} \right ] p + \frac{i a }{6 m \hb V_0} p^3 
+\right)
+ \\&
+\implies
+\psi(x) = F \left(x - a \frac{E}{V_0}\right) 
+\end{align*}
+From the computation it is clear that $F$ here is the inverse 
+ fourier transform at zero energy. 
+
+
+
+
+\section*{Problem 05} 
+\subsection*{(a)}
+\begin{align*}
+	G_3 &= 
+	\begin{bmatrix} 0&-1&0\\1&0&0\\0&0&0 \end{bmatrix}  \\ 
+	G_3^2  &= 
+	\begin{bmatrix} 0&-1&0\\1&0&0\\0&0&0 \end{bmatrix}  
+	\begin{bmatrix} 0&-1&0\\1&0&0\\0&0&0 \end{bmatrix} = 
+	\begin{bmatrix} -1&0&0\\0&-1&0\\0&0&0 \end{bmatrix} \\ 
+	G_3^{3} &= 
+	\begin{bmatrix} -1&0&0\\0&-1&0\\0&0&0 \end{bmatrix} 
+	\begin{bmatrix} 0&-1&0\\1&0&0\\0&0&0 \end{bmatrix}  = 
+	\begin{bmatrix} 0&1&0\\-1&0&0\\0&0&0 \end{bmatrix}  \\ 
+	G_3^4	&= 
+	\begin{bmatrix} 0&1&0\\-1&0&0\\0&0&0 \end{bmatrix}
+	\begin{bmatrix} 0&-1&0\\1&0&0\\0&0&0 \end{bmatrix}  = 
+	\begin{bmatrix} 1&0&0\\0&1&0\\0&0&0 \end{bmatrix} 
+	\\
+	G_3^{5} &=  
+	\begin{bmatrix} 1&0&0\\0&1&0\\0&0&0 \end{bmatrix} 
+	\begin{bmatrix} 0&-1&0\\1&0&0\\0&0&0 \end{bmatrix}  = 
+	\begin{bmatrix} 0&-1&0\\1&0&0\\0&0&0 \end{bmatrix}  = G_3
+\end{align*}
+
+\begin{align*}
+	\cos \theta &= 1 - \frac{1}{2!} x^2 + \frac{1}{4!} x^{4} - \cdots  \\ 
+	\sin \theta &= x - \frac{1}{3!} x^3 + \frac{1}{5!} x^{5} - \cdots \\
+\end{align*}
+
+
+\begin{align*}
+	\begin{bmatrix} 
+		\cos \theta & - \sin \theta & 0 \\
+		\sin \theta & \cos \theta & 0 \\ 
+		0 & 0 & 1
+	\end{bmatrix} &=
+	\begin{bmatrix} 
+	\cos \theta = 1 - \frac{1}{2!} x^2 + \frac{1}{4!} x^{4} - \cdots   
+	& 
+-	\sin \theta = - x + \frac{1}{3!} x^3 - \frac{1}{5!} x^{5} + \cdots 
+	&
+	0
+	\\
+		\sin \theta = x - \frac{1}{3!} x^3 + \frac{1}{5!} x^{5} - \cdots & 
+		\cos \theta = 1 - \frac{1}{2!} x^2 + \frac{1}{4!} x^{4} - \cdots  & 
+0 \\ 
+		0 & 0 & 1  
+	\end{bmatrix}  \\  
+	& = \text{ roughly speaking } 
+	\sum x^{n}/n!
+	\begin{bmatrix} 
+		1,0,-1,0,1, \ldots & 
+		0, -1, 0 , 1, 0 \ldots & 0 
+		\\
+		0, 1, 0, -1, 0, 1 \ldots  & 
+		1, 0, -1, 0, 1 \ldots \\ 
+		0 & 0 & 1 
+	\end{bmatrix}  \\ 
+	&= 
+	\begin{bmatrix} 1&0&0\\0&1&0\\0&0&1 \end{bmatrix}  + 
+	x 
+	\begin{bmatrix} 0&-1&0\\1&0&0\\0&0&0 \end{bmatrix}  + 
+	\frac{x^2}{2!} 
+	\begin{bmatrix} -1&0&0\\0&-1&0\\0&0&0 \end{bmatrix} + 
+	\frac{x^3}{3!} 
+	\begin{bmatrix} 0&1&0\\-1&0&0\\0&0&0 \end{bmatrix}  + \cdots
+	\\ &= 
+\hat{I} + x G_3 + \frac{x^2}{2!} G_3^2 + \frac{x^3}{3!} G_3^3 + \cdots
+= e^{\theta G_3} 
+\end{align*}
+
+
+\subsection*{(b)} 
+I do the computation by hand on paper. 
+\begin{align*}
+	G_1 G_2 &=  \begin{bmatrix} 0&0&0\\1&0&0\\0&0&0 \end{bmatrix} \\
+	G_2 G_1 &=  \begin{bmatrix} 0&1&0\\0&0&0\\0&0&0 \end{bmatrix}  
+		& [J_1, J_2] = i ^2 G_1 G_2 - i^2 G_2 G_1 =  G_2 G_1 - G_1 G_2 = \begin{bmatrix} 0&1&0\\-1&0&0\\0&0&0 \end{bmatrix} = i^2 G_3 = i J_3 \\ 
+	G_2 G_3 &=  \begin{bmatrix} 0&0&0\\0&0&0\\0&1&0 \end{bmatrix}   \\ 
+	G_3 G_2 &=  \begin{bmatrix} 0&0&0\\0&0&1\\0&0&0 \end{bmatrix}  
+		& [J_2, J_3] = \begin{bmatrix} 0&0&0\\0&0&1\\0&-1&0 \end{bmatrix}  = i^2 G_1 = i J_1 \\ 
+	G_3 G_1 &=  \begin{bmatrix} 0&0&1\\0&0&0\\0&0&0 \end{bmatrix}  \\
+	G_1 G_3 &=  \begin{bmatrix} 0&0&0\\0&0&0\\1&0&0 \end{bmatrix} & [J_3,J_1] = \begin{bmatrix} 0&0&-1\\0&0&0\\1&0&0 \end{bmatrix} = i^2 G_2 = i J_2 
+\end{align*}
+From the commutator relationship we know that 
+\[
+	[J_x, J_y] = - [J_y , J_x] \implies \varepsilon_{x,y,z} = - \varepsilon_{y,x,z} 
+\]
+So hence proving 
+\[
+	[J_a, J_b ] = i \varepsilon_{abc} J_c
+\] 
+\end{document}

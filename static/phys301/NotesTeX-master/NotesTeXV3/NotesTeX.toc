@@ -1,0 +1,15 @@
+\contentsline {part}{I\hspace {1em}Introduction}{1}{part.1}%
+\contentsline {section}{\numberline {1}Required Packages}{1}{section.1}%
+\contentsline {part}{II\hspace {1em}Modifications}{1}{part.2}%
+\contentsline {section}{\numberline {2}Features}{1}{section.2}%
+\contentsline {section}{\numberline {3}Included Packages}{2}{section.3}%
+\contentsline {section}{\numberline {4}Margins}{2}{section.4}%
+\contentsline {section}{\numberline {5}\texttt {amsthm} Environments}{3}{section.5}%
+\contentsline {section}{\numberline {6}Fullpage Environment}{5}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Known Issues with Fullpage}{5}{subsection.6.1}%
+\contentsline {section}{\numberline {7}The Part Environment}{5}{section.7}%
+\contentsline {part}{III\hspace {1em}Advanced}{6}{part.3}%
+\contentsline {section}{\numberline {8}Page Dimensions}{6}{section.8}%
+\contentsline {section}{\numberline {9}\texttt {Fancyhdr} Layout}{7}{section.9}%
+\contentsline {section}{\numberline {10}Alternative Language Integration}{7}{section.10}%
+\contentsline {section}{\numberline {11}License}{7}{section.11}%

@@ -1,0 +1,90 @@
+\documentclass[10pt]{article}
+\usepackage{NotesTeXV3,lipsum}
+%\usepackage{showframe}
+
+\begin{document}
+	\title{{Quantum Mechanics : PHYS 311}\\{\normalsize{\itshape 
+Attempting to write a study guide for midterm
+	}}}
+	\author{Ahmed Saad Sabit}
+	\affiliation{
+	Sophomore at Rice University\\
+	\href{https://kneardhead.github.io/}{Website}\\
+	}
+	\emailAdd{ahmedsaadsabit@rice.edu}
+	\maketitle
+	\newpage
+	\pagestyle{fancynotes}
+
+\part{Methodology}
+\section{Reading this handout} 
+What I am going to do is that
+\begin{itemize}
+	\item Read the lectures from the first day. 
+	\item Read the example solved problems in problem session. 
+	\item Find out some relevant problems from outside sources that are in context, and then type their solution up. 
+\end{itemize}
+\begin{prob}
+	This is a problem statement.
+\end{prob}
+\begin{solu}
+	This is a solution statement. 
+\end{solu}
+\begin{definition}
+	This is a definition. 
+\end{definition}
+\begin{fact}
+This is a fact. By fact I mean it's a derivative of Definition.
+\end{fact}
+
+
+
+\begin{align*}
+	\cos \theta &= 1 - \frac{1}{2!} x^2 + \frac{1}{4!} x^{4} - \cdots  \\ 
+	\sin \theta &= x - \frac{1}{3!} x^3 + \frac{1}{5!} x^{5} - \cdots \\
+\end{align*}
+
+
+\begin{align*}
+	\begin{bmatrix} 
+		\cos \theta & - \sin \theta & 0 \\
+		\sin \theta & \cos \theta & 0 \\ 
+		0 & 0 & 1
+	\end{bmatrix} \\ &=
+	\begin{bmatrix} 
+	\cos \theta = 1 - \frac{1}{2!} x^2 + \frac{1}{4!} x^{4} - \cdots   
+	& 
+-	\sin \theta = - x + \frac{1}{3!} x^3 - \frac{1}{5!} x^{5} + \cdots 
+	&
+	0
+	\\
+		\sin \theta = x - \frac{1}{3!} x^3 + \frac{1}{5!} x^{5} - \cdots & 
+		\cos \theta = 1 - \frac{1}{2!} x^2 + \frac{1}{4!} x^{4} - \cdots  & 
+0 \\ 
+		0 & 0 & 1  
+	\end{bmatrix}  \\  
+	& = \text{ roughly speaking } 
+	\sum x^{n}/n!
+	\begin{bmatrix} 
+		1,0,-1,0,1, \ldots & 
+		0, -1, 0 , 1, 0 \ldots & 0 
+		\\
+		0, 1, 0, -1, 0, 1 \ldots  & 
+		1, 0, -1, 0, 1 \ldots \\ 
+		0 & 0 & 1 
+	\end{bmatrix}  \\ 
+	&= 
+	\begin{bmatrix} 1&0&0\\0&1&0\\0&0&1 \end{bmatrix}  + 
+	x 
+	\begin{bmatrix} 0&-1&0\\1&0&0\\0&0&0 \end{bmatrix}  + 
+	\frac{x^2}{2!} 
+	\begin{bmatrix} -1&0&0\\0&-1&0\\0&0&0 \end{bmatrix} + 
+	\frac{x^3}{3!} 
+	\begin{bmatrix} 0&1&0\\-1&0&0\\0&0&0 \end{bmatrix}  + \cdots
+	\\ &= 
+\hat{I} + x G_3 + \frac{x^2}{2!} G_3^2 + \frac{x^3}{3!} G_3^3 + \cdots
+= e^{\theta G_3} 
+\end{align*}
+
+
+\end{document}

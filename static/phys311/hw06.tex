@@ -1,0 +1,532 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{../math232/ahsansabit}
+\usepackage[]{float}
+\title{Quantum Mechanics : : Homework 06}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+\newcommand{\hb}{\hbar}
+\begin{document}
+\maketitle
+
+\section*{Problem 01}
+The eigenstates for a well of dimension $L$ is given by 
+\[
+\psi_n(x) 
+=
+	\sqrt{\frac{2}{L}}  \sin\left(\frac{n \pi x}{L}\right) \quad n = 1,2,3 \ldots 
+\quad \text{and} \quad
+E_n = 
+n^2 \frac{\hbar ^2 \pi ^2 }{2 m L^2}
+\] 
+where the first excited eigenstate is referring to 
+\[
+\psi_2^{i} (x) = 
+\sqrt{\frac{2}{L}} 
+\sin
+\left(
+\frac{2 \pi x}{L}
+\right) \quad \text{and} \quad
+E_2 = 4 \frac{\hbar ^2 \pi ^2 }{2 m L^2}
+\] 
+
+
+The eigenstates of a well of dimension $2L$ is given by
+\[
+\psi_n(x) 
+=
+	\sqrt{\frac{1}{L}}  \sin\left(\frac{n \pi x}{2L}\right) \quad n = 1,2,3 \ldots 
+\quad \text{and} \quad 
+E_n = 
+\frac{n^2}{4} \frac{\hbar ^2 \pi ^2 }{2 m L^2}
+\]
+
+I am going to do some guesses from ,,\emph{The Adiabatic Theorem (11.5.2)}'' of Griffiths QM (3rd Ed.). 
+Call the post quench wave-function to be $\Psi (x)$ and the state as $| \Psi \rangle $. 
+The Hamiltonian change happens at $t = 0$. At $t = 0+$ (infinitesimally after the change) the wavefunction hasn't really been notified of the evident expansion, hence $t = 0$ state is still $| \psi_2^{i} \rangle $.
+For this
+\[
+| \Psi(0) \rangle = | \psi_2^{i} \rangle 
+\]
+The time evolution would be simply 
+\[
+| \Psi(0) \rangle = \sum_{n=1}^{\infty} e^{- i E_n t / \hb} | \psi_n^{f} \rangle \langle \psi_n^{f} | \psi_2^{i} \rangle 
+\] 
+This looks atrocious so replacing $\psi_n^{f } = E_n$ energy eigenstates (after quench), 
+\begin{align*}
+	| \Psi(0) \rangle &= \sum_{n=1}^{\infty} e^{- i E_n t / \hb} | E_n \rangle \langle E_n | \psi_2^{i} \rangle \\
+			  &= \sum_{n=1}^{\infty} e^{- i E_n t / \hb} 
+| E_n \rangle 
+	\left(
+\int_{0}^{2L} \sqrt{\frac{1}{L}} \sin \left(\frac{n \pi x}{2L}\right) \sqrt{\frac{2}{L}} \sin \left(\frac{2 \pi x}{L}\right) \, \mathrm{d} x 
+	\right) \\ 
+	\langle E_n | \Psi(0 ) \rangle &=
+	\left(
+\int_{0}^{L} \sqrt{\frac{1}{L}} \sin \left(\frac{n \pi x}{2L}\right) \sqrt{\frac{2}{L}} \sin \left(\frac{2 \pi x}{L}\right) \, \mathrm{d} x 
+	\right)
+	\tag{The initial wave function is only defined for $0<x<L$ and $\psi(x) = 0$ outside this region}
+\end{align*}
+$| \langle E_n  | \Psi(0) \rangle |^2 $ is the probability of finding the particle in $n$-th state. 
+
+\subsection*{(a)}
+So for $n = 1$ ground state after quench, 
+\[
+	\langle E_1 | \Psi(0 ) \rangle ^2= 
+	\left(
+\int_{0}^{L} \sqrt{\frac{1}{L}} \sin \left(\frac{ \pi x}{2L}\right) \sqrt{\frac{2}{L}} \sin \left(\frac{2 \pi x}{L}\right) \, \mathrm{d} x 
+	\right) ^2 = 0.58 
+	\] 
+	\subsection*{b}
+$n = 2$ \[
+	\langle E_2 | \Psi(0 ) \rangle ^2= 
+	\left(
+\int_{0}^{L} \sqrt{\frac{1}{L}} \sin \left(\frac{2 \pi x}{2L}\right) \sqrt{\frac{2}{L}} \sin \left(\frac{2 \pi x}{L}\right) \, \mathrm{d} x 
+	\right) ^2 = 0
+	\] 
+\section*{Problem 2}
+\subsection*{(a)} 
+I do the computation on paper (see appendix) to get 
+\[
+\hat{J}_a | m \rangle _a = m | m \rangle _a \implies (\hat{J}_a - m I) | m \rangle _a  = 0
+\] 
+
+\begin{align*}
+	| m = 1 \rangle _x &= \frac{1}{\sqrt{2} } \begin{bmatrix} 0\\1\\i \end{bmatrix}  
+	\tag{
+	$\hat{J}_x, m=1$  }
+	\\
+	| m = 0 \rangle _ x &= \begin{bmatrix} 1\\0\\0 \end{bmatrix}  
+	\tag{
+	$\hat{J} _x , m = 0$ }  
+	\\
+	| m = -1 \rangle _x &= \frac{1}{\sqrt{2} }\begin{bmatrix} 0\\i\\1 \end{bmatrix} 
+	\tag{$\hat J _x , m = -1$} 
+	\\
+	| m = 1 \rangle _y &= \frac{1}{\sqrt{2} } \begin{bmatrix} i \\ 0 \\ 1 \end{bmatrix} 	
+	\tag{$\hat{J} _ y , m = 1$ }
+	\\
+	| m = 0 \rangle_y &= \begin{bmatrix} 0\\1\\0 \end{bmatrix} 
+	\tag{$\hat{J}_y, m = 0$} \\ 
+	| m = -1 \rangle _y &= \frac{1}{\sqrt{2} } \begin{bmatrix} -i \\ 0 \\ 1 \end{bmatrix}  
+	\tag{$\hat{J} _ y , m = -1 $ } 
+\end{align*}
+
+\subsection*{(b)} 
+Hand computation attached in appendix
+\begin{align*}
+	_x \langle m = 1 | m = 1 \rangle _ y &= - \frac{i}{2} \\ 
+	_x \langle m = 1 | m = 0 \rangle _ y &= \frac{1}{\sqrt{2} } \\ 
+	_x \langle m = 1 | m = -1 \rangle _ y &= - \frac{i}{2}
+\end{align*}
+
+
+\subsection*{(c)} 
+\begin{align*}
+	e^{i \phi} \hat{R}_z (\theta = \frac{\pi}{2}) | m = -1 \rangle _x &= 
+	e^{i \phi} 
+	\begin{bmatrix} 0 & -1 & 0 \\ 
+	1 & 0 & 0 \\ 
+	0 & 0 & 1 
+\end{bmatrix} 
+\frac{1}{\sqrt{2} } 
+\begin{bmatrix} 0 \\ i \\ 1  \end{bmatrix}  \\ 
+			  &= 
+	e^{i \phi }		  \frac{1}{\sqrt{2} } 
+			  \begin{bmatrix} -i \\ 0 \\ 1 \end{bmatrix}  = | m = -1 \rangle _y  \implies \phi = 0 
+\end{align*}
+Counter clockwise rotation about $z$-axis of $| m = -1 \rangle )x$ provided that $\phi = 0$. 
+
+
+\section*{Problem 3} 
+\subsection*{(a)} 
+I did the first problem by hand and the second one step by step used a matrix calculator in Wolfram Alpha, what I got is
+\begin{align*}
+	\hat{S}_x \implies U^{T} S_x U =
+\hb 	\begin{bmatrix} 
+	-\frac{1}{\sqrt{2} } & \frac{i}{\sqrt{2} } & 0 \\ 
+	0 & 0 & 1 \\ 
+	\frac{1}{\sqrt{2} }& \frac{i}{\sqrt{2} } & 0 
+	\end{bmatrix}  
+	\begin{bmatrix} 0 & 0 & 0 \\ 
+	0 & 0 & -i \\ 
+0 & i & 0 \end{bmatrix}  
+		\begin{bmatrix} -\frac{1}{\sqrt{2} } & 0 & \frac{1}{\sqrt{2} } \\ 
+		- \frac{i}{\sqrt{2} } & 0 & -\frac{i}{\sqrt{2} } \\ 
+	0 & 1 & 0 \end{bmatrix}  \\ 
+&= 
+\frac{\hb}{\sqrt{2} } 
+			\begin{bmatrix} 0&1&0\\1&0&1\\0&1&0 \end{bmatrix} 
+\end{align*}
+Similarly 
+\begin{align*}
+	\hat{S}_y \implies 
+	U^{T} S_y U = 
+\hb 	\begin{bmatrix} 
+	-\frac{1}{\sqrt{2} } & \frac{i}{\sqrt{2} } & 0 \\ 
+	0 & 0 & 1 \\ 
+	\frac{1}{\sqrt{2} }& \frac{i}{\sqrt{2} } & 0 
+	\end{bmatrix}   
+	\begin{bmatrix} 0&0&i \\ 0&0&0 \\ -i&0&0 \end{bmatrix} 
+		\begin{bmatrix} -\frac{1}{\sqrt{2} } & 0 & \frac{1}{\sqrt{2} } \\ 
+		- \frac{i}{\sqrt{2} } & 0 & -\frac{i}{\sqrt{2} } \\ 
+	0 & 1 & 0 \end{bmatrix}  \\  
+						     &= \frac{\hb}{\sqrt{2} } 
+			\begin{bmatrix} 0&-i&0 \\ i & 0 & -i \\ 0 & i & 0 \end{bmatrix} 
+\end{align*}
+
+
+
+\subsection*{(b)} 
+In this basis 
+\[
+\hat{S}_z = 
+\hb
+\begin{bmatrix} 1 & 0 & 0 \\ 
+0 & 0 & 0 \\ 
+0 & 0 & -1\end{bmatrix} 
+\]
+here the eigenstate of $| m \rangle _z$ corresponds to an eigenvalue $m_z \hb$. 
+For $ m = 1$ 
+\begin{align*} (
+	\hat{S}_z - \hb \hat{I} ) 
+	| m = 1 \rangle _z &= 0 \implies 
+	\begin{bmatrix} 0 & 0 & 0 \\ 0 & -\hb & 0 \\ 0 & 0 & -2 \hb  \end{bmatrix}  
+	\begin{bmatrix} x \\ y \\ z \end{bmatrix}  = 
+	\begin{bmatrix} 0\\ 0 \\ 0 \end{bmatrix}  \implies 
+	| m=1 \rangle _z = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}  
+\end{align*}
+
+
+For $ m = -1$ 
+\begin{align*} (
+	\hat{S}_z + \hb \hat{I} ) 
+	| m = 1 \rangle _z &= 0 \implies 
+	\begin{bmatrix} 2 \hb  & 0 & 0 \\ 0 & \hb & 0 \\ 0 & 0 & 0   \end{bmatrix}  
+	\begin{bmatrix} x \\ y \\ z \end{bmatrix}  = 
+	\begin{bmatrix} 0\\ 0 \\ 0 \end{bmatrix}  \implies 
+	| m= -1 \rangle _z = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}  
+\end{align*}
+
+Note that I computed the trivial system of equation computation by head. 
+
+Now 
+\begin{align*}
+	\hat{S}_+ | m = 1 \rangle _z 
+	&= 
+\hb 
+	\begin{bmatrix} 0 & \sqrt{2}  & 0 \\ 0 & 0 & \sqrt{2}  \\ 0 & 0 & 0 \end{bmatrix} 
+	\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}  = \begin{bmatrix} 0\\0\\0 \end{bmatrix} \\ 
+	\hat{S}_+ | m = 1 \rangle _z 
+	&= 
+\hb 
+	\begin{bmatrix} 0 & 0  & 0 \\ \sqrt{2}  & 0 & 0  \\ 0 & \sqrt{2}  & 0 \end{bmatrix} 
+	\begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}  = \begin{bmatrix} 0\\0\\0 \end{bmatrix} \\ 
+\end{align*}
+This is easy to eye ball.
+
+\subsection*{(c)} 
+We require to solve the eigenvalue of $\hat{S}_x$, for $m = 1$ 
+\begin{align*}
+	(\hat{S}_x - \hb \hat{I} ) | m = 1 \rangle _x &= 
+	| 0 \rangle 
+\implies 
+	\begin{bmatrix} -\hb & \hb / \sqrt{2} & 0 \\ 
+	\hb / \sqrt{2} & - \hb & \hb / \sqrt{2}  \\ 
+0 & \hb / \sqrt{2}  & - \hb \end{bmatrix} 
+\begin{bmatrix} x \\ y \\ z \end{bmatrix}  = 
+\begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}  \implies 
+| m = 1 \rangle _x = 
+\begin{bmatrix} \frac{1}{ 2 } \\ \frac{1}{\sqrt{2} } \\ \frac{1}{2}  \end{bmatrix} 
+	\\
+	(\hat{S}_x + \hb \hat{I} ) | m = -1 \rangle _x &= 
+	| 0 \rangle 
+\implies  
+	\begin{bmatrix} \hb & \hb / \sqrt{2}  & 0 \\ 
+	\hb / \sqrt{2}  & \hb & \hb / \sqrt{2}  \\ 
+0 & \hb / \sqrt{2}  & \hb \end{bmatrix} 
+\begin{bmatrix} x \\ y \\ z \end{bmatrix}  = 
+\begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}  \implies 
+| m = -1 \rangle _x = 
+\begin{bmatrix} \frac{1}{ 2 } \\ - \frac{1}{\sqrt{2} } \\ \frac{1}{2}  \end{bmatrix} 
+\end{align*}
+System of equation I got here was done on paper.  
+
+\[
+\hat{S}_+ | m = 1 \rangle _x \implies 
+\hb 
+\begin{bmatrix} 0 & \sqrt{2} & 0 \\ 0 & 0 & \sqrt{2}  \\ 0 & 0 & 0  \end{bmatrix} 
+\begin{bmatrix} \frac{1}{2} \\ \frac{1}{\sqrt{2} } \\ \frac{1}{2} \end{bmatrix}  = 
+\hb \begin{bmatrix} 1 \\ \frac{1}{\sqrt{2} } \\ 0 \end{bmatrix}  \neq | 0 \rangle 
+\]
+\[
+	\hat{S}_- | m = -1 \rangle _x \implies 
+\hb 
+\begin{bmatrix} 0 & 0 & 0 \\ \sqrt{2} & 0 & 0 \\ 0 & \sqrt{2}  & 0  \end{bmatrix} 
+\begin{bmatrix} \frac{1}{2} \\ - \frac{1}{\sqrt{2} } \\ \frac{1}{2} \end{bmatrix} = 
+\hb 
+\begin{bmatrix} 0 \\ \frac{1}{\sqrt{2} } \\ -1 \end{bmatrix}  \neq | 0 \rangle 
+\] 
+None is annihilated. 
+
+\section*{Problem 4} 
+\subsection*{a}
+Using a matrix calculator
+\begin{align*}
+	\hat{S}_y &= \frac{\hb }{\sqrt{2}} 
+	\begin{bmatrix} 0 & -i & 0 \\ i & 0 & -i \\ 0 & i & 0 \end{bmatrix}  \\ 
+	\hat{S}_y ^2 &= \frac{\hb^2}{2} 
+	\begin{bmatrix} 1 & 0 & -1 \\ 0 & 2 & 0 \\ -1 & 0 & 1 \end{bmatrix} 
+	\\ 
+	\hat{S}_y ^3 &=  
+	\frac{\hb ^3}{4}
+	\begin{bmatrix} 0 & -2i & 0 \\ 2i & 0 & -2i \\ 0 & 2i & 0 \end{bmatrix}  = 
+	\hat{S}_y \frac{\hb ^3}{2}
+	\\ 
+	\hat{S}_y ^{4}& = \frac{h^{4}}{2} \hat{S}_y^2 
+\end{align*}
+
+\begin{align*}
+	\mathrm{e}^{-\frac{i}{\hb} \hat{S}_y \theta } &= 
+	\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1  \end{bmatrix}  
+	- i \frac{\theta}{\hb} S_y - 
+	\frac{\theta^2}{2! \hb } S_y ^2+ 
+	\frac{i \theta^3}{3! \hb ^3} S_y ^3 + 
+	\frac{\theta^{4}}{4! \hb ^{4} } S_y ^{4} + \cdots 
+	\\
+	&= 
+	\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1  \end{bmatrix}   -  
+	i \begin{bmatrix} 0 & -i & 0 \\ i & 0 & -i \\ 0 & i & 0 \end{bmatrix}  
+	\frac{\theta}{\sqrt{2} } 
+	- \frac{\theta^3}{3! \sqrt{2}  } 
+	\begin{bmatrix} 0 & -1 & 0 \\ 1 & 0 & -1 \\ 0 & 1 & 0  \end{bmatrix}  + 
+	\frac{\theta^{4}}{4! 2} 
+	\begin{bmatrix} 1 & 0 & -1 \\ 0 & 2 & 0 \\ -1 & 0 & 1 \end{bmatrix}  + \cdots 
+	\\
+\end{align*}
+\begin{align*}
+	\frac{1 + \cos \theta}{2} &= 1 - \frac{\theta^2}{2! 2} +
+	\frac{\theta^{4}}{4! 2 } + \cdots \\ 
+	\frac{1}{\sqrt{2} } \sin \theta &= \text{Taylor expansion of sine} \cdot \frac{1}{\sqrt{2} } \\ 
+\end{align*}
+Carefully inspecting the notation we can see that 
+\[
+R(\theta) = 
+\begin{bmatrix} 
+	\frac{1 + \cos \theta}{2} & 
+	- \frac{\sin \theta}{\sqrt{2} } & 
+	\frac{1 - \cos \theta}{2} \\ 
+	\frac{\sin \theta}{\sqrt{2}  } & 
+	\cos \theta & 
+	- \frac{\sin \theta}{\sqrt{2} } \\ 
+	\frac{1 - \cos \theta }{2} & 
+	\frac{\sin \theta}{\sqrt{2} } & 
+\frac{1 + \cos \theta }{2} 
+\end{bmatrix} 
+\]
+\[
+	| m_ {\vec{n}}    = 1\rangle = 
+\begin{bmatrix} 
+	\frac{1 + \cos \theta}{2} & 
+	- \frac{\sin \theta}{\sqrt{2} } & 
+	\frac{1 - \cos \theta}{2} \\ 
+	\frac{\sin \theta}{\sqrt{2}  } & 
+	\cos \theta & 
+	- \frac{\sin \theta}{\sqrt{2} } \\ 
+	\frac{1 - \cos \theta }{2} & 
+	\frac{\sin \theta}{\sqrt{2} } & 
+\frac{1 + \cos \theta }{2} 
+\end{bmatrix}  
+\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}  = \begin{bmatrix} \frac{1+\cos \theta}{2} \\ 
+\frac{\sin \theta}{\sqrt{2} } \\ 
+\frac{1 - \cos \theta }{2}\end{bmatrix} 
+\]
+
+\subsection*{(b)}  
+Requiring basic computational assist from online matrix calculator and mathematica 
+\begin{align*}
+	\langle S_x \rangle = \langle m_n = 1 | S_x | m_n = 1 \rangle 
+	&= 
+\frac{\hb}{\sqrt{2} } 
+	\begin{bmatrix} \frac{1 + \cos \theta}{2} & 
+	\frac{\sin \theta}{\sqrt{2}  } & \frac{1- \cos \theta }{2}\end{bmatrix}  
+		\begin{bmatrix} 0 & 1 & 0 \\ 
+		1 & 0 & 1 \\ 
+	0 & 1 & 0 \end{bmatrix}  
+	\begin{bmatrix} \frac{1 + \cos \theta}{2} \\ \frac{\sin \theta}{\sqrt{2} } \\ 
+	\frac{1 - \cos \theta }{2}\end{bmatrix}  = 
+{\hb \sin \theta} \\ 
+	(\Delta S_x)^2
+=
+\langle m_n = 1 | S_x^2 - \langle S_x \rangle ^2 | m_n = 1 \rangle 
+				  &= 
+\frac{\hb^2}{2} 
+	\begin{bmatrix} \frac{1 + \cos \theta}{2} & 
+	\frac{\sin \theta}{\sqrt{2}  } & \frac{1- \cos \theta }{2}\end{bmatrix}   
+		\begin{bmatrix} 1 & 0 & 1 \\ 
+		0 & 2 & 0 \\ 
+	1 & 0 & 1 \end{bmatrix}  
+	\begin{bmatrix} \frac{1 + \cos \theta}{2} \\ \frac{\sin \theta}{\sqrt{2} } \\ 
+	\frac{1 - \cos \theta }{2}\end{bmatrix} - 
+	\langle m_n = 1 | \hb ^2 \sin ^2 \theta | m_n = 1 \rangle 
+				  \\
+				  &= \frac{\hb^2}{{2} } \cos ^2 \theta \\
+	\langle S_y \rangle = \langle m_n = 1 | S_y | m_n = 1 \rangle 
+	&= 
+\frac{\hb}{\sqrt{2} } 
+	\begin{bmatrix} \frac{1 + \cos \theta}{2} & 
+	\frac{\sin \theta}{\sqrt{2}  } & \frac{1- \cos \theta }{2}\end{bmatrix}  
+		\begin{bmatrix} 0 & -i & 0 \\ 
+		i & 0 & -i \\ 
+	0 & i & 0 \end{bmatrix}  
+	\begin{bmatrix} \frac{1 + \cos \theta}{2} \\ \frac{\sin \theta}{\sqrt{2} } \\ 
+	\frac{1 - \cos \theta }{2}\end{bmatrix}  = 
+0 \\  
+(\Delta S_y)^ 2 = 
+\langle m_n = 1 | S_y^2 - \langle S_y \rangle ^2 | m_n = 1 \rangle 
+				  &= 
+\frac{\hb^2}{2} 
+	\begin{bmatrix} \frac{1 + \cos \theta}{2} & 
+	\frac{\sin \theta}{\sqrt{2}  } & \frac{1- \cos \theta }{2}\end{bmatrix}   
+		\begin{bmatrix} 1 & 0 & -1 \\ 
+		0 & 2 & 0 \\ 
+	1 & 0 & 1 \end{bmatrix}  
+	\begin{bmatrix} \frac{1 + \cos \theta}{2} \\ \frac{\sin \theta}{\sqrt{2} } \\ 
+	\frac{1 - \cos \theta }{2}\end{bmatrix} 
+				  \\
+				  &= \frac{\hb^2}{2}\\
+	\langle S_z \rangle = \langle m_n = 1 | S_z | m_n = 1 \rangle 
+	&= 
+	\hb ^2\begin{bmatrix} \frac{1 + \cos \theta}{2} & 
+	\frac{\sin \theta}{\sqrt{2}  } & \frac{1- \cos \theta }{2}\end{bmatrix}  
+		\begin{bmatrix} 1 & 0 & 0 \\ 
+		0 & 0 & 0 \\ 
+	0 & 0 & -1 \end{bmatrix}  
+	\begin{bmatrix} \frac{1 + \cos \theta}{2} \\ \frac{\sin \theta}{\sqrt{2} } \\ 
+	\frac{1 - \cos \theta }{2}\end{bmatrix}  = 
+\hb^2 \cos ^2 \theta  \\  
+(\Delta S_z)^ 2 = 
+\langle m_n = 1 | S_z^2 - \langle S_z \rangle ^2 | m_n = 1 \rangle 
+				  &= 
+{\hb^2} 
+	\begin{bmatrix} \frac{1 + \cos \theta}{2} & 
+	\frac{\sin \theta}{\sqrt{2}  } & \frac{1- \cos \theta }{2}\end{bmatrix}   
+		\begin{bmatrix} 1 & 0 & 0 \\ 
+		0 & 0 & 0 \\ 
+	0 & 0 & 1 \end{bmatrix}  
+	\begin{bmatrix} \frac{1 + \cos \theta}{2} \\ \frac{\sin \theta}{\sqrt{2} } \\ 
+	\frac{1 - \cos \theta }{2}\end{bmatrix}  - \hb^2 \cos ^2 \theta 
+				  \\
+				  &= \frac{\hb^2 \sin ^2 \theta }{2}\\
+\end{align*}
+
+\[
+\boxed{
+	(\Delta S_x) = \frac{\hb}{\sqrt{2} } \cos \theta 
+}
+\] 
+\[
+\boxed{
+	(\Delta S_y) = \frac{\hb}{\sqrt{2} }
+}
+\] 
+\[
+\boxed{
+	(\Delta S_z) = \frac{\hb}{\sqrt{2} } \sin \theta 
+}
+\] 
+\section*{Problem 5}  \subsection*{(a)} 
+\begin{align*}
+	\hat{T}(R) \Psi(x)&= 
+\exp
+\left(
+- \frac{i}{\hb} R \left(- i \hb \frac{\partial }{\partial x}\right) 
+\right) \Psi(x) = \exp
+\left(
+- R \frac{\partial}{\partial x}
+\right) \Psi(x) 
+	\\ 
+	&= 
+\Psi(x) - R \frac{\mathrm{d} }{\mathrm{d} x} \Psi(x) + R^2 
+\frac{\mathrm{d} ^2 }{\mathrm{d} x^2} \Psi(x) + \cdots 
+	\\ 
+	&= 
+	\Psi(x - R) \tag{Similar to expansion of $f(x-a)$ } 
+	\\
+\end{align*}
+\begin{align*}
+	\langle x | \hat{T}(R) | \Psi \rangle  &= 
+\int_{-\infty}^{\infty} \mathrm{d} x' \, 
+\langle x | \hat{T}(R) | x' \rangle \langle x' | \Psi \rangle 
+	\\ 
+	&= 
+\int_{-\infty}^{\infty} \mathrm{d} x ' 
+\langle x | x' \rangle 
+\hat{T}(R) \Psi(x')
+	\\
+	&= 
+\int_{-\infty}^{\infty} \mathrm{d} x  ' 
+\, 
+\langle x |  x' \rangle 
+\Psi(x' - R)
+	\\ 
+	&= 
+\Psi(x - R)
+	\\
+\end{align*}
+
+
+\subsection*{(b)} 
+\begin{align*}
+	\langle x' |  \hat{T}(R) | x \rangle  
+	&= 
+\sum_{n=0}^{\infty} \frac{(-R)^{n} }{n!} \frac{\mathrm{d} ^{n}}{\mathrm{d} x^{n} } \langle x' | x \rangle 
+     \\ & = 
+\sum_{n=0}^{\infty} \frac{(-R)^{n} }{n!} \frac{\mathrm{d} ^{n}}{\mathrm{d} x^{n} } \delta(x' - x ) 
+\\ &= 
+\delta(x' - (x+ R))
+\\ 
+&= 
+\langle x' | x + R \rangle 
+\\ 
+& \implies 
+\hat{T}(R) | x \rangle  = | x + R \rangle 
+\end{align*}
+
+\subsection*{(c)}
+\[
+	[\hat{X}, \hat{P} ] = i \hb \hat{I}
+\]
+\[
+[ \hat{A} , \hat{I} ] = 0 \]  
+\begin{align*}
+	T^{T} X T &= 
+	\exp\left(
+\frac{i}{\hb} R \hat{P}
+	\right)
+	\hat{X}
+	\exp\left(
+-\frac{i}{\hb} R \hat{P}
+	\right)  \\ 
+		  &= 
+\hat{X} + 
+	\frac{1}{1!} \left[ (i / \hb )R \hat{P}, \hat{X} \right]   + 
+	\frac{1}{2!} \left[ (i / \hb) R \hat{P}, [ i / \hb R \hat{P} , \hat{X} ] \right] + \cdots \\
+	&= 
+\hat{X} + 
+\frac{1}{1!} 
+\left[
+	(i / \hb) (- i \hb ) R  \hat{I}
+\right]
++
+\frac{1}{2!}\left[
+	(i / \hb ) R \hat{P} , I 
+\right] + \cdots  
+	\\
+	&= 
+	\hat{X} + R \hat{I} + 0 + \cdots  \tag{every other terms has a $[\hat{P}, [\hat{P}, \hat{X} ]] $ term}
+	\\
+	&= 
+\hat{X} + R \hat{I}
+	\\
+\end{align*}
+This consistent because $eq. 18$ is translation is position eigenstate while this result we found here is translation in position operator. 
+\end{document}

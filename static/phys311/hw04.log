@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2024.6.24)  22 SEP 2024 18:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2024.6.24)  28 SEP 2024 12:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -990,39 +990,83 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
-Overfull \hbox (32.10498pt too wide) detected at line 332
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5]
+Overfull \hbox (32.10498pt too wide) detected at line 344
 []
  []
 
-[5] [6] [7] (./hw04.aux) ) 
+[6] [7] [8]
+<ss/inti01.png, id=80, 417.56pt x 410.53375pt>
+File: ss/inti01.png Graphic file (type png)
+<use ss/inti01.png>
+Package pdftex.def Info: ss/inti01.png  used on input line 483.
+(pdftex.def)             Requested size: 200.19054pt x 196.82217pt.
+<ss/inti02.png, id=82, 833.1125pt x 820.06375pt>
+File: ss/inti02.png Graphic file (type png)
+<use ss/inti02.png>
+Package pdftex.def Info: ss/inti02.png  used on input line 484.
+(pdftex.def)             Requested size: 200.19054pt x 197.04456pt.
+<ss/inti03.png, id=83, 480.79625pt x 422.57875pt>
+File: ss/inti03.png Graphic file (type png)
+<use ss/inti03.png>
+Package pdftex.def Info: ss/inti03.png  used on input line 533.
+(pdftex.def)             Requested size: 200.19054pt x 175.95367pt.
+<ss/inti04.png, id=84, 835.12pt x 772.8875pt>
+File: ss/inti04.png Graphic file (type png)
+<use ss/inti04.png>
+Package pdftex.def Info: ss/inti04.png  used on input line 534.
+(pdftex.def)             Requested size: 200.19054pt x 185.2727pt.
+ [9 <./ss/inti01.png> <./ss/inti02.png>]
+<ss/inti06.png, id=90, 455.7025pt x 432.61626pt>
+File: ss/inti06.png Graphic file (type png)
+<use ss/inti06.png>
+Package pdftex.def Info: ss/inti06.png  used on input line 567.
+(pdftex.def)             Requested size: 200.19054pt x 190.04808pt.
+<ss/inti07.png, id=91, 832.10875pt x 828.09375pt>
+File: ss/inti07.png Graphic file (type png)
+<use ss/inti07.png>
+Package pdftex.def Info: ss/inti07.png  used on input line 568.
+(pdftex.def)             Requested size: 200.19054pt x 199.22672pt.
+ [10 <./ss/inti03.png> <./ss/inti04.png> <./ss/inti06.png> <./ss/inti07.png>]
+<ss/balsal1.png, id=99, 472.76625pt x 391.4625pt>
+File: ss/balsal1.png Graphic file (type png)
+<use ss/balsal1.png>
+Package pdftex.def Info: ss/balsal1.png  used on input line 657.
+(pdftex.def)             Requested size: 200.19054pt x 165.76306pt.
+<ss/balsal2.png, id=100, 838.13126pt x 751.80875pt>
+File: ss/balsal2.png Graphic file (type png)
+<use ss/balsal2.png>
+Package pdftex.def Info: ss/balsal2.png  used on input line 658.
+(pdftex.def)             Requested size: 200.19054pt x 179.56593pt.
+ [11] [12 <./ss/balsal1.png> <./ss/balsal2.png>] [13] [14] (./hw04.aux) ) 
 Here is how much of TeX's memory you used:
- 32880 strings out of 476182
- 833963 string characters out of 5796581
+ 32953 strings out of 476182
+ 835254 string characters out of 5796581
  1889793 words of memory out of 6000000
- 52606 multiletter control sequences out of 15000+600000
+ 52669 multiletter control sequences out of 15000+600000
  544518 words of font info for 55 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
  114i,20n,118p,764b,2182s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-
-mathsy.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/sh
-are/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texlive/tex
-mf-dist/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texlive/texmf-dist/fonts/t
-ype1/public/lm/lmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/
-lmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/lm/lmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/
-lmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/lm/lmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm
-/lmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/m
-sam10.pfb>
-Output written on hw04.pdf (7 pages, 195630 bytes).
+{/usr/
+share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texlive/t
+exmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texlive/texmf-dist/fonts
+/enc/dvips/lm/lm-rm.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ma
+thex.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/lm/lmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm
+/lmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/lm/lmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/l
+mss17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/symbols/msam10.pfb>
+Output written on hw04.pdf (14 pages, 917108 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
- 76 compressed objects within 1 object stream
+ 180 PDF objects out of 1000 (max. 8388607)
+ 95 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 157 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 197 words of extra memory for PDF output out of 10000 (max. 10000000)
 
