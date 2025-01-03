@@ -1,7 +1,7 @@
 ---
 title: Diary
 date: 2021-11-10T18:30:41-06:00
-draft: false
+draft: true
 unlisted: false
 ---
 

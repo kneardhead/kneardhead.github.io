@@ -4,12 +4,12 @@ date: 2024-01-13T16:15:11-06:00
 draft: false
 showthedate: false
 ---
-Spring 2024: MATH 354, MATH 382, MATH 232
+In class typed notes. 
 <!--more-->
 
 I take the LaTeX notes in real time on my Fedora Linux Thinkpad, aided by the incredible flexibility and ergonomics of Vim and Ultisnips. I remain indebted to [Gilles Castel](https://castel.dev) for pioneering this incredible ecosystem that makes taking math notes and diagrams faster than hand. Currently I am using a fork of the LaTeX package [ahsan.sty](https://github.com/AnglyPascal/sty) that I have trimmed to suit my needs. I hope to upload the package [texabit.sty](https://www.youtube.com/watch?v=dQw4w9WgXcQ) after I have a stable code.
 
-The first few notes are a little bit bad because I am still learning.
+The first few notes are a little bit bad because I am still learning. 
 
 **MATH 354: Honors Linear Algebra**
 \
@@ -103,4 +103,8 @@ The first few notes are a little bit bad because I am still learning.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 31](/math382/class31.pdf): Intro to Conformal Mapping.      
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 32](/math382/class32.pdf):       
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Class 33](/math382/class33.pdf):       
+## Why I don't use it anymore xD 
 
+Spring of 2024 was probably one of the worst semesters of my career. There are a few reasons, but the first being probably adhering to this note taking. I realized that I can't really think University Maths like I do Physics, and whilst I am typing them on class I am not getting enough mental space to analyze that deviation of comprehension. 
+
+For the Fall of 2024 I completely avoided mathematics and purely did Physics after dropping out of real analysis. It was an extremely good decision.  
