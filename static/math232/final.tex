@@ -347,9 +347,34 @@ If $f $ is continuous on a compact domain $D$, then $f$ is uniformly continuous 
 \newpage
 \section*{Optimization}
 
+\subsection*{The idea of Local Extremum}
+
 \df{
 Suppose $f: D \to \mathbb{R}$ is a function on a domain $D \subset  \mathbb{R}^{n}$ and $\vec{a}$ is a point in the interior of $D$. We say that $f$ has a \textbf{Local Minimum} at $\vec{a}$ if there is some $r> 0$ such that $f(\vec{a}) \le  f(\vec{x})$ for all $\vec{x} \in B_r (\vec{a})$. Similarly we say $f$ has a local maximum at $\vec{a}$ if $r>0$ exist such that $f(\vec{a}) \ge  f(\vec{x})$  for all $\vec{x} \in  B_r(\vec{a})$. 
+
+If $f$ has either a local maximum or minimum at $\vec{a}$ we say that $f$ has a local extremum at $\vec{a}$. 
 }
+
+{
+\df{
+Suppose $f: D\to \mathbb{R}$ is a function on a domain $D$ where $D \subset  \mathbb{R}^{n}$ and $\vec{a}$ is a point in the interior of $D.$ We say that $ \vec{a}$ is a \emph{Critical Point} for $f$ if $f$ is not differentiable at $\vec{a}$ or $df_\vec{a}$ is identically zero. 
+}
+}
+
+
+\thm{If $f$ has a local extremum at $\vec{a}$ then $\vec{a}$ must be a \emph{Critical Point}.}
+
+\thm{\textbf{Second Derivative Test:} Suppose $f : D\to \mathbb{R}$ is a $C^{2}$ function on a domain $D \subset  \mathbb{R}^{n}$ and $\vec{a}$ is a point in the interior of $D.$ Suppose $df _ \vec{a}$ is identically zero, and let $H$ be a Hessian Matrix of $f$ at $\vec{a}$. 
+
+	\begin{itemize}
+		\item If the quadratic form $Q(\vec{h}) = \vec{h}^{t} H \vec{h}$ is positive definite, then $\vec{a}$ is a local minimum of $f$. 
+		\item If $Q$ is negative definitive, then $\vec{a}$ is a local maximum of $f$. 
+		\item If $Q$ is indefinite, then $\vec{a}$ is not an extremum of $f$. 
+	\end{itemize} 
+}
+\newpage
+\section{Implicit and Inverse} 
+
 
 
 \newpage

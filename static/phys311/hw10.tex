@@ -1,0 +1,1072 @@
+\documentclass[letter, 10pts]{article}
+\usepackage[monocolor]{../math232/ahsansabit}
+\usepackage[]{float}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage[outline]{contour} % glow around text
+\usepackage{xcolor}
+\usepackage{pdfpages}
+\usepackage{physics}
+\usepackage[]{array}
+\newcolumntype{C}{>{\centering\arraybackslash}m{2cm}}
+\renewcommand{\arraystretch}{2.5} 
+\usepackage{multicol}
+\title{Quantum Mechanics : : Homework 0X}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+\newcommand{\hb}{\hbar}
+\newcommand{\U}{\uparrow}
+\newcommand{\D}{\downarrow}
+\usepackage[]{braket}
+\begin{document}
+\maketitle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section*{Problem 01} 
+\hrule
+\subsection*{(a)} 
+I always feel weird to use $\hat{P}$ operator
+\begin{align*}
+	\braket{\vec{r} | \hat{P_x} | E, m} &= - i \hb \frac{\mathrm{d} \Psi_{E,m}(r)}{\mathrm{d} x} \\
+	\braket{\vec{r} | \hat{X}^2 | E, m} &= \braket{\vec{r} | \hat{X}^2 | \vec{r}} \braket{\vec{r} | E,m}  \\
+					    &= x^2 \Psi_{E,m} (r) \\
+\end{align*}
+Hence 
+\begin{align*}
+	\braket{\vec{r} | \hat{H} | E,m} = E \Psi_{E,m}(r) &= 
+\frac{- \hb^2}{2 \mu}
+\left(
+	\nabla^2 \Psi_{E,m}(r) \right) 
+	+ \frac{\mu \omega^2}{2} \left(x^2 + y^2\right) \Psi_{E,m}(r)
+\\
+				 &= 
+				 \frac{- \hb^2}{2 \mu}
+\left(
+	\frac{\mathrm{d} ^2}{\mathrm{d} r^2} 
+	- 
+	\frac{m^2}{r^2}
+	+ 
+	\frac{1}{r} \frac{\mathrm{d} }{\mathrm{d} r}
+\right) \Psi_{E,m} (r)
+	+ \frac{\mu \omega^2}{2} r^2 \Psi_{E,m}(r)
+\\
+				 &= 
+				 \frac{- \hb^2}{2 \mu}
+\left(
+	\frac{\mathrm{d} ^2}{\mathrm{d} r^2} 
+	- 
+	\frac{m^2}{r^2}
+	+ 
+	\frac{1}{r} \frac{\mathrm{d} }{\mathrm{d} r}
+	- \frac{2 \mu}{\hb} \frac{\mu \omega^2}{2} r^2 \right) \Psi_{E,m}(r)
+\\
+				 &\implies 
+				\frac{- \hb^2}{2 \mu}
+\left(
+	\frac{\mathrm{d} ^2}{\mathrm{d} r^2} 
+	- 
+	\frac{m^2}{r^2}
+	+ 
+	\frac{1}{r} \frac{\mathrm{d} }{\mathrm{d} r}
+	-  \frac{\mu ^2 \omega^2}{\hb} r^2 + \frac{2\mu}{\hb^2} E \right) \Psi_{E,m}(r) 
+	= 0
+\\
+				 &= -\omega \hb b^2
+\left(
+	\frac{\mathrm{d} ^2}{\mathrm{d} r^2} 
+	- 
+	\frac{m^2}{r^2}
+	+ 
+	\frac{1}{r} \frac{\mathrm{d} }{\mathrm{d} r}
+	-  \frac{\mu ^2 \omega^2}{\hb} r^2 + \frac{2\mu}{\hb^2} E \right) \Psi_{E,m}(r) 
+	= 0
+\\
+				 &= 
+\left(
+	\frac{\mathrm{d} ^2}{\mathrm{d} y^2} 
+	- 
+	\frac{m^2}{y^2}
+	+ 
+	\frac{1}{y} \frac{\mathrm{d} }{\mathrm{d} y}
+	-   y^2 + \frac{2\mu}{\hb^2} \frac{\hb}{\mu \omega} E \right) \Psi_{E,m}(r) 
+	= 0
+\\
+				 &=
+\left(
+	\frac{\mathrm{d} ^2}{\mathrm{d} y^2} 
+	- 
+	\frac{m^2}{y^2}
+	+ 
+	\frac{1}{y} \frac{\mathrm{d} }{\mathrm{d} y}
+	-   y^2 + \frac{2}{\hb \omega} E \right) \Psi_{E,m}(r) 
+	= 0
+\\
+\end{align*}
+\[
+\boxed{
+\left[
+\frac{\mathrm{d} ^2}{\mathrm{d} y^2}
++ 
+\frac{1}{y} \frac{\mathrm{d} }{\mathrm{d} y}
+- 
+\frac{m^2}{y^2}
+- y^2 + 
+2 \varepsilon 
+\right]
+\psi_{\varepsilon, m}(y) = 0
+}
+\] 
+
+
+
+
+
+
+
+
+\subsection*{(b)} 
+\[
+\left[
+\frac{\mathrm{d} ^2}{\mathrm{d} y^2}
++ 
+\frac{1}{y} \frac{\mathrm{d} }{\mathrm{d} y}
+- 
+\frac{m^2}{y^2}
++ 
+2 \varepsilon 
+\right]
+y^{\alpha}
+= 0
+\] 
+\begin{align*}
+\alpha (\alpha - 1) y^{\alpha - 2} + 
+\alpha y^{\alpha - 2} - 
+m^2 y^{\alpha - 2} + 
+2 \varepsilon y^{\alpha} &= 0 
+\\
+\alpha (\alpha - 1) + 
+\alpha  - 
+m^2  + 
+2 \varepsilon y^{\alpha - \alpha + 2} &= 0 
+\\
+\alpha^2 
+- 
+m^2  + 
+2 \varepsilon y^{2} &= 0 
+\implies
+\lim_{y \to 0} \alpha^2 - m^2 + 2 \varepsilon y^2 = 0
+\\
+		    &\implies \alpha = |m|
+\end{align*}
+\[
+\boxed{
+	\lim_{y \to 0} \psi_{\varepsilon, m}(y) = y^{|m|}
+}
+\] 
+
+
+
+
+
+
+\subsection*{(c)}
+\begin{align*}
+\left[
+\frac{\mathrm{d} ^2}{\mathrm{d} y^2}
++ 
+\frac{1}{y} \frac{\mathrm{d} }{\mathrm{d} y}
+- 
+\frac{m^2}{y^2}
++ 
+2 \varepsilon 
+\right]
+y^{|m|}f(y)
+&= 0 
+\\
+\frac{\mathrm{d} }{\mathrm{d} y}
+\left(
+|m|y^{|m| - 1} f(y) + y^{|m|} f'(y)
+\right)
++ \frac{1}{y} \left(
+|m|y^{|m| - 1} f(y) + y^{|m|} f'(y)
+\right)
+- \frac{m^2}{y^2} y^{|m|}f(y) 
+	+ 2 \varepsilon y^{|m|}f(y) &= 0
+\\
+\frac{\mathrm{d} }{\mathrm{d} y}
+\left(
+|m|y^{|m| - 1} f(y) + y^{|m|} f'(y)
+\right)
++ \left(
+|m|y^{|m| - 2} f(y) + y^{|m|-1} f'(y)
+\right)
+- m^2 y^{|m| - 2 }f(y) 
+	+ 2 \varepsilon y^{|m|}f(y) &= 0
+\\
+\left(
+|m|(|m| - 1 ) y^{|m| - 2} f(y) 
++ |m| y^{|m| - 1} f'(y) + 
+|m| y^{|m| - 1} f'(y)
++ 
+y^{|m|}f''(y) 
+\right) + \\ 
++ \left(
+|m|y^{|m| - 2} f(y) + y^{|m|-1} f'(y)
+\right)
+- m^2 y^{|m| - 2 }f(y) 
+	+ 2 \varepsilon y^{|m|}f(y) &= 0
+	\\
+y^{|m| - 2} f(y)
+\Big[
+|m| (|m| - 1)  +
+|m|  
+- 
+m^2  
+\Big]
++
+y^{|m| - 1}  f'(y)
+\Big[
+2 |m| + 1 
+\Big]
++ 
+y^{|m|} 
+\Big[
+f''(y) + 2 \varepsilon f(y)
+\Big] &= 0 \\
+y^{|m| - 1}  f'(y)
+\Big[
+2 |m| + 1 
+\Big]
++ 
+y^{|m|} 
+\Big[
+f''(y) + 2 \varepsilon f(y)
+\Big] &= 0 \\
+f'(y)
+\Big[
+2 |m| + 1 
+\Big]
++ 
+y
+\Big[
+f''(y) + 2 \varepsilon f(y)
+\Big] &= 0 \\
+f'(y)
+\frac{\Big[
+2 |m| + 1 
+\Big]}{y}
++ 
+\Big[
+f''(y) + 2 \varepsilon f(y)
+\Big] &= 0 \\
+\frac{\mathrm{d} }{\mathrm{d} y} 
+\left(
+e^{- y^2 / 2} u(y) 
+\right)
+\frac{\Big[
+2 |m| + 1 
+\Big]}{y}
++ 
+\Big[
+\frac{\mathrm{d} ^2}{\mathrm{d} y^2} 
+\left(
+e^{ - y^2 / 2 } u(y) 
+\right)+ 2 \varepsilon 
+\left(e^{ - y^2 / 2} u(y) \right)
+\Big] &= 0 \\
+\left(
+- y  u(y) +  u'(y) 
+\right)e^{ - y^2 / 2}
+\frac{\Big[
+2 |m| + 1 
+\Big]}{y}+  \\ 
++ 
+\Big[
+\left(
+	-u(y) - y u'(y) + u''(y) + y^2 u(y) - y u'(y)  
+\right)e^{ - y^2 / 2 } 
++ 2 \varepsilon 
+\left(e^{ - y^2 / 2} u(y) \right)
+\Big] &= 0 \\
+\
+\
+\
+\left(
+- y  u(y) +  u'(y) 
+\right) 
+\frac{\Big[
+2 |m| + 1 
+\Big]}{y}+  \\ 
++ 
+\Big[
+\left(
+	-u(y) - 2 y u'(y) + u''(y) + y^2 u(y) 
+\right) 
++ 2 \varepsilon 
+u(y) 
+\Big] &= 0 \\
+\
+\
+\
+u''(y)+
+\left[
+\frac{2|m| + 1}{y} - 2y 	
+\right] u'
++ 
+(2 \varepsilon - 1 - 2|m| - 1) u = 0\\ 
+\end{align*}
+
+\[
+\boxed{
+u''(y)+
+\left[
+\frac{2|m| + 1}{y} - 2y 	
+\right] u'
++ 
+(2 \varepsilon - 2|m| - 2) u = 0\\ 
+}
+\] 
+
+
+\subsection*{(c)} 
+\begin{align*}
+u(y) &= \sum_{p = 0}^{\infty} c_p y^{p} \\
+u'(y) &= \sum_{p = 1}^{\infty}  p c_p y^{ p - 1}
+      = \sum_{p = 0 }^{\infty} (p+1) c_{p+1} y^{p} \\
+u''(y) &= \sum_{p = 2}^{\infty}  p(p-1) c_p y^{ p - 2}  
+= \sum_{p = 0}^{\infty}  (p+2)(p+1) c_{p+2} y^{ p}  \\ &
+\end{align*}
+\[
+u''(y)+
+\left[
+\frac{2|m| + 1}{y} - 2y 	
+\right] u'
++ 
+(2 \varepsilon - 2|m| - 2) u = 0 \] 
+\begin{align*}
+0 &= 
+\sum_{p = 0}^{\infty}  (p+2)(p+1) c_{p+2} y^{ p}  +
+\left[
+\frac{2|m| + 1}{y} - 2y 	
+\right] 
+      \sum_{p = 0 }^{\infty} (p+1) c_{p+1} y^{p} 
+      + 
+(2 \varepsilon - 2|m| - 2) 
+\sum_{p = 0}^{\infty} c_p y^{p} 
+\\
+&= 
+\sum_{p = 0}^{\infty}  (p+2)(p+1) c_{p+2} y^{ p}  +
+\underbrace{\left[
+	({2|m| + 1})
+      \sum_{p = -1 }^{\infty} (p+2) c_{p+2} y^{p} 
+	- 2  	
+      \sum_{p = 0 }^{\infty} (p) c_{p} y^{p} 
+\right]}_{\text{term of interest where $c_1 = 0$}}
+      + 
+(2 \varepsilon - 2|m| - 2) 
+\sum_{p = 0}^{\infty} c_p y^{p} 
+\\
+&= 
+\sum_{p = 0}^{\infty}  (p+2)(p+1) c_{p+2} y^{ p}  +
+	({2|m| + 1})
+      \sum_{p = 0 }^{\infty} (p+2) c_{p+2} y^{p} 
+	- 2  	
+      \sum_{p = 0 }^{\infty} (p) c_{p} y^{p} 
+      + 
+(2 \varepsilon - 2|m| - 2) 
+\sum_{p = 0}^{\infty} c_p y^{p} 
+\\ &=
+\sum_{p = 0}^{\infty} y^{p} 
+\Biggr[
+(p+2)(p+1) c_{p+2} + (2|m|+1) (p+2)c_{p+2} - 2 p c_p + (2 \varepsilon - 2 |m| - 2) c_p
+\Biggr]
+\\ &=
+\sum_{p = 0}^{\infty} y^{p} 
+\Biggr[
+\underbrace{\left[(p+2)(p+1)  + (2|m|+1) (p+2)\right] 
+}_{\text{two terms above}}c_{p+2}
++
+\left[ 
+- 2 p  + (2 \varepsilon - 2 |m| - 2) \right]
+c_p
+\Biggr]
+\end{align*}
+Requirement to keep everything $0$ (also note $p = 2k$) 
+\begin{align*}
+	c_{p+2}
+	&= 
+	\frac{
+ 2 p  - (2 \varepsilon - 2 |m| - 2) 
+	}
+	{(p+2)(p+1)  + (2|m|+1) (p+2)} \\ 
+&=  \frac{
+	2p - (2 \varepsilon - 2 |m| - 2)  
+}{p^2 + p + 2p + 2 + 2 |m| p + 4 |m|+ p + 2}
+	\\
+&=  \frac{
+	2p - (2 \varepsilon - 2 |m| - 2)  
+}{p^2 + (4 + 2 |m| )p + 4 + 4 |m|}
+	\\
+&=  2\frac{
+	p - ( \varepsilon -  |m| - 1)  
+}{p^2 + (4 + 2 |m| )p + 4 + 4 |m|}
+&
+c_{p+2}
+&=  2\frac{
+	p - ( \varepsilon -  |m| - 1)  
+}{p^2 + (4 + 2 |m| )p + 4 + 4 |m|}
+	\\
+&\text{for $\varepsilon = 2n +|m| +1$}\implies  2\frac{
+	p - ( 2n +|m| +1  -  |m| - 1)  
+}{p^2 + (4 + 2 |m| )p + 4 + 4 |m|}
+	\\
+&= 2\frac{
+	p - 2n
+}{p^2 + (4 + 2 |m| )p + 4 + 4 |m|}
+	\\
+&\implies c_{2n + 2} = 0 \impliedby p = 2n
+\end{align*}
+
+
+
+
+\subsection*{(c)}
+
+\[
+E(n_x, n_y) = \hb \omega \left(n_x + \frac{1}{2} + n_y + \frac{1}{2}\right)
+\] 
+\[
+\begin{array}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+n_y \setminus n_x & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+0 & 1\hbar\omega & 2\hbar\omega & 3\hbar\omega & 4\hbar\omega & 5\hbar\omega & 6\hbar\omega & 7\hbar\omega & 8\hbar\omega & 9\hbar\omega & 10\hbar\omega & 11\hbar\omega \\ \hline
+1 & 2\hbar\omega & 3\hbar\omega & 4\hbar\omega & 5\hbar\omega & 6\hbar\omega & 7\hbar\omega & 8\hbar\omega & 9\hbar\omega & 10\hbar\omega & 11\hbar\omega & 12\hbar\omega \\ \hline
+2 & 3\hbar\omega & 4\hbar\omega & 5\hbar\omega & 6\hbar\omega & 7\hbar\omega & 8\hbar\omega & 9\hbar\omega & 10\hbar\omega & 11\hbar\omega & 12\hbar\omega & 13\hbar\omega \\ \hline
+3 & 4\hbar\omega & 5\hbar\omega & 6\hbar\omega & 7\hbar\omega & 8\hbar\omega & 9\hbar\omega & 10\hbar\omega & 11\hbar\omega & 12\hbar\omega & 13\hbar\omega & 14\hbar\omega \\ \hline
+4 & 5\hbar\omega & 6\hbar\omega & 7\hbar\omega & 8\hbar\omega & 9\hbar\omega & 10\hbar\omega & 11\hbar\omega & 12\hbar\omega & 13\hbar\omega & 14\hbar\omega & 15\hbar\omega \\ \hline
+5 & 6\hbar\omega & 7\hbar\omega & 8\hbar\omega & 9\hbar\omega & 10\hbar\omega & 11\hbar\omega & 12\hbar\omega & 13\hbar\omega & 14\hbar\omega & 15\hbar\omega & 16\hbar\omega \\ \hline
+6 & 7\hbar\omega & 8\hbar\omega & 9\hbar\omega & 10\hbar\omega & 11\hbar\omega & 12\hbar\omega & 13\hbar\omega & 14\hbar\omega & 15\hbar\omega & 16\hbar\omega & 17\hbar\omega \\ \hline
+7 & 8\hbar\omega & 9\hbar\omega & 10\hbar\omega & 11\hbar\omega & 12\hbar\omega & 13\hbar\omega & 14\hbar\omega & 15\hbar\omega & 16\hbar\omega & 17\hbar\omega & 18\hbar\omega \\ \hline
+8 & 9\hbar\omega & 10\hbar\omega & 11\hbar\omega & 12\hbar\omega & 13\hbar\omega & 14\hbar\omega & 15\hbar\omega & 16\hbar\omega & 17\hbar\omega & 18\hbar\omega & 19\hbar\omega \\ \hline
+9 & 10\hbar\omega & 11\hbar\omega & 12\hbar\omega & 13\hbar\omega & 14\hbar\omega & 15\hbar\omega & 16\hbar\omega & 17\hbar\omega & 18\hbar\omega & 19\hbar\omega & 20\hbar\omega \\ \hline
+10 & 11\hbar\omega & 12\hbar\omega & 13\hbar\omega & 14\hbar\omega & 15\hbar\omega & 16\hbar\omega & 17\hbar\omega & 18\hbar\omega & 19\hbar\omega & 20\hbar\omega & 21\hbar\omega \\ \hline
+\end{array}
+\]
+This is clear as day to notice that for $\Pi \hb \omega$ there are $\Pi$ entries. We can just count diagonally.  
+\[
+E(n,m) = \hb \omega \left(2 n + |m| + 1\right)
+\] 
+\[
+\begin{array}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+n \setminus |m| & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+0 & 1\hbar\omega & 2\hbar\omega & 3\hbar\omega & 4\hbar\omega & 5\hbar\omega & 6\hbar\omega & 7\hbar\omega & 8\hbar\omega & 9\hbar\omega & 10\hbar\omega & 11\hbar\omega \\ \hline
+1 & 3\hbar\omega & 4\hbar\omega & 5\hbar\omega & 6\hbar\omega & 7\hbar\omega & 8\hbar\omega & 9\hbar\omega & 10\hbar\omega & 11\hbar\omega & 12\hbar\omega & 13\hbar\omega \\ \hline
+2 & 5\hbar\omega & 6\hbar\omega & 7\hbar\omega & 8\hbar\omega & 9\hbar\omega & 10\hbar\omega & 11\hbar\omega & 12\hbar\omega & 13\hbar\omega & 14\hbar\omega & 15\hbar\omega \\ \hline
+3 & 7\hbar\omega & 8\hbar\omega & 9\hbar\omega & 10\hbar\omega & 11\hbar\omega & 12\hbar\omega & 13\hbar\omega & 14\hbar\omega & 15\hbar\omega & 16\hbar\omega & 17\hbar\omega \\ \hline
+4 & 9\hbar\omega & 10\hbar\omega & 11\hbar\omega & 12\hbar\omega & 13\hbar\omega & 14\hbar\omega & 15\hbar\omega & 16\hbar\omega & 17\hbar\omega & 18\hbar\omega & 19\hbar\omega \\ \hline
+5 & 11\hbar\omega & 12\hbar\omega & 13\hbar\omega & 14\hbar\omega & 15\hbar\omega & 16\hbar\omega & 17\hbar\omega & 18\hbar\omega & 19\hbar\omega & 20\hbar\omega & 21\hbar\omega \\ \hline
+6 & 13\hbar\omega & 14\hbar\omega & 15\hbar\omega & 16\hbar\omega & 17\hbar\omega & 18\hbar\omega & 19\hbar\omega & 20\hbar\omega & 21\hbar\omega & 22\hbar\omega & 23\hbar\omega \\ \hline
+7 & 15\hbar\omega & 16\hbar\omega & 17\hbar\omega & 18\hbar\omega & 19\hbar\omega & 20\hbar\omega & 21\hbar\omega & 22\hbar\omega & 23\hbar\omega & 24\hbar\omega & 25\hbar\omega \\ \hline
+8 & 17\hbar\omega & 18\hbar\omega & 19\hbar\omega & 20\hbar\omega & 21\hbar\omega & 22\hbar\omega & 23\hbar\omega & 24\hbar\omega & 25\hbar\omega & 26\hbar\omega & 27\hbar\omega \\ \hline
+9 & 19\hbar\omega & 20\hbar\omega & 21\hbar\omega & 22\hbar\omega & 23\hbar\omega & 24\hbar\omega & 25\hbar\omega & 26\hbar\omega & 27\hbar\omega & 28\hbar\omega & 29\hbar\omega \\ \hline
+10 & 21\hbar\omega & 22\hbar\omega & 23\hbar\omega & 24\hbar\omega & 25\hbar\omega & 26\hbar\omega & 27\hbar\omega & 28\hbar\omega & 29\hbar\omega & 30\hbar\omega & 31\hbar\omega \\ \hline
+\end{array}
+\]
+\textbf{For $\hb \omega$}: 
+In this case there is one entry for $m = 0, n = 0.$
+
+\textbf{For $2 \hb \omega$}: 
+In this case there is one entry for $m = 1, n = 0$ but we have to careful because $m  = - 1, n= 0$ is also another separate case, hence keeping 2 entries. 
+
+\textbf{For $3 \hb \omega$ :  }
+For this we are dealing with $ m= 2, 0$ for respective  $n$, and there is another term for $m = -2$. Hence keeping $3$ entries. 
+
+We can go on like this for ever and count that for $\Pi \hb \omega$ we have $\Pi$ number of entries.
+
+\newpage
+\section*{Problem 02}
+\hrule
+\subsection*{(a)} 
+\begin{align*}
+\hat{x} &= \frac{1}{b} \hat{X} 
+	&\hat{p} &= \frac{b}{\hb} \hat{P} \\
+\end{align*}
+\begin{align*}
+	\hat{a} \ket{n = 0} &= 0 \\ 
+	\frac{1}{\sqrt{2} }\left(\hat{x} + i \hat{p}\right) \ket{n = 0}= 0 \\
+	\frac{1}{\sqrt{2} }\left( \hat{x} + i \hat{p}\right)\hat{I} \ket{n = 0}= 0 \\
+	\frac{1}{\sqrt{2} }\left( \hat{x} + i \hat{p}\right)\ket{p} \braket{p | n=0}= 0 \\
+	\implies
+	\frac{1}{\sqrt{2} }\bra{p'}\left( \hat{x} + i \hat{p}\right)\ket{p} \braket{p | n=0}= 0 \\
+	\frac{1}{\sqrt{2} }
+	\Big[
+		\bra{p'}\hat{x} \ket{p} + i \bra{p'}\hat{p}\ket{p}
+	\Big] 
+	\braket{p | n=0}= 0 \\
+	\frac{1}{\sqrt{2} }
+	\Big[
+		\bra{p'}\hat{x} \ket{p} \psi_0(p) + i \bra{p'}\hat{p}\ket{p}
+	\psi_0(p)
+	\Big] = 0 \\
+		i \hb \frac{1}{b} \frac{\mathrm{d} }{\mathrm{d} p} \psi_0(p) + 
+\frac{b}{\hb}
+		i p 
+	\psi_0(p)
+	= 0 \\
+	\implies
+		 \frac{\hb}{b} \frac{\mathrm{d} }{\mathrm{d} p} \psi_0(p) +  \frac{b}{\hb}p 
+	\psi_0(p)
+	= 0 \\
+		 \frac{\hb^2}{b^2} \frac{\mathrm{d} }{\mathrm{d} p} \psi_0(p) +  p 
+	\psi_0(p)
+	= 0 \\
+\frac{\hb^2}{b^2} \frac{\mathrm{d} \psi_0(p) }{\psi_0(p)} = - p \, \mathrm{d} p \\
+\frac{\hb^2}{b^2} \ln \left(\frac{\psi_0(p)}{\psi_0(0)}\right)= - \frac{p^2}{2} \\
+ \ln \left(\frac{\psi_0(p)}{\psi_0(0)}\right)= - \frac{b^2}{2 \hb^2 } p^2 \\
+ \ln \left(\frac{\psi_0(p)}{\psi_0(0)}\right)= - \frac{\hb}{2 m \omega \hb^2 } p^2 \\
+ \ln \left(\frac{\psi_0(p)}{\psi_0(0)}\right)= - \frac{p^2}{2  \omega  m \hb }  \\
+ \psi_0(p) = \psi_0(0) \, \mathrm e^{- p^2 / 2 m \omega \hb }
+\end{align*}
+
+
+
+
+\begin{align*}
+	| \psi_0(p)| ^2 =
+\psi_0^2(0) \int_{-\infty}^{\infty} \mathrm{d} p \, 
+e^{-p^2 / m \omega \hb} = \psi_0^2(0)  \frac{\sqrt{2 \pi } }{\sqrt{2 / m \omega \hb} } 
+= \psi_0^2(0) \sqrt{m \omega \pi \hb} \\ 
+\implies 
+|\psi_0(p)|^2 = \psi_0^2(0) \sqrt{m \omega \pi \hb} \\ 
+\implies
+\Psi_0(p) = \frac{e^{-p^2 / 2 m \omega \hb } }{(m \omega \pi \hb)^{1 / 4} }
+\end{align*}
+
+
+
+
+\subsection*{(b)}
+\begin{align*}
+\psi_0(x) = 
+\braket{x | n = 0} = 
+\int_{-\infty}^{\infty} \braket{x | p} \braket{p | n = 0} \, \mathrm{d} p  &= 
+\int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi \hb}}e^{i p x / \hb} 
+\Psi_0(p)
+\, \mathrm{d} p  \\ 
+&=  \frac{1}{\sqrt{2 \pi \hb}}\int_{-\infty}^{\infty} e^{i p x / \hb} 
+\frac{e^{-p^2 / 2 m \omega \hb } }{(m \omega \pi \hb)^{1 / 4} }
+\, \mathrm{d} p  \\ 
+&= \frac{1}{\sqrt{2 \pi \hb}}\frac{1}{(m \omega \pi \hb)^{1 / 4}} \int_{-\infty}^{\infty} e^{i p x / \hb
+{-p^2 / 2 m \omega \hb }} 
+\, \mathrm{d} p  \\ 
+&= \frac{1}{\sqrt{2 \pi \hb}}\frac{1}{(m \omega \pi \hb)^{1 / 4}} 
+\int_{-\infty}^{\infty} 
+e^{\beta p 
+{- \frac{\alpha}{2} p^2 }} 
+\, \mathrm{d} p  
+\impliedby 
+\begin{cases}
+	\alpha &= \frac{1}{m \omega \hb } \\
+	\beta &= \frac{ix}{\hb} \\
+\end{cases}
+\\ 
+&= \frac{1}{\sqrt{2 \pi \hb}}\frac{1}{(m \omega \pi \hb)^{1 / 4}} 
+\left(
+\sqrt{\frac{2\pi}{\alpha}}  e^{\beta^2 / 2 \alpha}
+\right)
+\impliedby 
+\begin{cases}
+	\alpha &= \frac{1}{m \omega \hb } \\
+	\beta &= \frac{ix}{\hb} \\
+\end{cases} \\ 
+&= \frac{1}{\sqrt{2 \pi \hb}}\frac{1}{(m \omega \pi \hb)^{1 / 4}} 
+\left(
+	\sqrt{2 \pi m \omega \hb }  \, 
+e^{- x ^2 (m \omega \hb )/ 2 \hb^2}
+\right)\\ 
+&= \frac{1}{\sqrt{2 \pi \hb}}\frac{1}{(m \omega \pi \hb)^{1 / 4}} 
+\left(
+	\sqrt{2 \pi m \omega \hb }  \, 
+e^{- x ^2 (m \omega )/ 2 \hb}
+\right) \\ 
+&= \frac{1}{\sqrt{2 \pi \hb}}\frac{1}{(m \omega \pi \hb)^{1 / 4}} 
+\left(
+	\sqrt{2 \pi m \omega \hb }  \, 
+e^{- x ^2/ 2 b}
+\right) \\ 
+&= \frac{\sqrt{m \omega } }{(m \omega \pi \hb)^{1 / 4}} 
+\left(\, 
+e^{- x ^2/ 2 b}
+\right) \\ 
+&= \frac{({m \omega } )^{1 / 4}}{(\pi \hb)^{1 / 4}} 
+\left(\, 
+e^{- x ^2/ 2 b}
+\right) \\ 
+&= 
+\frac{1}{\pi^{1 / 4} b^{ 1 / 2}}
+e^{- x ^2/ 2 b}
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section*{Problem 03} 
+\hrule
+\subsection*{(a)} 
+\textbf{For $n=1$ :}
+\begin{align*}
+	\left(y - \frac{\mathrm{d} }{\mathrm{d} y}\right) e^{-y^2 / 2}
+	&= y e^{-y^2 / 2} - \frac{\mathrm{d} }{\mathrm{d} y} e^{-y ^2 / 2}  \\
+	&= 
+	ye^{- y^2 / 2}  + 
+	ye^{- y^2 / 2} 
+	\\
+	&= 
+	2 ye^{- y^2 / 2} 
+\end{align*}
+
+
+
+
+\textbf{For $n=2$ :}
+\begin{align*}
+	\left(y - \frac{\mathrm{d} }{\mathrm{d} y}\right)^2 e^{- y^2 / 2}
+	&=  
+	\left(y - \frac{\mathrm{d} }{\mathrm{d} y}\right)
+	\left(y - \frac{\mathrm{d} }{\mathrm{d} y}\right) e^{- y^2 / 2} \\ 
+	&=
+	\left(y - \frac{\mathrm{d} }{\mathrm{d} y}\right) 
+	2 y e^{ - y^2 / 2} \\ 
+	&= 
+2y^2 e^{- y^2 / 2} - 
+\frac{\mathrm{d} }{\mathrm{d} y} 
+\left(
+2 y e^{- y^2 / 2}
+\right)
+	\\
+	&= 
+2 y^2 e^{- y^2 / 2} 
+- 
+\left(
+2 e ^{ - y ^2 / 2} 
+- 
+2 y^2 e^{- y^2 / 2}
+\right)
+	\\ 
+	&= 
+4 y^2 e^{- y ^2 / 2} - 2 e^{ - y ^2 / 2} 
+	\\
+	&= (4 y^2 - 2)e^{- y^2 / 2} \\
+\end{align*}
+
+
+\begin{align*}
+	\psi_1(x) 
+	&= 
+	\frac{2 y e ^{ - y ^2 / 2}}{\sqrt{2 b\sqrt{\pi} }  } \tag{$y = x / b$}
+	\\
+	\psi_2(x) 
+	&= 
+\frac{(4 y^2 - 2) e^{ - y ^2 / 2}}{2 \sqrt{2b\sqrt{\pi} } }
+	\\
+\end{align*}
+
+
+
+\subsection*{(b)} 
+
+\begin{align*}
+\int_{-\infty}^{\infty} 
+\mathrm{d} x \, 
+e^{-  \alpha x^2 / 2} 
+&= 
+\sqrt{\frac{2\pi}{a}} \\
+\frac{\mathrm{d} }{\mathrm{d} \alpha }\int_{-\infty}^{\infty} 
+\mathrm{d} x \, 
+e^{-  \alpha x^2 / 2} 
+&= 
+\frac{\mathrm{d} }{\mathrm{d} \alpha}
+\sqrt{\frac{2\pi}{a}} \\
+\int_{-\infty}^{\infty} 
+\mathrm{d} x \, 
+\frac{\mathrm{d} }{\mathrm{d} \alpha }
+e^{-  \alpha x^2 / 2}  
+&= 
+\sqrt{2 \pi }  \left(
+- \frac{1}{2} a^{- \frac{3}{2}}
+\right) \\
+- \frac{1}{2 } 
+\int_{-\infty}^{\infty} 
+\mathrm{d} x \, 
+x^2 e^{-  \alpha x^2 / 2}  
+&= 
+\frac{\sqrt{2 \pi } }{a^{\frac{3}{2}}}  \left(
+- \frac{1}{2} 
+\right)\\
+\int_{-\infty}^{\infty} 
+\mathrm{d} x \, 
+x^2 e^{-  \alpha x^2 / 2}  
+&= 
+\frac{\sqrt{2 \pi } }{a^{{3}/ {2}}} 
+\end{align*}
+
+
+
+
+
+\subsection*{(c)} 
+Consider the functions without the normalization constants in front
+\begin{align*}
+	\Psi_0(x) &= e^{ - y^2 / 2} \\ 
+	\Psi_1(x) &= y e^{ - y^2 / 2} \\
+	\Psi_2(x) &= (4 y^2 - 2) e^{ - y^2  / 2} \\
+\end{align*}
+\begin{align*}
+\braket{0 | 2 }
+&\implies
+\int_{-\infty}^{\infty} \mathrm{d} y \, 
+(4 y^2 - 2) e^{ - y^2 } \\
+&= \int_{-\infty}^{\infty} \mathrm{d} y \, 
+4 y^2 e^{ - y^2 } - 
+\int_{-\infty}^{\infty} \mathrm{d} y \, 2 e^{ - y^2 }\\
+&= 
+\sqrt{2\pi } 
+\left(
+\frac{4}{2^{3 / 2}} 
+- 
+\frac{2}{2^{1 / 2}}
+\right)
+\\
+&= 
+\sqrt{2\pi } 
+\left(
+\frac{2}{2^{1 / 2}} 
+- 
+\frac{2}{2^{1 / 2}}
+\right) = 0
+\end{align*}
+
+
+
+
+\begin{align*}
+\braket{1 | 1} 
+&= 
+\int_{-\infty}^{\infty} 
+\mathrm{d} x \, 
+y^2 e^{ - y^2 } 
+\\
+&= b
+\int_{-\infty}^{\infty} 
+\mathrm{d} y \, 
+y^2 e^{ - y^2 }  \\ 
+&=b \frac{\sqrt{2 \pi } }{2^{3 / 2}} \\
+&= b \frac{\sqrt{2} \sqrt{\pi} }{\sqrt{2} ^{3}} = b \frac{ \sqrt{\pi}  }{2} \\
+\end{align*}
+Coefficients of $\Psi_1(x)$ are 
+\[
+C = \frac{2}{ \sqrt{2b \sqrt{\pi} } } \implies C^2
+= 
+\frac{2}{b \sqrt{\pi} }
+\] 
+Putting that in place 
+\[
+\braket{1 | 1} = C^2 \int_{-\infty}^{\infty} \mathrm{d} x \, y^2 e^{- y^2}  = \frac{2}{b \sqrt{\pi } } b \frac{\sqrt{\pi } }{2} = 1
+\] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section*{Problem 04} 
+\hrule 
+\subsection*{(a)} 
+\begin{align*}
+	\hat{\overline{X}} &= \frac{1}{\sqrt{2} } (\hat{a} + \hat{a}^{T}) 
+			   &
+			   \hat{\overline{P}} &= \frac{i}{\sqrt{2} } (\hat{a}^{T} - \hat{a}) \\
+\hat{\overline{X}} \hat{\overline{X}} 
+					      &= \frac{1}{2} 
+					      \left(\hat{a} + \hat{a}^{T}\right)
+					      \left(\hat{a}+ \hat{a}^{T}\right) 
+					      &
+					    \hat{\overline{P}}
+					    \hat{\overline{P}}
+					    &= -
+					    \frac{1}{2} 
+					    \left(\hat{a}^{T} - \hat{a}\right)
+					    \left(\hat{a}^{T} - \hat{a}\right) 
+					 \\ &=
+					    \frac{1}{2}
+					    \left(
+					    \hat{a}\hat{a}
+				    + \hat{a}^{T}\hat{a}^{T}
+			    + \hat{a}^{T} \hat{a} + 
+		    \hat{a} \hat{a}^{T}\right)
+					    & &=-\frac{1}{2} 
+					    \left(
+					    \hat{a}\hat{a}
+				    + \hat{a}^{T}\hat{a}^{T}
+			    - \hat{a}^{T} \hat{a} - 
+		    \hat{a} \hat{a}^{T} 
+					    \right)
+\end{align*}
+
+
+
+\begin{align*}
+\bra{n} \hat{\overline{X}} \ket{n} &= 
+\frac{1}{\sqrt{2} }
+\bra{n} \hat{a} + \hat{a}^{T} \ket{n}
+\\
+&= \frac{1}{\sqrt{2} }
+\left(
+\braket{n | \hat{a} | n} + 
+\braket{n | \hat{a}^{T} | n }
+\right) \\
+&= 
+\frac{1}{\sqrt{2} }
+\left(
+\sqrt{n} \braket{n | n-1} +
+\sqrt{n+1} \braket{n | n+1}
+\right) = 0
+\\
+\braket{n | \hat{\overline{P}} | n} &= 
+\frac{i}{\sqrt{2} } 
+\braket{n | \hat{a}^{T} - \hat{a} | n}
+\\
+				    &=
+\frac{i}{\sqrt{2} } 
+\left(
+\braket{n | \hat{a}^{T} | n} - 
+\braket{n | \hat{a} | n}
+\right) = 0
+\end{align*}
+
+
+\begin{align*}
+\bra{n} \hat{\overline{X}}^2  \ket{ n} 
+&= 
+\frac{1}{2}
+\left(
+\braket{ n | \hat{a} \hat{a} | n}
++
+\braket{n | \hat{a}^{T} \hat{a}^{T} | n} 
++ 
+\braket{n | \hat{a} \hat{a}^{T} | n	}
++
+\braket{n | \hat{a}^{T} \hat{a} | n} 
+\right)\\
+&= 
+\frac{1}{2}
+\left(
+0 + 0 + (n+1) + n 
+\right)
+\\
+&= 
+\frac{1}{2} 
+\left(2n + 1\right)
+\\
+&= n + \frac{1}{2}  \\
+\
+\
+\
+\bra{n} \hat{\overline{P}} ^2 \ket{ n} 
+&= -
+\frac{1}{2}
+\left(
+\braket{ n | \hat{a} \hat{a} | n}
++
+\braket{n | \hat{a}^{T} \hat{a}^{T} | n} 
+- 
+\braket{n | \hat{a} \hat{a}^{T} | n	}
+-
+\braket{n | \hat{a}^{T} \hat{a} | n} 
+\right)\\
+&= - \frac{1}{2} 
+\left(
+0 + 0 - \left(
+	(n+1) + n
+\right)
+\right)\\
+& = n + \frac{1}{2}
+\end{align*}
+
+
+
+\begin{align*}
+\Delta X  
+&= \sqrt{\frac{\hb}{m \omega}} 
+\sqrt{
+\braket{n | \hat{\overline{X}}^2 | n }
+-
+\braket{n | \hat{\overline{X} } | n}
+} = \sqrt{\frac{\hb}{m \omega } } 
+\sqrt{n + \frac{1}{2}} \\
+\Delta P  
+&= \hb \sqrt{\frac{m \omega }{\hb}}  
+\sqrt{
+\braket{n | \hat{\overline{P}}^2 | n }
+-
+\braket{n | \hat{\overline{P} } | n}
+} = \hb \sqrt{\frac{m \omega }{ \hb } } 
+\sqrt{n + \frac{1}{2}} \\
+\end{align*}
+
+
+\subsection*{(b)}
+\begin{align*} \implies
+	\Delta X \Delta P &= \hb \left(n + \frac{1}{2}\right) \\ 
+	\Delta X \Delta P &\ge \frac{\hb}{2} \\ 
+	\Delta X \Delta P &= \frac{\hb}{2} \iff  n = 0
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section*{Problem 05} 
+\hrule
+\begin{align*}
+	\frac{\mathrm{d} }{\mathrm{d} t} 
+	\braket{ \Omega} (t) &= 
+	\frac{i}{\hb} 
+	\braket{ [H, \Omega] } (t)\\
+	\frac{\mathrm{d} }{\mathrm{d} t} 
+	\braket{ a} (t) &= 
+	\frac{i}{\hb} 
+	\braket{ [H, a] } (t)\\
+	&= 
+	\frac{i}{\hb} 
+	\braket{ \left[ \hb \omega \left(a^{T} a + \frac{1}{2} I \right), a \right]}\\
+	&= 
+	i \omega 
+	\braket{ \left[ \left(a^{T} a \right), a \right]}\\
+	&= 
+	- i \omega 
+	\braket{ a } \\
+	\int \frac{1}{\braket{ a}}\frac{\mathrm{d} }{\mathrm{d} t} \braket{ a } \, \mathrm{d} t &= 
+	\int
+	- i \omega 
+	  \, \mathrm{d}  t\\
+	\braket{ a} (t) &= \braket{ a}(0) e^{- i \omega t}
+\end{align*}
+
+\subsection*{Scratchwork}
+\hrule
+\begin{align*}
+	\frac{\mathrm{d} }{\mathrm{d} t} 
+	\braket{ \Omega} (t) &= 
+	\frac{i}{\hb} 
+	\braket{ [H, \Omega] } (t)\\
+	\frac{\mathrm{d} }{\mathrm{d} t} 
+	\braket{ a} (t) &= 
+	\frac{i}{\hb} 
+	\braket{ [H, a] } (t)\\
+	&= 
+	\frac{i}{\hb} 
+	\bra{\psi} Ha - a H \ket{\psi}\\
+	&= 
+	\frac{i}{\hb} \left[
+	\bra{\psi} Ha \ket{\psi}  - \bra{\psi} a H \ket{\psi}\right] \\
+	&= 
+	\frac{i (\hb \omega )}{\hb} \left[
+\bra{\psi} \left(a^{T} a + \frac{1}{2} I \right)a \ket{\psi}  - \bra{\psi} a  \left(a^{T} a + \frac{1}{2} I \right)\ket{\psi}\right] \\
+	&= 
+	 i \omega \left[
+\bra{\psi} a^{T} a a  \ket{\psi}  - \bra{\psi} a  a^{T} a \ket{\psi}\right] \\
+	&= 
+	 i \omega \left[
+	 \bra{\psi(n)} a^{T} a a  \ket{\psi(n)}  - \bra{\psi(n)} a  a^{T} a \ket{\psi(n)}\right] \tag{rewrite with $n$-th energy eigenstate} \\
+	&= 
+	 i \omega \left[ \sqrt{n-1} 
+	 \bra{\psi(n)} a^{T} a  \ket{\psi(n-1)}  - \sqrt{n-1} \bra{\psi(n)} a  a^{T}  \ket{\psi(n-1)}\right]\\ 
+	&= 
+	 i \omega \left[ \sqrt{(n-2)(n-1)} 
+	 \bra{\psi(n)} a^{T}   \ket{\psi(n-2)}  - \sqrt{n (n-1)} \bra{\psi(n)} a \ket{\psi(n)}\right]\\ 
+	&= 
+	 i \omega \left[ \sqrt{(n-2)(n-1)^2} 
+	 \bra{\psi(n)}   \ket{\psi(n-1)}  - \sqrt{n (n-1)^2} \bra{\psi(n)}  \ket{\psi(n-1)}\right]\\
+	&= 
+	 i \omega \left[ \sqrt{(n-2)(n-1)^2} 
+	  - \sqrt{n (n-1)^2} \right] \braket{\psi(n) | \psi(n-1)}
+\end{align*}
+
+
+
+
+\end{document}

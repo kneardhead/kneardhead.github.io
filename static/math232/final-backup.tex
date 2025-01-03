@@ -1,0 +1,902 @@
+\documentclass[letter]{article}
+\usepackage[monocolor]{ahsansabit}
+
+\title{Honors Multivariable Calculus Handout }
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{The Set $\mathbb{R}$ } 
+\textsf{I like to think $\mathbb{R}$ as a ``bag full of all the numbers I can imagine." Which includes negative numbers (because why not?).
+\newline
+Guess 69, it's in $\mathbb{R}$. Guess $23001.1930$, it's also in $\mathbb{R}$. Guess $\sin 20^{\circ}$, it's in $\mathbb{R}$. If any number $a$ is a member of $\mathbb{R}$ we say that 
+\[
+a \in \mathbb{R}
+\] 
+which means $a$ is an element of $\mathbb{R}$. This could be any number. 
+\newline
+We have defined numbers. But just having number is boring, we want to do ``something" with them. To do interesting things with these numbers we have to define ``mathematical operations", for instance addition, multiplication and their respective inverses (subtraction and division). We can define a definitions for ``distance" between two elements of $\mathbb{R}$. When we have defined the well set of rules and operations on $\mathbb{R}$, we have a \textbf{space} on $\mathbb{R}$. I will expand on this on the next subsection.   
+\newline
+The idea is we have the objects and then we have operations we can apply on them.
+}
+
+\df{
+The \emph{Set} of all real numbers is defined to be $\mathbb{R}$.}
+
+Please note that for this course we will be using Base-10 number system with the common sensical decimals.\footnote{$1,2,3,\ldots$}
+
+
+
+
+
+
+
+
+
+
+
+\section*{The Space of $\mathbb{R}$ }
+
+\textsf{I will first talk rigorously about \textbf{space}. An example of space can be a game; chess. A space has a set and a mathematical structure. For chess, the set can be the chess pieces (pawn, rook, knight etc.), chessboard, timer and the mathematical structure can be the rules of chess (how each pieces move) and time limit. Space gives us a well defined instrument and rules to handle it. Mathematically, the space offers us objects and the operations we can apply on the objects.  }
+
+\textsf{We will be interested on the \emph{set} $\mathbb{R}^{n}$ of numbers, whose elements are n-tuples (as you should know from linear algebra but I will still define them in next section). The \emph{structure} (or mathematical operations) we will define on this will complete the space and we name it ``vector space". }
+
+\textsf{Later we will include additional rules that will help us turn these vectors spaces into a Euclidean Space. These additional rules are basically Dot Products, just so that we can have a geometric representations of angles and stuffs. For now I will define it for one-dimension $\mathbb{R} = \mathbb{R}^{1}$ case. 
+}
+
+
+
+\df{
+	A \emph{One Dimensional Vector Space} is the Set $\mathbf V$ such that $\mathbf{V} \subset \mathbb{R}$ defined with two mappings\footnote{note that the $\otimes$ symbol just means a general mathematical operation.}
+\begin{align*}
+	+ : \mathbf V \otimes \mathbf V &\to \mathbf V \qquad \text{(Scalar Addition)} \\ 
+	\times : \mathbb{R} \otimes \mathbf V & \to \mathbf V \qquad \text{(Scalar Multiplication)}
+\end{align*}
+
+
+Considering ${x}, {y}, {z} \in \mathbf V$ and $a, b \in \mathbb{R},$\footnote{\textsf{To avoid confusion, I want to mean that $a,b$ might real numbers not necessarily members of $\mathbf V$}} the eight properties that are satisfied by the two mappings we instantiated above are as follows. 
+\begin{enumerate}
+	\item ${x} + \left({y} + {z}\right) = ( {x} + {y}) + {z}$
+	\item ${x}+ {y} = {y} + {x}$ 
+	\item ${x} + {0} = {x}$ 
+	\item ${x}+ \left(- {x}\right) = {0}$ 
+	\item $(a \times  b)\times   {x} = {a} \times  (b \times  {x})$ 
+	\item $(a+b) \times  {x} = a \times   {x}+ b  \times  {x}$ 
+	\item $a \times  ({x} + {y}) = a \times  {x} + a \times  {y}$ 
+	\item $1  \times  {x} = {x}$
+\end{enumerate}
+Additionally for Scalar Multiplication, 
+\[
+a \times  b = b \times  a
+\] TODO: Comments needed on this.  
+}
+
+\textsf{Usually while doing maths we can avoid $\times $ sign for scalar multiplication, even if it's between a Scalar and a Vector, for instance $a \times \vec{v} = a \vec{v}$. I am going to define 1 new rules imposed on this Vector Space to turn it into an Euclidean Space. But please note that the concept of \emph{inner products} make more sense in $n$ dimensions while we are working with $\mathbb{R}^{n}$. For now, just focus on the distance $d (x,y)$. }
+
+	\df{
+	A \emph{One Dimensional Euclidean Space} is a Vector Space on the set $\mathbf V \subset \mathbb{R}$ with three additional rules. Consider $x,y,z \in \mathbf V$ and $a,b \in \mathbb{R}$. Firstly, concept of \textbf{Inner Product} that satisfies
+\begin{enumerate}
+	\item $\langle x, x \rangle > 0$ if $x \neq 0$. 
+	\item $\langle x, y \rangle = \langle y, x \rangle $. 
+	\item $\langle a x + by , z \rangle = a \langle x, z \rangle + b \langle y , z \rangle$
+\end{enumerate}
+We define inner product on $x,y \in  \mathbb{R}$ 
+\[
+\langle x , y \rangle = xy
+\]
+
+Secondly, from Inner Products we get the concept of a \textbf{Norm} which can be thought of as a ``function" (we will define this later) that satisfies
+\begin{enumerate}
+	\item $|x| > 0$ if $x \neq  0$ 
+	\item $|a x| = |a| |x|$
+	\item $|x + y| \le |x| + |y|$
+\end{enumerate}
+We define the norm (associated with inner product) on $\mathbb{R}$.\footnote{Which is basically the non-negative value of $x$ in one dimensional case. Basically $= \sqrt{x^2}  = + x$}
+\[|x | = \sqrt{\langle x , x \rangle} \]
+Thirdly, from the idea of Norm we can provide a definition of \textbf{Distance} between two elements $x,y \in \mathbf V$ that satisfies the conditions 
+\begin{enumerate}
+	\item $d(x,y) > 0$ unless $x = y$ 
+	\item $d(x,y) = d(y,x)$ 
+	\item $d(x,z) \le d(x,y) + d(y,z)$
+\end{enumerate}
+We define the distance on $\mathbb{R}$ between to elements 
+\[
+d(x,y) = | x - y | 
+\] 
+	}
+
+
+
+
+	\section*{The Set of $\mathbb{R}^{n}$ } 
+	\textsf{Sets can be multiplied and they can form lists of numbers. Simple example is shown in the problem below after the definition of the method of Set Multiplication (Cartesian Product)} 
+
+	\df{
+	For two sets $\mathbf A, \mathbf B$, the set of all ordered pairs $(a,b)$ so that $a \in \mathbf A$ and $b \in \mathbf B$ is the \emph{Cartesian Product}. 
+	\[
+	\mathbf A \times \mathbf B = 
+	\{
+		(a,b)  \mid a \in \mathbf A \text{ and } b \in \mathbf B
+	\} 
+	\] 
+	}
+
+	\pr{
+Find the cartesian product of $\{1, 3, 6\} $ and $\{A, D, q\} $. 
+	}
+	\solu{
+\[
+\{1,3,6\} \times \{A , D , q\}  = \{
+	(1,A), (1,D), (1, q), (3, A), (3, D), (3, q), (6, A), (6, D), (6,q) 
+\} 
+\]
+Note that $(1,A) \neq (A,1)$ or similar. 
+	}
+
+	Cartesian Product of $\mathbb{R}$ with $\mathbb{R}$ gives us elements like,
+	\[
+	\mathbb{R} \times  \mathbb{R} = 
+	\mathbb{R}^{2} = \{(x_1, x_2)  \mid x_1, x_2 \in \mathbb{R}\} 
+	\]
+
+	\df{
+	\[
+	\mathbb{R}^{n} = \mathbb{R} \times  \cdots \times \mathbb{R} = 
+	\{(x_1, \ldots, x_n)  \mid x_1 , \ldots, x_n \in \mathbb{R}\} 
+	\] 
+	}
+
+
+
+
+
+\section*{The space of $\mathbb{R}^{n}$ }
+A \emph{space} is anything that has a set of ``objects" $\mathbf V$ and a mathematical structure defined on it.  We are specifically interested on \emph{Euclidean Spaces.} 
+
+\df{
+A \emph{Vector Space} is formed by a set $\mathbf V \subset \mathbb{R}^{n}$ defined with two mappings\footnote{note that the $\otimes$ symbol just means a mathematical operation.}
+\begin{align*}
++:	\mathbf V \otimes \mathbf V &\to \mathbf V \qquad \text{(Vector Addition)} \\ 
+\times :	\mathbb{R} \otimes \mathbf V & \to \mathbf V \qquad \text{(Scalar Multiplication)}
+\end{align*}
+
+
+Considering $\vec{x}, \vec{y}, \vec{z} \in \mathbf V$ and $a, b \in \mathbb{R}$, the eight properties that are satisfied by the two mappings we instantiated above are as follows. 
+\begin{enumerate}
+	\item $\vec{x} + \left(\vec{y} + \vec{z}\right) = (\vec{x} + \vec{y}) + \vec{z}$
+	\item $\vec{x}+ \vec{y} = \vec{y} + \vec{x}$ 
+	\item $\vec{x} + \vec{0} = \vec{x}$ 
+	\item $\vec{x}+ \left(- \vec{x}\right) = \vec{0}$ 
+	\item $(ab) \vec{x} = \vec{a}(b \vec{x})$ 
+	\item $(a+b) \vec{x} = a \vec{x}+ b \vec{x}$ 
+	\item $a (\vec{x} + \vec{y}) = a \vec{x} + a \vec{y}$ 
+	\item $1 \vec{x} = \vec{x}$
+\end{enumerate}
+For elements $\vec{x}, \vec{y}\in \mathbf V$ which can be written in their $n$-tuple form, the vector addition is defined to be
+\[
+\vec{x}+ \vec{y} = (x_1+ y_1, x_2 + y_2, \ldots, x_n + y_n)
+\]
+Scalar multiplication is defined to be with $a \in  \mathbb{R}$ 
+\[
+a \vec{x} = \left(a x_1, a x_2, \ldots, a x_3\right)
+\] 
+}
+
+\nt{
+	A \emph{Euclidean Vector Space} is a finite-dimensional \textbf{Inner Product Space} over the real numbers.
+}
+I prefer a slightly different wording of the exact same thing for simplicity. 
+	\df{
+	A \emph{Euclidean Space} is a Vector Space on the set $\mathbf V \subset \mathbb{R}^{n}$ with an additional rule of \textbf{Inner Product}. Consider $\vec{x},\vec{y},\vec{z} \in \mathbf V$ and $a,b \in \mathbb{R}$. Firstly, concept of \textbf{Inner Product} satisfies
+\begin{enumerate}
+	\item $\langle \vec{x}, \vec{x} \rangle > 0$ if $\vec{x} \neq \vec{0}$. 
+	\item $\langle \vec{x}, \vec{y} \rangle = \langle \vec{y}, \vec{x} \rangle $. 
+	\item $\langle a \vec{x} + b \vec{y} , \vec{z} \rangle = a \langle \vec{x}, \vec{z} \rangle + b \langle \vec{y} , \vec{z} \rangle$
+\end{enumerate}
+We define inner product on $\vec{x},\vec{y} \in  \mathbf V$ 
+\[
+\langle \vec{x}, \vec{y} \rangle = \sum_{i = 1}^{n} x_i y_i =  x_1 y_1 + x_2 y_2 + \cdots + x_n y_n
+\]
+
+Secondly, from Inner Products we get the concept of a \textbf{Norm} which can be thought of as a ``function" (we will define this later) that satisfies
+\begin{enumerate}
+	\item $|\vec{x}| > 0$ if $\vec{x} \neq  0$ 
+	\item $|a \vec{x}| = |a| |\vec{x}|$
+	\item $|\vec{x} + \vec{y}| \le |\vec{x}| + |\vec{y}|$
+\end{enumerate}
+We define the norm (associated with inner product) on $\mathbb{R}^{n}$.
+\[|\vec{x} | = \sqrt{\langle \vec{x} , \vec{x} \rangle} \]
+Thirdly, from the idea of Norm we can provide a definition of \textbf{Distance} between two elements $\vec{x},\vec{y} \in \mathbf V$ that satisfies the conditions 
+\begin{enumerate}
+	\item $d(\vec{x},\vec{y}) > 0$ unless $\vec{x} = \vec{y}$ 
+	\item $d(\vec{x},\vec{y}) = d(\vec{y},\vec{x})$ 
+	\item $d(\vec{x},\vec{z}) \le d(\vec{x},\vec{y}) + d(\vec{y},\vec{z})$
+\end{enumerate}
+We define the distance on $\mathbb{R}^{n}$ between to elements 
+\[
+d(\vec{x},\vec{y}) = | \vec{x} - \vec{y} | 
+\] 
+	}
+
+Note that in the above definition, we could have defined other equations that satisfies the same conditions of inner product, norms and distances. For example for Norm we defined 
+\[
+| \vec{x} | = \sqrt{\langle x, x \rangle}  = \sqrt{x_1^2 + x_2^2 + \cdots + x_n^2} 
+\]
+This is the most common type of norm that we use in Euclidean Space. But note that other norms like (with slightly different notations) 
+\[
+| | \vec{x} | | = \text{max} \{|x_1|, |x_2|, \ldots, |x_n|\}  = |x_m|  
+\] 
+\[
+|\vec{x}|_1 = |x_1| + |x_2| + \cdots + |x_3|
+\] 
+all satisfy the conditions of a norm. From these norms you can find a separate definition of distances. For now we don't have to worried to much about them. But note that while writing the proof of Inverse Function theorem we use the $| \vec{x}| _1 $ definition of a norm (Edwards).  
+
+\textsf{The intuition is that mathematicians tried to think what are the least conditions we should impose to have a concept of ``distance".}
+
+\newpage
+\section*{Sketch of Text: The Concept of Continuity and Limit} 
+\textsf{We haven't defined a function and linear mapping yet so it's probably premature to talk about continua in general. But I still like to ponder about it a little early on. 
+	\newline
+We have a \emph{space} where we can play now, and we also have a concept of a distance, so we can define how close two elements in $\mathbb{R}^{n}$ are. For now let's focus on $\mathbb{R}$ and pick two elements $a,b \in \mathbb{R}$ and without loss of generality $b > a$. What is the distance between them? It's $|a - b| = D$, a positive number. What's between $a$ and $b$? Everything in between can be defined by an \textbf{Open Interval} $(a,b)$. The meaning is, 
+\[
+	\text{If } x \in (a,b) \text{ then } x > a \text{ and } x < b
+\]
+There are uncountable number of $x$ in between $a$ and $b$. How far can we push $x$ to be close to $b$? 
+\newline
+Let's push $x$ to be near $b$ so that the distance between them is, 
+\[
+|x - b| = \frac{1}{10} =  0.1
+\]
+But we can keep pushing them even further, 
+\[
+|x - b| = \frac{1}{10000000} = 0.00000001
+\]
+No matter how infinitely close I go, I can get a valid distance $\delta = |x - b| > 0$ between $x$ and $b$ whilst $x \in  (a,b)$. If $\delta = 0 = |x-b|$ then it's invalid because $x = b$ now and $b \not\in (a,b)$. The idea is $b$ is not in between $a,b$. So I can possibly walk through every possible elements without a roadblock and still go arbitrarily close to  $b$ without reaching $b$ itself. 
+\newline
+This, I like to think as the most simple concept of $\delta$ that will be later used for limit. 
+}
+
+\section*{Function}
+\df{
+A function takes an element from a set $\mathbf X$ and assigns it to exactly one element of another set  $\mathbf Y$. 
+
+Here $\mathbf X$ is known to be the \emph{Domain of the Function} and $\mathbf Y$ is the \emph{Codomain}.
+}
+
+\df{
+A mapping $L : V \to W$ between two vector spaces $V, W$ is called linear if it satisfies the following conditions
+\[
+L(a \vec{x}) = a L(\vec{x})
+\] 
+\[
+L(\vec{x} + \vec{y}) = L(\vec{x})+ L(\vec{y})
+\] 
+where $\vec{x}, \vec{y} \in V$ and $a \in \mathbb{R}$. Note $L(\vec{x}), L(\vec{y}) \in W$
+}
+
+
+
+
+\section*{Neighborhood, Limits and Continuity of $\mathbb{R}^{n}$ }
+
+\subsection*{Concept of Neighborhood}
+\textsf{Let's pull up an element $\vec{a}$ from a set $\mathbb{R}^{n}$. What's around $\vec{a}$? Well, one mathematical way of doing this is to make a new set of all the points $\vec{x}$ such that they are within a range $\delta$ from $\vec{a}$. In simple $2D$ geometry ($\mathbb{R}^{n}$), the set of all points within $\delta$ of $\vec{a}$ is basically a circle of $\delta$ radius with center $ \vec{a}$. Such a set would be, 
+	\[
+	S = \{\vec{x} : \vec{x} \in \mathbb{R}^{n} \text{ such that } |\vec{x} - \vec{a}| < \delta\} 
+	\] 
+	\newline
+In $\mathbb{R}^{3}$ case it's a sphere if we are using the Norm $|\vec{x}| = \sqrt{x_1^2 + \cdots + x_n^2} $. But note that if we are considering $\text{distance} < \delta$ then the boundary points of the circle are at $D = \delta$ distance and we will not consider them. There is a reason why we don't consider boundary points, it's to keep the set open, I will come to this later. 
+\newline
+If we considered the norm $|\vec{x}| = \text{max} \{|x_1| , \ldots, |x_n|\} $ then the neighborhood would look like a box.} 
+
+The Open Ball gives us a concept of neighborhood in $\mathbb{R}^{n}$. 
+\df{
+For $r > 0$ and $a \in \mathbb{R}^{n}$, the \emph{Open Ball} of radius $r$ around $\vec{a}$ is 
+\[
+B_r (\vec{a}) = \{x \in \mathbb{R}^{n} : |\vec{x} - \vec{a}| < r\} 
+\] 
+}
+
+
+
+
+
+\subsection*{Concept of Limit} 
+\nt{
+The concept appears when are interested on the neighborhood of the input and output of a function.
+}
+\textsf{We have a notion of distance now. The way a function works is that we input an element from the Domain and get an output for the Codomain. Or you can think an element of Domain gets paired with another element of the Codomain. We can ask the question, what happens to the element that are close to this one? Elements that are under a certain distance, for example the element  $\vec{x}$ that are within $\delta$ distance from $\vec{a}$? An element $\vec{x}$ like this will satisfy 
+\[
+|\vec{x}- \vec{a}| < \delta
+\]
+This element $\vec{x}$ has a codomain element partner $f(\vec{x}) = \vec{y}$. If we consistently bring $\vec{x}$ close to $\vec{a}$ by decresaing $\delta$, and we see that the distance $\epsilon$ between $\vec{y}$ and another point $\vec{L}$ is also decreasing arbitrarily, we can say that limit of $\vec{x}$ approaching point $\vec{a}$ is gives us $f(\vec{x})= \vec{L}$
+}
+
+\df{
+\textbf{One Dimension Mapping}: Given there is a mapping $f: \mathbb{R} \to \mathbb{R}$ and $a,L \in \mathbb{R}$ with $x$ an element of the Domain
+\[
+\lim_{x \to a}  f(x) = L
+\] 
+means that for all $\epsilon > 0$, there exists some $\delta > 0$ such that if $|x-a| < \delta$ then $|f(x) - L | < \epsilon$. Note that $x \neq a$. 
+}
+
+\df{
+\textbf{General Mapping}: Given there is a mapping $f: \mathbb{R}^{n} \to \mathbb{R}^{m} $ and points $\vec{a} \in  \mathbb{R}^{n}$ and $\vec{L} \in \mathbb{R}^{m}$, with $\vec{x}$ being an element of the domain 
+\[
+\lim_{\vec{x} \to  \vec{a}}  f(\vec{x}) = \vec{L}
+\] 
+means that for all $\epsilon > 0$ there is some $\delta > 0$ such that $ |  \vec{x} - \vec{a}   | < \delta$ then $ |  f(\vec{x}) - \vec{L}   | < \epsilon$, whilst $\vec{x} \neq \vec{a}$. 
+}
+
+
+\subsection*{Concept of Continuity} 
+
+\subsection*{Concept of Uniform Continuity (helpful in Integration)} 
+\textsf{Apparently, uniformly continuous is an even more strict version of continuity.}
+
+\df{
+A function $f:D \to \mathbb{R}^{m}$ is \emph{Uniformly Continuous} on $D$ if for every $\epsilon > 0$ there is some $\delta > 0$ such that \textbf{every} $\vec{x}, \vec{y} \in D$ satisfying $| \vec{y}- \vec{x}| < \delta$ one has $|f(\vec{y}) - f(\vec{x})| < \epsilon$. 
+}
+
+\thm{
+If $f $ is continuous on a compact domain $D$, then $f$ is uniformly continuous on $D$. 
+}
+
+\newpage
+\section*{Optimization}
+
+\df{
+Suppose $f: D \to \mathbb{R}$ is a function on a domain $D \subset  \mathbb{R}^{n}$ and $\vec{a}$ is a point in the interior of $D$. We say that $f$ has a \textbf{Local Minimum} at $\vec{a}$ if there is some $r> 0$ such that $f(\vec{a}) \le  f(\vec{x})$ for all $\vec{x} \in B_r (\vec{a})$. Similarly we say $f$ has a local maximum at $\vec{a}$ if $r>0$ exist such that $f(\vec{a}) \ge  f(\vec{x})$  for all $\vec{x} \in  B_r(\vec{a})$. 
+}
+
+
+\newpage
+\section*{Integration} 
+\textsf{
+We will define integration in this way: 
+\begin{itemize}
+	\item Take a region.
+	\item Break it down into small pieces. 
+	\item Look at the value of a function inside the boxes (roughly the maximum and minimum in the box). We don't want this function to behave crazy (like go to positive or negative infinity; bounded). 
+	\item Multiply volume of small box and upper value of function in box to get an upper value. Multiply volume of small box and lower value of function in box to get a lower value. 
+	\item Add each of the value for all small boxes to respectively get upper sum and lower sum. 
+	\item If you increase the subdivisions in the partition, call it a refinement.
+	\item After refinement, if the lower sum and upper sum satisfy some conditions, call it \emph{Riemann Integrable.}
+\end{itemize}
+}
+\subsection*{Concept of Volume} 
+We can define simple volume of a ``box"-like structure in $\mathbb{R}^{n}$ through the following definition. 
+\df{
+A \emph{Box} $B$ in $\mathbb{R}^{n}$ is a Set of the form 
+\[
+B = 	[a_1, b_1] \times \cdots \times [a_n, b_n]
+\] 
+where $a_i < b_i$ and $i = 1,2, \ldots, n$. We define \emph{Volume of the Box} to be 
+\[
+V(B) = 	\prod_{i = 1}^{n} (b_i - a_i) = (b_1-a_1) \cdot (b_2- a_2) \cdots (b_n - a_n)
+\] 
+}
+
+\subsection*{Concept of Subdividing the Volume}
+We can break the box $B$ we defined in the previous subsection through the notion of a \textbf{Partition.}
+\textsf{The notion is you can break a box into smaller boxes. The mathematical formalism can get a bit confusing, I will make a simple example when I get time to make it clear.}
+\df{
+Let's have a box
+\[
+	B = [a_1, b_1] \times \cdots \times [a_n,b_n]
+\] 
+defined in $\mathbb{R}^{n}$. We define a \emph{Partition} of $B$ to be a choice of finite sets $S_i \subset \mathbb{R}$ for each $i = 1,2, \ldots, n$ where each $S_i = \{x_{i, 0 }, x_{i, 1} ,\ldots, x_{i, k_i}\} $ for some $k_i $ positive integer. This satisfies, 
+\[
+	a_i = x_{i , 0} < x_{i , 1} < \cdots < x_{i, k_i} = b_1
+\] An element of $S_i$ is a \emph{cut point} in coordinate $i$ for the partition. A \emph{Piece} of such a partition is a box of the form, 
+\[
+	[x_{1, j_1 - 1} , x_{1, j_1} ] \times [x_{2, j_2 - 1 }, x_{2, j_2} ] \times \cdots \times [x_{n, j_n - 1}, x_{n, j_n}] 
+\]
+where each $1 \le j_i \le k_i$.  
+}
+
+
+\section*{Concept of Function being Bounded} 
+\df{
+Given a set $D \subset \mathbb{R}^{n}$ and a function $f: D\to \mathbb{R}$, we say that the function $f$ is \textbf{Bounded} on $D$ if there exists $m, M \in \mathbb{R}$ such that, 
+\[
+m \le f(\vec{x}) \le M
+\] for all $\vec{x} \in D$.
+}
+
+\section*{Concept of Upper Sum and Lower Sum} 
+\df{
+If $f$ is bounded on a box $B$, and $P$ is a partition of $B$, then the \emph{Upper Sum} of $f$ on $P$ partition is defined to be 
+\[
+U(f,P) = \sum_{i = 1}^{p} M_i \cdot \text{vol}(B_i)
+\] if $B$ can be subdivided into $p$ boxes in total by the partition $P$. $M_i$ is the \emph{supremum} of $f(\vec{x})$ as $\vec{x}$ ranges over $B_i$.  
+}
+
+\df{
+\emph{Lower Sum} is the setup exactly same where we take 
+\[
+L(f,P) = \sum_{i = 1}^{p} m_i \cdot \text{vol}(B_i)
+\] whilst $m_i$ is the \emph{infimum} of $f(\vec{x})$ as $\vec{x}$ ranges over $B_i$. 
+}
+
+
+\section*{Concept of Refinement of Partitions}
+\df{
+If $P,Q$ are the two partitions $P, P'$ of a box $B$ in $\mathbb{R}^{n}$, we say that $P'$ is a refinement of $P$ if every cut point in coordinate $i$ for $P$ is a cut point in the same coordinate for $P'$. 
+}
+
+\section*{Conditions of being Integrable} 
+\textsf{Before we look at the required condition to be integrable, for intuition we can aid ourselves with this lemma.}
+
+\thm{
+If $P,Q$ are two partitions of the box $B$, and $f$ is bounded on $B$, then 
+\[
+U(f,P) \ge L(f,Q)
+\]
+}
+TODO: Turn this into a lemma and write the proof.
+
+\df{
+Given a bounded function $f$ on a box $D \subset \mathbb{R}^{n}$, we say that $f$ is \emph{Integrable} on $D$ if there is exactly one real number $I \in \mathbb{R}$ such that
+\[
+L(f,P) \le I \le U(f,P)
+\] for all possible partitions of $P$ of $D$. If this is the case we write
+\[
+\int_D f  = I 
+\] 
+}
+
+This can immediately be turned into the following proposition 
+
+\thm{
+A function $f$ is integrable on $D$ if and only if, for all $\epsilon > 0$ there is some partition $P$ of $D$ such that 
+\[
+U(f, P ) - L(f, P) < \epsilon
+\]
+}
+TODO: make this proposition.
+
+
+\thm{
+If $f $ is continuous on a box $B \subset \mathbb{R}^{n}$, the $f$ is integrable on $B$. 
+}
+TODO: proposition
+
+
+\subsection*{Concept of Content Zero} 
+\textsf{This is helpful because if your function happens to misbehave through discontinuity, if luckily it falls in one of these \textbf{Content Zero} places then it's still integrable.} 
+
+\df{
+A set $X \subset \mathbb{R}^{n}$ has \emph{Content Zero} if for every $\epsilon > 0$ there are finitely many boxes $B_1, B_2, \ldots, B_k$ such that 
+\[
+	X \subset \bigcup_{i \in 1 }^{k} B_i
+\]  and the sum of the volumes of $B_i$ is smaller than $\epsilon$. 
+}
+
+\thm{If $f$ is bounded on a box $B \subset \mathbb{R}^{n}$ and the set of points in $B$ where $f$ is discontinuous is of \emph{content zero} then $f$ is integrable on $B$. 
+
+\pr{
+	(Proposition) Prove that the Graph of continuous function on a compact set is content zero. 
+}
+\solu{
+Suppose that $f: D \to \mathbb{R}$ is continuous on some compact set $D \subset  \mathbb{R}^{n-1}$. We will show that $f$'s graph is content zero in $\mathbb{R}^{n}$ and we will restrict to $n = 3$ maybe to simplify notations. 
+
+Let $\epsilon > 0$ and $Y$ be a box that contains $D$. 
+
+Let 
+\[
+\epsilon' = \frac{\epsilon}{\text{vol} (Y)} = \frac{\epsilon}{V}
+\]
+We know that $f$ is continuous on $D$. Thus there is some $\delta > 0$ such that $\vec{x}, \vec{y} \in D$ within $\delta$ of each other gives us $| f(\vec{x}) - f(\vec{y}) | < \epsilon'$. Find a partition $P$ of $Y$ into boxes that have diameter smaller than  $\delta$.
+
+Suppose that $X_i$ is a piece of the partition that intersects $D$. Let's create a box $B_ i$ in $\mathbb{R}^{n}$ that is $X_i \times [a,b]$, where $a = \text{min}f(X)$ and $b = \text{max} f(X)$. Since diameter of $X_i$ is less than $\delta$, through uniform continuity we have $b - a < \epsilon'$. 
+
+Note that this box contains the entire graph of $f$ on $X_i$. Thus if we do this for all piece of $P$ that intersect $D$, we will get finite union of boxes in $\mathbb{R}^{n}$ that cover the graph of $f$ on the entirety of $D$. 
+
+The volume of $B_i$ equals $(b-a)$ times the volume of $X_i$, which is at most $\epsilon' \text{vol} (X_i)$. Thus adding that all together, $B_i$ is at most $\epsilon'$ times the sum of volume of $X_i$, which is at most volume of $Y$. 
+
+But $\epsilon' \text{vol}(Y) = \epsilon $. This proves graph of $f$  is content zero. 
+}
+	\subsection*{Integration over a region of interest (needs more reading)} 
+\df{
+If $f$  is bounded on a bounded domain $D \subset \mathbb{R}^{n}$, then $\int_D f$ is defined to be equal to $\int_B f_1$. 
+
+Here, $f_1 = 0$ on $ B \setminus D$ and $f_1 = f$ everywhere else. 
+}
+
+\subsection*{Riemann Sum}
+\textsf{This is a generalization of the Upper and Lower sum we had defined} 
+\df{
+If $f$ is bounded on $B$ (box) and $P$ is partition of $B$, then the \emph{Riemann Sum} is defined to be
+\[
+R(f,P) = \sum_{}^{} f(\vec{x}_i) \cdot \text{vol}(B_i)
+\] where the sum is taken over all pieces of $B_i$ of $P$ and $\vec{x}_i$ is any element of $B_i$. 
+} 
+
+\textsf{We can shift to the notion of integrability from Riemann Sums using the following proposition} 
+TODO: Make this a proposition 
+
+\thm{
+Given a function $f$ on a box $B$ 
+\[
+\int_B f = I
+\] if and only if for all $\epsilon > 0$ there is some $\delta > 0$ such that for any partition $P$ with the width of the pieces of $P$ less than $\delta$, and any Riemann Sum $R(f,P)$ of $f$ on $P$,  we have \[
+| R(f,P)- I | < \epsilon
+\] 
+}
+
+\subsection*{Concept of Multiple Integration} 
+\thm{
+	If $f$ is continuous on a box $ B = [a_1, b_1] \times \cdots \times [a_n ,b_n]$ then 
+	\[
+	\int_B f = 
+	\int_{B_1} S(x_1 ,\ldots, x_{n-1} )
+	\] 
+	where $B_1 = [a_1, b_1] \times  \cdots \times [a_{n-1}, b_{n-1}]$ and 
+	\[
+		S(x_1 ,\ldots, x_{n-1}) = \int_{[a_n, b_n]} f(x_1, \ldots, x_n) = 
+		\int_{a_n}^{b_n} f(x_1, \ldots, x_n) \, \mathrm{d} x_n 
+	\] 
+}
+
+\newpage
+\section*{Integration with change of Region} 
+\textsf{The notion is we will change the variables of integration.}
+\thm{
+Suppose $T: D' \to  D$ is a surjective $C^{1}$ map from compact domain $D' \subset  \mathbb{R}^{n}$ to another compact domain $D \subset \mathbb{R}^{n}$ which is injective (except for possibly on set of content zero as it doesn't matter). Then if $f:D \to \mathbb{R}$ is integrable on $D$ then 
+\[
+\int_D f = \int_D' f \circ T \, | \det (\mathrm{d} T) | 
+\] 
+}
+
+
+\subsection*{Basic example of Polar Coordinate Change of Variable}
+\df{
+Spherical Coordinates in $\mathbb{R}^{3}$ is given by $(\rho, \phi, \theta)$ where 
+\begin{align*}
+	x &= \rho \sin \phi \cos \theta \\
+	y &= \rho \sin \phi \sin \theta  \\ 
+	z &= \rho \cos \phi
+\end{align*}
+\[
+	\vec{r} = (x,y,z) = (x(\rho, \phi, \theta), y (\rho, \phi, \theta), z(\rho, \phi, \theta)) 
+	= 
+	(\rho \sin \phi \cos \theta, \rho \sin \phi  \sin \theta, \rho \cos \phi)
+\] 
+}
+
+\newpage
+\section*{Integration on a Subset (on Curves and Surfaces)} 
+\subsection*{Defining Path} 
+\textsf{A path in our surrounding space is made of all the points $(x,y,z)$ that satisfy some curve equation. For the definition of path we are about to see, image of $p$ means that we are going to look at the set of outputs from $p$. 
+	\[
+	\text{image of } p = \{(x,y,z) \in  p(I)  \mid p : I \to \mathbb{R}^{3}  \text{ and } I \text{ is a set}\} 
+\]
+Depending on our mood we can write $p$ as $\vec{p}$ too as it spits out a vector. It doesn't really matter if we keep track of the domain and codomain.   
+} 
+\df{
+A subset $C \subset \mathbb{R}^{n}$ is a $C^{1}$ \emph{Parametrized Curve} if there is some interval $I \subset \mathbb{R}$ and a $C^{1}$ function $p:I \to \mathbb{R}^{n}$ such that image of $p$ is $C$ and $p$ is injective outside some set of content zero.
+}
+
+\df{
+	\emph{Scalar Path Integral} or  \emph{Scalar Line Integral} is defined on a $C^{1}$ class parametrized curve $C$ and a function $f: \mathbb{R}^{n} \to \mathbb{R}$
+	\[
+	\int_C f \, \mathrm{d} s = \int_{a}^{b} f(p(t) ) \, | p'(t) | \, \mathrm{d} t 
+	\] 
+	where $p : [a,b] \to \mathbb{R}^{n}$ is any parametrization of $C$ curve. This is required to be independent of any parametrization of $C$. 
+}
+This definition can be exploited to find the length of the curve. We know this result works for upto $n = 3$ dimensions, we generalize this definition for $n$ general case. 
+
+\df{
+	\emph{Length of the Curve} is defined to be $\int_{C}^{} 1 \, \mathrm{d} s $ for a $C^{1}$ class parametrized curve $C \subset  \mathbb{R}^{n}$.  
+}
+
+\subsection*{Defining Surface} 
+\df{
+	A subset $S \subset \mathbb{R}^{n}$ is a $C^{1}$ \emph{Parametrized Surface} if there is some subset $D \subset  \mathbb{R}^{2}$ and a $C^{1}$ function $p : D \to \mathbb{R}^{n}$ such that the image of $p$ is $S$ and $p$ is injective outside some set of content zero. \footnote{There are some technical condition on $D$ that it should have non empty interior at the very least}
+}
+
+\df{
+\emph{The Scalar Surface Integral} of $f$ over a $C^{1}$ class parametrized surface $S \subset \mathbb{R}^{3}$ and a function $f:\mathbb{R}^{3} \to \mathbb{R}$ denoted by the following definition 
+\[
+\int_{S}^{} f \, \mathrm{d} S = \int_{D} f( p(u,v) ) \left| \frac{\partial p}{\partial u } \times \frac{\partial p}{ \partial v} \right|    
+\] where $D \subset  \mathbb{R}^{2} $ and $p:D\to \mathbb{R}^{3}$ is a parametrization of $S$. This value should be independent of the choice of parametrization of $S$.  
+}
+
+\df{
+For the $C^{1}$ parametrized surface $S \subset \mathbb{R}^{3}$, the surface area is defined to be 
+\[
+\int_{S}^{} 1 \, \mathrm{d} S 
+\] 
+}
+
+
+\pr{
+Solve for the surface area of a Unit Sphere in $\mathbb{R}^{3}$. 
+}
+\solu{
+From the definition of surface area we know 
+\[
+\int_{S}^{} 1 \, \mathrm{d} S = \int_{D}^{} \left| \frac{\partial p}{\partial u} \times  \frac{\partial p}{\partial v} \right| 
+\]
+\textbf{Parametric for Surface: }
+Here $\vec{p}$ is a function / map that is going to give us the surface of the sphere. In Cartesian Coordinates, we can roughly imagine a circle in $x-y$ plane is going to be mapped into a surface of a hemisphere using $x^2 + y^2 + z^2 = 1$ so that the point of the surface in $\mathbb{R}^{3}$ is $(x,y, \sqrt{1-  x^2 - y^2}) $. 
+
+So formally, defining $$D = \{(x,y)  \mid  x,y \in \mathbb{R} \text{ and } x^2 + y^2 \le  1\} $$ the parametric that gives the surface would be the image of the map $\vec{p} : D \to \mathbb{R}^{3}$
+\[
+\vec{p}(x,y) = \left(x, y , \sqrt{1- x^2 - y^2} \right)
+\]
+This will give the upper half of the hemisphere if we only consider the positive square root (and we should otherwise it's not a function). 
+
+\textbf{Partial Derivative Cross Product Determinant: }
+\begin{align*}
+	\frac{\partial \vec{p}}{\partial x} &= \left(1,0, \frac{x }{\sqrt{1 - x^2 - y^2} }\right) \\
+	\frac{\partial \vec{p}}{\partial y} &= \left(0, 1, \frac{y}{\sqrt{1-x^2 -y^2} } \right) \\
+	\frac{\partial \vec{p}}{\partial x} \times 
+	\frac{\partial \vec{p}}{\partial y} &= 
+	\left(\frac{x}{\sqrt{1-x^2-y^2}} , \frac{y}{\sqrt{ 1-x^2-y^2}},1\right)\\
+	\left|\frac{\partial \vec{p}}{\partial x} \times  \frac{\partial \vec{p}}{\partial y}\right| &= 
+	\sqrt{1 + \frac{x^2}{1-x^2-y^2  } + \frac{y^2}{1-x^2-y^2}} 
+\end{align*}
+\textbf{Change of Coordinates for Integration: (SETUP)}
+We learned that 
+\[
+\int_{D}^{} f = \int_{D'}^{ } f \circ T \, | \det (\mathrm{d} T) |   
+\] 
+What we have now is 
+\[
+	\int_{S}^{} 1 \, \mathrm{d} S = \int_{D}^{}    
+	 \sqrt{1 + \frac{x^2}{1-x^2-y^2  } + \frac{y^2}{1-x^2-y^2}} 
+\]
+Where \[
+D = \{(x,y)  \mid  x,y \in \mathbb{R} \text{ and } x^2 + y^2 \le  1\} 
+\]
+Because $D$'s image is a circle, we can conveniently use polar coordinates with the following transformation, as we know that $(x,y)$ is 
+\[
+	(x,y) = \left(x(r, \theta), y(r, \theta)\right)
+\] 
+\[
+	(x,y) = T(r, \theta)  = (r \cos \theta , r \sin \theta)
+\]
+We have defined $T$. Then 
+\[
+	\mathrm{d} T = \begin{pmatrix} \dfrac{\partial x}{\partial r} & 
+	\dfrac{\partial y}{\partial r} \\ 
+	\dfrac{\partial x}{\partial \theta} & 
+	\dfrac{\partial y}{\partial \theta} 
+\end{pmatrix}
+	 = \begin{pmatrix} \cos \theta & \sin \theta \\ - r \sin \theta & r \cos \theta \end{pmatrix} 
+\] 
+The determinant 
+\[
+\det \left(\mathrm{d} T\right) = 
+r
+\] 
+For the new domain of integration 
+\[
+D = \{(x,y)  \mid  x,y \in \mathbb{R} \text{ and } x^2 + y^2 \le  1\} 
+\]  
+will turn to 
+\[
+	D' = \{(r , \theta)  \mid  r,\theta \in \mathbb{R} \text{ and } r \in [0,1] \text{ and } \theta \in  [0, 2\pi] \} 
+\]
+$0$ and $2 \pi $ are content zero so we don't have to worry about overlaps.\footnote{Think about how much area is swept from 0 to $2 \pi $.} 
+
+\textbf{Change of Coordinates for Integration: (COMPUTATION)}
+\[
+f \circ T \implies f(T(r, \theta)) = f(r \cos \theta, r \sin \theta) = 
+\sqrt{
+1 + \frac{r^2 \cos ^2 \theta}{1 - r^2 \cos ^2 \theta - r^2 \sin ^2 \theta} + \frac{r ^2 \sin ^2 \theta}{1 - r^2 \cos ^2 - r^2 \sin ^2 \theta } }\] \[= \sqrt{1 + \frac{r^2}{1 - r^2}} 
+\]
+Putting all of it together now with variables of choice being $(r,\theta)$
+\[
+\int_{D}^{} f = \int_{D'}^{} f \circ T \, \det \left(\mathrm{d} T\right) \implies 
+\int_{D'}^{} \sqrt{1 + \frac{r^2}{1 - r^2}} (r)  = \int_{D'}^{} \frac{r}{\sqrt{1 -r^2} }  
+\] 
+\[
+	D' = \{(r , \theta)  \mid  r,\theta \in \mathbb{R} \text{ and } r \in [0,1] \text{ and } \theta \in  [0, 2\pi] \} 
+\]
+\textbf{Fubini's Theorem}:
+
+As we have an integration over a box-like region we can now turn the problem using Fubini's Theorem and evaluate the integral like this, 
+\[
+ \int_{D'}^{}  \frac{r}{\sqrt{1 - r^2} } = \int_{0}^{2\pi } 
+	\left[ 
+	\int_{0}^{1} \frac{r}{\sqrt{1 - r^2} } \, \mathrm{d}  r 
+	\right] \mathrm{d} \theta = 2 \pi 
+\] 
+Evaluating this single variable integral gives us
+\[
+\int_{S}^{} \mathrm{d} S = 2 \pi  
+\]
+For the whole sphere it will be $4 \pi $. 
+}
+
+
+\newpage
+\section*{Vector Fields and Vector Integration} 
+\subsection*{Defining Vector Field}
+\textsf{This is the most Physics thing in this course ever. We will imagine ever point in our surrounding space (not the mathematical space haha) has a \emph{vector }assigned to it. }
+\df{
+A \emph{Vector Field} on a domain $D \subset \mathbb{R}^{n}$ is any function 
+\[
+\vec{F} : D \to \mathbb{R}^{n}
+\] 
+}
+
+\subsection*{Vector Path Integral} 
+\textsf{The idea is exactly what we learn in computing the work done on an object.}
+\df{
+For an oriented $C^{1}$ parametrized curve $C \subset \mathbb{R}^{n}$ and a vector field $\vec{F}$ defined on a domain containing $C$, the \emph{Vector Path Integral} or \emph{Vector Line Integral} of $\vec{F}$ over $C$ is denoted by 
+\[
+\int_{C}^{ }  \vec{F} \cdot \mathrm{d} \vec{s}  
+\]
+defined to be 
+\[
+\int_{a}^{b} \vec{F}( \vec{p}(t) ) \cdot \vec{p}'(t) \, \mathrm{d} t 
+\] for a path $\vec{p} : [a,b] \to \mathbb{R}^{n}$, any valid parametrization whose image is $C$. Obviously the value of this integral is independent of the choice of parametrization of $C$. 
+}
+
+A path integral can be independent of the choice of the path too. We can define it by 
+\df{
+A vector field $\vec{F}$ on a domain $D \subset \mathbb{R}^{n}$ is \emph{Path Independent} if for any two oriented paths $C_1, C_2$ in $D$ that begin and end at the same points 
+\[
+\int_{C_1}^{} \vec{F} \cdot \mathrm{d} \vec{s} = \int_{C_2}^{} \vec{F} \cdot \mathrm{d} \vec{s}  
+\] 
+}
+This can lead to a very important theorem 
+\thm{
+A vector field $\vec{F}$ is path independent if and only if 
+\[
+\oint _C \vec{F} \cdot \mathrm{d}  \vec{s} = 0
+\] for all loops $C$ in the domain. 
+}
+
+From Physics we can write another banger of a definition 
+\df{
+A vector field $\vec{F}$ defined on an open set $D \subset  \mathbb{R}^{n}$ is \emph{Conservative} if there is  some function $f:D\to \mathbb{R}$ such that $\nabla f = \vec{F}$.
+}
+
+Conservative Vector Fields happen to be quite important. For instance we have the following theorem
+\thm{
+	A vector field on a \emph{path-connected domain}\footnote{will be defined right after this} is conservative if and only if it is Path Independent. 
+}
+
+\textsf{I like to think there is no island like disconnect between the regions.}
+\df{
+\emph{Path Connected} means that for every two points in the set $D \subset \mathbb{R}^{n}$, there is a path starting from one and ending at other. 
+}
+
+\subsection*{Path Integral version of Fundamental Theorem of Calculus} 
+\thm{
+If $\nabla f = \vec{F}$, then for any path $C$ in the domain of $\vec{F}$ which starts at a point $\vec{a}$ and ends at point $\vec{b}$, we have
+\[
+\int_{C}^{} \vec{F} \cdot \mathrm{d} \vec{s} = f(\vec{b}) - f(\vec{a}) 
+\] 
+}
+
+\subsection*{Introduction to Curl} 
+\df{
+If $\vec{F} = \langle F_1, F_2 \rangle$ a vector field in $\mathbb{R}^{2}$ then 
+\[
+	(\nabla \times \vec{F})_z = \text{curl}_z \vec{F} = \frac{\partial F_2}{\partial x} - \frac{\partial F_2}{\partial y}
+\] 
+}
+
+\df{
+	For a vector field $\vec{F} = \langle F_1, F_2, F_3 \rangle $ in $\mathbb{R}^{3}$, we define the curl 
+	\[
+	\text{curl} \vec{F} = 
+	\Biggl<
+	\frac{\partial F_3}{\partial y} - \frac{\partial F_2}{\partial z}, 
+	\frac{\partial F_1}{\partial z} - \frac{\partial F_3}{\partial x}, 
+	\frac{\partial F_2}{\partial x} - \frac{\partial F_1}{\partial y} \Biggl>
+	\] 
+}
+\subsection*{Green's Theorem: Vector Path Integral to Scalar Surface Integral in $\mathbb{R}^{2}$} 
+\thm{
+	Let $R$ be a ``nice" region in $\mathbb{R}^{2}$\footnote{the ``inside" of some closed, piecewise $C^{1}$ curve $C$ } and let $\vec{F}$ be a $C^{1}$ vector field defined on $R$. Then 
+	\[
+	\int_{R}^{} \text{curl}_z (\vec{F}) = \oint_C \vec{F} \cdot \mathrm{d} \vec{s}
+	\]
+	where $C$ is oriented so that $R$ is on the left if we go around $C$. 
+}
+TODO: make next one proposition 
+
+\thm{
+If a $C^{1}$ vector field $\vec{F}$ in $\mathbb{R}^{2}$ is \emph{conservative} the $\text{curl}_z \vec{F}$ is identically zero. 
+}
+
+\textsf{The reverse of this is not necessarily true for all case. For that our path need to be nice enough. I will define what I mean with nice enough later.} 
+TODO: make next one proposition 
+
+\thm{
+	If a $C^{1}$ vector field $\vec{F}$ in $\mathbb{R}^{2}$ has \emph{Simply Connected}\footnote{will be defined right after this.} domain $D$ and $\text{curl}_z \vec{F}$ is identically zero on  $D$, then $\vec{F}$ is conservative. 
+}
+\df{
+A domain $D$ in $\mathbb{R}^{2}$ or $\mathbb{R}^{3}$ is \emph{Simply Connected} if every loop in $D$ can be ``filled in" (by a region/surface) while staying in $D$. Alternatively, $D$ is \emph{Simply Connected} if every loop in $D$ can be ``pulled in" to a point in $D$. 
+}
+
+\subsection*{Vector Surface Integral : Flux} 
+\textsf{Before moving on to the Green's Theorem in $ \mathbb{R}^{3}$ we have the burden of definition of a Flux Integral}. 
+\df{
+Suppose $\vec{F}$ is a vector field on $\mathbb{R}^{3}$ and $S$ is an oriented $C^{1}$ parametrized surface in $\mathbb{R}^{3}$. If $S$ is parametrized by $p: D\to \mathbb{R}^{3}$ for some $D \subset \mathbb{R}^{2}$, then the \emph{Flux Integral} is defined by $\vec{F}$ over $S$ as 
+\[
+\int_{S}^{} \vec{F} \cdot \mathrm{d} \vec{S} = 
+\int_{D}^{} \vec{F}( p(u,v)) \cdot  \left(
+\frac{\partial p}{ \partial u} \times  \frac{\partial p }{\partial v}
+\right) 
+\]
+where we stay aware about the direction of $\frac{\partial p}{\partial u} \times  \frac{\partial p}{\partial v}$ with chosen orientation of the surface. 
+}
+
+\subsection*{Green's Theorem in $\mathbb{R}^{3}$ }
+\thm{
+Given a $C^{1}$ vector field $\vec{F}$ in $\mathbb{R}^{3}$ defined on an oriented surface $S$, we have 
+\[
+\int_{S}^{} \text{curl }\vec{F} \cdot \mathrm{d} \vec{S} = 
+\oint_{\partial S} \vec{F} \cdot  \mathrm{d} \vec{s}
+\]
+where $\partial S$ represents the edge of $S$ oriented compatibly with the orientation of $S$. 
+}
+\textsf{The intuitive addition to the above theorem is going to be that travelling around $\partial S$ with our head pointed towards the positive side of the surface, the surface is on our left.}
+
+
+TODO: make the next one proposition 
+\thm{
+If a $C^{1}$ vector field in $\vec{F}$ in $\mathbb{R}^{3}$ is conservative then $\text{curl } \vec{F}$ is identically zero. 
+}
+
+\thm{If a $C^{1}$ vector field $\vec{F}$ is defined on a \emph{Simply Connected }domain in $\mathbb{R}^{3}$ and $\text{curl }\vec{F}$ is identically zero, the $\vec{F}$ is conservative. 
+
+
+\subsection*{Divergence Theorem} 
+\df{
+For a vector field $\vec{F} = \langle F_1, F_2, F_3 \rangle$ in $\mathbb{R}^{3}$ the \emph{Divergence} of $\vec{F}$ is given by 
+\[
+\text{div }\vec{F} = \nabla \cdot \vec{F} = 
+\frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y} + \frac{\partial F_3}{ \partial z}
+\] 
+}
+
+\thm{Given a $C^{1}$ vector field $\vec{F}$ on $\mathbb{R}^{3}$ defined on region $R$, we have 
+	\[
+		\int_{R}^{} \text{div }\vec{F} = \oint_{\partial R} \vec{F} \cdot  \mathrm{d} \vec{S} 
+	\]
+	where $\partial R$ represents the boundary of $R$ oriented so that the side away from $R$ is positive. 
+
+	A useful fact can be 
+
+	TODO: make proposition 
+	\thm{ For a $C^{2}$ vector field $\vec{F}$
+		\[
+	\text{div} \left(\text{curl }\vec{F}\right)	 = 0
+		\] 
+	}
+
+
+
+\newpage\section*{Introduction} 
+
+\textsf{Whatever you see in this particular font is \emph{intuition}. Through \emph{intuition} I mean the ``not so correct" way of writing things that will provide you with a rough picture to think about. The slightly incorrect literature is supposed to give you an anchor for imagination - though the rigorous correctness is embodied in the} \emph{Definitions, Propositions, Theorems.}
+
+The goal I am trying to achieve with this handout is \textbf{putting all the things I've learned in 232 in one single place in a way my malfunctioning brain can understand.} I have particularly struggled through every single classes other than integration because I couldn't convince myself why certain things existed and behaved the way they did. This was remarkably debilitating for my academics because I had taken two other math courses and I had to spent three times the time only working on 232. 
+
+Now as I think about it, right before finals, the inability to \emph{chronologically} and \emph{logically} not being able to structure the ideas was the fatal flaw I was dealing with. This note is an attempt to fix that. 
+
+Please don't forget to read the footnotes.
+
+
+
+\section*{Appendix : Gamma Function} 
+\df{
+The Gamma Function for $z > 0$ is 
+\[
+\Gamma(z) = \int_{0}^{\infty} t ^{z-1} e^{-t} \, \mathrm{d} t 
+\] 
+}
+ 
+TODO: about multi-dim sphere vol. 
+\end{document}
