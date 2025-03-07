@@ -1,5 +1,5 @@
 ---
-title: "Competitive Physics Notes (Olympiad Training)"
+title: "Competition (Olympiad Training Notes)"
 date: 2024-01-13T16:06:51-06:00
 draft: false
 ---

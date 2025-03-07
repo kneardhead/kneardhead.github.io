@@ -1,0 +1,57 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[dutch]{babel}
+\usepackage{amsmath, amssymb}
+
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\[
+	\begin{bmatrix} a_{11} & a_{12} & a_{13} \\
+	a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33} \end{bmatrix} 
+\] 
+\[
+	\begin{bmatrix} a_{11} & a_{12} & a_{13} \\
+	a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33} \end{bmatrix} 
+\begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix} 
+=
+\begin{bmatrix} a_{11} v_1 + a_{12} v_2 + a_{13} v_3 \\
+a_{21} v_1  + a_{22} v_2 + a_{23} v_3 \\
+a_{31} v_1 + a_{32} v_2 + a_{33} v_3 \end{bmatrix} 
+\] 
+
+\[
+\boxed{
+	\begin{bmatrix} \mathbf a_{11} & a_{12} & a_{13} \\
+	\mathbf a_{21} & a_{22} & a_{23} \\
+\mathbf a_{31} & a_{32} & a_{33} \end{bmatrix} 
+\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} = \begin{bmatrix} a_{11} \\ 
+	a_{21} \\ a_{31} \end{bmatrix}  
+}
+\] 
+\[
+\boxed{	\begin{bmatrix} a_{11} & \mathbf a_{12} & a_{13} \\
+	a_{21} & \mathbf a_{22} & a_{23} \\
+a_{31} & \mathbf a_{32} & a_{33} \end{bmatrix} 
+\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} 
+= 
+\begin{bmatrix} a_{12} \\ a_{22} \\ a_{32} \end{bmatrix}  }
+\] 
+\end{document}

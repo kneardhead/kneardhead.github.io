@@ -1,0 +1,311 @@
+\documentclass[letter, 10pts]{article}
+\usepackage[monocolor]{../math232/ahsansabit}
+\usepackage[]{float}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage[outline]{contour} % glow around text
+\usepackage{xcolor}
+\usepackage{pdfpages}
+\usepackage{physics}
+\usepackage{multicol}
+\title{Solid State Physics : : Homework 0X}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+\newcommand{\hb}{\hbar}
+\newcommand{\U}{\uparrow}
+\newcommand{\D}{\downarrow}
+\usepackage[]{braket}
+\begin{document}
+\maketitle
+
+\fontfamily{cmss}\selectfont
+
+\section*{Problem 1}
+\hrule 
+\subsection*{(a)} 
+Inverse of a matrix (from memory)
+\[
+	\begin{pmatrix} a & b \\ c & d \end{pmatrix} ^{-1} 
+	= 
+	\frac{1}{ad - bc} \begin{pmatrix} d  & - b \\ - c & a \end{pmatrix}
+\] 
+The original resistivity tensor is 
+\[
+	\begin{bmatrix} \rho_{x x } & \rho_{xy} \\ 
+	\rho_{y x} & \rho_{y y} \end{bmatrix} 
+\] So 
+\[
+\tilde \sigma = \tilde \rho^{-1} = 
+\frac{1}{\rho_{x x} \rho_{y y} - \rho_{xy} \rho_{yx} }  
+\begin{bmatrix} \rho_{y y} & -\rho_{x y} \\ 
+-\rho_{y x} & \rho_{x x} \end{bmatrix} 
+\]
+
+This immediately gives us the solution for conductivity matrix
+\begin{align*}
+	\sigma_{x x} &= \frac{\rho_{y y} }{\rho_{x x} \rho_{y y}  - \rho_{x y} \rho_{y x} } \\ 
+	\sigma_{x y} &= \frac{- \rho_{x y} }{\rho_{x x} \rho_{y y}  - \rho_{x y} \rho_{y x} } \\ 
+	\sigma_{y x} &= \frac{-\rho_{y x} }{\rho_{x x} \rho_{y y}  - \rho_{x y} \rho_{y x} } \\ 
+	\sigma_{y y} &= \frac{\rho_{x x} }{\rho_{x x} \rho_{y y}  - \rho_{x y} \rho_{y x} } \\ 
+\end{align*}
+
+
+\subsection*{(b)} 
+The system at insulating for longitudinal conduction 
+\[
+	\sigma_{x x} = 0
+\] \[
+\sigma_{y y } = 0
+\] 
+This implies that 
+\begin{align*}
+	\sigma_{x x} &= 0 \\ 
+	\sigma_{x y} &= \frac{- \rho_{x y} }{ - \rho_{x y} \rho_{y x} }  = \frac{1}{\rho_{y x}}\\ 
+	\sigma_{y x} &= \frac{-\rho_{y x} }{ - \rho_{x y} \rho_{y x} } = \frac{1}{\rho_{ x y} } \\ 
+	\sigma_{y y} &= 0\\ 
+\end{align*}
+With the added effect 
+\[
+	\rho_{x x} = \rho_{y y}= 0
+\]
+
+\textbf{Analysis:} This is surprisingly absurd, we apparently have superconductivity (no resistance) along $x x$ and $y y $. 
+
+
+
+
+\section*{Problem 2}
+\hrule
+\subsection*{a}
+The heuristic of this problem is to convert mass density into a number density 
+\[
+\rho = 2.32 \frac{g}{cm^3} = 2.32 \frac{g}{cm ^3 } \frac{mol}{mol} = \frac{2.32}{28.1} \frac{g }{cm ^3} \frac{mol}{g} =   0.083 \frac{mol}{cm ^3} = 0.083 (N_a) \frac{1}{10^{-6}} \frac{\text{particles}}{m^3} 
+\approx 5 \times 10^{28} \frac{\text{particles}}{m^3}
+\] 
+
+\[
+\boxed{
+5 \times 10^{28} \text{ atoms per unit meter cubed}
+}
+\] 
+
+For doping, every millionth Si is replaced with P. $1 M = 1 \times 10^{6}$. Hence in total per unit meter cube we add  
+\[
+\frac{5 \times 10^{28}}{10^{6}} = 5 \times  10^{22}
+\] 
+ P atoms. The carrier density of electrons hence is 
+ \[
+ \boxed{
+ 5 \times 10^{22 } \text{ electrons per unit meter cubed}
+ }
+ \] 
+
+ \subsection*{(b)} 
+ I change to $m k s$ units and use the electron charge to mass ratio to solve 
+ \[
+ \mu = \frac{e \tau}{m} \to \tau = \frac{m \mu}{e}  = 0.3 \times  \frac{1}{1.758 \times 10^{11} } \times  1000 (10^{-4} )  (s) = 1.706 \times 10^{-13} \, s
+ \]
+\[\boxed{
+\tau = 1.706 \times  10^{-13} \, s
+} \] 
+
+
+\subsection*{(c)} 
+\[
+\sigma = \frac{e^2 \tau n}{m} \to \tau = \frac{m}{\rho e^2 n}   = 
+\frac{9.1 \times 10^{-31} }{2 \times 10^{-5} \times (1.602 \times 10^{- 1 9 } )^2 (5 \times 10^{28}) } s = 3.546 \times 10^{-17} \, s
+\] 
+This is about $1000$ times faster than $(b)$ in terms of order of magnitude. Which makes sense because we seem to have a higher number density. 
+
+Estimate of a mean free path would be 
+\[
+l = \braket{v } \tau = 10^{6} \times 3.546 \times 10^{-17} m = 3.546 \times 10^{-11} m = 0.35 A^{\circ} 
+\]
+\textbf{Analysis:} Google says me that an atom is roughly $1$ to $2.5$ angstroms. The electron gets scattered before it traverses around $0.35 $ angstroms, around 1/3 of the size of the atom around. I can see why materials like these are called bad metals. 
+
+Drude model hence implies a bad metallicity for this metal. Drude model is successful in making a rough estimate of the badness of the metal, although it's already understood that it's not quantum mechanically accurate. 
+
+
+
+
+
+
+\section*{Problem 3} 
+\hrule
+\subsection*{(a)} 
+I am going to do something that's a mathematicians worse nightmare. 
+\begin{align*}
+v_t = - v_x \tau \frac{\mathrm{d} v_x}{\mathrm{d} x} &=   - \tau 
+\left( \mathrm{d}  \int \right) v_x \frac{\mathrm{d} v_x}{\mathrm{d} x}\\ 
+						     &= - \tau  \left( {\mathrm{d} \over \mathrm{d} x}  \int \right) v_x {\mathrm{d} v_x} \\
+						     &					     = - \frac{\tau}{2} \left(\frac{\mathrm{d} }{\mathrm{d} x}\right) v_x^2 \\ 
+						     &= - \frac{\tau}{2} \frac{\mathrm{d} (v_x^2)}{\mathrm{d} x} \\ 
+						     &= - \frac{\tau}{2} \frac{\mathrm{d} (v^2 / 3)}{\mathrm{d} x} \\ 
+						     &= - \frac{\tau}{6} \frac{\mathrm{d} (v^2 )}{\mathrm{d} x} \\ 
+						     &= - \frac{\tau}{6} \frac{\mathrm{d} (v^2 )}{\mathrm{d} T} \frac{\mathrm{d} T}{\mathrm{d} x} \\ 
+\end{align*}
+For physical sense I like to write this as 
+\[
+v_t = \frac{\tau}{6} \frac{\mathrm{d} v^2}{\mathrm{d} T} \left(- \frac{\mathrm{d} T}{\mathrm{d} x}\right)
+\] 
+This makes a lot of sense. This says that $v$ is positive along the direction of temperature decrease. I imagine this as flowing along the downward going (hence negative) ramp of temperature, as electrons from higher temperature region flows towards lower temperature region by the assist of a velocity difference.
+
+
+\subsection*{(b)} 
+Resulting drift velocity only in terms of $e, m, \tau , E_x$ can be solved through the probabilistic differentia lequation 
+\[
+\frac{\mathrm{d} \vec{p}}{\mathrm{d} t} = - e \vec{E} - \vec{p}/\tau
+\] 
+In steady state for drift velocity we end up with 
+\[
+m \vec{v}_d = - e \tau \vec{E}  \implies v_d = - \frac{e \tau}{m} {E}_x
+\] 
+
+
+\subsection*{(c)} 
+\begin{align*}
+	v_t + v_d &= 0 \\
+- \frac{\tau}{6} \frac{\mathrm{d} v^2}{\mathrm{d} T} \frac{\mathrm{d} T}{\mathrm{d} x} 
+	- \frac{e \tau}{m} E_x   & = 0 \\ 
+	\frac{\tau}{6} \frac{2}{m} c_v \frac{\mathrm{d} T}{\mathrm{d} x} &= - \frac{e \tau}{ m} E_x \\ 
+	\frac{\tau}{6} \frac{2}{m} c_v \frac{\mathrm{d} T}{\mathrm{d} x} &=  \frac{e \tau}{ m} \frac{\mathrm{d} V}{\mathrm{d} x} \\ 
+	\frac{1}{3}  c_v \frac{\mathrm{d} T}{\mathrm{d} x} &=  e \frac{\mathrm{d} V}{\mathrm{d} x} \\ 
+	\frac{c_v}{3e} \frac{\mathrm{d} T}{\mathrm{d} x} &=  \frac{\mathrm{d} V}{\mathrm{d} x} \\ 
+	\frac{3 k_B / 2}{3e} \frac{\mathrm{d} T}{\mathrm{d} x} &=  \frac{\mathrm{d} V}{\mathrm{d} x} \\ 
+	\frac{k_B }{2e} \frac{\mathrm{d} T}{\mathrm{d} x} &=  \frac{\mathrm{d} V}{\mathrm{d} x} \\ 
+\end{align*}
+Comparing we see that apparently 
+\[
+\frac{k_B}{2 e} = - S \implies S = - \frac{k_B}{2 e 
+}
+\] 
+
+
+
+\section*{Problem 4} 
+\hrule
+\subsection*{(a)} 
+Let's find the kinetic energy of \textbf{one} single particle with $k = k_i$
+\begin{align*}
+E_k &= \frac{1}{2}m v^2 \\
+&= \frac{1}{2} m (p / m)^2  \\
+&= \frac{p^2}{2m}  \\
+&= \frac{\hb ^2 k^2}{2m} \\
+\implies 
+E_k (k_i) &= \frac{\hb ^2 k_i^2}{2m }
+\end{align*}
+Philosophy: I think we are always very careless about notations. I don't like it. $k$ is the general wavevector $k$, where $k_i$ is a specific value we are interested in. Now let's find the number of particles that are moving around in $k = k_i$ state.  Mathematically being specific $k = \sqrt{\vec{k} \cdot  \vec{k}}  = \sqrt{k_x^2 + k_y^2+ k_z^2}  $ where $k$ behaves like the scalar radius of fermi ball in $k$ space. 
+
+We know that in 3D $k$-space (is it really mathematically a space? I know that $\vec{k} \in  \mathbb{R}^{3}$ but what's the mathematical rule that makes it a space? I prefer the physics version though, slapping the word space and just going with the feeling).
+
+The separation between each state is given by $2\pi / L$ (lecture recording, I enjoyed that lecture like a movie (it was so interesting)). There is one particle per every box of length $2 \pi / L$ hence we could possibly write
+\[
+\rho = \frac{1}{(2 \pi / L)^3} = \frac{V}{8 \pi^3}
+\] 
+
+The number of particles in a state $k$ is (drum roll) : 0. Every point particle in $k$ space only intersects the manifold, but not contained. Being mathematically specific, we count $k$ points of states that are inside the ``volume". The manifold of $r = k$ has no containing volume so no state is contained. 
+
+But number of particles in a state $k < k_i < k+ \mathrm{d} k$ is (which can be measured because this has a non-zero measure as a 3D open set)
+\[
+	\mathrm{d} N(k_i) = \rho \, \mathrm{d} \mathcal{\tau} =  \frac{V}{8 \pi ^3}(4 \pi k_i ^2 \mathrm{d} k)  = \frac{V}{2 \pi^2} k_i^2 \mathrm{d} k 
+\]
+
+So the total energy of $\mathrm{d} N(k_i)$ (number of particles in $k_i$) state is given by 
+\[
+\mathrm{d} E(k_i) = \mathrm{d} N(k_i) \varepsilon(k_i) = \frac{V}{2 \pi^2} k_i^2 \mathrm{d} k \cdot \frac{\hb^2 k_i^2}{2 m }   
+\]
+We can integrate this from $k = 0$ to $k = k_F$ through 
+\[ E_F = 
+	\frac{\hb^2 V}{4 \pi^2 m } \int_{0}^{k_F}   k_i ^{4} \mathrm{d} k = \frac{\hb ^2 V}{4 \pi^2 m} \frac{k_i ^{5}}{5} \Biggr|_{k_i= 0 }^{k_i = k_F} = \frac{\hb^2 V k_F ^{5}}{20 \pi ^2 m  }
+\]  
+
+Now let's do a variable flip, we know that total number of particles in the $k$-ball from $0$ to $k_F$ are 
+\[
+N = \rho V = \frac{V}{8 \pi ^3}\frac{4}{3} \pi k_F ^3 = \frac{V k_F ^3}{6 \pi ^2}
+\] 
+And we already have the dispersion relation of energy that can give us the surface energy 
+\[
+\varepsilon_F = \frac{\hb ^2 k_F ^2}{2 m }
+\] 
+Using this we can write flip the variables for $E_F$
+\[
+E_F =
+\frac{\hb^2 V k_F^3}{20 \pi^2 m } = 
+\frac{1}{20}
+\left( \frac{V k_F^3 }{ \pi^2 }\right)
+\left(\frac{\hb^2 k_F^2}{m}\right)
+= \frac{6}{10}
+\left( \frac{V k_F^3 }{ 6\pi^2 }\right)
+\left(\frac{\hb^2 k_F^2}{2m}\right) = \frac{3}{5} N \varepsilon_F
+\] 
+\[
+\boxed{
+E_F = \frac{3}{5} N \varepsilon_F 
+}
+\] 
+
+
+\subsection*{(b)} 
+In $2$-Dimensions, we are constrained to wavefunctions span along two axes. Hence our states are contained in $k = \sqrt{k_x^2 + k_y^2} $. We are still going to use the energy relation $\varepsilon(k_i) = \frac{\hb ^2 k_i ^2}{2 m} $.
+
+We are required to derive $\varepsilon_F$ which is the surface energy. That would be given by 
+\[
+\varepsilon_F = \frac{\hb^2 k_F^2}{2 m}
+\] 
+Electron density (in $k$ space) \[
+n = \frac{1}{(2 \pi  / L )^2 } = \frac{L^2}{4 \pi^2}   = \frac{A}{4 \pi ^2} 
+\]
+Number of electron in $\varepsilon$ energy is given by 
+\[
+\mathrm{d} A = 2\pi k_i \mathrm{d} k
+\] 
+\[
+\mathrm{d} N = n \mathrm{d} A = \frac{A}{4 \pi^2}2 \pi k_i \mathrm{d} k = \frac{A}{2\pi } k_i \mathrm{d} k = \frac{A}{4 \pi } \mathrm{d} (k_i^2)  = \frac{A}{4 \pi } \frac{2m}{\hb^2} \mathrm{d} \varepsilon = A \frac{m}{\hb ^2} \mathrm{d} \varepsilon 
+\]
+\[
+\frac{\mathrm{d} N}{A} = g(\varepsilon	) \, \mathrm{d} \varepsilon = \frac{m}{\hb^2} \mathrm{d} \varepsilon 
+\] 
+\begin{align*}
+	\frac{N}{A} = \int_{0}^{\varepsilon_F}  g_{\text{2D}}(\varepsilon) \mathrm{d} \varepsilon  = \frac{m \varepsilon_F}{\pi \hb^2} \implies \pi \frac{\hb^2 N}{m A} = \varepsilon_F
+\end{align*}
+We find 
+\[
+\boxed{
+\varepsilon_F = \frac{\pi \hb^2 N}{m A}
+}
+\] 
+
+
+\subsection*{(c)} 
+Kinetic Energy of any particle with $k_i$ was shown to be 
+\[
+E_k(k_i) = \frac{\hb ^2 k_i^2}{2 m}
+\] 
+Number of particle per area in this state is 
+\[
+	\frac{N_\varepsilon}{A} = g(\varepsilon)\mathrm{d} \varepsilon = \frac{m}{\hb^2} \, \mathrm{d} \varepsilon \implies N_\varepsilon = A \frac{m}{\hb^2} \mathrm{d} \varepsilon 
+\]
+Total energy (kinetic) of $N_\varepsilon$ particles are 
+\[
+\mathrm{d} E(\varepsilon) = N_\varepsilon \varepsilon = A \frac{m }{\hb^2} \varepsilon \mathrm{d} \varepsilon 
+\] 
+So integrating this we get (also invoking what we had found $N / A = m \varepsilon_F / \pi \hb^2 $)
+\[
+E_\text{tot} = \frac{mA}{2\hb^2} \varepsilon_F^2 =   \frac{m \varepsilon_F}{\hb^2} \frac{A \varepsilon_F}{2}  = \frac{N}{A} \pi \frac{A \varepsilon_F}{2} = \frac{\pi}{2} N \varepsilon_F
+\] 
+\[
+\boxed{
+E_\text{tot} = \frac{\pi}{2} N \varepsilon_F
+}
+\] 
+
+\subsection*{(d)} 
+Maximum energy (surface energy)
+\[
+\varepsilon_F = \frac{\pi \hb^2 N}{m A}= \frac{1}{2} m v_F^2   \implies 
+\boxed{
+v_F = \sqrt{\frac{2 \pi \hb^2 N}{m^2 A}} 
+} \] 
+
+
+\end{document}

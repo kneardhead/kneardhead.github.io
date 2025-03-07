@@ -1,0 +1,135 @@
+\documentclass[letter, 10pts]{article}
+\usepackage[monocolor]{../math232/ahsansabit}
+\usepackage[]{float}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage[outline]{contour} % glow around text
+\usepackage{xcolor}
+\usepackage{pdfpages}
+\usepackage{physics}
+\usepackage{multicol}
+\title{Quantum Mechanics : : Homework 0X}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+\newcommand{\hb}{\hbar}
+\newcommand{\U}{\uparrow}
+\newcommand{\D}{\downarrow}
+\usepackage[]{braket}
+\begin{document}
+\maketitle
+
+
+\section*{Problem 4} 
+\subsection*{(a)} 
+\begin{align*}
+\sigma_B &= \vec{P} \cdot \vec{n} 
+\\
+&= (k \vec{r}) \cdot  \vec{n}  \\
+&= kr \\
+\end{align*} 
+At the surface the charge is $\sigma_B = k R$. Total charge at the surface, 
+\[
+Q_\text{surface} = 4 \pi R^3
+\] 
+\begin{align*}
+\rho_B &= - \nabla \cdot  \vec{P} \\
+&= -\frac{1}{r^2} \frac{\partial }{\partial r}(r^2 k r)  \\
+&= -\frac{1}{r^2} \frac{\partial}{\partial r}(r^3 k)  \\
+&= -\frac{k}{r^2} (3 r^2 )  \\
+&= -3k \\
+\end{align*}
+Total charge in the volume is 
+\[
+Q_\text{volume} = \frac{4}{3} \pi R^3 (- 3 k) = - 4 \pi R^3 
+\] 
+
+\textbf{Answers:}
+Surface charge density \[
+\boxed{
+\sigma_B = kr
+}
+\] 
+Volume charge density 
+\[
+\boxed{
+\rho_B = - 3k
+}
+\] 
+
+\subsection*{(b)} 
+For the homogeneous charge distribution inside the surface, hence using Gauss's law we know that the Electric field is just going to be 
+\[
+	E_r (4 \pi r^2) = (-3k) (4 \pi r^3 / 3\epsilon_0) 
+	\implies 
+	E_r = - \frac{k}{\epsilon_0}\tag{$r < R$}
+\] 
+
+Outside, using Gauss's law
+\[
+	E_r (4 \pi \mathrm{r}   ) = \frac{Q_\text{surface} + Q_\text{volume} }{\epsilon_0} = 0   
+	\tag{$\mathrm{r} > R $}
+\]  
+The field outside the ball is zero. 
+
+\textbf{Answers:} Electric Field \[
+\boxed{E_r =
+\begin{cases}
+ - k / \epsilon_0 & r < R\\
+	 0 & r > R 
+\end{cases}} 
+\] 
+
+
+
+
+\section*{Problem 5} 
+The uniform polarization along $\vec{P} = P \hat{z}$. 
+Bound charge 
+\[
+\rho_B = - \nabla \cdot  \vec{P} = \frac{\mathrm{d} P}{\mathrm{d}z } = 0
+\] 
+Surface charge (on flat ends) because curved surface would be zero. Top face
+\[
+\sigma^{\text{top}}_B = \vec{P} \cdot \hat{n} = P
+\]
+Bottom face
+\[
+\sigma^{\text{lower}}_B = \vec{P} \cdot  \hat{n} = -P 
+\] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section*{Problem 6} 
+Compute the total charge
+\[
+	Q = \int \mathrm{d} q_{\text{volume}}  + \int \mathrm{d} q_{\text{surface}} 
+\]
+\begin{align*}
+Q &= 
+\int \mathrm{d} V (\rho_b) + 
+\int \mathrm{d} A (\sigma_b) \\
+  &=
+- \int \mathrm{d} V (\nabla \cdot \vec{P}) + 
+\int \mathrm{d} A (\vec{P} \cdot \vec{n})\\
+&= -  \int \mathrm{d} \vec{S} \cdot  \vec{P} + 
+\int \mathrm{d} A (\vec{P} \cdot \vec{n})\\
+&= - \int \mathrm{d} A  \vec{P} \cdot \hat{n} + 
+\int \mathrm{d} A (\vec{P} \cdot \vec{n})\\ 
+&= 0 \\
+\end{align*}
+
+\end{document}

@@ -1,0 +1,187 @@
+\documentclass[letter, 10pts]{article}
+\usepackage[monocolor]{../math232/ahsansabit}
+\usepackage[]{float}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage[outline]{contour} % glow around text
+\usepackage{xcolor}
+\usepackage{pdfpages}
+\usepackage{physics}
+\usepackage{multicol}
+\title{Quantum Mechanics : : Homework 02}
+\author{Ahmed Saad Sabit, Rice University}
+\date{\today}
+\newcommand{\hb}{\hbar}
+\newcommand{\U}{\uparrow}
+\newcommand{\D}{\downarrow}
+\usepackage[]{braket}
+\begin{document}
+\maketitle
+
+\section*{Problem 01} 
+\hrule 
+\begin{align*}
+	[x_a, p_b] &= i \hb \delta_{ab}  \\ 
+x_a p_b - p_b x_a 		   &= i \hb \delta_{ab} \\
+x_a p_b - p_b x_a 		   - i \hb \delta_{ab} &=  0 \\
+x_a p_b  		   - i \hb \delta_{ab} &=  p_b x_a \\
+\end{align*}
+We will be plugging in $p_j x_i = x_i p_j - i \hb \delta_{ij} $ in the forthcoming solutions. 
+\subsection*{(a)} 
+\begin{align*}
+	[x_j, L_i] &= 
+	x_j \varepsilon_{imn} x_m p_n - 
+	\varepsilon_{imn} x_m p_n x_j 
+	\\
+	&=  
+	\varepsilon_{imn} x_j x_m p_n - 
+	\varepsilon_{imn} x_m p_n x_j 
+	\\
+	&=  
+	\varepsilon_{imn} x_j x_m p_n - 
+	\varepsilon_{imn} x_m (x_j p_n - i \hb \delta_{jn})
+	\\
+	&=  
+	\varepsilon_{imn} x_j x_m p_n - 
+	\varepsilon_{imn} x_m x_j p_n + i \hb \varepsilon_{imn} \delta_{jn} x_m 
+	\\ 
+	&=  i \hb \varepsilon_{i m j} x_m  \\
+	&=  i \hb \varepsilon_{m j i} x_m  \\
+\end{align*}
+
+Let's try for sake of understanding in terms of real index 
+\begin{align*}
+	[x_2, L_3] = x_2 L_3 - L_3 x_2  &= x_2 (x_1 p_2 - x_2 p_1 ) - (x_1 p_2 - x_2 p_1 ) x_2  \\
+	&= x_2 x_1 p_2 - x_2 x_2 p_1 - x_1 p_2 x_2 + x_2 p_1 x_2  \\
+	&= x_2 x_1 p_2 - x_2 x_2 p_1 - x_1 (x_2 p_2 - i \hb) + x_2 x_2 p_1   \\
+	&= x_2 x_1 p_2 - x_2 x_2 p_1 - x_1 x_2 p_2 + i \hb x_1 + x_2 x_2 p_1   \\
+	&= i \hb x_1  \\
+	&= i \hb \varepsilon_{1 2 3}  x_1  \\
+\end{align*}
+
+\subsection*{(b)}
+\begin{align*}
+	[p_j, L_i] &= p_j \varepsilon_{imn}x_m p_n - \varepsilon_{imn}x_m p_n p_j \\
+&=  \varepsilon_{imn} p_j x_m p_n - \varepsilon_{imn}x_m p_n p_j \\
+&=  \varepsilon_{imn} (x_m p_j - i \hb \delta_{mj} ) p_n - \varepsilon_{imn}x_m p_n p_j \\
+&=  \varepsilon_{imn} x_m p_j p_n  - i \hb \varepsilon_{imn} \delta_{mj}  p_n - \varepsilon_{imn}x_m p_n p_j \\
+&=  \varepsilon_{imn} x_m p_j p_n  - i \hb \varepsilon_{imn} \delta_{mj}  p_n - \varepsilon_{imn}x_m p_j p_n \\
+&= - i \hb \varepsilon_{imn} \delta_{mj} p_n  \\
+&= - i \hb \varepsilon_{ijn} p_n  \\
+&= - i \hb \varepsilon_{n i j } p_n  \\
+\end{align*}
+
+
+
+\subsection*{(c)} 
+Use the scalar triple product from Wikipedia
+\begin{align*}
+\vec{A} \cdot  (\vec{B} \times  \vec{C}) &= \vec{B} \cdot (\vec{C} \times  \vec{A}) \\
+\vec{r} \cdot  (\vec{L} \times \vec{r}) &= 
+\vec{L}\cdot  (\vec{r} \times  \vec{r}) \\ 
+					&= L_i \left( \varepsilon_{ijk} x_j x_k\right) \\ 
+					&= 0 
+\end{align*}
+
+
+
+
+
+\section*{Problem 02}
+\hrule 
+
+\subsection*{(a)} 
+\begin{align*}
+	[r^2, L] &= \left[\sum_{n=1}^{3} x_n x_n , \varepsilon_{ijk} x_j p_k  \right] \\
+		 &= \sum_{n=1}^{3} \varepsilon_{ijk} x_n x_n x_j p_k - \sum_{n=1}^{3} \varepsilon_{ijk} x_j p_k x_n x_n  \\
+		 &= \sum_{n=1}^{3} \left(\varepsilon_{ijk} x_n x_n x_j p_k - \varepsilon_{ijk} x_j (x_n p_k - i \hb \delta_{kn} ) x_n \right) \\
+		 &= \sum_{n=1}^{3} \left(\varepsilon_{ijk} x_n x_n x_j p_k - \varepsilon_{ijk} x_j (x_n p_k - i \hb \delta_{kn} ) x_n \right) \\
+		 &= \sum_{n=1}^{3} \left(\varepsilon_{ijk} x_n x_n x_j p_k - \varepsilon_{ijk} x_j x_n p_k x_n + \varepsilon_{ijk} i \hb \delta_{kn} x_j x_n  \right) \\
+		 &= \sum_{n=1}^{3} \left(\varepsilon_{ijk} x_n x_n x_j p_k - \varepsilon_{ijk} x_j x_n (x_n p_k - i \hb \delta_{nk} ) + \varepsilon_{ijk} i \hb \delta_{kn} x_j x_n  \right) \\
+		 &= \sum_{n=1}^{3} \left(\varepsilon_{ijk} x_n x_n x_j p_k - \varepsilon_{ijk} x_j x_n x_n p_k + i \hb \varepsilon_{ijk} \delta_{nk} x_j x_n + \varepsilon_{ijk} i \hb \delta_{kn} x_j x_n  \right) \\
+		 &= \sum_{n=1}^{3} \left(\varepsilon_{ijk} x_n x_n x_j p_k - \varepsilon_{ijk} x_n x_n x_j p_k + i \hb \varepsilon_{ijk} \delta_{nk} x_j x_n + \varepsilon_{ijk} i \hb \delta_{kn} x_j x_n  \right) \\
+		 &= \sum_{n=1}^{3} \left(i \hb \varepsilon_{ijk} \delta_{nk} x_j x_n + \varepsilon_{ijk} i \hb \delta_{kn} x_j x_n  \right) \\
+		 &= \sum_{n=1}^{3} \left( 2 \varepsilon_{ijn} i \hb x_j x_n  \right) \\
+\end{align*}
+Looking at the term 
+\[
+	\varepsilon_{ijn} x_j x_n = (x_j x_n - x_n x_j )_i = 0  
+\] 
+This proves 
+\[[
+	r^2, L ] = 0
+\] 
+
+
+\subsection*{(b)} 
+\begin{align*}
+\vec{L} \cdot  \vec{r} = L_1 x_1 + L_2 x_2 + L_3 x_3 = \sum_{n=1}^{3} (L_n r_n) 
+&= \sum_{n=1}^{3} 
+\sum_{i = 1}^{3} \sum_{j = 1}^{3} 
+(\varepsilon_{n i j } x_i p_j ) x_n  \\ 
+&= \sum_{n=1}^{3} 
+\sum_{i = 1}^{3} \sum_{j = 1}^{3} 
+\varepsilon_{n i j } x_i p_j  x_n  \\ 
+&= \sum_{n=1}^{3} 
+\sum_{i = 1}^{3} \sum_{j = 1}^{3} 
+\varepsilon_{n i j } x_i (x_n p_j - i \hb \delta_{n j} )  \\ 
+&= \sum_{n=1}^{3}
+\sum_{i = 1}^{3} \sum_{j = 1}^{3} 
+\varepsilon_{n i j } x_i x_n p_j - i \hb 
+\sum_{n=1}^{3} 
+\sum_{i = 1}^{3} \sum_{j = 1}^{3} 
+\varepsilon_{nij } \delta_{n j} x_i    \\ 
+&= \sum_{n=1}^{3}
+\sum_{i = 1}^{3} \sum_{j = 1}^{3} 
+\varepsilon_{n i j } x_n x_i p_j 
+\underbrace{- i \hb 
+\sum_{n=1}^{3} 
+\sum_{i = 1}^{3} \sum_{j = 1}^{3} 
+\varepsilon_{nij } \delta_{n j} x_i }_{\varepsilon_{nij} \delta_{nj} = \varepsilon_{nin} = 0}   \\ 
+\text{also, } \vec{r} \cdot  \vec{L} &= \sum_{n=1}^{3}
+\sum_{i = 1}^{3} \sum_{j = 1}^{3} 
+\varepsilon_{n i j } x_n x_i p_j  \\
+&= \varepsilon_{123} x_1 x_2 p_3 + \varepsilon_{132} x_1 x_3 p_2 + \\
+&+ \varepsilon_{231} x_2 x_3 p_1 + \varepsilon_{213} x_2 x_1 p_3 + \\ 
+&+ \varepsilon_{312} x_3 x_1 p_2 + \varepsilon_{321} x_3 x_2 p_1  \\ 
+&= x_1 x_2 p_3 -  \mathbf{x_1 x_3 p_2} + \\
+&+  x_2 x_3 p_1 -  x_2 x_1 p_3 + \\ 
+&+  \underbrace{\mathbf{x_3 x_1 p_2}}_{\text{pairs cross out}} -  x_3 x_2 p_1  = 0
+\end{align*}
+
+This expanded proof basically solves $\vec{r} \cdot \vec{L} = \vec{L} \cdot \vec{r} = 0$. 
+
+
+
+\subsection*{(c)} 
+\begin{align*}
+	\vec{W} = \frac{1}{2m} (\vec{p} \times  \vec{L} - \vec{L} \times  \vec{p} ) - \frac{e ^2}{r}\vec{r}
+\end{align*}
+\begin{align*}
+\vec{L} \cdot  \vec{W} &= \vec{L}  \cdot
+\left( \frac{1}{2m} (\vec{p} \times  \vec{L} - \vec{L} \times  \vec{p} ) - \frac{e ^2}{r}\vec{r}\right) 
+\\
+ &= \vec{L}  \cdot
+\left( \frac{1}{2m} (\vec{p} \times  \vec{L} - \vec{L} \times  \vec{p} ) \right) - \left(\frac{e ^2}{r} \vec{L} \cdot  \vec{r}\right) 
+\\
+\end{align*}
+From $(\vec{L} \cdot  \vec{r}) = 0$ from part $b$. 
+Using scalar triple product that says 
+\[
+\vec{L} \cdot  (\vec{p} \times \vec{L}) = \vec{p} \cdot (\vec{L} \times  \vec{L}) = 0  
+\]
+\[
+\vec{L} \cdot  (\vec{L} \times \vec{p}) = \vec{p} \cdot  (\vec{L} \times \vec{L}) = 0
+\] 
+
+So $\vec{L} \cdot  \vec{W} = 0$. 
+
+
+\newpage
+\section*{Problem 3}
+\hrule 
+
+See handwritten work (done in three sessions). 
+
+
+\end{document}

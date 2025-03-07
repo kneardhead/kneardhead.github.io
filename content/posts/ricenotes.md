@@ -1,5 +1,5 @@
 ---
-title: "Rice University Lecture Notes (Mathematics and Physics)"
+title: "Study (Mathematics and Physics)"
 date: 2024-01-13T16:15:11-06:00
 draft: false
 showthedate: false
