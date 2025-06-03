@@ -1,0 +1,215 @@
+\documentclass[11pt]{article}
+\usepackage[]{bm}
+% basic packages
+\usepackage[margin=1in]{geometry}
+\usepackage[pdftex]{graphicx}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{custom}
+\usepackage{lipsum}
+
+% page formatting
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\renewcommand{\sectionmark}[1]{\markright{\textsf{\arabic{section}. #1}}}
+\renewcommand{\subsectionmark}[1]{}
+\lhead{\textbf{\thepage} \ \ \nouppercase{\rightmark}}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+\setlength{\headheight}{14pt}
+
+\linespread{1.03} % give a little extra room
+\setlength{\parindent}{0.2in} % reduce paragraph indent a bit
+\setcounter{secnumdepth}{2} % no numbered subsubsections
+\setcounter{tocdepth}{2} % no subsubsections in ToC
+\newcommand{\hb}{\hbar}
+\renewcommand{\vec}{\mathbf}
+\begin{document}
+
+% make title page
+\thispagestyle{empty}
+\bigskip \
+\vspace{0.1cm}
+
+\begin{center}
+{\fontsize{22}{22} \selectfont Quick Note on Angular Momentum Addition}
+\vskip 16pt
+{\fontsize{36}{36} \selectfont \bf \sffamily PHYS 312}
+\vskip 24pt
+{\fontsize{18}{18} \selectfont \rmfamily Sabit} 
+\vskip 6pt
+{\fontsize{14}{14} \selectfont \ttfamily ass15@rice.edu} 
+\vskip 24pt
+\end{center}
+
+{\parindent0pt \baselineskip=15.5pt 
+%write something here 
+
+
+
+% make table of contents
+%\newpage
+%\microtoc
+\newpage
+
+% main content
+\section{Angular Momentum from two Subspaces}
+\begin{itemize}
+	\item Angular Momentum operator $\hat{\vec{J}}$ (I will write just $\vec{J}$) is the \textbf{Rotation Generator} of any ket $\ket{\Psi}$. By generator we mean that using $\vec{J}$ we can write an \textbf{Rotation Operator} 
+		\begin{equation}
+			\mathcal R (\hat{n}, \mathrm{d} \phi) = 1 - i \left(\frac{\vec{J} \cdot  \hat{\vec{n}}}{\hb}\right) \mathrm{d} \phi
+		\end{equation}
+		Simplification of the above garbage can give us something more usable. Invoke $\hat{\vec{n}} = \hat{z} = \vec{e}_z$ then 
+		\[
+		\mathcal R_z(\mathrm{d} \phi) = 1- i \left(\frac{J_z}{\hb}\right) \mathrm{d} \phi
+		\]
+		Finite rotation can be achieved by continuously doing infinitesimal rotations 
+		\[\underbrace{
+		\mathcal R_z(\mathrm{d} \phi)
+		\mathcal R_z(\mathrm{d} \phi)\ldots
+	\mathcal R_z(\mathrm{d} \phi)}_{\text{n times}} = \mathit R_z(\phi) = 
+	\left[ 1 - i \left(\frac{J_z}{\hb}\right) \mathrm{d} \phi \right] ^{n}
+	= 
+	\left[ 1 - i \left(\frac{J_z}{\hb}\right)  \left(\frac{\phi}{n}\right) \right] ^{n}
+		\] 
+		\begin{equation} \implies
+			\mathit R_z (\phi) = \exp \left( - i \frac{J_z \phi}{\hb}\right)
+		\end{equation}
+	\item Consider the two angular momentum operators $\vec{J_1}$ and $\vec{J_2}$ that are member of two different subspaces. They satisfy the following \textbf{Angular Momentum Algebra} as usual
+		\begin{equation}
+			[J_{1i}, J_{1j}] = i \hb \varepsilon_{ijk} J_{1k}
+		\end{equation}
+		\begin{equation}
+			[J_{2i}, J_{2j}] = i \hb \varepsilon_{ijk} J_{2k}
+		\end{equation}
+	\item But because the two angular momentum are from different subspaces we have 
+		\[
+			[J_{1m}, J_{2n}] = 0 
+		\] 
+\end{itemize}
+
+
+\section{Addition of the two Angular Momentum}
+\begin{itemize}
+	\item The infinitesimal rotation operator that affects both subspaces $1$ and 2 can be written as the tensor product where $1_1$ and $1_2$ represent the Identity Operators of subspace $1$ and $2$ respectively. 
+		\[ \mathcal R_{1 \text{ and } 2} = 
+		\mathcal R_1 \otimes \mathcal R_2 = 
+		\left( 1_1 - i \left(\frac{\vec{J}_1 \cdot  \hat{\vec{n}}}{\hb}\right) \mathrm{d} \phi
+			\right) \otimes 
+		\left( 1_2 - i \left(\frac{\vec{J}_2 \cdot  \hat{\vec{n}}}{\hb}\right) \mathrm{d} \phi
+		\right) \]  \[\mathcal R_{1 \text{ and } 2} =  1 - i\frac{(\vec{J}_1 \otimes 1_{2} + 1_{1} \otimes \vec{J}_2 ) \cdot  \vec{n} \cdot  \mathrm \phi}{ \hb}
+		\] 
+	\item Defining \textbf{Total Angular Momentum} of the two subspace as 
+		\[
+\vec{J} = \vec{J}_1 \otimes 1_{2} + 1_{1} \otimes \vec{J}_2  \equiv \vec{J}_1 + \vec{J}_2
+		\] 
+It can be proved (as an exercise or just taking it for granted) that the total angular momentum satisfies the required Algebra
+\[
+	[ J_i , J_j ] = i \hb \varepsilon_{ijk} J_k 
+\] 
+This gives us the Green Signal to continue with the mathematics treating the total angular momentum $\vec{J}$ as an ordinary angular momentum.
+\item $\vec{J}$ is to be treated as a Generator for the Entire System. We can follow the definition of $\vec{J}^2 = J_x J_x + J_y J_y + J_z J_z$ for the whole system and hence have the following relations that we have previously seen like 
+	\[
+		[\vec{J}^2 , J_z ] = 0 
+	\] 
+Here the $J_z$ will represent the \emph{component of the angular momentum} for the whole system instead of a single subspace.
+\item \textbf{Warning:} $[\vec{J}^2 , J_{1z}] \neq  0$, same for subspace 2.
+\item $\vec{J}^2$ can be represented in terms of $\vec{J}_1$ and $\vec{J}_2$.
+	\begin{equation}
+		\vec{J}^2 = \vec{J}_1 ^2 + \vec{J}_2 ^2 + 2 J_{1z} J_{2z} + J_{1+} J_{2-} + J_{1-} J_{2+}	
+	\end{equation} 
+	This can be solved by taking square of $\vec{J}_1 + \vec{J}_2$ and then replacing $\vec{J}_1 \cdot \vec{J}_2$ with $J_{1z}, J_{2z}$ and Ladder Operators instead of $J_{1x},J_{2x},$ etc. 
+\item Above says 
+\begin{align}
+	[\vec{J}^2 , \vec{J}_1^2 ] = 0\\
+	[\vec{J}^2 , \vec{J}_2^2 ] = 0
+\end{align}
+\end{itemize}
+
+
+
+
+
+
+\section*{Eigenkets of the Individual Operators}
+\begin{itemize}
+	\item For completeness let's quickly review the eigenkets for individual operators $\vec{J}_1^2, \vec{J}_2^2$ 
+		\begin{align*}
+		\vec{J}_1 ^2 \ket{j_1, j_2 , m_1 , m_2} &= j_1(j_1 + 1) \hb^2 \ket{j_1 , j_2 , m_1 , m_2} \\
+		\vec{J}_2 ^2 \ket{j_1, j_2 , m_1 , m_2} &= j_2(j_2 + 1) \hb^2 \ket{j_1 , j_2 , m_1 , m_2} \\
+		J_{1z} \ket{j_1, j_2 , m_1 , m_2 } &= m_1 \hb \ket{j_1, j_2 , m_1 , m_2 } \\
+		J_{2z} \ket{j_1, j_2 , m_1 , m_2 } &= m_2 \hb \ket{j_1, j_2 , m_1 , m_2 } \\
+		\end{align*}
+\end{itemize}
+
+
+
+
+
+
+
+
+
+	\section*{Eigenkets of the Combined Operators}
+\begin{itemize}
+\item Because we have found the operators, we should expect to find the Eigenkets now. $\vec{J}_1^2, \vec{J}_2^2$ commutes with $\vec{J}^2$ hence we can have simultaneous eigenkets such that 
+	\begin{align}
+		\vec{J}_1 ^2 \ket{j_1, j_2 , j , m} &= j_1(j_1 + 1) \hb^2 \ket{j_1 , j_2 , j , m} \\
+		\vec{J}_2 ^2 \ket{j_1, j_2 , j , m} &= j_2(j_2 + 1) \hb^2 \ket{j_1 , j_2 , j , m} \\
+		\vec{J} ^2 \ket{j_1, j_2 , j , m} &= j(j + 1) \hb^2 \ket{j_1 , j_2 , j , m} \\
+		J_z  \ket{j_1, j_2 , j , m} &= m \hb \ket{j_1 , j_2 , j , m} 
+	\end{align}
+	Using $\ket{\ket{\Psi}}$ instead of $\ket{\Psi}$ is going to be our resort to differentiate between combined eigenstates and individual eigenstates.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+\section*{Tranformation between Individual and Combined} 
+\begin{itemize}
+	\item We know that Individual Eigenkets and Combined Eigenkets are not the same same because $[\vec{J}^2 , J_{1z}] \neq 0$ don't commute. So they are different. There exists a transformation between them, which we can do by the following: Create a projection operator using the individual eigenkets 
+		\[
+		\hat{I} = \sum_{m_1}^{} \sum_{m_2} \ket{j_1, j_2, m_1, m_2} \bra{j_1, j_2 , m_1, m_2}
+		\] 
+		A combined ket $\boldsymbol{| | }\mathbf{ j_1, j_2, j , m }\boldsymbol{\rangle\rangle} $ in this representation would be 
+		\[
+		\boldsymbol{| | } j_1, j_2, j , m \boldsymbol{\rangle\rangle} = 
+ \sum_{m_1}^{} \sum_{m_2} \ket{j_1, j_2, m_1, m_2} 
+ \bra{j_1, j_2 , m_1, m_2}
+ | \mathbf{j_1, j_2, j , m } \boldsymbol{\rangle\rangle} 
+		\] 
+The term $ 
+ \bra{j_1, j_2 , m_1, m_2}
+ | \mathbf{j_1, j_2, j , m } \boldsymbol{\rangle\rangle}  $ is called the Clebsh-Gordan Coefficient. 
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

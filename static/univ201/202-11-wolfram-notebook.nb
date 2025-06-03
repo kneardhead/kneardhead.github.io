@@ -1,0 +1,64 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      1648,         56]
+NotebookOptionsPosition[      1083,         38]
+NotebookOutlinePosition[      1474,         54]
+CellTagsIndexPosition[      1431,         51]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Homework 11 for PHYS202", "Title",
+ CellChangeTimes->{{3.954617487096396*^9, 
+  3.9546175042910624`*^9}},ExpressionUUID->"5b28a363-7c93-40b0-9c4d-\
+f58d40274561"],
+
+Cell["Ahmed Saad Sabit", "Subtitle",
+ CellChangeTimes->{{3.954617509152166*^9, 
+  3.954617511652355*^9}},ExpressionUUID->"6b545d91-bf84-459a-b089-\
+2b04868919d4"],
+
+Cell["Problem 01", "Section",
+ CellChangeTimes->{{3.954617534810511*^9, 
+  3.954617535894161*^9}},ExpressionUUID->"97ec54f9-f39e-4a40-a430-\
+0ee791c98322"]
+}, Open  ]]
+},
+WindowSize->{1438.5, 777},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+FrontEndVersion->"14.1 for Linux x86 (64-bit) (July 16, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"d6bb74a4-598c-480f-9365-54d14acc79fe"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 168, 3, 96, "Title",ExpressionUUID->"5b28a363-7c93-40b0-9c4d-f58d40274561"],
+Cell[747, 27, 162, 3, 52, "Subtitle",ExpressionUUID->"6b545d91-bf84-459a-b089-2b04868919d4"],
+Cell[912, 32, 155, 3, 65, "Section",ExpressionUUID->"97ec54f9-f39e-4a40-a430-0ee791c98322"]
+}, Open  ]]
+}
+]
+*)
+

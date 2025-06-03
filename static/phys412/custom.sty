@@ -1,0 +1,288 @@
+\ProvidesPackage{custom}
+
+% general quality improvement
+\usepackage{mathtools}                % improves amsmath
+\usepackage[american]{babel}          % ensure correct hyphenation
+\usepackage[activate={true,nocompatibility},tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype} % better spacing
+    % activate={true,nocompatibility} - activate protrusion and expansion
+    % tracking=true, kerning=true, spacing=true - activate these techniques
+    % factor=1100 - add 10% to the protrusion amount (default is 1000)
+    % stretch=10, shrink=10 - reduce stretchability/shrinkability (default is 20/20)
+\microtypecontext{spacing=nonfrench}  % silence warning
+\newcommand{\microtoc}{               % turn off protrusion for table of contents
+  \microtypesetup{protrusion=false}
+  \tableofcontents
+  \microtypesetup{protrusion=true}
+}
+
+% packages for one-off commands
+\usepackage{tensor}       % tensor indices
+\usepackage[]{units}      % nice units
+\usepackage[shortlabels]{enumitem}     % better enumeration
+\usepackage{slashed}      % Feynman slash
+\usepackage{bbm}          % indicator functions
+\usepackage{anyfontsize}  % adjust font sizes freely
+
+% customize lists
+\newlist{subpart}{enumerate}{1} % useful sublist
+\setlist[subpart,1]{label=(\alph*)}
+\setlist[itemize]{leftmargin=20pt} % decrease itemize indent
+
+% make headers sans serif; incompatible with titlesec and others
+\usepackage{sectsty}
+\allsectionsfont{\normalfont\sffamily\bfseries}
+
+% comments for personal notes
+\usepackage{xcolor}
+\definecolor{notered}{rgb}{1.0,0.1,0.1}
+\definecolor{thoughtblue}{rgb}{0.1,0.1,1.0}
+\newcommand{\note}[1]{\color{notered} \textbf{(#1)} \color{black}}
+\newcommand{\thought}[1]{\color{thoughtblue} \textbf{(#1)} \color{black}}
+\newcommand{\highlight}[1]{\color{notered} #1 \color{black}}
+
+% use links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,
+    urlcolor=blue,
+}
+
+% produce bold upright vectors by manually unslanting existing letters
+\usepackage{xparse}
+\usepackage{bm}
+
+\newsavebox{\foobox}
+\newcommand{\slantbox}[2][0]{\mbox{ % performs a skew transformation
+        \sbox{\foobox}{#2}%
+        \hskip\wd\foobox
+        \pdfsave
+        \pdfsetmatrix{1 0 #1 1}%
+        \llap{\usebox{\foobox}}%
+        \pdfrestore
+}}
+\newcommand{\unslant}[2][-.15]{\slantbox[#1]{$#2$}}
+
+\ExplSyntaxOn
+\NewDocumentCommand\vectorInt{m}
+ {
+  \unslant_vector:n { #1 }
+ }
+
+\cs_new_protected:Npn \unslant_vector:n #1
+ {
+  \tl_map_inline:nn { #1 }
+   {
+    \unslant_vector_inner:n { ##1 }
+   }
+ }
+
+\cs_new_protected:Npn \unslant_vector_inner:n #1
+{
+  \tl_if_in:VnTF \g_unslant_latin_tl { #1 }
+   {
+    \mathbf { #1 } % a Latin letter
+   }
+   {
+    \tl_if_in:VnTF \g_unslant_greek_tl { #1 }
+     {
+	  \mkern-6mu \unslant{\bm{ #1 }} \mkern-1mu % a Greek letter that should be unslanted
+     }
+     {
+      \tl_if_in:VnTF \g_unslant_greekspecial_tl { #1 }
+       {
+	      \bm{ #1 } % a Greek letter that doesn't need unslanting
+       }
+       {
+        \bm{ #1 } % none of the above, default to bm
+       }
+     }
+   }
+}
+
+\tl_new:N \g_unslant_latin_tl
+\tl_new:N \g_unslant_greek_tl
+\tl_new:N \g_unslant_greekspecial_tl
+
+\tl_gset:Nn \g_unslant_latin_tl
+ {
+  ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  abcdefghijklmnopqrstuvwxyz
+ }
+\tl_gset:Nn \g_unslant_greek_tl
+ {
+  \alpha\beta\gamma\delta\epsilon\zeta\eta\theta\iota\kappa
+  \lambda\mu\nu\xi\pi\rho\sigma\tau\upsilon\phi\chi\psi\omega
+  \varepsilon\vartheta\varpi\varphi\varsigma\varrho
+ }
+\tl_gset:Nn \g_unslant_greekspecial_tl
+ {
+  \Gamma\Delta\Theta\Lambda\Pi\Sigma\Upsilon\Phi\Chi\Psi\Omega
+ }
+
+\ExplSyntaxOff
+
+\renewcommand{\v}[1]{\vectorInt{#1}}
+
+% make math bold when the context is bold, like in section headings
+\g@addto@macro\bfseries{\boldmath}
+
+% image macros
+\newcommand{\incgr}[2]{{\par \centering \includegraphics[scale=#1]{#2} \par}}
+\newcommand{\wincgr}[2]{{\par \centering \includegraphics[width=#1\textwidth]{#2} \par}}
+\newcommand{\hincgr}[2]{{\par \centering \includegraphics[height=#1\textheight]{#2} \par}}
+
+% general math commands
+\newcommand{\lra}{\leftrightarrow}
+\newcommand{\mytilde}{{\,\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}\,}}
+\newcommand{\myceil}[1]{\left \lceil #1 \right \rceil }
+\newcommand{\myfloor}[1]{\left \lfloor #1 \right \rfloor }
+\newcommand{\rth}{\mathbb{R}^3}
+\newcommand{\lie}[1]{\mathfrak{#1}} % Lie algebra
+\newcommand{\del}{\partial}
+\newcommand{\cev}[1]{\reflectbox{\ensuremath{\vec{\reflectbox{\ensuremath{#1}}}}}}  % backwards vector arrow
+\newcommand{\dual}{\ast} % dual of a differential form
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\Disc}{\operatorname{Disc}}
+\newcommand{\one}{\mathbf{I}}
+\newcommand{\two}{\mathbf{II}}
+\newcommand{\three}{\mathbf{III}}
+\newcommand{\from}{\leftarrow}
+\newcommand{\dbar}{{d\mkern-7mu\mathchar'26\mkern-2mu}} % it's dbar!
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\zee}{\mathbb{Z}}
+\newcommand{\xto}[1]{\xrightarrow{#1}}
+\newcommand{\unitv}[1]{\hat{\v{#1}}}
+\newcommand{\twovec}[2]{\begin{pmatrix} #1 \\ #2 \end{pmatrix}}
+\newsavebox{\@brx} % double angle brackets
+\newcommand{\llangle}[1][]{\savebox{\@brx}{\(\m@th{#1\langle}\)}%
+  \mathopen{\copy\@brx\mkern2mu\kern-0.9\wd\@brx\usebox{\@brx}}}
+\newcommand{\rrangle}[1][]{\savebox{\@brx}{\(\m@th{#1\rangle}\)}%
+  \mathclose{\copy\@brx\mkern2mu\kern-0.9\wd\@brx\usebox{\@brx}}}
+\newcommand{\grad}{\nabla}
+\newcommand{\curl}{\nabla \times}
+
+% improvements on existing commands
+\let\oldemptyset\emptyset         % save bad looking empty set
+\let\emptyset\varnothing          % good looking empty set
+\let\det\relax                    % determinant with correct exponent placement
+\DeclareMathOperator{\det}{det} 
+\newcommand{\division}{\div}      % save old division command
+\let\div\relax                    % divergence, not division
+\newcommand{\div}{\nabla \cdot}
+
+\usepackage{etoolbox} % remove extra spacing around colons, for functions
+\DeclareMathSymbol{\newordinarycolon}{\mathord}{operators}{"3A} % set up ordinary colon
+\patchcmd{\colon}{:}{\newordinarycolon}{}{} % remove : in definition of \colon to avoid infinite loop
+\begingroup\lccode`~=`: \lowercase{\endgroup\let~}\colon % turn : into \colon
+\AtBeginDocument{\mathcode`:="8000 } % make : math active
+
+% algebra commands
+\newcommand{\union}{\cup}
+\newcommand{\intersect}{\cap}
+\newcommand{\subgr}{\subseteq}
+\newcommand{\subr}{\subseteq}
+\newcommand{\nsubgr}{\trianglelefteq} % normal subgroup
+\newcommand{\dunion}{\sqcup}
+\newcommand{\incl}{\iota}
+\renewcommand{\mod}{\, \mathrm{mod}\, } % modular arithmetic
+\newcommand{\sdprod}{\rtimes} % semidirect product
+
+% math operators
+\DeclareMathOperator{\gcf}{gcf}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Map}{Map}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Ai}{Ai}
+\DeclareMathOperator{\Bi}{Bi}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\Pfaff}{Pfaff}
+\DeclareMathOperator{\Res}{Res}
+
+% QM and QFT commands
+\DeclarePairedDelimiter\ket{|}{\rangle} % use \ket* for large arguments
+\DeclarePairedDelimiter\bra{\langle}{|}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\bigbraket}[2]{\left\langle #1 \middle| #2 \right\rangle}
+
+\newcommand{\normord}[1]{\,\newordinarycolon\!\mathrel{#1}\!\newordinarycolon\,}
+\renewcommand{\bar}[1]{\overline{#1}}
+\renewcommand{\sl}[1]{\slashed{#1}} % Feynman slash
+\newcommand{\msbar}{\overline{\text{MS}}}
+\newcommand{\de}{\mathcal{D}} % path integral measure
+\newcommand{\op}{\mathcal{O}} % generic operator
+
+\newcommand{\parity}{\widehat{P}}
+\newcommand{\Time}{\widehat{T}} % capitalize to avoid conflict with clock packages
+\newcommand{\charge}{\widehat{C}}
+
+\newcommand{\enn}{\mathcal{N}} % number of supersymmetries
+
+\usepackage{xspace}
+\newcommand{\eV}{\text{e\kern-0.15ex V}\xspace} % better kerning for HEP units
+\newcommand{\keV}{\text{k\eV}\xspace}
+\newcommand{\MeV}{\text{M\eV}\xspace}
+\newcommand{\GeV}{\text{G\eV}\xspace}
+\newcommand{\TeV}{\text{T\kern-0.1ex \eV}\xspace}
+
+\newcommand{\meV}{\text{m\eV}\xspace}
+\newcommand{\mueV}{\mu\text{\eV}\xspace}
+\newcommand{\neV}{\text{n\eV}\xspace}
+\newcommand{\peV}{\text{p\eV}\xspace}
+
+% GR commands
+\newcommand{\cd}{\nabla} % covariant derivative
+\newcommand{\scri}{\mathcal{I}} % null infinity
+\newcommand{\ccd}[1]{\frac{\del x^{#1}}{\del x^{#1'}}}
+\newcommand{\ccu}[1]{\frac{\del x^{#1'}}{\del x^{#1}}}
+
+% astro commands
+\newcommand{\Sun}{\odot}
+\newcommand{\Earth}{\oplus}
+
+% probability commands
+\DeclareMathOperator{\expec}{\mathbb{E}}
+\DeclareMathOperator{\prob}{\mathbb{P}}
+\DeclareMathOperator{\indic}{\mathbbm{1}}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\std}{std}
+\DeclareMathOperator{\lik}{lik}
+\DeclareMathOperator{\Pois}{Pois}
+\DeclareMathOperator{\betad}{beta}
+\DeclareMathOperator{\gammad}{gamma}
+\DeclareMathOperator{\erf}{erf}
+\newcommand*{\seteq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+                     \hbox{\scriptsize.}\hbox{\scriptsize.}}}=} % imperative assignment
+\DeclareMathOperator{\Bias}{Bias}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+
+% theorem commands
+\theoremstyle{definition}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{example}{Example}
+\newtheorem*{corollary}{Corollary}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{definition}{Definition}
+\newtheorem*{remark}{Note}
+\newtheorem*{prop}{Prop}
+\newtheorem*{proofsketch}{Proof Sketch}
+\renewenvironment{proof}{\noindent {\bfseries Proof.}\,}{\medskip}

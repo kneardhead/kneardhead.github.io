@@ -1,0 +1,273 @@
+% JHEP.cls available at http://jhep.cern.ch/JOURNAL/tex.html
+%\RequirePackage{ifpdf}
+\documentclass[12pt]{article}        % For preprint
+%\documentclass[12pt,draft,nohyper]{JHEP3}    % For draft
+\usepackage{jheppub} % for details on the use of the package, please
+                     % see the JHEP-author-manual
+
+\usepackage{amssymb,amsfonts,bm,dsfont}
+%\usepackage{draftfil}
+%\usepackage{showkeys}
+%\usepackage{epsfig}
+%gives names of refs and cites
+%If you do not have the msbm fonts, delete the following 10 lines
+\font\mybb=msbm10 at 10pt
+%\font\mybb=msbm12 at 12pt
+
+\renewcommand{\arraystretch}{1.2}
+
+\usepackage{epsfig}
+%\usepackage{amssymb}
+
+%\newcommand{\sect}[1]{\setcounter{equation}{0}\section{#1}}
+%\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+%\def\appendix{{\newpage\section*{Appendix}}\let\appendix\section%
+%        {\setcounter{section}{0}
+%        \gdef\thesection{\Alph{section}}}\section}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%    My Macros    %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\be{\begin{eqnarray}}
+\def\ee{\end{eqnarray}}
+\newcommand{\nn}{\nonumber}
+\newcommand\para{\paragraph{}}
+\newcommand{\ft}[2]{{\textstyle\frac{#1}{#2}}}
+\newcommand{\eqn}[1]{(\ref{#1})}
+\newcommand{\pl}[1]{\frac{\partial L}{\partial{#1}}}
+\newcommand{\ppp}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\ph}[1]{\frac{\partial H}{\partial{#1}}}
+
+\newcommand\balpha{\mbox{\boldmath $\alpha$}}
+\newcommand\bbeta{\mbox{\boldmath $\beta$}}
+\newcommand\bgamma{\mbox{\boldmath $\gamma$}}
+\newcommand\bomega{\mbox{\boldmath $\omega$}}
+\newcommand\blambda{\mbox{\boldmath $\lambda$}}
+\newcommand\bmu{\mbox{\boldmath $\mu$}}
+\newcommand\bphi{\mbox{\boldmath $\phi$}}
+\newcommand\bzeta{\mbox{\boldmath $\zeta$}}
+\newcommand\bsigma{\mbox{\boldmath $\sigma$}}
+\newcommand\bepsilon{\mbox{\boldmath $\epsilon$}}
+\newcommand\btau{\mbox{\boldmath $\tau$}}
+\newcommand\beeta{\mbox{\boldmath $\eta$}}
+\newcommand\btheta{\mbox{\boldmath $\theta$}}
+\newcommand\valpha{\vec{\alpha}}
+\newcommand\vg{\vec{g}}
+\newcommand{\ra}{\rightarrow}
+
+\def\Dslash{\,\,{\raise.15ex\hbox{/}\mkern-12mu D}}
+\def\Dbarslash{\,\,{\raise.15ex\hbox{/}\mkern-12mu {\bar D}}}
+\def\delslash{\,\,{\raise.15ex\hbox{/}\mkern-9mu \partial}}
+\def\delbarslash{\,\,{\raise.15ex\hbox{/}\mkern-9mu {\bar\partial}}}
+\def\pslash{\,\,{\raise.15ex\hbox{/}\mkern-9mu p}}
+\def\calDslash{\,\,{\raise.15ex\hbox{/}\mkern-12mu {\cal D}}}
+\newcommand\Bprime{B${}^\prime$}
+\newcommand{\sign}{{\rm sign}}
+\newcommand{\D}{{\cal D}}
+\usepackage[]{braket}
+\newcommand\bte{\tilde{\bf e}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\Z}{{\bf Z}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\Q}{{\bf Q}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\R}{{\bf R}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\C}{{\bf C}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\e}{\,{\rm e}}
+\newcommand{\CP}{{\bf CP}}
+\newcommand{\Tr}{{\rm Tr}}
+\newcommand{\bu}{{\bf u}}
+\newcommand{\bk}{{\bf k}}
+\newcommand{\bx}{{\bf x}}
+\def\implies{\Rightarrow}
+\def\To{\longrightarrow}
+\def\longlongrightarrow{\relbar\joinrel\relbar\joinrel\rightarrow}
+\def\ridiculousrightarrow{\relbar\joinrel\relbar\joinrel\relbar%
+\joinrel\rightarrow}
+
+\def\underarrow#1{\mathrel{\mathop{\longrightarrow}\limits_{#1}}}
+\def\onnearrow#1{\mathrel{\mathop{\nearrow}\limits^{#1}}}
+\def\undernearrow#1{\mathrel{\mathop{\nearrow}\limits_{#1}}}
+\def\onarrow#1{\mathrel{\mathop{\longrightarrow}\limits^{#1}}}
+\def\onArrow#1{\mathrel{\mathop{\longlongrightarrow}\limits^{#1}}}
+\def\OnArrow#1{\mathrel{\mathop{\ridiculousrightarrow}\limits^{#1}}}
+\def\lae{\mathrel{\mathop{\smash{\lower .5 ex \hbox{$\stackrel<\sim$}}}}}
+\def\lae{\mathrel{\mathop{\smash{\lower .5 ex \hbox{$\stackrel>\sim$}}}}}
+\def\eqq{\stackrel?=}
+
+\def\theequation{\thesection.\arabic{equation}}
+
+
+\setlength{\parskip}{0.4em}
+\setlength{\parindent}{0pt}
+
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+
+% Define Nord color scheme (basic set)
+\definecolor{nord0}{HTML}{2E3440} % background
+\definecolor{nord1}{HTML}{3B4252} % darker background
+\definecolor{nord3}{HTML}{4C566A} % comment
+\definecolor{nord4}{HTML}{D8DEE9} % foreground
+\definecolor{nord7}{HTML}{8FBCBB} % teal
+\definecolor{nord8}{HTML}{88C0D0} % light blue
+\definecolor{nord9}{HTML}{81A1C1} % blue
+\definecolor{nord10}{HTML}{5E81AC} % dark blue
+
+% Define the tcolorbox environment for definitions
+\tcbset{
+  mydefstyle/.style={
+    colback=nord0!05!white,
+    colframe=nord10,
+    coltitle=white,
+    %coltext=nord1,
+    fonttitle=\bfseries,
+    title=Definition~\thetcbcounter,
+    boxrule=0.3mm,
+    arc=0mm,
+    top=1mm,
+    bottom=1mm,
+    left=1mm,
+    right=1mm,
+    enhanced
+  }
+}
+
+\tcbset{
+  mythmstyle/.style={
+    colback=nord0!02!white,
+    colframe=nord8,
+    coltitle=white,
+    %coltext=nord1,
+    fonttitle=\bfseries,
+    title=Theorem~\thetcbcounter,
+    boxrule=0.3mm,
+    arc=0mm,
+    top=1mm,
+    bottom=1mm,
+    left=1mm,
+    right=1mm,
+    enhanced
+  }
+}
+
+%\newtcolorbox[auto counter, number within=section]{definition}[2][]{mydefstyle,#1}
+\newtcbtheorem{definition}{Definition}{mydefstyle,#1}{def}
+\newtcbtheorem{theorem}{Theorem}{mythmstyle,#1}{thm}
+%%%%%%%%%%%%%%%%%%%%%   NOTES START  %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Scratchwork and Studies related to TFIM}
+
+
+\author{Ahmed Saad Sabit}
+
+\affiliation{Department of Physics and Astronomy \\ Rice University, Houston, TX}
+
+
+\emailAdd{sabit@rice.edu}
+
+
+\abstract{First of all we look at the \emph{Transverse Field Ising Model}. }
+
+
+\renewcommand{\baselinestretch}{1.05}
+\usepackage{hyperref}
+\begin{document} 
+
+\maketitle
+\flushbottom
+
+
+\section{The Transverse Field Ising Model}
+For now we will work with Spin $\frac{1}{2}$ particles. The spin of the particles are represented by a ket $\ket{ \uparrow }  = \ket{1} \in \mathcal{H}, \ket{\downarrow} = \ket{0} \in \mathcal{H}$ where $\mathcal H$ is a Hilbert Space for spin $\frac{1}{2}$.
+
+Let's construct a 1+1d lattice with each site labeled as $j$ ranging from $j=1$ to $j = L$. Each site $j$ of the lattice is assigned to a Hilbert Space $\mathcal H _j $. The Hilbert Space for the lattice $\mathcal H$ is defined by 
+\begin{equation}
+	\label{h-original}
+	\mathcal H = \mathcal H_1 \otimes \mathcal H_2 \otimes \cdots \otimes \mathcal H_L = \bigotimes_{j = 1}^{L} \mathcal H_j
+\end{equation}
+
+\begin{definition}{Transverse Field Ising Model}{tfim}
+	The Hamiltonian for the lattice $H : \mathcal H \to \mathcal H$ is defined by \[
+		H = - \sum_{i = 1}^{L} (Z_{i-1} Z_{i} + X_{i} :wq)
+	\]
+	where $Z_i, X_i$ are Pauli Matrices, in $\ket{1}, \ket{0}$ basis given by: 
+	\[
+	Z_i = 
+	\begin{pmatrix} 1 & 0 \\ 0 &-1 \end{pmatrix}_{i\text{-th site}}  \ \ \text{and} \ \  
+	X_i = 
+	\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}_{i\text{-th site}}
+	\] 
+\end{definition}
+
+\ref{def:tfim}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{Dummy Introduction}
+
+
+\begin{theorem}{Fluid Equation}{fluid}
+\be \ppp{\rho}{t} + \nabla\cdot({\rho \bu}) = 0\ \ \ {\rm and}\ \ \  \rho\frac{D{\bf u}}{Dt} = -\nabla P\nn\ee
+\end{theorem}
+
+and using Theorem \ref{thm:fluid}
+
+
+\newpage
+\begin{thebibliography}{99}
+
+\small
+\parskip=0pt plus 2pt
+
+
+\bibitem{son} S.~Dubovsky, L.~Hui, A.~Nicolis and D.~T.~Son,
+``{\it Effective field theory for hydrodynamics: thermodynamics, and the derivative expansion},''
+Phys. Rev. D \textbf{85} (2012), 085029 [arXiv:1107.0731 [hep-th]].
+
+%\bibitem{lin} C.C. Lin, in ``{\it Liquid Helium: Proceedings of the International School of Physics ``Enrico Fermi" Course}", 1961
+
+\bibitem{seliger} R.L. Seliger, ``{\it Variational Principles in Continuum Mechanics}", Caltech PhD Thesis 1968. 
+
+
+\bibitem{poly} A.~M.~Polyakov, ``{\it Compact Gauge Fields and the Infrared Catastrophe}''
+Phys. Lett. B 59 (1975), 82
+
+
+
+
+\end{thebibliography}
+\end{document}
+
+
+%
+%\begin{figure}[htb]
+%\begin{center}
+%\epsfxsize=3.2in\leavevmode\epsfbox{vibrator.eps}
+%\end{center}
+%\caption{The relative moduli space of two domain walls is a
+%cigar.}
+%\end{figure}
+%
+
+%
+%\EPSFIGURE{openclo.eps,height=110pt}{}
+%
