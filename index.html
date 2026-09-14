@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahmed Saad Sabit</title>
+<meta name="description" content="Ahmed Saad Sabit — undergraduate physics, Rice University">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #ffffff;
+    --ink: #1f1f1f;
+    --ink-soft: #5a5a5a;
+    --accent: #b3305c;
+    --rule: #e6e6e2;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --serif: 'Source Serif 4', Georgia, serif;
+    --mono: ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  }
+
+  html { box-sizing: border-box; }
+  *, *::before, *::after { box-sizing: inherit; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:hover { color: var(--ink); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .topbar { border-bottom: 1px solid var(--rule); }
+  .topbar nav {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.75rem;
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  .topbar nav a { color: var(--ink); text-decoration: none; }
+  .topbar nav a.current { color: var(--accent); font-weight: 600; }
+  .topbar nav a:hover { color: var(--accent); }
+
+  .page { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: 2.4rem;
+    font-weight: 400;
+    margin: 0 0 1rem;
+  }
+  h1 strong { font-weight: 700; }
+
+  .byline { color: var(--ink-soft); margin: 0 0 1.5rem; font-size: 0.98rem; }
+  .byline .obf { font-family: var(--mono); font-size: 0.85rem; }
+
+  .bio { max-width: 34rem; margin: 0 0 1.75rem; }
+
+  #research p { max-width: 34rem; }
+  ul.topics, ul.advisors { padding-left: 1.25rem; margin: 0 0 1.5rem; max-width: 34rem; }
+  ul.topics li { font-style: italic; color: var(--ink-soft); margin-bottom: 0.4rem; }
+  ul.advisors li { margin-bottom: 0.4rem; }
+
+  .photo-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border: 1px dashed var(--rule);
+    background: repeating-linear-gradient(135deg, #fdfdfc, #fdfdfc 8px, #f2f2ef 8px, #f2f2ef 16px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    margin-bottom: 0.6rem;
+    border-radius: 2px;
+  }
+  .photo-note { font-family: var(--mono); font-size: 0.7rem; color: var(--ink-soft); margin: 0 0 1.25rem; }
+  .address {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  section#cv {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+  }
+  section#cv h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.6rem;
+    margin: 0 0 1rem;
+  }
+  section#cv p { margin: 0 0 0.5rem; }
+
+  footer {
+    margin-top: 4rem;
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.85rem;
+  }
+  footer a { color: var(--ink-soft); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+
+  @media (max-width: 720px) {
+    .intro-grid { grid-template-columns: 1fr; }
+    .intro-grid .intro-photo { max-width: 220px; }
+    h1 { font-size: 1.9rem; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .page { animation: rise 0.5s ease-out; }
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <nav>
+    <a class="current" href="#top">about</a>
+    <a href="#research">research</a>
+    <a href="#cv">cv</a>
+  </nav>
+</div>
+
+<div id="top" class="page">
+  <div class="intro-grid">
+    <div class="intro-text">
+      <h1><strong>Ahmed</strong> Saad Sabit</h1>
+      <p class="byline">
+        Undergraduate physics major, <a href="https://www.rice.edu">Rice University</a>, Class of 2027<br>
+        <span class="obf"><!-- TODO: replace with your real email -->email: your-netid at rice dot edu</span>
+      </p>
+
+      <p class="bio">
+        I'm interested in condensed matter theory: how collective behavior emerges
+        in many-body systems, and the mathematics — symmetry, geometry, duality —
+        used to describe it. I'm currently applying to PhD programs in this area.
+      </p>
+
+      <div id="research">
+        <p>My research currently spans:</p>
+        <ul class="topics">
+          <li>Non-Abelian gauge symmetry in a softly gauged S₃ qudit chain, via DMRG</li>
+          <li>Wegner duality, extended from 1+1D lattice gauge theory to a 3+1D Ising model</li>
+          <li>Multiband semiclassical transport, via an orbital Wigner-function formalism</li>
+          <li>Differential geometry of constant-mean-curvature surfaces</li>
+        </ul>
+
+        <p>
+          The two gauge-theory projects build on each other — the 3+1D duality result
+          is built directly on scaffolding laid out by the 1+1D case. Alongside this,
+          I've kept the geometry project going as a standing exercise in analytical
+          reasoning outside the many-body setting.
+        </p>
+
+        <p>My work is advised by:</p>
+        <ul class="advisors">
+          <li><a href="https://profiles.rice.edu/faculty/andriy-nevidomskyy">Prof. Andriy Nevidomskyy</a> — non-Abelian gauging &amp; Wegner duality</li>
+          <li><a href="https://profiles.rice.edu/faculty/vir-b-bulchandani">Prof. Vir Bulchandani</a> — semiclassical transport</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="intro-photo">
+      <!--
+        Optional photo: replace the placeholder div below with
+        <img src="headshot.jpg" alt="Ahmed Saad Sabit" style="width:100%;border-radius:2px;">
+        once you have a headshot file saved next to this index.html.
+      -->
+      <div class="photo-placeholder">photo</div>
+      <p class="photo-note">add headshot.jpg &amp; swap in the &lt;img&gt; tag</p>
+
+      <p class="address">
+        Rice University<br>
+        Dept. of Physics &amp; Astronomy<br>
+        Houston, TX 77005
+      </p>
+    </div>
+  </div>
+
+  <section id="cv">
+    <h2>cv &amp; links</h2>
+    <!-- TODO: export your LaTeX CV to PDF, name it cv.pdf, and place it next to this file -->
+    <p><a href="cv.pdf">Curriculum vitae (PDF)</a></p>
+    <!-- TODO: replace with your real GitHub URL -->
+    <p><a href="https://github.com/your-username">GitHub</a></p>
+  </section>
+
+  <!--
+    Add a short "notes" or "press" section here later, following the same
+    pattern as #cv above, once a preprint is posted or there's coverage to link.
+  -->
+
+  <footer>
+    <a href="cv.pdf">cv</a>
+    <a href="https://github.com/your-username">github</a>
+  </footer>
+</div>
+
+</body>
+</html>
