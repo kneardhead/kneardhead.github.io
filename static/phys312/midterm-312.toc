@@ -1,6 +1,0 @@
-\contentsline {part}{I\hspace {1em}Methodology}{1}{part.1}%
-\contentsline {section}{\numberline {1}Reading this handout}{1}{section.1}%
-\contentsline {part}{II\hspace {1em}Angular Momentum Addition}{2}{part.2}%
-\contentsline {section}{\numberline {2}Angular Momentum from two Subspaces}{2}{section.2}%
-\contentsline {section}{\numberline {3}Addition of the two Angular Momentum}{2}{section.3}%
-\contentsline {part}{III\hspace {1em}Perturbation Theory: \\Examples}{4}{part.3}%
