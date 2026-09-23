@@ -9,16 +9,19 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto+Slab:wght@200;300;400;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 <style>
   :root {
     --paper: #ffffff;
     --ink: #1f1f1f;
-    --ink-soft: #5a5a5a;
-    --accent: #b3305c;
+    --ink-soft: #596c77;
+    --accent: #9232ca;
     --rule: #e6e6e2;
-    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --sans: 'Host Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --serif: 'Source Serif 4', Georgia, serif;
+    --slab: 'Roboto Slab', Rockwell, 'Courier New', serif;
     --mono: ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
   }
 
@@ -30,6 +33,7 @@
     background: var(--paper);
     color: var(--ink);
     font-family: var(--sans);
+    font-weight: 300;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
@@ -40,7 +44,7 @@
 
   .topbar { border-bottom: 1px solid var(--rule); }
   .topbar nav {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: flex-end;
@@ -52,29 +56,29 @@
   .topbar nav a.current { color: var(--accent); font-weight: 600; }
   .topbar nav a:hover { color: var(--accent); }
 
-  .page { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+  .page { max-width: 1200px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
 
   .intro-grid {
     display: grid;
-    grid-template-columns: 1fr 220px;
+    grid-template-columns: 1fr 320px;
     gap: 3rem;
     align-items: start;
   }
 
   h1 {
-    font-family: var(--serif);
+    font-family: var(--sans);
     font-size: 2.4rem;
-    font-weight: 400;
+    font-weight: 200;
     margin: 0 0 1rem;
   }
-  h1 strong { font-weight: 700; }
+  h1 strong { font-weight: 400; }
 
   .byline { color: var(--ink-soft); margin: 0 0 1.5rem; font-size: 0.98rem; }
   .byline .obf { font-family: var(--mono); font-size: 0.85rem; }
 
-  .bio { max-width: 34rem; margin: 0 0 1.75rem; }
+  .bio { max-width: 42rem; margin: 0 0 1.75rem; }
 
-  #research p { max-width: 34rem; }
+  #research p { max-width: 42rem; }
   ul.topics, ul.advisors { padding-left: 1.25rem; margin: 0 0 1.5rem; max-width: 34rem; }
   ul.topics li { font-style: italic; color: var(--ink-soft); margin-bottom: 0.4rem; }
   ul.advisors li { margin-bottom: 0.4rem; }
@@ -126,7 +130,7 @@
 
   @media (max-width: 720px) {
     .intro-grid { grid-template-columns: 1fr; }
-    .intro-grid .intro-photo { max-width: 220px; }
+    .intro-grid .intro-photo { max-width: 450px; }
     h1 { font-size: 1.9rem; }
   }
 
@@ -152,38 +156,36 @@
 <div id="top" class="page">
   <div class="intro-grid">
     <div class="intro-text">
-      <h1><strong>Ahmed</strong> Saad Sabit</h1>
+      <h1>Ahmed Saad <strong>Sabit</strong></h1>
       <p class="byline">
+        I go by 'Sabit' 
+      </br>
         Undergraduate physics major, <a href="https://www.rice.edu">Rice University</a>, Class of 2027<br>
-        <span class="obf"><!-- TODO: replace with your real email -->email: your-netid at rice dot edu</span>
+        <span class="obf"><!-- TODO: replace with your real email -->email: sabit at rice dot edu</span>
       </p>
 
       <p class="bio">
-        I'm interested in condensed matter theory: how collective behavior emerges
-        in many-body systems, and the mathematics — symmetry, geometry, duality —
-        used to describe it. I'm currently applying to PhD programs in this area.
+        I'm interested in condensed matter theory and geometry hidden in such quantum systems. 
       </p>
 
       <div id="research">
-        <p>My research currently spans:</p>
+        <p>My research projects are:</p>
         <ul class="topics">
-          <li>Non-Abelian gauge symmetry in a softly gauged S₃ qudit chain, via DMRG</li>
-          <li>Wegner duality, extended from 1+1D lattice gauge theory to a 3+1D Ising model</li>
-          <li>Multiband semiclassical transport, via an orbital Wigner-function formalism</li>
-          <li>Differential geometry of constant-mean-curvature surfaces</li>
+          <li>Extending <a href="https://doi.org/10.1103/tdsv-whd9J">orbital Wigner function</a> formalism to magnetic fields to study quantum fermionic transport in multiband systems.</li>
+          <li>Non-invertible symmetries, gauging, domain wall condensation in non-abelian G-Qudit chains.</li>
+          <li>(Formerly) Vanadium dioxide spin Seebeck effects.</li>
+          <li>(Formerly) Why donut shaped soap bubbles don't exist?</li>
         </ul>
 
         <p>
-          The two gauge-theory projects build on each other — the 3+1D duality result
-          is built directly on scaffolding laid out by the 1+1D case. Alongside this,
-          I've kept the geometry project going as a standing exercise in analytical
-          reasoning outside the many-body setting.
+          Beyond research, I am passionate about creative physics problems and participated in Asian & International Physics Olympiad in 2023. I grew up in <a href="https://en.wikipedia.org/wiki/Chittagong">Chittagong</a>. 
         </p>
 
-        <p>My work is advised by:</p>
+        <p>My work is/has been advised by:</p>
         <ul class="advisors">
-          <li><a href="https://profiles.rice.edu/faculty/andriy-nevidomskyy">Prof. Andriy Nevidomskyy</a> — non-Abelian gauging &amp; Wegner duality</li>
-          <li><a href="https://profiles.rice.edu/faculty/vir-b-bulchandani">Prof. Vir Bulchandani</a> — semiclassical transport</li>
+          <li><a href="https://profiles.rice.edu/faculty/andriy-nevidomskyy">Prof. Andriy Nevidomskyy</a> —   G-Qudits &amp; non-Abelian symmetries</li>
+          <li><a href="https://profiles.rice.edu/faculty/vir-b-bulchandani">Prof. Vir Bulchandani</a> — quantum transport</li>
+          <li><a href="https://profiles.rice.edu/faculty/douglas-natelson">Prof. Douglas Natelson</a> - vanadium spin transport</li>
         </ul>
       </div>
     </div>
@@ -194,12 +196,14 @@
         <img src="headshot.jpg" alt="Ahmed Saad Sabit" style="width:100%;border-radius:2px;">
         once you have a headshot file saved next to this index.html.
       -->
-      <div class="photo-placeholder">photo</div>
-      <p class="photo-note">add headshot.jpg &amp; swap in the &lt;img&gt; tag</p>
+      <!-- <div class="photo-placeholder">photo</div> -->
+      <!-- <p class="photo-note">add headshot.jpg &amp; swap in the &lt;img&gt; tag</p> -->
+      <img src="img/sabit-1.jpg" alt="Ahmed Saad Sabit" style="width:100%;border-radius:2px;">
 
       <p class="address">
+        Will Rice College,<br>
+        6330 Main St,
         Rice University<br>
-        Dept. of Physics &amp; Astronomy<br>
         Houston, TX 77005
       </p>
     </div>
@@ -222,6 +226,7 @@
     <a href="cv.pdf">cv</a>
     <a href="https://github.com/your-username">github</a>
   </footer>
+  <small>The website was heavily inspired by <a href="https://cims.nyu.edu/~tristanb/">Prof. Tristan Buckmaster's</a> faculty website.</small>
 </div>
 
 </body>
